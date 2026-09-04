@@ -24,8 +24,6 @@ Using this process, my current Volume 1 result is:
 
 This is a **proposed and ongoing solution**, not an officially verified decryption of Liber Primus.
 
-**Core idea:** 729 runes → 27×27 matrix → mirrored three-rune nodes → Euler totient navigation → Möbius key phase → Gematria Primus mod 29 decryption.
-
 ---
 
 ## The core idea
