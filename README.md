@@ -1,0 +1,2 @@
+# Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption
+A new approach to Cicada 3301's Liber Primus 0-2: all 729 runes form a 27×27 grid. Mirrored 3-rune nodes generate keys via Euler’s totient φ; totient values guide movement through the map, while the Möbius function μ sets key phase by Σμ(φ(Kᵢ)) mod 3. Gematria Primus mod 29 then yields the proposed plaintext “AS I GO, THE WEATHER TURNS COLD.”
