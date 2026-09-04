@@ -1,475 +1,689 @@
 # Cicada 3301 Liber Primus 0–2 — 27×27 Rune Matrix Decryption
 
-This repository documents my proposed solution framework for **Cicada 3301's Liber Primus, pages 0–2**.
+This repository documents a **proposed cryptanalytic framework for Cicada 3301's Liber Primus, pages 0–2**.
 
-The central observation is simple:
+The central observation is:
 
-**Liber Primus pages 0–2 contain exactly 729 runes.**
+> **Liber Primus pages 0–2 contain exactly 729 rune tokens, and 729 = 27 × 27.**
 
-Since:
+The complete rune sequence can therefore be written **left-to-right, row-by-row** as a **27×27 matrix** without adding or removing runes.
 
-**729 = 27 × 27**
+The working hypothesis is that this square is not only a visual rearrangement of a linear ciphertext. It may also function as a **spatial map** in which mirrored or structured three-rune patterns act as nodes, key sources, and navigation points.
 
-the complete rune sequence can be written left-to-right, row-by-row, as a **27×27 rune matrix**.
+The proposed framework is:
 
-My approach therefore does not treat Liber Primus 0–2 only as a linear ciphertext. It treats the 729 runes as a **spatial map** containing mirrored and symmetrical **three-rune structures** that act as nodes, keys, and navigation points.
+> **729 runes → 27×27 matrix → three-rune structures → Euler totient φ → local movement → Möbius μ key phase → Gematria Primus subtraction mod 29 → plaintext → next structure**
 
-The proposed method combines:
+Current Volume 1 result:
 
-**27×27 geometry → three-rune nodes → Euler's totient function φ → spatial movement → Möbius function μ → key-phase selection → Gematria Primus mod 29 decryption**
+> ## **AS I GO, THE WEATHER TURNS COLD**
 
-Using this process, my current Volume 1 result is:
-
-> **AS I GO, THE WEATHER TURNS COLD**
-
-![Liber Primus 27x27 rune matrix](./liber-primus-27x27-matrix.png)
-
-This is a **proposed and ongoing solution**, not an officially verified decryption of Liber Primus.
+**Status:** proposed, reproducible research; **not an officially verified Cicada 3301 solution**.
 
 ---
 
-## The core idea
+## Quick start / reproducibility
 
-The 729 runes of Liber Primus pages 0–2 are arranged into a **27×27 grid**.
+If you want to inspect or test the proposal without reading the full PDF first, start here:
 
-Once arranged this way, the text reveals unusual mirrored structures around important locations in the matrix.
+| File | Purpose |
+| --- | --- |
+| [`SOLUTION-0-2-volume-1.md`](./SOLUTION-0-2-volume-1.md) | Full technical, machine-readable explanation of Volume 1 |
+| [`liber-primus-0-2-729-runes.txt`](./liber-primus-0-2-729-runes.txt) | Raw 729-rune dataset arranged as 27 rows × 27 tokens |
+| [`verify-volume-1.py`](./verify-volume-1.py) | Standard-library Python verifier for the encoded core checks |
+| [`SOLUTION 0-2 volume 1.pdf`](./SOLUTION%200-2%20volume%201.pdf) | Original visual research document with highlighted routes and matrix diagrams |
+
+Run the verifier from the repository root:
+
+```bash
+python3 verify-volume-1.py
+```
+
+No third-party Python packages are required.
+
+The verifier checks the **encoded, reproducible core** of Volume 1: dataset shape, matrix coordinates, node locations, Euler-totient transforms, Möbius phases, key streams, mod-29 subtraction, proposed plaintext segments, and several numerical consistency checks.
+
+A successful run means that the stated operations reproduce the stated results from the repository dataset. It **does not** by itself prove that the proposed plaintext is the intended Cicada 3301 solution.
+
+---
+
+## Repository map
+
+### Technical research
+
+- [`SOLUTION-0-2-volume-1.md`](./SOLUTION-0-2-volume-1.md) — technical Markdown edition
+- [`SOLUTION 0-2 volume 1.pdf`](./SOLUTION%200-2%20volume%201.pdf) — original visual Volume 1
+- [`liber-primus-0-2-729-runes.txt`](./liber-primus-0-2-729-runes.txt) — machine-readable source data
+- [`verify-volume-1.py`](./verify-volume-1.py) — reproducibility verifier
+
+### Conceptual interpretation
+
+- [`WHAT-IS-LIBER-PRIMUS.md`](./WHAT-IS-LIBER-PRIMUS.md) — conceptual Markdown version
+- [`What is Liber Primus?.pdf`](./What%20is%20Liber%20Primus%3F.pdf) — original conceptual PDF
+
+### Visual reference
+
+- [`liber-primus-27x27-matrix.png`](./liber-primus-27x27-matrix.png) — 27×27 matrix visualization
+
+---
+
+## Evidence levels used in this repository
+
+To avoid mixing arithmetic with interpretation, the project separates claims into three levels.
+
+### 1. Reproducible core
+
+These claims can be checked directly from the 729-rune dataset and the explicit formulas or coordinates in Volume 1.
+
+Examples:
+
+- 729 rune tokens form a 27×27 matrix.
+- The geometric center is `(14,14)`.
+- The center rune is `NG`.
+- The stated structures occur at the stated coordinates.
+- `φ(J=11)=10=I`.
+- `φ(OE=22)=10=I`.
+- The Möbius phase rule produces the stated key rotations.
+- The listed ciphertext/key pairs reproduce:
+  - **AS I GO THE**
+  - **WEATHER**
+  - **TURNS**
+  - **COLD**
+- The full proposed phrase contains 7 words and 21 rune tokens.
+- Its 0-based Gematria Primus index sum is 233.
+
+These are the main targets of [`verify-volume-1.py`](./verify-volume-1.py).
+
+### 2. Supporting observations
+
+These are exact or checkable relationships that may support the construction but do not independently prove the plaintext.
 
 Examples include:
 
-**AE-J-EA**
+- `COLD` has a 0-based GP index sum of `51`.
+- `233` is the 51st prime.
+- `F₇ = 13` and `F₁₃ = 233`.
+- `19 − 7 = 12 = φ(NG)`.
+- `NG = 21` and occupies the center of the 27×27 matrix.
 
-**X-OE-X**
+These are treated as **consistency checks**, not as standalone decryption rules.
 
-**I-NG-I**
+### 3. Interpretive / exploratory hypotheses
 
-**H-NG-C**
+These include broader architectural or thematic ideas, such as:
 
-**H-TH-H**
+- the matrix behaving like a labyrinth or state-transition system;
+- a possible connection to a **Recursive Transition Network (RTN)**;
+- separators or visual features acting as instructions;
+- thematic wordplay and numerical references.
 
-These structures are not treated as decorative patterns. In this model, their rune values are transformed mathematically and used to generate short repeating keys and movement distances through the matrix.
-
-The basic process is:
-
-**find a structure → transform its values → generate a key → move through the matrix → decrypt the next segment → reach another structure**
-
-This creates a linked route through the 27×27 matrix rather than a sequence of unrelated decryptions.
-
----
-
-## 1. The 729-rune 27×27 matrix
-
-The starting point is the exact rune count:
-
-**729 runes = 27 × 27**
-
-The entire text of pages 0–2 can therefore be written into a square matrix without adding or removing runes.
-
-The runes are placed in their original order:
-
-**left to right → next row → left to right → next row**
-
-The resulting 27×27 matrix becomes the coordinate system for the proposed solution.
-
-In this interpretation, position matters.
-
-A rune is not only a cryptographic symbol. Its location relative to mirrored nodes, the center of the matrix, and other structures can determine the next step.
+These ideas are deliberately kept separate from the deterministic arithmetic checks.
 
 ---
 
-## 2. Three-rune nodes and Euler's totient
+# Core method
 
-A central mathematical operation in the method is **Euler's totient function**, written:
+## 1. Build the 27×27 matrix
 
-**φ(n)**
+Pages 0–2 contain exactly:
 
-One of the first important structures is:
-
-**AE-J-EA**
-
-Using Gematria Primus values:
-
-**J = 11**
+```text
+729 rune tokens
+```
 
 and:
 
-**φ(11) = 10**
+```text
+729 = 27 × 27
+```
 
-Gematria Primus value **10 = I**, therefore:
+The rune sequence is placed in original order:
 
-**AE-J-EA → AE-I-EA**
+```text
+left to right
+→ next row
+→ left to right
+→ next row
+...
+```
 
-This produces the repeating three-rune key:
+This creates a coordinate system with rows and columns numbered `1..27`.
 
-**AE-I-EA**
+The raw matrix data used by this repository is available in:
 
-The same transformation also produces a movement value.
+[`liber-primus-0-2-729-runes.txt`](./liber-primus-0-2-729-runes.txt)
 
-Since:
+Each line contains exactly 27 rune tokens.
 
-**φ(10) = 4**
-
-then:
-
-**10 + 4 = 14**
-
-which gives:
-
-**RIGHT 14**
-
-At that location, applying the repeating key with modular subtraction yields the proposed plaintext:
-
-> **AS I GO THE**
-
-So the same mathematical structure participates in both **key generation** and **navigation through the matrix**.
+Multi-character forms such as `AE`, `OE`, `NG`, `TH`, `U/V`, `C/K`, `S/Z`, and `IA/O` represent **single rune tokens**.
 
 ---
 
-## 3. From X-OE-X to the center of the matrix
+## 2. Three-rune structures
 
-The end of the first stage leads into another mirrored three-rune structure:
+Important structures encountered in Volume 1 include:
 
-**X-OE-X**
+```text
+AE-J-EA
+X-OE-X
+I-NG-I
+H-NG-C/K
+H-TH-H
+```
 
-The center rune again reduces through Euler's totient:
+The proposal treats these structures as functional nodes rather than merely visual coincidences.
 
-**φ(OE) = 10 = I**
+A recurring node transformation is:
 
-giving:
+```text
+K = (a, φ(b), c)
+```
 
-**X-OE-X → X-I-X**
-
-The value **10** then gives another movement:
-
-**RIGHT 10**
-
-This movement reaches **NG**, the exact center of the 27×27 matrix.
-
-The next proposed plaintext produced from this stage is:
-
-> **WEATHER**
-
-This is important because the route is not manually restarted after the first plaintext segment.
-
-The previous stage physically leads into the structure that controls the next stage.
+where the center rune value `b` is transformed by Euler's totient function.
 
 ---
 
-## 4. Möbius function and key phase
+## 3. Stage 1 — AS I GO THE
 
-A three-rune repeating key can have three possible starting positions.
+First node:
 
-To determine which phase should be used, I propose the following rule:
+```text
+AE-J-EA
+```
 
-**p = [μ(φ(k₁)) + μ(φ(k₂)) + μ(φ(k₃))] mod 3**
+Using 0-based Gematria Primus values:
 
-where:
+```text
+J = 11
+φ(11) = 10
+10 = I
+```
 
-**φ** = Euler's totient function  
-**μ** = Möbius function  
-**k₁, k₂, k₃** = the three runes of the key
+Therefore:
 
-The resulting value determines the rotation of the repeating key:
+```text
+AE-J-EA
+→ AE-I-EA
+```
 
-**p = 0 → start from rune 1**  
-**p = 1 → start from rune 2**  
-**p = 2 → start from rune 3**
+This gives the three-rune key:
 
-For example, the key:
+```text
+AE-I-EA
+```
 
-**X-I-X**
+The next derived value is:
 
-produces phase:
+```text
+φ(I=10) = 4
+10 + 4 = 14
+```
 
-**p = 2**
+Volume 1 uses:
 
-so the active repeating key becomes:
-
-**X-X-I**
-
-This phase is used in the proposed decryption of:
-
-> **WEATHER**
-
-The phase therefore does not have to be chosen manually for each segment.
-
----
-
-## 5. Totient-based navigation
-
-After WEATHER, the route continues through the geometry of the matrix.
-
-Two important derived values are:
-
-**10**
-
-and:
-
-**φ(10) = 4**
-
-At an important A position in the matrix:
-
-**UP 10 → NG**
-
-and:
-
-**RIGHT 4 → NG**
-
-This produces a route through another NG-centered structure.
-
-The structure:
-
-**H-NG-C**
-
-has the totient pattern:
-
-**4-12-4**
-
-Using this structure as the repeating key while reading the corresponding ciphertext upward produces:
-
-> **TURNS**
-
-Another important value is:
-
-**φ(NG) = φ(21) = 12**
-
-The shift of **12** leads to the mirrored structure:
-
-**H-TH-H**
-
-This becomes the key for the next stage.
-
----
-
-## 6. Mod 29 decryption
-
-The actual rune decryption uses **Gematria Primus values modulo 29**.
-
-The rule is:
-
-**P = C - K mod 29**
-
-where:
-
-**P** = plaintext rune  
-**C** = ciphertext rune  
-**K** = active key rune
-
-For the final word of the current Volume 1 plaintext, the mirrored structure is:
-
-**H-TH-H**
-
-Since:
-
-**φ(TH = 2) = 1 = U**
-
-the transformed key is:
-
-**H-U-H**
-
-The Möbius phase rule gives:
-
-**p = 1**
-
-therefore the active repeating key becomes:
-
-**U-H-H**
+```text
+RIGHT 14
+```
 
 The ciphertext is:
 
-**G-J-EA-A**
+```text
+L-AE-N-TH-P-U/V-X
+```
 
-Applying:
+Repeated key:
 
-**P = C - K mod 29**
+```text
+AE-I-EA-AE-I-EA-AE
+```
 
-gives:
+Decryption rule:
 
-**G-J-EA-A − U-H-H-U = C-O-L-D**
+```text
+P = C - K mod 29
+```
 
 Result:
 
+> **AS I GO THE**
+
+---
+
+## 4. Stage 2 — WEATHER
+
+The final `X` of the previous ciphertext opens the adjacent structure:
+
+```text
+X-OE-X
+```
+
+Its center transforms as:
+
+```text
+φ(OE=22) = 10 = I
+```
+
+giving:
+
+```text
+X-OE-X
+→ X-I-X
+```
+
+The proposed phase rule is:
+
+```text
+p = Σ μ(φ(Kᵢ)) mod 3
+```
+
+For:
+
+```text
+X-I-X
+```
+
+the result is:
+
+```text
+p = 2
+```
+
+so the active cycle becomes:
+
+```text
+X-X-I
+```
+
+A movement of:
+
+```text
+RIGHT 10
+```
+
+from the stated starting cell reaches:
+
+```text
+(14,14) = NG
+```
+
+the exact center of the 27×27 matrix.
+
+The five matrix tokens used at this stage are:
+
+```text
+NG-P-EO-O-E
+```
+
+with active key stream:
+
+```text
+X-X-I-X-X
+```
+
+and mod-29 subtraction gives:
+
+> **WEATHER**
+
+---
+
+## 5. Stage 3 — TURNS
+
+After WEATHER, the route reaches:
+
+```text
+A(14,19)
+```
+
+which functions as a crossroads in Volume 1.
+
+The previously derived values are reused locally:
+
+```text
+I = 10
+φ(I) = 4
+```
+
+From `A(14,19)`:
+
+```text
+UP 10    → NG(4,19)
+RIGHT 4  → NG(14,23)
+```
+
+Around the right-hand NG:
+
+```text
+UP 10   → H(4,23)
+DOWN 10 → C/K(24,23)
+```
+
+forming:
+
+```text
+H-NG-C/K
+```
+
+Its totient signature is:
+
+```text
+4-12-4
+```
+
+matching the signature of:
+
+```text
+I-NG-I
+```
+
+Reading upward from `A(14,19)` gives:
+
+```text
+A-OE-N-B-W
+```
+
+Using:
+
+```text
+H-NG-C/K-H-NG
+```
+
+as the repeating key gives:
+
+> **TURNS**
+
+---
+
+## 6. Stage 4 — COLD
+
+The next control value comes from:
+
+```text
+NG = 21
+φ(21) = 12
+```
+
+From `A(14,19)`, the same value points in two directions:
+
+```text
+DOWN 12 → center of H-TH-H
+LEFT 12 → G(14,7)
+```
+
+The first branch identifies the next key-generating structure.
+
+The second branch identifies the next ciphertext start.
+
+For:
+
+```text
+H-TH-H
+```
+
+the center transforms as:
+
+```text
+TH = 2
+φ(2) = 1
+1 = U/V
+```
+
+therefore:
+
+```text
+H-TH-H
+→ H-U/V-H
+```
+
+The Möbius phase formula gives:
+
+```text
+p = 1
+```
+
+so the active cycle becomes:
+
+```text
+U/V-H-H
+```
+
+The ciphertext read upward from `G(14,7)` is:
+
+```text
+G-J-EA-A
+```
+
+Active key stream:
+
+```text
+U/V-H-H-U/V
+```
+
+Therefore:
+
+```text
+G-J-EA-A
+-
+U/V-H-H-U/V
+=
+C/K-O-L-D
+```
+
+with the intended English reading:
+
 > **COLD**
 
-The current proposed plaintext is therefore:
+---
 
-> **AS I GO, THE WEATHER TURNS COLD**
+# Current route
+
+The current Volume 1 chain can be summarized as:
+
+```text
+729 rune tokens
+↓
+27×27 matrix
+↓
+AE-J-EA
+↓
+φ(J)=10=I
+↓
+AE-I-EA
+↓
+RIGHT 14
+↓
+AS I GO THE
+↓
+X-OE-X
+↓
+φ(OE)=10=I
+↓
+X-I-X
+↓
+Möbius phase 2
+↓
+RIGHT 10
+↓
+central NG
+↓
+WEATHER
+↓
+A(14,19) crossroads
+↓
+10 / 4 local movements
+↓
+H-NG-C/K
+↓
+TURNS
+↓
+φ(NG)=12
+↓
+H-TH-H + G(14,7)
+↓
+H-U/V-H
+↓
+Möbius phase 1
+↓
+COLD
+```
+
+Current proposed plaintext:
+
+> # **AS I GO, THE WEATHER TURNS COLD**
 
 ---
 
-## 7. The route as a connected system
+## Numerical consistency checks
 
-The important point of this approach is not only that individual ciphertext fragments can produce English words.
+The proposed phrase contains:
 
-The proposed solution attempts to connect the stages structurally.
+```text
+7 words
+21 rune tokens
+```
 
-In simplified form:
+so:
 
-**729 runes**
+```text
+21 = 3 × 7
+```
 
-↓
+Using 0-based Gematria Primus indices:
 
-**27×27 rune matrix**
-
-↓
-
-**mirrored three-rune structure**
-
-↓
-
-**Euler totient transformation**
-
-↓
-
-**three-rune key + movement value**
-
-↓
-
-**Möbius key phase**
-
-↓
-
-**Gematria Primus mod 29 decryption**
-
-↓
-
-**plaintext**
-
-↓
-
-**next structural node**
-
-↓
-
-**next stage**
-
-The current route produces:
-
-**AS I GO THE → WEATHER → TURNS → COLD**
-
-The goal is to determine whether this same structural logic can continue through the matrix.
-
----
-
-## 8. Numerical structure of the plaintext
-
-The recovered phrase:
-
-> **AS I GO THE WEATHER TURNS COLD**
-
-contains:
-
-**7 words**
+```text
+full plaintext sum = 233
+COLD sum = 51
+```
 
 and:
 
-**21 runes**
+```text
+51st prime = 233
+```
 
-Using 0-based Gematria Primus indices, the complete plaintext has a total value of:
+Fibonacci:
 
-**233**
+```text
+F₇  = 13
+F₁₃ = 233
+```
 
-The word:
+Another geometric/numerical relation in Volume 1 is:
 
-**COLD**
+```text
+TURNS ends in column 19
+COLD begins in column 7
 
-has a Gematria Primus index sum of:
+19 - 7 = 12
+φ(NG=21) = 12
+```
 
-**51**
-
-and:
-
-**233 is the 51st prime number**
-
-There is also a Fibonacci relationship:
-
-**F₇ = 13**
-
-and:
-
-**F₁₃ = 233**
-
-This gives the chain:
-
-**7 → 13 → 233**
-
-The value **21** also appears independently as the Gematria Primus value of **NG**, which occupies the center of the 27×27 matrix.
-
-These numerical relationships are treated as possible **consistency checks or structural signatures**, not as standalone proof that the plaintext is correct.
+These relationships are documented as **supporting checks**, not as independent proof of the plaintext.
 
 ---
 
-## 9. Recursive Transition Network hypothesis
+## Raw data and provenance
 
-A broader interpretation developed from this research is that the 27×27 map may behave like a **Recursive Transition Network (RTN)**.
+The repository includes the exact 729-token transcription used to construct the matrix:
 
-A Recursive Transition Network can be thought of as a system of:
+[`liber-primus-0-2-729-runes.txt`](./liber-primus-0-2-729-runes.txt)
 
-**nodes → transitions → procedures → continuation or return**
+The verifier normalizes this file as 27 lines of 27 space-separated tokens and checks its expected SHA-256 fingerprint before executing route-level verification.
 
-This resembles the behavior proposed for the Liber Primus matrix:
+The repository transcription was also cross-checked during preparation against the public LiberPrayground `p0-2.txt` transcription:
 
-**structure → mathematical operation → movement → decryption → new structure**
+https://github.com/relikd/LiberPrayground/blob/main/pages/p0-2.txt
 
-Under this interpretation, Liber Primus may be designed less like one conventional linear cipher and more like a **network or labyrinth of connected states**.
-
-The RTN interpretation is a broader architectural hypothesis and is not required for the core Volume 1 derivation above.
+This external transcription is a reproducibility reference, not an official Cicada 3301 endorsement of this research.
 
 ---
 
-## What this solution is proposing
+## What the verifier proves — and what it does not
 
-The central hypothesis of this repository is:
+[`verify-volume-1.py`](./verify-volume-1.py) is designed to answer a narrow question:
 
-> **Liber Primus pages 0–2 may encode part of their solution spatially. The exact 729-rune length allows the ciphertext to form a 27×27 matrix, and mirrored three-rune structures inside that matrix may generate both cryptographic keys and navigation instructions through Euler's totient function. A Möbius-function rule selects the phase of the repeating key, while Gematria Primus subtraction modulo 29 produces the plaintext.**
+> **Given the repository's fixed 729-rune dataset and the explicit Volume 1 operations, do the stated coordinates, arithmetic, keys, phases, and plaintext outputs reproduce correctly?**
 
-Current proposed result:
+It checks that question automatically.
 
-> **AS I GO, THE WEATHER TURNS COLD**
+It does **not** claim to prove:
 
-The research is ongoing.
+- that the initial node selection is uniquely forced;
+- that every local movement rule is generated by one universal equation;
+- that the plaintext has been authenticated by Cicada 3301;
+- that post-hoc numerical observations independently prove the plaintext;
+- that the RTN interpretation is cryptographically necessary;
+- that exploratory probability estimates constitute a complete statistical model.
+
+This distinction is intentional.
 
 ---
 
-## Files
+## Main open question
 
-### [SOLUTION 0-2 — Volume 1](./SOLUTION%200-2%20volume%201.pdf)
+The most important unresolved issue is not whether the encoded arithmetic reproduces — it does under the stated route.
 
-The main technical document for this stage of the research.
+The stronger question is:
 
-It contains the full proposed Liber Primus 0–2 derivation, including the **729-rune 27×27 matrix**, mirrored three-rune structures, Euler totient transformations, navigation rules, Möbius-function key phase, Gematria Primus mod 29 decryption, and the numerical relationships surrounding the current plaintext.
+> **Can the same framework determine a new step or plaintext segment prospectively, before the result is known, without adding an arbitrary rule after seeing the output?**
 
-### [What is Liber Primus?](./What%20is%20Liber%20Primus%3F.pdf)
+A successful out-of-sample continuation would provide much stronger evidence for the framework.
 
-A separate conceptual explanation of my interpretation of Liber Primus.
+Conversely, if continuation consistently requires unconstrained new choices, that would weaken the hypothesis.
 
-It presents the idea that Liber Primus may be a deliberately structured journey or sequence of discoveries rather than a conventional cipher governed everywhere by one fixed decoding rule.
+---
+
+## Recursive Transition Network hypothesis
+
+A broader conceptual interpretation is that the 27×27 map may behave somewhat like a **Recursive Transition Network (RTN)**:
+
+```text
+node
+→ transition
+→ operation
+→ new state
+→ continuation
+```
+
+The proposed matrix route behaves similarly:
+
+```text
+structure
+→ mathematical operation
+→ movement
+→ decryption
+→ next structure
+```
+
+This is an **architectural hypothesis**, not a required step in the Volume 1 arithmetic.
+
+For the broader interpretation, see:
+
+[`WHAT-IS-LIBER-PRIMUS.md`](./WHAT-IS-LIBER-PRIMUS.md)
 
 ---
 
 ## Research status
 
-This repository contains a **proposed cryptanalytic solution and ongoing research**.
+This repository contains **ongoing, proposed cryptanalytic research**.
 
-It should not be treated as an officially confirmed solution to Cicada 3301 or Liber Primus.
+The goal of publishing it publicly is to make the method:
 
-I am publishing the method publicly so that it can be:
+> **readable, reproducible, testable, criticizable, falsifiable, improvable, and continuable by other researchers.**
 
-**read, reproduced, tested, criticized, falsified, improved, or continued by other researchers.**
+If you find:
 
-If you find a mistake, an alternative explanation, a statistical problem, or an independently reproducible continuation, please open an Issue.
+- a transcription error;
+- a coordinate error;
+- an arithmetic error;
+- a hidden degree of freedom;
+- a stronger alternative explanation;
+- a statistical problem;
+- or an independently reproducible continuation,
+
+please open a GitHub Issue.
 
 ---
 
 ## Related terminology
 
-This research concerns **Cicada 3301, Liber Primus, Liber Primus decryption, Liber Primus solver research, Gematria Primus, the 729 runes of pages 0–2, a 27×27 rune matrix, mirrored three-rune nodes, Euler's totient function, totient-based navigation, the Möbius function, Möbius key-phase selection, modular arithmetic mod 29, Fibonacci 233, and a possible Recursive Transition Network structure**.
-
-## Machine-readable source data
-
-The complete 729-rune transcription used to construct the 27×27 matrix is available as plain text:
-
-### [Liber Primus 0–2 — 729 runes](./liber-primus-0-2-729-runes.txt)
-
-The file contains exactly 729 rune tokens arranged as 27 rows × 27 columns in the same row-wise order used throughout this research.
-
-Multi-letter forms such as AE, OE, NG, TH, U/V, C/K, S/Z, and IA/O represent individual rune tokens.
+Cicada 3301 · Liber Primus · Liber Primus 0–2 · cryptanalysis · Gematria Primus · 729 runes · 27×27 rune matrix · three-rune nodes · mirrored rune structures · Euler's totient function · Euler totient · totient navigation · Möbius function · Möbius key phase · modular arithmetic · mod 29 · Recursive Transition Network · RTN · Fibonacci 233 · AS I GO THE WEATHER TURNS COLD
