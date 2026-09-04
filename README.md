@@ -59,7 +59,6 @@ A successful run means that the stated operations reproduce the stated results f
 ### Conceptual interpretation
 
 - [`WHAT-IS-LIBER-PRIMUS.md`](./WHAT-IS-LIBER-PRIMUS.md) — conceptual Markdown version
-- [`What is Liber Primus?.pdf`](./What%20is%20Liber%20Primus%3F.pdf) — original conceptual PDF
 
 ### Visual reference
 
