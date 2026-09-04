@@ -463,3 +463,13 @@ If you find a mistake, an alternative explanation, a statistical problem, or an 
 ## Related terminology
 
 This research concerns **Cicada 3301, Liber Primus, Liber Primus decryption, Liber Primus solver research, Gematria Primus, the 729 runes of pages 0–2, a 27×27 rune matrix, mirrored three-rune nodes, Euler's totient function, totient-based navigation, the Möbius function, Möbius key-phase selection, modular arithmetic mod 29, Fibonacci 233, and a possible Recursive Transition Network structure**.
+
+## Machine-readable source data
+
+The complete 729-rune transcription used to construct the 27×27 matrix is available as plain text:
+
+### [Liber Primus 0–2 — 729 runes](./liber-primus-0-2-729-runes.txt)
+
+The file contains exactly 729 rune tokens arranged as 27 rows × 27 columns in the same row-wise order used throughout this research.
+
+Multi-letter forms such as AE, OE, NG, TH, U/V, C/K, S/Z, and IA/O represent individual rune tokens.
