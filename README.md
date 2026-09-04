@@ -22,6 +22,8 @@ Using this process, my current Volume 1 result is:
 
 > **AS I GO, THE WEATHER TURNS COLD**
 
+![Liber Primus 27x27 rune matrix](./liber-primus-27x27-matrix.png)
+
 This is a **proposed and ongoing solution**, not an officially verified decryption of Liber Primus.
 
 ---
