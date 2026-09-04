@@ -8,6 +8,8 @@ The central observation is:
 
 The complete rune sequence can therefore be written **left-to-right, row-by-row** as a **27×27 matrix** without adding or removing runes.
 
+![Liber Primus 27x27 rune matrix](./liber-primus-27x27-matrix.png)
+
 The working hypothesis is that this square is not only a visual rearrangement of a linear ciphertext. It may also function as a **spatial map** in which mirrored or structured three-rune patterns act as nodes, key sources, and navigation points.
 
 The proposed framework is:
