@@ -1452,3 +1452,11 @@ This Markdown document is a structured technical edition of the accompanying PDF
 **SOLUTION 0-2 volume 1**
 
 The PDF contains the original visual matrices, highlighted routes, screenshots, and diagrams. This Markdown edition focuses on searchable text, formulas, coordinates, transition logic, source fidelity, reproducibility, and explicit separation between core derivation and secondary observations.
+
+## Machine-readable source data
+
+The exact 729-rune transcription used for the 27×27 matrix is included in this repository:
+
+[liber-primus-0-2-729-runes.txt](./liber-primus-0-2-729-runes.txt)
+
+It contains exactly 27 rows × 27 rune tokens = 729 runes.
