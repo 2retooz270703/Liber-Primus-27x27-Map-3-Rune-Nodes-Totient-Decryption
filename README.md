@@ -10,7 +10,9 @@ The strongest plaintext recovered by the current model is:
 ![Volume 1](https://img.shields.io/badge/Volume_1-7_words-2563eb)
 ![Volume 2](https://img.shields.io/badge/Volume_2-%2B3_words-7c3aed)
 
-<!-- Add current progress / route image here -->
+<p align="center">
+  <img src="./data/27x27_matrix.png" alt="27×27 Rune Grid" width="100%">
+</p>
 
 ---
 
