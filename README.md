@@ -31,7 +31,7 @@ A structured technical version of the same research, optimized for reproducibili
 📄 **[Read Volume 1 — visual PDF](./volume/SOLUTION%200-2%20%20volume%201.pdf)**
 A visual walkthrough of the original 27×27 framework and the first major plaintext route.
 
-📝 **[Open Volume 1 — technical Markdown](./volume/SOLUTION-0-2-volume-1.md)**  
+📝 **[Open Volume 1 — technical Markdown](./volume/SOLUTION-0-2-volume-1.md)**
 A cleaner machine-readable version for exact coordinates, arithmetic, verification, or AI analysis.
 
 💡 **[What is this model trying to describe?](./volume/WHAT-IS-LIBER-PRIMUS.md)**  
