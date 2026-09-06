@@ -1,11 +1,5 @@
 # Cicada 3301 — Liber Primus 0–2
 
-**27×27 Rune Grid · Totient-Guided Decryption**
-
-A structural cryptanalysis of Liber Primus pages 0–2.
-
----
-
 ## 🗝️ Current progress
 
 The strongest plaintext recovered by the current model is:
