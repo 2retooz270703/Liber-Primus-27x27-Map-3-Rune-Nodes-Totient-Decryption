@@ -1,18 +1,20 @@
-# Cicada 3301 Liber Primus 0–2
-## 27×27 Rune Grid / Totient Decryption Framework
+# Cicada 3301 — Liber Primus 0–2
 
-### Current progress
+**27×27 Rune Grid · Totient-Guided Decryption**
+
+A structural cryptanalysis of Liber Primus pages 0–2.
+
+---
+
+## 🗝️ Current progress
 
 The strongest plaintext recovered by the current model is:
 
-> **AS I GO, THE WEATHER TURNS COLD.**  
-> **I MAY CRY...**
+> **AS I GO, THE WEATHER TURNS COLD. I MAY CRY...**
 
-That is **10 proposed plaintext words** so far — **7 in Volume 1** and **3 more in Volume 2**.
-
-The important progress is not only the text itself. The same structural behavior keeps returning across the route: **mirrored 3-rune nodes, Euler totients, Möbius key phases, movement through the grid, and hidden-key discovery** appear to interact as parts of one system.
-
-Volume 2 also introduces the strongest new structural idea so far: **totient values can persist beyond their first use and later reappear as movement distances or structural signals that lead to new keys.**
+![Plaintext](https://img.shields.io/badge/Plaintext-10_proposed_words-2ea44f)
+![Volume 1](https://img.shields.io/badge/Volume_1-7_words-2563eb)
+![Volume 2](https://img.shields.io/badge/Volume_2-%2B3_words-7c3aed)
 
 <!-- Add current progress / route image here -->
 
@@ -22,14 +24,6 @@ Volume 2 also introduces the strongest new structural idea so far: **totient val
 
 If you are opening this project for the first time, start with the PDFs. They are designed to be read visually and show the grid, routes, nodes, key locations, and decryption flow.
 
-### Volume 1
-
-📄 **[Read Volume 1 — visual PDF](./SOLUTION%200-2%20volume%201.pdf)**  
-A visual walkthrough of the original 27×27 framework and the first major plaintext route.
-
-📝 **[Open Volume 1 — technical Markdown](./SOLUTION-0-2-volume-1.md)**  
-A cleaner machine-readable version for exact coordinates, arithmetic, verification, or AI analysis.
-
 ### Volume 2
 
 📄 **[Read Volume 2 — visual PDF](./SOLUTION%200-2%20volume%202.pdf)**  
@@ -37,6 +31,14 @@ Continues the route beyond Volume 1 and develops the ideas of totient inheritanc
 
 📝 **[Open Volume 2 — technical Markdown](./SOLUTION-0-2-volume-2.md)**  
 A structured technical version of the same research, optimized for reproducibility and further analysis.
+
+### Volume 1
+
+📄 **[Read Volume 1 — visual PDF](./SOLUTION%200-2%20volume%201.pdf)**  
+A visual walkthrough of the original 27×27 framework and the first major plaintext route.
+
+📝 **[Open Volume 1 — technical Markdown](./SOLUTION-0-2-volume-1.md)**  
+A cleaner machine-readable version for exact coordinates, arithmetic, verification, or AI analysis.
 
 💡 **[What is this model trying to describe?](./WHAT-IS-LIBER-PRIMUS.md)**  
 A conceptual explanation of the architecture behind the proposed system.
