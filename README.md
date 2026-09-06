@@ -20,7 +20,7 @@ If you are opening this project for the first time, start with the PDFs. They ar
 
 ### Volume 2
 
-📄 **[Read Volume 2 — visual PDF](./SOLUTION%200-2%20volume%202.pdf)**  
+📄 **[Read Volume 2 — visual PDF](./volume/SOLUTION%200-2%20volume%202.pdf)**  
 Continues the route beyond Volume 1 and develops the ideas of totient inheritance and hidden-key discovery.
 
 📝 **[Open Volume 2 — technical Markdown](./SOLUTION-0-2-volume-2.md)**  
