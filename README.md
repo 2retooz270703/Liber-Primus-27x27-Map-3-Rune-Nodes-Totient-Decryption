@@ -1,201 +1,158 @@
 # Cicada 3301 Liber Primus 0–2
 ## 27×27 Rune Grid / Totient Decryption Framework
 
-# Current progress
+### Current progress
 
-| Item | Current result |
-|---|---|
-| **Plaintext found** | **10 proposed words** |
-| **Volume 1** | 7 words |
-| **Volume 2** | +3 words |
-| **Current strongest plaintext** | **AS I GO, THE WEATHER TURNS COLD. I MAY CRY...** |
-| **Grid** | 729 runes arranged as **27×27** |
-| **Main mechanism** | mirrored 3-rune nodes + Euler totient + Möbius phase + grid movement |
-| **New Volume 2 finding** | totient values can persist and later act as movement instructions that lead to hidden keys |
-| **Current open problem** | make every movement / transition fully deterministic before plaintext is known |
+The strongest plaintext recovered by the current model is:
 
-The strongest result so far is not only the plaintext itself, but the repeated structural behavior behind it: **mirrored nodes, totient-derived values, key generation, phase selection, and movement through the grid appear to form one connected process.**
+> **AS I GO, THE WEATHER TURNS COLD.**  
+> **I MAY CRY...**
 
----
-<!-- Add current route / progress image here -->
+That is **10 proposed plaintext words** so far — **7 in Volume 1** and **3 more in Volume 2**.
+
+The important progress is not only the text itself. The same structural behavior keeps returning across the route: **mirrored 3-rune nodes, Euler totients, Möbius key phases, movement through the grid, and hidden-key discovery** appear to interact as parts of one system.
+
+Volume 2 also introduces the strongest new structural idea so far: **totient values can persist beyond their first use and later reappear as movement distances or structural signals that lead to new keys.**
+
+<!-- Add current progress / route image here -->
 
 ---
 
-# About this project
+## 📖 Read the research
 
-A proposed cryptanalytic model for **Liber Primus pages 0–2**.
+If you are opening this project for the first time, start with the PDFs. They are designed to be read visually and show the grid, routes, nodes, key locations, and decryption flow.
 
-Pages 0–2 contain exactly **729 rune tokens**:
+### Volume 1
+
+📄 **[Read Volume 1 — visual PDF](./SOLUTION%200-2%20volume%201.pdf)**  
+A visual walkthrough of the original 27×27 framework and the first major plaintext route.
+
+📝 **[Open Volume 1 — technical Markdown](./SOLUTION-0-2-volume-1.md)**  
+A cleaner machine-readable version for exact coordinates, arithmetic, verification, or AI analysis.
+
+### Volume 2
+
+📄 **[Read Volume 2 — visual PDF](./SOLUTION%200-2%20volume%202.pdf)**  
+Continues the route beyond Volume 1 and develops the ideas of totient inheritance and hidden-key discovery.
+
+📝 **[Open Volume 2 — technical Markdown](./SOLUTION-0-2-volume-2.md)**  
+A structured technical version of the same research, optimized for reproducibility and further analysis.
+
+💡 **[What is this model trying to describe?](./WHAT-IS-LIBER-PRIMUS.md)**  
+A conceptual explanation of the architecture behind the proposed system.
+
+---
+
+## What this project is
+
+Pages 0–2 of Liber Primus contain exactly **729 rune tokens**.
 
 `729 = 27 × 27`
 
-Keeping the original rune order and placing the runes row by row creates a **27×27 grid**.
+If the runes are kept in their original order and placed row by row, they form a **27×27 grid**.
 
-The working hypothesis is that this grid behaves not only as ciphertext, but also as a **map**: 3-rune structures generate or reveal keys, Euler totients produce numerical control values, the Möbius function determines key phase, and some of those values can later be reused as movement distances through the grid.
+The central hypothesis of this project is that the grid is not only ciphertext. It may also act as a **map**.
 
-> **Status:** proposed and reproducible research, not an officially verified Cicada 3301 solution.
+In the proposed model, 3-rune structures can generate or reveal keys, Euler's totient function produces numerical values, the Möbius function selects the phase of a key, and some of those values can later be reused as movement distances through the grid.
 
----
+So the model is not simply:
 
-# Start here
+`ciphertext → plaintext`
 
-| | Human-readable / visual | Technical / AI-readable |
-|---|---|---|
-| **Volume 1** | [SOLUTION 0-2 volume 1.pdf](./SOLUTION%200-2%20volume%201.pdf) | [SOLUTION-0-2-volume-1.md](./SOLUTION-0-2-volume-1.md) |
-| **Volume 2** | [SOLUTION 0-2 volume 2.pdf](./SOLUTION%200-2%20volume%202.pdf) | [SOLUTION-0-2-volume-2.md](./SOLUTION-0-2-volume-2.md) |
-
-**First time here?** Read the PDFs. They show the grid, routes, nodes, and key locations visually.
-
-**Checking the method, reproducing calculations, or giving the research to an AI?** Use the Markdown versions.
-
-- **Volume 1** establishes the 27×27 framework and the main decryption route.
-- **Volume 2** continues the route and develops the ideas of **totient inheritance** and **hidden-key discovery**.
-
-For the conceptual interpretation of the system, see [`WHAT-IS-LIBER-PRIMUS.md`](./WHAT-IS-LIBER-PRIMUS.md).
-
----
-
-# How the model works
-
-The proposed process is a loop:
+It behaves more like:
 
 ```text
-729 runes in original order
-          ↓
-      27×27 grid
-          ↓
- find a 3-rune structure
-          ↓
- generate / locate a key
-          ↓
- Euler totient φ produces
- key values and signatures
-          ↓
- Möbius μ selects key phase
-          ↓
- Gematria Primus subtraction mod 29
-          ↓
-       plaintext
-          ↓
- derived values / geometry
- lead to the next structure
-          ↺
+runes
+  ↓
+27×27 grid
+  ↓
+3-rune structure
+  ↓
+key / totient values
+  ↓
+Möbius phase
+  ↓
+decryption
+  ↓
+movement through the grid
+  ↓
+next structure
+  ↺
 ```
 
-The important idea is that **the arithmetic and the geometry are connected**. A value obtained at one stage can remain relevant later instead of being discarded.
+The main idea is that **arithmetic and geometry are linked**.
 
 ---
 
-# 1. The 27×27 grid
+## 🪞 Mirrored 3-rune nodes
 
-The 729 runes are placed **left-to-right, row-by-row**, preserving their original order.
-
-This gives every rune a fixed coordinate `(row, column)` and allows the ciphertext to be treated as a spatial structure.
-
-Raw data:
-
-[`liber-primus-0-2-729-runes.txt`](./liber-primus-0-2-729-runes.txt)
-
-Visual grid:
-
-[`liber-primus-27x27-matrix.png`](./liber-primus-27x27-matrix.png)
-
----
-
-# 2. 3-rune nodes
-
-The grid contains recurring 3-rune structures that act as functional nodes.
-
-A particularly important form is a mirrored node:
+A recurring structure is a mirrored node:
 
 ```text
 a - b - a
 ```
 
-For mirrored nodes, the center is transformed through Euler's totient:
+When a mirrored node is used to generate a key, its center is transformed through Euler's totient:
 
 ```text
-a-b-a  →  a-φ(b)-a
+a-b-a → a-φ(b)-a
 ```
 
-The transformed structure can become a cipher key.
+This produces a new 3-rune key while preserving the outer symmetry.
 
-This is one of the main recurring operations of the model.
+Mirrored structures are especially important in the current model because they repeatedly appear at transition points between different stages of the route.
 
 ---
 
-# 3. Two ways keys appear
+## 🔑 Two ways keys appear
 
-The current research shows two different key mechanisms.
+Not every key is found in the same way.
 
-### Directly generated keys
+Some keys are generated **directly** from a mirrored 3-rune node by applying `φ` to its center.
 
-A mirrored 3-rune node generates a key by applying `φ` to its center.
+Other keys appear to be **hidden elsewhere in the grid**. In those cases, specific totient values already obtained earlier in the route are reused as movement distances, leading to the location of the next key or key-structure.
 
-```text
-mirrored node
-      ↓
- φ(center)
-      ↓
-     key
-```
-
-### Hidden / located keys
-
-Some keys are not generated directly at the current node.
-
-Instead, **specific totient values already obtained in the route are reused as movement distances**. Those movements lead to another location in the grid where the next key or key-structure is found.
+In simple form:
 
 ```text
-known totient values
-        ↓
- movement in the grid
-        ↓
- hidden key location
+direct:
+mirrored node → φ(center) → key
+
+hidden:
+known totient values → movement → hidden key location
 ```
 
-If the discovered structure is **mirrored**, its center is transformed with `φ` before use.
+A further pattern appears in the current route:
 
-If the discovered key is **non-mirrored**, it is used directly.
+- if the discovered structure is **mirrored**, its center is transformed through `φ`;
+- if the discovered key is **non-mirrored**, it is used directly.
 
-The examples are reproducible in the current route, but the exact general rule that determines **when hidden-key search is activated** is still unresolved.
+The exact rule that decides **when hidden-key search becomes active** is still unknown, but the observed examples are reproducible.
 
 ---
 
-# 4. Totient signatures and inheritance
+## 🔁 Totient inheritance
 
-For a 3-rune key:
+One of the main findings of Volume 2 is that a totient value may remain important after its first use.
 
-```text
-K = (k1, k2, k3)
-```
+A derived number can later reappear as:
 
-its totient signature is:
+- a movement distance,
+- part of a structural signature,
+- a key-generation value,
+- or an input to the Möbius phase rule.
 
-```text
-σ(K) = (φ(k1), φ(k2), φ(k3))
-```
+This repeated reuse is described in the project as **totient inheritance** or a **totient chain**.
 
-These numbers can have more than one role.
-
-In the current model they can participate in:
-
-- identifying related structures;
-- determining key phase;
-- defining movement distances;
-- locating later keys.
-
-Volume 2 refers to this repeated reuse of previously derived values as **totient inheritance** or a **totient chain**.
-
-This does **not** mean every totient value is always reused. The observed claim is narrower: specific values recur at important transitions and connect separate parts of the grid.
+The claim is not that every previous totient is always reused. The narrower observation is that **specific derived values repeatedly return at structurally important points in the route**.
 
 ---
 
-# 5. Möbius key phase
+## 🧭 Möbius phase selection
 
-Once a 3-rune key is known, its cyclic phase is determined numerically rather than chosen by whichever rotation produces readable English.
+Once a 3-rune key is known, the model does not choose the rotation that happens to look most like English.
 
-The proposed phase rule is:
+Its phase is determined numerically:
 
 ```text
 p = Σ μ(φ(Kᵢ)) mod 3
@@ -203,21 +160,23 @@ p = Σ μ(φ(Kᵢ)) mod 3
 
 where `μ` is the Möbius function.
 
-The result `p ∈ {0,1,2}` selects one of the three cyclic rotations of the key.
+The result selects one of the three cyclic rotations:
 
 ```text
-phase 0: K1 K2 K3
-phase 1: K2 K3 K1
-phase 2: K3 K1 K2
+phase 0 → K1 K2 K3
+phase 1 → K2 K3 K1
+phase 2 → K3 K1 K2
 ```
+
+This is important because the phase can be fixed **before** evaluating the resulting plaintext.
 
 ---
 
-# 6. Decryption
+## 🔓 Decryption
 
-Rune values use **0-based Gematria Primus**.
+The model uses **0-based Gematria Primus** values.
 
-Decryption is:
+Plaintext is calculated as:
 
 ```text
 P = C - K mod 29
@@ -225,76 +184,62 @@ P = C - K mod 29
 
 where:
 
-- `C` = ciphertext rune value
-- `K` = active key rune value
-- `P` = plaintext rune value
+- `C` is the ciphertext rune value,
+- `K` is the active key rune value,
+- `P` is the resulting plaintext rune value.
 
-The resulting plaintext is not treated as the end of the process. Its endpoint, surrounding geometry, and already derived numerical values can lead to the next node or key.
-
-That feedback loop is the central idea of the proposed framework.
+The endpoint of one decryption can then become part of the next geometric structure, allowing the process to continue.
 
 ---
 
-# Algorithm at a glance
+## 🧩 The model in one view
 
 ```text
-SOURCE
-729 rune tokens
-      │
-      ▼
-27×27 GRID
-fixed coordinates
-      │
-      ▼
-STRUCTURE
-3-rune node / geometric relation
-      │
-      ├──────── mirrored node ────────┐
-      │                               ▼
-      │                         φ(center)
-      │                               │
-      │                               ▼
-      │                              KEY
-      │
-      └──── totient-guided movement ──► hidden key
-                                      │
-                                      ▼
-                              TOTIENT SIGNATURE
-                                      │
-                         ┌────────────┴────────────┐
-                         ▼                         ▼
-                    Möbius phase             grid movement
-                         │                         │
-                         ▼                         │
-                    active key                    │
-                         │                         │
-                         ▼                         │
-                 GP subtraction mod 29            │
-                         │                         │
-                         ▼                         │
-                     plaintext                    │
-                         │                         │
-                         └──── next structure ◄────┘
+729 original rune tokens
+          ↓
+      27×27 grid
+          ↓
+   find a structure
+          ↓
+ generate or locate key
+          ↓
+    Euler totient φ
+          ↓
+ totient signature / values
+          ↓
+      Möbius μ
+          ↓
+      key phase
+          ↓
+ GP subtraction mod 29
+          ↓
+       plaintext
+          ↓
+ geometry + inherited values
+          ↓
+   next structure / key
+          ↺
 ```
 
 ---
 
-# Repository guide
+## 📂 Useful files
 
-| File | What it is for |
-|---|---|
-| [`SOLUTION 0-2 volume 1.pdf`](./SOLUTION%200-2%20volume%201.pdf) | Visual, reader-friendly Volume 1 |
-| [`SOLUTION-0-2-volume-1.md`](./SOLUTION-0-2-volume-1.md) | Exact technical / machine-readable Volume 1 |
-| [`SOLUTION 0-2 volume 2.pdf`](./SOLUTION%200-2%20volume%202.pdf) | Visual, reader-friendly Volume 2 |
-| [`SOLUTION-0-2-volume-2.md`](./SOLUTION-0-2-volume-2.md) | Exact technical / machine-readable Volume 2 |
-| [`liber-primus-0-2-729-runes.txt`](./liber-primus-0-2-729-runes.txt) | Raw 729-rune source dataset |
-| [`liber-primus-27x27-matrix.png`](./liber-primus-27x27-matrix.png) | Visual reference for the 27×27 grid |
-| [`verify-volume-1.py`](./verify-volume-1.py) | Reproducibility checks for the Volume 1 core |
-| [`WHAT-IS-LIBER-PRIMUS.md`](./WHAT-IS-LIBER-PRIMUS.md) | Conceptual explanation of the proposed architecture |
+🧱 **[Raw 729-rune dataset](./liber-primus-0-2-729-runes.txt)**  
+The source rune sequence used to construct the 27×27 grid.
+
+🗺️ **[27×27 matrix image](./liber-primus-27x27-matrix.png)**  
+A visual reference for coordinates, routes, and node locations.
+
+🧪 **[Volume 1 verifier](./verify-volume-1.py)**  
+Checks the encoded coordinates, totient transformations, Möbius phases, key streams, and mod-29 arithmetic used in the Volume 1 core.
+
+💡 **[Conceptual model](./WHAT-IS-LIBER-PRIMUS.md)**  
+Explains the broader interpretation of the system and why previously derived values may become later instructions.
 
 ---
 
-# Reproducibility
+## ✅ Reproducibility
 
 Volume 1 includes a Python verifier:
 
@@ -304,22 +249,25 @@ python3 verify-volume-1.py
 
 No third-party packages are required.
 
-The verifier checks the encoded core of the proposal: grid size, coordinates, node locations, totient transformations, Möbius phases, key streams, and mod-29 arithmetic.
+A successful run confirms that the documented coordinates and arithmetic reproduce the documented result from the repository data.
 
-A successful run shows that the documented operations reproduce the documented result from the repository data.
-
-It does **not** by itself prove that the model is the intended Cicada 3301 solution.
+It does **not** by itself prove that this is the intended Cicada 3301 solution.
 
 ---
 
-# What remains open
+## Where the research stands now
 
-The strongest unresolved question is not whether the framework can produce readable plaintext.
+The current model can already reproduce a connected sequence of plaintext while repeatedly returning to the same families of structures, totient values, and key-generation behavior.
 
-It is whether the complete transition logic can be made **fully deterministic**:
+The main unresolved problem is now more demanding:
 
-> Can the next movement, node, and key be predicted from the existing state **before the next plaintext is known**?
+> **Can the next movement, node, and key be predicted from the current state before the next plaintext is known?**
 
-In particular, the rule controlling when totient-derived values become movement instructions is still being investigated.
+That is the key test for turning the observed structure into a fully deterministic algorithm.
 
-For the actual routes, coordinates, plaintext, and evidence, read **Volume 1** and **Volume 2** rather than this README.
+For the actual routes, coordinates, plaintext, and evidence, continue with **Volume 1** and **Volume 2**.
+
+---
+
+> **Research status:** proposed, reproducible, and still under active analysis.  
+> This repository does not claim an officially verified Cicada 3301 solution.
