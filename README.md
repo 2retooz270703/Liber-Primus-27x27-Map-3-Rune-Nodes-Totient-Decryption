@@ -41,7 +41,7 @@ A shorter conceptual explanation of how the grid, mirrored structures, totients,
 📄 **[Read the conceptual overview](./other-stuff/md/What-Is-Liber-Primus.md)**
 
 
-### Want to go deeper?
+### 📖 Want to go deeper?
 
 After reading the PDFs, you can explore the extended Markdown versions for detailed analysis, exact references, and AI-assisted work.
 
