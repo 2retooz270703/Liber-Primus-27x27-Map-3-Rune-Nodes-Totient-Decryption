@@ -223,7 +223,7 @@ The endpoint of one decryption can then become part of the next geometric struct
 
 ## 📂 Useful files
 
-🧱 **[Raw 729-rune dataset](./liber-primus-0-2-729-runes.txt)**  
+🧱 **[Raw 729-rune dataset](./other-stuff/0-2-runes.txt)**  
 The source rune sequence used to construct the 27×27 grid.
 
 🗺️ **[27×27 matrix image](./other-stuff/grid.png)**  
