@@ -1367,6 +1367,8 @@ decrypt_mod29(ciphertext, active_key):
 
 Movement is intentionally **not** reduced to one universal pseudocode function here, because Volume 1 uses locally derived values and structural clues rather than stating one global movement equation.
 
+---
+
 ## 44. Independent reproduction checklist
 
 A reader attempting to reproduce Volume 1 should verify these claims separately:
@@ -1387,20 +1389,6 @@ A reader attempting to reproduce Volume 1 should verify these claims separately:
 14. G-J-EA-A minus U-H-H-U gives COLD.
 15. The 21 plaintext rune indices sum to **233** and COLD sums to **51**.
 16. Any probability or uniqueness claim should be reproduced with its exact search space and selection criteria before being treated as statistical evidence.
-
-### Source-data limitation
-
-The PDF contains the 27×27 matrix primarily as images rather than as a complete plain-text 729-token transcription. Therefore, this Markdown edition describes the route and coordinates but does not by itself provide the complete raw matrix dataset.
-
-For maximum reproducibility in a future repository revision, the strongest additional artifact would be a separate machine-readable file containing the exact 729-rune transcription and/or the full 27×27 matrix, for example:
-
-`liber-primus-0-2-729-runes.txt`
-
-or:
-
-`liber-primus-0-2-27x27-matrix.tsv`
-
-That would allow an independent script or AI system to verify coordinates directly rather than relying on the PDF image.
 
 ---
 
