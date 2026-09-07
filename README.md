@@ -20,19 +20,25 @@ The strongest plaintext recovered by the current model is:
 
 If you are opening this project for the first time, start with the PDFs. They are designed to be read visually and show the grid, routes, nodes, key locations, and decryption flow.
 
-### Volume 2
+### 📘 Volume 2
 
-📄 **[Read Volume 2 — visual PDF](./volume/SOLUTION%200-2%20volume%202.pdf)**  
-Continues the route beyond Volume 1 and develops the ideas of totient inheritance and hidden-key discovery.
+Continues the route from Volume 1 and develops the newer parts of the model: totient inheritance, hidden-key discovery, structural returns, and the strongest continuation found so far.
 
-### Volume 1
+📄 **[Read Volume 2 — visual PDF](./volume/SOLUTION%200-2%20volume%202.pdf)**
+
+
+### 📘 Volume 1
+
+Introduces the 27×27 rune grid, mirrored 3-rune nodes, Euler-totient key generation, Möbius phase selection, and the first connected plaintext route.
 
 📄 **[Read Volume 1 — visual PDF](./Read-PDFs-Here/0-2-volume-1.pdf)**
-A visual walkthrough of the original 27×27 framework and the first major plaintext route.
 
 
-💡 **[What is this model trying to describe?](./other-stuff/md/What-Is-Liber-Primus.md)**  
-A conceptual explanation of the architecture behind the proposed system.
+### 💡 What is this model trying to describe?
+
+A shorter conceptual explanation of how the grid, mirrored structures, totients, keys, and movement may work together as one connected system.
+
+📄 **[Read the conceptual overview](./other-stuff/md/What-Is-Liber-Primus.md)**
 
 ---
 
