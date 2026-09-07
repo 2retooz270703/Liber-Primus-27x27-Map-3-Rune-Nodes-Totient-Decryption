@@ -20,14 +20,14 @@ The strongest plaintext recovered by the current model is:
 
 If you are opening this project for the first time, start with the PDFs. They are designed to be read visually and show the grid, routes, nodes, key locations, and decryption flow.
 
-### 📘 Volume 2
+### 🦋 Volume 2
 
 Continues the route from Volume 1 and develops the newer parts of the model: totient inheritance, hidden-key discovery, structural returns, and the strongest continuation found so far.
 
 📄 **[Read Volume 2 — visual PDF](./volume/SOLUTION%200-2%20volume%202.pdf)**
 
 
-### 📘 Volume 1
+### 🦋 Volume 1
 
 Introduces the 27×27 rune grid, mirrored 3-rune nodes, Euler-totient key generation, Möbius phase selection, and the first connected plaintext route.
 
