@@ -21,19 +21,7 @@ This file does **not** claim that the method is an officially verified solution 
 | Current proposed plaintext | **AS I GO, THE WEATHER TURNS COLD** |
 | Status | proposed, ongoing, not officially verified |
 
-### Source-page map
-
-This Markdown edition follows the accompanying PDF in this order:
-
-- PDF pp. 5–8: 729-rune matrix, AE-J-EA, RIGHT 14, **AS I GO THE**
-- PDF pp. 9–11 and 18: X-OE-X, central NG, Möbius phase, **WEATHER**
-- PDF pp. 12–18: A crossroads, values 10 and 4, H-NG-C, **TURNS**
-- PDF pp. 19–21: `φ(NG)=12`, H-TH-H → H-U-H, **COLD**
-- PDF pp. 21–24: 233 / Fibonacci / column structure / thematic observations
-- PDF pp. 1–4: GEB / RTN context and the broader methodological interpretation
-
 ---
-
 
 ## 1. Scope
 
