@@ -1442,21 +1442,3 @@ The most important next test is whether the same structural framework can contin
 Relevant terms for this Volume include:
 
 **Cicada 3301, Liber Primus, Liber Primus pages 0–2, Liber Primus decryption, Liber Primus solution, 729 runes, 27×27 rune matrix, 27x27 grid, three-rune nodes, mirrored rune structures, Gematria Primus, Euler's totient function, Euler totient, totient navigation, Möbius function, Möbius key phase, mod 29, modular subtraction, AE-J-EA, AE-I-EA, X-OE-X, X-I-X, I-NG-I, H-NG-C, H-TH-H, H-U-H, A crossroads, AS I GO THE WEATHER TURNS COLD, Fibonacci 233, Recursive Transition Network, RTN.**
-
----
-
-## 47. Companion source
-
-This Markdown document is a structured technical edition of the accompanying PDF:
-
-**SOLUTION 0-2 volume 1**
-
-The PDF contains the original visual matrices, highlighted routes, screenshots, and diagrams. This Markdown edition focuses on searchable text, formulas, coordinates, transition logic, source fidelity, reproducibility, and explicit separation between core derivation and secondary observations.
-
-## Machine-readable source data
-
-The exact 729-rune transcription used for the 27×27 matrix is included in this repository:
-
-[liber-primus-0-2-729-runes.txt](./other-stuff/0-2-runes.txt)
-
-It contains exactly 27 rows × 27 rune tokens = 729 runes.
