@@ -30,6 +30,7 @@ Continues the route beyond Volume 1 and develops the ideas of totient inheritanc
 📄 **[Read Volume 1 — visual PDF](./Read-PDFs-Here/0-2-volume-1.pdf)**
 A visual walkthrough of the original 27×27 framework and the first major plaintext route.
 
+
 💡 **[What is this model trying to describe?](./other-stuff/md/What-Is-Liber-Primus.md)**  
 A conceptual explanation of the architecture behind the proposed system.
 
