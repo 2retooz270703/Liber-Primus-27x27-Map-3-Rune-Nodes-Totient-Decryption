@@ -24,7 +24,7 @@ If you are opening this project for the first time, start with the PDFs. They ar
 
 Continues the route from Volume 1 and develops the newer parts of the model: totient inheritance, hidden-key discovery, structural returns, and the strongest continuation found so far.
 
-📄 **[Read Volume 2 — visual PDF](./volume/SOLUTION%200-2%20volume%202.pdf)**
+📄 **[Read Volume 2 — visual PDF](./Read-PDFs-Here/0-2-volume-2.pdf)**
 
 
 ### 💡 Volume 1
