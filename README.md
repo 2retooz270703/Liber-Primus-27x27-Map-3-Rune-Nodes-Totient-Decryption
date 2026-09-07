@@ -36,7 +36,7 @@ A visual walkthrough of the original 27×27 framework and the first major plaint
 📝 **[Open Volume 1 — technical Markdown](./volume/SOLUTION-0-2-volume-1.md)**
 A cleaner machine-readable version for exact coordinates, arithmetic, verification, or AI analysis.
 
-💡 **[What is this model trying to describe?](./volume/WHAT-IS-LIBER-PRIMUS.md)**  
+💡 **[What is this model trying to describe?](./other-stuff/md/What-Is-Liber-Primus.md)**  
 A conceptual explanation of the architecture behind the proposed system.
 
 ---
@@ -232,7 +232,7 @@ A visual reference for coordinates, routes, and node locations.
 🧪 **[Volume 1 verifier](./verify-volume-1.py)**  
 Checks the encoded coordinates, totient transformations, Möbius phases, key streams, and mod-29 arithmetic used in the Volume 1 core.
 
-💡 **[Conceptual model](./volume/WHAT-IS-LIBER-PRIMUS.md)**  
+💡 **[Conceptual model](./other-stuff/md/What-Is-Liber-Primus.md)**
 Explains the broader interpretation of the system and why previously derived values may become later instructions.
 
 ---
