@@ -11,7 +11,7 @@ The strongest plaintext recovered by the current model is:
 ![Volume 2](https://img.shields.io/badge/Volume_2-%2B3_words-7c3aed)
 
 <p align="center">
-  <img src="./data/27x27_matrix.png" alt="27×27 Rune Grid" width="100%">
+  <img src="./other-stuff/grid.png" alt="27×27 Rune Grid" width="100%">
 </p>
 
 ---
