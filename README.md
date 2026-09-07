@@ -42,6 +42,14 @@ A shorter conceptual explanation of how the grid, mirrored structures, totients,
 
 ---
 
+### Want to go deeper?
+
+After reading the PDFs, you can explore the extended Markdown versions for **detailed analysis, exact references, and AI-assisted work**.
+
+📝 **[Open the extended Markdown files](./other-stuff/md/)**
+
+---
+
 ## What this project is
 
 Pages 0–2 of Liber Primus contain exactly **729 rune tokens**.
@@ -248,12 +256,3 @@ For the actual routes, coordinates, plaintext, and evidence, continue with **Vol
 
 > **Research status:** proposed, reproducible, and still under active analysis.  
 > This repository does not claim an officially verified Cicada 3301 solution.
-
----
-
-### Want to go deeper?
-
-After reading the PDFs, you can explore the extended Markdown versions for **detailed analysis, exact references, and AI-assisted work**.
-
-📝 **[Open the extended Markdown files](./other-stuff/md/)**
-
