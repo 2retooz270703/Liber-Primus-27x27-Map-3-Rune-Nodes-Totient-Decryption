@@ -55,7 +55,7 @@ For a key `K=(k1,k2,k3)`:
 
 The cyclic key phase is:
 
-`p = sum(mu(phi(ki))) mod 3`
+`p = [μ(φ(k1)) + μ(φ(k2)) + μ(φ(k3))] mod 3`
 
 The phase is therefore determined numerically, before judging the plaintext.
 
