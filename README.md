@@ -25,16 +25,10 @@ If you are opening this project for the first time, start with the PDFs. They ar
 📄 **[Read Volume 2 — visual PDF](./volume/SOLUTION%200-2%20volume%202.pdf)**  
 Continues the route beyond Volume 1 and develops the ideas of totient inheritance and hidden-key discovery.
 
-📝 **[Open Volume 2 — technical Markdown](./volume/SOLUTION-0-2-volume-2.md)**  
-A structured technical version of the same research, optimized for reproducibility and further analysis.
-
 ### Volume 1
 
 📄 **[Read Volume 1 — visual PDF](./Read-PDFs-Here/0-2-volume-1.pdf)**
 A visual walkthrough of the original 27×27 framework and the first major plaintext route.
-
-📝 **[Open Volume 1 — technical Markdown](./volume/SOLUTION-0-2-volume-1.md)**
-A cleaner machine-readable version for exact coordinates, arithmetic, verification, or AI analysis.
 
 💡 **[What is this model trying to describe?](./other-stuff/md/What-Is-Liber-Primus.md)**  
 A conceptual explanation of the architecture behind the proposed system.
