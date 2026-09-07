@@ -230,28 +230,6 @@ The source rune sequence used to construct the 27×27 grid.
 🗺️ **[27×27 matrix image](./other-stuff/grid.png)**  
 A visual reference for coordinates, routes, and node locations.
 
-🧪 **[Volume 1 verifier](./verify-volume-1.py)**  
-Checks the encoded coordinates, totient transformations, Möbius phases, key streams, and mod-29 arithmetic used in the Volume 1 core.
-
-💡 **[Conceptual model](./other-stuff/md/What-Is-Liber-Primus.md)**
-Explains the broader interpretation of the system and why previously derived values may become later instructions.
-
----
-
-## ✅ Reproducibility
-
-Volume 1 includes a Python verifier:
-
-```bash
-python3 verify-volume-1.py
-```
-
-No third-party packages are required.
-
-A successful run confirms that the documented coordinates and arithmetic reproduce the documented result from the repository data.
-
-It does **not** by itself prove that this is the intended Cicada 3301 solution.
-
 ---
 
 ## Where the research stands now
