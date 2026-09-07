@@ -237,6 +237,9 @@ The source rune sequence used to construct the 27×27 grid.
 🗺️ **[27×27 matrix image](./other-stuff/grid.png)**  
 A visual reference for coordinates, routes, and node locations.
 
+🧪 **[Verification scripts](./other-stuff/verify/)**  
+Python 3 verifiers based on the expanded MD versions of the solution, which contain the clearest and most detailed claims that can be checked directly through code.
+
 ---
 
 ## Where the research stands now
