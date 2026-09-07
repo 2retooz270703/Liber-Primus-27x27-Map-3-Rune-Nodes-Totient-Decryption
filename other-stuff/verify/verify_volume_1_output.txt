@@ -1,0 +1,146 @@
+SOLUTION 0-2 — Volume 1 verifier
+Rune source: /mnt/data/0-2-runes.txt
+Coordinates: 1-based (row, column)
+Arithmetic: zero-based Gematria Primus, Euler phi, Möbius mu, mod 29
+
+=== 1. Source data and global structure ===
+[PASS] 729 rune tokens are present
+[PASS] Row-wise placement forms exactly 27 rows x 27 columns
+[PASS] The exact matrix center (14,14) is NG
+       (14,14)=NG
+[PASS] J=11 and OE=22 are the only GP values 1..28 with phi(n)=10
+       solutions=[11, 22] -> ['J', 'OE']
+[PASS] AE-J-EA exists at row 13, columns 11..13
+[PASS] X-OE-X exists at row 14, columns 4..6
+[PASS] I-NG-I exists at row 4, columns 18..20
+[PASS] H-TH-H exists vertically at column 19, rows 25..27
+[PASS] The exact contiguous H-TH-H pattern occurs once globally (undirected)
+       global exact-pattern count=1
+
+=== 2. Stage 1 — AS I GO THE ===
+[PASS] phi(J=11)=10=I and AE-J-EA compiles to AE-I-EA
+       compiled_key=AE-I-EA
+[PASS] 10 + phi(10)=14
+       movement_value=14
+[PASS] RIGHT 14 from the left outer AE(13,11) reaches L(13,25)
+       Important origin convention: using the center J(13,12) would land on AE(13,26), not L.
+[PASS] Seven row-major ciphertext runes are L-AE-N-TH-P-U/V-X
+       read=L-AE-N-TH-P-U/V-X (crosses row 13 -> row 14)
+[PASS] Möbius phase of AE-I-EA is 0
+       phi(K)=[20, 4, 12], mu=[0, 0, 0], phase=0
+[PASS] Mod-29 subtraction decrypts Stage 1 to A-S-I-G-O-TH-E
+       plaintext=A-S/Z-I-G-O-TH-E
+[PASS] The final Stage-1 ciphertext rune is X at (14,4)
+
+=== 3. Stage 2 — WEATHER ===
+[PASS] The final X at (14,4) is the left edge of adjacent X-OE-X
+[PASS] phi(OE=22)=10=I and X-OE-X compiles to X-I-X
+       compiled_key=X-I-X
+[PASS] Möbius phase of X-I-X is 2, giving active cycle X-X-I
+       phi(K)=[6, 4, 6], mu=[1, 0, 1], phase=2
+[PASS] RIGHT 10 from final X(14,4) reaches the exact center NG(14,14)
+       Origin is the final ciphertext X; RIGHT 10 from the node center OE would not reach (14,14).
+[PASS] The five matrix runes from central NG are NG-P-EO-O-E
+       ciphertext=NG-P-EO-O-E
+[PASS] X-X-I-X-X decrypts NG-P-EO-O-E to W-EA-TH-E-R
+       plaintext=W-EA-TH-E-R
+[PASS] W-EA-TH appears directly above the first three WEATHER ciphertext cells
+       W-EA-TH is at row 13, cols 14..16; ciphertext starts below at row 14, col 14.
+[PASS] WEATHER ciphertext ends at E(14,18) and is followed by A(14,19)
+
+=== 4. Stage 3 — TURNS ===
+[PASS] A(14,19) is the stated crossroads
+[PASS] UP 10 from A(14,19) reaches NG(4,19)
+[PASS] RIGHT 4 from A(14,19) reaches NG(14,23)
+[PASS] NG(14,23) has A exactly 4 cells left and right
+       A(14,19) --4-- NG(14,23) --4-- A(14,27)
+[PASS] The vertical 10-step axis is H(4,23)-NG(14,23)-C/K(24,23)
+       node=H-NG-C/K
+[PASS] H-NG-C/K has totient signature 4-12-4
+       signature=[4, 12, 4]
+[PASS] I-NG-I has the same totient signature 4-12-4
+       signature=[4, 12, 4]
+[PASS] The stated Möbius rule gives phase 0 for H-NG-C/K
+       mu=[0, 0, 0], phase=0
+[PASS] Reading upward from A(14,19) gives A-OE-N-B-W
+       ciphertext=A-OE-N-B-W
+[PASS] H-NG-C/K-H-NG decrypts A-OE-N-B-W to T-U-R-N-S
+       plaintext=T-U/V-R-N-S/Z
+[PASS] The final TURNS ciphertext rune W lies in column 19
+       W is at (10,19).
+
+=== 5. Stage 4 — COLD ===
+[PASS] phi(NG=21)=12
+[PASS] DOWN 12 from A(14,19) reaches TH(26,19), the center of H-TH-H
+[PASS] LEFT 12 from A(14,19) reaches G(14,7), the COLD ciphertext start
+[PASS] phi(TH=2)=1=U/V and H-TH-H compiles to H-U/V-H
+       compiled_key=H-U/V-H
+[PASS] Möbius phase of H-U/V-H is 1, giving U/V-H-H
+       phi(K)=[4, 1, 4], mu=[0, 1, 0], phase=1
+[PASS] Reading upward from G(14,7) gives G-J-EA-A
+       ciphertext=G-J-EA-A
+[PASS] U/V-H-H-U/V decrypts G-J-EA-A to C-O-L-D
+       plaintext=C/K-O-L-D
+[PASS] The final COLD ciphertext cell is A(11,7), and phi(A=24)=8=H
+[PASS] The H-TH-H vertical node lies entirely in the A-crossroads column 19
+
+=== 6. Full plaintext and numerical checks ===
+[PASS] The four stages contain 21 plaintext rune tokens
+       rune_count=21
+[PASS] The human-readable phrase has 7 words
+[PASS] The 21 zero-based GP indices sum to 233
+       sum=233
+[PASS] COLD has zero-based GP index sum 51
+       sum=51
+[PASS] 233 is the 51st prime number
+       51st_prime=233
+[PASS] F7=13 and F13=233
+       F7=13, F13=233
+[PASS] 21 = 3 x 7 and NG has GP value 21
+
+=== 7. Column 19 / column 7 observations ===
+[PASS] A crossroads, I-NG-I center, and H-TH-H center are all in column 19
+       A=(14,19), I-NG-I center NG=(4,19), H-TH-H center TH=(26,19)
+[PASS] W has zero-based GP index 7 and prime value 19
+       index(W)=7, prime_value(W)=19
+[PASS] 19 - 7 = 12 = phi(NG)
+[PASS] TURNS ends in column 19 and COLD begins in column 7
+       TURNS final ciphertext W=(10,19); COLD start G=(14,7)
+
+=== 8. Additional reproducible observations ===
+[PASS] ROAD: 4+3+24+23=54 -> 54 mod 29 = 25 = AE
+[PASS] PATH: 13+24+2=39 -> 39 mod 29 = 10 = I
+[PASS] WAY: 7+24+26=57 -> 57 mod 29 = 28 = EA
+[PASS] ROAD / PATH / WAY therefore reduce to AE-I-EA
+[PASS] WAY passes diagonally through A(14,19) with A at its center
+       W(15,18) -> A(14,19) -> Y(13,20)
+[PASS] DIVINITY WITHIN and A CROSSROADS both have GP prime-value sum 491
+       DIVINITY WITHIN=491, A CROSSROADS=491
+[PASS] The Stage-1 ciphertext associated with AS I GO THE has prime-value sum 301
+       ciphertext sum=301; plaintext sum=277. The 301 value belongs to L-AE-N-TH-P-U/V-X under this prime table.
+[PASS] The simple J -> OE estimate 1/29^2 equals about 0.119%
+       1/841=0.001189061 = 0.118906%
+[PASS] 0.0041% is arithmetically of the same order as approximately 1 in 24,000
+       1/24000=0.004167%
+[INFO] EA-G-AE exists as an equally spaced straight pattern, but 'false path' is interpretive
+       unique straight coordinate sets found=2
+
+=== 9. Claims requiring additional source/criteria ===
+[N/A ] Random-shuffle probability 0.0041% as an empirical result
+       The MD reports the estimate but does not specify the exact randomization procedure, search window, stopping rule, or selection criteria. The arithmetic 0.0041% ~ 1/24,000 is checked above; the experiment itself is not reproducible from these files alone.
+[N/A ] The broad H-TH-H 'only mirrored structure in the lower area' wording
+       The exact H-TH-H token pattern is globally unique in this 27x27 grid (count=1), but 'lower area' is not formally bounded in the MD, so the broader search-space claim should not be assigned a probability without a precise region/node definition.
+[N/A ] Separator/dot alignments and separator-count sum 14
+       other-stuff/0-2-runes.txt contains rune tokens only; separator positions/counts are not encoded in this file.
+[N/A ] 2014 message.txt.asc hidden-space primes 2..37 except 19
+       The external 2014 source file is not part of the Volume-1 rune dataset used by this verifier.
+[N/A ] The statement that AE-I-EA also appears in the separate 3x3 matrix
+       The separate 3x3 source matrix is not provided as machine-readable input to this verifier.
+[N/A ] Global visual symmetry, dot-line patterns, GEB/RTN meaning, and thematic interpretations
+       These are interpretive/contextual observations rather than falsifiable arithmetic checks under the stated Volume-1 formulas.
+[N/A ] A universal deterministic movement rule
+       Volume 1 explicitly does not claim one. The script therefore verifies each stated local movement with its stated origin/value instead of inventing a global navigation formula.
+
+=== SUMMARY ===
+PASS=64  FAIL=0  INFO=1  N/A=7
+Core reproducible checks completed without a mismatch.

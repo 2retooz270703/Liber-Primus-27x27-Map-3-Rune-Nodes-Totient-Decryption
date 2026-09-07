@@ -1,0 +1,133 @@
+SOLUTION 0-2 — Volume 2 verifier
+Rune source: /mnt/data/0-2-runes.txt
+Coordinates: 1-based (row, column)
+Arithmetic: zero-based Gematria Primus, Euler phi, Möbius mu, mod 29
+Scope: COLD handoff -> I MAY -> CRY, totient inheritance, phase audit
+
+=== 1. Source data and Volume-1 handoff ===
+[PASS] 729 rune tokens form exactly a 27 x 27 grid
+[PASS] The preserved parent node is H-TH-H at column 19, rows 25..27
+       node=H-TH-H; center=TH(26,19)
+[PASS] phi(TH=2)=1=U/V, so H-TH-H compiles to H-U/V-H
+       compiled_key=H-U/V-H
+[PASS] The COLD key H-U/V-H has totient signature 4-1-4
+       signature=[4, 1, 4]
+[PASS] The Volume-1 COLD handoff reproduces G-J-EA-A -> C-O-L-D
+       ciphertext=G-J-EA-A; phase=1; plaintext=C/K-O-L-D
+[PASS] The final COLD ciphertext rune is A at (11,7)
+       endpoint=A(11, 7)
+
+=== 2. COLD endpoint fingerprint ===
+[PASS] A(11,7) is the center of contiguous EA-A-EA
+       EA(10,7)-A(11,7)-EA(12,7)
+[PASS] EA-A-EA has totient signature 12-8-12
+       phi(EA=28)=12, phi(A=24)=8, signature=[12, 8, 12]
+[INFO] Exact contiguous EA-A-EA is globally unique in this 27 x 27 grid
+       undirected exact-pattern count=1
+
+=== 3. Inherited 4-1-4 movement ===
+[PASS] D4 from A(11,7) reaches S/Z(15,7)
+       A(11,7) -> D4 -> S/Z(15, 7)
+[PASS] R1 from S/Z(15,7) reaches B(15,8)
+       S/Z(15,7) -> R1 -> B(15, 8)
+[PASS] The movement distances 4 and 1 are exactly the first two values of the inherited COLD signature 4-1-4
+       cold_signature=[4, 1, 4]; movement=D4,R1
+
+=== 4. Hidden mirrored node and I MAY key ===
+[PASS] B(15,8) is the center of NG(13,8)-B(15,8)-NG(17,8)
+       node=NG-B-NG with equal vertical spacing 2
+[PASS] phi(B=17)=16=T, so NG-B-NG compiles to NG-T-NG
+       compiled_key=NG-T-NG
+[PASS] NG-T-NG has totient signature 12-8-12
+       signature=[12, 8, 12]
+[PASS] EA-A-EA and NG-T-NG have the exact same 12-8-12 signature
+       endpoint_signature=[12, 8, 12]; key_signature=[12, 8, 12]
+[INFO] The exact equally spaced NG-B-NG structure (step 2) is globally unique in the grid
+       undirected exact-pattern count=1
+
+=== 5. I MAY Möbius phase ===
+[PASS] mu(12), mu(8), mu(12) are all 0, so NG-T-NG has phase 0
+       signature=[12, 8, 12]; mu=[0, 0, 0]; phase=0
+[PASS] Reading left from preserved center TH(26,19) gives TH-G-T-E
+       ciphertext=TH-G-T-E; coordinates=(26,19)->(26,16)
+[PASS] The three cyclic phases reproduce the Volume-2 I MAY phase table
+       phase0=I-M-A-Y ; phase1=S/Z-X-A-TH ; phase2=I-X-F-Y
+[PASS] The numerically selected phase 0 decrypts TH-G-T-E to I-M-A-Y
+       selected_plaintext=I-M-A-Y
+
+=== 6. I MAY result and next-node handoff ===
+[PASS] The I MAY ciphertext starts exactly at the preserved H-TH-H center TH(26,19)
+       The same parent node that generated the COLD key is reused as the read origin.
+[PASS] The I MAY ciphertext ends at E(26,16)
+       endpoint=E(26, 16)
+[PASS] The final E of I MAY is immediately the lower edge of E-X-E
+       E(24,16)-X(25,16)-E(26,16)
+[INFO] Exact contiguous E-X-E is globally unique in this 27 x 27 grid
+       undirected exact-pattern count=1
+
+=== 7. CRY key and Möbius phase ===
+[PASS] phi(X=14)=6=G, so E-X-E compiles to E-G-E
+       compiled_key=E-G-E
+[PASS] E-G-E has totient signature 6-2-6
+       signature=[6, 2, 6]
+[PASS] mu(6)=+1, mu(2)=-1, mu(6)=+1 gives phase 1
+       mu=[1, -1, 1]; sum=1; phase=1
+[PASS] Phase 1 rotates E-G-E to the active key G-E-E
+       active_key=G-E-E
+
+=== 8. Inherited value 6 and CRY ciphertext ===
+[PASS] The outer totient value of E-G-E is 6
+       signature=[6, 2, 6]
+[PASS] UP 6 from X(25,16) lands exactly on J(19,16)
+       X(25,16) -> U6 -> J(19, 16)
+[PASS] J(19,16) is the exact center of contiguous OE-J-OE
+       OE(18,16)-J(19,16)-OE(20,16)
+[INFO] Exact contiguous OE-J-OE is globally unique in this 27 x 27 grid
+       undirected exact-pattern count=1
+[PASS] Reading upward from J(19,16) gives J-OE-S/Z
+       ciphertext=J-OE-S/Z; coordinates=(19,16)->(17,16)
+
+=== 9. CRY decryption ===
+[PASS] The three cyclic phases reproduce the Volume-2 CRY phase table
+       phase0=OE-T-Y ; phase1=C/K-R-Y ; phase2=OE-R-N
+[PASS] The numerically selected phase 1 decrypts J-OE-S/Z to C/K-R-Y
+       selected_plaintext=C/K-R-Y
+[PASS] The active G-E-E subtraction is exactly J-G=C/K, OE-E=R, S/Z-E=Y (mod 29)
+       J-OE-S/Z-G-E-E-mod29 -> C/K-R-Y
+
+=== 10. Totient-chain cross-checks ===
+[PASS] The 12-8-12 endpoint fingerprint exactly reappears as the I MAY key signature
+[PASS] The value 4 is first present in the COLD signature and is reused as D4 after COLD
+[PASS] The value 1 is present in the COLD signature and is reused as R1 after D4
+[PASS] The value 6 is part of the CRY-key signature and is reused as U6 from X
+[PASS] The Möbius rule remains unchanged from I MAY to CRY
+       same formula p=sum(mu(phi(K_i))) mod 3; phases are 0 then 1
+[PASS] The earlier non-mirrored hidden structure H-NG-C/K exists on column 23 with equal spacing 10
+       node=H-NG-C/K at rows 4,14,24
+[PASS] H-NG-C/K is non-mirrored, while NG-B-NG and E-X-E are mirrored
+[PASS] In the earlier hidden-key example, R4 from A(14,19) locates NG(14,23), and +/-10 locates H/C/K
+       A(14,19) -> R4 -> NG(14,23); U10 -> H(4,23); D10 -> C/K(24,23)
+[PASS] The non-mirrored H-NG-C/K comparison key is used directly at phase 0 and decrypts A-OE-N-B-W to T-U-R-N-S/Z
+       signature=[4, 12, 4]; phase=0; ciphertext=A-OE-N-B-W; plaintext=T-U/V-R-N-S/Z
+
+=== 11. Claims requiring additional rule or criterion ===
+[N/A ] A deterministic rule that activates hidden-key search after COLD
+       Volume 2 explicitly states that the activation condition is not yet known. This script can verify the stated D4/R1 route, but cannot derive the decision to start that search from first principles.
+[N/A ] A deterministic rule that chooses D4 then R1, including direction and order
+       The values 4 and 1 are genuinely inherited from 4-1-4 and the stated moves land on B, but Volume 2 does not yet provide a universal selector for DOWN vs RIGHT or for their order.
+[N/A ] A universal rule saying every mirrored hidden node must compile its center with phi and every non-mirrored hidden key must be used directly
+       The concrete examples are reproducible; the universal classification rule is still a model hypothesis rather than a theorem derivable from this dataset alone.
+[N/A ] A formal parent-state-return rule explaining why NG-T-NG is applied back at H-TH-H
+       The return is geometrically reproducible and gives I MAY, but Volume 2 lists formal representation of parent-state return as unresolved.
+[N/A ] A deterministic rule choosing UP for the inherited value 6 after E-X-E
+       UP 6 does land exactly on J, but the volume explicitly says the fully deterministic movement-direction rule is still unknown.
+[N/A ] The linguistic ranking that I MAY and CRY are the strongest plaintext candidates
+       The script reproduces the arithmetic outputs and all three key phases, but 'strongest' is a cryptanalytic/model-selection judgment rather than a grid-only identity.
+[N/A ] A deterministic continuation after CRY without adding a new rule
+       Volume 2 explicitly leaves this as the next out-of-sample test of the model.
+[N/A ] The broad interpretation that totients form a persistent control layer for the whole system
+       The repeated 4, 1, 12, 8, 6, and 2 relationships checked above are factual; treating them as a universal control layer is the research hypothesis under evaluation.
+
+=== SUMMARY ===
+PASS=42  FAIL=0  INFO=4  N/A=8
+Core reproducible Volume-2 checks completed without a mismatch.
