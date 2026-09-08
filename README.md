@@ -2,8 +2,6 @@
 
 <div align="center">
 
-<sub>Liber Primus 0-2</sub>
-
 <p align="center">
   <h3>
     AS I GO, THE WEATHER TURNS COLD.<br>
