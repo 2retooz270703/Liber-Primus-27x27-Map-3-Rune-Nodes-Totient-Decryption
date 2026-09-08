@@ -1,45 +1,42 @@
+
+
 <div align="center">
+
+
+<p align="center">
+  <h3>
+    AS I GO, THE WEATHER TURNS COLD.<br>
+    I MAY CRY NOW. THE ...
+  </h3>
+</p>
 
 <sub>✨ current plaintext</sub>
 
-<p>
-  <b>
-    AS I GO, THE WEATHER TURNS COLD.<br>
-    I MAY CRY NOW. THE ...
-  </b>
-</p>
-
-<sub>27×27 model · Liber Primus 0–2</sub>
 
 </div>
 
+
+#### 🔎 See how the plaintext was found
+
+Click below to start reading from Volume 1, then continue with the next volumes.
+
+#### **[🔍 View all volumes →](./Read-PDFs-Here/)**
+
 ---
 
-## 🗺️ The map
+### 🗺️ The map
 
 <p align="center">
   <img src="./other-stuff/grid.png" alt="Liber Primus 27×27 rune matrix and current route" width="100%">
 </p>
 
-🟪 **Purple** — ciphertext that becomes plaintext  
-🟦 **Blue** — hidden-key points  
-🟩 **Green** — geometric clues and transitions 
+🟪 **Purple** — plaintext route  
+🟦 **Blue** — hidden-key locations  
+🟩 **Green** — navigation clues
 
 ---
 
-## 📚 Read the full research
-
-This README is only a short overview.
-
-The PDFs are the best place to follow the actual solution route: they show the **highlighted matrix, coordinates, keys, movements, calculations, and reasoning** step by step.
-
-### **[📖 Open the PDF archive →](./Read-PDFs-Here/)**
-
-*Volumes 1–3 · complete visual walkthrough*
-
----
-
-## 🧭 What is the idea?
+### 🧭 What is the idea?
 
 The model starts from one simple observation:
 
@@ -71,7 +68,7 @@ The important part is that one stage often leads directly into the next.
 
 ---
 
-## 🪞 Mirrors
+### 🪞 Mirrors
 
 A recurring structure looks like this:
 
@@ -93,7 +90,7 @@ That result can become a **key**, a **number used for movement**, or a clue to a
 
 ---
 
-## 🔑 Keys and movement
+### 🔑 Keys and movement
 
 Some keys are generated directly from the mirror currently being used:
 
@@ -115,7 +112,7 @@ A value can return later as a distance, a matching signature, or even the radius
 
 ---
 
-## 🧮 Key phase
+### 🌀 Key phase
 
 A three-rune key can start in three cyclic positions.
 
@@ -135,7 +132,7 @@ using zero-based Gematria Primus values.
 
 ---
 
-## 🔁 Why the route is interesting
+### 🔁 Why the route is interesting
 
 The recovered text does not appear as isolated words.
 
@@ -151,57 +148,28 @@ That is the main idea behind the current **27×27 geometric route**.
 
 ---
 
-## ✨ Progress
-
-**📘 Volume 1**  
-Introduces the 27×27 map, mirrored nodes, φ, Möbius phase, and mod-29 decryption.
-
-> **AS I GO, THE WEATHER TURNS COLD.**
-
-**📗 Volume 2**  
-Adds hidden keys and the reuse of earlier totient values.
-
-> **I MAY CRY...**
-
-**📙 Volume 3**  
-Develops mirror geometry as a direction clue and continues the route.
-
-> **NOW THE**
-
----
-
-## 🧪 Check the mechanics
+### ✅ Verify the results
 
 For anyone who wants to reproduce the documented steps:
 
-- 🧱 **[Raw 0–2 runes](./other-stuff/0-2-runes.txt)**
-- 🗺️ **[27×27 matrix](./liber-primus-27x27-matrix.png)**
-- ✅ **[Volume 1 verifier](./verify_volume_1.py)**
-- ✅ **[Volume 2 verifier](./verify_volume_2.py)**
-
-The verifier scripts check the documented coordinates, transformations, phases, and mod-29 arithmetic.
-
-*They verify internal reproducibility of the proposed route, not an official Cicada 3301 solution.*
+- 🗒️ **[Raw 0–2 runes](./other-stuff/0-2-runes.txt)**
+- 🗺️ **[27×27 matrix](./other-stuff/grid.png)**
+- 💻 **[Verification scripts](./other-stuff/verify/)**
 
 ---
 
-## 🜏 What is Liber Primus?
+### ✨ How I see Liber Primus
+A short look at how I understand the puzzle and why I started exploring it as a 27×27 structure.
 
-If you are new to the puzzle, start here:
-
-### **[🜏 Read: What is Liber Primus? →](./WHAT-IS-LIBER-PRIMUS.md)**
-
-A short introduction to Liber Primus and the idea behind this 27×27 approach.
+#### **[🔍 Read my view →](./other-stuff/md/WHAT-IS-LIBER-PRIMUS.md)**
 
 ---
 
-## 🤖 Using AI?
+### 🧠 Working with AI?
 
-For AI analysis, exact coordinates, searchable formulas, and machine-readable reasoning:
+The Markdown versions are easier to search and analyze.
 
-### **[🤖 Open the technical Markdown archive →](./other-stuff/md/)**
-
-*Volumes 1–3 · searchable technical versions*
+#### **[🔍 Open the Markdown archive →](./other-stuff/md/)**
 
 ---
 
