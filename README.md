@@ -90,7 +90,7 @@ That result can become a **key**, a **number used for movement**, or a clue to a
 
 ---
 
-### 🔑 Keys and movement
+### 🚦 Keys and movement
 
 Some keys are generated directly from the mirror currently being used:
 
@@ -112,7 +112,7 @@ A value can return later as a distance, a matching signature, or even the radius
 
 ---
 
-### 🌀 Key phase
+### 🗝️ Key phase
 
 A three-rune key can start in three cyclic positions.
 
@@ -132,7 +132,7 @@ using zero-based Gematria Primus values.
 
 ---
 
-### 🔁 Why the route is interesting
+### 🗿 Why the route is interesting
 
 The recovered text does not appear as isolated words.
 
