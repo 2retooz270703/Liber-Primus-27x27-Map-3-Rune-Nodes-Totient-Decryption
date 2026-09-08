@@ -6,7 +6,8 @@
 <p align="center">
   <h3>
     AS I GO, THE WEATHER TURNS COLD.<br>
-    I MAY CRY NOW. THE ...
+    I MAY CRY NOW.<br>
+    THE ...
   </h3>
 </p>
 
