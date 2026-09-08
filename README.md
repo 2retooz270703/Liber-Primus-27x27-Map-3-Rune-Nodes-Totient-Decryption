@@ -155,7 +155,7 @@ That is the main idea behind the current **27×27 geometric route**.
 For anyone who wants to reproduce the documented steps:
 
 - 🗒️ **[Raw 0–2 runes](./other-stuff/0-2-runes.txt)**
-- 🗺️ **[27×27 matrix](./other-stuff/grid.png)**
+- 🗺️ **[27×27 grid](./other-stuff/grid.png)**
 - 💻 **[Verification scripts](./other-stuff/verify/)**
 
 ---
