@@ -36,7 +36,7 @@ Click below to start reading from Volume 1, then continue with the next volumes.
 
 ---
 
-### 🧭 What is the idea?
+### 💡 What is the idea?
 
 The model starts from one simple observation:
 
