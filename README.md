@@ -2,6 +2,7 @@
 
 <div align="center">
 
+<sub>Liber Primus 0-2</sub>
 
 <p align="center">
   <h3>
@@ -12,7 +13,6 @@
 </p>
 
 <sub>✨ current plaintext</sub>
-
 
 </div>
 
