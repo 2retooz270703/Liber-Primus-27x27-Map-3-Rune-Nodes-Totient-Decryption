@@ -1,13 +1,15 @@
 <div align="center">
 
-### ✨ Plaintext recovered so far
+<sub>✨ current plaintext</sub>
 
-<h2>
-AS I GO, THE WEATHER TURNS COLD.<br>
-I MAY CRY NOW. THE ...
-</h2>
+<p>
+  <b>
+    AS I GO, THE WEATHER TURNS COLD.<br>
+    I MAY CRY NOW. THE ...
+  </b>
+</p>
 
-<sub>from the current Liber Primus 0–2 · 27×27 model</sub>
+<sub>27×27 model · Liber Primus 0–2</sub>
 
 </div>
 
@@ -16,13 +18,12 @@ I MAY CRY NOW. THE ...
 ## 🗺️ The map
 
 <p align="center">
-  <img src="./liber-primus-27x27-matrix.png" alt="Liber Primus 27×27 rune matrix and current route" width="100%">
+  <img src="./other-stuff/grid.png" alt="Liber Primus 27×27 rune matrix and current route" width="100%">
 </p>
 
 🟪 **Purple** — ciphertext that becomes plaintext  
 🟦 **Blue** — hidden-key points  
-🟩 **Green** — geometric clues and transitions  
-🟣 **Purple outline** — mirror structures directly involved in the route
+🟩 **Green** — geometric clues and transitions 
 
 ---
 
