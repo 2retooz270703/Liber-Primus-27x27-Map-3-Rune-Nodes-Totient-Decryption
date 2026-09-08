@@ -1,19 +1,15 @@
 <div align="center">
 
-<sub><b>CICADA 3301 · LIBER PRIMUS 0–2</b></sub>
-
-# 27×27 Rune Matrix Research
+<sub><b>LIBER PRIMUS 0–2 · CURRENT MODEL</b></sub>
 
 <br>
 
-<sub><b>CURRENT STRONGEST PLAINTEXT</b></sub>
+# **AS I GO, THE WEATHER TURNS COLD.**  
+# **I MAY CRY NOW. THE ...**
 
-<h1>
-AS I GO, THE WEATHER TURNS COLD.<br>
-I MAY CRY NOW. THE ...
-</h1>
+✦
 
-<sub>Independent cryptanalytic research · ongoing · not officially verified</sub>
+<sub>Strongest plaintext produced by the current 27×27 model</sub>
 
 </div>
 
@@ -25,48 +21,39 @@ I MAY CRY NOW. THE ...
   <img src="./liber-primus-27x27-matrix.png" alt="Liber Primus 27×27 rune matrix and current route" width="100%">
 </p>
 
-| | Meaning |
-|---|---|
-| 🟪 **Purple** | ciphertext cells used to produce plaintext |
-| 🟦 **Blue** | hidden-key points and geometric clues |
-| 🟩 **Green** | transition / confirmation points |
-| **Purple outline** | mirror structures directly involved in the route |
+<p align="center">
+  🟪 <b>Purple</b> — plaintext route &nbsp;&nbsp;·&nbsp;&nbsp;
+  🟦 <b>Blue</b> — hidden-key points &nbsp;&nbsp;·&nbsp;&nbsp;
+  🟩 <b>Green</b> — geometric clues
+</p>
+
+<p align="center">
+  <sub>A thin purple outline marks mirror structures directly involved in the route.</sub>
+</p>
 
 ---
 
-## Read the research
+# 📚 Read the full research
 
-<table>
-<tr>
-<td width="50%" valign="top">
+The README only shows the core idea.
 
-### 📚 PDF archive
+The PDFs are the best place to understand the actual route: they contain the **highlighted matrix, coordinates, key generation, movement, calculations, and the reasoning behind every plaintext block**.
 
-**[Open Volumes 1–3 →](./Read-PDFs-Here/)**
+<div align="center">
 
-The visual version of the research: maps, routes, highlighted structures, calculations and the full reasoning.
+## **[OPEN THE PDF ARCHIVE →](./Read-PDFs-Here/)**
 
-</td>
-<td width="50%" valign="top">
+<sub>Volumes 1–3 · visual walkthrough of the complete research</sub>
 
-### 🜏 What is Liber Primus?
-
-**[Read the introduction →](./WHAT-IS-LIBER-PRIMUS.md)**
-
-A short explanation of the puzzle, the idea behind this project, and why the 27×27 map matters.
-
-</td>
-</tr>
-</table>
-
-> 🤖 **Working with AI, checking coordinates, or reproducing calculations?**  
-> Use the **[technical Markdown archive →](./other-stuff/md/)**
+</div>
 
 ---
 
-# The model, simply
+# 🧭 How the model works
 
-The central idea is that the first 729 runes are not treated only as a line of ciphertext.
+The simplest way to understand the idea is this:
+
+> **The 729 runes are treated not only as ciphertext, but as a map.**
 
 Because:
 
@@ -74,62 +61,37 @@ Because:
 729 = 27 × 27
 ```
 
-they can be placed in their original order into a perfect **27×27 grid**.
+the rune sequence can be placed, without changing its order, into a perfect **27×27 grid**.
 
-The working hypothesis is that this grid behaves as both:
-
-**ciphertext** + **map**
-
-So the process is not just:
+From there, the route moves through a repeating cycle:
 
 ```text
-ciphertext → key → plaintext
-```
-
-It is closer to:
-
-```text
-729 runes
-   ↓
-27×27 map
-   ↓
 find a structure
-   ↓
-derive a key or useful number
-   ↓
-move / decrypt
-   ↓
-plaintext
-   ↓
-next structure
-   ↺
+      ↓
+get a key or number
+      ↓
+use it to move / decrypt
+      ↓
+reach plaintext
+      ↓
+the endpoint reveals the next structure
 ```
 
----
-
-## 01 — The grid is the map
-
-Every rune receives a fixed coordinate inside the 27×27 matrix.
-
-That makes it possible to study not only the rune sequence, but also the **distance, symmetry and position** between runes.
-
-The route is therefore spatial: one result can point to another place in the same matrix.
+The same map keeps being reused.
 
 ---
 
-## 02 — Mirrored 3-rune structures act like nodes
+## 🪞 1. Mirrored structures act like nodes
 
-A recurring structure is:
+A recurring pattern is:
 
 ```text
 A — B — A
 ```
 
-The important rune is the center.
+These small mirrored structures repeatedly appear at important transition points.
 
-The project repeatedly finds that these mirrored 3-rune structures can act as **nodes**: they may generate a key, define a direction, or connect one stage of the route to the next.
-
-For a mirrored node, the center can be transformed with Euler's totient function:
+The center rune can be transformed with **Euler's totient function φ**:
 
 ```text
 A — B — A
@@ -137,50 +99,75 @@ A — B — A
     φ(B)
 ```
 
-This can produce a new rune value and therefore a new key or movement value.
+That transformed value can become:
+
+- part of a key,
+- a movement distance,
+- or a clue that connects the current point to another structure.
+
+So a mirror is not just visual symmetry — in the current model, it behaves like a **functional node**.
 
 ---
 
-## 03 — Earlier numbers can return later
+## 🔑 2. Some keys are generated, others are found
 
-One of the strongest observations across the later stages is that a number does not always disappear after being used once.
-
-A value produced by a structure can later return as:
-
-- a movement distance,
-- a matching numerical signature,
-- a hidden-key clue,
-- or a geometric radius.
-
-This is the idea referred to in the research as **totient inheritance**.
-
-In simple terms:
+Sometimes the current mirror directly produces the next key:
 
 ```text
-a structure gives a number
-        ↓
-the number is used
-        ↓
-the same number appears again later
-        ↓
-it helps locate the next structure
+mirror → transform center → key
 ```
+
+But some keys are **hidden elsewhere in the matrix**.
+
+In those cases, values already discovered earlier are reused as distances:
+
+```text
+earlier value → move through the grid → hidden key
+```
+
+This is one of the most important ideas developed in Volume 2:  
+**a useful number can survive beyond the step where it first appeared.**
 
 ---
 
-## 04 — The key phase is chosen before reading the plaintext
+## 🔁 3. The same number can return in a new role
 
-A 3-rune key can be rotated in three ways.
+A value may first appear as part of a key calculation, then later return as:
 
-The project uses the Möbius function to determine which rotation is active:
+- a distance,
+- a matching signature,
+- a hidden-key clue,
+- or even a geometric radius.
+
+This repeated reuse is what the project calls **totient inheritance**.
+
+The important point is simple:
+
+> **previous steps can leave information behind for later steps.**
+
+The route therefore behaves like a chain with memory rather than a sequence of unrelated decryptions.
+
+---
+
+## 🧮 4. Möbius fixes the key phase
+
+A three-rune key can repeat in three cyclic orders.
+
+Instead of choosing whichever order produces readable English, the active phase is calculated first:
 
 ```text
 p = Σ μ(φ(Kᵢ)) mod 3
 ```
 
-This matters because the phase is calculated **before** deciding whether the resulting plaintext looks meaningful.
+Only after that phase is fixed is the ciphertext decrypted.
 
-Once the active key is known, decryption itself is simple:
+This matters because it reduces one of the biggest sources of arbitrary choice.
+
+---
+
+## 🔓 5. Decryption itself is simple
+
+Once the correct location and active key are known:
 
 ```text
 P = C − K mod 29
@@ -188,90 +175,89 @@ P = C − K mod 29
 
 using zero-based Gematria Primus values.
 
----
+So the difficult part is not the subtraction.
 
-## 05 — The end of one stage becomes the beginning of the next
+The difficult part is discovering:
 
-The plaintext is not treated as the end of the process.
-
-The final position of one decryption often lands on, beside, or inside another meaningful structure.
-
-That gives the route its most important recurring shape:
-
-```text
-structure
-   ↓
-key / number
-   ↓
-plaintext
-   ↓
-endpoint
-   ↓
-new geometry
-   ↓
-next structure
-```
-
-This is why the project increasingly looks less like one static cipher and more like a **geometric state machine**.
+**where to read → which structure is active → which key belongs to it → where the result points next.**
 
 ---
 
-## Why the geometry matters
+## 🧭 6. Geometry helps decide where to move
 
-The later stages suggest that geometry may help remove ambiguity from movement.
+Volume 3 adds an important idea: geometry may help determine direction.
 
-If the route reaches the outer rune of a mirror:
+If the route lands on the outer rune of a mirror:
 
 ```text
 A — B — A
 ```
 
-the natural direction is toward the center.
+the mirror naturally points **toward its center**.
 
-Volume 3 also shows an especially interesting case where a previously derived value reappears as the actual radius of a mirror. In other words, the arithmetic and the geometry begin to confirm the same movement independently.
+Even more interestingly, a value already produced mathematically can later reappear as an exact distance inside the map.
 
-That is the main idea of the project:
+The strongest example so far is the value **6**, which reappears as a **radius-6 mirror** after `CRY`.
 
-> **The numbers, keys, movement and mirror geometry may be different parts of one connected system.**
+That is where the arithmetic and geometry begin to reinforce each other.
 
 ---
 
-## Progress across the three volumes
+## ✨ The core idea
 
-| Volume | Main contribution | Plaintext reached |
-|---|---|---|
-| **Volume 1** | 27×27 map, mirrored nodes, Euler φ, Möbius phase, mod-29 decryption | **AS I GO, THE WEATHER TURNS COLD.** |
-| **Volume 2** | hidden keys and reuse of earlier totient values | **I MAY CRY...** |
-| **Volume 3** | mirror geometry as a direction rule; radius-based continuation | **NOW THE** |
+Across all three volumes, the same pattern keeps returning:
+
+```text
+structure
+   ↓
+number / key
+   ↓
+movement
+   ↓
+decryption
+   ↓
+plaintext
+   ↓
+new structure
+```
+
+The current hypothesis is that **keys, totient values, movement distances, mirror geometry and plaintext transitions are different layers of one connected system**.
+
+That system currently produces:
 
 <div align="center">
 
-### Current strongest reading
-
-## **AS I GO, THE WEATHER TURNS COLD. I MAY CRY NOW. THE ...**
+### **AS I GO, THE WEATHER TURNS COLD. I MAY CRY NOW. THE ...**
 
 </div>
 
 ---
 
-## 🧪 Reproducibility
+# 🜏 What is Liber Primus?
 
-For readers who want the raw material rather than the presentation:
+If you are new to Cicada 3301 or want the broader idea before reading the technical work:
 
-- **[Raw rune source](./other-stuff/0-2-runes.txt)**
+## **[READ: WHAT IS LIBER PRIMUS? →](./WHAT-IS-LIBER-PRIMUS.md)**
+
+This explains the puzzle itself, why the 27×27 structure became important, and the larger interpretation behind the project.
+
+---
+
+# 🤖 Working with AI?
+
+For AI analysis, searching, quoting exact coordinates, or checking formulas, use the technical Markdown versions rather than the visual PDFs.
+
+## **[OPEN THE TECHNICAL MARKDOWN ARCHIVE →](./other-stuff/md/)**
+
+The archive contains the machine-readable versions of the research, organized for detailed analysis and verification.
+
+---
+
+## 🧪 Reproducibility files
+
+- **[Raw 0–2 rune source](./other-stuff/0-2-runes.txt)**
 - **[27×27 matrix image](./liber-primus-27x27-matrix.png)**
 - **[Volume 1 verifier](./verify_volume_1.py)**
 - **[Volume 2 verifier](./verify_volume_2.py)**
-- **[Technical Markdown archive](./other-stuff/md/)**
 
-The verifier scripts check the documented coordinates, numerical transformations, key phases and mod-29 arithmetic.
-
-They test whether the stated method reproduces the stated result. They do **not** prove that the plaintext is the official Cicada 3301 solution.
-
----
-
-<div align="center">
-
-<sub><b>Status:</b> proposed research · reproducible in the documented stages · still under active analysis</sub>
-
-</div>
+<sub>The verifier scripts reproduce the documented coordinates and arithmetic. They test internal reproducibility, not official Cicada verification.</sub>
