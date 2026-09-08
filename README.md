@@ -16,7 +16,6 @@
 
 </div>
 
----
 
 #### 🔎 See how the plaintext was found
 
@@ -173,10 +172,8 @@ The Markdown versions are easier to search and analyze.
 
 #### **[🔍 Open the Markdown archive →](./other-stuff/md/)**
 
----
-
 <div align="center">
 
-<sub>Independent ongoing research · current model · not officially verified</sub>
+<sub>Independent ongoing research · not officially verified</sub>
 
 </div>
