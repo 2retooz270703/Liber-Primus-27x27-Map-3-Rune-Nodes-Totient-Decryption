@@ -2,590 +2,260 @@
 
 <sub><b>CICADA 3301 · LIBER PRIMUS 0–2</b></sub>
 
-# 𐌙 27×27 RUNE MATRIX RESEARCH 𐌙
+# 27×27 Rune Matrix Research
 
-<sub><b>CURRENT STRONGEST PLAINTEXT</b></sub>
+### CURRENT STRONGEST PLAINTEXT
 
-# AS I GO, THE WEATHER TURNS COLD.
-# I MAY CRY NOW. THE ...
+# **AS I GO, THE WEATHER TURNS COLD.**
+# **I MAY CRY NOW. THE ...**
 
 <sub>Independent cryptanalytic research · ongoing · not officially verified</sub>
 
 <br>
 
-**A geometric / number-theoretic approach to Liber Primus pages 0–2**  
-729 runes · 27×27 map · mirrored nodes · Euler φ · Möbius μ · Gematria Primus mod 29
+**729 runes → 27×27 map → geometry → keys → plaintext**
 
 </div>
 
 ---
 
-## 🗺️ The current map
+## 🗺️ Current map
 
 <p align="center">
   <img src="./liber-primus-27x27-matrix.png" alt="Liber Primus 27×27 rune matrix and current route" width="100%">
 </p>
 
-<div align="center">
+<p align="center">
+  🟪 <b>Purple</b> — ciphertext used for plaintext &nbsp;&nbsp;
+  🟦 <b>Blue</b> — hidden-key points &nbsp;&nbsp;
+  🟩 <b>Green</b> — geometric clues
+</p>
 
-**🟪 Purple** — ciphertext that decrypts into the proposed plaintext  
-**🟦 Blue** — hidden-key points whose position is used as a geometric clue  
-**🟩 Green** — geometric confirmation / transition points  
-**🟣 Thin purple outline** — mirrors directly involved in forming or confirming plaintext
-
-</div>
-
-> The same 729-rune matrix is used throughout the research. The route continues from one state to the next; each volume adds another part of the same map rather than starting over.
+<p align="center">
+  <sub>A thin purple outline marks mirror structures directly involved in the route.</sub>
+</p>
 
 ---
 
-<table>
-<tr>
-<td width="50%" align="center">
+<div align="center">
 
-### 📚 Read the research
+## Start here
 
-**[OPEN THE PDF ARCHIVE →](./Read-PDFs-Here/)**
+### 📚 **[PDF ARCHIVE — VOLUMES 1–3](./Read-PDFs-Here/)**  
+Visual walkthroughs with the full route, maps, calculations and reasoning.
 
-The visual editions of the research.  
-Start here if you want to follow the route, highlighted matrix, keys, geometry and decryption step by step.
-
-**Volumes 1–3 are kept together in one archive.**
-
-</td>
-<td width="50%" align="center">
-
-### 🜏 What is Liber Primus?
-
-**[READ THE CONCEPTUAL EXPLANATION →](./WHAT-IS-LIBER-PRIMUS.md)**
-
-A shorter explanation of what Liber Primus is, why I began treating the ciphertext as a map, and how I currently interpret the architecture of the puzzle.
-
-**Best starting point before the technical details.**
-
-</td>
-</tr>
-</table>
+### 🜏 **[WHAT IS LIBER PRIMUS?](./WHAT-IS-LIBER-PRIMUS.md)**  
+A short introduction to the puzzle and the idea behind this research.
 
 <br>
 
-<div align="center">
-
-### 🤖 Working with AI or checking the method?
-
-The PDF archive is designed for human reading.  
-For searchable text, exact formulas, coordinates and machine-readable reasoning, use the Markdown editions:
-
-## **[OPEN THE TECHNICAL MARKDOWN ARCHIVE →](./other-stuff/md/)**
-
-<sub>Contains the technical Volume 1, Volume 2 and Volume 3 notes.</sub>
+### 🤖 **[TECHNICAL MARKDOWN ARCHIVE](./other-stuff/md/)**  
+Searchable versions for AI analysis, exact coordinates, formulas and verification.
 
 </div>
 
 ---
 
-# ✨ What this project is actually proposing
+## The idea in simple terms
 
-The starting observation is simple: **Liber Primus pages 0–2 contain exactly 729 rune tokens.**
+The main hypothesis is that the first 729 runes of Liber Primus should not be read only as a line of ciphertext.
+
+Because:
 
 ```text
 729 = 27 × 27
 ```
 
-If the rune sequence is kept in its original order and written **left-to-right, row-by-row**, it forms a perfect **27×27 matrix**.
+the runes can be placed in their original order into a perfect **27×27 grid**.
 
-That gives every rune a fixed coordinate `(row, column)`.
+The project treats that grid as both:
 
-The working hypothesis is that this matrix is doing two jobs at the same time:
+- **ciphertext**, and
+- **a map that tells us where to look next**.
 
-1. it is the **ciphertext**;
-2. it is also a **map through the ciphertext**.
-
-The route is therefore not simply:
+So the method is not just:
 
 ```text
 ciphertext → key → plaintext
 ```
 
-Instead, the current model behaves more like:
+It is closer to:
 
 ```text
-729 runes
+structure
    ↓
-27×27 map
+number / key
    ↓
-geometric / 3-rune structure
-   ↓
-Euler totient φ
-   ↓
-key, signature or movement value
-   ↓
-Möbius phase μ
-   ↓
-Gematria Primus subtraction mod 29
+movement or decryption
    ↓
 plaintext
    ↓
-endpoint + inherited geometry
-   ↓
 next structure
-   ↺
 ```
 
-The important part is the **loop**. A plaintext block does not simply end. Its endpoint can already lie on the next useful structure, while numbers obtained earlier can return as movement distances, key signatures, or geometric radii.
+The route keeps continuing through the same map.
 
 ---
 
-# 🪞 1. Mirrored 3-rune structures
+## 🪞 Mirrors are the main structural nodes
 
-A recurring object in the matrix is a three-rune mirror:
+A recurring pattern is a three-rune mirror:
 
 ```text
 A — B — A
 ```
 
-When such a structure acts as a key-generating node, the center is transformed with Euler's totient function:
+The center rune can be transformed with **Euler's totient function φ**.
+
+In simple form:
 
 ```text
 A — B — A
-      ↓ φ
-A — φ(B) — A
+      ↓
+    φ(B)
+      ↓
+new key / useful value
 ```
 
-For example, one of the first nodes is:
-
-```text
-AE — J — EA
-```
-
-With zero-based Gematria Primus values:
-
-```text
-J = 11
-φ(11) = 10 = I
-```
-
-so:
-
-```text
-AE — J — EA  →  AE — I — EA
-```
-
-The matrix supplies the **structure**, and the totient operation supplies the **transformed center** used in the key.
-
-This same behavior appears again with structures such as:
-
-```text
-X  — OE — X   → X  — I — X
-H  — TH — H   → H  — U — H
-E  — X  — E   → E  — G — E
-OE — J  — OE  → OE — I — OE
-```
+These structures can do several jobs: generate a key, define a direction, or connect the current point to another part of the map.
 
 ---
 
-# 🧭 2. The geometry can determine direction
+## 🔑 Keys can be found in two ways
 
-One problem in the early route was direction: if a number says “move 6,” what tells us **which way**?
+Some keys are created **directly** from the mirror currently being used:
 
-Volume 3 suggests a simple geometric answer.
+```text
+mirror → transform center → key
+```
 
-For a horizontal mirror:
+Other keys are **hidden elsewhere in the grid**.
+
+In those cases, numbers found earlier are reused as distances:
+
+```text
+previous value → move through grid → hidden key
+```
+
+This repeated reuse of earlier values is one of the main discoveries of Volume 2.
+
+---
+
+## 🧭 Geometry helps choose direction
+
+A number may tell us **how far** to move, but the geometry can tell us **where**.
+
+If the route lands on the outer rune of a mirror:
 
 ```text
 A — B — A
 ```
 
-If the route lands on the left `A`, the structure points right — toward `B`.  
-If it lands on the right `A`, the structure points left — again toward `B`.
+the natural direction is **toward the center**.
 
-For a vertical mirror:
+Volume 3 develops this idea further: the same numerical value can reappear as an actual geometric distance or mirror radius.
 
-```text
-A
-│
-B
-│
-A
-```
-
-The same principle applies: an outer rune points **toward the center**.
-
-So, when the route lands on an outer rune of a mirror, the geometry itself can define the direction without choosing it after seeing plaintext.
-
-If the route lands **exactly on the center**, both directions are symmetrical. In the current model, that is where another mechanism becomes relevant: a matching signature or a hidden-key search can point to a related structure, often on the perpendicular axis.
+So numbers and geometry appear to confirm each other rather than acting as separate systems.
 
 ---
 
-# 🔑 3. Two kinds of keys
+## 🧮 Möbius fixes the key phase
 
-The route currently contains two different ways of obtaining a key.
+A three-rune key can start in three different cyclic positions.
 
-### Directly generated key
-
-A mirrored node is already present at the current location:
-
-```text
-mirror → φ(center) → key
-```
-
-Example:
-
-```text
-H — TH — H
-φ(TH=2) = 1 = U
-H — U — H
-```
-
-### Hidden / located key
-
-Sometimes the current stage does not directly contain the next key. Instead, values derived earlier are reused as movement distances and lead to another structure elsewhere in the map:
-
-```text
-previous values
-     ↓
-movement
-     ↓
-hidden key location
-```
-
-An important Volume 1 example is the non-mirrored structure:
-
-```text
-H — NG — C
-```
-
-An important Volume 2 example is:
-
-```text
-NG — B — NG
-      ↓ φ
-NG — T — NG
-```
-
-The current working distinction is:
-
-- **mirrored discovered structure** → transform its center with `φ`;
-- **non-mirrored discovered key** → use the discovered structure directly.
-
-The exact general activation rule for every hidden-key search is still being tested, but the individual routes and coordinates can be reproduced from the grid.
-
----
-
-# 🔁 4. Totient signatures — the same numbers return
-
-For a three-rune key:
-
-```text
-K = (k₁, k₂, k₃)
-```
-
-I use its totient signature:
-
-```text
-σ(K) = (φ(k₁), φ(k₂), φ(k₃))
-```
-
-These signatures act like numerical fingerprints between apparently different structures.
-
-A strong example occurs between **COLD** and **I MAY**.
-
-At the endpoint of COLD:
-
-```text
-EA — A — EA
-```
-
-its signature is:
-
-```text
-12 — 8 — 12
-```
-
-Later, the hidden structure used for `I MAY` becomes:
-
-```text
-NG — T — NG
-```
-
-and it has exactly the same signature:
-
-```text
-12 — 8 — 12
-```
-
-So:
-
-```text
-EA — A — EA  →  12 — 8 — 12  ←  NG — T — NG
-```
-
-This is what Volume 2 calls **totient inheritance**: a numerical result can remain active beyond the place where it first appeared and re-enter the route later in another role.
-
----
-
-# 🧮 5. Möbius selects the key phase
-
-A 3-rune key can repeat in three cyclic phases.
-
-For:
-
-```text
-K = K₁ K₂ K₃
-```
-
-there are three possible starts:
-
-```text
-phase 0 → K₁ K₂ K₃ ...
-phase 1 → K₂ K₃ K₁ ...
-phase 2 → K₃ K₁ K₂ ...
-```
-
-The model does **not** choose whichever phase happens to produce readable English.
-
-The phase is calculated first:
+Instead of choosing the version that happens to produce English, the project calculates the phase with:
 
 ```text
 p = Σ μ(φ(Kᵢ)) mod 3
 ```
 
-where `μ` is the Möbius function.
-
-This matters because the key rotation is fixed numerically **before the plaintext is evaluated**.
-
-The same phase rule continues through the later route, including `I MAY`, `CRY`, and `NOW THE`.
+This determines how the key starts **before** the plaintext is judged.
 
 ---
 
-# 🔓 6. Decryption itself is simple
+## 🔓 The actual decryption is simple
 
-Once the ciphertext path and the active key are known, the actual decryption is ordinary Gematria Primus subtraction:
+Once the position and active key are known, the rune values are decrypted with zero-based Gematria Primus:
 
 ```text
 P = C − K mod 29
 ```
 
-where:
+The difficult part is therefore not the subtraction.
 
-```text
-C = ciphertext rune index
-K = active key rune index
-P = plaintext rune index
-```
-
-The complexity of the model is therefore not mainly in the subtraction. The difficult part is discovering **where to read**, **which structure supplies the key**, and **how the current state leads to the next state**.
+The difficult part is finding the correct **structure, key, direction and next point**.
 
 ---
 
-# 🧩 7. How the plaintext chain grows
+## 🔁 The important pattern
 
-The strongest feature of the current route is that the stages are not isolated.
-
-### `AS I GO THE`
+The strongest recurring behavior across Volumes 1–3 is:
 
 ```text
-AE-J-EA
-→ φ(J)=I
-→ key AE-I-EA
-→ movement 14
-→ ciphertext L-AE-N-TH-P-U-X
-→ AS I GO THE
+find structure
+      ↓
+derive key / number
+      ↓
+move or decrypt
+      ↓
+get plaintext
+      ↓
+endpoint reveals next structure
+      ↺
 ```
 
-The final ciphertext rune is `X`, which is immediately part of the next mirror:
+A value discovered in one stage can later return as:
 
-```text
-X — OE — X
-```
+- a key value,
+- a movement distance,
+- a matching numerical signature,
+- or a geometric radius.
 
-### `WEATHER`
+That is the central idea of the current model: **the arithmetic and the geometry appear to be parts of the same chain.**
 
-```text
-X-OE-X
-→ φ(OE)=I
-→ X-I-X
-→ RIGHT 10
-→ exact center NG(14,14)
-→ WEATHER
-```
+---
 
-This is the first strong example of one stage ending directly on the structure that opens the next stage.
+## Progress so far
 
-### `TURNS`
+**Volume 1** establishes the 27×27 map and the core structure, producing:
 
-The route reaches the crossroads `A(14,19)` and reuses the already known values `10` and `4` geometrically. This leads to `H-NG-C`, which becomes the key used to decrypt:
+> **AS I GO, THE WEATHER TURNS COLD.**
 
-```text
-TURNS
-```
+**Volume 2** develops inherited values and hidden keys, extending the plaintext to:
 
-### `COLD`
+> **I MAY CRY...**
 
-The route reaches the mirrored structure:
+**Volume 3** develops the geometric direction rule and the radius-6 transition, producing:
 
-```text
-H — TH — H
-```
+> **NOW THE**
 
-which becomes:
-
-```text
-H — U — H
-```
-
-and produces:
-
-```text
-COLD
-```
-
-At the COLD endpoint, the new structure `EA-A-EA` already contains the `12-8-12` signature that later reappears in the I MAY key.
-
-### `I MAY`
-
-The inherited values from the previous state move through the map to `B(15,8)`, the center of:
-
-```text
-NG — B — NG
-```
-
-Transforming the center gives:
-
-```text
-NG — T — NG
-```
-
-with the same `12-8-12` signature. The Möbius rule chooses phase 0, and the preserved `H-TH-H` area decrypts to:
-
-```text
-I MAY
-```
-
-### `CRY`
-
-The final `E` of the I MAY ciphertext belongs to the next mirror:
-
-```text
-E — X — E
-```
-
-which becomes:
-
-```text
-E — G — E
-```
-
-Its signature contains the value `6`:
-
-```text
-6 — 2 — 6
-```
-
-That same `6` is then reused as movement:
-
-```text
-X(25,16) → UP 6 → J(19,16)
-```
-
-and the resulting ciphertext decrypts to:
-
-```text
-CRY
-```
-
-### `NOW THE`
-
-After `CRY`, the endpoint is `S(17,16)`.
-
-Here the number `6` appears again — not only as an inherited value, but as actual geometry:
-
-```text
-S(17,4) —6— IA/O(17,10) —6— S(17,16)
-```
-
-The center confirms it independently:
-
-```text
-IA/O = 27
-φ(27) = 18
-φ(18) = 6
-```
-
-so:
-
-```text
-φ²(IA/O) = 6
-```
-
-The same center participates in a second radius-6 mirror, allowing the route to transfer to `TH(11,16)`.
-
-From there, the already generated key `OE-I-OE` and its Möbius-selected phase decrypt the next five runes to:
-
-```text
-NOW THE
-```
-
-This gives the current strongest reading:
+Which gives the current strongest reading:
 
 <div align="center">
 
-## **AS I GO, THE WEATHER TURNS COLD.**
-## **I MAY CRY NOW. THE ...**
+### **AS I GO, THE WEATHER TURNS COLD.**
+### **I MAY CRY NOW. THE ...**
 
 </div>
 
 ---
 
-# 🧠 The core idea in one sentence
+## 🧪 Reproducibility
 
-> **The same information keeps changing form: a rune becomes a totient value, a totient value becomes a key or movement, a movement reaches a mirror, the mirror fixes direction, its geometry confirms the number, and the endpoint becomes the beginning of the next stage.**
+For readers who want to inspect the mechanics rather than the presentation:
 
-That is why I currently think the 27×27 object is better understood as a **geometric-cryptographic state machine** than as a conventional linear cipher.
+- **[Raw rune source](./other-stuff/0-2-runes.txt)**
+- **[27×27 matrix](./liber-primus-27x27-matrix.png)**
+- **[Volume 1 verifier](./verify_volume_1.py)**
+- **[Volume 2 verifier](./verify_volume_2.py)**
+- **[Technical Markdown archive](./other-stuff/md/)**
 
----
-
-# 🧪 Reproduce the mechanics
-
-The repository includes the source data and machine-checkable parts of the research separately from the visual interpretation.
-
-| Resource | Purpose |
-|---|---|
-| **[🧱 Raw rune source](./other-stuff/0-2-runes.txt)** | The rune sequence used to reconstruct the 27×27 grid |
-| **[🗺️ Matrix image](./liber-primus-27x27-matrix.png)** | Visual reference for coordinates, nodes and the current route |
-| **[🧪 Volume 1 verifier](./verify_volume_1.py)** | Checks grid shape, coordinates, node transformations, phases and mod-29 arithmetic |
-| **[🧪 Volume 2 verifier](./verify_volume_2.py)** | Checks the reproducible I MAY / CRY continuation and inherited-value relations |
-| **[📝 Technical Markdown archive](./other-stuff/md/)** | Searchable versions of the research for detailed checking or AI analysis |
-
-Typical verifier use:
-
-```bash
-python3 verify_volume_1.py
-python3 verify_volume_2.py
-```
-
-A successful verifier run means the stated mechanical operations reproduce the documented result from the supplied data. It does **not** by itself establish that the plaintext is the intended official solution to Liber Primus.
-
----
-
-# 🔭 What remains open
-
-The research is strongest when a transition is fixed by information that already exists **before** the resulting plaintext is inspected.
-
-The main question is therefore:
-
-> **Can every future movement, structure and key be predicted from the current state without introducing a new rule after seeing the plaintext?**
-
-Volume 3 significantly narrows the earlier direction problem by connecting movement to mirror geometry and by showing the inherited value `6` reappearing as a literal radius whose center independently encodes the same value.
-
-The next useful continuation should preserve that standard.
+The verification scripts reproduce the documented grid coordinates, numerical transformations, key phases and mod-29 arithmetic. They test internal reproducibility; they do not establish that the plaintext is an official Cicada 3301 solution.
 
 ---
 
 <div align="center">
 
-### 📚 **[PDF ARCHIVE](./Read-PDFs-Here/)** · 🜏 **[WHAT IS LIBER PRIMUS?](./WHAT-IS-LIBER-PRIMUS.md)** · 🤖 **[TECHNICAL MARKDOWN](./other-stuff/md/)**
-
-<sub>Independent research into Cicada 3301's Liber Primus · proposed, reproducible where stated, and still under active analysis.</sub>
+<sub><b>Research status:</b> proposed · reproducible in the documented stages · still under active analysis</sub>
 
 </div>
