@@ -10,7 +10,7 @@
   </h3>
 </p>
 
-<sub>✨ current plaintext</sub>
+<sub>📌 current plaintext</sub>
 
 </div>
 
