@@ -16,7 +16,6 @@
 
 </div>
 
----
 
 #### 🔎 See how the plaintext was found
 
