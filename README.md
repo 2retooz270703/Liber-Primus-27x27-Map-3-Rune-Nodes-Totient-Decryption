@@ -45,8 +45,10 @@ TURNS ends in column 19
 NG = GP index 21
 NG = center of the 27×27 matrix
 
-F₇ = 13
-F₁₃ = 233
+13 is the 7th Fibonacci number
+233 is the 13th Fibonacci number
+
+7 → F₇ = 13 → F₁₃ = 233
 ```
 
 These numerical links all converge on the same recovered sentence: 7 words, 21 runes, GP sum 233, COLD = 51, 233 = the 51st prime, and the 19→7 column shift equals φ(NG)=12. That kind of internal agreement is strong evidence that the plaintext was produced by a real underlying structure, not by arbitrary choices.
