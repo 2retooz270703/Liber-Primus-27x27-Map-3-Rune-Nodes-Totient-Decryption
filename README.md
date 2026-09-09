@@ -31,9 +31,10 @@ AS I GO, THE WEATHER TURNS COLD.
 ↓
 21 plaintext runes = 3 × 7
 ↓
-0-based GP sum of all 21 runes = 233
+Sum of the 0-based Gematria Primus indices
+of all 21 plaintext runes = 233
 ↓
-COLD GP sum = 51
+COLD: sum of the 0-based GP indices = 51
 ↓
 233 is the 51st prime
 
@@ -51,9 +52,9 @@ NG = center of the 27×27 matrix
 7 → F₇ = 13 → F₁₃ = 233
 ```
 
-These links connect several different parts of the result at once: the length of the recovered sentence, its Gematria Primus sum (index 0-based), the word COLD, the prime-number relation, the column geometry of the route, the central NG rune, and the Fibonacci sequence. The fact that all of these independent structures point back to the same plaintext is what makes the result look highly non-arbitrary.
+These connections tie together the plaintext length, its Gematria Primus values, the word COLD, the route through the grid, the central NG rune, and the Fibonacci pattern. Since all of them point back to the same recovered sentence, the result is difficult to explain as an arbitrary coincidence.
 
-> These relationships were found **after the plaintext had already been recovered**. They were not used to produce it, so I treat them as independent numerical support for the result.
+> These relationships are **not used to choose the plaintext**. They appear around a plaintext already produced by the route, so I treat them as a numerical consistency check rather than part of the decryption rule.
 
 ---
 
