@@ -38,10 +38,19 @@ COLD: sum of the 0-based GP indices = 51
 ↓
 233 is the 51st prime
 
-COLD starts in column 7
-TURNS ends in column 19
-↓
+TURNS ends on W in column 19
+COLD begins in column 7
+
+W has:
+0-based GP index = 7
+prime value = 19
+
+W is the only rune where:
 19 − 7 = 12 = φ(NG)
+
+So the same 19 → 7 relation appears twice:
+numerically inside W
+and geometrically in the route from TURNS to COLD
 
 NG = GP index 21
 NG = center of the 27×27 matrix
