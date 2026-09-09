@@ -51,7 +51,7 @@ NG = center of the 27×27 matrix
 7 → F₇ = 13 → F₁₃ = 233
 ```
 
-These numerical links all converge on the same recovered sentence: 7 words, 21 runes, GP sum 233, COLD = 51, 233 = the 51st prime, and the 19→7 column shift equals φ(NG)=12. That kind of internal agreement is strong evidence that the plaintext was produced by a real underlying structure, not by arbitrary choices.
+These links connect several different parts of the result at once: the length of the recovered sentence, its Gematria Primus sum (index 0-based), the word COLD, the prime-number relation, the column geometry of the route, the central NG rune, and the Fibonacci sequence. The fact that all of these independent structures point back to the same plaintext is what makes the result look highly non-arbitrary.
 
 > These relationships were found **after the plaintext had already been recovered**. They were not used to produce it, so I treat them as independent numerical support for the result.
 
