@@ -16,6 +16,45 @@
 
 ---
 
+#### 💯 A numerical fingerprint
+
+These numerical coincidences strongly support the idea that this may be a real solution to Liber Primus 0–2, rather than an arbitrary plaintext produced by chance.
+
+```text
+AS I GO, THE WEATHER TURNS COLD.
+```
+
+**7 words** · **21 runes** · **GP sum = 233**
+
+```text
+7 words
+↓
+21 plaintext runes = 3 × 7
+↓
+0-based GP sum of all 21 runes = 233
+↓
+COLD GP sum = 51
+↓
+233 is the 51st prime
+
+COLD starts in column 7
+TURNS ends in column 19
+↓
+19 − 7 = 12 = φ(NG)
+
+NG = GP index 21
+NG = center of the 27×27 matrix
+
+F₇ = 13
+F₁₃ = 233
+```
+
+These numerical links all converge on the same recovered sentence: 7 words, 21 runes, GP sum 233, COLD = 51, 233 = the 51st prime, and the 19→7 column shift equals φ(NG)=12. That kind of internal agreement is strong evidence that the plaintext was produced by a real underlying structure, not by arbitrary choices.
+
+> These relationships were found **after the plaintext had already been recovered**. They were not used to produce it, so I treat them as independent numerical support for the result.
+
+---
+
 #### 🔮 See how the plaintext was found
 
 Click below to start reading from Volume 1, then continue with the next volumes.
