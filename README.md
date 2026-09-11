@@ -1,9 +1,9 @@
 
  <sub>✨ **Volume 4** · 11 Sep 2026</sub>
 
-> ### **AS I GO, THE WEATHER TURNS COLD.**
-> ### **I MAY CRY NOW.**
-> ### **THE IDEA OF THE END ...**
+**· AS I GO, THE WEATHER TURNS COLD.**  
+**· I MAY CRY NOW.**  
+**· THE IDEA OF THE END ...**
 
 ---
 
