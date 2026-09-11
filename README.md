@@ -208,13 +208,6 @@ For anyone who wants to reproduce the documented steps:
 
 ---
 
-### 🔮 How I see Liber Primus
-A short look at how I understand the puzzle and why I started exploring it as a 27×27 structure.
-
-#### **[🔍 Read my view →](./other-stuff/md/What-Is-Liber-Primus.md)**
-
----
-
 ### 🧠 Working with AI?
 
 The Markdown versions are easier to search and analyze.
