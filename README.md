@@ -69,7 +69,7 @@ These connections tie together the plaintext length, its Gematria Primus values,
 
 Click below to start reading from Volume 1, then continue with the next volumes.
 
-#### **[🔍 View all volumes →](./Read-PDFs-Here/)**
+[🔍 View all volumes →](./Read-PDFs-Here/)
 
 ---
 
@@ -211,7 +211,7 @@ For anyone who wants to reproduce the documented steps:
 
 The Markdown versions are easier to search and analyze.
 
-#### **[🔍 Open the markdown archive →](./other-stuff/md/)**
+[🔍 Open the markdown archive →](./other-stuff/md/)
 
 ---
 
@@ -219,4 +219,4 @@ The Markdown versions are easier to search and analyze.
 
 A small archive of books I love and recommend.
 
-**[🔍 See my books →](./other-stuff/my-favorite-books/)**
+[🔍 See my books →](./other-stuff/my-favorite-books/)
