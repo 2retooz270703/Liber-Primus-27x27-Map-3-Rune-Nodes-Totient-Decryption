@@ -7,6 +7,14 @@
 
 ---
 
+#### Urizen’s Labyrinth
+
+The newest and, in my view, strongest interpretation of Liber Primus pages 0–2, connecting the labyrinth, geometry, plaintext, and William Blake’s *The First Book of Urizen*.
+
+[🔍 My thoughts →](./other-stuff/md/urizen.md)
+
+---
+
 ### 💯 A numerical fingerprint
 
 These numerical coincidences strongly support the idea that this may be a real solution to Liber Primus 0–2, rather than an arbitrary plaintext produced by chance.
