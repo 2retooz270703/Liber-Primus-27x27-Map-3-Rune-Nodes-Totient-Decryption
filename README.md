@@ -219,4 +219,4 @@ The Markdown versions are easier to search and analyze.
 
 A small archive of books I love and recommend.
 
-**[🔍 See my books →](./books/)**
+**[🔍 See my books →](./other-stuff/my-favorite-books/)**
