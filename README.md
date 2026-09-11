@@ -1,5 +1,5 @@
 
- <sub>✨ **Volume 4** · 11 Sep 2026</sub>
+ <sub>✨ Volume 4 · 11 Sep 2026</sub>
 
 01&nbsp;&nbsp;&nbsp;&nbsp;<b>AS I GO, THE WEATHER TURNS COLD.</b>  
 02&nbsp;&nbsp;&nbsp;&nbsp;<b>I MAY CRY NOW.</b>  
