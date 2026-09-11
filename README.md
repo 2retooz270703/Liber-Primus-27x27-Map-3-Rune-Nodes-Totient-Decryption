@@ -6,7 +6,7 @@
 
 #### 🕸️ Urizen’s Labyrinth
 
-The newest and, in my view, strongest interpretation of Liber Primus pages 0–2, connecting the labyrinth, geometry, plaintext, and William Blake’s *The First Book of Urizen*.
+The strongest interpretation of Liber Primus pages 0–2, connecting the labyrinth, geometry, plaintext, and William Blake’s *The First Book of Urizen*.
 
 [My thoughts](./other-stuff/md/urizen.md)
 
