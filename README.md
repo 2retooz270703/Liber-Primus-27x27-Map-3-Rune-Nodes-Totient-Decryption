@@ -1,10 +1,6 @@
-01&nbsp;&nbsp;&nbsp;&nbsp;<b>AS I GO, THE WEATHER TURNS COLD.</b>  
-02&nbsp;&nbsp;&nbsp;&nbsp;<b>I MAY CRY NOW.</b>  
-03&nbsp;&nbsp;&nbsp;&nbsp;<b>THE IDEA OF THE END ...</b>
+# <b>AS I GO, THE WEATHER TURNS COLD. I MAY CRY NOW. THE IDEA OF THE END... </b>
 
----
-
-#### 🗺️ The Map
+### <b>🗺️ The Map
 
 <p align="center">
   <img src="./other-stuff/grid.png" alt="Liber Primus 27×27 rune matrix and current route" width="100%">
@@ -13,24 +9,32 @@
 🟪 **Purple** — plaintext route  
 🟦 **Blue** — hidden-key locations  
 🟩 **Green** — navigation clues
+</b>
 
----
-
-#### 🔮 See how the plaintext was found
+### <b>🔮 See how the plaintext was found
 
 Click below to start reading from Volume 1, then continue with the next volumes.
 
 [View all volumes](./Read-PDFs-Here/)
+</b>
 
-#### 🧠 Working with AI?
+### <b>🧠 Working with AI?
 
 The Markdown versions are easier to search and analyze.
 
 [Open the markdown archive](./other-stuff/md/)
+</b>
 
----
+### <b>🐾 Urizen’s Labyrinth
 
-#### 💯 A numerical fingerprint
+The strongest interpretation of Liber Primus pages 0–2, connecting the labyrinth, geometry, plaintext, and William Blake’s *The First Book of Urizen*.
+
+[My thoughts](./other-stuff/md/urizen.md)
+</b>
+
+
+
+### 💯 A numerical fingerprint
 
 These numerical coincidences strongly support the idea that this may be a real solution to Liber Primus 0–2, rather than an arbitrary plaintext produced by chance.
 
@@ -79,9 +83,7 @@ These connections tie together the plaintext length, its Gematria Primus values,
 
 These relationships **were not used** to produce the original 7-word plaintext. They were discovered afterward. Now, the patterns found in those 7 words are being used as constraints to search for and test the real continuation of the plaintext.
 
----
-
-#### 💡 What is the idea?
+### 💡 What is the idea?
 
 The model starts from one simple observation:
 
@@ -111,9 +113,7 @@ The route repeatedly follows the same general pattern:
 
 The important part is that one stage often leads directly into the next.
 
----
-
-#### 🪞 Mirrors
+### 🪞 Mirrors
 
 A recurring structure looks like this:
 
@@ -133,9 +133,7 @@ A — B — A
 
 That result can become a **key**, a **number used for movement**, or a clue to another structure.
 
----
-
-#### 🚦 Keys and movement
+### 🚦 Keys and movement
 
 Some keys are generated directly from the mirror currently being used:
 
@@ -155,9 +153,7 @@ So the numbers are not always used once and forgotten.
 
 A value can return later as a distance, a matching signature, or even the radius of another mirror.
 
----
-
-#### 🗝️ Key phase
+### 🗝️ Key phase
 
 A three-rune key can start in three cyclic positions.
 
@@ -175,9 +171,7 @@ P = C − K mod 29
 
 using zero-based Gematria Primus values.
 
----
-
-#### 🔗 Why the route is interesting
+### 🔗 Why the route is interesting
 
 The recovered text does not appear as isolated words.
 
@@ -191,9 +185,7 @@ structure → key → movement → plaintext → next structure
 
 That is the main idea behind the current **27×27 geometric route**.
 
----
-
-#### ✅ Verify the results
+### ✅ Verify the results
 
 For anyone who wants to reproduce the documented steps:
 
@@ -201,17 +193,8 @@ For anyone who wants to reproduce the documented steps:
 - 🗺️ [27×27 grid](./other-stuff/grid.png)
 - 💻 [Verification scripts](./other-stuff/verify/)
 
----
 
-#### 🕸️ Urizen’s Labyrinth
-
-The strongest interpretation of Liber Primus pages 0–2, connecting the labyrinth, geometry, plaintext, and William Blake’s *The First Book of Urizen*.
-
-[My thoughts](./other-stuff/md/urizen.md)
-
----
-
-#### 📚 Favorite Books
+### 📚 Favorite Books
 
 A small archive of books I love and recommend.
 
