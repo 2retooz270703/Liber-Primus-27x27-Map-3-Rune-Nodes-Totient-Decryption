@@ -181,7 +181,7 @@ using zero-based Gematria Primus values.
 
 ---
 
-#### 🗿 Why the route is interesting
+#### 🔗 Why the route is interesting
 
 The recovered text does not appear as isolated words.
 
@@ -211,7 +211,7 @@ For anyone who wants to reproduce the documented steps:
 
 The Markdown versions are easier to search and analyze.
 
-#### **[🔍 Open the Markdown archive →](./other-stuff/md/)**
+#### **[🔍 Open the markdown archive →](./other-stuff/md/)**
 
 ---
 
