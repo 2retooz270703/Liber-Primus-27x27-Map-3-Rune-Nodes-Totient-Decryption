@@ -15,7 +15,7 @@ The newest and, in my view, strongest interpretation of Liber Primus pages 0–2
 
 ---
 
-### 💯 A numerical fingerprint
+#### 💯 A numerical fingerprint
 
 These numerical coincidences strongly support the idea that this may be a real solution to Liber Primus 0–2, rather than an arbitrary plaintext produced by chance.
 
