@@ -4,14 +4,6 @@
 
 ---
 
-#### 🕸️ Urizen’s Labyrinth
-
-The strongest interpretation of Liber Primus pages 0–2, connecting the labyrinth, geometry, plaintext, and William Blake’s *The First Book of Urizen*.
-
-[My thoughts](./other-stuff/md/urizen.md)
-
----
-
 #### 🗺️ The Map
 
 <p align="center">
@@ -208,6 +200,14 @@ For anyone who wants to reproduce the documented steps:
 - 🗒️ [Raw 0–2 runes](./other-stuff/0-2-runes.txt)
 - 🗺️ [27×27 grid](./other-stuff/grid.png)
 - 💻 [Verification scripts](./other-stuff/verify/)
+
+---
+
+#### 🕸️ Urizen’s Labyrinth
+
+The strongest interpretation of Liber Primus pages 0–2, connecting the labyrinth, geometry, plaintext, and William Blake’s *The First Book of Urizen*.
+
+[My thoughts](./other-stuff/md/urizen.md)
 
 ---
 
