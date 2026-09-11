@@ -1,5 +1,4 @@
-
- <sub>✨ Volume 4 · 11 Sep 2026</sub>
+<sub>✨ Volume 4 · 11 Sep 2026</sub>
 
 01&nbsp;&nbsp;&nbsp;&nbsp;<b>AS I GO, THE WEATHER TURNS COLD.</b>  
 02&nbsp;&nbsp;&nbsp;&nbsp;<b>I MAY CRY NOW.</b>  
@@ -23,7 +22,7 @@ These numerical coincidences strongly support the idea that this may be a real s
 AS I GO, THE WEATHER TURNS COLD.
 ```
 
-**7 words** · **21 runes** · **GP sum = 233**
+<sub>**7 words** · **21 runes** · **GP sum = 233**</sub>
 
 ```text
 7 words
@@ -66,7 +65,7 @@ These connections tie together the plaintext length, its Gematria Primus values,
 
 ---
 
-### 🔮 See how the plaintext was found
+#### 🔮 See how the plaintext was found
 
 Click below to start reading from Volume 1, then continue with the next volumes.
 
@@ -74,7 +73,7 @@ Click below to start reading from Volume 1, then continue with the next volumes.
 
 ---
 
-### 🗺️ The map
+#### 🗺️ The map
 
 <p align="center">
   <img src="./other-stuff/grid.png" alt="Liber Primus 27×27 rune matrix and current route" width="100%">
@@ -86,7 +85,7 @@ Click below to start reading from Volume 1, then continue with the next volumes.
 
 ---
 
-### 💡 What is the idea?
+#### 💡 What is the idea?
 
 The model starts from one simple observation:
 
@@ -118,7 +117,7 @@ The important part is that one stage often leads directly into the next.
 
 ---
 
-### 🪞 Mirrors
+#### 🪞 Mirrors
 
 A recurring structure looks like this:
 
@@ -140,7 +139,7 @@ That result can become a **key**, a **number used for movement**, or a clue to a
 
 ---
 
-### 🚦 Keys and movement
+#### 🚦 Keys and movement
 
 Some keys are generated directly from the mirror currently being used:
 
@@ -162,7 +161,7 @@ A value can return later as a distance, a matching signature, or even the radius
 
 ---
 
-### 🗝️ Key phase
+#### 🗝️ Key phase
 
 A three-rune key can start in three cyclic positions.
 
@@ -182,7 +181,7 @@ using zero-based Gematria Primus values.
 
 ---
 
-### 🗿 Why the route is interesting
+#### 🗿 Why the route is interesting
 
 The recovered text does not appear as isolated words.
 
@@ -198,7 +197,7 @@ That is the main idea behind the current **27×27 geometric route**.
 
 ---
 
-### ✅ Verify the results
+#### ✅ Verify the results
 
 For anyone who wants to reproduce the documented steps:
 
@@ -208,7 +207,7 @@ For anyone who wants to reproduce the documented steps:
 
 ---
 
-### 🧠 Working with AI?
+#### 🧠 Working with AI?
 
 The Markdown versions are easier to search and analyze.
 
