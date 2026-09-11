@@ -211,7 +211,7 @@ For anyone who wants to reproduce the documented steps:
 
 The Markdown versions are easier to search and analyze.
 
-#### **[🔍](./other-stuff/md/)**
+#### **[🔍 Open the Markdown archive →](./other-stuff/md/)**
 
 ---
 
@@ -219,5 +219,4 @@ The Markdown versions are easier to search and analyze.
 
 A small archive of books I love and recommend.
 
-**[🔍](./books/)**
-
+**[🔍 See my books →](./books/)**
