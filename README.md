@@ -1,5 +1,3 @@
-<sub>🎉 11 Sep 2026</sub>
-
 01&nbsp;&nbsp;&nbsp;&nbsp;<b>AS I GO, THE WEATHER TURNS COLD.</b>  
 02&nbsp;&nbsp;&nbsp;&nbsp;<b>I MAY CRY NOW.</b>  
 03&nbsp;&nbsp;&nbsp;&nbsp;<b>THE IDEA OF THE END ...</b>
