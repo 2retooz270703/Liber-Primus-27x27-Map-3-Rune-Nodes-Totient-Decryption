@@ -6,7 +6,7 @@
 
 ---
 
-#### Urizen’s Labyrinth
+#### 🐾 Urizen’s Labyrinth
 
 The newest and, in my view, strongest interpretation of Liber Primus pages 0–2, connecting the labyrinth, geometry, plaintext, and William Blake’s *The First Book of Urizen*.
 
@@ -201,9 +201,9 @@ That is the main idea behind the current **27×27 geometric route**.
 
 For anyone who wants to reproduce the documented steps:
 
-- 🗒️ **[Raw 0–2 runes](./other-stuff/0-2-runes.txt)**
-- 🗺️ **[27×27 grid](./other-stuff/grid.png)**
-- 💻 **[Verification scripts](./other-stuff/verify/)**
+- 🗒️ [Raw 0–2 runes](./other-stuff/0-2-runes.txt)
+- 🗺️ [27×27 grid](./other-stuff/grid.png)
+- 💻 [Verification scripts](./other-stuff/verify/)
 
 ---
 
