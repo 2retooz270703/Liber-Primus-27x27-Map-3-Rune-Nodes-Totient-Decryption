@@ -73,7 +73,7 @@ Click below to start reading from Volume 1, then continue with the next volumes.
 
 ---
 
-#### 🗺️ The map
+#### 🗺️ The Map
 
 <p align="center">
   <img src="./other-stuff/grid.png" alt="Liber Primus 27×27 rune matrix and current route" width="100%">
