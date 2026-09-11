@@ -211,10 +211,13 @@ For anyone who wants to reproduce the documented steps:
 
 The Markdown versions are easier to search and analyze.
 
-#### **[🔍 Open the Markdown archive →](./other-stuff/md/)**
+#### **[🔍](./other-stuff/md/)**
 
-<div align="center">
+---
 
-<sub>Independent ongoing research · not officially verified</sub>
+#### 📚 Favorite Books
 
-</div>
+A small archive of books I love and recommend.
+
+**[🔍](./books/)**
+
