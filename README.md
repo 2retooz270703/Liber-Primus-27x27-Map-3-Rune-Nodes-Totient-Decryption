@@ -6,6 +6,21 @@
 
 ---
 
+#### 🔮 See how the plaintext was found
+
+Click below to start reading from Volume 1, then continue with the next volumes.
+
+[View all volumes](./Read-PDFs-Here/)
+
+#### 🧠 Working with AI?
+
+The Markdown versions are easier to search and analyze.
+
+[Open the markdown archive](./other-stuff/md/)
+
+---
+
+
 #### 🕸️ Urizen’s Labyrinth
 
 The newest and, in my view, strongest interpretation of Liber Primus pages 0–2, connecting the labyrinth, geometry, plaintext, and William Blake’s *The First Book of Urizen*.
@@ -62,20 +77,6 @@ NG = center of the 27×27 matrix
 These connections tie together the plaintext length, its Gematria Primus values, the word COLD, the route through the grid, the central NG rune, and the Fibonacci pattern. Since all of them point back to the same recovered sentence, the result is difficult to explain as an arbitrary coincidence.
 
 These relationships **were not used** to produce the original 7-word plaintext. They were discovered afterward. Now, the patterns found in those 7 words are being used as constraints to search for and test the real continuation of the plaintext.
-
----
-
-#### 🔮 See how the plaintext was found
-
-Click below to start reading from Volume 1, then continue with the next volumes.
-
-[View all volumes](./Read-PDFs-Here/)
-
-#### 🧠 Working with AI?
-
-The Markdown versions are easier to search and analyze.
-
-[Open the markdown archive](./other-stuff/md/)
 
 ---
 
