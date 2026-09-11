@@ -71,6 +71,12 @@ Click below to start reading from Volume 1, then continue with the next volumes.
 
 [View all volumes](./Read-PDFs-Here/)
 
+#### 🧠 Working with AI?
+
+The Markdown versions are easier to search and analyze.
+
+[Open the markdown archive](./other-stuff/md/)
+
 ---
 
 #### 🗺️ The Map
@@ -204,14 +210,6 @@ For anyone who wants to reproduce the documented steps:
 - 🗒️ [Raw 0–2 runes](./other-stuff/0-2-runes.txt)
 - 🗺️ [27×27 grid](./other-stuff/grid.png)
 - 💻 [Verification scripts](./other-stuff/verify/)
-
----
-
-#### 🧠 Working with AI?
-
-The Markdown versions are easier to search and analyze.
-
-[Open the markdown archive](./other-stuff/md/)
 
 ---
 
