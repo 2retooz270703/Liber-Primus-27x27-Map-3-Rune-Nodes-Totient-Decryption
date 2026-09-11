@@ -38,7 +38,7 @@ These numerical coincidences strongly support the idea that this may be a real s
 AS I GO, THE WEATHER TURNS COLD.
 ```
 
-<sub>**7 words** · **21 runes** · **GP sum = 233**</sub>
+**7 words** · **21 runes** · **GP sum = 233**
 
 ```text
 7 words
