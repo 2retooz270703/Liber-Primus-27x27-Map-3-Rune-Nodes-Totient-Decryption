@@ -2322,13 +2322,4 @@ CURRENT_RESULT:
 
 ---
 
-## Related files
-
-- [Volume 3 technical Markdown](./0-2-volume-3.md)
-- [Raw pages 0–2 rune data](../0-2-runes.txt)
-- [27×27 matrix image](../../liber-primus-27x27-matrix.png)
-- [Repository README](../../README.md)
-
----
-
 > **Research status:** proposed and reproducible at the level of the documented coordinates, Euler-totient transformations, Möbius phases, and mod-29 arithmetic. The larger transition system remains under active investigation and is not an officially verified Cicada 3301 solution.
