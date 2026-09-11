@@ -1,7 +1,5 @@
 # <b>AS I GO, THE WEATHER TURNS COLD. I MAY CRY NOW. THE IDEA OF THE END... </b>
 
-### <b>🗺️ The Map
-
 <p align="center">
   <img src="./other-stuff/grid.png" alt="Liber Primus 27×27 rune matrix and current route" width="100%">
 </p>
@@ -11,30 +9,28 @@
 🟩 **Green** — navigation clues
 </b>
 
-### <b>🔮 See how the plaintext was found
+# <b>🔮 See how the plaintext was found
 
 Click below to start reading from Volume 1, then continue with the next volumes.
 
 [View all volumes](./Read-PDFs-Here/)
 </b>
 
-### <b>🧠 Working with AI?
+# <b>🧠 Working with AI?
 
 The Markdown versions are easier to search and analyze.
 
 [Open the markdown archive](./other-stuff/md/)
 </b>
 
-### <b>🐾 Urizen’s Labyrinth
+# <b>🐾 Urizen’s Labyrinth
 
 The strongest interpretation of Liber Primus pages 0–2, connecting the labyrinth, geometry, plaintext, and William Blake’s *The First Book of Urizen*.
 
 [My thoughts](./other-stuff/md/urizen.md)
 </b>
 
-
-
-### 💯 A numerical fingerprint
+# <b>💯 A numerical fingerprint
 
 These numerical coincidences strongly support the idea that this may be a real solution to Liber Primus 0–2, rather than an arbitrary plaintext produced by chance.
 
@@ -82,6 +78,7 @@ NG = center of the 27×27 matrix
 These connections tie together the plaintext length, its Gematria Primus values, the word COLD, the route through the grid, the central NG rune, and the Fibonacci pattern. Since all of them point back to the same recovered sentence, the result is difficult to explain as an arbitrary coincidence.
 
 These relationships **were not used** to produce the original 7-word plaintext. They were discovered afterward. Now, the patterns found in those 7 words are being used as constraints to search for and test the real continuation of the plaintext.
+</b>
 
 ### 💡 What is the idea?
 
