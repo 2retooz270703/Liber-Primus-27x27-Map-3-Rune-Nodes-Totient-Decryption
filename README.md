@@ -1,8 +1,28 @@
-<sub>✨ Volume 4 · 11 Sep 2026</sub>
+<sub>🎉 11 Sep 2026</sub>
 
 01&nbsp;&nbsp;&nbsp;&nbsp;<b>AS I GO, THE WEATHER TURNS COLD.</b>  
 02&nbsp;&nbsp;&nbsp;&nbsp;<b>I MAY CRY NOW.</b>  
 03&nbsp;&nbsp;&nbsp;&nbsp;<b>THE IDEA OF THE END ...</b>
+
+---
+
+#### 🕸️ Urizen’s Labyrinth
+
+The newest and, in my view, strongest interpretation of Liber Primus pages 0–2, connecting the labyrinth, geometry, plaintext, and William Blake’s *The First Book of Urizen*.
+
+[My thoughts](./other-stuff/md/urizen.md)
+
+---
+
+#### 🗺️ The Map
+
+<p align="center">
+  <img src="./other-stuff/grid.png" alt="Liber Primus 27×27 rune matrix and current route" width="100%">
+</p>
+
+🟪 **Purple** — plaintext route  
+🟦 **Blue** — hidden-key locations  
+🟩 **Green** — navigation clues
 
 ---
 
@@ -17,15 +37,6 @@ Click below to start reading from Volume 1, then continue with the next volumes.
 The Markdown versions are easier to search and analyze.
 
 [Open the markdown archive](./other-stuff/md/)
-
----
-
-
-#### 🕸️ Urizen’s Labyrinth
-
-The newest and, in my view, strongest interpretation of Liber Primus pages 0–2, connecting the labyrinth, geometry, plaintext, and William Blake’s *The First Book of Urizen*.
-
-[My thoughts](./other-stuff/md/urizen.md)
 
 ---
 
@@ -77,18 +88,6 @@ NG = center of the 27×27 matrix
 These connections tie together the plaintext length, its Gematria Primus values, the word COLD, the route through the grid, the central NG rune, and the Fibonacci pattern. Since all of them point back to the same recovered sentence, the result is difficult to explain as an arbitrary coincidence.
 
 These relationships **were not used** to produce the original 7-word plaintext. They were discovered afterward. Now, the patterns found in those 7 words are being used as constraints to search for and test the real continuation of the plaintext.
-
----
-
-#### 🗺️ The Map
-
-<p align="center">
-  <img src="./other-stuff/grid.png" alt="Liber Primus 27×27 rune matrix and current route" width="100%">
-</p>
-
-🟪 **Purple** — plaintext route  
-🟦 **Blue** — hidden-key locations  
-🟩 **Green** — navigation clues
 
 ---
 
