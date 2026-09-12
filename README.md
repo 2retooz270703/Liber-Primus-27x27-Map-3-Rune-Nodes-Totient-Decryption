@@ -1,6 +1,6 @@
-# <b>AS I GO, THE WEATHER TURNS COLD. I MAY CRY NOW. THE IDEA OF THE END... </b>
-
 <sub>✨ Sep 11, 2026 · **Volume 4**</sub>
+
+# <b>AS I GO, THE WEATHER TURNS COLD. I MAY CRY NOW. THE IDEA OF THE END... </b>
 
 <p align="center">
   <img src="./other-stuff/grid.png" alt="Liber Primus 27×27 rune matrix and current route" width="100%">
