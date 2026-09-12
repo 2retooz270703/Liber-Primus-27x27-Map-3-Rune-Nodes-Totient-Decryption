@@ -25,7 +25,7 @@ The Markdown versions are easier to search and analyze.
 [Open the markdown archive](./other-stuff/md/)
 </b>
 
-# <b>🐾 Urizen’s Labyrinth
+# <b>🕯️ Urizen’s Labyrinth
 
 The strongest interpretation of Liber Primus pages 0–2, connecting the labyrinth, geometry, plaintext, and William Blake’s *The First Book of Urizen*.
 
