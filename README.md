@@ -64,11 +64,9 @@ NG = center of the 27×27 matrix
 ```
 
 These connections tie together the plaintext length, its Gematria Primus values, the word COLD, the route through the grid, the central NG rune, and the Fibonacci pattern. Since all of them point back to the same recovered sentence, the result is difficult to explain as an arbitrary coincidence.
-
-These relationships **were not used** to produce the original 7-word plaintext. They were discovered afterward. Now, the patterns found in those 7 words are being used as constraints to search for and test the real continuation of the plaintext.
 </b>
 
-# <b>🔥 Verify the results
+# <b>✅ Verify the results
 
 For anyone who wants to reproduce the documented steps:
 
