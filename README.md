@@ -62,11 +62,3 @@ NG = center of the 27×27 matrix
 ```
 
 These connections tie together the plaintext length, its Gematria Primus values, the word COLD, the route through the grid, the central NG rune, and the Fibonacci pattern. Since all of them point back to the same recovered sentence, the result is difficult to explain as an arbitrary coincidence.
-
-# 💻 Verify the results
-
-For anyone who wants to reproduce the documented steps:
-
-# 🗒️ [Raw 0–2 runes](./other-stuff/0-2-runes.txt)
-# 🗺️ [27×27 grid](./other-stuff/grid.png)
-# ✅ [Verification scripts](./other-stuff/verify/)
