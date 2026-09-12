@@ -1149,14 +1149,6 @@ Volume 3 does not yet have a dedicated verifier.
 
 This Markdown edition therefore keeps the key coordinates, transforms, phase arithmetic, and mod-29 subtraction explicit so that a future `verify_volume_3.py` can test the same claims directly.
 
-Related repository files:
-
-- [Volume 2 technical Markdown](./0-2-volume-2.md)
-- [Raw 0–2 rune dataset](../0-2-runes.txt)
-- [27×27 grid image](../grid.png)
-- [Verification scripts](../verify/)
-- [Repository README](../../README.md)
-
 ---
 
 ## 28. Current strongest plaintext
