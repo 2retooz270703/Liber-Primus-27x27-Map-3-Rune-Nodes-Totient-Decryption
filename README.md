@@ -10,7 +10,7 @@
 🟦 **Blue** — hidden-key locations  
 🟩 **Green** — navigation clues
 
-# ✨ See how the plaintext was found
+# 💡 See how the plaintext was found
 
 Click below to start reading from Volume 1, then continue with the next volumes.
 
