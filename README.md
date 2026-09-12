@@ -14,7 +14,7 @@
 
 Click below to start reading from Volume 1, then continue with the next volumes.
 
-**[Open the markdown archive](./Read-here/)**
+# [Open the markdown archive](./Read-here/)
 
 # 💯 A numerical fingerprint
 
