@@ -14,7 +14,7 @@
 
 Click below to start reading from Volume 1, then continue with the next volumes.
 
-# [Open the markdown archive](./Read-here/)
+# [🔍 Open the markdown archive](./Read-here/)
 
 # 💯 A numerical fingerprint
 
@@ -67,6 +67,6 @@ These connections tie together the plaintext length, its Gematria Primus values,
 
 For anyone who wants to reproduce the documented steps:
 
-- 🗒️ [Raw 0–2 runes](./other-stuff/0-2-runes.txt)
-- 🗺️ [27×27 grid](./other-stuff/grid.png)
-- 💻 [Verification scripts](./other-stuff/verify/)
+# 🗒️ [Raw 0–2 runes](./other-stuff/0-2-runes.txt)
+# 🗺️ [27×27 grid](./other-stuff/grid.png)
+# 💻 [Verification scripts](./other-stuff/verify/)
