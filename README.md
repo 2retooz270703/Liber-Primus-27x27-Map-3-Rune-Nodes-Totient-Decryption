@@ -1,4 +1,4 @@
-<sub>✨ Sep 11, 2026</sub>
+<sub>🦋 Sep 11, 2026</sub>
 
 > # <b>AS I GO, THE WEATHER TURNS COLD. I MAY CRY NOW. THE IDEA OF THE END... </b>
 
@@ -16,13 +16,6 @@
 Click below to start reading from Volume 1, then continue with the next volumes.
 
 [Open the markdown archive](./Read-here/)
-</b>
-
-# <b>🕯️ Urizen’s Labyrinth
-
-The strongest interpretation of Liber Primus pages 0–2, connecting the labyrinth, geometry, plaintext, and William Blake’s *The First Book of Urizen*.
-
-[My thoughts](./Read-here/urizen.md)
 </b>
 
 # <b>💯 A numerical fingerprint
@@ -75,7 +68,7 @@ These connections tie together the plaintext length, its Gematria Primus values,
 These relationships **were not used** to produce the original 7-word plaintext. They were discovered afterward. Now, the patterns found in those 7 words are being used as constraints to search for and test the real continuation of the plaintext.
 </b>
 
-# <b>🎉 Verify the results
+# <b>🔥 Verify the results
 
 For anyone who wants to reproduce the documented steps:
 
