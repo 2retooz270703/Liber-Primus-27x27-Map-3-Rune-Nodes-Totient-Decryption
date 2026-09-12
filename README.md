@@ -9,16 +9,14 @@
 🟪 **Purple** — plaintext route  
 🟦 **Blue** — hidden-key locations  
 🟩 **Green** — navigation clues
-</b>
 
-# <b>🔮 See how the plaintext was found
+# 🔮 See how the plaintext was found
 
 Click below to start reading from Volume 1, then continue with the next volumes.
 
-[Open the markdown archive](./Read-here/)
-</b>
+**[Open the markdown archive](./Read-here/)**
 
-# <b>💯 A numerical fingerprint
+# 💯 A numerical fingerprint
 
 These numerical coincidences strongly support the idea that this may be a real solution to Liber Primus 0–2, rather than an arbitrary plaintext produced by chance.
 
@@ -64,13 +62,11 @@ NG = center of the 27×27 matrix
 ```
 
 These connections tie together the plaintext length, its Gematria Primus values, the word COLD, the route through the grid, the central NG rune, and the Fibonacci pattern. Since all of them point back to the same recovered sentence, the result is difficult to explain as an arbitrary coincidence.
-</b>
 
-# <b>✅ Verify the results
+# ✅ Verify the results
 
 For anyone who wants to reproduce the documented steps:
 
 - 🗒️ [Raw 0–2 runes](./other-stuff/0-2-runes.txt)
 - 🗺️ [27×27 grid](./other-stuff/grid.png)
 - 💻 [Verification scripts](./other-stuff/verify/)
-</b>
