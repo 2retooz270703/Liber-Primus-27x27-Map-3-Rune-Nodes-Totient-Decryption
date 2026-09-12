@@ -1,4 +1,4 @@
-<sub>**Sep 11, 2026**</sub>
+Sep 11, 2026
 
 > # <b>AS I GO, THE WEATHER TURNS COLD. I MAY CRY NOW. THE IDEA OF THE END... </b>
 
