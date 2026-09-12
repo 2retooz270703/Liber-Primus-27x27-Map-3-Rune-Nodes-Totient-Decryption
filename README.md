@@ -22,7 +22,7 @@ Click below to start reading from Volume 1, then continue with the next volumes.
 
 The strongest interpretation of Liber Primus pages 0–2, connecting the labyrinth, geometry, plaintext, and William Blake’s *The First Book of Urizen*.
 
-[My thoughts](./other-stuff/md/urizen.md)
+[My thoughts](./Read-here/urizen.md)
 </b>
 
 # <b>💯 A numerical fingerprint
