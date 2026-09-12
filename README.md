@@ -16,7 +16,7 @@
 
 Click below to start reading from Volume 1, then continue with the next volumes.
 
-# [Open the markdown archive](./Read-here/)
+[Open the markdown archive](./Read-here/)
 
 
 # 💯 A numerical fingerprint
@@ -65,3 +65,5 @@ NG = center of the 27×27 matrix
 ```
 
 These connections tie together the plaintext length, its Gematria Primus values, the word COLD, the route through the grid, the central NG rune, and the Fibonacci pattern. Since all of them point back to the same recovered sentence, the result is difficult to explain as an arbitrary coincidence.
+
+
