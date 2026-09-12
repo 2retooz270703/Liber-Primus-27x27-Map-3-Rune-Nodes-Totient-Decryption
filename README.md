@@ -15,14 +15,7 @@
 
 Click below to start reading from Volume 1, then continue with the next volumes.
 
-[View all volumes](./Read-PDFs-Here/)
-</b>
-
-# <b>🧠 Working with AI?
-
-The Markdown versions are easier to search and analyze.
-
-[Open the markdown archive](./other-stuff/md/)
+[Open the markdown archive](./Read-here/)
 </b>
 
 # <b>🕯️ Urizen’s Labyrinth
