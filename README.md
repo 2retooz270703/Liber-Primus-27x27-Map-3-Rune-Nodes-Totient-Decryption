@@ -67,4 +67,30 @@ NG = center of the 27×27 matrix
 
 These connections tie together the plaintext length, its Gematria Primus values, the word COLD, the route through the grid, the central NG rune, and the Fibonacci pattern. Since all of them point back to the same recovered sentence, the result is difficult to explain as an arbitrary coincidence.
 
+#### Volume 5 reveals a new numerical relation in the plaintext.
 
+The newly recovered 7-word block
+
+> THE IDEA OF THE END IS DEATH
+
+has a 0-based Gematria Primus sum of:
+
+> 232
+
+The preceding 7-word block
+
+> AS I GO, THE WEATHER TURNS COLD
+
+has a sum of:
+
+> 233
+
+Since 233 is prime:
+
+> **φ(233) = 232**
+
+This gives the exact Volume 5 transition:
+
+> **233 → φ(233) → 232**
+
+The newly recovered 7-word block is therefore the Euler totient of the preceding one.
