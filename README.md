@@ -13,14 +13,14 @@
 🟩 **Green** — navigation clues
 
 
-# 💡 See how the plaintext was found
+#### 💡 See how the plaintext was found
 
 Click below to start reading from Volume 1, then continue with the next volumes.
 
-[Open the markdown archive](./Read-here/)
+**[Open the markdown archive](./Read-here/)**
 
 
-# 💯 A numerical fingerprint
+#### 💯 A numerical fingerprint
 
 These numerical coincidences strongly support the idea that this may be a real solution to Liber Primus 0–2, rather than an arbitrary plaintext produced by chance.
 
