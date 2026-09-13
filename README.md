@@ -87,7 +87,7 @@ The preceding 7-word block
 AS I GO, THE WEATHER TURNS COLD.
 ```
 
-has a sum of:
+has a 0-based Gematria Primus sum of:
 
 ```text
 233
