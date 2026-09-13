@@ -1,4 +1,4 @@
-<sub>✨ Sep 13, 2026 · **Volume 5**</sub>
+<sub>✨ Sep 13, 2026 · Volume 5</sub>
 
 <kbd>1</kbd>&nbsp;&nbsp;AS I GO, THE WEATHER TURNS COLD.  
 <kbd>2</kbd>&nbsp;&nbsp;I MAY CRY NOW.  
