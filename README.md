@@ -1,4 +1,4 @@
-<sub>✨ Sep 11, 2026 · **Volume 5**</sub>
+<sub>✨ Sep 13, 2026 · **Volume 5**</sub>
 
 <kbd>1</kbd>&nbsp;&nbsp;AS I GO, THE WEATHER TURNS COLD.  
 <kbd>2</kbd>&nbsp;&nbsp;I MAY CRY NOW.  
@@ -71,19 +71,19 @@ These connections tie together the plaintext length, its Gematria Primus values,
 
 The newly recovered 7-word block
 
-> THE IDEA OF THE END IS DEATH
+> **THE IDEA OF THE END IS DEATH.**
 
 has a 0-based Gematria Primus sum of:
 
-> 232
+> **232**
 
 The preceding 7-word block
 
-> AS I GO, THE WEATHER TURNS COLD
+> **AS I GO, THE WEATHER TURNS COLD.**
 
 has a sum of:
 
-> 233
+> **233**
 
 Since 233 is prime:
 
