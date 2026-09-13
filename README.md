@@ -71,26 +71,38 @@ These connections tie together the plaintext length, its Gematria Primus values,
 
 The newly recovered 7-word block
 
-> **THE IDEA OF THE END IS DEATH.**
+```text
+THE IDEA OF THE END IS DEATH.
+```
 
 has a 0-based Gematria Primus sum of:
 
-> **232**
+```text
+232
+```
 
 The preceding 7-word block
 
-> **AS I GO, THE WEATHER TURNS COLD.**
+```text
+AS I GO, THE WEATHER TURNS COLD.
+```
 
 has a sum of:
 
-> **233**
+```text
+233
+```
 
 Since 233 is prime:
 
-> **φ(233) = 232**
+```text
+φ(233) = 232
+```
 
 This gives the exact Volume 5 transition:
 
-> **233 → φ(233) → 232**
+```text
+233 → φ(233) → 232
+```
 
 The newly recovered 7-word block is therefore the Euler totient of the preceding one.
