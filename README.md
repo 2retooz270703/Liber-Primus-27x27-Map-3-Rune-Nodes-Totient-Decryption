@@ -1,4 +1,4 @@
-✨ Sep 13, 2026 · **Volume 5**
+✨ Sep 13, 2026
 
 <p align="center">
   
