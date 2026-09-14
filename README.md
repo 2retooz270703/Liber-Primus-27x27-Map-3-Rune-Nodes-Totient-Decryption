@@ -1,8 +1,8 @@
 ✨ Sep 13, 2026 · **Volume 5**
 
-<kbd>1</kbd>&nbsp;&nbsp;AS I GO, THE WEATHER TURNS COLD.</kbd>  
-<kbd>2</kbd>&nbsp;&nbsp;I MAY CRY NOW  
-<kbd>3</kbd>&nbsp;&nbsp;THE IDEA OF THE END IS DEATH.
+<p align="center">
+<h3>AS I GO, THE WEATHER TURNS COLD. I MAY CRY NOW. THE IDEA OF THE END IS DEATH.</h3>
+</p>
 
 <p align="center">
   <img src="./other-stuff/data/grid.png" alt="Liber Primus 27×27 rune matrix and current route" width="100%">
