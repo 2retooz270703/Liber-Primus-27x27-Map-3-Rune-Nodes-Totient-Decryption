@@ -1,4 +1,4 @@
-✨ Sep 15, 2026
+<sub>✨ Plaintext</sub>
 
 <p align="center">
   
