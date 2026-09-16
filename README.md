@@ -1,4 +1,4 @@
-<sub>✨ Plaintext · Sep 16, 2026</sub>
+<sub>✨ **Sep 16, 2026**</sub>
 
 <p align="center">
   
