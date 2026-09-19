@@ -1,10 +1,11 @@
-<sub>✨ **Sep 16, 2026**</sub>
+<sub>✨ **Sep 19, 2026**</sub>
 
 <p align="center">
   
 * AS I GO, THE WEATHER TURNS COLD.
 * I MAY CRY NOW.
 * THE IDEA OF THE END IS DEATH.
+* SEE ...
 
 <p align="center">
   <img src="./other-stuff/data/grid.png" alt="Liber Primus 27×27 rune matrix and current route" width="100%">
