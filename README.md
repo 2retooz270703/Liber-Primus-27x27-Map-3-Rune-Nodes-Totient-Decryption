@@ -5,7 +5,7 @@
 >* AS I GO, THE WEATHER TURNS COLD.
 >* I MAY CRY NOW.
 >* THE IDEA OF THE END IS DEATH.
->* SEE ...
+>* SEE YOU ...
 
 <p align="center">
   <img src="./other-stuff/data/briefly.png" alt"briefly" width="100%">
