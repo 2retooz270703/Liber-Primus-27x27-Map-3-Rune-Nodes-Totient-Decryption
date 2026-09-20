@@ -15,6 +15,9 @@
 🟦 **Blue** — hidden-key locations  
 🟩 **Green** — navigation clues
 
+<p align="center">
+  <img src="./other-stuff/data/briefly.png" alt"briefly" width="100%">
+</p>
 
 #### 💡 See how the plaintext was found
 
