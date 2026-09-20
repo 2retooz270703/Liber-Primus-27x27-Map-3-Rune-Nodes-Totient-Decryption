@@ -1,4 +1,4 @@
-<sub>✨ Sep 19, 2026</sub>
+<sub>✨ **Sep 19, 2026**</sub>
 
 <p align="center">
   
