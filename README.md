@@ -2,10 +2,10 @@
 
 <p align="center">
   
-* AS I GO, THE WEATHER TURNS COLD.
-* I MAY CRY NOW.
-* THE IDEA OF THE END IS DEATH.
-* SEE ...
+>* AS I GO, THE WEATHER TURNS COLD.
+>* I MAY CRY NOW.
+>* THE IDEA OF THE END IS DEATH.
+>* SEE ...
 
 <p align="center">
   <img src="./other-stuff/data/briefly.png" alt"briefly" width="100%">
