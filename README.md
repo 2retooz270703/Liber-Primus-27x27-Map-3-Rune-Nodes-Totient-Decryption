@@ -22,7 +22,7 @@ Click below to start reading from Volume 1, then continue with the next volumes.
 
 **[Open the markdown archive](./Read-here/)**
 
-#### 📌 Key formulas
+#### ⚡️ Key formulas
 <p align="center">
   <img src="./other-stuff/data/briefly.png" alt"briefly" width="60%">
 </p>
