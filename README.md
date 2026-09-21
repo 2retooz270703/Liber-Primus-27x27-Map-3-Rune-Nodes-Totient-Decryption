@@ -22,8 +22,9 @@ Click below to start reading from Volume 1, then continue with the next volumes.
 
 **[Open the markdown archive](./Read-here/)**
 
+#### 📌 Key formulas
 <p align="center">
-  <img src="./other-stuff/data/briefly.png" alt"briefly" width="70%">
+  <img src="./other-stuff/data/briefly.png" alt"briefly" width="67%">
 </p>
 
 #### 💯 A numerical fingerprint
