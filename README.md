@@ -15,9 +15,6 @@
 🟦 **Blue** — hidden-key locations  
 🟩 **Green** — navigation clues
 
-<p align="center">
-  <img src="./other-stuff/data/briefly.png" alt"briefly" width="100%">
-</p>
 
 #### 💡 See how the plaintext was found
 
@@ -25,6 +22,9 @@ Click below to start reading from Volume 1, then continue with the next volumes.
 
 **[Open the markdown archive](./Read-here/)**
 
+<p align="center">
+  <img src="./other-stuff/data/briefly.png" alt"briefly" width="100%">
+</p>
 
 #### 💯 A numerical fingerprint
 
