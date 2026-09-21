@@ -8,10 +8,6 @@
 >* SEE YOU ...
 
 <p align="center">
-  <img src="./other-stuff/data/briefly.png" alt"briefly" width="100%">
-</p>
-
-<p align="center">
   <img src="./other-stuff/data/grid.png" alt="Liber Primus 27×27 rune matrix and current route" width="100%">
 </p>
 
@@ -19,6 +15,9 @@
 🟦 **Blue** — hidden-key locations  
 🟩 **Green** — navigation clues
 
+<p align="center">
+  <img src="./other-stuff/data/briefly.png" alt"briefly" width="100%">
+</p>
 
 #### 💡 See how the plaintext was found
 
