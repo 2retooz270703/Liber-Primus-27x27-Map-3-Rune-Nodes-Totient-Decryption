@@ -8,7 +8,7 @@
 >* SEE YOU ...
 
 <p align="center">
-  <img src="./other-stuff/data/grid.png" alt="Liber Primus 27×27 rune matrix and current route" width="100%">
+  <img src="./other-stuff/data/grid.PNG" alt="Liber Primus 27×27 rune matrix and current route" width="100%">
 </p>
 
 🟪 **Purple** — plaintext route  
