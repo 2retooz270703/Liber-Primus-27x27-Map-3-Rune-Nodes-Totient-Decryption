@@ -7,13 +7,6 @@
 >* THE IDEA OF THE END IS DEATH.
 >* SEE YOU ...
 
-<p align="center">
-  <img src="./other-stuff/data/grid.PNG" alt="Liber Primus 27×27 rune matrix and current route" width="100%">
-</p>
-
-🟪 **Purple** — plaintext route  
-🟦 **Blue** — hidden-key locations  
-🟩 **Green** — navigation clues
 
 #### ⚡️ Key formulas
 <p align="center">
