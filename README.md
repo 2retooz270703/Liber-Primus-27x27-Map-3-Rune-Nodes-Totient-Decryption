@@ -1,49 +1,33 @@
-<sub>Updated · **2 October 2026**</sub>
+<sub>Last updated: **2 October 2026**</sub>
 
-<div align="center">
+## Liber Primus · 27×27 Route Research
 
-## Liber Primus · 27×27 Route
-
-*Research notes for a possible reconstruction of pages 0–2*
-
-</div>
-
----
+This repository documents an ongoing reconstruction of a possible route through **Liber Primus pages 0–2**.  
+The goal is not to collect every numerical coincidence, but to preserve only the mechanisms that can be followed, checked, and reproduced directly from the rune grid.
 
 ### Recovered plaintext
 
-<div align="center">
+> **AS I GO, THE WEATHER TURNS COLD.**  
+> **I MAY CRY NOW.**  
+> **THE IDEA OF THE END IS DEATH.**  
+> **SEE YOU ...**
 
-**AS I GO, THE WEATHER TURNS COLD.**
-
-**I MAY CRY NOW.**
-
-**THE IDEA OF THE END IS DEATH.**
-
-**SEE YOU ...**
-
-</div>
-
----
-
-### Research
+### Repository structure
 
 **[Plaintext reconstruction](./plaintext-i-found/)**  
-A step-by-step record of every recovered segment: grid position, structure, key, movement, ciphertext, and decryption.
+The recovered text is split into individual stages. Each file shows the relevant grid position, three-rune structure, active key, movement, ciphertext, and modular decryption for that segment.
 
 **[Rules](./rules/)**  
-The rule set extracted from the route itself, kept separate so each mechanism is defined once and then only applied.
-
----
+The general mechanics are collected separately so they only need to be explained once. This includes the 27×27 grid model, totient-based key construction, key-phase selection, movement values, coordinate direction selection, and CENTER / OUTER structural states.
 
 ### Current framework
 
-The reconstruction currently uses:
+The reconstruction begins from the **729 rune positions**, arranged as a **27×27 grid**. Repeating three-rune structures are treated as functional nodes. Their centers can be transformed with Euler's totient function to generate keys and numerical signatures.
 
-`27×27 grid` · `three-rune structures` · `Euler φ` · `Möbius phase` · `totient movement` · `coordinate selector` · `CENTER / OUTER states`
+Those values are then reused across the route. The Möbius function determines the active cyclic phase of a key, totient-derived values provide movement distances, the coordinate selector constrains direction, and the full Möbius state can distinguish CENTER-like and OUTER-like structural roles.
 
-The recovered route currently reads:
+The plaintext files show these rules in use. The rules folder contains only the general mechanisms that currently repeat strongly enough to be treated as part of the working system.
 
-> **AS I GO, THE WEATHER TURNS COLD. I MAY CRY NOW. THE IDEA OF THE END IS DEATH. SEE YOU ...**
+---
 
 <sub>Independent cryptanalytic research · not an officially verified Liber Primus solution.</sub>
