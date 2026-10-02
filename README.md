@@ -1,50 +1,40 @@
 <sub>Last updated · **2 October 2026**</sub>
 
-## Liber Primus · 27×27 Route Research
+## Liber Primus · 27×27 Route
 
-This repository documents an ongoing reconstruction of a possible route through **Liber Primus pages 0–2**.  
-Only the parts of the method that can be checked directly against the rune grid are kept in the main structure.
+A compact record of the current reconstruction of **Liber Primus pages 0–2**.
 
 ---
 
 ### Recovered plaintext
 
-<div align="center">
-
-**AS I GO, THE WEATHER TURNS COLD.**  
-**I MAY CRY NOW.**  
-**THE IDEA OF THE END IS DEATH.**  
-**SEE YOU ...**
-
-</div>
+<p align="center">
+  <strong>AS I GO, THE WEATHER TURNS COLD.</strong><br>
+  <strong>I MAY CRY NOW.</strong><br>
+  <strong>THE IDEA OF THE END IS DEATH.</strong><br>
+  <strong>SEE YOU ...</strong>
+</p>
 
 ---
 
-### Repository
+### Repository structure
 
-**[Plaintext reconstruction](./plaintext-i-found/)**  
-The route is split into **14 stages**. Each file shows how one plaintext segment is recovered from the grid, including the relevant position, structure, movement, key, ciphertext, and decryption.
+**1. [27×27 rune map](./0-2-grid-i-used.txt)**  
+The full grid used as the reference for coordinates, structures, and route positions.
 
-**[Rules](./rules/)**  
-The repeated mechanics are collected into **5 working rules**, so the same explanations do not need to be repeated in every stage.
+**2. [Plaintext reconstruction](./plaintext-i-found/)**  
+The route split into **14 stages**, with each recovered segment shown step by step.
 
-The full **27×27 rune map** is kept separately as a `.txt` file and serves as the common reference for coordinates, structures, and route positions.
+**3. [Rules](./rules/)**  
+The **5 working rules** that repeat across the route and are used in multiple stages.
 
 ---
 
-### Current framework
+### Method
 
-The reconstruction currently uses:
+The reconstruction uses the same core system throughout the route: three-rune structures, Euler totient transformations, Möbius key-phase selection, totient-based movement, coordinate direction selection, and CENTER / OUTER structural states.
 
-- a **27×27 grid** built from 729 rune positions;
-- recurring **three-rune structures**;
-- **Euler totient** transformations for key generation and numerical values;
-- **Möbius phase selection** for cyclic key position;
-- **totient-derived movement** for distance;
-- a **coordinate selector** for direction;
-- **CENTER / OUTER states** for structural role.
-
-These parts are treated as one connected route system rather than as separate tricks for individual plaintext segments.
+The map shows **where** the route moves, the reconstruction shows **what** is recovered, and the rules explain **how** the repeated mechanics work.
 
 ---
 
