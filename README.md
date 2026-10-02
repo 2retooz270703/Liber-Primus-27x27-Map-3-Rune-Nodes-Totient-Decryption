@@ -44,15 +44,3 @@ The reconstruction currently relies on:
 - **CENTER / OUTER** structural states.
 
 These rules are separated from the plaintext files so that each mechanism only needs to be explained once.
-
----
-
-### Current status
-
-This is an **independent cryptanalytic reconstruction** and is not an officially verified Liber Primus solution.
-
-The recovered route currently reaches:
-
-> **SEE YOU ...**
-
-The main unresolved problem is the deterministic rule that selects the next continuation from that point.
