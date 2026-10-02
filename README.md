@@ -2,7 +2,8 @@
 
 ## Liber Primus · 27×27 Route Research
 
-This repository documents an ongoing reconstruction of a possible route through **Liber Primus pages 0–2**. The aim is to keep only the parts of the method that can be followed, checked, and reproduced directly from the rune grid.
+This repository documents an ongoing reconstruction of a possible route through **Liber Primus pages 0–2**.  
+Only the parts of the method that can be checked directly against the rune grid are kept in the main structure.
 
 ---
 
@@ -10,44 +11,40 @@ This repository documents an ongoing reconstruction of a possible route through 
 
 <div align="center">
 
-<br>
-
-**AS I GO, THE WEATHER TURNS COLD.**
-
-**I MAY CRY NOW.**
-
-**THE IDEA OF THE END IS DEATH.**
-
+**AS I GO, THE WEATHER TURNS COLD.**  
+**I MAY CRY NOW.**  
+**THE IDEA OF THE END IS DEATH.**  
 **SEE YOU ...**
-
-<br>
 
 </div>
 
 ---
 
-### Repository structure
+### Repository
 
 **[Plaintext reconstruction](./plaintext-i-found/)**  
-Step-by-step reconstruction of the recovered text. Each file records the relevant grid position, three-rune structure, active key, movement, ciphertext, and modular decryption for that stage.
+The route is split into **14 stages**. Each file shows how one plaintext segment is recovered from the grid, including the relevant position, structure, movement, key, ciphertext, and decryption.
 
 **[Rules](./rules/)**  
-The general mechanics used across the route, collected separately so each rule is defined once and then only applied in the plaintext files.
+The repeated mechanics are collected into **5 working rules**, so the same explanations do not need to be repeated in every stage.
+
+The full **27×27 rune map** is kept separately as a `.txt` file and serves as the common reference for coordinates, structures, and route positions.
 
 ---
 
 ### Current framework
 
-The reconstruction begins with the **729 rune positions arranged as a 27×27 grid**. Repeating three-rune structures are treated as functional nodes, and their centers can be transformed with Euler's totient function to generate keys and numerical signatures.
+The reconstruction currently uses:
 
-The current route is built from four recurring layers:
+- a **27×27 grid** built from 729 rune positions;
+- recurring **three-rune structures**;
+- **Euler totient** transformations for key generation and numerical values;
+- **Möbius phase selection** for cyclic key position;
+- **totient-derived movement** for distance;
+- a **coordinate selector** for direction;
+- **CENTER / OUTER states** for structural role.
 
-- **Möbius phase** — selects the active cyclic key position
-- **Totient movement** — provides movement distances
-- **Coordinate selector** — constrains movement direction
-- **CENTER / OUTER states** — indicate the structural role of the next position
-
-Together, these mechanisms connect the cryptographic operations with the geometry of the grid and form the current working route.
+These parts are treated as one connected route system rather than as separate tricks for individual plaintext segments.
 
 ---
 
