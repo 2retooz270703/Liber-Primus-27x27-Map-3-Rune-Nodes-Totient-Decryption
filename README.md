@@ -1,40 +1,59 @@
 <sub>Last updated · **2 October 2026**</sub>
 
-## Liber Primus · 27×27 Route
+<div align="center">
 
-A compact record of the current reconstruction of **Liber Primus pages 0–2**.
+### Liber Primus · 27×27 Route Research
+
+A structured record of the current reconstruction of  
+**Liber Primus pages 0–2**
+
+</div>
 
 ---
 
 ### Recovered plaintext
 
-<p align="center">
-  <strong>AS I GO, THE WEATHER TURNS COLD.</strong><br>
-  <strong>I MAY CRY NOW.</strong><br>
-  <strong>THE IDEA OF THE END IS DEATH.</strong><br>
-  <strong>SEE YOU ...</strong>
-</p>
+> **AS I GO, THE WEATHER TURNS COLD.**  
+> **I MAY CRY NOW.**  
+> **THE IDEA OF THE END IS DEATH.**  
+> **SEE YOU ...**
 
 ---
 
 ### Repository structure
 
-**1. [27×27 rune map](./0-2-grid-i-used.txt)**  
-The full grid used as the reference for coordinates, structures, and route positions.
+#### 1. 27×27 rune map
+**[Open the grid](./0-2-grid-i-used.txt)**
 
-**2. [Plaintext reconstruction](./plaintext-i-found/)**  
-The route split into **14 stages**, with each recovered segment shown step by step.
+The complete rune grid used as the common reference for every coordinate, structure, movement, and route position in the reconstruction.
 
-**3. [Rules](./rules/)**  
-The **5 working rules** that repeat across the route and are used in multiple stages.
+#### 2. Plaintext reconstruction
+**[Open the 14 stages](./plaintext-i-found/)**
+
+The recovered route is split into **14 separate stages**. Each file shows one segment from start to finish: where it appears in the grid, which structure is used, how the key is produced, how the route moves, and how the ciphertext decrypts.
+
+#### 3. Working rules
+**[Open the 5 rules](./rules/)**
+
+The repeated mechanics are kept in one place instead of being re-explained in every stage. These are the rules currently reused across multiple parts of the route.
 
 ---
 
-### Method
+### How the repository is meant to be read
 
-The reconstruction uses the same core system throughout the route: three-rune structures, Euler totient transformations, Möbius key-phase selection, totient-based movement, coordinate direction selection, and CENTER / OUTER structural states.
+```text
+27×27 map
+    ↓
+route reconstruction
+    ↓
+repeated mechanics
+```
 
-The map shows **where** the route moves, the reconstruction shows **what** is recovered, and the rules explain **how** the repeated mechanics work.
+The **map** shows where everything is.  
+The **14 stages** show how the plaintext is recovered.  
+The **5 rules** explain the mechanics that keep repeating across the route.
+
+This separation makes it easier to check each result against the grid without mixing the reconstruction itself with general theory.
 
 ---
 
