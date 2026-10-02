@@ -1,46 +1,55 @@
-Last updated: **2 October 2026**
+<sub>Last updated · **2 October 2026**</sub>
 
-## Liber Primus 27×27 route research
-
-This repository contains an ongoing reconstruction of a possible route through **Liber Primus pages 0–2**.
-
-The work is organized into two parts: the recovered plaintext itself and the rules that repeatedly reproduce the route.
+<p align="center">
+  <strong>Liber Primus · 27×27 route research</strong><br>
+  <sub>Ongoing reconstruction of a possible route through pages 0–2</sub>
+</p>
 
 ---
 
-### Current recovered plaintext
+### Recovered plaintext
 
 <p align="center">
   <br>
-  <strong>AS I GO, THE WEATHER TURNS COLD.</strong><br>
-  <strong>I MAY CRY NOW.</strong><br>
-  <strong>THE IDEA OF THE END IS DEATH.</strong><br>
+  <strong>AS I GO, THE WEATHER TURNS COLD.</strong><br><br>
+  <strong>I MAY CRY NOW.</strong><br><br>
+  <strong>THE IDEA OF THE END IS DEATH.</strong><br><br>
   <strong>SEE YOU ...</strong>
   <br><br>
 </p>
 
 ---
 
-### Read the reconstruction
+### Research files
 
-**[Plaintext](./plaintext-i-found/)**  
-Each recovered segment is shown separately, with the exact grid positions, key, ciphertext, movement, and decryption used to obtain it.
+**[→ Plaintext reconstruction](./plaintext-i-found/)**  
+The recovered text, split into individual stages with the exact grid positions, keys, ciphertext, movement, and decryption used at each step.
 
-**[Rules](./rules/)**  
-The current rule set extracted from the recovered route: core mechanics, key-phase selection, totient movement, coordinate selection, and CENTER / OUTER states.
+**[→ Rules](./rules/)**  
+The compact rule set extracted from the route itself: core mechanics, key-phase selection, totient movement, coordinate selection, and CENTER / OUTER states.
 
 ---
 
-### Current method
+### What the route currently uses
 
-The reconstruction currently relies on:
+- **27×27 rune grid** from the 729 rune positions
+- recurring **three-rune structures**
+- **Euler totient** transformations
+- **Möbius-based key phase selection**
+- **totient-derived movement values**
+- **coordinate-based direction selection**
+- **CENTER / OUTER** structural states
 
-- a **27×27 rune grid** built from the 729 rune positions;
-- recurring **three-rune structures**;
-- **Euler totient** transformations;
-- **Möbius-based key phase selection**;
-- **totient-derived movement values**;
-- a **coordinate selector** for movement direction;
-- **CENTER / OUTER** structural states.
+The general rules are kept separate from the plaintext files so each mechanism is defined once and then only applied.
 
-These rules are separated from the plaintext files so that each mechanism only needs to be explained once.
+---
+
+### Open problem
+
+The reconstructed route currently reaches:
+
+> **SEE YOU ...**
+
+The remaining task is to determine the **deterministic rule for the next route selection** from that point.
+
+<sub>This is an independent cryptanalytic reconstruction and is not an officially verified Liber Primus solution.</sub>
