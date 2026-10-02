@@ -4,188 +4,95 @@
 > **Current sequence:** `AS I GO THE WEATHER`  
 > **Status:** proposed reconstruction; not an officially verified Cicada 3301 solution.
 
-This chapter continues directly from the final point of the previous fragment:
-
-```text
-AS I GO THE
-```
-
-The previous ciphertext ended at:
-
-```text
-X(14,4)
-```
-
-That exact `X` is not an isolated endpoint. It is also the left outer rune of the next 3-rune structure, which is where the `WEATHER` stage begins.
-
 Everything below uses the same 27×27 rune grid:
 
 > **[Open `0-2-grid-i-used.txt`](../0-2-grid-i-used.txt)**
 
-Coordinates are written as:
-
-```text
-(row, column)
-```
-
-and are **1-based**.
+Coordinates are **1-based**.
 
 ---
 
-## 1. The previous fragment ends inside the next node
+## 1. The previous endpoint opens X-OE-X
 
-The last ciphertext rune of `AS I GO THE` is:
+`AS I GO THE` ends at:
 
 ```text
 X(14,4)
 ```
 
-Look immediately to the right in row 14:
+That same cell is the left outer of:
 
 ```text
 X(14,4) — OE(14,5) — X(14,6)
 ```
 
-So the endpoint of the previous plaintext is simultaneously part of the next mirrored 3-rune node:
+So the next key-generating structure is:
 
 ```text
-X — OE — X
+X-OE-X
 ```
 
-This gives a direct handoff:
-
-```text
-AS I GO THE
-      ↓
-final ciphertext rune X(14,4)
-      ↓
-X(14,4) — OE(14,5) — X(14,6)
-```
-
----
-
-## 2. X-OE-X generates the next key
-
-The center of the new node is:
-
-```text
-OE(14,5)
-```
-
-Using the **0-based Gematria Primus index**:
+The center is:
 
 ```text
 OE = 22
 ```
 
-Apply Euler's totient function:
+and:
 
 ```text
-φ(22) = 10
+φ(22)=10=I
 ```
 
-Gematria Primus index `10` is:
+therefore:
 
 ```text
-I
+X-OE-X
+→
+X-I-X
 ```
 
-So:
+So the new key structure is:
 
 ```text
-X(14,4) — OE(14,5) — X(14,6)
-                 ↓
-              φ(22)=10
-                 ↓
-                 I
-```
-
-and the node becomes:
-
-```text
-X — I — X
-```
-
-Therefore the new 3-rune key is:
-
-```text
-KEY = X-I-X
+X-I-X
 ```
 
 ---
 
-## 3. The same value gives the movement
+## 2. The same value gives the movement
 
 The center transformation produced:
 
 ```text
-φ(OE) = 10
+10
 ```
 
-That same value is used as the movement distance.
-
-Start again from the current route position:
+Reuse it as movement from the current route position:
 
 ```text
 X(14,4)
+→ RIGHT 10
+→ NG(14,14)
 ```
 
-Move 10 cells to the right:
-
-```text
-X(14,4) → RIGHT 10 → NG(14,14)
-```
-
-Check the column:
-
-```text
-4 + 10 = 14
-```
-
-So the destination is:
+This lands exactly on the unique center of the 27×27 grid:
 
 ```text
 NG(14,14)
 ```
 
-This is especially important because a 27×27 grid has one exact center:
+So the same `φ(OE)=10` both:
 
 ```text
-center row    = 14
-center column = 14
-```
-
-Therefore:
-
-```text
-NG(14,14)
-```
-
-is the **exact center of the entire 27×27 grid**.
-
-The transition so far is:
-
-```text
-X(14,4) — OE(14,5) — X(14,6)
-                 ↓
-              OE = 22
-                 ↓
-              φ(22)=10=I
-                 ↓
-              KEY = X-I-X
-
-X(14,4)
-↓
-RIGHT 10
-↓
-NG(14,14)
+generates I in the key
+and
+moves the route to the grid center
 ```
 
 ---
 
-## 4. The key has three possible cyclic phases
-
-A 3-rune key can begin in three different cyclic positions.
+## 3. Möbius phase
 
 For:
 
@@ -193,85 +100,43 @@ For:
 X-I-X
 ```
 
-the possible phases are:
+the totient signature is:
 
 ```text
-phase 0: X-I-X-X-I-X...
-phase 1: I-X-X-I-X-X...
-phase 2: X-X-I-X-X-I...
+φ(X=14)=6
+φ(I=10)=4
+φ(X=14)=6
 ```
 
-So I need a rule that tells me which phase to use rather than choosing the one that gives readable English afterward.
-
-The phase rule is:
-
-```text
-p = [μ(φ(k1)) + μ(φ(k2)) + μ(φ(k3))] mod 3
-```
-
-where:
-
-```text
-φ = Euler's totient function
-μ = Möbius function
-```
-
-For the key:
-
-```text
-X-I-X
-```
-
-use the 0-based GP values:
-
-```text
-X = 14
-I = 10
-X = 14
-```
-
-Apply `φ`:
-
-```text
-φ(14) = 6
-φ(10) = 4
-φ(14) = 6
-```
-
-So the totient signature is:
+so:
 
 ```text
 6-4-6
 ```
 
-Now apply the Möbius function:
+The Möbius values are:
 
 ```text
-μ(6) = +1
-μ(4) = 0
-μ(6) = +1
+μ(6)=+1
+μ(4)=0
+μ(6)=+1
 ```
 
-Therefore:
+therefore:
 
 ```text
-p = (+1 + 0 + +1) mod 3
-p = 2
+phase = 2
 ```
 
-So the active phase is:
+and:
 
 ```text
-phase 2
+X-I-X
+→ phase 2
+→ X-X-I
 ```
 
-and the active repeating key becomes:
-
-```text
-X-X-I
-```
-
-For a 5-rune ciphertext, that gives:
+For five runes:
 
 ```text
 KEY = X-X-I-X-X
@@ -279,15 +144,9 @@ KEY = X-X-I-X-X
 
 ---
 
-## 5. The WEATHER ciphertext begins at the exact center
+## 4. Ciphertext
 
-The movement landed on:
-
-```text
-NG(14,14)
-```
-
-Reading five cells to the right from that point gives:
+Starting at the grid center and reading right:
 
 ```text
 NG(14,14)
@@ -297,285 +156,188 @@ O(14,17)
 E(14,18)
 ```
 
-So the 5-rune ciphertext is:
+gives:
 
 ```text
 CIPHERTEXT = NG-P-EO-O-E
 ```
 
-This can be checked directly in `0-2-grid-i-used.txt`.
-
-The plaintext word `WEATHER` is also five runes, because `EA` and `TH` are each single rune tokens:
-
-```text
-W — EA — TH — E — R
-```
+This sequence is directly checkable in the 27×27 grid.
 
 ---
 
-## 6. Decryption: C − K mod 29
+## 5. Decryption
 
-The ciphertext is:
-
-```text
-NG-P-EO-O-E
-```
-
-The active key is:
-
-```text
-X-X-I-X-X
-```
-
-Align them:
-
-```text
-Ciphertext:  NG  P   EO  O   E
-Key:         X   X   I   X   X
-```
-
-As before, decryption uses **0-based Gematria Primus values**:
+Use:
 
 ```text
 P = (C - K) mod 29
 ```
 
-where:
+with:
 
 ```text
-C = ciphertext rune value
-K = key rune value
-P = plaintext rune value
+Ciphertext: NG  P   EO  O   E
+Key:        X   X   I   X   X
 ```
 
-The values needed here are:
-
-```text
-NG = 21
-P  = 13
-EO = 12
-O  = 3
-E  = 18
-
-X  = 14
-I  = 10
-```
-
-Now decrypt each position:
-
-| # | Ciphertext | C | Key | K | `(C - K) mod 29` | Plaintext |
-|---:|---|---:|---|---:|---:|---|
-| 1 | `NG(14,14)` | 21 | `X` | 14 | `21 - 14 = 7` | `W` |
-| 2 | `P(14,15)` | 13 | `X` | 14 | `13 - 14 = -1 ≡ 28` | `EA` |
-| 3 | `EO(14,16)` | 12 | `I` | 10 | `12 - 10 = 2` | `TH` |
-| 4 | `O(14,17)` | 3 | `X` | 14 | `3 - 14 = -11 ≡ 18` | `E` |
-| 5 | `E(14,18)` | 18 | `X` | 14 | `18 - 14 = 4` | `R` |
+| # | C | K | Result |
+|---:|---:|---:|---|
+| 1 | `NG=21` | `X=14` | `21-14 = 7 = W` |
+| 2 | `P=13` | `X=14` | `13-14 ≡ 28 = EA` |
+| 3 | `EO=12` | `I=10` | `12-10 = 2 = TH` |
+| 4 | `O=3` | `X=14` | `3-14 ≡ 18 = E` |
+| 5 | `E=18` | `X=14` | `18-14 = 4 = R` |
 
 Therefore:
 
 ```text
-Ciphertext:
 NG-P-EO-O-E
-
-Key:
+-
 X-X-I-X-X
-
-(C - K) mod 29
-
-Result:
+=
 W-EA-TH-E-R
 ```
 
-which reads:
-
 # **WEATHER**
 
-The plaintext sequence is now:
+The plaintext becomes:
 
 # **AS I GO THE WEATHER**
 
 ---
 
-## 7. The whole WEATHER route in one view
+## 6. Why this branch is strong
+
+The stage reuses one arithmetic value consistently:
 
 ```text
-previous ciphertext ends at:
+OE=22
+↓
+φ(OE)=10=I
+```
+
+which gives both:
+
+```text
+X-OE-X → X-I-X
+```
+
+and:
+
+```text
+RIGHT 10 → NG(14,14)
+```
+
+The route lands on the exact center of the entire grid, not an arbitrary cell.
+
+There are also two useful cross-checks:
+
+```text
+J=11  → φ(J)=10=I
+OE=22 → φ(OE)=10=I
+```
+
+so the first two key-generating centers independently reduce to the same rune `I`.
+
+And directly above the first three ciphertext cells:
+
+```text
+NG-P-EO
+```
+
+the grid contains:
+
+```text
+W-EA-TH
+```
+
+This is a visual supporting clue, not part of the decryption rule.
+
+---
+
+## 7. Next state
+
+`WEATHER` ends at:
+
+```text
+E(14,18)
+```
+
+Immediately to the right is:
+
+```text
+A(14,19)
+```
+
+which becomes the next crossroads.
+
+The two active values carried forward are:
+
+```text
+I = 10
+φ(I)=4
+```
+
+and the later coordinate selector at:
+
+```text
+A(14,19)
+```
+
+with phase `2` gives:
+
+```text
+V₂(14,19)=(-1,+1)
+→ UP + RIGHT
+```
+
+These values drive the next stage:
+
+```text
+TURNS
+```
+
+---
+
+## 8. Compact route
+
+```text
+AS I GO THE
+↓
 X(14,4)
 
 ↓
-adjacent mirrored node:
-X(14,4) — OE(14,5) — X(14,6)
+X-OE-X
 
 ↓
-center:
-OE = 22
+OE → I
 
 ↓
-φ(22) = 10 = I
-
-↓
-generated key:
 X-I-X
 
 ↓
-same value gives movement:
-X(14,4) → RIGHT 10 → NG(14,14)
+signature 6-4-6
+phase 2
 
 ↓
-NG(14,14) is the exact center of the 27×27 grid
+X-X-I
 
 ↓
-key phase:
-φ(X-I-X) = 6-4-6
-μ(6-4-6) = +1,0,+1
+RIGHT 10
 
-↓
-p = 2
-
-↓
-active key:
-X-X-I-X-X
+NG(14,14)
+= exact grid center
 
 ↓
 ciphertext:
-NG(14,14)
-P(14,15)
-EO(14,16)
-O(14,17)
-E(14,18)
-
-↓
-CIPHERTEXT = NG-P-EO-O-E
-
-↓
-P = (C - K) mod 29
+NG-P-EO-O-E
 
 ↓
 W-EA-TH-E-R
 
 ↓
 WEATHER
-```
-
----
-
-## 8. Strong structural cross-checks
-
-These observations are not required to perform the decryption above, but they are useful because they independently connect this stage to the previous one.
-
-### The first two node centers both reduce to I
-
-The first stage used:
-
-```text
-J = 11
-φ(11) = 10 = I
-```
-
-This stage uses:
-
-```text
-OE = 22
-φ(22) = 10 = I
-```
-
-So the first two consecutive key-generating nodes are:
-
-```text
-AE-J-EA  →  AE-I-EA
-X-OE-X   →  X-I-X
-```
-
-Among the relevant 0-based GP index values, `11` and `22` are the two values whose Euler totient is `10`.
-
-So both stages independently converge on the same rune:
-
-```text
-I
-```
-
----
-
-### W-EA-TH appears directly above the ciphertext
-
-The first three WEATHER ciphertext cells are:
-
-```text
-NG(14,14) — P(14,15) — EO(14,16)
-```
-
-Directly above them in row 13 are:
-
-```text
-W(13,14) — EA(13,15) — TH(13,16)
-```
-
-which reads:
-
-```text
-W-EA-TH
-```
-
-This is recorded as a **supporting visual clue**, not as part of the core decryption rule.
-
-It is especially interesting because the key itself has a 3-position cyclic phase.
-
----
-
-### The route lands on the exact center
-
-The movement:
-
-```text
-X(14,4) → RIGHT 10
-```
-
-does not land on an arbitrary rune.
-
-It lands on:
-
-```text
-NG(14,14)
-```
-
-the unique center cell of the 27×27 grid.
-
-That gives the start of the WEATHER ciphertext a clear geometric position.
-
----
-
-## 9. Where the next chapter starts
-
-`WEATHER` ends on the ciphertext rune:
-
-```text
-E(14,18)
-```
-
-The immediately adjacent cell to the right is:
-
-```text
-A(14,19)
-```
-
-So the boundary is:
-
-```text
-E(14,18) → A(14,19)
-```
-
-That `A(14,19)` becomes the important crossroads used in the next stage.
-
-The next chapter continues from:
-
-```text
-AS I GO THE WEATHER
-```
-
-to:
-
-```text
-AS I GO THE WEATHER TURNS
 ```
 
 ---
