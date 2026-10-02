@@ -1,35 +1,41 @@
-<sub>Last updated: **October 2, 2026**</sub>
+<div align="center">
 
 # Liber Primus — 27×27 Route Research
 
-This repository documents an ongoing reconstruction of a possible plaintext route through **Liber Primus pages 0–2**.
+<sub>Last updated · **2 October 2026**</sub>
 
-The current method is based on the 27×27 rune grid, recurring three-rune structures, Euler totient transformations, Möbius-based key phase selection, coordinate direction selection, and CENTER / OUTER structural states.
+<br>
+
+An ongoing reconstruction of a possible plaintext route through  
+**Liber Primus pages 0–2**.
+
+</div>
 
 ---
 
 ## Recovered plaintext
 
-<p align="center">
-  <strong>
-    AS I GO, THE WEATHER TURNS COLD.<br>
-    I MAY CRY NOW.<br>
-    THE IDEA OF THE END IS DEATH.<br>
-    SEE YOU ...
-  </strong>
-</p>
+> **AS I GO, THE WEATHER TURNS COLD.**  
+> **I MAY CRY NOW.**  
+> **THE IDEA OF THE END IS DEATH.**  
+> **SEE YOU ...**
 
 ---
 
-## Read the research
+## Research
 
-### [Plaintext reconstruction](./plaintext-i-found/)
+| Section | Description |
+|---|---|
+| **[Plaintext reconstruction](./plaintext-i-found/)** | Step-by-step reconstruction of each recovered plaintext segment. |
+| **[Rules](./rules/)** | The compact rule set currently supported by the recovered route. |
 
-Step-by-step reconstruction of each recovered plaintext segment.
+---
 
-### [Rules](./rules/)
+## Method
 
-The compact rule set currently supported by the recovered route.
+The current reconstruction is built around:
+
+**27×27 rune grid** · **three-rune structures** · **Euler totient transformations** · **Möbius key-phase selection** · **coordinate direction selection** · **CENTER / OUTER states**
 
 ---
 
