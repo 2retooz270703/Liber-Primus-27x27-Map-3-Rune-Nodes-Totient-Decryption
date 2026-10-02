@@ -2,36 +2,36 @@ LIBER PRIMUS PAGES 0-2 — 27x27 RUNE GRID
 Coordinates: (row, column), 1-based
 Left readings used for slash runes: IA/O→IA, S/Z→S, C/K→C, U/V→U
 
-      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27  
-   +------------------------------------------------------------------------------------+
- 1 |   S  H  E  O  G  M IA  F  S  Y  E NG  C TH  J  G AE  F  J OE  O  N TH  N  E  W  B  |
- 2 |   A  S OE EO  I NG  U  N AE  G  I TH  H  B  N IA  P  B  N EO  J TH  A NG  Y  X  B  |
- 3 |   D  P  E IA  F  X  G  F  S  P  T  F  P  U NG  Y NG  X IA  Y  H  B  U  G  O  P NG  |
- 4 |  AE TH  I AE  H  X TH  P  G  Y  F NG  C  J TH  A  M  I NG  I IA  Y  H EO  T  H AE  |
- 5 |  IA  X  Y  E  U NG  C  F  N EO TH  J  I TH TH  P  Y NG EA  Y  N  E  Y  D  X NG  W  |
- 6 |   B  C  X  D  B  F  M  T  N  E EA  J  N  L  G  B  X  G TH  Y  I  D  A NG  G  M  J  |
- 7 |   R  O  L EO  Y  T  P  I TH  D  J OE  H  L EA  F  X AE  P  G  X  F  L  W EO  T AE  |
- 8 |   F  G  N  M EO  L  N NG  M  F  R IA  A  S EA  M NG  X  X EO  D  B OE  D  M  O EA  |
- 9 |  EO  H  D NG  G OE NG  L  U  R  N  T AE  S  Y  U  H  R  T  H  C  S OE  T OE NG  U  |
-10 |   R  S  F  O  E  W EA OE  L  F AE  M  R NG  D  A  M  R  W  A  I  M  S  N  S OE  R  |
-11 |   U  W  S  L IA OE  A AE NG  S  D  P  T  C  R TH IA  R  B  O  D TH  F  Y  X  I  T  |
-12 |  OE  I  F  L  O  F EA  R  O OE  M  H  M  G  P  H AE  H  N  O  H  Y OE  S  L  N  G  |
-13 |  AE  Y OE  C  B  L  J NG  L OE AE  J EA  W EA TH  O  B OE  Y  C  F  C  J  L AE  N  |
-14 |  TH  P  U  X OE  X  G  P  F  S EO AE OE NG  P EO  O  E  A  G AE IA NG TH  O  P  A  |
-15 |  OE TH  R NG AE  C  S  B EO  Y  H  T  X  E  L  R  G  W  Y  J  F  I  N IA  C  Y EA  |
-16 |   I IA  O TH  E  C AE  C  X IA EA  O  L  C  F  R  D NG  E  U  D  C  L EA  S  X  C  |
-17 |   G IA  W  S TH  F  D NG  I IA  M  A AE  G  W  S  N  D  C  P TH  X  P EA EA  W  U  |
-18 |  EA  W  F  W  J  Y  X  D  W  C  G  C OE  D  X OE  R IA  G  N  P  A  Y  P  C  Y  H  |
-19 |   F  E  J EA  N OE AE  U  A  H  R  E EA TH  F  J  A  L  X  S  T  M  F  L  F  T  G  |
-20 |   I TH  U  L  G  X EA  T  S  L  J  P  L  X  I OE  M  U  H  T  B EO  L  D  H  B  M  |
-21 |  EA  R  B  N  H  B  E  G EO  D  L  W EO IA  P  O  H  E EA  W  I  R  I  H  U TH  H  |
-22 |   Y  N  X  B  G  J  P  U NG EA  F  N  I  E  D IA NG  R  D  B  J IA OE  M  I  F  T  |
-23 |   J  D  I TH  R  L  S  E EO  O  G  B  T  D TH  A  N  C  Y IA  S TH  D NG  F  L  E  |
-24 |   G  H  C  E  O  I  T  N  X  P  T  F  H  R  D  E  F  T AE  W  H  B  C  F  P  A  L  |
-25 |   U EA  N  L  J  J  C  L  W EA  D  U  D EO EA  X  D  W  H EA TH IA AE  C  L  T  W  |
-26 |   E  I  C  P OE  D  C  N  H  A  R  I  G TH EA  E  T  G TH  H  O IA  W AE  J  E NG  |
-27 |  EA  D  O AE  A  L  B  J  C  U  X  T  A  B  J  P  F EA  H  D  N IA  U  P  S  U  W  |
-   +------------------------------------------------------------------------------------+
+      1   2   3   4   5   6   7   8   9   10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27 
+   +--------------------------------------------------------------------------------------------------------------+
+ 1 |  S   H   E   O   G   M   IA  F   S   Y   E   NG  C   TH  J   G   AE  F   J   OE  O   N   TH  N   E   W   B   |
+ 2 |  A   S   OE  EO  I   NG  U   N   AE  G   I   TH  H   B   N   IA  P   B   N   EO  J   TH  A   NG  Y   X   B   |
+ 3 |  D   P   E   IA  F   X   G   F   S   P   T   F   P   U   NG  Y   NG  X   IA  Y   H   B   U   G   O   P   NG  |
+ 4 |  AE  TH  I   AE  H   X   TH  P   G   Y   F   NG  C   J   TH  A   M   I   NG  I   IA  Y   H   EO  T   H   AE  |
+ 5 |  IA  X   Y   E   U   NG  C   F   N   EO  TH  J   I   TH  TH  P   Y   NG  EA  Y   N   E   Y   D   X   NG  W   |
+ 6 |  B   C   X   D   B   F   M   T   N   E   EA  J   N   L   G   B   X   G   TH  Y   I   D   A   NG  G   M   J   |
+ 7 |  R   O   L   EO  Y   T   P   I   TH  D   J   OE  H   L   EA  F   X   AE  P   G   X   F   L   W   EO  T   AE  |
+ 8 |  F   G   N   M   EO  L   N   NG  M   F   R   IA  A   S   EA  M   NG  X   X   EO  D   B   OE  D   M   O   EA  |
+ 9 |  EO  H   D   NG  G   OE  NG  L   U   R   N   T   AE  S   Y   U   H   R   T   H   C   S   OE  T   OE  NG  U   |
+10 |  R   S   F   O   E   W   EA  OE  L   F   AE  M   R   NG  D   A   M   R   W   A   I   M   S   N   S   OE  R   |
+11 |  U   W   S   L   IA  OE  A   AE  NG  S   D   P   T   C   R   TH  IA  R   B   O   D   TH  F   Y   X   I   T   |
+12 |  OE  I   F   L   O   F   EA  R   O   OE  M   H   M   G   P   H   AE  H   N   O   H   Y   OE  S   L   N   G   |
+13 |  AE  Y   OE  C   B   L   J   NG  L   OE  AE  J   EA  W   EA  TH  O   B   OE  Y   C   F   C   J   L   AE  N   |
+14 |  TH  P   U   X   OE  X   G   P   F   S   EO  AE  OE  NG  P   EO  O   E   A   G   AE  IA  NG  TH  O   P   A   |
+15 |  OE  TH  R   NG  AE  C   S   B   EO  Y   H   T   X   E   L   R   G   W   Y   J   F   I   N   IA  C   Y   EA  |
+16 |  I   IA  O   TH  E   C   AE  C   X   IA  EA  O   L   C   F   R   D   NG  E   U   D   C   L   EA  S   X   C   |
+17 |  G   IA  W   S   TH  F   D   NG  I   IA  M   A   AE  G   W   S   N   D   C   P   TH  X   P   EA  EA  W   U   |
+18 |  EA  W   F   W   J   Y   X   D   W   C   G   C   OE  D   X   OE  R   IA  G   N   P   A   Y   P   C   Y   H   |
+19 |  F   E   J   EA  N   OE  AE  U   A   H   R   E   EA  TH  F   J   A   L   X   S   T   M   F   L   F   T   G   |
+20 |  I   TH  U   L   G   X   EA  T   S   L   J   P   L   X   I   OE  M   U   H   T   B   EO  L   D   H   B   M   |
+21 |  EA  R   B   N   H   B   E   G   EO  D   L   W   EO  IA  P   O   H   E   EA  W   I   R   I   H   U   TH  H   |
+22 |  Y   N   X   B   G   J   P   U   NG  EA  F   N   I   E   D   IA  NG  R   D   B   J   IA  OE  M   I   F   T   |
+23 |  J   D   I   TH  R   L   S   E   EO  O   G   B   T   D   TH  A   N   C   Y   IA  S   TH  D   NG  F   L   E   |
+24 |  G   H   C   E   O   I   T   N   X   P   T   F   H   R   D   E   F   T   AE  W   H   B   C   F   P   A   L   |
+25 |  U   EA  N   L   J   J   C   L   W   EA  D   U   D   EO  EA  X   D   W   H   EA  TH  IA  AE  C   L   T   W   |
+26 |  E   I   C   P   OE  D   C   N   H   A   R   I   G   TH  EA  E   T   G   TH  H   O   IA  W   AE  J   E   NG  |
+27 |  EA  D   O   AE  A   L   B   J   C   U   X   T   A   B   J   P   F   EA  H   D   N   IA  U   P   S   U   W   |
+   +--------------------------------------------------------------------------------------------------------------+
 
 Use the row number on the left and the column number at the top.
 Example: J(13,12) = row 13, column 12.
