@@ -1,4 +1,4 @@
-<sub>⚡️ Last updated · **2 October 2026**</sub>
+<sub>⚡️ Last updated · **3 October 2026**</sub>
 
 ### Recovered plaintext
 
@@ -23,4 +23,4 @@
 |---|---|---|
 | **1** | **[Map](./0-2-grid-i-used.txt)** | Full reference grid for coordinates, structures, movement, and route positions. |
 | **2** | **[Plaintext reconstruction](./plaintext-i-found/)** | `14 stages` showing how each plaintext segment is recovered step by step. |
-| **3** | **[Working rules](./rules/)** | `5 rules` that repeat across different stages of the route. |
+| **3** | **[Working rules](./rules/)** | `6 rules` that repeat across different stages of the route. |
