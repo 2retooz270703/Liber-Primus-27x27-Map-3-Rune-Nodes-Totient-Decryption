@@ -1,4 +1,4 @@
-<sub>⚡️ Last updated · **3 October 2026**</sub>
+<sub>⚡️ Last updated · **4 October 2026**</sub>
 
 ### Recovered plaintext
 
@@ -9,7 +9,7 @@
 <code><strong>AS I GO, THE WEATHER TURNS COLD.</strong></code><br><br>
 <code><strong>I MAY CRY NOW.</strong></code><br><br>
 <code><strong>THE IDEA OF THE END IS DEATH.</strong></code><br><br>
-<code><strong>SEE YOU ...</strong></code>
+<code><strong>SEE YOU SOON</strong></code>
 
 <br>
 
@@ -22,5 +22,5 @@
 | | Section | What it contains |
 |---|---|---|
 | **1** | **[Map](./0-2-grid-i-used.txt)** | Full reference grid for coordinates, structures, movement, and route positions. |
-| **2** | **[Plaintext reconstruction](./plaintext-i-found/)** | `14 stages` showing how each plaintext segment is recovered step by step. |
+| **2** | **[Plaintext reconstruction](./plaintext-i-found/)** | `15 stages` showing how each plaintext segment is recovered step by step. |
 | **3** | **[Working rules](./rules/)** | `6 rules` that repeat across different stages of the route. |
