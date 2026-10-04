@@ -4,8 +4,6 @@
 
 [**Open the 27×27 Route Analysis Map →**](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)
 
-Interactive map of the reconstructed route.
-
 ### Recovered plaintext
 
 <div align="center">
