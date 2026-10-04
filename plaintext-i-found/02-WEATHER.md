@@ -6,9 +6,7 @@
 
 Everything below uses the same 27×27 rune grid:
 
-> **[Open `0-2-grid-i-used.txt`](../0-2-grid-i-used.txt)**
-
-Coordinates are **1-based**.
+https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/0-2-live-map.html
 
 ---
 
@@ -339,8 +337,3 @@ W-EA-TH-E-R
 ↓
 WEATHER
 ```
-
----
-
-[← 01 — AS I GO THE](./01-AS-I-GO-THE.md)  
-[← Back to the main page](../README.md)
