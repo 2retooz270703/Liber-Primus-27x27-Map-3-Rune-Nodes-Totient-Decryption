@@ -1,30 +1,58 @@
-<sub>⚡️ Last updated · **4 October 2026**</sub>
+<sub>⚡️ Last updated: **4 October 2026**</sub>
 
-## Interactive Live Map
+## Live Route Analysis
 
-[**Open the 27×27 Route Analysis Map →**](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)
+### [Open the Live Route Map →](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)
 
-### Recovered plaintext
+The map provides separate views for:
 
-<div align="center">
-
-<br>
-
-<code><strong>AS I GO, THE WEATHER TURNS COLD.</strong></code><br><br>
-<code><strong>I MAY CRY NOW.</strong></code><br><br>
-<code><strong>THE IDEA OF THE END IS DEATH.</strong></code><br><br>
-<code><strong>SEE YOU SOON</strong></code>
-
-<br>
-
-</div>
+- route and hand-off nodes;
+- ciphertext cells;
+- key-generating structures;
+- supporting mirrors and geometry;
+- individual reconstruction stages **01–15**.
 
 ---
 
-### Repository structure
+## Current Plaintext Reconstruction
 
-| | Section | What it contains |
-|---|---|---|
-| **1** | **[Map](./0-2-grid-i-used.txt)** | Full reference grid for coordinates, structures, movement, and route positions. |
-| **2** | **[Plaintext reconstruction](./plaintext-i-found/)** | `15 stages` showing how each plaintext segment is recovered step by step. |
-| **3** | **[Working rules](./rules/)** | `6 rules` that repeat across different stages of the route. |
+<div align="center">
+
+<pre>
+AS I GO, THE WEATHER TURNS COLD.
+
+I MAY CRY NOW.
+
+THE IDEA OF THE END IS DEATH.
+
+SEE YOU SOON
+</pre>
+
+</div>
+
+The reconstruction is currently documented through **15 successive stages**, from **AS I GO THE** to **SOON**.
+
+---
+
+## Repository Guide
+
+| Resource | Description |
+|---|---|
+| **[Plaintext](./plaintext-i-found/)** | Stage-by-stage reconstruction of the recovered plaintext. Currently contains **15 stages**. |
+| **[Rules](./rules/)** | The **6 recurring structural rules** currently used to explain key selection, movement, coordinates, state changes, and hidden values. |
+| **[Live Map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)** | Interactive visual representation of the route and all mapped structures. |
+
+---
+
+## How to Read the Reconstruction
+
+The repository is organized so that the result can be checked at three levels:
+
+**1. Plaintext**  
+See what each stage decrypts.
+
+**2. Route and structures**  
+Use the live map to inspect the exact cells, route nodes, keys, and supporting geometry.
+
+**3. Rules**  
+Read the recurring mechanics used to explain why each transition and key selection occurs.
