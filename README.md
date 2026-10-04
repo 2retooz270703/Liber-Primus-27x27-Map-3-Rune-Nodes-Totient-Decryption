@@ -4,13 +4,11 @@
 
 ### [Open the Live Route Map →](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)
 
-The map provides separate views for:
+<p align="center">
+  <img src="./example.png" alt="Example of the live route map" width="720">
+</p>
 
-- route and hand-off nodes;
-- ciphertext cells;
-- key-generating structures;
-- supporting mirrors and geometry;
-- individual reconstruction stages **01–15**.
+The map allows you to explore the full route or focus on individual stages 01–15, including the related ciphertext, key structures, and supporting geometry. It will be updated as the reconstruction develops and new stages or structural findings are added.
 
 ---
 
@@ -31,13 +29,3 @@ SEE YOU SOON
 </div>
 
 The reconstruction is currently documented through **15 successive stages**, from **AS I GO THE** to **SOON**.
-
----
-
-## Repository Guide
-
-| Resource | Description |
-|---|---|
-| **[Plaintext](./plaintext-i-found/)** | Stage-by-stage reconstruction of the recovered plaintext. Currently contains **15 stages**. |
-| **[Rules](./rules/)** | The **6 recurring structural rules** currently used to explain key selection, movement, coordinates, state changes, and hidden values. |
-| **[Live Map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)** | Interactive visual representation of the route and all mapped structures. |
