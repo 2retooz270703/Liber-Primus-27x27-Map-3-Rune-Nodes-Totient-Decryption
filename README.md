@@ -12,20 +12,21 @@ The map allows you to explore the full route or focus on individual stages 01–
 
 ---
 
-## Current Plaintext Reconstruction
+## Recovered Plaintext
 
 <div align="center">
 
-<pre>
-AS I GO, THE WEATHER TURNS COLD.
+<sub>STAGES 01–15</sub>
 
-I MAY CRY NOW.
+<br><br>
 
-THE IDEA OF THE END IS DEATH.
+**AS I GO, THE WEATHER TURNS COLD.**  
+**I MAY CRY NOW.**  
+**THE IDEA OF THE END IS DEATH.**  
+**SEE YOU SOON**
 
-SEE YOU SOON
-</pre>
+<br><br>
+
+<sub>Current endpoint — <strong>SOON</strong></sub>
 
 </div>
-
-The reconstruction is currently documented through **15 successive stages**, from **AS I GO THE** to **SOON**.
