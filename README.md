@@ -41,18 +41,3 @@ The reconstruction is currently documented through **15 successive stages**, fro
 | **[Plaintext](./plaintext-i-found/)** | Stage-by-stage reconstruction of the recovered plaintext. Currently contains **15 stages**. |
 | **[Rules](./rules/)** | The **6 recurring structural rules** currently used to explain key selection, movement, coordinates, state changes, and hidden values. |
 | **[Live Map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)** | Interactive visual representation of the route and all mapped structures. |
-
----
-
-## How to Read the Reconstruction
-
-The repository is organized so that the result can be checked at three levels:
-
-**1. Plaintext**  
-See what each stage decrypts.
-
-**2. Route and structures**  
-Use the live map to inspect the exact cells, route nodes, keys, and supporting geometry.
-
-**3. Rules**  
-Read the recurring mechanics used to explain why each transition and key selection occurs.
