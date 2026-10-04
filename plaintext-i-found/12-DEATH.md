@@ -6,11 +6,7 @@
 
 Everything below uses the same 27×27 rune grid:
 
-> **[Open `0-2-grid-i-used.txt`](../0-2-grid-i-used.txt)**
-
-Coordinates are **1-based**.
-
-> Older technical files write `C/K`; the compact grid uses the left reading `C`.
+https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/0-2-live-map.html
 
 ---
 
@@ -513,8 +509,3 @@ and leads to the candidate:
 ```text
 SEE
 ```
-
----
-
-[← 11 — IS](./11-IS.md)  
-[← Back to the main page](../README.md)
