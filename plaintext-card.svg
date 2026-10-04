@@ -1,18 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="250" viewBox="0 0 900 250">
+
   <rect
     x="1"
     y="1"
     width="898"
     height="248"
     rx="18"
-    fill="#d8b4c8"
+    fill="#F7EEF5"
   />
 
   <text
     x="450"
     y="38"
     text-anchor="middle"
-    fill="#7a4f67"
+    fill="#9A7F92"
     font-family="Arial, sans-serif"
     font-size="13"
     font-weight="600"
@@ -25,7 +26,7 @@
     x="450"
     y="82"
     text-anchor="middle"
-    fill="#ffffff"
+    fill="#4A3F48"
     font-family="Arial, sans-serif"
     font-size="19"
     font-weight="700"
@@ -37,7 +38,7 @@
     x="450"
     y="116"
     text-anchor="middle"
-    fill="#ffffff"
+    fill="#4A3F48"
     font-family="Arial, sans-serif"
     font-size="19"
     font-weight="700"
@@ -49,7 +50,7 @@
     x="450"
     y="150"
     text-anchor="middle"
-    fill="#ffffff"
+    fill="#4A3F48"
     font-family="Arial, sans-serif"
     font-size="19"
     font-weight="700"
@@ -61,7 +62,7 @@
     x="450"
     y="184"
     text-anchor="middle"
-    fill="#ffffff"
+    fill="#4A3F48"
     font-family="Arial, sans-serif"
     font-size="19"
     font-weight="700"
@@ -73,10 +74,11 @@
     x="450"
     y="222"
     text-anchor="middle"
-    fill="#7a4f67"
+    fill="#9A7F92"
     font-family="Arial, sans-serif"
     font-size="12"
   >
     CURRENT ENDPOINT · SOON
   </text>
+
 </svg>
