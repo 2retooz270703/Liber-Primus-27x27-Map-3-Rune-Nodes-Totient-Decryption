@@ -14,8 +14,9 @@ The map allows you to explore the full route or focus on individual stages 01–
 
 ---
 
-## Recovered Plaintext
+### How to verify the reconstruction
 
-<p align="center">
-  <img src="./plaintext-card.svg" alt="Recovered plaintext" width="900">
-</p>
+For the full step-by-step plaintext route, see:
+
+- [`plaintext-i-found/`](./plaintext-i-found/) — reconstruction of each recovered stage.
+- [`rules/`](./rules/) — the recurring rules and mechanics used across the route.
