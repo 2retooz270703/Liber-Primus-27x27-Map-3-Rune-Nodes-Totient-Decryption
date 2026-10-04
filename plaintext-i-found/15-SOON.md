@@ -6,9 +6,7 @@
 
 Everything below uses the same 27×27 rune grid:
 
-> **[Open `0-2-grid-i-used.txt`](../0-2-grid-i-used.txt)**
-
-Coordinates are **1-based**.
+https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/0-2-live-map.html
 
 ---
 
@@ -846,7 +844,3 @@ primary X-based route   = strongest current derivation
 secondary mirror route  = independent supporting cross-check
 universal post-YOU rule = still incomplete
 ```
-
----
-
-[← Back to the main page](../README.md)
