@@ -14,19 +14,6 @@ The map allows you to explore the full route or focus on individual stages 01–
 
 ## Recovered Plaintext
 
-<div align="center">
-
-<sub>STAGES 01–15</sub>
-
-<br><br>
-
-**AS I GO, THE WEATHER TURNS COLD.**  
-**I MAY CRY NOW.**  
-**THE IDEA OF THE END IS DEATH.**  
-**SEE YOU SOON**
-
-<br><br>
-
-<sub>Current endpoint — <strong>SOON</strong></sub>
-
-</div>
+<p align="center">
+  <img src="./plaintext-card.svg" alt="Recovered plaintext" width="700">
+</p>
