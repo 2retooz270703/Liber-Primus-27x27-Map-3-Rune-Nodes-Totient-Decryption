@@ -1,4 +1,4 @@
-<sub>⚡️ Last updated: **5 October 2026**</sub>
+![Last updated](https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fapi.github.com%2Frepos%2F2retooz270703%2FLiber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption%2Fcommits%3Fper_page%3D1&search=%28%5Cd%7B4%7D-%5Cd%7B2%7D-%5Cd%7B2%7D%29T%28%5Cd%7B2%7D%3A%5Cd%7B2%7D%29%3A%5Cd%7B2%7DZ&replace=%241+%242+UTC&label=Last+updated&style=flat-square&labelColor=B79AC8&color=E7D9F2)
 
 ## Live Route Analysis
 
