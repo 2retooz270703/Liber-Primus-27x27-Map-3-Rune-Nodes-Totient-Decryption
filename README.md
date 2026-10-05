@@ -20,3 +20,4 @@ For the full step-by-step plaintext route, see:
 
 - [`plaintext-i-found/`](./plaintext-i-found/) — reconstruction of each recovered stage.
 - [`rules/`](./rules/) — the recurring rules and mechanics used across the route.
+- [`strongest-plaintext-evidence.md`](./strongest-plaintext-evidence.md) — the strongest independent numerical and structural evidence supporting the recovered plaintext.
