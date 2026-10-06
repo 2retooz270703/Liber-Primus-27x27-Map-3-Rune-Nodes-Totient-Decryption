@@ -1,6 +1,6 @@
 # Strongest Plaintext Evidence
 
-*All values use 0-based Gematria Primus indices.*
+*Unless otherwise stated, values use 0-based Gematria Primus indices. Section 3 uses the standard prime-valued Gematria Primus mapping.*
 
 ---
 
@@ -40,7 +40,39 @@ So the same block begins with its 7-word count and ends exactly on the GP value 
 
 ---
 
-## 3. The repeated value 51
+## 3. Prime-sum through DEATH — YOU
+
+Using the standard prime-valued Gematria Primus mapping, take the entire recovered plaintext from the beginning through **DEATH**:
+
+**AS I GO THE WEATHER TURNS COLD. I MAY CRY NOW. THE IDEA OF THE END IS DEATH.**
+
+Its prime-sum is:
+
+**2163**
+
+and:
+
+**2163 = 3 × 7 × 103**
+
+In prime-valued Gematria Primus:
+
+**U = 3 · O = 7 · Y = 103**
+
+Therefore:
+
+**2163 = 103 × 7 × 3 = Y × O × U = YOU**
+
+Immediately after **DEATH**, the recovered plaintext continues:
+
+**… DEATH. SEE YOU …**
+
+This makes **SEE YOU** read almost like an instruction: *look at YOU*. The word **YOU** is already hidden numerically in the prime factorization of the entire plaintext leading up to **DEATH**.
+
+The multiplication itself does not determine letter order, but the three exact prime factors are the Gematria Primus values of **Y, O, U**; ordered from largest to smallest, they spell **YOU**. Since this relationship was not used to recover the plaintext, it acts as an independent numerical cross-check and a particularly striking example of layered numerical and linguistic wordplay.
+
+---
+
+## 4. The repeated value 51
 
 The value 51 appears several times independently in the plaintext. COLD has a GP value of 51, and SEE also has a GP value of 51. At the same time, 233 — the GP sum of the first 7-word block — is the 51st prime number.
 
@@ -59,7 +91,7 @@ It also factors as 51 = 3 × 17, where 3 is the number of words in SEE YOU SOON,
 
 ---
 
-## 4. The 27 / 343 cube pair
+## 5. The 27 / 343 cube pair
 
 The last two blocks are:
 
