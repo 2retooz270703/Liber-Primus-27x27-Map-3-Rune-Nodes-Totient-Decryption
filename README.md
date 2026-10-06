@@ -13,8 +13,8 @@ The map allows you to explore the full route or focus on individual stages, incl
 <p align="center">
   <a href="https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/">
     <img
-      src="https://img.shields.io/github/directory-file-count/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/plaintext-i-found?type=file&label=OPEN%20MAP%20%C2%B7%20FOUND%20STAGES&style=for-the-badge&labelColor=8EB8DC&color=D6ECFA&cacheSeconds=300"
-      alt="Open map"
+      src="https://img.shields.io/github/directory-file-count/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/plaintext-i-found?type=file&label=EXPLORE%20MAP%20%E2%86%92%20STAGES%20FOUND&style=for-the-badge&labelColor=8EB8DC&color=D6ECFA&cacheSeconds=300"
+      alt="Explore map"
       height="38"
     >
   </a>
