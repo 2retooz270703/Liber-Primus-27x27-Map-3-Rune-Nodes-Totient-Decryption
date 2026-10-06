@@ -268,7 +268,87 @@ This also repeats.
 
 ---
 
-## 9. OUTER example: NOW THE
+## 9. OUTER example: WEATHER
+
+The active symmetric key structure is:
+
+```text
+X-I-X
+```
+
+Its totient signature is:
+
+```text
+6-4-6
+```
+
+Apply Möbius:
+
+```text
+μ(6)=+1
+μ(4)=0
+μ(6)=+1
+```
+
+so:
+
+```text
+M=(+1,0,+1)
+```
+
+The plaintext is:
+
+```text
+WEATHER
+```
+
+and its endpoint is:
+
+```text
+E(14,18)
+```
+
+That cell is an outer point of the diagonal mirrored structure:
+
+```text
+E(6,10)
+   \
+    \
+     NG(10,14)
+        \
+         \
+          E(14,18)
+```
+
+with equal radius:
+
+```text
+E(6,10)
+— 4 diagonal steps —
+NG(10,14)
+— 4 diagonal steps —
+E(14,18)
+```
+
+Therefore:
+
+```text
+(+1,0,+1)
+→ WEATHER
+→ endpoint is OUTER
+```
+
+A full scan of the 27×27 grid over horizontal, vertical, and both 45° diagonal symmetric 3-rune structures, at all possible integer radii, finds exactly **one** `E-NG-E` mirror:
+
+```text
+E(6,10) — NG(10,14) — E(14,18)
+```
+
+So the `WEATHER` endpoint is not one of several competing `E-NG-E` mirrors. It gives an additional direct occurrence of the same OUTER-state rule.
+
+---
+
+## 10. OUTER example: NOW THE
 
 The active structure is:
 
@@ -325,7 +405,7 @@ Therefore:
 
 ---
 
-## 10. OUTER example: END
+## 11. OUTER example: END
 
 The active structure is:
 
@@ -382,7 +462,7 @@ Again:
 
 ---
 
-## 11. OUTER rule
+## 12. OUTER rule
 
 The repeated observation is:
 
@@ -399,7 +479,7 @@ This is the second strongest state correspondence in the current model.
 
 ---
 
-## 12. Other observed states
+## 13. Other observed states
 
 Other symmetric Möbius states also appear, but their meanings are less secure.
 
@@ -466,7 +546,7 @@ This is weaker than the CENTER / OUTER correspondence and should remain provisio
 
 ---
 
-## 13. Negative partner states
+## 14. Negative partner states
 
 Each non-neutral symmetric state has a sign-reversed partner:
 
@@ -493,7 +573,7 @@ not established movement rules
 
 ---
 
-## 14. State classes
+## 15. State classes
 
 The current working classification is:
 
@@ -523,7 +603,7 @@ The sign may encode polarity or orientation, but that interpretation is not yet 
 
 ---
 
-## 15. Relationship to phase
+## 16. Relationship to phase
 
 For symmetric states:
 
@@ -571,7 +651,7 @@ structural role information
 
 ---
 
-## 16. Why this matters for route selection
+## 17. Why this matters for route selection
 
 The coordinate selector can tell us:
 
@@ -609,7 +689,7 @@ This sharply reduces the number of plausible next-route candidates.
 
 ---
 
-## 17. Evidence status
+## 18. Evidence status
 
 Strongly supported:
 
@@ -633,7 +713,7 @@ These should not yet be treated as fully deterministic rules.
 
 ---
 
-## 18. Compact model
+## 19. Compact model
 
 ```text
 3-rune key
