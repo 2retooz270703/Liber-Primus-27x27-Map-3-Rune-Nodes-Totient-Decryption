@@ -1349,6 +1349,3305 @@ label[for="layer-mirror"]{--ui-rgb:82,174,101}
   }
 }
 
+
+/* =========================================================
+   V54 — STAGE PREV/NEXT + LAPTOP ARROW KEYS
+   Cycle: ALL → 01 → ... → 15 → ALL
+   Reverse: ALL ← 01 ← ... ← 15 ← ALL
+   Existing map/grid/glow logic remains untouched.
+   ========================================================= */
+
+/* Keep title aligned exactly as in v53, with a tiny keyboard hint beside it. */
+.controls-wrap .stage-picker-head{
+  gap:7px !important;
+}
+
+.controls-wrap .stage-key-hint{
+  display:inline-flex !important;
+  align-items:center !important;
+  height:18px !important;
+  color:#697183 !important;
+  font-size:10px !important;
+  font-weight:800 !important;
+  letter-spacing:.04em !important;
+  line-height:18px !important;
+  opacity:.9;
+}
+
+/* Reuse the same selector shell; just add two compact navigation buttons. */
+.controls-wrap .stage-select-shell{
+  padding-right:8px !important;
+  gap:5px !important;
+}
+
+.controls-wrap .stage-accent{
+  margin-left:12px !important;
+  margin-right:2px !important;
+}
+
+.controls-wrap .stage-select{
+  flex:1 1 auto !important;
+  width:auto !important;
+  min-width:0 !important;
+  padding:0 10px !important;
+}
+
+.controls-wrap .stage-nav{
+  appearance:none;
+  -webkit-appearance:none;
+  flex:0 0 34px;
+  width:34px;
+  height:34px;
+  min-width:34px;
+  min-height:34px;
+  padding:0;
+  border:1px solid rgba(var(--picker-rgb),.28);
+  border-radius:9px;
+  background:rgba(var(--picker-rgb),.08);
+  color:#e9e5f0;
+  font:800 16px/1 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  transition:
+    background .14s ease,
+    border-color .14s ease,
+    transform .14s ease;
+}
+
+.controls-wrap .stage-nav:hover{
+  background:rgba(var(--picker-rgb),.16);
+  border-color:rgba(var(--picker-rgb),.46);
+}
+
+.controls-wrap .stage-nav:active{
+  transform:translateY(1px);
+}
+
+.controls-wrap .stage-nav:focus,
+.controls-wrap .stage-nav:focus-visible{
+  outline:none;
+  box-shadow:none;
+}
+
+/* The old decorative dropdown chevron is unnecessary with the new buttons. */
+.controls-wrap .stage-chevron{
+  display:none !important;
+}
+
+@media(max-width:899px){
+  .controls-wrap .stage-key-hint{
+    height:17px !important;
+    font-size:9.5px !important;
+    line-height:17px !important;
+  }
+
+  .controls-wrap .stage-nav{
+    flex-basis:36px;
+    width:36px;
+    height:36px;
+    min-width:36px;
+    min-height:36px;
+  }
+
+  .controls-wrap .stage-select{
+    padding-left:8px !important;
+    padding-right:8px !important;
+  }
+}
+
+
+/* =========================================================
+   V55 — CLEANER / SIMPLER STICKY TOOLBAR
+   Decorative top arrows removed.
+   Bottom stage navigation arrows + keyboard navigation remain.
+   Map/grid/glow/filter logic untouched.
+   ========================================================= */
+
+/* Cleaner page heading */
+.header{
+  padding:14px 12px 10px !important;
+}
+
+.header h1{
+  margin:0 !important;
+  font-size:20px !important;
+  font-weight:780 !important;
+  letter-spacing:-.025em !important;
+}
+
+/* One calm, clearly divided toolbar */
+.controls-wrap{
+  grid-template-columns:minmax(270px,.82fr) minmax(0,2.18fr) !important;
+  gap:0 !important;
+  padding:10px !important;
+  border:1px solid rgba(255,255,255,.055) !important;
+  border-radius:14px !important;
+  background:rgba(15,19,27,.985) !important;
+  box-shadow:0 8px 22px rgba(0,0,0,.17) !important;
+}
+
+/* Two logical sections inside the SAME plaque */
+.controls-wrap .plaintext-selector-panel{
+  padding-right:12px !important;
+}
+
+.controls-wrap .layerbar{
+  padding-left:12px !important;
+  border-left:1px solid rgba(255,255,255,.065) !important;
+}
+
+/* Keep both section names visually identical and level */
+.controls-wrap .stage-picker-head,
+.controls-wrap .control-title{
+  top:0 !important;
+  left:1px !important;
+  height:17px !important;
+  min-height:17px !important;
+  line-height:17px !important;
+}
+
+.controls-wrap .stage-picker-kicker,
+.controls-wrap .control-title{
+  color:#969dad !important;
+  font-size:9px !important;
+  font-weight:800 !important;
+  letter-spacing:.115em !important;
+  line-height:17px !important;
+}
+
+/* Remove the obsolete decorative hint completely */
+.controls-wrap .stage-key-hint{
+  display:none !important;
+}
+
+/* Give both control areas the same clean visual weight */
+.controls-wrap .stage-select-shell{
+  border-radius:10px !important;
+  border-color:rgba(var(--picker-rgb),.28) !important;
+  background:rgba(24,29,39,.88) !important;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.018) !important;
+}
+
+.controls-wrap .layer-button{
+  border-radius:10px !important;
+  min-height:42px !important;
+  font-size:12.5px !important;
+  font-weight:790 !important;
+  padding:9px 10px !important;
+}
+
+/* Make layer controls read as one clear group */
+.controls-wrap .layerbar{
+  column-gap:7px !important;
+}
+
+@media(max-width:899px){
+  .controls-wrap{
+    grid-template-columns:1fr !important;
+    gap:8px !important;
+    padding:8px !important;
+  }
+
+  .controls-wrap .plaintext-selector-panel{
+    padding-right:0 !important;
+  }
+
+  .controls-wrap .layerbar{
+    padding-left:0 !important;
+    padding-top:8px !important;
+    border-left:0 !important;
+    border-top:1px solid rgba(255,255,255,.06) !important;
+  }
+
+  .header{
+    padding:12px 8px 9px !important;
+  }
+
+  .header h1{
+    font-size:18px !important;
+  }
+}
+
+
+/* =========================================================
+   V56 — TOOLBAR REDESIGN
+   One compact, functional control strip instead of two mini-panels.
+   Stage label is integrated into its control.
+   Layers are a segmented control group.
+   Map/grid/glow/filter logic remains untouched.
+   ========================================================= */
+
+.header{
+  padding:13px 12px 9px !important;
+}
+
+.header h1{
+  margin:0 !important;
+  font-size:19px !important;
+  font-weight:780 !important;
+  letter-spacing:-.02em !important;
+}
+
+/* The whole control area behaves like one actual toolbar. */
+.controls-wrap{
+  position:sticky !important;
+  top:0 !important;
+  z-index:90 !important;
+  display:flex !important;
+  align-items:center !important;
+  gap:10px !important;
+  padding:8px !important;
+  margin-bottom:9px !important;
+  border:1px solid rgba(255,255,255,.055) !important;
+  border-radius:13px !important;
+  background:rgba(14,18,26,.985) !important;
+  box-shadow:
+    0 8px 22px rgba(0,0,0,.18),
+    inset 0 1px 0 rgba(255,255,255,.025) !important;
+}
+
+/* Reset earlier heading-based layout rules. */
+.controls-wrap .plaintext-selector-panel,
+.controls-wrap .stage-picker,
+.controls-wrap .layerbar{
+  position:static !important;
+  padding:0 !important;
+  margin:0 !important;
+  border:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
+
+.controls-wrap .plaintext-selector-panel{
+  flex:0 1 430px !important;
+  min-width:300px !important;
+}
+
+.controls-wrap .stage-picker{
+  display:block !important;
+}
+
+/* Stage control is one clean horizontal module. */
+.controls-wrap .stage-select-shell{
+  width:100% !important;
+  height:44px !important;
+  min-height:44px !important;
+  display:flex !important;
+  align-items:center !important;
+  gap:5px !important;
+  padding:4px 6px !important;
+  border:1px solid rgba(var(--picker-rgb),.27) !important;
+  border-radius:10px !important;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.024), rgba(255,255,255,.008)),
+    rgba(21,26,36,.92) !important;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.018) !important;
+  animation:none !important;
+  transform:none !important;
+}
+
+/* No extra oval / halo. */
+.controls-wrap .stage-select-shell::before,
+.map-app.stage-focus .controls-wrap .stage-select-shell::before{
+  display:none !important;
+  content:none !important;
+}
+
+/* Inline name replaces the awkward floating heading. */
+.controls-wrap .stage-inline-label{
+  flex:0 0 auto !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  height:28px !important;
+  padding:0 8px !important;
+  border-right:1px solid rgba(255,255,255,.075) !important;
+  color:#8f97a8 !important;
+  font-size:8.5px !important;
+  font-weight:850 !important;
+  letter-spacing:.105em !important;
+  line-height:1 !important;
+  white-space:nowrap !important;
+}
+
+/* Accent is redundant now; keep it as a tiny state marker. */
+.controls-wrap .stage-accent{
+  flex:0 0 3px !important;
+  width:3px !important;
+  height:19px !important;
+  margin:0 1px 0 0 !important;
+  border-radius:999px !important;
+}
+
+/* Compact navigation arrows. */
+.controls-wrap .stage-nav{
+  flex:0 0 32px !important;
+  width:32px !important;
+  height:32px !important;
+  min-width:32px !important;
+  min-height:32px !important;
+  padding:0 !important;
+  border:0 !important;
+  border-radius:8px !important;
+  background:rgba(255,255,255,.035) !important;
+  color:#cfd3dd !important;
+  font-size:15px !important;
+  box-shadow:none !important;
+}
+
+.controls-wrap .stage-nav:hover{
+  background:rgba(var(--picker-rgb),.13) !important;
+  color:#fff !important;
+}
+
+.controls-wrap .stage-select{
+  flex:1 1 auto !important;
+  width:auto !important;
+  min-width:0 !important;
+  height:34px !important;
+  min-height:34px !important;
+  padding:0 7px !important;
+  border:0 !important;
+  outline:0 !important;
+  background:transparent !important;
+  color:#f0edf4 !important;
+  font-size:12.5px !important;
+  font-weight:800 !important;
+  box-shadow:none !important;
+}
+
+.controls-wrap .stage-chevron{
+  display:none !important;
+}
+
+/* Thin divider between the two functional groups. */
+.controls-wrap .layerbar{
+  flex:1 1 auto !important;
+  min-width:0 !important;
+  height:44px !important;
+  display:flex !important;
+  align-items:center !important;
+  gap:6px !important;
+  padding-left:10px !important;
+  border-left:1px solid rgba(255,255,255,.07) !important;
+}
+
+/* LAYERS is now a compact inline toolbar label, not another heading. */
+.controls-wrap .toolbar-inline-title{
+  position:static !important;
+  flex:0 0 auto !important;
+  width:auto !important;
+  height:auto !important;
+  min-height:0 !important;
+  margin:0 2px 0 0 !important;
+  padding:0 4px 0 0 !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  color:#8f97a8 !important;
+  font-size:8.5px !important;
+  font-weight:850 !important;
+  letter-spacing:.105em !important;
+  line-height:1 !important;
+}
+
+/* Layer toggles become one balanced segmented row. */
+.controls-wrap .layer-button{
+  flex:1 1 0 !important;
+  width:auto !important;
+  min-width:0 !important;
+  height:36px !important;
+  min-height:36px !important;
+  margin:0 !important;
+  padding:0 9px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:7px !important;
+  border-radius:8px !important;
+  font-size:12px !important;
+  font-weight:790 !important;
+  line-height:1.05 !important;
+  text-align:center !important;
+  white-space:nowrap !important;
+}
+
+.controls-wrap .layer-button .swatch{
+  flex:0 0 10px !important;
+  width:10px !important;
+  height:10px !important;
+  min-width:10px !important;
+}
+
+/* Mobile: still one plaque; stage first, layers underneath in 2×2. */
+@media(max-width:899px){
+  .controls-wrap{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:7px !important;
+    padding:7px !important;
+  }
+
+  .controls-wrap .plaintext-selector-panel{
+    min-width:0 !important;
+    width:100% !important;
+  }
+
+  .controls-wrap .stage-select-shell{
+    height:45px !important;
+    min-height:45px !important;
+  }
+
+  .controls-wrap .stage-inline-label{
+    font-size:8px !important;
+    padding:0 7px !important;
+  }
+
+  .controls-wrap .stage-nav{
+    flex-basis:34px !important;
+    width:34px !important;
+    height:34px !important;
+    min-width:34px !important;
+    min-height:34px !important;
+  }
+
+  .controls-wrap .stage-select{
+    font-size:16px !important; /* avoids iOS zoom */
+  }
+
+  .controls-wrap .layerbar{
+    width:100% !important;
+    height:auto !important;
+    display:grid !important;
+    grid-template-columns:auto repeat(2,minmax(0,1fr)) !important;
+    gap:6px !important;
+    padding:7px 0 0 0 !important;
+    border-left:0 !important;
+    border-top:1px solid rgba(255,255,255,.06) !important;
+  }
+
+  .controls-wrap .toolbar-inline-title{
+    grid-row:1 / span 2 !important;
+    align-self:stretch !important;
+    padding:0 8px 0 2px !important;
+    border-right:1px solid rgba(255,255,255,.065) !important;
+  }
+
+  .controls-wrap .layer-button{
+    width:100% !important;
+    height:38px !important;
+    min-height:38px !important;
+    justify-content:flex-start !important;
+    padding:0 10px !important;
+    font-size:11.6px !important;
+  }
+
+  .header{
+    padding:11px 8px 8px !important;
+  }
+
+  .header h1{
+    font-size:18px !important;
+  }
+}
+
+@media(max-width:520px){
+  .controls-wrap .stage-inline-label{
+    max-width:74px !important;
+    white-space:normal !important;
+    text-align:left !important;
+    line-height:1.05 !important;
+  }
+}
+
+
+/* =========================================================
+   V57 — MORE SPACE FOR STAGE + REMOVE COLOR ACCENT
+   Only the sticky toolbar proportions are adjusted.
+   ========================================================= */
+
+/* Give the plaintext-stage module noticeably more horizontal room. */
+.controls-wrap .plaintext-selector-panel{
+  flex:0 1 560px !important;
+  min-width:460px !important;
+}
+
+/* Remove the colored vertical marker beside the stage value. */
+.controls-wrap .stage-accent{
+  display:none !important;
+}
+
+/* Use the freed space for the actual stage text. */
+.controls-wrap .stage-select-shell{
+  gap:6px !important;
+}
+
+.controls-wrap .stage-select{
+  flex:1 1 auto !important;
+  min-width:0 !important;
+  padding-left:10px !important;
+  padding-right:10px !important;
+  white-space:nowrap !important;
+  overflow:visible !important;
+  text-overflow:clip !important;
+}
+
+/* Let the Layers side flex into whatever space remains. */
+.controls-wrap .layerbar{
+  flex:1 1 0 !important;
+}
+
+/* On narrower desktops, reduce gracefully without clipping the selected stage. */
+@media(min-width:900px) and (max-width:1250px){
+  .controls-wrap .plaintext-selector-panel{
+    flex-basis:500px !important;
+    min-width:420px !important;
+  }
+
+  .controls-wrap .stage-inline-label{
+    padding-left:7px !important;
+    padding-right:7px !important;
+  }
+
+  .controls-wrap .layer-button{
+    padding-left:7px !important;
+    padding-right:7px !important;
+    font-size:11.5px !important;
+  }
+}
+
+/* Mobile remains fluid. */
+@media(max-width:899px){
+  .controls-wrap .plaintext-selector-panel{
+    min-width:0 !important;
+    width:100% !important;
+    flex-basis:auto !important;
+  }
+}
+
+
+/* =========================================================
+   V58 — SUBTLE ANIMATED GLOW AROUND THE WHOLE TOP TOOLBAR
+   Applies to the single plaque containing PLAINTEXT + LAYERS.
+   Map/grid/stage/layer logic is untouched.
+   ========================================================= */
+
+.controls-wrap{
+  isolation:isolate !important;
+  overflow:visible !important;
+  animation:toolbarGlowBreath 4.8s ease-in-out infinite !important;
+}
+
+/* Thin flowing multi-color border around the entire plaque. */
+.controls-wrap::before{
+  content:"" !important;
+  position:absolute !important;
+  inset:-1px !important;
+  z-index:-1 !important;
+  pointer-events:none !important;
+  border-radius:14px !important;
+  padding:1px !important;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(123,77,177,.82),
+      rgba(219,145,207,.72),
+      rgba(74,151,224,.78),
+      rgba(82,174,101,.60),
+      rgba(123,77,177,.82)
+    ) !important;
+  background-size:260% 100% !important;
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0) !important;
+  -webkit-mask-composite:xor !important;
+  mask-composite:exclude !important;
+
+  opacity:.58 !important;
+  animation:
+    toolbarBorderFlow 8s linear infinite,
+    toolbarBorderPulse 4.8s ease-in-out infinite !important;
+}
+
+/* Very soft aura outside the plaque, synchronized with the border. */
+.controls-wrap::after{
+  content:"" !important;
+  position:absolute !important;
+  inset:-5px !important;
+  z-index:-2 !important;
+  pointer-events:none !important;
+  border-radius:18px !important;
+  background:
+    linear-gradient(
+      110deg,
+      rgba(123,77,177,.24),
+      rgba(219,145,207,.18),
+      rgba(74,151,224,.22),
+      rgba(82,174,101,.14),
+      rgba(123,77,177,.24)
+    ) !important;
+  background-size:260% 100% !important;
+  filter:blur(10px) !important;
+  opacity:.22 !important;
+  animation:
+    toolbarBorderFlow 8s linear infinite,
+    toolbarAuraPulse 4.8s ease-in-out infinite !important;
+}
+
+@keyframes toolbarBorderFlow{
+  0%   { background-position:0% 50%; }
+  100% { background-position:260% 50%; }
+}
+
+@keyframes toolbarBorderPulse{
+  0%,100% { opacity:.38; }
+  50%     { opacity:.82; }
+}
+
+@keyframes toolbarAuraPulse{
+  0%,100% { opacity:.10; transform:scale(1); }
+  50%     { opacity:.28; transform:scale(1.003); }
+}
+
+@keyframes toolbarGlowBreath{
+  0%,100%{
+    box-shadow:
+      0 8px 22px rgba(0,0,0,.18),
+      0 0 0 rgba(123,77,177,0),
+      inset 0 1px 0 rgba(255,255,255,.025) !important;
+  }
+  50%{
+    box-shadow:
+      0 8px 24px rgba(0,0,0,.20),
+      0 0 18px rgba(123,77,177,.12),
+      inset 0 1px 0 rgba(255,255,255,.035) !important;
+  }
+}
+
+/* Keep it calm on smaller screens. */
+@media(max-width:899px){
+  .controls-wrap::before{
+    border-radius:13px !important;
+    opacity:.50 !important;
+  }
+
+  .controls-wrap::after{
+    inset:-4px !important;
+    border-radius:16px !important;
+    filter:blur(8px) !important;
+  }
+}
+
+/* Respect system accessibility preference. */
+@media(prefers-reduced-motion:reduce){
+  .controls-wrap,
+  .controls-wrap::before,
+  .controls-wrap::after{
+    animation:none !important;
+  }
+
+  .controls-wrap::before{
+    opacity:.48 !important;
+    background-position:40% 50% !important;
+  }
+
+  .controls-wrap::after{
+    opacity:.12 !important;
+  }
+}
+
+
+/* =========================================================
+   V59 — CLEAR / VISIBLE TOOLBAR PULSE
+   Stronger animated border + glow around the ONE sticky plaque.
+   Overrides the subtler V58 effect.
+   ========================================================= */
+
+.controls-wrap{
+  border:2px solid rgba(123,77,177,.95) !important;
+  animation:toolbarStrongPulse 3.6s ease-in-out infinite !important;
+}
+
+/* Disable the old nearly invisible gradient pseudo-layers. */
+.controls-wrap::before,
+.controls-wrap::after{
+  display:none !important;
+  content:none !important;
+  animation:none !important;
+}
+
+/* Clearly cycles through the four map/layer colors. */
+@keyframes toolbarStrongPulse{
+  0%,100%{
+    border-color:rgba(123,77,177,.96);
+    box-shadow:
+      0 0 0 1px rgba(123,77,177,.18),
+      0 0 14px rgba(123,77,177,.46),
+      0 0 30px rgba(123,77,177,.22),
+      0 8px 22px rgba(0,0,0,.20),
+      inset 0 0 16px rgba(123,77,177,.055) !important;
+  }
+
+  25%{
+    border-color:rgba(219,145,207,.98);
+    box-shadow:
+      0 0 0 1px rgba(219,145,207,.22),
+      0 0 17px rgba(219,145,207,.54),
+      0 0 34px rgba(219,145,207,.26),
+      0 8px 22px rgba(0,0,0,.20),
+      inset 0 0 18px rgba(219,145,207,.065) !important;
+  }
+
+  50%{
+    border-color:rgba(74,151,224,.98);
+    box-shadow:
+      0 0 0 1px rgba(74,151,224,.22),
+      0 0 18px rgba(74,151,224,.58),
+      0 0 36px rgba(74,151,224,.28),
+      0 8px 22px rgba(0,0,0,.20),
+      inset 0 0 18px rgba(74,151,224,.07) !important;
+  }
+
+  75%{
+    border-color:rgba(82,174,101,.96);
+    box-shadow:
+      0 0 0 1px rgba(82,174,101,.20),
+      0 0 16px rgba(82,174,101,.50),
+      0 0 32px rgba(82,174,101,.24),
+      0 8px 22px rgba(0,0,0,.20),
+      inset 0 0 17px rgba(82,174,101,.06) !important;
+  }
+}
+
+/* Make the pulse a little stronger at the midpoint of each color transition. */
+@keyframes toolbarStrongPulseMobile{
+  0%,100%{
+    border-color:rgba(123,77,177,.96);
+    box-shadow:
+      0 0 12px rgba(123,77,177,.42),
+      0 0 24px rgba(123,77,177,.18),
+      0 6px 18px rgba(0,0,0,.20) !important;
+  }
+  33%{
+    border-color:rgba(219,145,207,.98);
+    box-shadow:
+      0 0 14px rgba(219,145,207,.48),
+      0 0 28px rgba(219,145,207,.20),
+      0 6px 18px rgba(0,0,0,.20) !important;
+  }
+  66%{
+    border-color:rgba(74,151,224,.98);
+    box-shadow:
+      0 0 15px rgba(74,151,224,.50),
+      0 0 30px rgba(74,151,224,.22),
+      0 6px 18px rgba(0,0,0,.20) !important;
+  }
+}
+
+@media(max-width:899px){
+  .controls-wrap{
+    animation:toolbarStrongPulseMobile 3.2s ease-in-out infinite !important;
+  }
+}
+
+/* Keep accessibility preference respected. */
+@media(prefers-reduced-motion:reduce){
+  .controls-wrap{
+    animation:none !important;
+    border-color:rgba(123,77,177,.9) !important;
+    box-shadow:
+      0 0 14px rgba(123,77,177,.40),
+      0 8px 22px rgba(0,0,0,.20) !important;
+  }
+}
+
+
+/* =========================================================
+   V60 — LAYER BUTTONS PULSE IN THEIR OWN COLORS
+   Remove the global toolbar pulse from v59.
+   Make Route / Ciphertext / Key structures / Supporting mirrors
+   visibly pulse in their own colors.
+   ========================================================= */
+
+/* Turn off the whole-toolbar pulse from v59. */
+.controls-wrap{
+  animation:none !important;
+  border:1px solid rgba(255,255,255,.055) !important;
+  box-shadow:
+    0 8px 22px rgba(0,0,0,.18),
+    inset 0 1px 0 rgba(255,255,255,.025) !important;
+}
+
+.controls-wrap::before,
+.controls-wrap::after{
+  display:none !important;
+  content:none !important;
+  animation:none !important;
+}
+
+/* Each layer button gets its own ongoing colored pulse. */
+.controls-wrap .layer-button{
+  position:relative !important;
+  overflow:visible !important;
+  animation:layerButtonPulse 3.2s ease-in-out infinite !important;
+  will-change:border-color, box-shadow, transform;
+}
+
+/* Give each button a soft outer halo in its own color. */
+.controls-wrap .layer-button::after{
+  content:"" !important;
+  position:absolute !important;
+  inset:-4px !important;
+  z-index:-1 !important;
+  pointer-events:none !important;
+  border-radius:12px !important;
+  background:rgba(var(--ui-rgb),.18) !important;
+  filter:blur(9px) !important;
+  opacity:.18 !important;
+  animation:layerButtonAura 3.2s ease-in-out infinite !important;
+}
+
+/* Make the color swatch pulse too, so the effect is obvious. */
+.controls-wrap .layer-button .swatch{
+  animation:layerSwatchPulse 3.2s ease-in-out infinite !important;
+}
+
+/* Stronger pulse when the layer is enabled. */
+#layer-route:checked ~ .controls-wrap label[for="layer-route"],
+#layer-cipher:checked ~ .controls-wrap label[for="layer-cipher"],
+#layer-key:checked ~ .controls-wrap label[for="layer-key"],
+#layer-mirror:checked ~ .controls-wrap label[for="layer-mirror"]{
+  animation:layerButtonPulseActive 2.8s ease-in-out infinite !important;
+}
+
+#layer-route:checked ~ .controls-wrap label[for="layer-route"]::after,
+#layer-cipher:checked ~ .controls-wrap label[for="layer-cipher"]::after,
+#layer-key:checked ~ .controls-wrap label[for="layer-key"]::after,
+#layer-mirror:checked ~ .controls-wrap label[for="layer-mirror"]::after{
+  animation:layerButtonAuraActive 2.8s ease-in-out infinite !important;
+  opacity:.26 !important;
+}
+
+#layer-route:checked ~ .controls-wrap label[for="layer-route"] .swatch,
+#layer-cipher:checked ~ .controls-wrap label[for="layer-cipher"] .swatch,
+#layer-key:checked ~ .controls-wrap label[for="layer-key"] .swatch,
+#layer-mirror:checked ~ .controls-wrap label[for="layer-mirror"] .swatch{
+  animation:layerSwatchPulseActive 2.8s ease-in-out infinite !important;
+}
+
+/* Stagger timing slightly so the four pulses don't look dead-flat. */
+label[for="layer-route"]{ animation-delay:0s !important; }
+label[for="layer-route"]::after,
+label[for="layer-route"] .swatch{ animation-delay:0s !important; }
+
+label[for="layer-cipher"]{ animation-delay:.24s !important; }
+label[for="layer-cipher"]::after,
+label[for="layer-cipher"] .swatch{ animation-delay:.24s !important; }
+
+label[for="layer-key"]{ animation-delay:.48s !important; }
+label[for="layer-key"]::after,
+label[for="layer-key"] .swatch{ animation-delay:.48s !important; }
+
+label[for="layer-mirror"]{ animation-delay:.72s !important; }
+label[for="layer-mirror"]::after,
+label[for="layer-mirror"] .swatch{ animation-delay:.72s !important; }
+
+@keyframes layerButtonPulse{
+  0%,100%{
+    transform:translateY(0);
+    border-color:rgba(var(--ui-rgb),.34);
+    box-shadow:
+      0 2px 8px rgba(0,0,0,.12),
+      0 0 0 rgba(var(--ui-rgb),0),
+      inset 0 0 0 1px rgba(255,255,255,.025);
+  }
+  50%{
+    transform:translateY(-1px);
+    border-color:rgba(var(--ui-rgb),.74);
+    box-shadow:
+      0 3px 10px rgba(0,0,0,.14),
+      0 0 14px rgba(var(--ui-rgb),.28),
+      0 0 24px rgba(var(--ui-rgb),.10),
+      inset 0 0 0 1px rgba(255,255,255,.03);
+  }
+}
+
+@keyframes layerButtonAura{
+  0%,100%{
+    opacity:.12;
+    transform:scale(.99);
+  }
+  50%{
+    opacity:.32;
+    transform:scale(1.015);
+  }
+}
+
+@keyframes layerSwatchPulse{
+  0%,100%{
+    box-shadow:
+      0 0 6px rgba(var(--ui-rgb),.18),
+      inset 0 0 4px rgba(var(--ui-rgb),.06);
+  }
+  50%{
+    box-shadow:
+      0 0 10px rgba(var(--ui-rgb),.42),
+      0 0 18px rgba(var(--ui-rgb),.12),
+      inset 0 0 4px rgba(var(--ui-rgb),.08);
+  }
+}
+
+@keyframes layerButtonPulseActive{
+  0%,100%{
+    transform:translateY(0);
+    border-color:rgba(var(--ui-rgb),.56);
+    box-shadow:
+      0 3px 10px rgba(0,0,0,.14),
+      0 0 10px rgba(var(--ui-rgb),.12),
+      inset 0 0 0 1px rgba(255,255,255,.035);
+  }
+  50%{
+    transform:translateY(-1px);
+    border-color:rgba(var(--ui-rgb),.96);
+    box-shadow:
+      0 4px 12px rgba(0,0,0,.15),
+      0 0 18px rgba(var(--ui-rgb),.40),
+      0 0 32px rgba(var(--ui-rgb),.16),
+      inset 0 0 0 1px rgba(255,255,255,.045);
+  }
+}
+
+@keyframes layerButtonAuraActive{
+  0%,100%{
+    opacity:.18;
+    transform:scale(1);
+  }
+  50%{
+    opacity:.42;
+    transform:scale(1.02);
+  }
+}
+
+@keyframes layerSwatchPulseActive{
+  0%,100%{
+    box-shadow:
+      0 0 8px rgba(var(--ui-rgb),.24),
+      inset 0 0 4px rgba(var(--ui-rgb),.08);
+  }
+  50%{
+    box-shadow:
+      0 0 12px rgba(var(--ui-rgb),.56),
+      0 0 20px rgba(var(--ui-rgb),.18),
+      inset 0 0 5px rgba(var(--ui-rgb),.10);
+  }
+}
+
+/* Keep it readable on phones. */
+@media(max-width:899px){
+  .controls-wrap .layer-button::after{
+    inset:-3px !important;
+    filter:blur(7px) !important;
+  }
+}
+
+/* Accessibility */
+@media(prefers-reduced-motion:reduce){
+  .controls-wrap .layer-button,
+  .controls-wrap .layer-button::after,
+  .controls-wrap .layer-button .swatch{
+    animation:none !important;
+  }
+}
+
+
+/* =========================================================
+   V61 — BRIGHT NEON LAYER BUTTONS
+   Make the four layer buttons visibly glow with a pleasant neon effect.
+   ========================================================= */
+
+/* Stronger neon base for every layer button */
+.controls-wrap .layer-button{
+  position:relative !important;
+  overflow:visible !important;
+  isolation:isolate !important;
+  border-width:1.5px !important;
+  background:
+    linear-gradient(180deg,
+      rgba(var(--ui-rgb),.14),
+      rgba(var(--ui-rgb),.06)),
+    rgba(18,23,32,.96) !important;
+  animation:neonLayerButton 2.65s ease-in-out infinite !important;
+}
+
+/* Main neon aura around each button */
+.controls-wrap .layer-button::before{
+  content:"" !important;
+  position:absolute !important;
+  inset:-2px !important;
+  z-index:-1 !important;
+  border-radius:10px !important;
+  pointer-events:none !important;
+  box-shadow:
+    0 0 0 1px rgba(var(--ui-rgb),.20),
+    0 0 12px rgba(var(--ui-rgb),.32),
+    0 0 24px rgba(var(--ui-rgb),.18),
+    0 0 40px rgba(var(--ui-rgb),.08) !important;
+  opacity:.65 !important;
+  animation:neonLayerAura 2.65s ease-in-out infinite !important;
+}
+
+/* Softer outer bloom */
+.controls-wrap .layer-button::after{
+  content:"" !important;
+  position:absolute !important;
+  inset:-6px !important;
+  z-index:-2 !important;
+  border-radius:13px !important;
+  pointer-events:none !important;
+  background:rgba(var(--ui-rgb),.28) !important;
+  filter:blur(12px) !important;
+  opacity:.22 !important;
+  animation:neonLayerBloom 2.65s ease-in-out infinite !important;
+}
+
+/* Text itself glows a bit */
+.controls-wrap .layer-button{
+  color:#f3f6fb !important;
+  text-shadow:
+    0 0 7px rgba(255,255,255,.06),
+    0 0 10px rgba(var(--ui-rgb),.14) !important;
+}
+
+/* Swatches become obvious neon points */
+.controls-wrap .layer-button .swatch{
+  border-color:rgba(var(--ui-rgb),.88) !important;
+  background:rgba(var(--ui-rgb),.24) !important;
+  animation:neonSwatch 2.65s ease-in-out infinite !important;
+}
+
+/* Active layers glow more strongly */
+#layer-route:checked ~ .controls-wrap label[for="layer-route"],
+#layer-cipher:checked ~ .controls-wrap label[for="layer-cipher"],
+#layer-key:checked ~ .controls-wrap label[for="layer-key"],
+#layer-mirror:checked ~ .controls-wrap label[for="layer-mirror"]{
+  animation:neonLayerButtonActive 2.25s ease-in-out infinite !important;
+}
+
+#layer-route:checked ~ .controls-wrap label[for="layer-route"]::before,
+#layer-cipher:checked ~ .controls-wrap label[for="layer-cipher"]::before,
+#layer-key:checked ~ .controls-wrap label[for="layer-key"]::before,
+#layer-mirror:checked ~ .controls-wrap label[for="layer-mirror"]::before{
+  animation:neonLayerAuraActive 2.25s ease-in-out infinite !important;
+  opacity:.95 !important;
+}
+
+#layer-route:checked ~ .controls-wrap label[for="layer-route"]::after,
+#layer-cipher:checked ~ .controls-wrap label[for="layer-cipher"]::after,
+#layer-key:checked ~ .controls-wrap label[for="layer-key"]::after,
+#layer-mirror:checked ~ .controls-wrap label[for="layer-mirror"]::after{
+  animation:neonLayerBloomActive 2.25s ease-in-out infinite !important;
+  opacity:.34 !important;
+}
+
+#layer-route:checked ~ .controls-wrap label[for="layer-route"] .swatch,
+#layer-cipher:checked ~ .controls-wrap label[for="layer-cipher"] .swatch,
+#layer-key:checked ~ .controls-wrap label[for="layer-key"] .swatch,
+#layer-mirror:checked ~ .controls-wrap label[for="layer-mirror"] .swatch{
+  animation:neonSwatchActive 2.25s ease-in-out infinite !important;
+}
+
+/* Slight stagger so the neon feels alive */
+label[for="layer-route"],
+label[for="layer-route"]::before,
+label[for="layer-route"]::after,
+label[for="layer-route"] .swatch{ animation-delay:0s !important; }
+
+label[for="layer-cipher"],
+label[for="layer-cipher"]::before,
+label[for="layer-cipher"]::after,
+label[for="layer-cipher"] .swatch{ animation-delay:.18s !important; }
+
+label[for="layer-key"],
+label[for="layer-key"]::before,
+label[for="layer-key"]::after,
+label[for="layer-key"] .swatch{ animation-delay:.36s !important; }
+
+label[for="layer-mirror"],
+label[for="layer-mirror"]::before,
+label[for="layer-mirror"]::after,
+label[for="layer-mirror"] .swatch{ animation-delay:.54s !important; }
+
+@keyframes neonLayerButton{
+  0%,100%{
+    transform:translateY(0);
+    border-color:rgba(var(--ui-rgb),.48);
+    box-shadow:
+      0 2px 8px rgba(0,0,0,.12),
+      inset 0 0 8px rgba(var(--ui-rgb),.05),
+      inset 0 0 0 1px rgba(255,255,255,.03);
+  }
+  50%{
+    transform:translateY(-1px);
+    border-color:rgba(var(--ui-rgb),.96);
+    box-shadow:
+      0 4px 12px rgba(0,0,0,.16),
+      0 0 10px rgba(var(--ui-rgb),.24),
+      inset 0 0 14px rgba(var(--ui-rgb),.09),
+      inset 0 0 0 1px rgba(255,255,255,.04);
+  }
+}
+
+@keyframes neonLayerAura{
+  0%,100%{
+    opacity:.54;
+    transform:scale(1);
+    box-shadow:
+      0 0 0 1px rgba(var(--ui-rgb),.16),
+      0 0 10px rgba(var(--ui-rgb),.26),
+      0 0 20px rgba(var(--ui-rgb),.14),
+      0 0 34px rgba(var(--ui-rgb),.06);
+  }
+  50%{
+    opacity:.96;
+    transform:scale(1.012);
+    box-shadow:
+      0 0 0 1px rgba(var(--ui-rgb),.28),
+      0 0 16px rgba(var(--ui-rgb),.44),
+      0 0 30px rgba(var(--ui-rgb),.24),
+      0 0 48px rgba(var(--ui-rgb),.12);
+  }
+}
+
+@keyframes neonLayerBloom{
+  0%,100%{
+    opacity:.18;
+    transform:scale(.995);
+  }
+  50%{
+    opacity:.34;
+    transform:scale(1.02);
+  }
+}
+
+@keyframes neonSwatch{
+  0%,100%{
+    box-shadow:
+      0 0 8px rgba(var(--ui-rgb),.34),
+      0 0 14px rgba(var(--ui-rgb),.10),
+      inset 0 0 6px rgba(var(--ui-rgb),.08);
+  }
+  50%{
+    box-shadow:
+      0 0 12px rgba(var(--ui-rgb),.60),
+      0 0 22px rgba(var(--ui-rgb),.18),
+      0 0 32px rgba(var(--ui-rgb),.08),
+      inset 0 0 6px rgba(var(--ui-rgb),.12);
+  }
+}
+
+@keyframes neonLayerButtonActive{
+  0%,100%{
+    transform:translateY(0);
+    border-color:rgba(var(--ui-rgb),.78);
+    box-shadow:
+      0 4px 12px rgba(0,0,0,.16),
+      0 0 12px rgba(var(--ui-rgb),.24),
+      inset 0 0 14px rgba(var(--ui-rgb),.10),
+      inset 0 0 0 1px rgba(255,255,255,.04);
+  }
+  50%{
+    transform:translateY(-1px);
+    border-color:rgba(var(--ui-rgb),1);
+    box-shadow:
+      0 5px 14px rgba(0,0,0,.18),
+      0 0 20px rgba(var(--ui-rgb),.54),
+      0 0 34px rgba(var(--ui-rgb),.24),
+      inset 0 0 18px rgba(var(--ui-rgb),.14),
+      inset 0 0 0 1px rgba(255,255,255,.05);
+  }
+}
+
+@keyframes neonLayerAuraActive{
+  0%,100%{
+    opacity:.78;
+    transform:scale(1.005);
+    box-shadow:
+      0 0 0 1px rgba(var(--ui-rgb),.24),
+      0 0 14px rgba(var(--ui-rgb),.40),
+      0 0 26px rgba(var(--ui-rgb),.22),
+      0 0 40px rgba(var(--ui-rgb),.10);
+  }
+  50%{
+    opacity:1;
+    transform:scale(1.018);
+    box-shadow:
+      0 0 0 1px rgba(var(--ui-rgb),.34),
+      0 0 20px rgba(var(--ui-rgb),.70),
+      0 0 34px rgba(var(--ui-rgb),.34),
+      0 0 54px rgba(var(--ui-rgb),.16);
+  }
+}
+
+@keyframes neonLayerBloomActive{
+  0%,100%{
+    opacity:.26;
+    transform:scale(1);
+  }
+  50%{
+    opacity:.46;
+    transform:scale(1.026);
+  }
+}
+
+@keyframes neonSwatchActive{
+  0%,100%{
+    box-shadow:
+      0 0 10px rgba(var(--ui-rgb),.46),
+      0 0 18px rgba(var(--ui-rgb),.14),
+      inset 0 0 6px rgba(var(--ui-rgb),.10);
+  }
+  50%{
+    box-shadow:
+      0 0 14px rgba(var(--ui-rgb),.82),
+      0 0 26px rgba(var(--ui-rgb),.24),
+      0 0 38px rgba(var(--ui-rgb),.10),
+      inset 0 0 7px rgba(var(--ui-rgb),.14);
+  }
+}
+
+@media(max-width:899px){
+  .controls-wrap .layer-button::before{
+    inset:-1px !important;
+  }
+  .controls-wrap .layer-button::after{
+    inset:-4px !important;
+    filter:blur(9px) !important;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .controls-wrap .layer-button,
+  .controls-wrap .layer-button::before,
+  .controls-wrap .layer-button::after,
+  .controls-wrap .layer-button .swatch{
+    animation:none !important;
+  }
+}
+
+
+/* =========================================================
+   V62 — NEON GLOW + CLEAR PULSE FOR PLAINTEXT SECTION
+   Add the same kind of visible neon treatment to the left plaintext section.
+   Make it pulse clearly, not just glow statically.
+   Layer-button neon pulse from v61 stays in place.
+   ========================================================= */
+
+/* Strong neon pulse for the whole plaintext-stage control module */
+.controls-wrap .stage-select-shell,
+.map-app.stage-focus .controls-wrap .stage-select-shell{
+  position:relative !important;
+  overflow:visible !important;
+  isolation:isolate !important;
+  border-width:1.5px !important;
+  border-color:rgba(var(--picker-rgb),.78) !important;
+  background:
+    linear-gradient(180deg,
+      rgba(var(--picker-rgb),.12),
+      rgba(var(--picker-rgb),.05)),
+    rgba(18,23,32,.96) !important;
+  box-shadow:
+    0 4px 12px rgba(0,0,0,.18),
+    inset 0 0 14px rgba(var(--picker-rgb),.08),
+    inset 0 0 0 1px rgba(255,255,255,.04) !important;
+  animation:stageShellPulse 2.45s ease-in-out infinite !important;
+}
+
+/* Main neon perimeter */
+.controls-wrap .stage-select-shell::after,
+.map-app.stage-focus .controls-wrap .stage-select-shell::after{
+  content:"" !important;
+  position:absolute !important;
+  inset:-2px !important;
+  z-index:-1 !important;
+  pointer-events:none !important;
+  border-radius:11px !important;
+  box-shadow:
+    0 0 0 1px rgba(var(--picker-rgb),.22),
+    0 0 14px rgba(var(--picker-rgb),.36),
+    0 0 28px rgba(var(--picker-rgb),.18),
+    0 0 46px rgba(var(--picker-rgb),.08) !important;
+  opacity:.70 !important;
+  animation:stageShellAura 2.45s ease-in-out infinite !important;
+}
+
+/* Outer bloom */
+.controls-wrap .stage-picker::after{
+  content:"" !important;
+  position:absolute !important;
+  inset:auto 0 0 0 !important;
+  top:24px !important;
+  z-index:-2 !important;
+  pointer-events:none !important;
+  border-radius:14px !important;
+  background:rgba(var(--picker-rgb),.24) !important;
+  filter:blur(14px) !important;
+  opacity:.18 !important;
+  animation:stagePickerBloom 2.45s ease-in-out infinite !important;
+}
+
+/* Inline label should breathe too */
+.controls-wrap .stage-inline-label{
+  color:#eef1f7 !important;
+  text-shadow:
+    0 0 8px rgba(var(--picker-rgb),.16),
+    0 0 12px rgba(var(--picker-rgb),.08) !important;
+  animation:stageLabelPulse 2.45s ease-in-out infinite !important;
+}
+
+/* Make the selected stage text visibly pulse */
+.controls-wrap .stage-select{
+  color:#f7f4fb !important;
+  text-shadow:
+    0 0 8px rgba(var(--picker-rgb),.16),
+    0 0 14px rgba(var(--picker-rgb),.08) !important;
+  animation:stageTextPulse 2.45s ease-in-out infinite !important;
+}
+
+/* Stage arrows should glow and pulse too */
+.controls-wrap .stage-nav{
+  position:relative !important;
+  overflow:visible !important;
+  border:1px solid rgba(var(--picker-rgb),.34) !important;
+  background:rgba(var(--picker-rgb),.08) !important;
+  box-shadow:
+    0 0 8px rgba(var(--picker-rgb),.14),
+    inset 0 0 6px rgba(var(--picker-rgb),.05) !important;
+  animation:stageNavPulse 2.45s ease-in-out infinite !important;
+}
+
+.controls-wrap .stage-nav::after{
+  content:"" !important;
+  position:absolute !important;
+  inset:-3px !important;
+  z-index:-1 !important;
+  pointer-events:none !important;
+  border-radius:10px !important;
+  background:rgba(var(--picker-rgb),.22) !important;
+  filter:blur(8px) !important;
+  opacity:.14 !important;
+  animation:stageNavAura 2.45s ease-in-out infinite !important;
+}
+
+/* Let the left section run slightly ahead so it feels alive */
+.controls-wrap .stage-select-shell,
+.controls-wrap .stage-select-shell::after,
+.controls-wrap .stage-picker::after,
+.controls-wrap .stage-inline-label,
+.controls-wrap .stage-select,
+.controls-wrap .stage-nav,
+.controls-wrap .stage-nav::after{
+  animation-delay:.08s !important;
+}
+
+@keyframes stageShellPulse{
+  0%,100%{
+    transform:translateY(0);
+    border-color:rgba(var(--picker-rgb),.64);
+    box-shadow:
+      0 4px 12px rgba(0,0,0,.16),
+      0 0 10px rgba(var(--picker-rgb),.14),
+      inset 0 0 10px rgba(var(--picker-rgb),.06),
+      inset 0 0 0 1px rgba(255,255,255,.04);
+  }
+  50%{
+    transform:translateY(-1px);
+    border-color:rgba(var(--picker-rgb),1);
+    box-shadow:
+      0 6px 14px rgba(0,0,0,.18),
+      0 0 18px rgba(var(--picker-rgb),.34),
+      0 0 30px rgba(var(--picker-rgb),.14),
+      inset 0 0 18px rgba(var(--picker-rgb),.12),
+      inset 0 0 0 1px rgba(255,255,255,.05);
+  }
+}
+
+@keyframes stageShellAura{
+  0%,100%{
+    opacity:.60;
+    transform:scale(1);
+    box-shadow:
+      0 0 0 1px rgba(var(--picker-rgb),.18),
+      0 0 12px rgba(var(--picker-rgb),.28),
+      0 0 22px rgba(var(--picker-rgb),.12),
+      0 0 36px rgba(var(--picker-rgb),.06);
+  }
+  50%{
+    opacity:1;
+    transform:scale(1.014);
+    box-shadow:
+      0 0 0 1px rgba(var(--picker-rgb),.30),
+      0 0 18px rgba(var(--picker-rgb),.50),
+      0 0 32px rgba(var(--picker-rgb),.22),
+      0 0 54px rgba(var(--picker-rgb),.12);
+  }
+}
+
+@keyframes stagePickerBloom{
+  0%,100%{
+    opacity:.14;
+    transform:scale(.995);
+  }
+  50%{
+    opacity:.30;
+    transform:scale(1.018);
+  }
+}
+
+@keyframes stageLabelPulse{
+  0%,100%{
+    opacity:.90;
+    text-shadow:
+      0 0 6px rgba(var(--picker-rgb),.12),
+      0 0 10px rgba(var(--picker-rgb),.05);
+  }
+  50%{
+    opacity:1;
+    text-shadow:
+      0 0 10px rgba(var(--picker-rgb),.28),
+      0 0 18px rgba(var(--picker-rgb),.10);
+  }
+}
+
+@keyframes stageTextPulse{
+  0%,100%{
+    opacity:.94;
+    text-shadow:
+      0 0 6px rgba(var(--picker-rgb),.12),
+      0 0 10px rgba(var(--picker-rgb),.06);
+  }
+  50%{
+    opacity:1;
+    text-shadow:
+      0 0 10px rgba(var(--picker-rgb),.30),
+      0 0 18px rgba(var(--picker-rgb),.12);
+  }
+}
+
+@keyframes stageNavPulse{
+  0%,100%{
+    border-color:rgba(var(--picker-rgb),.28);
+    background:rgba(var(--picker-rgb),.06);
+    box-shadow:
+      0 0 7px rgba(var(--picker-rgb),.10),
+      inset 0 0 5px rgba(var(--picker-rgb),.04);
+  }
+  50%{
+    border-color:rgba(var(--picker-rgb),.82);
+    background:rgba(var(--picker-rgb),.14);
+    box-shadow:
+      0 0 12px rgba(var(--picker-rgb),.34),
+      0 0 22px rgba(var(--picker-rgb),.10),
+      inset 0 0 8px rgba(var(--picker-rgb),.07);
+  }
+}
+
+@keyframes stageNavAura{
+  0%,100%{
+    opacity:.10;
+    transform:scale(1);
+  }
+  50%{
+    opacity:.24;
+    transform:scale(1.03);
+  }
+}
+
+@media(max-width:899px){
+  .controls-wrap .stage-select-shell::after{
+    inset:-1px !important;
+  }
+  .controls-wrap .stage-picker::after{
+    top:22px !important;
+    filter:blur(10px) !important;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .controls-wrap .stage-select-shell,
+  .controls-wrap .stage-select-shell::after,
+  .controls-wrap .stage-picker::after,
+  .controls-wrap .stage-inline-label,
+  .controls-wrap .stage-select,
+  .controls-wrap .stage-nav,
+  .controls-wrap .stage-nav::after{
+    animation:none !important;
+  }
+}
+
+
+/* =========================================================
+   V63 — LEFT-TO-RIGHT WAVE PULSE
+   The toolbar should not just glow statically:
+   each layer button and the plaintext block brighten like a wave,
+   moving left → right in a noticeable but pleasant way.
+   ========================================================= */
+
+/* ---------- reset previous pulse emphasis so the new wave reads clearly ---------- */
+.controls-wrap .layer-button,
+.controls-wrap .layer-button::before,
+.controls-wrap .layer-button::after,
+.controls-wrap .layer-button .swatch,
+.controls-wrap .stage-select-shell,
+.controls-wrap .stage-select-shell::after,
+.controls-wrap .stage-picker::after,
+.controls-wrap .stage-inline-label,
+.controls-wrap .stage-select,
+.controls-wrap .stage-nav,
+.controls-wrap .stage-nav::after{
+  animation:none !important;
+}
+
+/* ---------- PLAINTEXT AREA: one clear wave across the whole left block ---------- */
+.controls-wrap .stage-select-shell,
+.map-app.stage-focus .controls-wrap .stage-select-shell{
+  position:relative !important;
+  overflow:visible !important;
+  isolation:isolate !important;
+  border-width:1.5px !important;
+  border-color:rgba(var(--picker-rgb),.72) !important;
+  background:
+    linear-gradient(180deg,
+      rgba(var(--picker-rgb),.10),
+      rgba(var(--picker-rgb),.04)),
+    rgba(18,23,32,.96) !important;
+  box-shadow:
+    0 4px 12px rgba(0,0,0,.17),
+    0 0 10px rgba(var(--picker-rgb),.16),
+    inset 0 0 10px rgba(var(--picker-rgb),.05),
+    inset 0 0 0 1px rgba(255,255,255,.035) !important;
+  animation:stageWaveBreath 2.85s ease-in-out infinite !important;
+}
+
+/* bright wave band moving across the plaintext block */
+.controls-wrap .stage-select-shell::before,
+.map-app.stage-focus .controls-wrap .stage-select-shell::before{
+  display:block !important;
+  content:"" !important;
+  position:absolute !important;
+  top:-2px !important;
+  bottom:-2px !important;
+  left:-28% !important;
+  width:34% !important;
+  z-index:-1 !important;
+  pointer-events:none !important;
+  border-radius:11px !important;
+  background:
+    linear-gradient(90deg,
+      rgba(var(--picker-rgb),0) 0%,
+      rgba(var(--picker-rgb),.06) 22%,
+      rgba(255,255,255,.34) 48%,
+      rgba(var(--picker-rgb),.42) 64%,
+      rgba(var(--picker-rgb),0) 100%) !important;
+  filter:blur(5px) !important;
+  opacity:.0 !important;
+  animation:toolbarWaveSweep 2.85s cubic-bezier(.45,0,.55,1) infinite !important;
+}
+
+.controls-wrap .stage-select-shell::after,
+.map-app.stage-focus .controls-wrap .stage-select-shell::after{
+  content:"" !important;
+  position:absolute !important;
+  inset:-3px !important;
+  z-index:-2 !important;
+  pointer-events:none !important;
+  border-radius:12px !important;
+  box-shadow:
+    0 0 0 1px rgba(var(--picker-rgb),.18),
+    0 0 14px rgba(var(--picker-rgb),.24),
+    0 0 28px rgba(var(--picker-rgb),.10) !important;
+  opacity:.58 !important;
+  animation:stageWaveAura 2.85s ease-in-out infinite !important;
+}
+
+.controls-wrap .stage-inline-label,
+.controls-wrap .stage-select,
+.controls-wrap .stage-nav{
+  position:relative !important;
+  z-index:1 !important;
+  animation:stageTextBreath 2.85s ease-in-out infinite !important;
+}
+
+.controls-wrap .stage-nav{
+  border:1px solid rgba(var(--picker-rgb),.30) !important;
+  background:rgba(var(--picker-rgb),.07) !important;
+  box-shadow:
+    0 0 7px rgba(var(--picker-rgb),.10),
+    inset 0 0 5px rgba(var(--picker-rgb),.04) !important;
+}
+
+/* ---------- LAYER BUTTONS: wave left → right across the whole layer row ---------- */
+.controls-wrap .layer-button{
+  position:relative !important;
+  overflow:visible !important;
+  isolation:isolate !important;
+  border-width:1.5px !important;
+  background:
+    linear-gradient(180deg,
+      rgba(var(--ui-rgb),.11),
+      rgba(var(--ui-rgb),.05)),
+    rgba(18,23,32,.96) !important;
+  color:#f3f6fb !important;
+  text-shadow:
+    0 0 8px rgba(255,255,255,.05),
+    0 0 8px rgba(var(--ui-rgb),.10) !important;
+  animation:layerWaveBreath 2.8s ease-in-out infinite !important;
+  will-change:box-shadow, border-color, transform;
+}
+
+/* internal sweeping bright band */
+.controls-wrap .layer-button::before{
+  content:"" !important;
+  position:absolute !important;
+  top:-2px !important;
+  bottom:-2px !important;
+  left:-30% !important;
+  width:38% !important;
+  z-index:-1 !important;
+  pointer-events:none !important;
+  border-radius:10px !important;
+  background:
+    linear-gradient(90deg,
+      rgba(var(--ui-rgb),0) 0%,
+      rgba(var(--ui-rgb),.07) 20%,
+      rgba(255,255,255,.30) 48%,
+      rgba(var(--ui-rgb),.44) 66%,
+      rgba(var(--ui-rgb),0) 100%) !important;
+  filter:blur(5px) !important;
+  opacity:0 !important;
+  animation:toolbarWaveSweep 2.8s cubic-bezier(.45,0,.55,1) infinite !important;
+}
+
+/* outer neon aura that peaks when the wave passes */
+.controls-wrap .layer-button::after{
+  content:"" !important;
+  position:absolute !important;
+  inset:-4px !important;
+  z-index:-2 !important;
+  pointer-events:none !important;
+  border-radius:12px !important;
+  box-shadow:
+    0 0 0 1px rgba(var(--ui-rgb),.16),
+    0 0 10px rgba(var(--ui-rgb),.22),
+    0 0 20px rgba(var(--ui-rgb),.08) !important;
+  opacity:.46 !important;
+  animation:layerWaveAura 2.8s ease-in-out infinite !important;
+}
+
+.controls-wrap .layer-button .swatch{
+  position:relative !important;
+  z-index:1 !important;
+  border-color:rgba(var(--ui-rgb),.80) !important;
+  background:rgba(var(--ui-rgb),.20) !important;
+  animation:layerSwatchWave 2.8s ease-in-out infinite !important;
+}
+
+/* stronger when checked */
+#layer-route:checked ~ .controls-wrap label[for="layer-route"],
+#layer-cipher:checked ~ .controls-wrap label[for="layer-cipher"],
+#layer-key:checked ~ .controls-wrap label[for="layer-key"],
+#layer-mirror:checked ~ .controls-wrap label[for="layer-mirror"]{
+  animation-name:layerWaveBreathActive !important;
+}
+
+#layer-route:checked ~ .controls-wrap label[for="layer-route"]::after,
+#layer-cipher:checked ~ .controls-wrap label[for="layer-cipher"]::after,
+#layer-key:checked ~ .controls-wrap label[for="layer-key"]::after,
+#layer-mirror:checked ~ .controls-wrap label[for="layer-mirror"]::after{
+  animation-name:layerWaveAuraActive !important;
+}
+
+#layer-route:checked ~ .controls-wrap label[for="layer-route"] .swatch,
+#layer-cipher:checked ~ .controls-wrap label[for="layer-cipher"] .swatch,
+#layer-key:checked ~ .controls-wrap label[for="layer-key"] .swatch,
+#layer-mirror:checked ~ .controls-wrap label[for="layer-mirror"] .swatch{
+  animation-name:layerSwatchWaveActive !important;
+}
+
+/* left → right order across the row */
+label[for="layer-route"],
+label[for="layer-route"]::before,
+label[for="layer-route"]::after,
+label[for="layer-route"] .swatch{ animation-delay:0s !important; }
+
+label[for="layer-cipher"],
+label[for="layer-cipher"]::before,
+label[for="layer-cipher"]::after,
+label[for="layer-cipher"] .swatch{ animation-delay:.20s !important; }
+
+label[for="layer-key"],
+label[for="layer-key"]::before,
+label[for="layer-key"]::after,
+label[for="layer-key"] .swatch{ animation-delay:.40s !important; }
+
+label[for="layer-mirror"],
+label[for="layer-mirror"]::before,
+label[for="layer-mirror"]::after,
+label[for="layer-mirror"] .swatch{ animation-delay:.60s !important; }
+
+/* ---------- keyframes ---------- */
+
+@keyframes toolbarWaveSweep{
+  0%{
+    left:-34%;
+    opacity:0;
+  }
+  12%{
+    opacity:.14;
+  }
+  35%{
+    opacity:.92;
+  }
+  55%{
+    opacity:.46;
+  }
+  100%{
+    left:108%;
+    opacity:0;
+  }
+}
+
+@keyframes stageWaveBreath{
+  0%,100%{
+    border-color:rgba(var(--picker-rgb),.58);
+    box-shadow:
+      0 4px 12px rgba(0,0,0,.16),
+      0 0 8px rgba(var(--picker-rgb),.12),
+      inset 0 0 8px rgba(var(--picker-rgb),.04),
+      inset 0 0 0 1px rgba(255,255,255,.035);
+  }
+  35%{
+    border-color:rgba(var(--picker-rgb),.98);
+    box-shadow:
+      0 6px 14px rgba(0,0,0,.18),
+      0 0 18px rgba(var(--picker-rgb),.36),
+      0 0 30px rgba(var(--picker-rgb),.14),
+      inset 0 0 16px rgba(var(--picker-rgb),.10),
+      inset 0 0 0 1px rgba(255,255,255,.05);
+  }
+  100%{
+    border-color:rgba(var(--picker-rgb),.58);
+  }
+}
+
+@keyframes stageWaveAura{
+  0%,100%{
+    opacity:.44;
+    transform:scale(1);
+    box-shadow:
+      0 0 0 1px rgba(var(--picker-rgb),.16),
+      0 0 12px rgba(var(--picker-rgb),.18),
+      0 0 22px rgba(var(--picker-rgb),.08);
+  }
+  35%{
+    opacity:1;
+    transform:scale(1.012);
+    box-shadow:
+      0 0 0 1px rgba(var(--picker-rgb),.28),
+      0 0 18px rgba(var(--picker-rgb),.44),
+      0 0 34px rgba(var(--picker-rgb),.18);
+  }
+}
+
+@keyframes stageTextBreath{
+  0%,100%{
+    text-shadow:
+      0 0 6px rgba(var(--picker-rgb),.10),
+      0 0 10px rgba(var(--picker-rgb),.04);
+  }
+  35%{
+    text-shadow:
+      0 0 10px rgba(var(--picker-rgb),.28),
+      0 0 18px rgba(var(--picker-rgb),.10);
+  }
+}
+
+@keyframes layerWaveBreath{
+  0%,100%{
+    border-color:rgba(var(--ui-rgb),.40);
+    box-shadow:
+      0 2px 8px rgba(0,0,0,.12),
+      0 0 7px rgba(var(--ui-rgb),.10),
+      inset 0 0 8px rgba(var(--ui-rgb),.04),
+      inset 0 0 0 1px rgba(255,255,255,.025);
+  }
+  35%{
+    border-color:rgba(var(--ui-rgb),.94);
+    box-shadow:
+      0 4px 12px rgba(0,0,0,.15),
+      0 0 18px rgba(var(--ui-rgb),.38),
+      0 0 30px rgba(var(--ui-rgb),.14),
+      inset 0 0 15px rgba(var(--ui-rgb),.10),
+      inset 0 0 0 1px rgba(255,255,255,.035);
+  }
+}
+
+@keyframes layerWaveBreathActive{
+  0%,100%{
+    border-color:rgba(var(--ui-rgb),.62);
+    box-shadow:
+      0 3px 10px rgba(0,0,0,.14),
+      0 0 12px rgba(var(--ui-rgb),.18),
+      inset 0 0 12px rgba(var(--ui-rgb),.07),
+      inset 0 0 0 1px rgba(255,255,255,.035);
+  }
+  35%{
+    border-color:rgba(var(--ui-rgb),1);
+    box-shadow:
+      0 5px 14px rgba(0,0,0,.16),
+      0 0 22px rgba(var(--ui-rgb),.54),
+      0 0 36px rgba(var(--ui-rgb),.22),
+      inset 0 0 18px rgba(var(--ui-rgb),.13),
+      inset 0 0 0 1px rgba(255,255,255,.05);
+  }
+}
+
+@keyframes layerWaveAura{
+  0%,100%{
+    opacity:.34;
+    transform:scale(1);
+    box-shadow:
+      0 0 0 1px rgba(var(--ui-rgb),.14),
+      0 0 10px rgba(var(--ui-rgb),.18),
+      0 0 20px rgba(var(--ui-rgb),.08);
+  }
+  35%{
+    opacity:.90;
+    transform:scale(1.016);
+    box-shadow:
+      0 0 0 1px rgba(var(--ui-rgb),.24),
+      0 0 18px rgba(var(--ui-rgb),.44),
+      0 0 34px rgba(var(--ui-rgb),.18);
+  }
+}
+
+@keyframes layerWaveAuraActive{
+  0%,100%{
+    opacity:.54;
+    transform:scale(1.004);
+    box-shadow:
+      0 0 0 1px rgba(var(--ui-rgb),.18),
+      0 0 12px rgba(var(--ui-rgb),.24),
+      0 0 22px rgba(var(--ui-rgb),.10);
+  }
+  35%{
+    opacity:1;
+    transform:scale(1.02);
+    box-shadow:
+      0 0 0 1px rgba(var(--ui-rgb),.30),
+      0 0 22px rgba(var(--ui-rgb),.60),
+      0 0 38px rgba(var(--ui-rgb),.22);
+  }
+}
+
+@keyframes layerSwatchWave{
+  0%,100%{
+    box-shadow:
+      0 0 7px rgba(var(--ui-rgb),.22),
+      inset 0 0 5px rgba(var(--ui-rgb),.06);
+  }
+  35%{
+    box-shadow:
+      0 0 12px rgba(var(--ui-rgb),.62),
+      0 0 20px rgba(var(--ui-rgb),.16),
+      inset 0 0 6px rgba(var(--ui-rgb),.10);
+  }
+}
+
+@keyframes layerSwatchWaveActive{
+  0%,100%{
+    box-shadow:
+      0 0 9px rgba(var(--ui-rgb),.36),
+      inset 0 0 5px rgba(var(--ui-rgb),.08);
+  }
+  35%{
+    box-shadow:
+      0 0 14px rgba(var(--ui-rgb),.84),
+      0 0 24px rgba(var(--ui-rgb),.20),
+      inset 0 0 7px rgba(var(--ui-rgb),.12);
+  }
+}
+
+@media(max-width:899px){
+  .controls-wrap .layer-button::before{
+    width:42% !important;
+  }
+  .controls-wrap .stage-select-shell::before{
+    width:38% !important;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .controls-wrap .layer-button,
+  .controls-wrap .layer-button::before,
+  .controls-wrap .layer-button::after,
+  .controls-wrap .layer-button .swatch,
+  .controls-wrap .stage-select-shell,
+  .controls-wrap .stage-select-shell::before,
+  .controls-wrap .stage-select-shell::after,
+  .controls-wrap .stage-inline-label,
+  .controls-wrap .stage-select,
+  .controls-wrap .stage-nav{
+    animation:none !important;
+  }
+}
+
+
+/* =========================================================
+   V64 — REAL VISIBLE SEQUENTIAL WAVE
+   IMPORTANT: this deliberately keeps the requested toolbar animation
+   even if the OS/browser has "Reduce motion" enabled.
+   ========================================================= */
+
+/* Kill every older toolbar animation so only this sequence is visible. */
+.controls-wrap .layer-button,
+.controls-wrap .layer-button::before,
+.controls-wrap .layer-button::after,
+.controls-wrap .layer-button .swatch,
+.controls-wrap .stage-select-shell,
+.controls-wrap .stage-select-shell::before,
+.controls-wrap .stage-select-shell::after,
+.controls-wrap .stage-picker::after,
+.controls-wrap .stage-inline-label,
+.controls-wrap .stage-select,
+.controls-wrap .stage-nav,
+.controls-wrap .stage-nav::after{
+  animation:none !important;
+}
+
+/* ---------- LAYERS: distinct ignition from left to right ---------- */
+
+.controls-wrap .layer-button{
+  position:relative !important;
+  z-index:1 !important;
+  overflow:visible !important;
+  transform:translateZ(0);
+  border:1.5px solid rgba(var(--ui-rgb),.34) !important;
+  background:
+    linear-gradient(180deg,
+      rgba(var(--ui-rgb),.09),
+      rgba(var(--ui-rgb),.035)),
+    rgba(18,23,32,.97) !important;
+  box-shadow:
+    0 2px 8px rgba(0,0,0,.14),
+    inset 0 0 8px rgba(var(--ui-rgb),.035) !important;
+  animation:realLayerIgnite 5.2s linear infinite !important;
+}
+
+.controls-wrap .layer-button .swatch{
+  border-color:rgba(var(--ui-rgb),.62) !important;
+  background:rgba(var(--ui-rgb),.16) !important;
+  animation:realSwatchIgnite 5.2s linear infinite !important;
+}
+
+/* Route → Ciphertext → Key → Mirrors */
+.controls-wrap label[for="layer-route"],
+.controls-wrap label[for="layer-route"] .swatch{
+  animation-delay:0s !important;
+}
+
+.controls-wrap label[for="layer-cipher"],
+.controls-wrap label[for="layer-cipher"] .swatch{
+  animation-delay:1.0s !important;
+}
+
+.controls-wrap label[for="layer-key"],
+.controls-wrap label[for="layer-key"] .swatch{
+  animation-delay:2.0s !important;
+}
+
+.controls-wrap label[for="layer-mirror"],
+.controls-wrap label[for="layer-mirror"] .swatch{
+  animation-delay:3.0s !important;
+}
+
+/* One button spends most of the cycle calm, then BRIGHTLY ignites. */
+@keyframes realLayerIgnite{
+  0%,12%,100%{
+    transform:translateY(0) scale(1);
+    border-color:rgba(var(--ui-rgb),.34);
+    background:
+      linear-gradient(180deg,
+        rgba(var(--ui-rgb),.09),
+        rgba(var(--ui-rgb),.035)),
+      rgba(18,23,32,.97);
+    box-shadow:
+      0 2px 8px rgba(0,0,0,.14),
+      0 0 4px rgba(var(--ui-rgb),.05),
+      inset 0 0 8px rgba(var(--ui-rgb),.035);
+    filter:brightness(1);
+  }
+
+  4.5%{
+    transform:translateY(-1px) scale(1.012);
+    border-color:rgba(var(--ui-rgb),1);
+    background:
+      linear-gradient(180deg,
+        rgba(var(--ui-rgb),.34),
+        rgba(var(--ui-rgb),.12)),
+      rgba(18,23,32,.97);
+    box-shadow:
+      0 0 3px rgba(var(--ui-rgb),.96),
+      0 0 14px rgba(var(--ui-rgb),.88),
+      0 0 30px rgba(var(--ui-rgb),.58),
+      0 0 52px rgba(var(--ui-rgb),.28),
+      inset 0 0 20px rgba(var(--ui-rgb),.22);
+    filter:brightness(1.28);
+  }
+
+  7.5%{
+    transform:translateY(-1px) scale(1.007);
+    border-color:rgba(var(--ui-rgb),.92);
+    background:
+      linear-gradient(180deg,
+        rgba(var(--ui-rgb),.24),
+        rgba(var(--ui-rgb),.08)),
+      rgba(18,23,32,.97);
+    box-shadow:
+      0 0 2px rgba(var(--ui-rgb),.80),
+      0 0 11px rgba(var(--ui-rgb),.66),
+      0 0 24px rgba(var(--ui-rgb),.38),
+      0 0 42px rgba(var(--ui-rgb),.18),
+      inset 0 0 16px rgba(var(--ui-rgb),.16);
+    filter:brightness(1.17);
+  }
+}
+
+@keyframes realSwatchIgnite{
+  0%,12%,100%{
+    background:rgba(var(--ui-rgb),.16);
+    border-color:rgba(var(--ui-rgb),.58);
+    box-shadow:0 0 5px rgba(var(--ui-rgb),.16);
+    transform:scale(1);
+  }
+  4.5%{
+    background:rgba(var(--ui-rgb),.70);
+    border-color:rgba(var(--ui-rgb),1);
+    box-shadow:
+      0 0 5px rgba(var(--ui-rgb),1),
+      0 0 13px rgba(var(--ui-rgb),.90),
+      0 0 22px rgba(var(--ui-rgb),.50);
+    transform:scale(1.13);
+  }
+  7.5%{
+    background:rgba(var(--ui-rgb),.48);
+    border-color:rgba(var(--ui-rgb),.94);
+    box-shadow:
+      0 0 5px rgba(var(--ui-rgb),.86),
+      0 0 11px rgba(var(--ui-rgb),.60);
+    transform:scale(1.07);
+  }
+}
+
+/* ---------- PLAINTEXT: a real left → right wave INSIDE the left module ---------- */
+
+.controls-wrap .stage-select-shell,
+.map-app.stage-focus .controls-wrap .stage-select-shell{
+  position:relative !important;
+  overflow:visible !important;
+  border:1.5px solid rgba(var(--picker-rgb),.40) !important;
+  background:
+    linear-gradient(180deg,
+      rgba(var(--picker-rgb),.08),
+      rgba(var(--picker-rgb),.03)),
+    rgba(18,23,32,.97) !important;
+  box-shadow:
+    0 2px 8px rgba(0,0,0,.14),
+    inset 0 0 8px rgba(var(--picker-rgb),.035) !important;
+  animation:plaintextShellIgnite 3.3s linear infinite !important;
+}
+
+/* label → left arrow → stage text → right arrow */
+.controls-wrap .stage-inline-label{
+  animation:plaintextPieceIgnite 3.3s linear infinite !important;
+  animation-delay:0s !important;
+}
+
+.controls-wrap .stage-nav-prev{
+  animation:plaintextPieceIgnite 3.3s linear infinite !important;
+  animation-delay:.32s !important;
+}
+
+.controls-wrap .stage-select{
+  animation:plaintextTextIgnite 3.3s linear infinite !important;
+  animation-delay:.64s !important;
+}
+
+.controls-wrap .stage-nav-next{
+  animation:plaintextPieceIgnite 3.3s linear infinite !important;
+  animation-delay:.96s !important;
+}
+
+@keyframes plaintextShellIgnite{
+  0%,34%,100%{
+    border-color:rgba(var(--picker-rgb),.40);
+    box-shadow:
+      0 2px 8px rgba(0,0,0,.14),
+      0 0 5px rgba(var(--picker-rgb),.06),
+      inset 0 0 8px rgba(var(--picker-rgb),.035);
+  }
+  17%{
+    border-color:rgba(var(--picker-rgb),.96);
+    box-shadow:
+      0 0 3px rgba(var(--picker-rgb),.90),
+      0 0 15px rgba(var(--picker-rgb),.68),
+      0 0 32px rgba(var(--picker-rgb),.34),
+      inset 0 0 18px rgba(var(--picker-rgb),.14);
+  }
+}
+
+@keyframes plaintextPieceIgnite{
+  0%,20%,100%{
+    color:#d9dde7;
+    border-color:rgba(var(--picker-rgb),.26);
+    background:rgba(var(--picker-rgb),.055);
+    box-shadow:
+      0 0 4px rgba(var(--picker-rgb),.05),
+      inset 0 0 5px rgba(var(--picker-rgb),.03);
+    text-shadow:none;
+    filter:brightness(1);
+    transform:scale(1);
+  }
+  8%{
+    color:#fff;
+    border-color:rgba(var(--picker-rgb),1);
+    background:rgba(var(--picker-rgb),.30);
+    box-shadow:
+      0 0 3px rgba(var(--picker-rgb),.98),
+      0 0 13px rgba(var(--picker-rgb),.82),
+      0 0 26px rgba(var(--picker-rgb),.42),
+      inset 0 0 12px rgba(var(--picker-rgb),.18);
+    text-shadow:
+      0 0 8px rgba(255,255,255,.32),
+      0 0 12px rgba(var(--picker-rgb),.52);
+    filter:brightness(1.30);
+    transform:scale(1.035);
+  }
+  13%{
+    color:#fff;
+    border-color:rgba(var(--picker-rgb),.86);
+    background:rgba(var(--picker-rgb),.18);
+    box-shadow:
+      0 0 9px rgba(var(--picker-rgb),.54),
+      0 0 18px rgba(var(--picker-rgb),.24);
+    text-shadow:0 0 10px rgba(var(--picker-rgb),.30);
+    filter:brightness(1.15);
+    transform:scale(1.015);
+  }
+}
+
+/* Select itself can't take the same background treatment cleanly in all browsers,
+   so its wave is expressed through brightness/text glow. */
+@keyframes plaintextTextIgnite{
+  0%,20%,100%{
+    color:#f1eef5;
+    text-shadow:none;
+    filter:brightness(1);
+  }
+  8%{
+    color:#fff;
+    text-shadow:
+      0 0 7px rgba(255,255,255,.42),
+      0 0 13px rgba(var(--picker-rgb),.72),
+      0 0 22px rgba(var(--picker-rgb),.34);
+    filter:brightness(1.38);
+  }
+  13%{
+    color:#fff;
+    text-shadow:
+      0 0 9px rgba(var(--picker-rgb),.48),
+      0 0 16px rgba(var(--picker-rgb),.22);
+    filter:brightness(1.18);
+  }
+}
+
+/* CRITICAL:
+   Earlier versions obeyed prefers-reduced-motion and could therefore show
+   NO toolbar animation at all on some Macs/browsers.
+   User explicitly requested this animation, so keep it enabled here. */
+@media(prefers-reduced-motion:reduce){
+  .controls-wrap .layer-button{
+    animation:realLayerIgnite 5.2s linear infinite !important;
+  }
+  .controls-wrap .layer-button .swatch{
+    animation:realSwatchIgnite 5.2s linear infinite !important;
+  }
+
+  .controls-wrap label[for="layer-route"],
+  .controls-wrap label[for="layer-route"] .swatch{ animation-delay:0s !important; }
+
+  .controls-wrap label[for="layer-cipher"],
+  .controls-wrap label[for="layer-cipher"] .swatch{ animation-delay:1.0s !important; }
+
+  .controls-wrap label[for="layer-key"],
+  .controls-wrap label[for="layer-key"] .swatch{ animation-delay:2.0s !important; }
+
+  .controls-wrap label[for="layer-mirror"],
+  .controls-wrap label[for="layer-mirror"] .swatch{ animation-delay:3.0s !important; }
+
+  .controls-wrap .stage-select-shell{
+    animation:plaintextShellIgnite 3.3s linear infinite !important;
+  }
+  .controls-wrap .stage-inline-label{
+    animation:plaintextPieceIgnite 3.3s linear infinite !important;
+    animation-delay:0s !important;
+  }
+  .controls-wrap .stage-nav-prev{
+    animation:plaintextPieceIgnite 3.3s linear infinite !important;
+    animation-delay:.32s !important;
+  }
+  .controls-wrap .stage-select{
+    animation:plaintextTextIgnite 3.3s linear infinite !important;
+    animation-delay:.64s !important;
+  }
+  .controls-wrap .stage-nav-next{
+    animation:plaintextPieceIgnite 3.3s linear infinite !important;
+    animation-delay:.96s !important;
+  }
+}
+
+
+/* =========================================================
+   V65 — ACTUAL VISIBLE LIGHT WAVE
+   A bright light band now visibly travels LEFT → RIGHT
+   through the PLAINTEXT block and through each LAYER button.
+   ========================================================= */
+
+/* ---------- LAYER BUTTONS ---------- */
+
+.controls-wrap .layer-button{
+  position:relative !important;
+  overflow:hidden !important; /* clips the travelling beam to the button */
+  isolation:isolate !important;
+  border:1.5px solid rgba(var(--ui-rgb),.42) !important;
+  background:
+    linear-gradient(180deg,
+      rgba(var(--ui-rgb),.12),
+      rgba(var(--ui-rgb),.045)),
+    rgba(17,22,31,.97) !important;
+  animation:layerGlowWave 4.2s ease-in-out infinite !important;
+}
+
+/* A REAL bright strip moves across the face of each button. */
+.controls-wrap .layer-button::before{
+  content:"" !important;
+  display:block !important;
+  position:absolute !important;
+  top:-20% !important;
+  bottom:-20% !important;
+  left:-55% !important;
+  width:42% !important;
+  z-index:0 !important;
+  pointer-events:none !important;
+  border-radius:999px !important;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(var(--ui-rgb),0) 0%,
+      rgba(var(--ui-rgb),.10) 18%,
+      rgba(var(--ui-rgb),.72) 42%,
+      rgba(255,255,255,.90) 50%,
+      rgba(var(--ui-rgb),.72) 58%,
+      rgba(var(--ui-rgb),.10) 82%,
+      rgba(var(--ui-rgb),0) 100%
+    ) !important;
+  filter:blur(8px) !important;
+  opacity:0 !important;
+  transform:skewX(-14deg) !important;
+  animation:layerBeamSweep 4.2s cubic-bezier(.42,0,.58,1) infinite !important;
+}
+
+/* Text and swatch stay above the moving light. */
+.controls-wrap .layer-button > *{
+  position:relative !important;
+  z-index:2 !important;
+}
+
+.controls-wrap .layer-button{
+  z-index:1 !important;
+}
+
+/* Swatch flashes when the wave reaches its button. */
+.controls-wrap .layer-button .swatch{
+  animation:layerDotWave 4.2s ease-in-out infinite !important;
+}
+
+/* Left → right timing across the row */
+.controls-wrap label[for="layer-route"],
+.controls-wrap label[for="layer-route"]::before,
+.controls-wrap label[for="layer-route"] .swatch{
+  animation-delay:0s !important;
+}
+
+.controls-wrap label[for="layer-cipher"],
+.controls-wrap label[for="layer-cipher"]::before,
+.controls-wrap label[for="layer-cipher"] .swatch{
+  animation-delay:.46s !important;
+}
+
+.controls-wrap label[for="layer-key"],
+.controls-wrap label[for="layer-key"]::before,
+.controls-wrap label[for="layer-key"] .swatch{
+  animation-delay:.92s !important;
+}
+
+.controls-wrap label[for="layer-mirror"],
+.controls-wrap label[for="layer-mirror"]::before,
+.controls-wrap label[for="layer-mirror"] .swatch{
+  animation-delay:1.38s !important;
+}
+
+@keyframes layerBeamSweep{
+  0%,7%{
+    left:-55%;
+    opacity:0;
+  }
+  10%{
+    opacity:.35;
+  }
+  17%{
+    opacity:1;
+  }
+  29%{
+    opacity:.78;
+  }
+  38%{
+    left:118%;
+    opacity:0;
+  }
+  100%{
+    left:118%;
+    opacity:0;
+  }
+}
+
+@keyframes layerGlowWave{
+  0%,7%,42%,100%{
+    border-color:rgba(var(--ui-rgb),.40);
+    box-shadow:
+      0 2px 8px rgba(0,0,0,.14),
+      0 0 5px rgba(var(--ui-rgb),.08),
+      inset 0 0 8px rgba(var(--ui-rgb),.04);
+    filter:brightness(1);
+  }
+  17%{
+    border-color:rgba(var(--ui-rgb),1);
+    box-shadow:
+      0 0 3px rgba(var(--ui-rgb),1),
+      0 0 14px rgba(var(--ui-rgb),.95),
+      0 0 28px rgba(var(--ui-rgb),.62),
+      0 0 48px rgba(var(--ui-rgb),.30),
+      inset 0 0 20px rgba(var(--ui-rgb),.24);
+    filter:brightness(1.34);
+  }
+  26%{
+    border-color:rgba(var(--ui-rgb),.88);
+    box-shadow:
+      0 0 2px rgba(var(--ui-rgb),.76),
+      0 0 11px rgba(var(--ui-rgb),.58),
+      0 0 22px rgba(var(--ui-rgb),.28),
+      inset 0 0 14px rgba(var(--ui-rgb),.15);
+    filter:brightness(1.16);
+  }
+}
+
+@keyframes layerDotWave{
+  0%,7%,42%,100%{
+    background:rgba(var(--ui-rgb),.18);
+    border-color:rgba(var(--ui-rgb),.58);
+    box-shadow:0 0 5px rgba(var(--ui-rgb),.16);
+    transform:scale(1);
+  }
+  17%{
+    background:rgba(var(--ui-rgb),.88);
+    border-color:rgba(var(--ui-rgb),1);
+    box-shadow:
+      0 0 5px rgba(var(--ui-rgb),1),
+      0 0 12px rgba(var(--ui-rgb),.92),
+      0 0 22px rgba(var(--ui-rgb),.52);
+    transform:scale(1.12);
+  }
+}
+
+/* ---------- PLAINTEXT BLOCK ---------- */
+
+.controls-wrap .stage-select-shell,
+.map-app.stage-focus .controls-wrap .stage-select-shell{
+  position:relative !important;
+  overflow:hidden !important;
+  isolation:isolate !important;
+  border:1.5px solid rgba(var(--picker-rgb),.45) !important;
+  background:
+    linear-gradient(180deg,
+      rgba(var(--picker-rgb),.10),
+      rgba(var(--picker-rgb),.035)),
+    rgba(17,22,31,.97) !important;
+  animation:plaintextGlowWave 3.7s ease-in-out infinite !important;
+}
+
+/* One bright strip physically travels through the whole plaintext selector. */
+.controls-wrap .stage-select-shell::before,
+.map-app.stage-focus .controls-wrap .stage-select-shell::before{
+  content:"" !important;
+  display:block !important;
+  position:absolute !important;
+  top:-25% !important;
+  bottom:-25% !important;
+  left:-48% !important;
+  width:34% !important;
+  z-index:0 !important;
+  pointer-events:none !important;
+  border-radius:999px !important;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(var(--picker-rgb),0) 0%,
+      rgba(var(--picker-rgb),.10) 18%,
+      rgba(var(--picker-rgb),.66) 42%,
+      rgba(255,255,255,.92) 50%,
+      rgba(var(--picker-rgb),.66) 58%,
+      rgba(var(--picker-rgb),.10) 82%,
+      rgba(var(--picker-rgb),0) 100%
+    ) !important;
+  filter:blur(8px) !important;
+  opacity:0 !important;
+  transform:skewX(-14deg) !important;
+  animation:plaintextBeamSweep 3.7s cubic-bezier(.42,0,.58,1) infinite !important;
+}
+
+.controls-wrap .stage-select-shell > *{
+  position:relative !important;
+  z-index:2 !important;
+}
+
+/* Remove older extra pseudo glow so it doesn't muddy the moving beam. */
+.controls-wrap .stage-select-shell::after,
+.map-app.stage-focus .controls-wrap .stage-select-shell::after{
+  display:none !important;
+  content:none !important;
+}
+
+/* Stage content softly reacts as the beam passes. */
+.controls-wrap .stage-inline-label,
+.controls-wrap .stage-nav,
+.controls-wrap .stage-select{
+  animation:plaintextContentGlow 3.7s ease-in-out infinite !important;
+}
+
+@keyframes plaintextBeamSweep{
+  0%,6%{
+    left:-48%;
+    opacity:0;
+  }
+  10%{
+    opacity:.35;
+  }
+  20%{
+    opacity:1;
+  }
+  46%{
+    opacity:.84;
+  }
+  62%{
+    left:116%;
+    opacity:0;
+  }
+  100%{
+    left:116%;
+    opacity:0;
+  }
+}
+
+@keyframes plaintextGlowWave{
+  0%,7%,68%,100%{
+    border-color:rgba(var(--picker-rgb),.44);
+    box-shadow:
+      0 2px 8px rgba(0,0,0,.14),
+      0 0 6px rgba(var(--picker-rgb),.09),
+      inset 0 0 8px rgba(var(--picker-rgb),.04);
+    filter:brightness(1);
+  }
+  25%{
+    border-color:rgba(var(--picker-rgb),1);
+    box-shadow:
+      0 0 3px rgba(var(--picker-rgb),1),
+      0 0 15px rgba(var(--picker-rgb),.88),
+      0 0 30px rgba(var(--picker-rgb),.52),
+      0 0 48px rgba(var(--picker-rgb),.24),
+      inset 0 0 20px rgba(var(--picker-rgb),.20);
+    filter:brightness(1.26);
+  }
+  48%{
+    border-color:rgba(var(--picker-rgb),.82);
+    box-shadow:
+      0 0 2px rgba(var(--picker-rgb),.62),
+      0 0 10px rgba(var(--picker-rgb),.46),
+      0 0 20px rgba(var(--picker-rgb),.20),
+      inset 0 0 14px rgba(var(--picker-rgb),.12);
+    filter:brightness(1.12);
+  }
+}
+
+@keyframes plaintextContentGlow{
+  0%,7%,68%,100%{
+    text-shadow:none;
+    filter:brightness(1);
+  }
+  25%{
+    text-shadow:
+      0 0 7px rgba(255,255,255,.30),
+      0 0 14px rgba(var(--picker-rgb),.46);
+    filter:brightness(1.22);
+  }
+  48%{
+    text-shadow:0 0 10px rgba(var(--picker-rgb),.28);
+    filter:brightness(1.10);
+  }
+}
+
+/* Keep the requested animation even when OS reduce-motion is enabled. */
+@media(prefers-reduced-motion:reduce){
+  .controls-wrap .layer-button{
+    animation:layerGlowWave 4.2s ease-in-out infinite !important;
+  }
+  .controls-wrap .layer-button::before{
+    animation:layerBeamSweep 4.2s cubic-bezier(.42,0,.58,1) infinite !important;
+  }
+  .controls-wrap .layer-button .swatch{
+    animation:layerDotWave 4.2s ease-in-out infinite !important;
+  }
+
+  .controls-wrap label[for="layer-route"],
+  .controls-wrap label[for="layer-route"]::before,
+  .controls-wrap label[for="layer-route"] .swatch{animation-delay:0s !important}
+
+  .controls-wrap label[for="layer-cipher"],
+  .controls-wrap label[for="layer-cipher"]::before,
+  .controls-wrap label[for="layer-cipher"] .swatch{animation-delay:.46s !important}
+
+  .controls-wrap label[for="layer-key"],
+  .controls-wrap label[for="layer-key"]::before,
+  .controls-wrap label[for="layer-key"] .swatch{animation-delay:.92s !important}
+
+  .controls-wrap label[for="layer-mirror"],
+  .controls-wrap label[for="layer-mirror"]::before,
+  .controls-wrap label[for="layer-mirror"] .swatch{animation-delay:1.38s !important}
+
+  .controls-wrap .stage-select-shell{
+    animation:plaintextGlowWave 3.7s ease-in-out infinite !important;
+  }
+  .controls-wrap .stage-select-shell::before{
+    animation:plaintextBeamSweep 3.7s cubic-bezier(.42,0,.58,1) infinite !important;
+  }
+  .controls-wrap .stage-inline-label,
+  .controls-wrap .stage-nav,
+  .controls-wrap .stage-select{
+    animation:plaintextContentGlow 3.7s ease-in-out infinite !important;
+  }
+}
+
+
+/* =========================================================
+   V66 — TOOLBAR GLOW MATCHES MATRIX CELLS
+   No travelling wave. The controls now pulse exactly like
+   the highlighted matrix cells: border + fill + neon shadow
+   with the same fastSquarePulse timing.
+   ========================================================= */
+
+/* ----- stop all previous toolbar wave animations ----- */
+.controls-wrap .layer-button,
+.controls-wrap .layer-button .swatch,
+.controls-wrap .stage-select-shell,
+.controls-wrap .stage-inline-label,
+.controls-wrap .stage-select,
+.controls-wrap .stage-nav,
+.map-app.stage-focus .controls-wrap .stage-select-shell{
+  animation:none !important;
+}
+
+#layer-route:checked ~ .controls-wrap label[for="layer-route"],
+#layer-cipher:checked ~ .controls-wrap label[for="layer-cipher"],
+#layer-key:checked ~ .controls-wrap label[for="layer-key"],
+#layer-mirror:checked ~ .controls-wrap label[for="layer-mirror"]{
+  animation:none !important;
+}
+
+/* remove the travelling beam */
+.controls-wrap .layer-button::before,
+.controls-wrap .stage-select-shell::before,
+.map-app.stage-focus .controls-wrap .stage-select-shell::before{
+  display:none !important;
+  content:none !important;
+  animation:none !important;
+}
+
+/* ----- layer buttons: same visual recipe as matrix cells ----- */
+.controls-wrap .layer-button{
+  position:relative !important;
+  overflow:visible !important;
+  isolation:isolate !important;
+  border-color:rgba(var(--ui-rgb),.38) !important;
+  background:
+    linear-gradient(180deg,
+      rgba(var(--ui-rgb),.07),
+      rgba(var(--ui-rgb),.025)),
+    rgba(18,23,32,.97) !important;
+  box-shadow:none !important;
+  filter:none !important;
+  transform:none !important;
+}
+
+.controls-wrap .layer-button::after{
+  display:block !important;
+  content:"" !important;
+  position:absolute !important;
+  inset:1px !important;
+  z-index:0 !important;
+  pointer-events:none !important;
+  border-radius:7px !important;
+
+  border:1px solid rgba(var(--ui-rgb),.96) !important;
+  background:rgba(var(--ui-rgb),.095) !important;
+  box-shadow:
+    0 0 4px rgba(var(--ui-rgb),.78),
+    0 0 9px rgba(var(--ui-rgb),.56),
+    0 0 14px rgba(var(--ui-rgb),.30),
+    inset 0 0 8px rgba(var(--ui-rgb),.25) !important;
+
+  opacity:.22 !important;
+  animation:fastSquarePulse 1.48s ease-in-out infinite !important;
+  will-change:opacity !important;
+}
+
+.controls-wrap .layer-button > *{
+  position:relative !important;
+  z-index:2 !important;
+}
+
+/* same phase offsets as the matrix role glows */
+.controls-wrap label[for="layer-route"]::after{
+  animation-delay:0s !important;
+}
+.controls-wrap label[for="layer-cipher"]::after{
+  animation-delay:-.24s !important;
+}
+.controls-wrap label[for="layer-key"]::after{
+  animation-delay:-.48s !important;
+}
+.controls-wrap label[for="layer-mirror"]::after{
+  animation-delay:-.72s !important;
+}
+
+/* make the little colored squares pulse with the same rhythm too */
+.controls-wrap .layer-button .swatch{
+  border-color:rgba(var(--ui-rgb),.96) !important;
+  background:rgba(var(--ui-rgb),.14) !important;
+  box-shadow:
+    0 0 4px rgba(var(--ui-rgb),.70),
+    0 0 8px rgba(var(--ui-rgb),.36) !important;
+  opacity:.35 !important;
+  animation:fastSquarePulse 1.48s ease-in-out infinite !important;
+}
+
+.controls-wrap label[for="layer-route"] .swatch{
+  animation-delay:0s !important;
+}
+.controls-wrap label[for="layer-cipher"] .swatch{
+  animation-delay:-.24s !important;
+}
+.controls-wrap label[for="layer-key"] .swatch{
+  animation-delay:-.48s !important;
+}
+.controls-wrap label[for="layer-mirror"] .swatch{
+  animation-delay:-.72s !important;
+}
+
+/* ----- plaintext block: same pulse, using its current stage color ----- */
+.controls-wrap .stage-select-shell,
+.map-app.stage-focus .controls-wrap .stage-select-shell{
+  position:relative !important;
+  overflow:visible !important;
+  isolation:isolate !important;
+  border-color:rgba(var(--picker-rgb),.38) !important;
+  background:
+    linear-gradient(180deg,
+      rgba(var(--picker-rgb),.07),
+      rgba(var(--picker-rgb),.025)),
+    rgba(18,23,32,.97) !important;
+  box-shadow:none !important;
+  filter:none !important;
+  transform:none !important;
+}
+
+.controls-wrap .stage-select-shell::after,
+.map-app.stage-focus .controls-wrap .stage-select-shell::after{
+  display:block !important;
+  content:"" !important;
+  position:absolute !important;
+  inset:1px !important;
+  z-index:0 !important;
+  pointer-events:none !important;
+  border-radius:8px !important;
+
+  border:1px solid rgba(var(--picker-rgb),.96) !important;
+  background:rgba(var(--picker-rgb),.095) !important;
+  box-shadow:
+    0 0 4px rgba(var(--picker-rgb),.78),
+    0 0 9px rgba(var(--picker-rgb),.56),
+    0 0 14px rgba(var(--picker-rgb),.30),
+    inset 0 0 8px rgba(var(--picker-rgb),.25) !important;
+
+  opacity:.22 !important;
+  animation:fastSquarePulse 1.48s ease-in-out infinite !important;
+  animation-delay:-.12s !important;
+  will-change:opacity !important;
+}
+
+.controls-wrap .stage-select-shell > *{
+  position:relative !important;
+  z-index:2 !important;
+}
+
+/* arrows get a restrained version of the same pulse */
+.controls-wrap .stage-nav{
+  border-color:rgba(var(--picker-rgb),.54) !important;
+  background:rgba(var(--picker-rgb),.055) !important;
+  box-shadow:
+    0 0 4px rgba(var(--picker-rgb),.28),
+    inset 0 0 5px rgba(var(--picker-rgb),.06) !important;
+}
+
+.controls-wrap .stage-nav-prev{
+  animation:fastSquarePulse 1.48s ease-in-out infinite !important;
+  animation-delay:-.12s !important;
+}
+
+.controls-wrap .stage-nav-next{
+  animation:fastSquarePulse 1.48s ease-in-out infinite !important;
+  animation-delay:-.36s !important;
+}
+
+/* keep this requested animation even if the system reduces motion */
+@media(prefers-reduced-motion:reduce){
+  .controls-wrap .layer-button::after,
+  .controls-wrap .layer-button .swatch,
+  .controls-wrap .stage-select-shell::after,
+  .controls-wrap .stage-nav{
+    animation-name:fastSquarePulse !important;
+    animation-duration:1.48s !important;
+    animation-timing-function:ease-in-out !important;
+    animation-iteration-count:infinite !important;
+  }
+}
+
+
+/* =========================================================
+   V68 — BRIGHTER PULSING OUTLINES FOR LAYER BUTTONS
+   Based on v66 (the previous better variant with arrows).
+   Keep the overall look, but make the LAYER BUTTON OUTLINES
+   themselves pulse more clearly in their own colors.
+   No text pulse.
+   ========================================================= */
+
+/* Use the base v66 look, but animate the actual button outline. */
+.controls-wrap .layer-button{
+  position:relative !important;
+  overflow:visible !important;
+  isolation:isolate !important;
+  color:rgba(243,246,251,.94) !important;
+  border:1.5px solid rgba(var(--ui-rgb),.38) !important;
+  background:
+    linear-gradient(180deg,
+      rgba(var(--ui-rgb),.07),
+      rgba(var(--ui-rgb),.025)),
+    rgba(18,23,32,.97) !important;
+  box-shadow:
+    0 2px 8px rgba(0,0,0,.14),
+    inset 0 0 8px rgba(var(--ui-rgb),.04) !important;
+  animation:layerOutlinePulse 1.48s ease-in-out infinite !important;
+}
+
+/* The inner matrix-style glow remains, but slightly calmer than the outline. */
+.controls-wrap .layer-button::after{
+  display:block !important;
+  content:"" !important;
+  position:absolute !important;
+  inset:1px !important;
+  z-index:0 !important;
+  pointer-events:none !important;
+  border-radius:7px !important;
+
+  border:1px solid rgba(var(--ui-rgb),.92) !important;
+  background:rgba(var(--ui-rgb),.085) !important;
+  box-shadow:
+    0 0 4px rgba(var(--ui-rgb),.72),
+    0 0 8px rgba(var(--ui-rgb),.48),
+    0 0 12px rgba(var(--ui-rgb),.22),
+    inset 0 0 7px rgba(var(--ui-rgb),.20) !important;
+
+  opacity:.20 !important;
+  animation:fastSquarePulse 1.48s ease-in-out infinite !important;
+  will-change:opacity !important;
+}
+
+.controls-wrap .layer-button > *{
+  position:relative !important;
+  z-index:2 !important;
+}
+
+/* Colored swatches can keep a subtle pulse, but less important than the outline. */
+.controls-wrap .layer-button .swatch{
+  border-color:rgba(var(--ui-rgb),.92) !important;
+  background:rgba(var(--ui-rgb),.13) !important;
+  box-shadow:
+    0 0 4px rgba(var(--ui-rgb),.60),
+    0 0 8px rgba(var(--ui-rgb),.28) !important;
+  opacity:.34 !important;
+  animation:fastSquarePulse 1.48s ease-in-out infinite !important;
+}
+
+/* Same phase offsets so the four colors feel alive. */
+.controls-wrap label[for="layer-route"]{
+  animation-delay:0s !important;
+}
+.controls-wrap label[for="layer-cipher"]{
+  animation-delay:-.24s !important;
+}
+.controls-wrap label[for="layer-key"]{
+  animation-delay:-.48s !important;
+}
+.controls-wrap label[for="layer-mirror"]{
+  animation-delay:-.72s !important;
+}
+
+.controls-wrap label[for="layer-route"]::after,
+.controls-wrap label[for="layer-route"] .swatch{
+  animation-delay:0s !important;
+}
+.controls-wrap label[for="layer-cipher"]::after,
+.controls-wrap label[for="layer-cipher"] .swatch{
+  animation-delay:-.24s !important;
+}
+.controls-wrap label[for="layer-key"]::after,
+.controls-wrap label[for="layer-key"] .swatch{
+  animation-delay:-.48s !important;
+}
+.controls-wrap label[for="layer-mirror"]::after,
+.controls-wrap label[for="layer-mirror"] .swatch{
+  animation-delay:-.72s !important;
+}
+
+/* Outline-specific pulse: brighter / dimmer / brighter */
+@keyframes layerOutlinePulse{
+  0%,100%{
+    border-color:rgba(var(--ui-rgb),.38);
+    box-shadow:
+      0 2px 8px rgba(0,0,0,.14),
+      0 0 4px rgba(var(--ui-rgb),.06),
+      0 0 0 rgba(var(--ui-rgb),0),
+      inset 0 0 8px rgba(var(--ui-rgb),.04);
+    filter:brightness(1);
+  }
+  50%{
+    border-color:rgba(var(--ui-rgb),1);
+    box-shadow:
+      0 2px 8px rgba(0,0,0,.14),
+      0 0 8px rgba(var(--ui-rgb),.68),
+      0 0 18px rgba(var(--ui-rgb),.40),
+      0 0 28px rgba(var(--ui-rgb),.16),
+      inset 0 0 10px rgba(var(--ui-rgb),.06);
+    filter:brightness(1.08);
+  }
+}
+
+/* Keep requested animation even if reduced-motion is enabled. */
+@media(prefers-reduced-motion:reduce){
+  .controls-wrap .layer-button{
+    animation:layerOutlinePulse 1.48s ease-in-out infinite !important;
+  }
+  .controls-wrap .layer-button::after,
+  .controls-wrap .layer-button .swatch{
+    animation:fastSquarePulse 1.48s ease-in-out infinite !important;
+  }
+}
+
+
+/* =========================================================
+   V69 — FIX REAL LAYER OUTLINE PULSE + CLEANER TOOLBAR
+   Changes requested:
+   1) layer button outlines really pulse now
+   2) remove little circles from layer buttons
+   3) enlarge layer button labels
+   4) make the sticky plaque a bit taller
+   5) widen plaintext selector area
+   6) make select text / options a more elegant font style
+   ========================================================= */
+
+/* Slightly taller overall sticky plaque */
+.controls-wrap{
+  padding:12px !important;
+  border-radius:14px !important;
+}
+
+/* Give the plaintext side more room so the dropdown opens from a wider control */
+.controls-wrap .plaintext-selector-panel{
+  flex:0 1 640px !important;
+  min-width:540px !important;
+}
+
+@media(min-width:900px) and (max-width:1260px){
+  .controls-wrap .plaintext-selector-panel{
+    flex-basis:560px !important;
+    min-width:470px !important;
+  }
+}
+
+@media(max-width:899px){
+  .controls-wrap{
+    padding:10px !important;
+  }
+  .controls-wrap .plaintext-selector-panel{
+    min-width:0 !important;
+    width:100% !important;
+    flex-basis:auto !important;
+  }
+}
+
+/* Make the selector itself slightly larger and more refined */
+.controls-wrap .stage-select-shell,
+.map-app.stage-focus .controls-wrap .stage-select-shell{
+  min-height:48px !important;
+  height:48px !important;
+  border-radius:11px !important;
+}
+
+.controls-wrap .stage-inline-label{
+  font-family:"Avenir Next","SF Pro Display","Inter","Segoe UI",system-ui,sans-serif !important;
+  font-size:9px !important;
+  letter-spacing:.12em !important;
+  padding:0 10px !important;
+}
+
+.controls-wrap .stage-select{
+  min-width:230px !important;
+  height:36px !important;
+  font-family:"Avenir Next","SF Pro Text","Inter","Segoe UI",system-ui,sans-serif !important;
+  font-size:13.5px !important;
+  font-weight:800 !important;
+  letter-spacing:.01em !important;
+}
+
+/* Style dropdown options as much as the browser allows */
+.controls-wrap .stage-select,
+.controls-wrap .stage-select option{
+  font-family:"Avenir Next","SF Pro Text","Inter","Segoe UI",system-ui,sans-serif !important;
+}
+
+/* Slightly larger arrow buttons to match the taller control */
+.controls-wrap .stage-nav{
+  width:34px !important;
+  min-width:34px !important;
+  height:34px !important;
+  min-height:34px !important;
+  border-radius:9px !important;
+}
+
+/* -------- LAYERS -------- */
+
+/* Remove the little circles completely */
+.controls-wrap .layer-button .swatch{
+  display:none !important;
+}
+
+/* Larger button text, cleaner spacing */
+.controls-wrap .layer-button{
+  gap:0 !important;
+  min-height:40px !important;
+  height:40px !important;
+  padding:0 14px !important;
+  font-size:14.5px !important;
+  font-weight:800 !important;
+  letter-spacing:.005em !important;
+  font-family:"Avenir Next","SF Pro Text","Inter","Segoe UI",system-ui,sans-serif !important;
+  justify-content:center !important;
+  text-align:center !important;
+}
+
+/* Mobile readable but not oversized */
+@media(max-width:899px){
+  .controls-wrap .layer-button{
+    font-size:13px !important;
+    min-height:42px !important;
+    height:42px !important;
+    justify-content:flex-start !important;
+    text-align:left !important;
+  }
+}
+
+/* REAL outline pulse on the actual visible border */
+.controls-wrap label[for="layer-route"].layer-button{
+  animation:routeOutlinePulse 1.52s ease-in-out infinite !important;
+}
+.controls-wrap label[for="layer-cipher"].layer-button{
+  animation:cipherOutlinePulse 1.52s ease-in-out infinite !important;
+}
+.controls-wrap label[for="layer-key"].layer-button{
+  animation:keyOutlinePulse 1.52s ease-in-out infinite !important;
+}
+.controls-wrap label[for="layer-mirror"].layer-button{
+  animation:mirrorOutlinePulse 1.52s ease-in-out infinite !important;
+}
+
+.controls-wrap label[for="layer-route"].layer-button{ animation-delay:0s !important; }
+.controls-wrap label[for="layer-cipher"].layer-button{ animation-delay:-.24s !important; }
+.controls-wrap label[for="layer-key"].layer-button{ animation-delay:-.48s !important; }
+.controls-wrap label[for="layer-mirror"].layer-button{ animation-delay:-.72s !important; }
+
+/* Keep the inner matrix-like overlay, but calmer than the outer border */
+.controls-wrap label[for="layer-route"].layer-button::after,
+.controls-wrap label[for="layer-cipher"].layer-button::after,
+.controls-wrap label[for="layer-key"].layer-button::after,
+.controls-wrap label[for="layer-mirror"].layer-button::after{
+  animation:fastSquarePulse 1.52s ease-in-out infinite !important;
+}
+
+.controls-wrap label[for="layer-route"].layer-button::after{ animation-delay:0s !important; }
+.controls-wrap label[for="layer-cipher"].layer-button::after{ animation-delay:-.24s !important; }
+.controls-wrap label[for="layer-key"].layer-button::after{ animation-delay:-.48s !important; }
+.controls-wrap label[for="layer-mirror"].layer-button::after{ animation-delay:-.72s !important; }
+
+/* Specific pulses so the border definitely changes visibly */
+@keyframes routeOutlinePulse{
+  0%,100%{
+    border-color:rgba(123,77,177,.36);
+    box-shadow:
+      0 2px 8px rgba(0,0,0,.14),
+      0 0 4px rgba(123,77,177,.06),
+      inset 0 0 8px rgba(123,77,177,.03);
+    filter:brightness(1);
+  }
+  50%{
+    border-color:rgba(158,112,233,1);
+    box-shadow:
+      0 2px 8px rgba(0,0,0,.14),
+      0 0 8px rgba(158,112,233,.82),
+      0 0 18px rgba(158,112,233,.46),
+      0 0 28px rgba(158,112,233,.18),
+      inset 0 0 10px rgba(158,112,233,.06);
+    filter:brightness(1.08);
+  }
+}
+@keyframes cipherOutlinePulse{
+  0%,100%{
+    border-color:rgba(214,123,190,.36);
+    box-shadow:
+      0 2px 8px rgba(0,0,0,.14),
+      0 0 4px rgba(214,123,190,.06),
+      inset 0 0 8px rgba(214,123,190,.03);
+    filter:brightness(1);
+  }
+  50%{
+    border-color:rgba(241,155,220,1);
+    box-shadow:
+      0 2px 8px rgba(0,0,0,.14),
+      0 0 8px rgba(241,155,220,.82),
+      0 0 18px rgba(241,155,220,.46),
+      0 0 28px rgba(241,155,220,.18),
+      inset 0 0 10px rgba(241,155,220,.06);
+    filter:brightness(1.08);
+  }
+}
+@keyframes keyOutlinePulse{
+  0%,100%{
+    border-color:rgba(76,142,220,.36);
+    box-shadow:
+      0 2px 8px rgba(0,0,0,.14),
+      0 0 4px rgba(76,142,220,.06),
+      inset 0 0 8px rgba(76,142,220,.03);
+    filter:brightness(1);
+  }
+  50%{
+    border-color:rgba(115,177,249,1);
+    box-shadow:
+      0 2px 8px rgba(0,0,0,.14),
+      0 0 8px rgba(115,177,249,.82),
+      0 0 18px rgba(115,177,249,.46),
+      0 0 28px rgba(115,177,249,.18),
+      inset 0 0 10px rgba(115,177,249,.06);
+    filter:brightness(1.08);
+  }
+}
+@keyframes mirrorOutlinePulse{
+  0%,100%{
+    border-color:rgba(78,168,101,.36);
+    box-shadow:
+      0 2px 8px rgba(0,0,0,.14),
+      0 0 4px rgba(78,168,101,.06),
+      inset 0 0 8px rgba(78,168,101,.03);
+    filter:brightness(1);
+  }
+  50%{
+    border-color:rgba(116,209,139,1);
+    box-shadow:
+      0 2px 8px rgba(0,0,0,.14),
+      0 0 8px rgba(116,209,139,.82),
+      0 0 18px rgba(116,209,139,.46),
+      0 0 28px rgba(116,209,139,.18),
+      inset 0 0 10px rgba(116,209,139,.06);
+    filter:brightness(1.08);
+  }
+}
+
+/* Preserve requested pulsing even with reduced motion */
+@media(prefers-reduced-motion:reduce){
+  .controls-wrap label[for="layer-route"].layer-button{
+    animation:routeOutlinePulse 1.52s ease-in-out infinite !important;
+  }
+  .controls-wrap label[for="layer-cipher"].layer-button{
+    animation:cipherOutlinePulse 1.52s ease-in-out infinite !important;
+  }
+  .controls-wrap label[for="layer-key"].layer-button{
+    animation:keyOutlinePulse 1.52s ease-in-out infinite !important;
+  }
+  .controls-wrap label[for="layer-mirror"].layer-button{
+    animation:mirrorOutlinePulse 1.52s ease-in-out infinite !important;
+  }
+}
+
+
+/* =========================================================
+   V70 — ELEGANT LIGHT TYPOGRAPHY
+   Remove the heavy/bold look from the entire top interface.
+   Use a cleaner, lighter, more aesthetic system font stack.
+   ========================================================= */
+
+.header,
+.controls-wrap,
+.controls-wrap button,
+.controls-wrap select,
+.controls-wrap option,
+.controls-wrap label,
+.controls-wrap span{
+  font-family:
+    "Avenir Next",
+    "SF Pro Text",
+    "Helvetica Neue",
+    Inter,
+    Arial,
+    sans-serif !important;
+}
+
+/* Main title: cleaner, lighter, not bold */
+.header h1{
+  font-family:
+    "Avenir Next",
+    "SF Pro Display",
+    "Helvetica Neue",
+    Inter,
+    Arial,
+    sans-serif !important;
+  font-size:19px !important;
+  font-weight:500 !important;
+  letter-spacing:-.015em !important;
+  line-height:1.15 !important;
+}
+
+/* Small interface labels */
+.controls-wrap .stage-inline-label,
+.controls-wrap .toolbar-inline-title,
+.controls-wrap .control-title{
+  font-weight:500 !important;
+  letter-spacing:.10em !important;
+  color:#9aa1af !important;
+}
+
+/* Stage value */
+.controls-wrap .stage-select{
+  font-weight:500 !important;
+  letter-spacing:.005em !important;
+  font-size:13.5px !important;
+}
+
+/* Dropdown options */
+.controls-wrap .stage-select option{
+  font-weight:400 !important;
+  letter-spacing:0 !important;
+}
+
+/* Navigation arrows: light and refined */
+.controls-wrap .stage-nav{
+  font-family:
+    "Avenir Next",
+    "SF Pro Text",
+    "Helvetica Neue",
+    Inter,
+    Arial,
+    sans-serif !important;
+  font-weight:400 !important;
+  font-size:16px !important;
+}
+
+/* Layer buttons: larger text, but no heavy bold weight */
+.controls-wrap .layer-button{
+  font-family:
+    "Avenir Next",
+    "SF Pro Text",
+    "Helvetica Neue",
+    Inter,
+    Arial,
+    sans-serif !important;
+  font-size:14px !important;
+  font-weight:500 !important;
+  letter-spacing:.003em !important;
+  line-height:1.1 !important;
+}
+
+/* Prevent inherited strong/bold styles inside the top controls */
+.controls-wrap strong,
+.controls-wrap b{
+  font-weight:500 !important;
+}
+
+/* Slightly softer text color for a more polished look */
+.controls-wrap .layer-button,
+.controls-wrap .stage-select,
+.controls-wrap .stage-nav{
+  color:#e7eaf0 !important;
+}
+
+
+/* =========================================================
+   V71 — DISABLE TEXT SELECTION / ACCIDENTAL COPYING
+   Prevent accidental mouse selection across the whole map UI.
+   ========================================================= */
+
+html, body, .map-app, .map-app *{
+  -webkit-user-select:none !important;
+  -moz-user-select:none !important;
+  -ms-user-select:none !important;
+  user-select:none !important;
+  -webkit-touch-callout:none !important;
+}
+
+/* Keep native controls visually normal while still non-selectable. */
+button, label, select, option{
+  -webkit-user-select:none !important;
+  -moz-user-select:none !important;
+  -ms-user-select:none !important;
+  user-select:none !important;
+}
+
 </style>
 </head>
 <body>
@@ -1365,22 +4664,21 @@ label[for="layer-mirror"]{--ui-rgb:82,174,101}
 <div class="controls-wrap">
 <div aria-label="Plaintext stage selector" class="plaintext-panel plaintext-selector-panel">
 <div class="stage-picker">
-<div class="stage-picker-head">
-<span class="stage-picker-kicker">PLAINTEXT STAGE</span>
-<span class="stage-picker-hint">Select a stage to isolate its evidence</span>
-</div>
 <div class="stage-select-shell" data-tone="all" id="stage-select-shell">
+<span class="stage-inline-label">PLAINTEXT STAGE</span>
 <span aria-hidden="true" class="stage-accent"></span>
+<button aria-label="Previous plaintext stage" class="stage-nav stage-nav-prev" id="stage-prev" type="button">←</button>
 <select aria-label="Select plaintext stage" class="stage-select" id="stage-select">
 <option value="">ALL · FULL MAP</option>
 <option value="01">01 · AS I GO THE</option><option value="02">02 · WEATHER</option><option value="03">03 · TURNS</option><option value="04">04 · COLD</option><option value="05">05 · I MAY</option><option value="06">06 · CRY</option><option value="07">07 · NOW THE</option><option value="08">08 · IDEA</option><option value="09">09 · OF THE</option><option value="10">10 · END</option><option value="11">11 · IS</option><option value="12">12 · DEATH</option><option value="13">13 · SEE</option><option value="14">14 · YOU</option><option value="15">15 · SOON</option></select>
+<button aria-label="Next plaintext stage" class="stage-nav stage-nav-next" id="stage-next" type="button">→</button>
 <span aria-hidden="true" class="stage-chevron">⌄</span>
 </div>
 </div>
 </div>
 
 <div class="layerbar">
-<span class="control-title">LAYERS</span>
+<span class="control-title toolbar-inline-title">LAYERS</span>
 <label class="layer-button" for="layer-route"><span class="swatch"></span>Route</label>
 <label class="layer-button" for="layer-cipher"><span class="swatch"></span>Ciphertext</label>
 <label class="layer-button" for="layer-key"><span class="swatch"></span>Key structures</label>
@@ -1500,6 +4798,36 @@ label[for="layer-mirror"]{--ui-rgb:82,174,101}
       setTone(value);
     };
 
+    const values = ['', ...Array.from({length:15}, (_, i) => String(i + 1).padStart(2, '0'))];
+
+    const stepStage = direction => {
+      const current = values.indexOf(select.value);
+      const index = current >= 0 ? current : 0;
+      const next = (index + direction + values.length) % values.length;
+      select.value = values[next];
+      select.dispatchEvent(new Event('change', {bubbles:true}));
+    };
+
+    const prev = document.getElementById('stage-prev');
+    const next = document.getElementById('stage-next');
+
+    if (prev) prev.addEventListener('click', () => stepStage(-1));
+    if (next) next.addEventListener('click', () => stepStage(1));
+
+    document.addEventListener('keydown', event => {
+      if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey) return;
+      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+
+      const target = event.target;
+      const tag = target && target.tagName ? target.tagName.toLowerCase() : '';
+      if (target && target.isContentEditable) return;
+      if (tag === 'textarea') return;
+      if (tag === 'input' && !['checkbox','radio','button'].includes((target.type || '').toLowerCase())) return;
+
+      event.preventDefault();
+      stepStage(event.key === 'ArrowRight' ? 1 : -1);
+    });
+
     select.addEventListener('change', apply, {passive:true});
     apply();
   };
@@ -1510,6 +4838,15 @@ label[for="layer-mirror"]{--ui-rgb:82,174,101}
     connectStagePicker();
   }
 })();
+</script>
+
+
+<script>
+/* V71 — prevent accidental selection/copy behavior */
+document.addEventListener('selectstart', function(e){ e.preventDefault(); });
+document.addEventListener('dragstart', function(e){ e.preventDefault(); });
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('cut', function(e){ e.preventDefault(); });
 </script>
 
 </body>
