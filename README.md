@@ -1,5 +1,7 @@
+![Last updated](https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fapi.github.com%2Frepos%2F2retooz270703%2FLiber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption%2Fcommits%3Fper_page%3D1&search=%28%5Cd%7B4%7D-%5Cd%7B2%7D-%5Cd%7B2%7D%29T%28%5Cd%7B2%7D%3A%5Cd%7B2%7D%29%3A%5Cd%7B2%7DZ&replace=%241+%242+UTC&label=Last+updated&style=flat-square&labelColor=B79AC8&color=E7D9F2&cacheSeconds=300)
+
 [![Last plaintext found](https://img.shields.io/github/directory-file-count/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/plaintext-i-found?type=file&label=Last%20plaintext%20found&style=flat-square&labelColor=8EB8DC&color=D6ECFA&cacheSeconds=300)](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/tree/main/plaintext-i-found)
-[![Rules found](https://img.shields.io/github/directory-file-count/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/rules?type=file&label=Rules%20found&style=flat-square&labelColor=9BC9AE&color=DDF2E5&cacheSeconds=300)](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/tree/main/rules)
+
 
 ## Live Route Analysis
 
