@@ -254,7 +254,109 @@ This is a visual supporting clue, not part of the decryption rule.
 
 ---
 
-## 7. Next state
+## 7. OUTER-state cross-check
+
+The active symmetric key structure for this stage is:
+
+```text
+X-I-X
+```
+
+Its totient signature is:
+
+```text
+6-4-6
+```
+
+and therefore its full Möbius state is:
+
+```text
+μ(6)=+1
+μ(4)=0
+μ(6)=+1
+
+M=(+1,0,+1)
+```
+
+Under the observed CENTER / OUTER state rule, this is the strong:
+
+```text
+(+1,0,+1)
+→ OUTER
+```
+
+state.
+
+`WEATHER` ends at:
+
+```text
+E(14,18)
+```
+
+That endpoint is not only the last ciphertext cell. It is also an **outer** point of the diagonal mirrored structure:
+
+```text
+E(6,10)
+   \
+    \
+     NG(10,14)
+        \
+         \
+          E(14,18)
+```
+
+with equal radius:
+
+```text
+E(6,10)
+— 4 diagonal steps —
+NG(10,14)
+— 4 diagonal steps —
+E(14,18)
+```
+
+So the stage gives the direct structural correspondence:
+
+```text
+X-I-X
+↓
+signature 6-4-6
+↓
+M=(+1,0,+1)
+↓
+WEATHER
+↓
+endpoint E(14,18)
+↓
+OUTER of E-NG-E
+```
+
+A full scan of the 27×27 grid over horizontal, vertical, and both 45° diagonal symmetric 3-rune structures, at all possible integer radii, finds exactly **one** `E-NG-E` mirror in the entire grid:
+
+```text
+E(6,10) — NG(10,14) — E(14,18)
+```
+
+Therefore this is not one of several competing `E-NG-E` mirrors that could be attached to the endpoint.
+
+This makes `WEATHER` an additional direct example supporting the rule documented in:
+
+```text
+rules/05-center-outer-states.md
+```
+
+namely:
+
+```text
+(+1,0,+1)
+→ OUTER
+```
+
+Together with the later `NOW THE` and `END` stages, this gives three clean direct OUTER examples before `DEATH`.
+
+---
+
+## 8. Next state
 
 `WEATHER` ends at:
 
@@ -298,7 +400,7 @@ TURNS
 
 ---
 
-## 8. Compact route
+## 9. Compact route
 
 ```text
 AS I GO THE
