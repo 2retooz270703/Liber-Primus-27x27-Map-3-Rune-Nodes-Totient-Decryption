@@ -307,7 +307,77 @@ This relation is not required for the decryption, but it is a strong structural 
 
 ---
 
-## 6. Determine the key phase
+## 6. Prime-weight cross-check: the hidden pair equals SOON
+
+The retained coordinate values after `YOU` are:
+
+```text
+T₁(25,16)=(20,8)=(L,H)
+```
+
+On the standard prime-valued Gematria Primus layer:
+
+```text
+L = 73
+H = 23
+```
+
+Therefore:
+
+```text
+prime(L) + prime(H)
+=
+73 + 23
+=
+96
+```
+
+Now calculate the prime-sum of the recovered plaintext:
+
+```text
+SOON
+=
+S + O + O + N
+=
+53 + 7 + 7 + 29
+=
+96
+```
+
+So:
+
+```text
+prime(L) + prime(H)
+=
+prime-sum(SOON)
+=
+96
+```
+
+This is especially notable because `(L,H)` is not derived from the plaintext. It is already produced by the coordinate state before the `SOON` decryption:
+
+```text
+X(25,16)
+↓
+phase 1
+↓
+T₁(25,16)=(L,H)
+```
+
+and the same two hidden values are then used structurally in the primary reconstruction:
+
+```text
+L → key family
+H → ciphertext endpoint
+```
+
+Thus the complete hidden pair has a second, independent relation to the recovered word: its combined prime-weight is exactly the prime-weight of `SOON`.
+
+This prime-valued equality is not used to generate the plaintext, so it should be treated as an independent numerical cross-check rather than part of the decryption algorithm.
+
+---
+
+## 7. Determine the key phase
 
 The common generated key is:
 
@@ -371,7 +441,7 @@ No manual key rotation is needed.
 
 ---
 
-## 7. Primary decryption
+## 8. Primary decryption
 
 Use the established rule:
 
@@ -411,7 +481,7 @@ The plaintext becomes:
 
 ---
 
-## 8. Why the primary reconstruction is strong
+## 9. Why the primary reconstruction is strong
 
 The complete local chain is:
 
@@ -472,13 +542,13 @@ For that reason this is treated as the **primary reconstruction** of `SOON`.
 
 ---
 
-## 9. Independent secondary reconstruction
+## 10. Independent secondary reconstruction
 
 A second route reaches the same plaintext through a substantially different mirror chain.
 
 This route is longer and contains more local branch choices, so it is not used as the primary handoff. Its importance is that it independently reconstructs the same word from different ciphertext and key material.
 
-### 9.1. Re-enter the mirror network from X
+### 10.1. Re-enter the mirror network from X
 
 The final cell:
 
@@ -542,7 +612,7 @@ From this single hub, one branch reaches the ciphertext while another reaches th
 
 ---
 
-## 10. Secondary ciphertext branch
+## 11. Secondary ciphertext branch
 
 Take the radius-4 mirror:
 
@@ -607,7 +677,7 @@ A scan of all eight straight directions finds this as the only contiguous `P-S-U
 
 ---
 
-## 11. Secondary key branch
+## 12. Secondary key branch
 
 Return to the same hub:
 
@@ -721,7 +791,7 @@ KEY₂ = IA-EO-IA-IA
 
 ---
 
-## 12. Secondary decryption
+## 13. Secondary decryption
 
 Use:
 
@@ -751,7 +821,7 @@ S-O-O-N
 
 ---
 
-## 13. Two different constructions, one plaintext
+## 14. Two different constructions, one plaintext
 
 The two reconstructions are genuinely different:
 
@@ -801,7 +871,7 @@ two structurally different constructions independently decrypt to SOON
 
 ---
 
-## 14. What remains unproven
+## 15. What remains unproven
 
 The primary construction is strongly constrained once the hidden pair:
 
