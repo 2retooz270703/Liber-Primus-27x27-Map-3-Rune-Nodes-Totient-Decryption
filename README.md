@@ -1,4 +1,4 @@
-![Recovered plaintexts](https://img.shields.io/github/directory-file-count/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/plaintext-i-found?type=file&label=Recovered%20plaintexts&style=flat-square&labelColor=8EB8DC&color=D6ECFA&cacheSeconds=300)
+[![Last plaintext found](https://img.shields.io/github/directory-file-count/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/plaintext-i-found?type=file&label=Last%20plaintext%20found&style=flat-square&labelColor=8EB8DC&color=D6ECFA&cacheSeconds=300)](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/tree/main/plaintext-i-found)
 [![Rules found](https://img.shields.io/github/directory-file-count/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/rules?type=file&label=Rules%20found&style=flat-square&labelColor=9BC9AE&color=DDF2E5&cacheSeconds=300)](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/tree/main/rules)
 
 ## Live Route Analysis
