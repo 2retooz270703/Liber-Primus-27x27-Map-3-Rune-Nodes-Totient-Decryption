@@ -1,6 +1,6 @@
 # Strongest Plaintext Evidence
 
-*Unless otherwise stated, values use 0-based Gematria Primus indices. Section 3 uses the standard prime-valued Gematria Primus mapping.*
+*Unless otherwise stated, values use 0-based Gematria Primus indices.*
 
 ---
 
