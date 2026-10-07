@@ -40,7 +40,132 @@ So the same block begins with its 7-word count and ends exactly on the GP value 
 
 ---
 
-## 3. Prime-sum through DEATH — YOU
+## 3. Ciphertext–key aggregate structure of the two 7-word blocks
+
+All values here are **0-based Gematria Primus indices (0–28)**.
+
+### AS I GO, THE WEATHER TURNS COLD
+
+**AS I GO THE**
+
+```text
+CIPHERTEXT: L AE N TH P U X = 20+25+9+2+13+1+14 = 84
+KEY:        AE I EA AE I EA AE = 25+10+28+25+10+28+25 = 151
+```
+
+**WEATHER**
+
+```text
+CIPHERTEXT: NG P EO O E = 21+13+12+3+18 = 67
+KEY:        X X I X X = 14+14+10+14+14 = 66
+```
+
+**TURNS**
+
+```text
+CIPHERTEXT: A OE N B W = 24+22+9+17+7 = 79
+KEY:        H NG C H NG = 8+21+5+8+21 = 63
+```
+
+**COLD**
+
+```text
+CIPHERTEXT: G J EA A = 6+11+28+24 = 69
+KEY:        U H H U = 1+8+8+1 = 18
+```
+
+**TOTAL CIPHERTEXT** = 84+67+79+69 = **299**  
+**TOTAL KEY** = 151+66+63+18 = **298**
+
+The aggregate decryption relation is:
+
+```text
+ΣP = ΣC - ΣK + (wraps × 29)
+
+ΣP = 299 - 298 + (8 × 29)
+ΣP = 233
+```
+
+So for the first 7-word block:
+
+```text
+ΣC = 299
+ΣK = 298
+wraps = 8
+ΣP = 233
+```
+
+### THE IDEA OF THE END IS DEATH
+
+**THE**
+
+```text
+CIPHERTEXT: A J = 24+11 = 35
+KEY:        OE OE = 22+22 = 44
+```
+
+**IDEA**
+
+```text
+CIPHERTEXT: J E D = 11+18+23 = 52
+KEY:        U A A = 1+24+24 = 49
+```
+
+**OF THE**
+
+```text
+CIPHERTEXT: X OE A J = 14+22+24+11 = 71
+KEY:        J OE OE OE = 11+22+22+22 = 77
+```
+
+**END**
+
+```text
+CIPHERTEXT: F L I = 0+20+10 = 30
+KEY:        J J T = 11+11+16 = 38
+```
+
+**IS**
+
+```text
+CIPHERTEXT: EO D = 12+23 = 35
+KEY:        TH H = 2+8 = 10
+```
+
+**DEATH**
+
+```text
+CIPHERTEXT: C I E = 5+10+18 = 33
+KEY:        J J T = 11+11+16 = 38
+```
+
+**TOTAL CIPHERTEXT** = 35+52+71+30+35+33 = **256**  
+**TOTAL KEY** = 44+49+77+38+10+38 = **256**
+
+Again:
+
+```text
+ΣP = ΣC - ΣK + (wraps × 29)
+
+ΣP = 256 - 256 + (8 × 29)
+ΣP = 232
+```
+
+So for the second 7-word block:
+
+```text
+ΣC = 256
+ΣK = 256
+wraps = 8
+ΣP = 232
+```
+
+The ciphertext and key totals are almost identical in both 7-word blocks: **299 vs 298** and **256 vs 256**. With the same **8 modular wraps**, this aggregate arithmetic directly reproduces the plaintext totals **233** and **232**. In other words, the 233 → 232 relationship is already present in the ciphertext/key layer, not only in the recovered plaintext. Both blocks also use exactly 8 wraps, and the Euler totient of 8 is 4: **φ(8) = 4**.
+
+
+---
+
+## 4. Prime-sum through DEATH — YOU
 
 Using the standard prime-valued Gematria Primus mapping, take the entire recovered plaintext from the beginning through **DEATH**:
 
@@ -72,7 +197,7 @@ The multiplication itself does not determine letter order, but the three exact p
 
 ---
 
-## 4. The repeated value 51
+## 5. The repeated value 51
 
 The value 51 appears several times independently in the plaintext. COLD has a GP value of 51, and SEE also has a GP value of 51. At the same time, 233 — the GP sum of the first 7-word block — is the 51st prime number.
 
@@ -91,7 +216,7 @@ It also factors as 51 = 3 × 17, where 3 is the number of words in SEE YOU SOON,
 
 ---
 
-## 5. The 27 / 343 cube pair
+## 6. The 27 / 343 cube pair
 
 The last two blocks are:
 
