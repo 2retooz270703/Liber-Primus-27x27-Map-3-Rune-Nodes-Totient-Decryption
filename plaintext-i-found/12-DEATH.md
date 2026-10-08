@@ -1,511 +1,186 @@
 # 12 — DEATH
 
-> **Recovered plaintext:** `DEATH`  
-> **Current sequence:** `AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH`  
-> **Status:** proposed reconstruction; not an officially verified Cicada 3301 solution.
+AS I GO, THE WEATHER TURNS COLD. I MAY CRY NOW. THE IDEA OF THE END IS DEATH.
 
-Everything below uses the same 27×27 rune grid:
+## 1. Return from IS to the earlier J-B-J mirror
 
-https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/0-2-live-map.html
-
----
-
-## 1. From IS to the old B-centered key generator
-
-`IS` ends at:
+The previous chapter, [`11-IS.md`](./11-IS.md), ends at **D(21,10)**. This rune is the center of a diagonal mirror whose outer runes are both `E`:
 
 ```text
-D(21,10)
+E(19,12) ── 2 ── D(21,10) ── 2 ── E(23,8)
 ```
 
-which is the center of the exact radius-2 mirror:
+The two outer runes are each two rows and two columns away from the center. Using the same distance **perpendicular to this diagonal**, we move two rows down and two columns right:
 
 ```text
-E(19,12) —2— D(21,10) —2— E(23,8)
+D(21,10) ── (+2,+2) ──→ B(23,12)
 ```
 
-Using the same radius perpendicular to that diagonal gives:
+This brings us back to a familiar location. **B(23,12)** is the center of the `J-B-J` mirror previously used to generate the key for `END`:
 
 ```text
-D(21,10) → B(23,12)
+J(19,16) ── 4 ── B(23,12) ── 4 ── J(27,8)
 ```
 
-`B(23,12)` is already known: it is the center of the mirror that generated the key for `END`:
+The route therefore reconnects with an earlier key-generating structure. We can apply the same Euler–Möbius rules to it again.
 
-```text
-J(19,16) —4— B(23,12) —4— J(27,8)
-```
+## 2. J-B-J regenerates the key used for END
 
-So the route returns to the existing:
-
-```text
-J-B-J
-```
-
-structure instead of introducing a new key family.
-
----
-
-## 2. Regenerate the key
-
-The center is:
+Begin with the mirror **J-B-J**. Euler's totient transforms its center `B` while leaving the two outer `J` runes unchanged:
 
 ```text
 B = 17
+φ(17) = 16 = T
+
+J-B-J → J-T-J
 ```
 
-Apply Euler's totient:
+Next, calculate the totient signature of `J-T-J`, then apply the Möbius function to determine the key's phase:
 
 ```text
-φ(17)=16=T
+φ(J=11) = 10
+φ(T=16) =  8
+φ(J=11) = 10
+
+Totient signature: (10,8,10)
+Möbius signature: (+1,0,+1)
+Phase:              (1+0+1) mod 3 = 2
 ```
 
-Therefore:
+**Phase 2** rotates `J-T-J` into `J-J-T`:
 
 ```text
-J-B-J
-→
-J-T-J
+J-T-J → phase 2 → J-J-T
+
+Active key: J-J-T
 ```
 
-Its totient signature is:
+This is **exactly the same active key used for `END`**. Instead of producing an unrelated key, the route returns to the earlier `J-B-J` mirror and regenerates it.
+
+## 3. Phase 2 selects the other J
+
+The `J-B-J` mirror has two outer runes: **J(19,16)** and **J(27,8)**. To decide which side to follow, apply the coordinate selector with the newly calculated phase 2 to the center **B(23,12)**:
 
 ```text
-φ(J=11)=10
-φ(T=16)=8
-φ(J=11)=10
+φ²(23) = 10 → μ(10) = +1
+φ²(12) =  2 → μ(2)  = -1
+
+V₂(23,12) = (+1,-1) → DOWN + LEFT
 ```
 
-so:
+Of the two outer runes, **J(27,8)** lies down and left from `B(23,12)`. The other `J(19,16)` lies up and right.
 
-```text
-10-8-10
-```
+The selector therefore points to **J(27,8)**, opening the side of the mirror that leads toward the next ciphertext.
 
-The Möbius values are:
+## 4. A connected mirror chain reveals C-I-E
 
-```text
-μ(10)=+1
-μ(8)=0
-μ(10)=+1
-```
-
-therefore:
-
-```text
-phase = 2
-```
-
-and:
-
-```text
-J-T-J
-→ phase 2
-→ J-J-T
-```
-
-So the active key is:
-
-```text
-KEY = J-J-T
-```
-
-This is exactly the same key used for `END`.
-
----
-
-## 3. Select the unused outer J
-
-The two outers of `J-B-J` are:
-
-```text
-J(19,16)
-J(27,8)
-```
-
-At:
-
-```text
-B(23,12)
-```
-
-with phase:
-
-```text
-p=2
-```
-
-the later coordinate selector gives:
-
-```text
-V₂(23,12)=(+1,-1)
-```
-
-meaning:
-
-```text
-DOWN + LEFT
-```
-
-That selects exactly:
-
-```text
-J(27,8)
-```
-
-rather than returning to the already used `J(19,16)`.
-
----
-
-## 4. Local mirror chain to the ciphertext
-
-The selected outer:
-
-```text
-J(27,8)
-```
-
-belongs to:
+The selected **J(27,8)** is the lower outer rune of a small diagonal mirror:
 
 ```text
 J(25,6) — C(26,7) — J(27,8)
 ```
 
-The shared:
+Its center, **C(26,7)**, is also the right outer rune of another mirror on row 26:
 
 ```text
-C(26,7)
+C(26,3) ── 2 ── OE(26,5) ── 2 ── C(26,7)
 ```
 
-is itself the right outer of:
+These two mirrors connect through the shared **C(26,7)**. Following the horizontal mirror to its opposite outer brings us to **C(26,3)**.
+
+Reading the three adjacent cells from that position to the left gives:
 
 ```text
-C(26,3) —2— OE(26,5) —2— C(26,7)
+C(26,3) → I(26,2) → E(26,1)
 ```
 
-Following that mirror to its opposite outer gives:
+We now have **ciphertext `C-I-E`**. The route reaches it through two connected mirrors, beginning at the `J` selected by the phase-2 direction.
+
+## 5. Decrypting C-I-E
+
+The active key `J-J-T` was already generated at the `J-B-J` mirror. Subtract it from the three ciphertext runes, modulo 29:
+
+| Ciphertext | Key | Calculation | Plaintext |
+|---|---|---|---|
+| `C = 5` | `J = 11` | `5 − 11 ≡ 23` | **D** |
+| `I = 10` | `J = 11` | `10 − 11 ≡ 28` | **EA** |
+| `E = 18` | `T = 16` | `18 − 16 = 2` | **TH** |
 
 ```text
-C(26,3)
+Ciphertext: C  - I  - E
+Key:        J  - J  - T
+Plaintext:  D  - EA - TH
 ```
 
-From there, reading left:
+The result is **DEATH**. Although it contains five Latin letters, it consists of **three runes**: `D`, `EA`, and `TH`.
 
-```text
-C(26,3)
-I(26,2)
-E(26,1)
-```
+The central structural connection is that **the same `J-B-J` mirror and the same `J-J-T` key** appear in the reconstructions of both `END` and `DEATH`. Between them, the route passes through `IS` and returns to the earlier mirror center.
 
-gives:
+## 6. Two numerical connections
 
-```text
-CIPHERTEXT = C-I-E
-```
+There are two further relationships worth noting alongside the geometric decryption.
 
-The full local route is:
-
-```text
-B(23,12)
-↓
-J(27,8)
-↓
-C(26,7)
-↓
-C(26,3)
-↓
-I(26,2)
-↓
-E(26,1)
-```
-
----
-
-## 5. Decryption
-
-Use:
-
-```text
-P = (C - K) mod 29
-```
-
-with:
-
-```text
-Ciphertext: C   I   E
-Key:        J   J   T
-```
-
-| # | C | K | Result |
-|---:|---:|---:|---|
-| 1 | `C=5` | `J=11` | `5-11 ≡ 23 = D` |
-| 2 | `I=10` | `J=11` | `10-11 ≡ 28 = EA` |
-| 3 | `E=18` | `T=16` | `18-16 = 2 = TH` |
-
-Therefore:
-
-```text
-C-I-E
--
-J-J-T
-=
-D-EA-TH
-```
-
-# **DEATH**
-
-The recovered clause is:
-
-# **THE IDEA OF THE END IS DEATH**
-
----
-
-## 6. Why this branch is strong
-
-The important checks are compact:
-
-```text
-1. IS ends at the exact center of E-D-E.
-2. Its radius 2 leads to the already used B(23,12).
-3. B regenerates the same J-J-T key used for END.
-4. V₂(23,12)=(+1,-1) selects the unused outer J(27,8).
-5. Exact local mirrors connect J(27,8) to C(26,3).
-6. The resulting contiguous C-I-E decrypts directly to DEATH.
-```
-
-The strongest feature is the recursion:
-
-```text
-END
-→ leave J-B-J
-→ IS
-→ return to B(23,12)
-→ regenerate J-J-T
-→ DEATH
-```
-
-No new cipher mechanism is introduced.
-
----
-
-## 7. Numerical cross-checks
-
-### 233 → φ(233) → 232
-
-The first seven-word block has GP sum:
+**First: the two seven-word passages are connected by Euler's totient.** Their Gematria Primus totals are:
 
 ```text
 AS I GO THE WEATHER TURNS COLD = 233
+THE IDEA OF THE END IS DEATH   = 232
+
+φ(233) = 232
 ```
 
-The later seven-word block has:
+Because **233 is prime**, its totient is **232**. The total of the first passage therefore transforms directly into the total of the later passage.
+
+**Second: the key-generating center connects to the numerical value of DEATH.** The passage `THE IDEA OF THE END IS DEATH` contains **17 runes**. The center of the reused `J-B-J` mirror also has value **17**:
 
 ```text
-THE IDEA OF THE END IS DEATH = 232
+B = 17
+φ(17) = 16 = T
+16th prime = 53
+
+DEATH = D(23) + EA(28) + TH(2) = 53
 ```
 
-Since `233` is prime:
+The same chain links the **17-rune passage**, the **B** center, its totient **16**, and the prime-valued total **53** of `DEATH`. These numerical relationships accompany the decryption; the actual plaintext is produced by the `C-I-E` and `J-J-T` subtraction above.
 
-```text
-φ(233)=232
-```
+## 7. The endpoint prepares the next transition
 
-So:
-
-```text
-233
-↓ φ
-232
-```
-
-links two complete plaintext blocks.
-
-### 17 → 16 → 53
-
-The later seven-word block contains:
-
-```text
-17 runes
-```
-
-and the key-generating center is:
-
-```text
-B=17
-```
-
-Then:
-
-```text
-φ(17)=16=T
-```
-
-The 16th prime is:
-
-```text
-53
-```
-
-and:
-
-```text
-DEATH = D(23)+EA(28)+TH(2)=53
-```
-
-So:
-
-```text
-17
-→ φ(17)=16
-→ 16th prime=53
-→ DEATH=53
-```
-
-These are supporting checks, not required for the decryption.
-
----
-
-## 8. Frozen state after DEATH
-
-`DEATH` ends at:
-
-```text
-E(26,1)
-```
-
-The pre-rotation structure remains:
+The last ciphertext rune is **E(26,1)**. Its key came from `J-T-J`, so the phase and Möbius signature carried forward are:
 
 ```text
 J-T-J
+Totient signature: (10,8,10)
+Möbius signature: (+1,0,+1)
+Phase:              2
 ```
 
-with:
+In the project's route model, `(+1,0,+1)` is associated with an **outer-rune** continuation. Applying phase 2 to the endpoint coordinates gives:
 
 ```text
-signature = 10-8-10
-M = (+1,0,+1)
-phase = 2
+φ²(26) = 4 → μ(4) = 0
+φ²(1)  = 1 → μ(1) = +1
+
+T₂(26,1) = (4,1)
+V₂(26,1) = (0,+1) → RIGHT
 ```
 
-The later state model treats:
+So the next search is guided by an **outer mirror rune on the right-compatible side** of **E(26,1)**. This endpoint is not the `E(26,16)` from the earlier `E-X-E` mirror; the two positions are distinct.
+
+One more number helps connect this ending to the next chapter. The plaintext through `DEATH` can be grouped into **12 major route blocks**:
 
 ```text
-(+1,0,+1)
+ 1. AS I GO THE       7. NOW THE
+ 2. WEATHER           8. IDEA
+ 3. TURNS             9. OF THE
+ 4. COLD             10. END
+ 5. I MAY            11. IS
+ 6. CRY              12. DEATH
 ```
 
-as **OUTER-compatible**.
-
-The endpoint selector is:
+The central rune of the matrix is **NG = 21**. Its totient is **12**, and applying the totient again gives **4**:
 
 ```text
-V₂(26,1)
-=
-(0,+1)
+NG = 21 → φ(21) = 12 → φ(12) = 4
 ```
 
-so the post-`DEATH` state is:
-
-```text
-endpoint = E(26,1)
-role = OUTER-compatible
-horizontal side = RIGHT-compatible
-vertical direction = unresolved
-```
-
-Important:
-
-```text
-E(26,1)
-```
-
-is **not** the earlier `E(26,16)` from:
-
-```text
-E(24,16)-X(25,16)-E(26,16)
-```
-
-so the old `E-X-E` mirror does not directly contain the `DEATH` endpoint.
-
----
-
-## 9. Route-level totient observation
-
-With `DEATH`, the reconstruction now contains 12 major route blocks:
-
-```text
-AS I GO THE
-WEATHER
-TURNS
-COLD
-I MAY
-CRY
-NOW THE
-IDEA
-OF THE
-END
-IS
-DEATH
-```
-
-The central grid rune is:
-
-```text
-NG=21
-```
-
-and:
-
-```text
-φ(21)=12
-```
-
-So:
-
-```text
-NG=21
-↓ φ
-12
-=
-12 major blocks through DEATH
-```
-
-This becomes important in the next chapter, where the proposed missing route rule continues:
-
-```text
-φ(12)=4
-```
-
-and tests `4` as the next mirror scale.
-
----
-
-## 10. Next chapter
-
-The exact frozen endpoint is:
-
-```text
-E(26,1)
-```
-
-with:
-
-```text
-M=(+1,0,+1)
-V₂=(0,+1)
-```
-
-The strongest current continuation searches for:
-
-```text
-OUTER
-+
-RIGHT-compatible
-+
-radius 4
-```
-
-and leads to the candidate:
-
-```text
-SEE
-```
+The following chapter, [`13-SEE.md`](./13-SEE.md), uses this **radius 4** together with the outer-rune signature and RIGHT-compatible direction to examine the next mirror and recover **SEE**.
