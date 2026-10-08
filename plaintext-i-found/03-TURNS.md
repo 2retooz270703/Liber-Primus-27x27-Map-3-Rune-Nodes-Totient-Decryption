@@ -1,325 +1,166 @@
 # 03 — TURNS
 
-> **Recovered plaintext:** `TURNS`  
-> **Current sequence:** `AS I GO THE WEATHER TURNS`  
-> **Status:** proposed reconstruction; not an officially verified Cicada 3301 solution.
+AS I GO, THE WEATHER TURNS
 
-Everything below uses the same 27×27 rune grid:
+## 1. Continue from WEATHER
 
-https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/0-2-live-map.html
+The previous chapter, [`02-WEATHER.md`](./02-WEATHER.md), ends at **E(14,18)**. The cell immediately to its right is **A(14,19)**, which becomes the crossroads for the next stage.
 
----
-
-## 1. WEATHER leads to the A crossroads
-
-After `WEATHER`, the route continues to:
-
-```text
-A(14,19)
-```
-
-The two active control values are inherited from the previous `I`:
+The `WEATHER` key was built from `X-I-X`, with **Möbius phase 2**. It also left us with two related values:
 
 ```text
 I = 10
-φ(I)=4
+φ(I) = 4
 ```
 
-From `A(14,19)` they are reused as movement distances:
+We use **10** and **4** again to locate the next key. The phase-2 coordinate selector at `A(14,19)` gives the directions:
 
 ```text
-UP 10
-RIGHT 4
+φ²(14) = 2 → μ(2) = -1
+φ²(19) = 6 → μ(6) = +1
+
+V₂(14,19) = (-1,+1) → UP + RIGHT
 ```
 
-The later coordinate selector independently agrees with these directions:
+The selector points **up and right**. The inherited numbers supply the distances, while the nearby rune structure shows where they can be applied.
+
+## 2. Find the key through NG
+
+Start at `A(14,19)` and move **RIGHT 4**:
 
 ```text
-phase = 2
-
-V₂(14,19)=(-1,+1)
-→ UP + RIGHT
+A(14,19) → RIGHT 4 → NG(14,23)
 ```
 
----
-
-## 2. Locate the key structure
-
-The rightward movement lands on:
+This `NG` lies at the center of a horizontal, equally spaced `A-NG-A` structure:
 
 ```text
+A(14,19) ── 4 ── NG(14,23) ── 4 ── A(14,27)
+```
+
+Now apply the other inherited number, **10**, vertically from `NG(14,23)`:
+
+```text
+NG(14,23) → UP 10   → H(4,23)
+NG(14,23) → DOWN 10 → C(24,23)
+```
+
+The resulting vertical structure is:
+
+```text
+ H(4,23)
+    |
+   10
+    |
 NG(14,23)
+    |
+   10
+    |
+ C(24,23)
 ```
 
-with:
+Its outer runes are different, **H** and **C**, so this is not a matching-rune mirror. We use the three runes in their existing order as the key structure: **`H-NG-C`**.
+
+The geometry is the important connection: **RIGHT 4** reaches the central `NG`, and **UP/DOWN 10** identifies the two outer runes. Both distances come from the preceding stage.
+
+## 3. Determine the key's Möbius phase
+
+Calculate the Euler totient of each rune in `H-NG-C`:
 
 ```text
-A(14,19) —4— NG(14,23) —4— A(14,27)
+φ(H=8)   = 4
+φ(NG=21) = 12
+φ(C=5)   = 4
+
+Totient signature: (4,12,4)
 ```
 
-Using the other inherited value vertically from this `NG`:
+The same signature appears in the related `I-NG-I` structure, giving both rune sequences the numerical pattern **(4,12,4)**.
+
+Next, apply the Möbius function to determine the rotation:
 
 ```text
-UP 10   → H(4,23)
-DOWN 10 → C(24,23)
+μ(4)  = 0
+μ(12) = 0
+μ(4)  = 0
+
+Möbius signature: (0,0,0)
+Phase:              (0+0+0) mod 3 = 0
 ```
 
-forms:
+**Phase 0** leaves `H-NG-C` unchanged. Because the ciphertext contains five runes, repeat the three-rune key from the beginning:
 
 ```text
-H(4,23)
-   |
-  10
-   |
-NG(14,23)
-   |
-  10
-   |
-C(24,23)
+H-NG-C → phase 0 → H-NG-C
+
+Active key: H-NG-C-H-NG
 ```
 
-So the key is:
+## 4. Read the ciphertext and decrypt TURNS
+
+Return to the crossroads **A(14,19)**. Reading straight upward gives five consecutive runes:
 
 ```text
-KEY = H-NG-C
+A(14,19) → OE(13,19) → N(12,19) → B(11,19) → W(10,19)
 ```
 
-This is a non-mirrored structure, so it is used directly.
+This gives **ciphertext `A-OE-N-B-W`**. Subtract the active key `H-NG-C-H-NG`, modulo 29:
 
----
-
-## 3. Signature and phase
-
-Its totient signature is:
+| Ciphertext | Key | Calculation | Plaintext |
+|---|---|---|---|
+| `A = 24` | `H = 8` | `24 − 8 = 16` | **T** |
+| `OE = 22` | `NG = 21` | `22 − 21 = 1` | **U** |
+| `N = 9` | `C = 5` | `9 − 5 = 4` | **R** |
+| `B = 17` | `H = 8` | `17 − 8 = 9` | **N** |
+| `W = 7` | `NG = 21` | `7 − 21 ≡ 15` | **S** |
 
 ```text
-φ(H=8)=4
-φ(NG=21)=12
-φ(C=5)=4
+Ciphertext: A - OE - N - B - W
+Key:        H - NG - C - H - NG
+Plaintext:  T - U  - R - N - S
 ```
 
-therefore:
+The result is **TURNS**. The key is built around `NG(14,23)`, while the ciphertext begins at the original crossroads `A(14,19)`. Both are connected by the inherited distance **4**.
+
+## 5. A numerical link to I-NG-I
+
+There is a useful relationship between the newly constructed key and a mirror of the form `I-NG-I`:
 
 ```text
-4-12-4
+H-NG-C → φ → (4,12,4)
+I-NG-I → φ → (4,12,4)
 ```
 
-This exactly matches the signature of the related mirrored structure:
+The outer runes differ, but their totient values are equal:
 
 ```text
-I-NG-I
-→ 4-12-4
+φ(H=8)  = 4
+φ(I=10) = 4
+φ(C=5)  = 4
 ```
 
-For `H-NG-C`:
+This explains why **H-NG-C** and **I-NG-I** produce the same signature. The equality also accounts for their common neutral Möbius pattern `(0,0,0)`.
 
-```text
-μ(4)=0
-μ(12)=0
-μ(4)=0
-```
+## 6. NG supplies the next movement to COLD
 
-so:
-
-```text
-phase = 0
-```
-
-and the key remains:
-
-```text
-H-NG-C
-```
-
-Repeated across five runes:
-
-```text
-H-NG-C-H-NG
-```
-
----
-
-## 4. Ciphertext
-
-Reading upward from the crossroads gives:
-
-```text
-A(14,19)
-OE(13,19)
-N(12,19)
-B(11,19)
-W(10,19)
-```
-
-Therefore:
-
-```text
-CIPHERTEXT = A-OE-N-B-W
-```
-
----
-
-## 5. Decryption
-
-Use:
-
-```text
-P = (C - K) mod 29
-```
-
-with:
-
-```text
-Ciphertext: A   OE  N   B   W
-Key:        H   NG  C   H   NG
-```
-
-| # | C | K | Result |
-|---:|---:|---:|---|
-| 1 | `A=24` | `H=8` | `24-8 = 16 = T` |
-| 2 | `OE=22` | `NG=21` | `22-21 = 1 = U` |
-| 3 | `N=9` | `C=5` | `9-5 = 4 = R` |
-| 4 | `B=17` | `H=8` | `17-8 = 9 = N` |
-| 5 | `W=7` | `NG=21` | `7-21 ≡ 15 = S` |
-
-Therefore:
-
-```text
-A-OE-N-B-W
--
-H-NG-C-H-NG
-=
-T-U-R-N-S
-```
-
-# **TURNS**
-
-The plaintext becomes:
-
-# **AS I GO THE WEATHER TURNS**
-
----
-
-## 6. Why this branch is strong
-
-The stage reuses the same two inherited values throughout:
-
-```text
-10 and 4
-```
-
-They first select the route:
-
-```text
-A(14,19)
-→ UP 10
-→ RIGHT 4
-→ NG(14,23)
-```
-
-and then define the cross containing the key:
-
-```text
-A —4— NG —4— A
-        |
-       10
-        |
-        H / C
-```
-
-The resulting key also has the exact signature match:
-
-```text
-H-NG-C
-→ 4-12-4
-← I-NG-I
-```
-
-No new decryption rule is introduced.
-
----
-
-## 7. Next state
-
-The key center is:
+The route now returns to the **A(14,19)** crossroads rather than starting from the last ciphertext rune `W(10,19)`. The center of the `TURNS` key structure is **NG = 21**. Applying Euler's totient gives a new value:
 
 ```text
 NG = 21
+φ(21) = 12
 ```
 
-so:
+The current **phase 0** gives a different directional selector at the crossroads:
 
 ```text
-φ(NG)=12
+V₀(14,19) = (+1,-1) → DOWN + LEFT
 ```
 
-This new value controls the next transition from the same crossroads:
+Using **12** in these two directions reaches the structures used for the next word:
 
 ```text
-A(14,19)
-→ DOWN 12
-→ center of H-TH-H
-
-A(14,19)
-→ LEFT 12
-→ G(14,7)
+A(14,19) → DOWN 12 → TH(26,19)
+A(14,19) → LEFT 12 → G(14,7)
 ```
 
-The later selector for the new phase agrees:
-
-```text
-V₀(14,19)=(+1,-1)
-→ DOWN + LEFT
-```
-
-These two 12-step branches begin the next plaintext:
-
-```text
-COLD
-```
-
----
-
-## 8. Compact route
-
-```text
-WEATHER
-↓
-A(14,19)
-
-inherited:
-10 and 4
-
-↓
-UP 10
-RIGHT 4
-
-NG(14,23)
-
-↓
-vertical ±10
-
-H-NG-C
-
-↓
-signature 4-12-4
-phase 0
-
-↓
-ciphertext:
-A-OE-N-B-W
-
-↓
-T-U-R-N-S
-
-↓
-TURNS
-
-↓
-NG=21
-φ(NG)=12
-
-↓
-next:
-COLD
-```
+**TH(26,19)** is the center of the next key-generating `H-TH-H` mirror, while **G(14,7)** begins the next ciphertext. Thus, the same `NG` that sits at the center of the `TURNS` key also supplies the distance that connects this stage to **COLD**, explained in [`04-COLD.md`](./04-COLD.md).
