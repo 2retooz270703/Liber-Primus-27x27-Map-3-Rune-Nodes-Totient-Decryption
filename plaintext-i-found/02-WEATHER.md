@@ -1,441 +1,155 @@
 # 02 — WEATHER
 
-> **Recovered plaintext:** `WEATHER`  
-> **Current sequence:** `AS I GO THE WEATHER`  
-> **Status:** proposed reconstruction; not an officially verified Cicada 3301 solution.
+AS I GO, THE WEATHER
 
-Everything below uses the same 27×27 rune grid:
+## 1. Continue from the end of AS I GO THE
 
-https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/0-2-live-map.html
-
----
-
-## 1. The previous endpoint opens X-OE-X
-
-`AS I GO THE` ends at:
-
-```text
-X(14,4)
-```
-
-That same cell is the left outer of:
+The previous chapter, [`01-AS-I-GO-THE.md`](./01-AS-I-GO-THE.md), ends at **X(14,4)**. This rune is also the left outer of a small horizontal mirror:
 
 ```text
 X(14,4) — OE(14,5) — X(14,6)
 ```
 
-So the next key-generating structure is:
-
-```text
-X-OE-X
-```
-
-The center is:
+The mirror **X-OE-X** provides the key for the next stage. As in the previous chapter, we apply Euler's totient to the center while keeping the two outer runes unchanged:
 
 ```text
 OE = 22
-```
+φ(22) = 10 = I
 
-and:
-
-```text
-φ(22)=10=I
-```
-
-therefore:
-
-```text
-X-OE-X
-→
-X-I-X
-```
-
-So the new key structure is:
-
-```text
-X-I-X
-```
-
----
-
-## 2. The same value gives the movement
-
-The center transformation produced:
-
-```text
-10
-```
-
-Reuse it as movement from the current route position:
-
-```text
-X(14,4)
-→ RIGHT 10
-→ NG(14,14)
-```
-
-This lands exactly on the unique center of the 27×27 grid:
-
-```text
-NG(14,14)
-```
-
-So the same `φ(OE)=10` both:
-
-```text
-generates I in the key
-and
-moves the route to the grid center
-```
-
----
-
-## 3. Möbius phase
-
-For:
-
-```text
-X-I-X
-```
-
-the totient signature is:
-
-```text
-φ(X=14)=6
-φ(I=10)=4
-φ(X=14)=6
-```
-
-so:
-
-```text
-6-4-6
-```
-
-The Möbius values are:
-
-```text
-μ(6)=+1
-μ(4)=0
-μ(6)=+1
-```
-
-therefore:
-
-```text
-phase = 2
-```
-
-and:
-
-```text
-X-I-X
-→ phase 2
-→ X-X-I
-```
-
-For five runes:
-
-```text
-KEY = X-X-I-X-X
-```
-
----
-
-## 4. Ciphertext
-
-Starting at the grid center and reading right:
-
-```text
-NG(14,14)
-P(14,15)
-EO(14,16)
-O(14,17)
-E(14,18)
-```
-
-gives:
-
-```text
-CIPHERTEXT = NG-P-EO-O-E
-```
-
-This sequence is directly checkable in the 27×27 grid.
-
----
-
-## 5. Decryption
-
-Use:
-
-```text
-P = (C - K) mod 29
-```
-
-with:
-
-```text
-Ciphertext: NG  P   EO  O   E
-Key:        X   X   I   X   X
-```
-
-| # | C | K | Result |
-|---:|---:|---:|---|
-| 1 | `NG=21` | `X=14` | `21-14 = 7 = W` |
-| 2 | `P=13` | `X=14` | `13-14 ≡ 28 = EA` |
-| 3 | `EO=12` | `I=10` | `12-10 = 2 = TH` |
-| 4 | `O=3` | `X=14` | `3-14 ≡ 18 = E` |
-| 5 | `E=18` | `X=14` | `18-14 = 4 = R` |
-
-Therefore:
-
-```text
-NG-P-EO-O-E
--
-X-X-I-X-X
-=
-W-EA-TH-E-R
-```
-
-# **WEATHER**
-
-The plaintext becomes:
-
-# **AS I GO THE WEATHER**
-
----
-
-## 6. Why this branch is strong
-
-The stage reuses one arithmetic value consistently:
-
-```text
-OE=22
-↓
-φ(OE)=10=I
-```
-
-which gives both:
-
-```text
 X-OE-X → X-I-X
 ```
 
-and:
+This gives the new key structure **X-I-X**. The transformation also produces the number **10**, which has a second role: it determines how far the route moves from the previous endpoint.
+
+## 2. The same number leads to the center of the grid
+
+Starting at **X(14,4)**, move **RIGHT 10** along row 14:
 
 ```text
-RIGHT 10 → NG(14,14)
+X(14,4) → RIGHT 10 → NG(14,14)
 ```
 
-The route lands on the exact center of the entire grid, not an arbitrary cell.
+The destination **NG(14,14)** is the exact center of the 27×27 matrix. The connection is particularly clear: the value obtained from the mirror's center, **φ(OE) = 10**, is used both to generate **I** in the key and to reach the center of the entire grid.
 
-There are also two useful cross-checks:
+From this central cell, the next ciphertext is read along the same row.
+
+## 3. Calculate the key's Möbius phase
+
+We already have **X-I-X**. To determine its rotation, first calculate Euler's totient for each rune:
 
 ```text
-J=11  → φ(J)=10=I
-OE=22 → φ(OE)=10=I
+φ(X=14) = 6
+φ(I=10) = 4
+φ(X=14) = 6
+
+Totient signature: (6,4,6)
 ```
 
-so the first two key-generating centers independently reduce to the same rune `I`.
-
-And directly above the first three ciphertext cells:
+Now apply the Möbius function to that signature:
 
 ```text
-NG-P-EO
+μ(6) = +1
+μ(4) =  0
+μ(6) = +1
+
+Möbius signature: (+1,0,+1)
+Phase:              (1+0+1) mod 3 = 2
 ```
 
-the grid contains:
+**Phase 2** rotates the key structure to **X-X-I**. The ciphertext contains five runes, so the three-rune key repeats from the beginning:
 
 ```text
-W-EA-TH
+X-I-X → phase 2 → X-X-I
+
+Active key: X-X-I-X-X
 ```
 
-This is a visual supporting clue, not part of the decryption rule.
+The key is now determined by the mirror and its calculated phase.
 
----
+## 4. Read the ciphertext and decrypt WEATHER
 
-## 7. OUTER-state cross-check
-
-The active symmetric key structure for this stage is:
+Return to **NG(14,14)**, the grid center reached by **RIGHT 10**. Reading five consecutive runes to the right gives:
 
 ```text
-X-I-X
+NG(14,14) → P(14,15) → EO(14,16) → O(14,17) → E(14,18)
 ```
 
-Its totient signature is:
+This is **ciphertext `NG-P-EO-O-E`**. Subtract the active key `X-X-I-X-X`, modulo 29:
+
+| Ciphertext | Key | Calculation | Plaintext |
+|---|---|---|---|
+| `NG = 21` | `X = 14` | `21 − 14 = 7` | **W** |
+| `P = 13` | `X = 14` | `13 − 14 ≡ 28` | **EA** |
+| `EO = 12` | `I = 10` | `12 − 10 = 2` | **TH** |
+| `O = 3` | `X = 14` | `3 − 14 ≡ 18` | **E** |
+| `E = 18` | `X = 14` | `18 − 14 = 4` | **R** |
 
 ```text
-6-4-6
+Ciphertext: NG - P  - EO - O - E
+Key:        X  - X  - I  - X - X
+Plaintext:  W  - EA - TH - E - R
 ```
 
-and therefore its full Möbius state is:
+The result is **WEATHER**. Although it has seven Latin letters, it consists of five runes because **EA** and **TH** are single runes in Gematria Primus.
+
+## 5. Additional connections around the grid center
+
+There are two useful relationships alongside the decryption.
+
+First, the key-generating centers in the opening chapters reduce to the same rune:
 
 ```text
-μ(6)=+1
-μ(4)=0
-μ(6)=+1
-
-M=(+1,0,+1)
+J  = 11 → φ(11) = 10 = I
+OE = 22 → φ(22) = 10 = I
 ```
 
-Under the observed CENTER / OUTER state rule, this is the strong:
+So both center transformations produce **I**, even though their original rune values differ.
+
+Second, the grid contains a striking alignment directly above the beginning of this ciphertext:
 
 ```text
-(+1,0,+1)
-→ OUTER
+Plaintext runes: W - EA - TH
+Ciphertext:      NG - P - EO
 ```
 
-state.
+These are adjacent rows of the matrix. The alignment is an additional geometric connection; the modular subtraction above is what actually recovers the word.
 
-`WEATHER` ends at:
+## 6. The endpoint belongs to a unique E-NG-E mirror
+
+`WEATHER` ends at **E(14,18)**. That cell is also an outer rune of a larger diagonal mirror:
 
 ```text
-E(14,18)
+E(6,10) —4 diagonal steps— NG(10,14) —4 diagonal steps— E(14,18)
 ```
 
-That endpoint is not only the last ciphertext cell. It is also an **outer** point of the diagonal mirrored structure:
+The equal distances form **E-NG-E**, with **NG(10,14)** at its center. This is the only mirror of that exact rune pattern found in the grid when checking horizontal, vertical, and diagonal axes at all integer radii.
+
+There is also a numerical connection to the key state. The **X-I-X** structure used to decrypt `WEATHER` has:
 
 ```text
-E(6,10)
-   \
-    \
-     NG(10,14)
-        \
-         \
-          E(14,18)
+Totient signature: (6,4,6)
+Möbius signature: (+1,0,+1)
 ```
 
-with equal radius:
+In the project's **CENTER / OUTER** interpretation, **(+1,0,+1)** corresponds to an **OUTER** continuation. The final cell **E(14,18)** is indeed the outer rune of the `E-NG-E` mirror.
 
-```text
-E(6,10)
-— 4 diagonal steps —
-NG(10,14)
-— 4 diagonal steps —
-E(14,18)
-```
+This repeats the geometric relationship also seen in later chapters: the key's Möbius state matches the role of the endpoint in the next mirror structure.
 
-So the stage gives the direct structural correspondence:
+## 7. The next cell leads to TURNS
 
-```text
-X-I-X
-↓
-signature 6-4-6
-↓
-M=(+1,0,+1)
-↓
-WEATHER
-↓
-endpoint E(14,18)
-↓
-OUTER of E-NG-E
-```
+Immediately to the right of the final **E(14,18)** lies **A(14,19)**. This cell becomes the crossroads used in the next stage.
 
-A full scan of the 27×27 grid over horizontal, vertical, and both 45° diagonal symmetric 3-rune structures, at all possible integer radii, finds exactly **one** `E-NG-E` mirror in the entire grid:
-
-```text
-E(6,10) — NG(10,14) — E(14,18)
-```
-
-Therefore this is not one of several competing `E-NG-E` mirrors that could be attached to the endpoint.
-
-This makes `WEATHER` an additional direct example supporting the rule documented in:
-
-```text
-rules/05-center-outer-states.md
-```
-
-namely:
-
-```text
-(+1,0,+1)
-→ OUTER
-```
-
-Together with the later `NOW THE` and `END` stages, this gives three clean direct OUTER examples before `DEATH`.
-
----
-
-## 8. Next state
-
-`WEATHER` ends at:
-
-```text
-E(14,18)
-```
-
-Immediately to the right is:
-
-```text
-A(14,19)
-```
-
-which becomes the next crossroads.
-
-The two active values carried forward are:
+We carry forward the two related values already produced by the key:
 
 ```text
 I = 10
-φ(I)=4
+φ(I) = 4
 ```
 
-and the later coordinate selector at:
+With **phase 2**, the coordinate selector at `A(14,19)` gives:
 
 ```text
-A(14,19)
+V₂(14,19) = (-1,+1) → UP + RIGHT
 ```
 
-with phase `2` gives:
-
-```text
-V₂(14,19)=(-1,+1)
-→ UP + RIGHT
-```
-
-These values drive the next stage:
-
-```text
-TURNS
-```
-
----
-
-## 9. Compact route
-
-```text
-AS I GO THE
-↓
-X(14,4)
-
-↓
-X-OE-X
-
-↓
-OE → I
-
-↓
-X-I-X
-
-↓
-signature 6-4-6
-phase 2
-
-↓
-X-X-I
-
-↓
-RIGHT 10
-
-NG(14,14)
-= exact grid center
-
-↓
-ciphertext:
-NG-P-EO-O-E
-
-↓
-W-EA-TH-E-R
-
-↓
-WEATHER
-```
+The directions **UP** and **RIGHT**, together with the inherited distances **10** and **4**, locate the next key structure and ciphertext. This continuation produces **TURNS**, explained in [`03-TURNS.md`](./03-TURNS.md).
