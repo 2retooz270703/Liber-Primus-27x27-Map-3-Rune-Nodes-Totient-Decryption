@@ -1,338 +1,136 @@
 # 08 — IDEA
 
-> **Recovered plaintext:** `IDEA`  
-> **Current sequence:** `AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA`  
-> **Status:** proposed reconstruction; not an officially verified Cicada 3301 solution.
+AS I GO, THE WEATHER TURNS COLD. I MAY CRY NOW. THE IDEA
 
-Everything below uses the same 27×27 rune grid:
+## 1. NOW THE leads directly to the next ciphertext
 
-https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/0-2-live-map.html
+The previous chapter, [`07-NOW-THE.md`](./07-NOW-THE.md), ends at **J(15,20)**. This same cell becomes the first ciphertext rune of **IDEA**, so the new stage begins exactly where the previous one finished.
 
----
-
-## 1. NOW THE ends at the IDEA ciphertext start
-
-`NOW THE` ends at:
+The key comes from a mirror connected to the route we have just followed. One step up-left from `J(15,20)` is **A(14,19)**, the lower outer rune of this diagonal mirror:
 
 ```text
-J(15,20)
+A(8,13) ── 3 ── TH(11,16) ── 3 ── A(14,19)
 ```
 
-and the same cell becomes the first ciphertext rune of `IDEA`.
+The route used **A(14,19)** before reaching **J(15,20)**. Both cells lie on the same diagonal, making **A-TH-A** the natural nearby structure to examine for the next key.
 
-Nearby, on the same diagonal, is the exact radius-3 mirror:
+## 2. The A-TH-A mirror generates the key
 
-```text
-A(8,13) —3— TH(11,16) —3— A(14,19)
-```
-
-The route has already passed through:
-
-```text
-A(14,19)
-```
-
-and reaches:
-
-```text
-J(15,20)
-```
-
-immediately beyond it on the same diagonal.
-
-So:
-
-```text
-A-TH-A
-```
-
-is the local key-generating structure for the next block.
-
----
-
-## 2. Generate the key
-
-The center is:
+As in the earlier stages, transform only the center rune using Euler's totient. The center is `TH(11,16)`, whose rune value is **2**:
 
 ```text
 TH = 2
+φ(2) = 1 = U
+
+A-TH-A → A-U-A
 ```
 
-Apply Euler's totient:
+We now calculate the totient signature of the transformed structure **A-U-A**, then apply Möbius to determine its rotation:
 
 ```text
-φ(2)=1=U
+φ(A=24) = 8  → μ(8) = 0
+φ(U=1)  = 1  → μ(1) = +1
+φ(A=24) = 8  → μ(8) = 0
+
+Totient signature: (8,1,8)
+Möbius signature: (0,+1,0)
+Phase:              (0+1+0) mod 3 = 1
 ```
 
-therefore:
+**Phase 1** rotates `A-U-A` into **U-A-A**:
 
 ```text
-A-TH-A
-→
-A-U-A
+A-U-A → phase 1 → U-A-A
+
+Active key: U-A-A
 ```
 
-Its totient signature is:
+The mirror therefore gives us the full three-rune key without needing to choose its rotation manually.
+
+## 3. Read the ciphertext and decrypt IDEA
+
+Starting at the last `NOW THE` cell **J(15,20)**, read diagonally down-left through two adjacent cells:
 
 ```text
-φ(A=24)=8
-φ(U=1)=1
-φ(A=24)=8
+J(15,20) → E(16,19) → D(17,18)
+
+Ciphertext: J-E-D
 ```
 
-so:
+Subtract the generated key **U-A-A** from these runes, modulo 29:
+
+| Ciphertext | Key | Calculation | Plaintext |
+|---|---|---|---|
+| `J = 11` | `U = 1` | `11 − 1 = 10` | **I** |
+| `E = 18` | `A = 24` | `18 − 24 ≡ 23` | **D** |
+| `D = 23` | `A = 24` | `23 − 24 ≡ 28` | **EA** |
 
 ```text
-8-1-8
+Ciphertext: J  - E - D
+Key:        U  - A - A
+Plaintext:  I  - D - EA
 ```
 
-The Möbius values are:
+The result is **IDEA**. It is written with four Latin letters but uses **three runes**: `I`, `D`, and `EA`.
+
+The final ciphertext cell is **D(17,18)**. Its location is important because it is also the center of the mirror that connects to the next stage.
+
+## 4. The endpoint matches the 010 → CENTER pattern
+
+The key-generating structure **A-U-A** produced the Möbius signature **`(0,+1,0)`**. In the project's route model, this signature is associated with a **CENTER** continuation.
+
+The final cell of **IDEA**, **D(17,18)**, is exactly the center of a diagonal mirror:
 
 ```text
-μ(8)=0
-μ(1)=+1
-μ(8)=0
+J(15,20) ── 2 ── D(17,18) ── 2 ── J(19,16)
 ```
 
-therefore:
+This is the **J-D-J** mirror. Notice that one of its outer runes, **J(15,20)**, is also where the **IDEA** ciphertext began. The new mirror therefore connects **both ends of the ciphertext**: it starts at one `J` and ends at the central `D`.
+
+The same `010 → CENTER` relationship appears at the ending of **COLD**, and it appears again later at **IS**. Here, it connects the key's Möbius signature to the precise geometric role of the final rune.
+
+## 5. J-D-J prepares OF THE
+
+The center **D(17,18)** also supplies the next transformation. Its rune value is **23**, so Euler's totient gives:
 
 ```text
-phase = 1
+D = 23
+φ(23) = 22 = OE
+
+J-D-J → J-OE-J
 ```
 
-and:
+The transformed structure has an especially clear totient signature:
 
 ```text
-A-U-A
-→ phase 1
-→ U-A-A
+φ(J=11)  = 10
+φ(OE=22) = 10
+φ(J=11)  = 10
+
+Totient signature: (10,10,10)
 ```
 
-So the active key is:
+Now look at **J(19,16)**, the opposite outer rune of `J-D-J`. This same cell is the center of another mirror:
 
 ```text
-KEY = U-A-A
+OE(18,16)
+    |
+ J(19,16)   ← shared J
+    |
+OE(20,16)
 ```
 
----
+The **OE-J-OE** mirror has **the same totient signature `(10,10,10)`**, because `φ(OE)=10` and `φ(J)=10`.
 
-## 3. IDEA ciphertext
+This gives a direct connection to [`09-OF-THE.md`](./09-OF-THE.md): **J-D-J** and **OE-J-OE** share the cell `J(19,16)`, and both produce the same totient signature. The next chapter uses these connected mirrors to recover **OF THE**.
 
-From:
+The phase carried by **IDEA** is **1**. At its final cell, the coordinate selector also gives a right-compatible component:
 
 ```text
-J(15,20)
+φ(17) = 16 → μ(16) = 0
+φ(18) =  6 → μ(6)  = +1
+
+V₁(17,18) = (0,+1)
 ```
 
-continue diagonally down-left:
-
-```text
-J(15,20)
-E(16,19)
-D(17,18)
-```
-
-Therefore:
-
-```text
-CIPHERTEXT = J-E-D
-```
-
----
-
-## 4. Decryption
-
-Use:
-
-```text
-P = (C - K) mod 29
-```
-
-with:
-
-```text
-Ciphertext: J   E   D
-Key:        U   A   A
-```
-
-| # | C | K | Result |
-|---:|---:|---:|---|
-| 1 | `J=11` | `U=1` | `11-1 = 10 = I` |
-| 2 | `E=18` | `A=24` | `18-24 ≡ 23 = D` |
-| 3 | `D=23` | `A=24` | `23-24 ≡ 28 = EA` |
-
-Therefore:
-
-```text
-J-E-D
--
-U-A-A
-=
-I-D-EA
-```
-
-# **IDEA**
-
-The plaintext becomes:
-
-# **AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA**
-
----
-
-## 5. Strong state cross-check: 010 → CENTER
-
-The key structure:
-
-```text
-A-U-A
-```
-
-has:
-
-```text
-signature = 8-1-8
-M = (0,+1,0)
-phase = 1
-```
-
-`IDEA` ends at:
-
-```text
-D(17,18)
-```
-
-and that exact cell is the center of:
-
-```text
-J(15,20) —2— D(17,18) —2— J(19,16)
-```
-
-So:
-
-```text
-A-U-A
-→ M=(0,+1,0)
-→ IDEA
-→ endpoint becomes CENTER of J-D-J
-```
-
-This matches the same later pattern seen with `COLD` and `IS`:
-
-```text
-(0,+1,0) → CENTER-compatible
-```
-
-The decryption itself does not depend on this later interpretation.
-
----
-
-## 6. Next state
-
-The endpoint:
-
-```text
-D(17,18)
-```
-
-is already the center of:
-
-```text
-J-D-J
-```
-
-Compile the center:
-
-```text
-D=23
-φ(23)=22=OE
-```
-
-therefore:
-
-```text
-J-D-J
-→
-J-OE-J
-```
-
-Its signature is:
-
-```text
-10-10-10
-```
-
-which exactly matches the next physical mirror:
-
-```text
-OE(18,16) — J(19,16) — OE(20,16)
-```
-
-because:
-
-```text
-φ(OE-J-OE)=10-10-10
-```
-
-This prepares the next plaintext block:
-
-```text
-OF THE
-```
-
-The later coordinate selector at the `IDEA` endpoint is:
-
-```text
-V₁(17,18)=(0,+1)
-```
-
-so the selector is partial and local mirror geometry supplies the continuation.
-
----
-
-## 7. Compact route
-
-```text
-NOW THE ends at:
-J(15,20)
-
-↓
-local mirror:
-A(8,13) —3— TH(11,16) —3— A(14,19)
-
-↓
-TH → U
-
-↓
-A-U-A
-
-↓
-signature 8-1-8
-phase 1
-
-↓
-U-A-A
-
-ciphertext:
-J-E-D
-
-↓
-I-D-EA
-
-↓
-IDEA
-
-↓
-endpoint D(17,18)
-= center of J-D-J
-
-↓
-D → OE
-
-↓
-J-OE-J
-→ signature 10-10-10
-
-↓
-next:
-OF THE
-```
+Together, the **CENTER** endpoint, the shared `J` rune, and the matching `(10,10,10)` signatures explain how this local mirror network leads into the following chapter.
