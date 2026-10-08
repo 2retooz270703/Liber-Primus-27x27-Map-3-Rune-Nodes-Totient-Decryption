@@ -1,12 +1,10 @@
-## Live Route Analysis
-
 <p align="center">
   <a href="https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/">
     <img src="./example.gif" alt="Liber Primus Interactive Route Map" width="850">
   </a>
 </p>
 
-The map allows you to explore the full route or focus on individual stages, including the related ciphertext, key structures, and supporting geometry. It will be updated as the reconstruction develops and new stages or structural findings are added.
+Follow the clues, explore the connections, and help solve Liber Primus.
 
 <p align="center">
   <a href="https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/">
@@ -20,10 +18,8 @@ The map allows you to explore the full route or focus on individual stages, incl
 
 ---
 
-### How to verify the reconstruction
+To understand how the plaintext was recovered and how the pieces connect, explore:
 
-For the full step-by-step plaintext route, see:
-
-- [`plaintext-i-found/`](./plaintext-i-found/) — reconstruction of each recovered stage.
-- [`rules/`](./rules/) — the recurring rules and mechanics used across the route.
-- [`strongest-plaintext-evidence.md`](./strongest-plaintext-evidence.md) — the strongest independent numerical and structural evidence supporting the recovered plaintext.
+- [`plaintext-i-found/`](./plaintext-i-found/) — step-by-step reconstruction of the recovered plaintext.
+- [`rules/`](./rules/) — the mathematical rules and mechanics behind the route.
+- [`strongest-plaintext-evidence.md`](./strongest-plaintext-evidence.md) — key numerical and structural connections found in the plaintext.
