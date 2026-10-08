@@ -1,383 +1,136 @@
 # 02 — Key Phase Selection
 
-> **Purpose:** define how the active cyclic phase of a 3-rune key is selected.  
-> This rule determines **which rune the repeated key starts from** before decryption.
+A three-rune key can begin at three different positions, but the order matters: changing the starting rune changes every subtraction in the ciphertext. **The Möbius phase rule selects one starting position mathematically**, using the key's totient signature. This chapter explains the calculation and shows how it works in the recovered stages.
 
----
+The basic key-generation process is explained in [`01-core-mechanics.md`](./01-core-mechanics.md). Here we begin with a three-rune key that has already been generated.
 
-## 1. The phase problem
+## 1. Why a key needs a phase
 
-A 3-rune key can start in three cyclic positions.
-
-For:
+Consider the key `H-U-H`. It has three possible cyclic orders:
 
 ```text
-k1-k2-k3
+Phase 0: H-U-H
+Phase 1: U-H-H
+Phase 2: H-H-U
 ```
 
-the three possible phases are:
+A phase is simply a **left rotation** of the same three runes. Phase 0 keeps their original order, phase 1 moves the first rune to the end, and phase 2 rotates the order once more.
+
+The phase must be calculated **before** repeating the key across a ciphertext. Otherwise, the same three runes could produce three different decryptions.
+
+## 2. How the Möbius phase is calculated
+
+Start with a generated key `k₁-k₂-k₃`. The calculation has three steps.
+
+**First, calculate the totient signature.** Apply Euler's totient function `φ` to the value of each rune in the key:
 
 ```text
-phase 0 → k1-k2-k3
-phase 1 → k2-k3-k1
-phase 2 → k3-k1-k2
+Key:                k₁ - k₂ - k₃
+Totient signature:  φ(k₁), φ(k₂), φ(k₃)
 ```
 
-Example:
+**Second, apply the Möbius function `μ`** to each of those three numbers. Each result is `−1`, `0`, or `+1`. For example, `μ(2)=−1`, `μ(6)=+1`, and `μ(4)=0`. The value is `0` when the number is divisible by the square of a prime, while `μ(1)=+1`.
+
+**Third, add the three Möbius values and take the result modulo 3:**
 
 ```text
-H-U-H
+p = [μ(φ(k₁)) + μ(φ(k₂)) + μ(φ(k₃))] mod 3
 ```
 
-can be used as:
+The result is always one of the three key phases:
 
 ```text
-phase 0 → H-U-H
-phase 1 → U-H-H
-phase 2 → H-H-U
+p = 0  →  keep k₁-k₂-k₃
+p = 1  →  use  k₂-k₃-k₁
+p = 2  →  use  k₃-k₁-k₂
 ```
 
-So the route needs a rule that fixes the active starting position.
+This means the rotation follows from the key's numerical properties, not from testing different orders against a desired word.
 
----
+## 3. Example: phase 1 produces the COLD key
 
-## 2. The Möbius phase rule
+In [`04-COLD.md`](../plaintext-i-found/04-COLD.md), the mirror `H-TH-H` is transformed into `H-U-H`. We can now calculate which of the three rotations to use.
 
-Let the key be:
+The totient signature is:
 
 ```text
-K = k1-k2-k3
+φ(H = 8) = 4
+φ(U = 1) = 1
+φ(H = 8) = 4
+
+Totient signature: (4,1,4)
 ```
 
-First compute its totient signature:
+Apply Möbius and add the results:
 
 ```text
-φ(k1)-φ(k2)-φ(k3)
+μ(4) = 0
+μ(1) = +1
+μ(4) = 0
+
+p = (0 + 1 + 0) mod 3 = 1
 ```
 
-Then apply the Möbius function `μ` to each signature value and sum the result:
+**Phase 1** rotates `H-U-H` to **`U-H-H`**. Since the ciphertext for `COLD` contains four runes, the active key repeats once more from its first position:
 
 ```text
-p = [μ(φ(k1)) + μ(φ(k2)) + μ(φ(k3))] mod 3
+Generated key: H-U-H
+Phase 1:       U-H-H
+4-rune key:    U-H-H-U
 ```
 
-This gives the phase:
+That is the key used to decrypt `G-J-EA-A` into **COLD**.
 
-```text
-p = 0 → phase 0
-p = 1 → phase 1
-p = 2 → phase 2
-```
+## 4. The same rule produces the other phases
 
-So the pipeline is:
+The calculation works without changing the procedure for different keys.
 
-```text
-3-rune key
-↓
-totient signature
-↓
-Möbius values
-↓
-sum mod 3
-↓
-active phase
-```
+### Phase 0 — AS I GO THE
 
----
-
-## 3. How the phase is used
-
-Once `p` is known, the key is rotated before being repeated across the ciphertext.
-
-For:
-
-```text
-k1-k2-k3
-```
-
-the active key becomes:
-
-```text
-p=0 → k1-k2-k3
-p=1 → k2-k3-k1
-p=2 → k3-k1-k2
-```
-
-Then that rotated 3-rune key is repeated to match the ciphertext length.
-
----
-
-## 4. Example: AE-I-EA
-
-Start with:
+The first stage, [`01-AS-I-GO-THE.md`](../plaintext-i-found/01-AS-I-GO-THE.md), generates `AE-I-EA`. Its totient signature consists of `20`, `4`, and `12`, all of which have Möbius value `0`:
 
 ```text
 AE-I-EA
+φ → (20,4,12)
+μ → (0,0,0)
+
+p = (0 + 0 + 0) mod 3 = 0
 ```
 
-Compute the signature:
+**Phase 0** leaves the key as `AE-I-EA`. For the seven-rune ciphertext, it repeats as `AE-I-EA-AE-I-EA-AE`.
 
-```text
-φ(AE=25)=20
-φ(I=10)=4
-φ(EA=28)=12
-```
+### Phase 2 — WEATHER
 
-so:
-
-```text
-20-4-12
-```
-
-Apply Möbius:
-
-```text
-μ(20)=0
-μ(4)=0
-μ(12)=0
-```
-
-Sum:
-
-```text
-0+0+0 = 0
-```
-
-Therefore:
-
-```text
-p = 0
-```
-
-So the key remains:
-
-```text
-AE-I-EA
-```
-
-This is the phase used in:
-
-```text
-AS I GO THE
-```
-
----
-
-## 5. Example: X-I-X
-
-Start with:
+In [`02-WEATHER.md`](../plaintext-i-found/02-WEATHER.md), the generated key is `X-I-X`:
 
 ```text
 X-I-X
+φ → (6,4,6)
+μ → (+1,0,+1)
+
+p = (1 + 0 + 1) mod 3 = 2
 ```
 
-Compute the signature:
+**Phase 2** changes the order to `X-X-I`. Repeating it over five ciphertext positions gives `X-X-I-X-X`, the active key for **WEATHER**.
 
-```text
-φ(X=14)=6
-φ(I=10)=4
-φ(X=14)=6
-```
+### Phase 2 — END and DEATH
 
-so:
-
-```text
-6-4-6
-```
-
-Apply Möbius:
-
-```text
-μ(6)=+1
-μ(4)=0
-μ(6)=+1
-```
-
-Sum:
-
-```text
-1+0+1 = 2
-```
-
-Therefore:
-
-```text
-p = 2
-```
-
-So the active key is:
-
-```text
-X-I-X
-→
-X-X-I
-```
-
-This is the phase used in:
-
-```text
-WEATHER
-```
-
----
-
-## 6. Example: H-U-H
-
-Start with:
-
-```text
-H-U-H
-```
-
-Compute the signature:
-
-```text
-φ(H=8)=4
-φ(U=1)=1
-φ(H=8)=4
-```
-
-so:
-
-```text
-4-1-4
-```
-
-Apply Möbius:
-
-```text
-μ(4)=0
-μ(1)=+1
-μ(4)=0
-```
-
-Sum:
-
-```text
-0+1+0 = 1
-```
-
-Therefore:
-
-```text
-p = 1
-```
-
-So the active key is:
-
-```text
-H-U-H
-→
-U-H-H
-```
-
-This is the phase used in:
-
-```text
-COLD
-```
-
----
-
-## 7. Example: J-T-J
-
-Start with:
+Both [`10-END.md`](../plaintext-i-found/10-END.md) and [`12-DEATH.md`](../plaintext-i-found/12-DEATH.md) use the same generated key, `J-T-J`:
 
 ```text
 J-T-J
+φ → (10,8,10)
+μ → (+1,0,+1)
+
+p = (1 + 0 + 1) mod 3 = 2
 ```
 
-Compute the signature:
+Again, **phase 2** is selected. The active three-rune key is **`J-J-T`**, used in both stages.
 
-```text
-φ(J=11)=10
-φ(T=16)=8
-φ(J=11)=10
-```
+## 5. What this rule determines
 
-so:
+The Möbius phase answers one specific question: **once a three-rune key has been found, which rune should its repeating cycle start with?**
 
-```text
-10-8-10
-```
+For example, `H-U-H` gives phase 1, while `X-I-X` gives phase 2. Those results are fixed by the totient and Möbius calculations. After rotation, the key is repeated to cover the ciphertext and its values are subtracted modulo 29, as explained in [`01-core-mechanics.md`](./01-core-mechanics.md).
 
-Apply Möbius:
-
-```text
-μ(10)=+1
-μ(8)=0
-μ(10)=+1
-```
-
-Sum:
-
-```text
-1+0+1 = 2
-```
-
-Therefore:
-
-```text
-p = 2
-```
-
-So the active key is:
-
-```text
-J-T-J
-→
-J-J-T
-```
-
-This is the phase used in:
-
-```text
-END
-and
-DEATH
-```
-
----
-
-## 8. Why this rule matters
-
-Without a phase rule, every 3-rune key would have three possible cyclic starts, and the plaintext could be chosen by trial and error.
-
-The Möbius phase rule removes that freedom:
-
-```text
-key
-→ signature
-→ Möbius sum
-→ fixed phase
-→ active repeated key
-```
-
-So the route does not need to guess which cyclic rotation to use.
-
----
-
-## 9. Evidence status
-
-The rule is strongly supported because it works consistently across the recovered route.
-
-Clean examples include:
-
-```text
-AE-I-EA → p=0
-X-I-X   → p=2
-H-U-H   → p=1
-J-T-J   → p=2
-```
-
-This file defines only the phase rule itself.
-
-Later files explain how the same totient and Möbius machinery is used for:
-
-```text
-movement values
-coordinate selectors
-CENTER / OUTER state roles
-inheritance
-route selection
-```
+**Phase selection is separate from route selection.** This rule determines the order of an existing key; the following rules explain how totient values, coordinates, and matrix structures are used to move through the grid. The next chapter is [`03-totient-movement.md`](./03-totient-movement.md).
