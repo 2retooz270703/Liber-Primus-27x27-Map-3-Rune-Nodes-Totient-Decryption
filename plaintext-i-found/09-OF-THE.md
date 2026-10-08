@@ -1,434 +1,189 @@
 # 09 — OF THE
 
-> **Recovered plaintext:** `OF THE`  
-> **Current sequence:** `AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE`  
-> **Status:** proposed reconstruction; not an officially verified Cicada 3301 solution.
+AS I GO, THE WEATHER TURNS COLD. I MAY CRY NOW. THE IDEA OF THE
 
-Everything below uses the same 27×27 rune grid:
+## 1. IDEA leads to two connected mirrors
 
-https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/0-2-live-map.html
-
----
-
-## 1. IDEA ends at the center of J-D-J
-
-`IDEA` ends at:
+The previous chapter, [`08-IDEA.md`](./08-IDEA.md), ends at **D(17,18)**. This cell is the center of a diagonal mirror with two `J` runes at equal distances:
 
 ```text
-D(17,18)
+J(15,20) ── 2 ── D(17,18) ── 2 ── J(19,16)
 ```
 
-which is the exact center of:
-
-```text
-J(15,20) —2— D(17,18) —2— J(19,16)
-```
-
-So the next structure is:
-
-```text
-J-D-J
-```
-
-The center is:
+We begin with **J-D-J** and transform its center using Euler's totient:
 
 ```text
 D = 23
+φ(23) = 22 = OE
+
+J-D-J → J-OE-J
 ```
 
-and:
+The transformed structure has a particularly uniform totient signature:
 
 ```text
-φ(23)=22=OE
+φ(J=11)  = 10
+φ(OE=22) = 10
+φ(J=11)  = 10
+
+Totient signature: (10,10,10)
 ```
 
-therefore:
-
-```text
-J-D-J
-→
-J-OE-J
-```
-
----
-
-## 2. Exact signature match to the next mirror
-
-The transformed structure has:
-
-```text
-φ(J=11)=10
-φ(OE=22)=10
-φ(J=11)=10
-```
-
-so:
-
-```text
-J-OE-J → 10-10-10
-```
-
-The opposite outer:
-
-```text
-J(19,16)
-```
-
-is also the center of:
-
-```text
-OE(18,16) — J(19,16) — OE(20,16)
-```
-
-or:
-
-```text
-OE-J-OE
-```
-
-Its signature is also:
-
-```text
-10-10-10
-```
-
-Therefore the handoff is linked both geometrically and numerically:
-
-```text
-J-D-J
-↓
-shared J(19,16)
-↓
-OE-J-OE
-
-and
-
-φ(J-OE-J)=φ(OE-J-OE)=10-10-10
-```
-
----
-
-## 3. Decrypt OF
-
-For:
-
-```text
-10-10-10
-```
-
-the Möbius values are:
-
-```text
-+1,+1,+1
-```
-
-so:
-
-```text
-phase = 0
-```
-
-and the active key remains:
-
-```text
-J-OE-J
-```
-
-The next ciphertext is:
-
-```text
-X(18,15)
-OE(18,16)
-```
-
-Use the first two key runes:
-
-```text
-J-OE
-```
-
-| # | C | K | Result |
-|---:|---:|---:|---|
-| 1 | `X=14` | `J=11` | `14-11 = 3 = O` |
-| 2 | `OE=22` | `OE=22` | `22-22 = 0 = F` |
-
-Therefore:
-
-```text
-X-OE
--
-J-OE
-=
-O-F
-```
-
-# **OF**
-
----
-
-## 4. OF ends inside OE-J-OE
-
-`OF` ends at:
+Now look at the lower `J` of the original mirror, **J(19,16)**. That same cell is the center of another mirror:
 
 ```text
 OE(18,16)
+    |
+ J(19,16)   ← shared J
+    |
+OE(20,16)
 ```
 
-which is already an outer of:
+This **OE-J-OE** mirror also has totient signature **(10,10,10)** before its center is transformed: `φ(OE)=10` and `φ(J)=10`.
+
+The connection is therefore both **geometric** and **numerical**. The two mirrors share `J(19,16)`, and their rune values produce the same signature. This shared structure supplies the first word and then leads directly into the second.
+
+## 2. Generate the key and decrypt OF
+
+The key for the first word comes from **J-OE-J**, obtained by transforming `J-D-J`. Its signature `(10,10,10)` gives:
 
 ```text
-OE(18,16) — J(19,16) — OE(20,16)
+μ(10) = +1
+
+Möbius signature: (+1,+1,+1)
+Phase:              (1+1+1) mod 3 = 0
+Active key:         J-OE-J
 ```
 
-Compile the center:
+Because the phase is **0**, the key is not rotated. For a two-rune ciphertext, we use its first two runes: **J-OE**.
+
+Immediately left of the upper `OE` in the connected vertical mirror is **X(18,15)**. Reading the two adjacent cells gives:
 
 ```text
-J=11
-φ(11)=10=I
+X(18,15) → OE(18,16)
+
+Ciphertext: X-OE
 ```
 
-so:
+Subtract the key from this ciphertext, modulo 29:
+
+| Ciphertext | Key | Calculation | Plaintext |
+|---|---|---|---|
+| `X = 14` | `J = 11` | `14 − 11 = 3` | **O** |
+| `OE = 22` | `OE = 22` | `22 − 22 = 0` | **F** |
 
 ```text
-OE-J-OE
-→
-OE-I-OE
+Ciphertext: X  - OE
+Key:        J  - OE
+Plaintext:  O  - F
 ```
 
-Its signature is:
+The first result is **OF**. It ends at **OE(18,16)** — the upper outer of the `OE-J-OE` mirror already connected to the previous route.
+
+## 3. The same mirror generates the key for THE
+
+We do not need to move to a different part of the grid. The final `OE(18,16)` of **OF** belongs to the exact vertical mirror:
 
 ```text
-10-4-10
+OE(18,16)  ← end of OF
+    |
+ J(19,16)  ← center
+    |
+OE(20,16)
 ```
 
-with Möbius values:
+This time, **OE-J-OE** becomes the key generator. Transform its center:
 
 ```text
-+1,0,+1
+J = 11
+φ(11) = 10 = I
+
+OE-J-OE → OE-I-OE
 ```
 
-therefore:
+The transformed mirror now has a different signature, which determines a new phase:
 
 ```text
-phase = 2
+φ(OE=22) = 10 → μ(10) = +1
+φ(I=10)  =  4 → μ(4)  =  0
+φ(OE=22) = 10 → μ(10) = +1
+
+Totient signature: (10,4,10)
+Möbius signature:  (+1,0,+1)
+Phase:              (1+0+1) mod 3 = 2
 ```
 
-and:
+**Phase 2** rotates `OE-I-OE` into **OE-OE-I**. Since the next ciphertext contains two runes, its active key is the first two: **OE-OE**.
 
 ```text
-OE-I-OE
-→ phase 2
-→ OE-OE-I
+OE-I-OE → phase 2 → OE-OE-I
+
+Active key: OE-OE
 ```
 
-For the next two-rune ciphertext, use:
+Notice the progression: the first key comes from `J-D-J`, while the second comes from the connected `OE-J-OE`. Their shared cell lets the route continue without an unrelated jump.
+
+## 4. Decrypt THE
+
+On row 19, the rune immediately to the right of the shared center **J(19,16)** is **A(19,17)**. Reading back toward `J` gives the next ciphertext:
 
 ```text
-OE-OE
+A(19,17) → J(19,16)
+
+Ciphertext: A-J
 ```
 
----
+Decrypt it with the newly generated key **OE-OE**:
 
-## 5. Decrypt THE
-
-Read inward toward the shared center:
+| Ciphertext | Key | Calculation | Plaintext |
+|---|---|---|---|
+| `A = 24` | `OE = 22` | `24 − 22 = 2` | **TH** |
+| `J = 11` | `OE = 22` | `11 − 22 ≡ 18` | **E** |
 
 ```text
-A(19,17)
-J(19,16)
+Ciphertext: A  - J
+Key:        OE - OE
+Plaintext:  TH - E
 ```
 
-so:
+The result is **THE**. Here **TH** represents one rune, so the word is recovered from two ciphertext positions.
+
+Together, the two connected decryptions give **OF THE**:
+
+- `X-OE − J-OE = O-F`
+- `A-J − OE-OE = TH-E`
+
+## 5. Why the shared structure matters
+
+The same small region of the matrix supports both words. **OF** ends at `OE(18,16)`, which is an outer of the mirror used to generate the key for **THE**. The transformed **J-OE-J** and the original **OE-J-OE** are connected through **J(19,16)** and share the exact totient signature **(10,10,10)**.
+
+The key phases also follow directly from their signatures: **phase 0** for `J-OE-J`, followed by **phase 2** for `OE-I-OE`.
+
+After decrypting **THE**, the route ends at **J(19,16)**. The `OE-I-OE` key has Möbius signature **(+1,0,+1)**, which matches the project's **OUTER** pattern: this `J` is also an outer rune of the mirror used in the next chapter.
+
+## 6. The final J prepares END
+
+Carry phase **2** to the final cell **J(19,16)**. The coordinate selector gives:
 
 ```text
-CIPHERTEXT = A-J
+φ²(19) = 6 → μ(6) = +1
+φ²(16) = 4 → μ(4) =  0
+
+V₂(19,16) = (+1,0)
 ```
 
-Decrypt with:
+The next local connections are both built around mirrors of radius **4**.
+
+Immediately left of the final `J` is **F(19,15)**, the left outer of a horizontal mirror:
 
 ```text
-KEY = OE-OE
+F(19,15) ── 4 ── X(19,19) ── 4 ── F(19,23)
 ```
 
-| # | C | K | Result |
-|---:|---:|---:|---|
-| 1 | `A=24` | `OE=22` | `24-22 = 2 = TH` |
-| 2 | `J=11` | `OE=22` | `11-22 ≡ 18 = E` |
-
-Therefore:
+At the same time, **J(19,16)** itself is the upper outer of a diagonal mirror:
 
 ```text
-A-J
--
-OE-OE
-=
-TH-E
+J(19,16) ── 4 ── B(23,12) ── 4 ── J(27,8)
 ```
 
-# **THE**
-
-Together:
-
-# **OF THE**
-
----
-
-## 6. Why this handoff is strong
-
-The two words are produced from one connected local structure:
-
-```text
-J-D-J
-→ J-OE-J
-→ OF
-→ endpoint OE(18,16)
-→ OE-J-OE
-→ OE-I-OE
-→ THE
-```
-
-The strongest check is the exact signature identity:
-
-```text
-φ(J-OE-J)
-=
-φ(OE-J-OE)
-=
-10-10-10
-```
-
-So the route does not jump to an unrelated key or region.
-
----
-
-## 7. Later state cross-check
-
-The `OF` key state is:
-
-```text
-J-OE-J
-→ 10-10-10
-→ M=(+1,+1,+1)
-→ phase 0
-```
-
-The later interpretation of this state is provisional and should not be used as core proof.
-
-For `THE`:
-
-```text
-OE-I-OE
-→ 10-4-10
-→ M=(+1,0,+1)
-→ phase 2
-```
-
-The endpoint is:
-
-```text
-J(19,16)
-```
-
-which participates in the radius-4 structures used for the next word `END`.
-
-The later coordinate selector gives:
-
-```text
-V₂(19,16)=(+1,0)
-```
-
-so the selector is partial and local geometry supplies the continuation.
-
----
-
-## 8. Next state
-
-Immediately left of:
-
-```text
-J(19,16)
-```
-
-is:
-
-```text
-F(19,15)
-```
-
-which is the left outer of:
-
-```text
-F(19,15) —4— X(19,19) —4— F(19,23)
-```
-
-At the same time:
-
-```text
-J(19,16)
-```
-
-is an outer of:
-
-```text
-J(19,16) —4— B(23,12) —4— J(27,8)
-```
-
-These two radius-4 structures prepare the next plaintext:
-
-```text
-END
-```
-
----
-
-## 9. Compact route
-
-```text
-IDEA ends at D(17,18)
-
-↓
-J-D-J
-
-↓
-D → OE
-
-↓
-J-OE-J
-
-↓
-signature 10-10-10
-phase 0
-
-↓
-X-OE
--
-J-OE
-=
-OF
-
-↓
-OF ends at OE(18,16)
-
-↓
-OE-J-OE
-
-↓
-J → I
-
-↓
-OE-I-OE
-
-↓
-signature 10-4-10
-phase 2
-
-↓
-A-J
--
-OE-OE
-=
-THE
-
-↓
-OF THE
-```
+These two structures provide the starting point and the key generator for the next chapter, [`10-END.md`](./10-END.md). The first leads to ciphertext **F-L-I**; the second generates key **J-J-T**, producing **END**.
