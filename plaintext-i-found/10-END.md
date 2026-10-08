@@ -1,44 +1,18 @@
 # 10 — END
 
-> **Recovered plaintext:** `END`  
-> **Current sequence:** `AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END`  
-> **Status:** proposed reconstruction; not an officially verified Cicada 3301 solution.
+AS I GO, THE WEATHER TURNS COLD. I MAY CRY NOW. THE IDEA OF THE END
 
-Everything below uses the same 27×27 rune grid:
+## 1. The end of OF THE reveals a radius-4 mirror
 
-https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/0-2-live-map.html
-
----
-
-## 1. THE ends beside a radius-4 pointer
-
-`THE` ends at:
+The previous chapter, [`09-OF-THE.md`](./09-OF-THE.md), finishes at **J(19,16)**. Immediately to its left is **F(19,15)**, the outer rune of a horizontal mirror:
 
 ```text
-J(19,16)
+F(19,15) ── 4 ── X(19,19) ── 4 ── F(19,23)
 ```
 
-Immediately left is:
+The two `F` runes are equally distant from the center `X`. Following this mirror from the nearby `F(19,15)` to its opposite outer leads to **F(19,23)**, where the new ciphertext begins.
 
-```text
-F(19,15)
-```
-
-which is the left outer of:
-
-```text
-F(19,15) —4— X(19,19) —4— F(19,23)
-```
-
-So the opposite outer:
-
-```text
-F(19,23)
-```
-
-becomes the next ciphertext start.
-
-The same center `X(19,19)` also belongs to the perpendicular mirror:
+The center **X(19,19)** also belongs to a perpendicular mirror of the same radius:
 
 ```text
 Y(15,19)
@@ -52,329 +26,122 @@ X(19,19)
 Y(23,19)
 ```
 
-This reinforces the local radius-4 geometry.
+Both structures are centered on the same cell and use a distance of **4**. This makes the movement through `F-X-F` part of a connected local pattern rather than an isolated jump.
 
----
+## 2. The final J also leads to the key
 
-## 2. Generate the key from J-B-J
-
-The `THE` endpoint:
+The same **J(19,16)** is the upper outer of another radius-4 mirror, this time diagonal:
 
 ```text
-J(19,16)
+J(19,16) ── 4 ── B(23,12) ── 4 ── J(27,8)
 ```
 
-is also an outer of:
-
-```text
-J(19,16) —4— B(23,12) —4— J(27,8)
-```
-
-The center is:
+This **J-B-J** mirror provides the key. As in the preceding chapters, we apply Euler's totient to its center while leaving the outer runes unchanged:
 
 ```text
 B = 17
+φ(17) = 16 = T
+
+J-B-J → J-T-J
 ```
 
-Apply Euler's totient:
+Next, calculate the totient and Möbius signatures of the transformed structure:
 
 ```text
-φ(17)=16=T
+φ(J=11) = 10  → μ(10) = +1
+φ(T=16) =  8  → μ(8)  =  0
+φ(J=11) = 10  → μ(10) = +1
+
+Totient signature: (10,8,10)
+Möbius signature: (+1,0,+1)
+Phase:              (1+0+1) mod 3 = 2
 ```
 
-therefore:
+**Phase 2** rotates `J-T-J` to **J-J-T**. This gives the active key without selecting its order from the desired plaintext:
 
 ```text
-J-B-J
-→
-J-T-J
+J-T-J → phase 2 → J-J-T
+
+Active key: J-J-T
 ```
 
-Its totient signature is:
+The transition therefore uses **two mirrors of radius 4 near the same ending cell**: `F-X-F` identifies the ciphertext's starting position, while `J-B-J` generates its key.
 
-```text
-φ(J=11)=10
-φ(T=16)=8
-φ(J=11)=10
-```
+## 3. Read the ciphertext from F(19,23)
 
-so:
-
-```text
-10-8-10
-```
-
-The Möbius values are:
-
-```text
-μ(10)=+1
-μ(8)=0
-μ(10)=+1
-```
-
-therefore:
-
-```text
-phase = 2
-```
-
-and:
-
-```text
-J-T-J
-→ phase 2
-→ J-J-T
-```
-
-So the active key is:
-
-```text
-KEY = J-J-T
-```
-
----
-
-## 3. END ciphertext
-
-From the opposite outer of `F-X-F`:
+Return to **F(19,23)**, the outer rune reached through `F-X-F`. Reading downward along column 23 gives three consecutive cells:
 
 ```text
 F(19,23)
-```
-
-read downward:
-
-```text
-F(19,23)
+   ↓
 L(20,23)
+   ↓
 I(21,23)
 ```
 
-Therefore:
+These form the ciphertext **F-L-I**. We already have a three-rune active key, **J-J-T**, so the two sequences can now be decrypted together.
+
+## 4. Decrypting F-L-I
+
+Subtract each key value from its corresponding ciphertext value, modulo 29:
+
+| Ciphertext | Key | Calculation | Plaintext |
+|---|---|---|---|
+| `F = 0` | `J = 11` | `0 − 11 ≡ 18` | **E** |
+| `L = 20` | `J = 11` | `20 − 11 = 9` | **N** |
+| `I = 10` | `T = 16` | `10 − 16 ≡ 23` | **D** |
 
 ```text
-CIPHERTEXT = F-L-I
+Ciphertext: F - L - I
+Key:        J - J - T
+Plaintext:  E - N - D
 ```
 
----
+The result is **END**. The last rune is **I(21,23)**, which is already part of the mirror network needed for the next word.
 
-## 4. Decryption
+## 5. The endpoint matches the OUTER pattern
 
-Use:
+The key generator `J-T-J` produced Möbius signature **`(+1,0,+1)`**. In the route model, this signature is associated with an **OUTER** continuation.
+
+That is exactly where `END` finishes: **I(21,23)** is the right outer of a horizontal mirror:
 
 ```text
-P = (C - K) mod 29
+I(21,21) ── 1 ── R(21,22) ── 1 ── I(21,23)
 ```
 
-with:
+This repeats the same **`(+1,0,+1) → OUTER`** relationship seen earlier in `NOW THE`. The final cell is not just the end of the ciphertext; it also connects the current key signature to the geometry of the following stage.
+
+## 6. The same center prepares IS
+
+The `I-R-I` mirror has center **R(21,22)**. Transforming that center gives:
 
 ```text
-Ciphertext: F   L   I
-Key:        J   J   T
+R = 4
+φ(4) = 2 = TH
+
+I-R-I → I-TH-I
 ```
 
-| # | C | K | Result |
-|---:|---:|---:|---|
-| 1 | `F=0` | `J=11` | `0-11 ≡ 18 = E` |
-| 2 | `L=20` | `J=11` | `20-11 = 9 = N` |
-| 3 | `I=10` | `T=16` | `10-16 ≡ 23 = D` |
-
-Therefore:
+The same `R(21,22)` is also the center of a larger mirror on row 21:
 
 ```text
-F-L-I
--
-J-J-T
-=
-E-N-D
+H(21,17) ── 5 ── R(21,22) ── 5 ── H(21,27)
 ```
 
-# **END**
-
-The plaintext becomes:
-
-# **AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END**
-
----
-
-## 5. Why this branch is strong
-
-The transition uses two exact radius-4 structures in the same local region:
+It transforms to **H-TH-H**. Although the outer runes differ, **both structures produce the same totient signature**:
 
 ```text
-F-X-F
-→ selects the ciphertext start F(19,23)
-
-J-B-J
-→ generates the key J-J-T
+I-TH-I → (4,1,4)
+H-TH-H → (4,1,4)
 ```
 
-So the same scale:
+One more coordinate check comes from the phase **2** already generated for `END`. At its endpoint, **I(21,23)**:
 
 ```text
-4
+φ²(21) =  4 → μ(4)  = 0
+φ²(23) = 10 → μ(10) = +1
+
+V₂(21,23) = (0,+1) → RIGHT-compatible
 ```
 
-controls both route relocation and key generation.
-
-No new cipher rule is introduced.
-
----
-
-## 6. Strong state cross-check: 101 → OUTER
-
-The pre-rotation structure:
-
-```text
-J-T-J
-```
-
-has:
-
-```text
-signature = 10-8-10
-M = (+1,0,+1)
-phase = 2
-```
-
-`END` finishes at:
-
-```text
-I(21,23)
-```
-
-and that exact cell is the right outer of:
-
-```text
-I(21,21) — R(21,22) — I(21,23)
-```
-
-So:
-
-```text
-J-T-J
-→ M=(+1,0,+1)
-→ END
-→ endpoint becomes OUTER of I-R-I
-```
-
-This matches the earlier `NOW THE` case and supports the later working rule:
-
-```text
-(+1,0,+1) → OUTER-compatible
-```
-
-The plaintext decryption itself does not depend on this later state interpretation.
-
----
-
-## 7. Next state
-
-The endpoint:
-
-```text
-I(21,23)
-```
-
-is already part of:
-
-```text
-I-R-I
-```
-
-with:
-
-```text
-R=4
-φ(4)=2=TH
-```
-
-therefore:
-
-```text
-I-R-I
-→
-I-TH-I
-```
-
-Its totient signature is:
-
-```text
-4-1-4
-```
-
-The same center `R(21,22)` also opens:
-
-```text
-H(21,17) — R(21,22) — H(21,27)
-```
-
-which compiles to:
-
-```text
-H-TH-H
-```
-
-with the same signature:
-
-```text
-4-1-4
-```
-
-This prepares the next plaintext:
-
-```text
-IS
-```
-
-The later coordinate selector at the `END` endpoint is:
-
-```text
-V₂(21,23)=(0,+1)
-```
-
-so the selector is partial and local mirror geometry supplies the continuation.
-
----
-
-## 8. Compact route
-
-```text
-THE ends at J(19,16)
-
-↓
-adjacent pointer:
-F(19,15)
-
-↓
-F(19,15) —4— X(19,19) —4— F(19,23)
-
-↓
-ciphertext start:
-F(19,23)
-
-meanwhile:
-
-J(19,16) —4— B(23,12) —4— J(27,8)
-
-↓
-B → T
-
-↓
-J-T-J
-
-↓
-phase 2
-
-↓
-J-J-T
-
-ciphertext:
-F-L-I
-
-↓
-E-N-D
-
-↓
-END
-```
+This gives a right-compatible horizontal component, while the shared `R` center supplies a concrete local continuation. The connected `I-R-I` and `H-R-H` mirrors are used in the next chapter, [`11-IS.md`](./11-IS.md), to generate the key for **IS**.
