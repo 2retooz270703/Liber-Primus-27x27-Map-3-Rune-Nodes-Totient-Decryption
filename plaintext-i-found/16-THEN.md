@@ -8,8 +8,6 @@ Everything below uses the same 27×27 rune grid:
 
 https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/0-2-live-map.html
 
-Coordinates are `(row, column)`, starting at 1. Rune values use the repository's 0-based Gematria Primus indices and arithmetic modulo 29.
-
 ---
 
 ## 1. Start from the end of SOON
@@ -245,23 +243,29 @@ This is an exact observation found **after** the decryption, not an independent 
 
 ---
 
-## 9. Why this candidate is strong — and what remains open
+## 9. Why THEN stands out
 
-The unusual part is how the pieces meet:
+The strongest point is how the route connects **previously established structures**, rather than just producing an English word:
 
-1. **An inherited phase** gives RIGHT and `(8,6)` without changing the previous rules.
-2. **RIGHT 6** and **RIGHT 8** land on the start and end of the same unique `L-T-W` ciphertext.
-3. Its entry point has a **midpoint** lying on the only `IA-IA-IA` mirror; the mirror generates the exact key and phase.
-4. The resulting endpoint **joins both SOON routes** through `W-NG-W` and can reproduce the initial phase-2 coordinate state.
+1. The **phase 2 inherited from SOON** gives RIGHT and `(8,6)`. Those numbers land exactly on the start and end of `L-T-W`.
+2. Halfway to the ciphertext's starting point lies the grid's **only `IA-IA-IA` mirror**. The existing Euler–Möbius rules turn it into the exact key `E-IA-IA` and decrypt `TH-E-N`.
+3. The final rune of THEN, **W(25,27)**, forms `W-NG-W` with **W(27,27)** — the endpoint of the *hidden secondary SOON route already documented in [`15-SOON.md`](./15-SOON.md)*.
 
-However, two choices still need a general predictive rule:
+**This makes `W-NG-W` a natural mirror to examine next.** It is not selected simply because it happens to give phase 2: it directly bridges the new endpoint and an endpoint independently established in the previous chapter.
 
-- Why must **6 and 8** mark the ciphertext boundaries rather than be used differently?
-- Why must the **midpoint mirror** supply the key, and why should `W-NG-W` be chosen over another mirror afterward?
+```text
+THEN ends:           W(25,27)
+                       |
+                      NG(26,27)
+                       |
+Secondary SOON ends: W(27,27)
+```
 
-A broader search finds **47** ways to decrypt `TH-E-N` from arbitrary valid key/path combinations. The word alone is not proof; the value of this candidate lies in the **local chain of connected constraints**.
+Using this connecting mirror gives **phase 2**, which restores the same coordinate state `(8,6)` and Möbius pair `(0,+1)` that SOON had before THEN began. The geometric link explains *why this mirror is especially relevant*; the repeated state is an additional result, not the reason the mirror was noticed.
 
-**Conclusion:** `THEN` is the strongest current stage-16 hypothesis in this project. Its arithmetic and geometry are reproducible, but it is **not yet verified as the intended Cicada 3301 plaintext**.
+The remaining open point is **formalizing the selection rule**. The meanings of `6` and `8` as ciphertext boundaries and the midpoint-mirror rule still need prospective tests. Another mirror (`W-W-W`) also passes through the endpoint, so the cross-branch connection makes `W-NG-W` well-motivated, **not mathematically mandatory**. A global search also finds other ways to obtain `THEN` if keys and routes are freely combined.
+
+**Conclusion:** `THEN` is the strongest current stage-16 candidate because the inherited numbers, unique key mirror, and previously hidden SOON branch meet in one local construction. The geometry and decryption are exact; the full route is not yet proven to be the intended Cicada 3301 plaintext.
 
 ---
 
