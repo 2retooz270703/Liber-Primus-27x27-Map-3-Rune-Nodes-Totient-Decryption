@@ -1,388 +1,149 @@
 # 05 — I MAY
 
-> **Recovered plaintext:** `I MAY`  
-> **Current sequence:** `AS I GO THE WEATHER TURNS COLD I MAY`  
-> **Status:** proposed reconstruction; not an officially verified Cicada 3301 solution.
+AS I GO, THE WEATHER TURNS COLD. I MAY
 
-Everything below uses the same 27×27 rune grid:
+## 1. Continue from the end of COLD
 
-https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/0-2-live-map.html
+The previous chapter, [`04-COLD.md`](./04-COLD.md), ends at **A(11,7)**. Its key came from the `H-TH-H` mirror, whose transformed structure `H-U-H` produced the totient signature **(4,1,4)** and **phase 1**.
 
----
-
-## 1. COLD leaves the signal 4-1-4
-
-`COLD` ends at:
+At the final `A`, the phase-1 coordinate selector gives:
 
 ```text
-A(11,7)
+φ(11) = 10 → μ(10) = +1
+φ(7)  =  6 → μ(6)  = +1
+
+V₁(11,7) = (+1,+1) → DOWN + RIGHT
 ```
 
-The key used for `COLD` came from:
+Both components point toward positive directions. Reusing **4** and **1** from the preceding key signature as movement distances leads to:
 
 ```text
-H-TH-H
-→
-H-U-H
+A(11,7) → DOWN 4 → S(15,7) → RIGHT 1 → B(15,8)
 ```
 
-with signature:
+The destination **B(15,8)** is important because it sits at the center of another exact mirror.
+
+## 2. The new mirror generates NG-T-NG
+
+The rune `B(15,8)` is the center of a vertical **NG-B-NG** mirror, with both outer runes two cells away:
 
 ```text
-4-1-4
+NG(13,8)
+    |
+ B(15,8)  ← center
+    |
+NG(17,8)
 ```
 
-The later coordinate selector at the `COLD` endpoint gives:
-
-```text
-V₁(11,7)=(+1,+1)
-```
-
-so the inherited values are used as:
-
-```text
-DOWN 4
-RIGHT 1
-```
-
-Starting from:
-
-```text
-A(11,7)
-```
-
-gives:
-
-```text
-A(11,7)
-→ DOWN 4
-→ S(15,7)
-→ RIGHT 1
-→ B(15,8)
-```
-
----
-
-## 2. B reveals the hidden key structure
-
-`B(15,8)` is the center of:
-
-```text
-NG(13,8) —2— B(15,8) —2— NG(17,8)
-```
-
-So the hidden mirror is:
-
-```text
-NG-B-NG
-```
-
-The center is:
+Transforming the center by Euler's totient gives:
 
 ```text
 B = 17
+φ(17) = 16 = T
+
+NG-B-NG → NG-T-NG
 ```
 
-Apply Euler's totient:
+This produces the new three-rune key structure **NG-T-NG**. Its connection to the previous word becomes clearer when we compare the numerical signatures of the two mirrors.
 
-```text
-φ(17)=16=T
-```
+## 3. The COLD endpoint and the new key share one signature
 
-therefore:
-
-```text
-NG-B-NG
-→
-NG-T-NG
-```
-
-So the key structure is:
-
-```text
-NG-T-NG
-```
-
----
-
-## 3. Exact signature match at the COLD endpoint
-
-The final `A(11,7)` of `COLD` is itself the center of:
+The final `A(11,7)` of `COLD` is itself the center of a small vertical mirror:
 
 ```text
 EA(10,7)
-A(11,7)
+    |
+ A(11,7)  ← end of COLD
+    |
 EA(12,7)
 ```
 
-or:
+This **EA-A-EA** mirror has the totient signature **(12,8,12)**:
 
 ```text
-EA-A-EA
+φ(EA=28) = 12
+φ(A=24)  =  8
+φ(EA=28) = 12
 ```
 
-Its signature is:
+Now calculate the same signature for the newly generated `NG-T-NG`:
 
 ```text
-φ(EA=28)=12
-φ(A=24)=8
-φ(EA=28)=12
+φ(NG=21) = 12
+φ(T=16)  =  8
+φ(NG=21) = 12
 ```
 
-so:
+**Both structures produce exactly (12,8,12)**. One is centered on the endpoint of `COLD`; the other provides the key for `I MAY`. This connects the two stages through the same mathematical signature, even though the mirrors occupy different parts of the matrix.
+
+## 4. Determine the active key
+
+Apply the Möbius function to the signature of `NG-T-NG`:
 
 ```text
-EA-A-EA
-→
-12-8-12
+Totient signature: (12,8,12)
+Möbius signature: (0,0,0)
+Phase:              (0+0+0) mod 3 = 0
 ```
 
-The newly found key has exactly the same signature:
+**Phase 0** leaves the three-rune structure unchanged. To cover four ciphertext positions, repeat its first rune:
 
 ```text
-NG-T-NG
-→
-12-8-12
+NG-T-NG → phase 0 → NG-T-NG
+
+Active key: NG-T-NG-NG
 ```
 
-Therefore:
+The key is now fixed by the mirror transformation and its Möbius phase.
+
+## 5. Return to the earlier H-TH-H mirror and decrypt I MAY
+
+The reconstruction returns to **H-TH-H**, the mirror that generated the key for `COLD`. Its center is **TH(26,19)** — the point reached in the previous chapter by moving **DOWN 12** from `A(14,19)`.
+
+Reading left from that center gives four consecutive runes:
 
 ```text
-EA-A-EA
-→ 12-8-12
-← NG-T-NG
+TH(26,19) → G(26,18) → T(26,17) → E(26,16)
 ```
 
-This is a strong structural cross-check linking the `COLD` endpoint to the `I MAY` key.
+These form **ciphertext `TH-G-T-E`**. Subtract the active key `NG-T-NG-NG`, modulo 29:
 
----
-
-## 4. Möbius phase
-
-For:
+| Ciphertext | Key | Calculation | Plaintext |
+|---|---|---|---|
+| `TH = 2` | `NG = 21` | `2 − 21 ≡ 10` | **I** |
+| `G = 6` | `T = 16` | `6 − 16 ≡ 19` | **M** |
+| `T = 16` | `NG = 21` | `16 − 21 ≡ 24` | **A** |
+| `E = 18` | `NG = 21` | `18 − 21 ≡ 26` | **Y** |
 
 ```text
-12-8-12
+Ciphertext: TH - G - T  - E
+Key:        NG - T - NG - NG
+Plaintext:  I  - M - A  - Y
 ```
 
-the Möbius values are:
+The result is **I MAY**. The new key comes from `NG-B-NG`, while the ciphertext begins at the center of the earlier `H-TH-H` mirror. In this way, the previous stage contributes both a movement signature and a location reused in the new decryption.
 
-```text
-μ(12)=0
-μ(8)=0
-μ(12)=0
-```
+## 6. The final E connects directly to CRY
 
-so:
-
-```text
-M=(0,0,0)
-phase=0
-```
-
-The key is not rotated:
-
-```text
-KEY = NG-T-NG
-```
-
-For four ciphertext runes it repeats as:
-
-```text
-NG-T-NG-NG
-```
-
----
-
-## 5. Return to H-TH-H
-
-The new key is applied back to the preserved parent structure:
-
-```text
-H-TH-H
-```
-
-Its center is:
-
-```text
-TH(26,19)
-```
-
-Reading left gives:
-
-```text
-TH(26,19)
-G(26,18)
-T(26,17)
-E(26,16)
-```
-
-Therefore:
-
-```text
-CIPHERTEXT = TH-G-T-E
-```
-
----
-
-## 6. Decryption
-
-Use:
-
-```text
-P = (C - K) mod 29
-```
-
-with:
-
-```text
-Ciphertext: TH  G   T   E
-Key:        NG  T   NG  NG
-```
-
-| # | C | K | Result |
-|---:|---:|---:|---|
-| 1 | `TH=2` | `NG=21` | `2-21 ≡ 10 = I` |
-| 2 | `G=6` | `T=16` | `6-16 ≡ 19 = M` |
-| 3 | `T=16` | `NG=21` | `16-21 ≡ 24 = A` |
-| 4 | `E=18` | `NG=21` | `18-21 ≡ 26 = Y` |
-
-Therefore:
-
-```text
-TH-G-T-E
--
-NG-T-NG-NG
-=
-I-M-A-Y
-```
-
-# **I MAY**
-
----
-
-## 7. Why this branch is strong
-
-The transition uses one connected chain:
-
-```text
-COLD endpoint A(11,7)
-→ inherited 4-1 movement
-→ B(15,8)
-→ NG-B-NG
-→ B transforms to T
-→ NG-T-NG
-→ exact signature match 12-8-12
-→ phase 0
-→ TH-G-T-E
-→ I MAY
-```
-
-No new decryption rule is introduced.
-
-The especially strong check is:
-
-```text
-EA-A-EA
-→ 12-8-12
-← NG-T-NG
-```
-
-because the endpoint structure and the hidden key independently produce the same numerical fingerprint.
-
----
-
-## 8. Next state
-
-`I MAY` ends at:
-
-```text
-E(26,16)
-```
-
-which is already the lower outer of:
+`I MAY` ends at **E(26,16)**. This cell is the lower outer of a vertical **E-X-E** mirror:
 
 ```text
 E(24,16)
-X(25,16)
-E(26,16)
+    |
+X(25,16)  ← center
+    |
+E(26,16)  ← end of I MAY
 ```
 
-So the route immediately enters:
+The phase-0 coordinate selector at this endpoint gives **`V₀(26,16)=(+1,0)`**, while the nearby mirror identifies the next key-generating center, `X(25,16)`.
+
+Transforming that center gives:
 
 ```text
-E-X-E
+X = 14
+φ(14) = 6 = G
+
+E-X-E → E-G-E
 ```
 
-The later coordinate selector gives:
-
-```text
-V₀(26,16)=(+1,0)
-```
-
-which is only partial, so local mirror geometry supplies the next transition.
-
-The center transforms as:
-
-```text
-X=14
-φ(14)=6=G
-```
-
-therefore:
-
-```text
-E-X-E
-→
-E-G-E
-```
-
-which begins the next plaintext:
-
-```text
-CRY
-```
-
----
-
-## 9. Compact route
-
-```text
-COLD ends at:
-A(11,7)
-
-↓
-signature inherited:
-4-1-4
-
-↓
-DOWN 4, RIGHT 1
-
-B(15,8)
-
-↓
-NG-B-NG
-
-↓
-B → T
-
-↓
-NG-T-NG
-
-↓
-signature 12-8-12
-phase 0
-
-↓
-return to H-TH-H
-
-↓
-ciphertext:
-TH-G-T-E
-
-↓
-I-M-A-Y
-
-↓
-I MAY
-```
+The transformed mirror introduces the value **6**, which guides the movement used to recover the next word, **CRY**, in [`06-CRY.md`](./06-CRY.md).
