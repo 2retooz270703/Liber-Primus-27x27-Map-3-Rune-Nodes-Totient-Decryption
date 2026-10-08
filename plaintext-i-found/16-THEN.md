@@ -4,7 +4,7 @@ AS I GO, THE WEATHER TURNS COLD. I MAY CRY NOW. THE IDEA OF THE END IS DEATH. SE
 
 ## 1. Start from the end of SOON
 
-The primary `SOON` route ends at **H(25,19)**. Its key already established **Möbius phase 2** in the previous chapter. We carry that phase forward rather than choosing a new one for `THEN`.
+The primary `SOON` route from the previous chapter, [`15-SOON.md`](./15-SOON.md), ends at **H(25,19)**. Its key established **Möbius phase 2**, which we carry forward into `THEN`.
 
 Apply phase 2 to the endpoint coordinates:
 
