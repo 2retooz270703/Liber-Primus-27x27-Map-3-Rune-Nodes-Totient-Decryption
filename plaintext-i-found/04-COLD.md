@@ -1,393 +1,145 @@
 # 04 — COLD
 
-> **Recovered plaintext:** `COLD`  
-> **Current sequence:** `AS I GO THE WEATHER TURNS COLD`  
-> **Status:** proposed reconstruction; not an officially verified Cicada 3301 solution.
+AS I GO, THE WEATHER TURNS COLD.
 
-Everything below uses the same 27×27 rune grid:
+## 1. Continue from the end of TURNS
 
-https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/0-2-live-map.html
-
----
-
-## 1. TURNS leaves the value 12
-
-`TURNS` returns to the crossroads:
-
-```text
-A(14,19)
-```
-
-The central rune of the preceding structure is:
+The previous chapter, [`03-TURNS.md`](./03-TURNS.md), returns to **A(14,19)**. Its mirror structure contains the central rune **NG**, whose value provides the number used for the next movement:
 
 ```text
 NG = 21
+φ(21) = 12
 ```
 
-Apply Euler's totient:
+From `A(14,19)`, the same distance **12** is used in two directions: downward to find the next key-generating mirror, and leftward to find the ciphertext.
+
+The coordinate selector also agrees with these directions:
 
 ```text
-φ(21)=12
+V₀(14,19) = (+1,-1) → DOWN + LEFT
 ```
 
-Volume 1 uses this same value in two directions from `A(14,19)`:
+The selector gives the orientation, while **φ(NG) = 12** supplies the distance. Together they describe two connected branches from the same starting cell.
+
+## 2. Two movements of 12 find the key and ciphertext
+
+First, move **DOWN 12** from the `TURNS` endpoint:
 
 ```text
-DOWN 12
-LEFT 12
+A(14,19) → DOWN 12 → TH(26,19)
 ```
 
-These two branches locate the next key structure and ciphertext start.
+The destination **TH(26,19)** is the center of an **H-TH-H** mirror. This is the structure that will generate the key.
 
----
-
-## 2. Two 12-step branches
-
-### Key branch
+Now return to `A(14,19)` and move **LEFT 12**:
 
 ```text
-A(14,19)
-→ DOWN 12
-→ TH(26,19)
+A(14,19) → LEFT 12 → G(14,7)
 ```
 
-`TH(26,19)` is the center of:
+The second destination **G(14,7)** is the first rune of the ciphertext. Thus, one value obtained from the earlier `NG` center identifies **both parts of the decryption**: where the key comes from and where the encrypted run begins.
 
-```text
-H-TH-H
-```
+## 3. Transform H-TH-H into the active key
 
-### Ciphertext branch
-
-```text
-A(14,19)
-→ LEFT 12
-→ G(14,7)
-```
-
-So one value:
-
-```text
-φ(NG)=12
-```
-
-selects both:
-
-```text
-key structure
-and
-ciphertext start
-```
-
-The later coordinate selector is consistent with these directions:
-
-```text
-V₀(14,19)=(+1,-1)
-→ DOWN + LEFT
-```
-
-This selector is a later cross-check; the original route already records the two 12-step branches.
-
----
-
-## 3. Generate the key
-
-The center of:
-
-```text
-H-TH-H
-```
-
-is:
+The center of the `H-TH-H` mirror is **TH = 2**. Apply Euler's totient to that center, leaving the two outer runes unchanged:
 
 ```text
 TH = 2
+φ(2) = 1 = U
+
+H-TH-H → H-U-H
 ```
 
-Apply Euler's totient:
+To determine how the key is rotated, calculate the totient signature of `H-U-H` and apply the Möbius function:
 
 ```text
-φ(2)=1=U
+φ(H=8) = 4 → μ(4) = 0
+φ(U=1) = 1 → μ(1) = +1
+φ(H=8) = 4 → μ(4) = 0
+
+Totient signature: (4,1,4)
+Möbius signature: (0,+1,0)
+Phase:              (0+1+0) mod 3 = 1
 ```
 
-therefore:
+**Phase 1** rotates `H-U-H` into **U-H-H**. The ciphertext has four runes, so the first key rune repeats to cover the fourth position:
 
 ```text
-H-TH-H
-→
-H-U-H
+H-U-H → phase 1 → U-H-H
+
+Active key: U-H-H-U
 ```
 
-Its totient signature is:
+The key is now determined by the mirror and its calculated phase.
+
+## 4. Read the ciphertext and decrypt COLD
+
+The leftward branch reached **G(14,7)**. Reading upward from that position gives four consecutive runes:
 
 ```text
-φ(H=8)=4
-φ(U=1)=1
-φ(H=8)=4
+G(14,7) → J(13,7) → EA(12,7) → A(11,7)
 ```
 
-so:
+This is **ciphertext `G-J-EA-A`**. Subtract the active key `U-H-H-U`, modulo 29:
+
+| Ciphertext | Key | Calculation | Plaintext |
+|---|---|---|---|
+| `G = 6` | `U = 1` | `6 − 1 = 5` | **C** |
+| `J = 11` | `H = 8` | `11 − 8 = 3` | **O** |
+| `EA = 28` | `H = 8` | `28 − 8 = 20` | **L** |
+| `A = 24` | `U = 1` | `24 − 1 = 23` | **D** |
 
 ```text
-4-1-4
+Ciphertext: G - J - EA - A
+Key:        U - H - H  - U
+Plaintext:  C - O - L  - D
 ```
 
-The Möbius values are:
+The result is **COLD**, completing the sentence **“AS I GO, THE WEATHER TURNS COLD.”** The two movements of **12** supplied its ciphertext and key-generating mirror without changing the established decryption method.
 
-```text
-μ(4)=0
-μ(1)=+1
-μ(4)=0
-```
+## 5. The final A becomes the center of another mirror
 
-therefore:
-
-```text
-phase = 1
-```
-
-and:
-
-```text
-H-U-H
-→ phase 1
-→ U-H-H
-```
-
-So the active repeating key is:
-
-```text
-KEY = U-H-H-U
-```
-
----
-
-## 4. Ciphertext
-
-Starting from:
-
-```text
-G(14,7)
-```
-
-read upward:
-
-```text
-G(14,7)
-J(13,7)
-EA(12,7)
-A(11,7)
-```
-
-Therefore:
-
-```text
-CIPHERTEXT = G-J-EA-A
-```
-
----
-
-## 5. Decryption
-
-Use:
-
-```text
-P = (C - K) mod 29
-```
-
-with:
-
-```text
-Ciphertext: G   J   EA  A
-Key:        U   H   H   U
-```
-
-| # | C | K | Result |
-|---:|---:|---:|---|
-| 1 | `G=6` | `U=1` | `6-1 = 5 = C` |
-| 2 | `J=11` | `H=8` | `11-8 = 3 = O` |
-| 3 | `EA=28` | `H=8` | `28-8 = 20 = L` |
-| 4 | `A=24` | `U=1` | `24-1 = 23 = D` |
-
-Therefore:
-
-```text
-G-J-EA-A
--
-U-H-H-U
-=
-C-O-L-D
-```
-
-# **COLD**
-
-The first recovered sentence is:
-
-# **AS I GO THE WEATHER TURNS COLD**
-
----
-
-## 6. Why this branch is strong
-
-The core transition is unusually compact:
-
-```text
-NG=21
-↓
-φ(NG)=12
-
-A(14,19)
-├─ DOWN 12 → H-TH-H → key
-└─ LEFT 12 → G(14,7) → ciphertext
-```
-
-The same derived value controls both parts of the stage, and the key itself follows the already established center-totient rule:
-
-```text
-H-TH-H
-→ H-U-H
-→ phase 1
-→ U-H-H
-```
-
-No new cipher mechanism is introduced.
-
----
-
-## 7. Strong state cross-check: 010 → CENTER
-
-The key structure:
-
-```text
-H-U-H
-```
-
-has:
-
-```text
-signature = 4-1-4
-M = (0,+1,0)
-phase = 1
-```
-
-`COLD` ends at:
-
-```text
-A(11,7)
-```
-
-and that exact cell is the center of:
+`COLD` ends at **A(11,7)**. This cell is the center of a small vertical mirror:
 
 ```text
 EA(10,7)
-A(11,7)
+    |
+ A(11,7)  ← end of COLD, mirror center
+    |
 EA(12,7)
 ```
 
-or:
+The resulting **EA-A-EA** structure is significant because the key for `COLD` has the Möbius signature **(0,+1,0)**. In the route's state interpretation, that signature is associated with a **CENTER** continuation — and the endpoint is exactly the center of this mirror.
+
+The mirror also has a useful totient signature:
 
 ```text
-EA-A-EA
+φ(EA=28) = 12
+φ(A=24)  =  8
+φ(EA=28) = 12
+
+Signature: (12,8,12)
 ```
 
-So:
+This same signature will appear in the next stage, linking the `COLD` endpoint to the new key structure.
+
+## 6. The next movement leads to I MAY
+
+The active key leaves us with the signature **(4,1,4)** and **phase 1**. Apply the phase-1 coordinate selector to the final cell `A(11,7)`:
 
 ```text
-H-U-H
-→ M=(0,+1,0)
-→ COLD
-→ endpoint becomes CENTER of EA-A-EA
+φ(11) = 10 → μ(10) = +1
+φ(7)  =  6 → μ(6)  = +1
+
+V₁(11,7) = (+1,+1) → DOWN + RIGHT
 ```
 
-This later supports the working rule:
+Using the retained values **4** and **1** as distances gives:
 
 ```text
-(0,+1,0) → CENTER-compatible
+A(11,7) → DOWN 4 → S(15,7) → RIGHT 1 → B(15,8)
 ```
 
-The decryption itself does not depend on this later interpretation.
+The landing cell **B(15,8)** is the center of an **NG-B-NG** mirror. Its transformed form **NG-T-NG** produces the same totient signature **(12,8,12)** as `EA-A-EA` at the end of `COLD`.
 
----
-
-## 8. Next state
-
-The active signature remains:
-
-```text
-4-1-4
-```
-
-and the later coordinate selector at:
-
-```text
-A(11,7)
-```
-
-gives:
-
-```text
-V₁(11,7)=(+1,+1)
-```
-
-So the next movement uses:
-
-```text
-DOWN 4
-RIGHT 1
-```
-
-which leads to:
-
-```text
-B(15,8)
-```
-
-the center of:
-
-```text
-NG-B-NG
-```
-
-This begins the next plaintext:
-
-```text
-I MAY
-```
-
----
-
-## 9. Compact route
-
-```text
-TURNS
-↓
-A(14,19)
-
-NG=21
-↓
-φ(NG)=12
-
-A(14,19)
-├─ DOWN 12 → H-TH-H
-└─ LEFT 12 → G(14,7)
-
-H-TH-H
-↓
-TH → U
-↓
-H-U-H
-↓
-signature 4-1-4
-phase 1
-↓
-U-H-H
-
-ciphertext:
-G-J-EA-A
-
-↓
-C-O-L-D
-
-↓
-COLD
-```
+This is the starting connection for the next recovered words, **I MAY**, explained in [`05-I-MAY.md`](./05-I-MAY.md).
