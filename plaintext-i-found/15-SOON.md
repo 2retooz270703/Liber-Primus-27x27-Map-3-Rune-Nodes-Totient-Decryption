@@ -2,7 +2,7 @@
 
 > **Recovered plaintext candidate:** `SOON`  
 > **Current sequence:** `AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YOU SOON`  
-> **Status:** strongest current continuation after `YOU`; the primary reconstruction starts directly from the final `X(25,16)` and generates the same key through three independent `L-*-EA` structures. A second, longer mirror route independently recovers `SOON` and is treated as a supporting cross-check rather than the primary handoff.
+> **Status:** strongest current continuation after `YOU`. The primary route produces the same key from three different mirror structures. A longer, separate route also decrypts to `SOON`. The calculations are exact; some route choices remain hypotheses.
 
 Everything below uses the same 27×27 rune grid:
 
@@ -10,907 +10,333 @@ https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decr
 
 ---
 
-## 1. Starting state after YOU
+## 1. Start from the end of YOU
 
-`YOU` ends at:
+The previous chapter, [`14-YOU.md`](./14-YOU.md), ends at:
 
 ```text
 X(25,16)
 ```
 
-The key used for `YOU` comes from:
+Its key comes from `P-R-P → P-TH-P`, with Möbius phase **1**. We carry that phase into the next coordinate calculation:
 
 ```text
-P-R-P
-→ P-TH-P
+φ(25) = 20 = L     μ(20) = 0
+φ(16) =  8 = H     μ(8)  = 0
+
+T₁(25,16) = (20,8) = (L,H)
+V₁(25,16) = (0,0)
 ```
 
-with:
+Möbius gives no direction, but the existing **hidden-value rule** retains `L` and `H`.
+
+The proposed roles are simple:
 
 ```text
-signature = 12-1-12
-M         = (0,+1,0)
-phase     = 1
-```
-
-So the coordinate layer at the final `X` uses the same phase:
-
-```text
-p = 1
-```
-
-Before Möbius reduction:
-
-```text
-T₁(25,16)
-=
-(φ(25), φ(16))
-=
-(20,8)
-=
-(L,H)
-```
-
-Applying Möbius:
-
-```text
-μ(20)=0
-μ(8)=0
-```
-
-therefore:
-
-```text
-V₁(25,16)=(0,0)
-```
-
-The directional selector disappears, but by the hidden-value rule the pre-Möbius values remain available:
-
-```text
-L = 20
-H = 8
-```
-
-These two retained values split naturally into two local roles:
-
-```text
-L → key family
-H → ciphertext endpoint
+H → end of the ciphertext
+L → start of the key-generating structures
 ```
 
 ---
 
-## 2. H fixes the local ciphertext from X
+## 2. H marks a ciphertext beside X
 
-On row 25, starting from:
-
-```text
-X(25,16)
-```
-
-the retained rune:
+On the same row, `H` appears three cells to the right of the final `YOU` node:
 
 ```text
-H = 8
-```
+X(25,16) → D(25,17) → W(25,18) → H(25,19)
 
-occurs at:
-
-```text
-H(25,19)
-```
-
-exactly three cells to the right.
-
-The cells between them are:
-
-```text
-X(25,16)
-D(25,17)
-W(25,18)
-H(25,19)
-```
-
-So the direct local string is:
-
-```text
 CIPHERTEXT = X-D-W-H
 ```
 
-A scan of all eight contiguous straight directions finds this as the only `X-D-W-H` occurrence in the 27×27 grid.
+The directed sequence `X-D-W-H` occurs **only once** among the grid's straight, consecutive four-rune paths.
 
-The important point is that the endpoint is not chosen from the plaintext. It is already supplied by the hidden coordinate value:
-
-```text
-T₁=(L,H)
-      ↑
-      H
-      ↓
-X → RIGHT 3 → H
-```
+The crucial point is that **H=8 was already present in the coordinate state**. Its role as the next ciphertext endpoint is a proposed selection rule, not something the Möbius signs alone determine.
 
 ---
 
-## 3. The unique EA-EA-EA mirror beside the ciphertext
+## 3. One EA mirror connects three key generators
 
-The ciphertext lies inside the right side of the exact horizontal mirror:
-
-```text
-EA(25,10) —5— EA(25,15) —5— EA(25,20)
-```
-
-or:
+The ciphertext is contained inside the right arm of a horizontal mirror:
 
 ```text
-EA-EA-EA
+EA(25,10) ── 5 ── EA(25,15) ── 5 ── EA(25,20)
+
+EA(25,15) | X-D-W-H | EA(25,20)
 ```
 
-This is the only standard horizontal, vertical, or 45° `EA-EA-EA` mirror in the grid.
+This is the grid's **only standard EA-EA-EA mirror**.
 
-Its right arm contains the full ciphertext:
+Now look at its three `EA` nodes. Each can be reached by a different equal-step structure starting with the other hidden rune, **L**:
 
-```text
-EA(25,15) | X(25,16) D(25,17) W(25,18) H(25,19) | EA(25,20)
-              X         D         W         H
-```
+| Generator | Exact mirror | Center transformation |
+|---|---|---|
+| A | `L(25,4) — C(25,7) — EA(25,10)` | `φ(C=5)=4=R` |
+| B | `L(15,15) — I(20,15) — EA(25,15)` | `φ(I=10)=4=R` |
+| C | `L(25,8) — EO(25,14) — EA(25,20)` | `φ(EO=12)=4=R` |
 
-The three `EA` positions of this mirror are important because each is the endpoint of a separate equal-step three-rune structure beginning with the other retained hidden value:
-
-```text
-L = 20
-```
-
----
-
-## 4. Three independent generators converge on the same key
-
-### Generator A
-
-The left `EA` of the large mirror is reached by:
-
-```text
-L(25,4) —3— C(25,7) —3— EA(25,10)
-```
-
-The center is:
-
-```text
-C = 5
-```
-
-and:
-
-```text
-φ(5)=4=R
-```
-
-so:
-
-```text
-L-C-EA
-→
-L-R-EA
-```
-
-### Generator B
-
-The central `EA` is reached vertically by:
-
-```text
-L(15,15) —5— I(20,15) —5— EA(25,15)
-```
-
-The center is:
-
-```text
-I = 10
-```
-
-and:
-
-```text
-φ(10)=4=R
-```
-
-so:
-
-```text
-L-I-EA
-→
-L-R-EA
-```
-
-### Generator C
-
-The right `EA` is reached by:
-
-```text
-L(25,8) —6— EO(25,14) —6— EA(25,20)
-```
-
-The center is:
-
-```text
-EO = 12
-```
-
-and:
-
-```text
-φ(12)=4=R
-```
-
-so:
-
-```text
-L-EO-EA
-→
-L-R-EA
-```
-
-All three structures therefore compile independently to the same key family:
+Their arm lengths are **3, 5, and 6** respectively. All three centers independently produce the same unrotated key:
 
 ```text
 L-C-EA  ─┐
-L-I-EA  ─┼→ L-R-EA
+L-I-EA  ─┼─→ L-R-EA
 L-EO-EA ─┘
 ```
 
-This is the strongest part of the construction: the key is not selected because it decrypts to an English word. It is produced three times by three different centers attached to the three `EA` nodes of one larger mirror.
+**This is the main strength of the primary route:** three different geometric structures, attached to the three nodes of one larger mirror, converge on **L-R-EA**. They are distinct constructions, though not three statistically independent proofs.
 
 ---
 
-## 5. A totient cross-check: C, H, I, EO
+## 4. Two numerical cross-checks
 
-Within the positive rune-value range, the complete set satisfying:
+The first connection comes from the complete set of positive rune indices satisfying `φ(n)=4`:
 
 ```text
-φ(n)=4
+{5,8,10,12} = {C,H,I,EO}
 ```
 
-is:
+Three of these are exactly the key-mirror centers:
 
 ```text
-{5,8,10,12}
-=
-{C,H,I,EO}
+C, I, EO → φ = 4 = R
 ```
 
-Three of these values are exactly the three centers used by the key generators:
+The fourth is **H**, the ciphertext endpoint. Thus one totient class appears on both sides of the construction.
+
+There is also a prime-weight match. The hidden pair after `YOU` is `L,H`:
 
 ```text
-C  → φ(C)=4=R
-I  → φ(I)=4=R
-EO → φ(EO)=4=R
-```
+prime(L) + prime(H) = 73 + 23 = 96
 
-The remaining member is:
-
-```text
-H = 8
-```
-
-which is exactly the hidden value that terminates the ciphertext:
-
-```text
-X-D-W-H
-```
-
-So the same four-member totient class is split across the construction as:
-
-```text
-C, I, EO → three key confirmations
-H        → ciphertext endpoint
-```
-
-This relation is not required for the decryption, but it is a strong structural cross-check.
-
----
-
-## 6. Prime-weight cross-check: the hidden pair equals SOON
-
-The retained coordinate values after `YOU` are:
-
-```text
-T₁(25,16)=(20,8)=(L,H)
-```
-
-On the standard prime-valued Gematria Primus layer:
-
-```text
-L = 73
-H = 23
-```
-
-Therefore:
-
-```text
-prime(L) + prime(H)
-=
-73 + 23
-=
-96
-```
-
-Now calculate the prime-sum of the recovered plaintext:
-
-```text
-SOON
-=
-S + O + O + N
-=
-53 + 7 + 7 + 29
-=
-96
+prime(SOON) = S + O + O + N
+            = 53 + 7 + 7 + 29 = 96
 ```
 
 So:
 
 ```text
-prime(L) + prime(H)
-=
-prime-sum(SOON)
-=
-96
+prime(L) + prime(H) = prime(SOON) = 96
 ```
 
-This is especially notable because `(L,H)` is not derived from the plaintext. It is already produced by the coordinate state before the `SOON` decryption:
-
-```text
-X(25,16)
-↓
-phase 1
-↓
-T₁(25,16)=(L,H)
-```
-
-and the same two hidden values are then used structurally in the primary reconstruction:
-
-```text
-L → key family
-H → ciphertext endpoint
-```
-
-Thus the complete hidden pair has a second, independent relation to the recovered word: its combined prime-weight is exactly the prime-weight of `SOON`.
-
-This prime-valued equality is not used to generate the plaintext, so it should be treated as an independent numerical cross-check rather than part of the decryption algorithm.
+These are exact numerical relationships. They **support checking the proposed route**, but neither one determines the route or proves the word was intentionally encoded.
 
 ---
 
-## 7. Determine the key phase
+## 5. Möbius fixes the key — and decrypts SOON
 
-The common generated key is:
+All three generators give the unrotated key `L-R-EA`.
 
 ```text
-L-R-EA
+KEY = L-R-EA
+
+Totient signature:
+φ(20), φ(4), φ(28) = (8,2,12)
+
+Möbius signature:
+μ(8), μ(2), μ(12) = (0,-1,0)
+
+phase = (0-1+0) mod 3 = 2
 ```
 
-Its totient signature is:
+Rotate by the calculated phase and repeat the first rune for the fourth ciphertext position:
 
 ```text
-φ(L=20)  = 8
-φ(R=4)   = 2
-φ(EA=28) = 12
+L-R-EA → phase 2 → EA-L-R
+
+ACTIVE KEY = EA-L-R-EA
 ```
 
-therefore:
+Apply `P = (C − K) mod 29`:
+
+| Ciphertext | Key | Calculation | Plaintext |
+|---|---|---|---|
+| `X = 14` | `EA = 28` | `14 − 28 ≡ 15` | **S** |
+| `D = 23` | `L = 20` | `23 − 20 = 3` | **O** |
+| `W = 7` | `R = 4` | `7 − 4 = 3` | **O** |
+| `H = 8` | `EA = 28` | `8 − 28 ≡ 9` | **N** |
 
 ```text
-signature = 8-2-12
-```
-
-Apply Möbius:
-
-```text
-μ(8)=0
-μ(2)=-1
-μ(12)=0
-```
-
-so:
-
-```text
-M=(0,-1,0)
-```
-
-and:
-
-```text
-phase
-=
-(0-1+0) mod 3
-=
-2
-```
-
-Therefore:
-
-```text
-L-R-EA
-→ phase 2
-→ EA-L-R
-```
-
-Repeated across four ciphertext runes:
-
-```text
-KEY = EA-L-R-EA
-```
-
-No manual key rotation is needed.
-
----
-
-## 8. Primary decryption
-
-Use the established rule:
-
-```text
-P = (C - K) mod 29
-```
-
-with:
-
-```text
-Ciphertext: X   D   W   H
-Key:        EA  L   R   EA
-```
-
-| # | C | K | Result |
-|---:|---:|---:|---|
-| 1 | `X=14` | `EA=28` | `14-28 ≡ 15 = S` |
-| 2 | `D=23` | `L=20` | `23-20 = 3 = O` |
-| 3 | `W=7` | `R=4` | `7-4 = 3 = O` |
-| 4 | `H=8` | `EA=28` | `8-28 ≡ 9 = N` |
-
-Therefore:
-
-```text
-X-D-W-H
--
-EA-L-R-EA
-=
-S-O-O-N
+CIPHERTEXT: X   D   W   H
+KEY:        EA  L   R   EA
+            --------------
+PLAINTEXT:  S   O   O   N
 ```
 
 # **SOON**
-
-The plaintext becomes:
 
 # **AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YOU SOON**
 
 ---
 
-## 9. Why the primary reconstruction is strong
+## 6. A hidden second route begins at the same X
 
-The complete local chain is:
+There is also a **different geometric route** to `SOON`, using another ciphertext and another key.
 
-```text
-YOU
-↓
-X(25,16)
-
-phase 1
-↓
-T₁(25,16)=(L,H)
-V₁(25,16)=(0,0)
-
-H
-↓
-X-D-W-H
-
-L
-↓
-three independent structures attached to EA-EA-EA
-↓
-L-C-EA  → L-R-EA
-L-I-EA  → L-R-EA
-L-EO-EA → L-R-EA
-
-L-R-EA
-↓
-8-2-12
-↓
-M=(0,-1,0)
-↓
-phase 2
-↓
-EA-L-R-EA
-
-X-D-W-H
--
-EA-L-R-EA
-=
-SOON
-```
-
-This route has several independent constraints:
-
-```text
-final X from YOU
-same inherited phase p=1
-hidden pair (L,H)
-unique local H on row 25
-unique contiguous X-D-W-H
-unique EA-EA-EA standard mirror
-three independent key generators
-one common compiled key L-R-EA
-phase fixed arithmetically by Möbius
-```
-
-For that reason this is treated as the **primary reconstruction** of `SOON`.
-
----
-
-## 10. Independent secondary reconstruction
-
-A second route reaches the same plaintext through a substantially different mirror chain.
-
-This route is longer and contains more local branch choices, so it is not used as the primary handoff. Its importance is that it independently reconstructs the same word from different ciphertext and key material.
-
-### 10.1. Re-enter the mirror network from X
-
-The final cell:
-
-```text
-X(25,16)
-```
-
-is the center of:
+Start again at `X(25,16)`. It is the center of:
 
 ```text
 E(24,16)
 X(25,16)
 E(26,16)
-```
 
-or:
-
-```text
 E-X-E
 ```
 
-Using the previously unused upper outer gives:
+The upper `E(24,16)` connects to:
 
 ```text
-E(24,16)
+E(22,14) — TH(23,15) — E(24,16)
 ```
 
-That cell is itself the lower outer of:
+The center **TH(23,15)** is a mirror hub. Two further mirrors pass through it:
 
 ```text
-E(22,14)
-TH(23,15)
-E(24,16)
+X(19,19) — TH(23,15) — X(27,11)   (radius 4)
+D(22,15) — TH(23,15) — D(24,15)   (radius 1)
 ```
 
-so the route enters:
-
-```text
-E-TH-E
-```
-
-The center:
-
-```text
-TH(23,15)
-```
-
-is a genuine multi-mirror hub. Besides `E-TH-E`, it is also the center of:
-
-```text
-D(22,15) —1— TH(23,15) —1— D(24,15)
-```
-
-and:
-
-```text
-X(19,19) —4— TH(23,15) —4— X(27,11)
-```
-
-From this single hub, one branch reaches the ciphertext while another reaches the key.
+The `X-TH-X` branch leads to the **second ciphertext**; the `D-TH-D` branch leads to its **key**. These are real mirror connections, although choosing each branch is not yet dictated by a universal rule.
 
 ---
 
-## 11. Secondary ciphertext branch
+## 7. The secondary ciphertext: P-S-U-W
 
-Take the radius-4 mirror:
+Follow the `X-TH-X` branch to `X(27,11)`, then through the connected mirrors:
 
 ```text
-X(19,19) —4— TH(23,15) —4— X(27,11)
+X(19,19) — TH(23,15) — X(27,11)
+                            |
+D(27,2) ───────── X(27,11) ───────── D(27,20)
+                                       |
+P(27,16) ─────── D(27,20) ─────── P(27,24)
 ```
 
-and continue through:
+The last `P` begins a consecutive four-rune segment:
 
 ```text
-X(27,11)
-```
+P(27,24) → S(27,25) → U(27,26) → W(27,27)
 
-which is the center of:
-
-```text
-D(27,2) —9— X(27,11) —9— D(27,20)
-```
-
-The right outer:
-
-```text
-D(27,20)
-```
-
-is then the center of:
-
-```text
-P(27,16) —4— D(27,20) —4— P(27,24)
-```
-
-The left outer:
-
-```text
-P(27,16)
-```
-
-is the same `P` already used in the reconstruction of `YOU`.
-
-Taking the opposite outer reaches:
-
-```text
-P(27,24)
-```
-
-and the grid then ends with the unique contiguous run:
-
-```text
-P(27,24)
-S(27,25)
-U(27,26)
-W(27,27)
-```
-
-Therefore the secondary ciphertext is:
-
-```text
 CIPHERTEXT₂ = P-S-U-W
 ```
 
-A scan of all eight straight directions finds this as the only contiguous `P-S-U-W` occurrence in the grid.
+This directed `P-S-U-W` also occurs **only once** in the grid.
+
+There is a direct link to the earlier research: **P(27,16)** was already used in [`14-YOU.md`](./14-YOU.md). The hidden second route therefore intersects a previously known node before reaching a new endpoint, **W(27,27)**.
 
 ---
 
-## 12. Secondary key branch
+## 8. The secondary key and a second SOON
 
-Return to the same hub:
-
-```text
-TH(23,15)
-```
-
-and take:
+Return to the same hub, `TH(23,15)`, and follow the other branch:
 
 ```text
-D(22,15) —1— TH(23,15) —1— D(24,15)
+D(22,15) — TH(23,15) — D(24,15)
+D(22,15) — NG(22,17) — D(22,19)
+IA(22,16) — D(22,19) — IA(22,22)
+IA(16,10) — EA(19,13) — IA(22,16)
 ```
 
-Using:
-
-```text
-D(22,15)
-```
-
-enters the exact mirror:
-
-```text
-D(22,15) —2— NG(22,17) —2— D(22,19)
-```
-
-The opposite outer:
-
-```text
-D(22,19)
-```
-
-is the center of:
-
-```text
-IA(22,16) —3— D(22,19) —3— IA(22,22)
-```
-
-Following the left outer:
-
-```text
-IA(22,16)
-```
-
-reaches another exact mirror:
-
-```text
-IA(16,10) —3— EA(19,13) —3— IA(22,16)
-```
-
-So the key generator is:
+The last mirror generates the key:
 
 ```text
 IA-EA-IA
+
+φ(EA=28) = 12 = EO
+
+IA-EA-IA → IA-EO-IA
 ```
 
-Apply the center transformation:
+Möbius fixes its phase without changing the order:
 
 ```text
-EA = 28
-φ(28)=12=EO
+Totient signature = (18,4,18)
+Möbius signature  = (0,0,0)
+phase = 0
+
+ACTIVE KEY₂ = IA-EO-IA-IA
 ```
 
-therefore:
+Now decrypt the second ciphertext:
+
+| Ciphertext | Key | Calculation | Plaintext |
+|---|---|---|---|
+| `P = 13` | `IA = 27` | `13 − 27 ≡ 15` | **S** |
+| `S = 15` | `EO = 12` | `15 − 12 = 3` | **O** |
+| `U = 1` | `IA = 27` | `1 − 27 ≡ 3` | **O** |
+| `W = 7` | `IA = 27` | `7 − 27 ≡ 9` | **N** |
 
 ```text
-IA-EA-IA
-→
-IA-EO-IA
+CIPHERTEXT₂: P   S   U   W
+KEY₂:        IA  EO  IA  IA
+             --------------
+PLAINTEXT:   S   O   O   N
 ```
 
-Its totient signature is:
+# **SOON — AGAIN**
 
-```text
-φ(IA=27)=18
-φ(EO=12)=4
-φ(IA=27)=18
-```
-
-so:
-
-```text
-18-4-18
-```
-
-and:
-
-```text
-μ(18)=0
-μ(4)=0
-μ(18)=0
-```
-
-therefore:
-
-```text
-M=(0,0,0)
-phase=0
-```
-
-The secondary key remains:
-
-```text
-IA-EO-IA
-```
-
-Repeated over four runes:
-
-```text
-KEY₂ = IA-EO-IA-IA
-```
+The second route uses **different ciphertext, a different mirror key, and phase 0**, yet gives the same plaintext. It is a supporting reconstruction, not a proven independent message from Cicada.
 
 ---
 
-## 13. Secondary decryption
+## 9. Why the two SOON routes matter
 
-Use:
+The constructions can be compared directly:
+
+| | Primary SOON | Hidden secondary SOON |
+|---|---|---|
+| Ciphertext | `X-D-W-H` | `P-S-U-W` |
+| Active key | `EA-L-R-EA` | `IA-EO-IA-IA` |
+| Key phase | **2** | **0** |
+| Final cell | **H(25,19)** | **W(27,27)** |
+| Main structure | Unique `EA-EA-EA` with three key generators | Two branches from the `TH(23,15)` mirror hub |
+
+The primary route is the better direct continuation of `YOU` because it starts at the final `X` of `YOU`, applies the inherited phase 1 to its coordinates, finds `H` on the same row, and produces its key through three converging structures.
+
+The longer secondary route is valuable because it reaches **the same word without reusing the primary ciphertext or key**. It has more unresolved branch choices, so it should remain a cross-check rather than replace the direct route.
+
+### A connection that becomes important in chapter 16
+
+The primary `SOON` endpoint is **H(25,19)** with phase **2**:
 
 ```text
-Ciphertext: P   S   U   W
-Key:        IA  EO  IA  IA
+φ²(25) = 8     μ(8) = 0
+φ²(19) = 6     μ(6) = +1
+
+T₂(25,19) = (8,6)
+V₂(25,19) = (0,+1) → RIGHT
 ```
 
-| # | C | K | Result |
-|---:|---:|---:|---|
-| 1 | `P=13` | `IA=27` | `13-27 ≡ 15 = S` |
-| 2 | `S=15` | `EO=12` | `15-12 = 3 = O` |
-| 3 | `U=1` | `IA=27` | `1-27 ≡ 3 = O` |
-| 4 | `W=7` | `IA=27` | `7-27 ≡ 9 = N` |
+Those **pre-existing values (8,6)** are the starting state for [`16-THEN.md`](./16-THEN.md).
 
-Therefore:
+The *secondary* `SOON` endpoint **W(27,27)** also matters later: the proposed `THEN` ciphertext ends at **W(25,27)**, and the two endpoints belong to one exact vertical mirror:
 
 ```text
-P-S-U-W
--
-IA-EO-IA-IA
-=
-S-O-O-N
+W(25,27)    ← end of THEN
+   |
+NG(26,27)   ← center
+   |
+W(27,27)    ← end of secondary SOON
 ```
 
-# **SOON**
+So the second `SOON` route is not just a duplicated decryption: **its endpoint becomes part of a concrete geometric connection in the next chapter**. That connection makes `W-NG-W` a natural mirror to examine, but does not by itself prove a mandatory phase choice.
 
 ---
 
-## 14. Two different constructions, one plaintext
+## 10. What remains open
 
-The two reconstructions are genuinely different:
-
-```text
-PRIMARY
-
-X-D-W-H
--
-EA-L-R-EA
-=
-SOON
-```
-
-and:
+The primary route has a strong internal structure, but it still assumes the hidden pair `(L,H)` is used as:
 
 ```text
-SECONDARY
-
-P-S-U-W
--
-IA-EO-IA-IA
-=
-SOON
+L → key-generating mirrors
+H → ciphertext endpoint
 ```
 
-They do not reuse the same ciphertext or the same key.
+This role assignment needs to be predicted by a reusable rule rather than justified only after finding `SOON`.
 
-The first is preferred as the actual continuation because it begins directly at the final `X(25,16)` of `YOU`, preserves the active phase, exposes the hidden values `(L,H)`, and produces its key three times independently around the local `EA-EA-EA` structure.
+The hidden secondary route has additional fork choices, especially the choice of **IA(22,16)** rather than **IA(22,22)** in the `IA-D-IA` mirror.
 
-The second requires a longer sequence of mirror handoffs and contains unresolved branch-selection questions. It is therefore better interpreted as an **independent structural confirmation** of the plaintext rather than as the main route.
+**What is established:** both ciphertexts, both keys, the phase calculations, the mirror coordinates, and the two modular decryptions can be checked directly on the map.
 
-A possible interpretation is that the map deliberately contains redundancy:
+**What remains a hypothesis:** that either route—especially the longer hidden route—was intentionally designed to produce the plaintext `SOON`.
 
-```text
-one local route
-+
-one larger mirror-network route
-→
-the same plaintext
-```
-
-That possibility is consistent with the repeated mirror, recursion, and self-return behavior already seen elsewhere in the reconstruction, but intentional redundancy is **not yet proven**. The evidence currently supports only the narrower statement:
-
-```text
-two structurally different constructions independently decrypt to SOON
-```
-
----
-
-## 15. What remains unproven
-
-The primary construction is strongly constrained once the hidden pair:
-
-```text
-T₁(25,16)=(L,H)
-```
-
-is retained, but the exact universal rule assigning:
-
-```text
-L → key structures
-H → same-row ciphertext endpoint
-```
-
-has not yet been demonstrated at another route stage.
-
-The secondary construction has a different weakness: several mirror-network branch choices still need a general selector, especially the choice of:
-
-```text
-IA(22,16)
-```
-
-rather than:
-
-```text
-IA(22,22)
-```
-
-inside:
-
-```text
-IA-D-IA
-```
-
-So the current hierarchy of evidence is:
-
-```text
-SOON plaintext          = very strong
-primary X-based route   = strongest current derivation
-secondary mirror route  = independent supporting cross-check
-universal post-YOU rule = still incomplete
-```
+The most useful next step is already documented in [`16-THEN.md`](./16-THEN.md): the fixed primary endpoint **H(25,19)** and phase **2** produce `(8,6)`, which can be tested against the next ciphertext's geometry.
