@@ -1,456 +1,173 @@
 # 07 — NOW THE
 
-> **Recovered plaintext:** `NOW THE`  
-> **Current sequence:** `AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE`  
-> **Status:** proposed reconstruction; not an officially verified Cicada 3301 solution.
+AS I GO, THE WEATHER TURNS COLD. I MAY CRY NOW. THE
 
-Everything below uses the same 27×27 rune grid:
+## 1. CRY leaves a useful value: 6
 
-https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/0-2-live-map.html
-
----
-
-## 1. CRY leaves the value 6 active
-
-`CRY` ends at:
+The previous chapter, [`06-CRY.md`](./06-CRY.md), ends at **S(17,16)**. Its key came from the `E-X-E` mirror, whose center was transformed into `G`:
 
 ```text
-S(17,16)
+X = 14 → φ(14) = 6 = G
+
+E-X-E → E-G-E
+Totient signature: (6,2,6)
 ```
 
-The preceding structure was:
+The outer value **6** had already determined an exact movement in `CRY`: **UP 6** from `X(25,16)` to `J(19,16)`. The next stage reveals this same number in the geometry surrounding the final `S`.
+
+## 2. Two mirrors confirm the distance of 6
+
+The endpoint **S(17,16)** is the right outer rune of a horizontal mirror:
 
 ```text
-E-X-E
-→
-E-G-E
+S(17,4) ── 6 ── IA(17,10) ── 6 ── S(17,16)
 ```
 
-with signature:
-
-```text
-6-2-6
-```
-
-The outer value:
-
-```text
-6
-```
-
-had already been used as movement:
-
-```text
-X(25,16)
-→ UP 6
-→ J(19,16)
-```
-
-So after `CRY` the inherited value is still:
-
-```text
-6
-```
-
----
-
-## 2. The endpoint confirms the same 6 geometrically
-
-`S(17,16)` is the right outer of:
-
-```text
-S(17,4) —6— IA(17,10) —6— S(17,16)
-```
-
-The center independently gives the same value:
+Its radius is **6**. More importantly, the center `IA(17,10)` independently produces the same number through Euler's totient applied twice:
 
 ```text
 IA = 27
-φ(27)=18
-φ(18)=6
+φ(27) = 18
+φ(18) = 6
+
+φ²(IA) = 6
 ```
 
-so:
+That `IA` is also the center of a second mirror, this time on the opposite diagonal:
 
 ```text
-φ²(IA)=6
+TH(11,16) ── 6 ── IA(17,10) ── 6 ── TH(23,4)
 ```
 
-The same center also belongs to:
+The two mirrors share **IA(17,10)**, have the same radius **6**, and connect `S` to a pair of `TH` runes. Of those two `TH` positions, **TH(11,16)** is exactly six cells straight above the `CRY` endpoint:
 
 ```text
-TH(11,16) —6— IA(17,10) —6— TH(23,4)
+S(17,16) → UP 6 → TH(11,16)
 ```
 
-Of the two `TH` outers, only:
+This gives a direct geometric starting point for the next ciphertext. The distance is supported by the previous key signature, both mirror radii, and the double totient of their shared center.
+
+## 3. Read the new ciphertext
+
+Starting at **TH(11,16)**, follow the diagonal down-right through four consecutive cells:
 
 ```text
-TH(11,16)
+TH(11,16) → AE(12,17) → B(13,18) → A(14,19) → J(15,20)
 ```
 
-is reachable from the current endpoint by one straight move of exactly 6:
+The five runes form the ciphertext **TH-AE-B-A-J**. Its final cell, **J(15,20)**, will also connect to the next chapter.
+
+## 4. Reuse the OE-J-OE mirror to generate the key
+
+The key comes from a mirror already encountered in `CRY`. That chapter's **UP 6** movement landed at `J(19,16)`, the center of the vertical structure:
 
 ```text
-S(17,16)
-→ UP 6
-→ TH(11,16)
+OE(18,16)
+    |
+ J(19,16)  ← center
+    |
+OE(20,16)
 ```
 
-This selects the next ciphertext start.
-
----
-
-## 3. Ciphertext
-
-From:
-
-```text
-TH(11,16)
-```
-
-read diagonally down-right:
-
-```text
-TH(11,16)
-AE(12,17)
-B(13,18)
-A(14,19)
-J(15,20)
-```
-
-Therefore:
-
-```text
-CIPHERTEXT = TH-AE-B-A-J
-```
-
----
-
-## 4. Generate the key
-
-The key-generating structure is:
-
-```text
-OE-J-OE
-```
-
-with center:
+This is **OE-J-OE**. Transform its center using Euler's totient:
 
 ```text
 J = 11
+φ(11) = 10 = I
+
+OE-J-OE → OE-I-OE
 ```
 
-Apply Euler's totient:
+Now calculate the totient and Möbius signatures of `OE-I-OE` to determine the active rotation:
 
 ```text
-φ(11)=10=I
+φ(OE=22) = 10 → μ(10) = +1
+φ(I=10)  =  4 → μ(4)  =  0
+φ(OE=22) = 10 → μ(10) = +1
+
+Totient signature: (10,4,10)
+Möbius signature: (+1,0,+1)
+Phase:              (1+0+1) mod 3 = 2
 ```
 
-so:
+**Phase 2** rotates the three-rune structure into **OE-OE-I**. Repeating the cycle across the five ciphertext positions gives:
 
 ```text
-OE-J-OE
-→
-OE-I-OE
+OE-I-OE → phase 2 → OE-OE-I
+
+Active key: OE-OE-I-OE-OE
 ```
 
-Its totient signature is:
+The key therefore reuses the same `OE-J-OE` mirror that was already part of the previous stage's geometry.
+
+## 5. Decrypting TH-AE-B-A-J
+
+Subtract the active key from the ciphertext, modulo 29:
+
+| Ciphertext | Key | Calculation | Plaintext |
+|---|---|---|---|
+| `TH = 2` | `OE = 22` | `2 − 22 ≡ 9` | **N** |
+| `AE = 25` | `OE = 22` | `25 − 22 = 3` | **O** |
+| `B = 17` | `I = 10` | `17 − 10 = 7` | **W** |
+| `A = 24` | `OE = 22` | `24 − 22 = 2` | **TH** |
+| `J = 11` | `OE = 22` | `11 − 22 ≡ 18` | **E** |
 
 ```text
-φ(OE=22)=10
-φ(I=10)=4
-φ(OE=22)=10
+Ciphertext: TH - AE - B - A  - J
+Key:        OE - OE - I - OE - OE
+Plaintext:  N  - O  - W - TH - E
 ```
 
-therefore:
+The result is **NOW THE**. It contains **five runes** even though the Latin transcription has six letters, because `TH` is one rune.
+
+## 6. A numerical connection between CRY and NOW THE
+
+The two consecutive plaintext blocks have exactly the same **prime-valued Gematria Primus sum**:
 
 ```text
-10-4-10
+CRY:      C + R + Y          = 13 + 11 + 103        = 127
+NOW THE:  N + O + W + TH + E = 29 + 7 + 19 + 5 + 67 = 127
 ```
 
-The Möbius values are:
+There is another connection to the key. **127 is the 31st prime**, and **31** is the prime-valued Gematria Primus weight of `I` — the rune produced by transforming the key mirror's center `J`:
 
 ```text
-μ(10)=+1
-μ(4)=0
-μ(10)=+1
-```
+OE-J-OE → OE-I-OE
 
-so:
-
-```text
-phase = 2
-```
-
-and:
-
-```text
-OE-I-OE
-→ phase 2
-→ OE-OE-I
-```
-
-Repeated across five runes:
-
-```text
-KEY = OE-OE-I-OE-OE
-```
-
----
-
-## 5. Decryption
-
-Use:
-
-```text
-P = (C - K) mod 29
-```
-
-| # | C | K | Result |
-|---:|---:|---:|---|
-| 1 | `TH=2` | `OE=22` | `2-22 ≡ 9 = N` |
-| 2 | `AE=25` | `OE=22` | `25-22 = 3 = O` |
-| 3 | `B=17` | `I=10` | `17-10 = 7 = W` |
-| 4 | `A=24` | `OE=22` | `24-22 = 2 = TH` |
-| 5 | `J=11` | `OE=22` | `11-22 ≡ 18 = E` |
-
-Therefore:
-
-```text
-TH-AE-B-A-J
--
-OE-OE-I-OE-OE
-=
-N-O-W-TH-E
-```
-
-# **NOW THE**
-
----
-
-## 6. Why this branch is strong
-
-The same value `6` appears repeatedly without being reintroduced:
-
-```text
-E-G-E signature → outer value 6
-previous movement → 6
-S-IA-S radius → 6
-φ²(IA) → 6
-TH-IA-TH radius → 6
-S(17,16) → TH(11,16) movement → 6
-```
-
-So the route uses one inherited arithmetic value as both:
-
-```text
-movement distance
-and
-mirror radius
-```
-
-The key is then generated by the already established center-totient rule and its phase is fixed before plaintext inspection.
-
----
-
-## 7. Prime-weight cross-check: CRY = NOW THE
-
-There is also an independent numerical match on the standard prime-valued Gematria Primus layer.
-
-For `CRY`:
-
-```text
-C = 13
-R = 11
-Y = 103
-
-13 + 11 + 103 = 127
-```
-
-For `NOW THE`:
-
-```text
-N  = 29
-O  = 7
-W  = 19
-TH = 5
-E  = 67
-
-29 + 7 + 19 + 5 + 67 = 127
-```
-
-Therefore:
-
-```text
-prime-sum(CRY)
-=
-prime-sum(NOW THE)
-=
-127
-```
-
-So the stage reached immediately after `CRY` has exactly the same prime-weight as `CRY` itself.
-
-There is one further connection:
-
-```text
+prime-sum(CRY) = prime-sum(NOW THE) = 127
 127 = 31st prime
-I = 31
+prime-value(I) = 31
 ```
 
-and `I` is the transformed center of the key used for `NOW THE`:
+Thus, the equal prime sums of the two plaintext blocks also point numerically to the new key's transformed center.
+
+## 7. The endpoint connects directly to IDEA
+
+The active key `OE-I-OE` has Möbius signature **`(+1,0,+1)`**, which the route model associates with an **OUTER** continuation.
+
+The ciphertext ends at **J(15,20)**. This exact rune is an outer of a diagonal mirror:
 
 ```text
-OE-J-OE
-→ J → I
-→ OE-I-OE
+J(15,20) ── 2 ── D(17,18) ── 2 ── J(19,16)
 ```
 
-Thus the transition has an additional independent numerical correspondence:
+This is **J-D-J**. Notice the second outer, **J(19,16)**: it is the same `J` reached by **UP 6** in `CRY` and used above as the center of the key-generating `OE-J-OE` mirror.
+
+That makes the connection especially clear. The final `J` of **NOW THE** is joined by one mirror to a `J` that has already played an important role in both **CRY** and this stage's key generation.
+
+At `J(15,20)`, the phase-2 coordinate selector gives:
 
 ```text
-CRY
-→ 127
+φ²(15) = 4 → μ(4) = 0
+φ²(20) = 4 → μ(4) = 0
 
-NOW THE
-→ 127
-→ 31
-→ I
-
-OE-I-OE
+V₂(15,20) = (0,0)
 ```
 
-This prime-valued relation is not used to produce the decryption, so it functions only as an independent cross-check of the recovered transition.
-
----
-
-## 8. Strong state cross-check: 101 → OUTER
-
-The key structure:
+The continuation is therefore found through nearby mirror geometry. One step up-left from `J(15,20)` lies **A(14,19)**, the outer of the diagonal `A-TH-A` mirror:
 
 ```text
-OE-I-OE
+A(8,13) ── 3 ── TH(11,16) ── 3 ── A(14,19)
 ```
 
-has:
-
-```text
-signature = 10-4-10
-M = (+1,0,+1)
-phase = 2
-```
-
-`NOW THE` ends at:
-
-```text
-J(15,20)
-```
-
-and this exact cell later becomes an outer of:
-
-```text
-J(15,20) —2— D(17,18) —2— J(19,16)
-```
-
-So:
-
-```text
-OE-I-OE
-→ M=(+1,0,+1)
-→ NOW THE
-→ endpoint becomes OUTER of J-D-J
-```
-
-This supports the later working rule:
-
-```text
-(+1,0,+1) → OUTER-compatible
-```
-
-The decryption itself does not depend on this later interpretation.
-
----
-
-## 9. Next state
-
-At:
-
-```text
-J(15,20)
-```
-
-the later coordinate selector gives:
-
-```text
-V₂(15,20)=(0,0)
-```
-
-so local geometry must determine the continuation.
-
-On the same diagonal is:
-
-```text
-A(8,13) —3— TH(11,16) —3— A(14,19)
-```
-
-and:
-
-```text
-J(15,20)
-```
-
-lies immediately beyond `A(14,19)`.
-
-This `A-TH-A` mirror generates the next key and leads to:
-
-```text
-IDEA
-```
-
----
-
-## 10. Compact route
-
-```text
-CRY ends at S(17,16)
-
-↓
-inherited value = 6
-
-S —6— IA —6— S
-       |
-       | φ²(IA)=6
-       v
-TH —6— IA —6— TH
-
-↓
-UP 6
-
-TH(11,16)
-
-↓
-ciphertext:
-TH-AE-B-A-J
-
-key generator:
-OE-J-OE
-
-↓
-J → I
-
-↓
-OE-I-OE
-
-↓
-signature 10-4-10
-phase 2
-
-↓
-OE-OE-I-OE-OE
-
-↓
-N-O-W-TH-E
-
-↓
-NOW THE
-```
+This mirror supplies the key in the next chapter, [`08-IDEA.md`](./08-IDEA.md). Its lower `A(14,19)` also lies directly on the ciphertext diagonal used to recover **NOW THE**, making the handoff to **IDEA** continuous.
