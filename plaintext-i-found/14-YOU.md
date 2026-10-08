@@ -1,305 +1,147 @@
 # 14 — YOU
 
-> **Recovered plaintext candidate:** `YOU`  
-> **Current sequence:** `AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YOU`  
-> **Status:** strongest current continuation after `SEE`; the initial `B → P` handoff still depends on the provisional neutral-state inheritance rule.
+AS I GO, THE WEATHER TURNS COLD. I MAY CRY NOW. THE IDEA OF THE END IS DEATH. SEE YOU.
 
-Everything below uses the same 27×27 rune grid:
+## 1. Start from the end of SEE
 
-https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/0-2-live-map.html
+The previous chapter, [`13-SEE.md`](./13-SEE.md), ends at **B(27,14)**. Its key, `EA-I-EA`, has **Möbius phase 0** and the neutral signature `(0,0,0)`.
 
----
-
-## 1. Starting state after SEE
-
-`SEE` ends at:
+Applying the coordinate selector at the final `B` gives:
 
 ```text
-B(27,14)
+μ(27) = 0
+μ(14) = +1
+
+V₀(27,14) = (0,+1) → RIGHT
 ```
 
-with:
+The direction is **RIGHT**. To determine the distance, the route uses the project's **`000 → INHERIT`** rule: a neutral key signature preserves the center of the preceding key. Here that center is **I**, whose value is `10`.
 
-```text
-key       = EA-I-EA
-signature = 12-4-12
-M         = (0,0,0)
-phase     = 0
-```
-
-The coordinate selector gives:
-
-```text
-V₀(27,14)=(0,+1)
-```
-
-so the surviving component is **RIGHT-compatible**.
-
-Using the current neutral-state interpretation:
-
-```text
-000 → INHERIT
-```
-
-the inherited center is:
+Applying Euler's totient twice to this inherited value gives:
 
 ```text
 I = 10
-φ(I)=4
-φ²(I)=2=TH
+φ(10) = 4
+φ(4)  = 2 = TH
 ```
 
-The working continuation is therefore:
+The resulting distance is **2 cells**. Moving right from the end of `SEE` reaches:
 
 ```text
-RIGHT 2
+B(27,14) ── RIGHT 2 ──→ P(27,16)
 ```
 
-from:
+This places us at a rune that belongs to a large, symmetrical structure.
 
-```text
-B(27,14)
-→ P(27,16)
-```
+## 2. The P-R-P mirror generates the key
 
----
-
-## 2. P-R-P generates the key
-
-`P(27,16)` is the lower outer of the exact vertical mirror:
+The new cell **P(27,16)** is the lower outer rune of a vertical mirror. Its other outer rune is **P(5,16)**, with **R(16,16)** exactly halfway between them:
 
 ```text
 P(5,16)
    |
-R(16,16)
+   | 11 cells
    |
-P(27,16)
+R(16,16)  ← center
+   |
+   | 11 cells
+   |
+P(27,16)  ← reached from SEE
 ```
 
-So the node is:
-
-```text
-P-R-P
-```
-
-Its center gives:
+The mirror is **P-R-P**. As in the earlier chapters, we transform its center using Euler's totient:
 
 ```text
 R = 4
-φ(4)=2=TH
+φ(4) = 2 = TH
+
+P-R-P → P-TH-P
 ```
 
-therefore:
+Notice that the center produces **2** again — the same value that brought us from `B` to `P`.
+
+Now calculate the Möbius phase of the generated key:
 
 ```text
-P-R-P
-→
-P-TH-P
+φ(P=13)  = 12
+φ(TH=2)  =  1
+φ(P=13)  = 12
+
+Totient signature: (12,1,12)
+Möbius signature: (0,+1,0)
+Phase:              1
 ```
 
-The totient signature is:
+Phase **1** rotates `P-TH-P` into **TH-P-P**:
 
 ```text
-12-1-12
+P-TH-P → phase 1 → TH-P-P
+
+Active key: TH-P-P
 ```
 
-with:
+The key is obtained directly from the mirror's center and its calculated phase.
+
+## 3. The same value leads to the ciphertext
+
+The transformed mirror center is **TH = 2**. Reusing this number as a distance, move another **2 cells RIGHT** from `P(27,16)`:
 
 ```text
-M=(0,+1,0)
-phase=1
+P(27,16) ── RIGHT 2 ──→ EA(27,18)
 ```
 
-so the active key is:
+From `EA(27,18)`, the diagonal going up and left passes through **T(26,17)** and reaches **X(25,16)**:
 
 ```text
-KEY = TH-P-P
+EA(27,18) → T(26,17) → X(25,16)
 ```
 
----
+This gives the three-rune **ciphertext `EA-T-X`**.
 
-## 3. The same value 2 gives the ciphertext start
+The endpoint is particularly meaningful: **X(25,16) is the same cell where the earlier SEE route began**. The new ciphertext therefore leads back to a position already used in the previous reconstruction.
 
-The transformed center is:
+## 4. Decrypting EA-T-X
+
+Subtract the active key `TH-P-P` from the ciphertext, modulo 29:
+
+| Ciphertext | Key | Calculation | Plaintext |
+|---|---|---|---|
+| `EA = 28` | `TH = 2` | `28 − 2 = 26` | **Y** |
+| `T = 16` | `P = 13` | `16 − 13 = 3` | **O** |
+| `X = 14` | `P = 13` | `14 − 13 = 1` | **U** |
 
 ```text
-TH = 2
+Ciphertext: EA - T - X
+Key:        TH - P - P
+Plaintext:   Y - O - U
 ```
 
-Reuse that value as movement:
+The result is **YOU**. Its final cell is **X(25,16)**, and the mirror that generated its key established **phase 1**.
+
+## 5. How the geometry connects the stages
+
+Several details reinforce the relationship between the end of `SEE`, the new mirror, and the ciphertext.
+
+First, the three main cells on row 27 are evenly spaced:
 
 ```text
-P(27,16)
-→ RIGHT 2
-→ EA(27,18)
+B(27,14) ── 2 ── P(27,16) ── 2 ── EA(27,18)
 ```
 
-From there, read diagonally up-left:
+The first distance comes from applying Euler's totient twice to the inherited center **I**. The second uses the value of the transformed **R** center in `P-R-P`. Both calculations give **2**.
+
+Second, the final ciphertext cell **X(25,16)** lies exactly **2 rows above P(27,16)**. It is also the center of the vertical **E-X-E** mirror:
 
 ```text
-EA(27,18)
-T (26,17)
-X (25,16)
+E(24,16)
+   |
+X(25,16)  ← end of YOU
+   |
+E(26,16)
 ```
 
-Therefore:
+This matches the **center-oriented signature `(0,+1,0)`** generated by the `P-TH-P` key structure and gives the final `X` another geometric role.
 
-```text
-CIPHERTEXT = EA-T-X
-```
+There is also a numerical detail beside the first move: **J(27,15)** lies between `B` and `P`, and its rune value **11** matches the radius of the large `P-R-P` mirror (`27 − 16 = 11`).
 
----
-
-## 4. Decryption
-
-Use:
-
-```text
-P = (C - K) mod 29
-```
-
-with:
-
-```text
-Ciphertext: EA  T   X
-Key:        TH  P   P
-```
-
-| # | C | K | Result |
-|---:|---:|---:|---|
-| 1 | `EA=28` | `TH=2` | `28-2 = 26 = Y` |
-| 2 | `T=16` | `P=13` | `16-13 = 3 = O` |
-| 3 | `X=14` | `P=13` | `14-13 = 1 = U` |
-
-Therefore:
-
-```text
-EA-T-X
--
-TH-P-P
-=
-Y-O-U
-```
-
-# **YOU**
-
----
-
-## 5. Why this continuation is strong
-
-After the initial handoff, the chain reuses the existing system without introducing a new cipher rule:
-
-```text
-B(27,14)
-→ RIGHT 2
-→ P(27,16)
-
-P-R-P
-→ P-TH-P
-→ phase 1
-→ TH-P-P
-
-TH=2
-→ RIGHT 2
-→ EA(27,18)
-
-EA-T-X
--
-TH-P-P
-=
-YOU
-```
-
-The geometry also closes the route:
-
-```text
-SEE starts at X(25,16)
-SEE ends   at B(27,14)
-
-YOU starts at EA(27,18)
-YOU ends   at X(25,16)
-```
-
-with:
-
-```text
-B(27,14) ←2→ P(27,16) ←2→ EA(27,18)
-                         |
-                         2
-                         ↑
-                     X(25,16)
-```
-
-The final:
-
-```text
-X(25,16)
-```
-
-is the center of the already known:
-
-```text
-E-X-E
-```
-
-which is consistent with the:
-
-```text
-M=(0,+1,0)
-→ CENTER
-```
-
-state generated by `P-TH-P`.
-
-A secondary cross-check is that the cell immediately before `P(27,16)` is:
-
-```text
-J(27,15)
-```
-
-and:
-
-```text
-J=11
-```
-
-exactly matches the radius of the large `P-R-P` mirror.
-
----
-
-## 6. What remains unproven
-
-The weakest step is still:
-
-```text
-B(27,14)
-→ P(27,16)
-```
-
-because it combines:
-
-```text
-V₀=(0,+1)
-```
-
-with the provisional interpretation:
-
-```text
-000 → INHERIT
-```
-
-to obtain:
-
-```text
-RIGHT 2
-```
-
-A partial selector alone does not prove a literal immediate RIGHT move.
-
-So the current status is:
-
-```text
-YOU = strongest current continuation after SEE
-B → P handoff = still provisional
-P-R-P → YOU chain = strongly constrained once P is reached
-```
+Most importantly, the ending of **YOU** returns to **X(25,16)**, while its key supplies **phase 1**. These are precisely the starting cell and inherited phase used in [`15-SOON.md`](./15-SOON.md), where the next word is reconstructed.
