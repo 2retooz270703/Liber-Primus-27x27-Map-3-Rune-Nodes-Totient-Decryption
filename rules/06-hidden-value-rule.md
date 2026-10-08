@@ -1,677 +1,165 @@
 # 06 — Hidden Value Rule
 
-> **Purpose:** preserve the pre-Möbius coordinate value when the coordinate selector produces `0`.  
-> A zero removes the **sign**, but does not necessarily erase the **totient-derived value** that produced it.
+A **zero in the coordinate selector removes a directional sign, not the number that produced it**. The Hidden Value Rule keeps that earlier number available when the route encounters a partial or null selector. In three late-stage transitions, the value concealed by a zero is **4**, and each continuation contains a nearby mirror whose geometry or center also uses **4**.
 
----
+This rule extends [`04-coordinate-selector.md`](./04-coordinate-selector.md). It does not replace the selector or the CENTER / OUTER constraints described in [`05-center-outer-states.md`](./05-center-outer-states.md).
 
-## 1. The missing information in the coordinate selector
+## 1. What remains when Möbius returns zero
 
-The coordinate selector is defined as:
-
-```text
-V_p(r,c)
-=
-( μ(φ^p(r)), μ(φ^p(c)) )
-```
-
-and reduces each coordinate component to:
+The coordinate selector uses the key's active phase `p` and the current position `(r,c)`:
 
 ```text
--1
- 0
-+1
+Vₚ(r,c) = (μ(φᵖ(r)), μ(φᵖ(c)))
 ```
 
-This is sufficient when both components are non-zero, because the signs select a directional branch.
+Each component becomes `−1`, `0`, or `+1`. A nonzero result supplies a direction: for rows, `−1` means UP and `+1` means DOWN; for columns, `−1` means LEFT and `+1` means RIGHT. A zero supplies **no direction on that axis**.
 
-But when a component becomes:
+But the Möbius result is the final step of a longer calculation. Before applying `μ`, the totient layer has already produced a specific integer `t`:
 
 ```text
-0
+coordinate n → φᵖ(n) = t → μ(t)
 ```
 
-the current model treats that axis as unresolved.
+For example, `μ(4)=0` because **4 contains a squared prime factor** (`4=2²`). The sign becomes zero, but the preceding calculation still produced the number **4**. The Hidden Value Rule proposes retaining that number as an **unsigned structural parameter** when looking for the next compatible mirror.
 
-The important observation is that the zero is only the **final Möbius output**.
-
-Before applying `μ`, there is still a concrete value:
+To keep the two layers distinct, define:
 
 ```text
-φ^p(n) = t
+Tₚ(r,c) = (φᵖ(r), φᵖ(c))       numerical layer
+Vₚ(r,c) = (μ(φᵖ(r)), μ(φᵖ(c)))  directional layer
 ```
 
-and only then:
+The active phase is unchanged; both calculations use the phase already selected for the key. `μ` is applied to the two entries of `Tₚ` separately to obtain `Vₚ`.
+
+If the result is:
 
 ```text
-μ(t)=0
+T₂ = (6,4)
+V₂ = (+1,0)
 ```
 
-So the full information chain is:
+we can annotate it as **`(+1,0[4])`**. The notation `0[4]` means that the direction is unresolved on this axis while its pre-Möbius value was **4**. It does **not** mean `0=4`, nor does it turn that zero into a directional command. The next structure must still be checked against the grid.
+
+## 2. OF THE → END: a zero retains the mirror radius
+
+The ciphertext for **THE**, at the end of [`09-OF-THE.md`](../plaintext-i-found/09-OF-THE.md), finishes at **J(19,16)**. Its key has phase **2**, so each coordinate passes through Euler's totient twice before Möbius:
 
 ```text
-coordinate n
-↓
-φ^p(n)=t
-↓
-μ(t)=0
+Row:    19 → φ(19)=18 → φ(18)=6
+Column: 16 → φ(16)=8  → φ(8)=4
+
+T₂(19,16) = (6,4)
+
+μ(6) = +1
+μ(4) =  0
+
+V₂(19,16) = (+1,0) = (+1,0[4])
 ```
 
-The new rule is:
+The selector retains a **DOWN-compatible** sign, but gives no horizontal direction. At the same time, its unresolved column contains the value **4**. The continuation to [`10-END.md`](../plaintext-i-found/10-END.md) contains two exact mirrors of that radius.
 
-```text
-μ(t)=0
-does not imply
-"t is lost"
-```
-
-Instead:
-
-```text
-0 removes the directional sign,
-but t remains available as an unsigned structural value.
-```
-
----
-
-## 2. Retain the pre-Möbius layer
-
-Define the pre-Möbius coordinate state:
-
-```text
-T_p(r,c)
-=
-( φ^p(r), φ^p(c) )
-```
-
-Then the ordinary selector is obtained by applying `μ` componentwise:
-
-```text
-V_p(r,c)
-=
-μ(T_p(r,c))
-```
-
-The route should therefore retain **both** layers:
-
-```text
-T_p(r,c) = numerical layer
-V_p(r,c) = sign layer
-```
-
-Example notation:
-
-```text
-T_p = (6,4)
-V_p = (+1,0)
-```
-
-or, in compact annotated form:
-
-```text
-(+1, 0[4])
-```
-
-where:
-
-```text
-0[4]
-```
-
-means:
-
-```text
-Möbius sign = 0
-hidden pre-Möbius value = 4
-```
-
-This is **not** the statement:
-
-```text
-0 = 4
-```
-
-It means only:
-
-```text
-4 → μ(4)=0
-```
-
-and the value `4` is retained after its sign disappears.
-
----
-
-## 3. Working interpretation
-
-For a selector component:
-
-```text
-μ(t)=+1
-```
-
-or:
-
-```text
-μ(t)=-1
-```
-
-the component supplies a directional sign in the usual way.
-
-For:
-
-```text
-μ(t)=0
-```
-
-the component supplies no sign, but the underlying value:
-
-```text
-t = φ^p(n)
-```
-
-remains structurally active.
-
-So a partial selector such as:
-
-```text
-(+1,0)
-```
-
-should be read more precisely as something like:
-
-```text
-(+1, 0[t])
-```
-
-meaning:
-
-```text
-one directional constraint survives
-+
-one unsigned structural value survives
-```
-
-The exact role of `t` depends on the local geometry.
-
-Observed uses include:
-
-```text
-radius
-center value
-local structural scale
-```
-
-The current evidence does **not** prove that every retained zero-value must always be used in the same way.
-
----
-
-## 4. Example: THE → END
-
-`THE` ends at:
-
-```text
-J(19,16)
-```
-
-with active phase:
-
-```text
-p=2
-```
-
-Before Möbius reduction:
-
-```text
-row:
-19 → φ(19)=18 → φ(18)=6
-
-column:
-16 → φ(16)=8 → φ(8)=4
-```
-
-Therefore:
-
-```text
-T₂(19,16)=(6,4)
-```
-
-Now apply Möbius:
-
-```text
-μ(6)=+1
-μ(4)=0
-```
-
-so:
-
-```text
-V₂(19,16)=(+1,0)
-```
-
-The old reading is only:
-
-```text
-DOWN-compatible
-horizontal direction unresolved
-```
-
-The retained reading is:
-
-```text
-(+1, 0[4])
-```
-
-and the local continuation to `END` immediately uses radius-4 geometry:
+Immediately left of the final `J` is **F(19,15)**, an outer of the horizontal mirror:
 
 ```text
 F(19,15) —4— X(19,19) —4— F(19,23)
 ```
 
-and:
+The final `J` itself is the upper outer of a diagonal mirror:
 
 ```text
 J(19,16) —4— B(23,12) —4— J(27,8)
 ```
 
-So the value hidden under the zero is:
+Both structures use **4 steps from center to outer**. The `F-X-F` structure leads toward the ciphertext for `END`, while `J-B-J` supplies its key. Thus the same value that becomes invisible in the column's directional sign matches the scale of **both connected route structures**. The selector alone does not determine the full path; the mirrors supply the missing geometric information.
+
+## 3. END → IS: the hidden value becomes a mirror center
+
+[`10-END.md`](../plaintext-i-found/10-END.md) ends at **I(21,23)** with the same active phase **2**. This time the zero appears in the **row** component:
 
 ```text
-4
+Row:    21 → φ(21)=12 → φ(12)=4
+Column: 23 → φ(23)=22 → φ(22)=10
+
+T₂(21,23) = (4,10)
+
+μ(4)  = 0
+μ(10) = +1
+
+V₂(21,23) = (0,+1) = (0[4],+1)
 ```
 
-and the next route region is dominated by the same scale:
-
-```text
-radius 4
-```
-
-This is a supporting cross-check for retention.
-
----
-
-## 5. Example: END → IS
-
-`END` finishes at:
-
-```text
-I(21,23)
-```
-
-The active key state still has:
-
-```text
-p=2
-```
-
-Calculate the pre-Möbius coordinate layer.
-
-Row:
-
-```text
-21
-→ φ(21)=12
-→ φ(12)=4
-```
-
-Column:
-
-```text
-23
-→ φ(23)=22
-→ φ(22)=10
-```
-
-Therefore:
-
-```text
-T₂(21,23)=(4,10)
-```
-
-Apply Möbius:
-
-```text
-μ(4)=0
-μ(10)=+1
-```
-
-so:
-
-```text
-V₂(21,23)=(0,+1)
-```
-
-The ordinary selector says:
-
-```text
-RIGHT-compatible
-vertical direction unresolved
-```
-
-But the retained form is:
-
-```text
-(0[4], +1)
-```
-
-Now look at the exact structure occupied by the endpoint:
+The surviving sign is **RIGHT-compatible**, with vertical direction unresolved. The retained row value is again **4**. Now examine the exact mirror containing the final ciphertext cell:
 
 ```text
 I(21,21) — R(21,22) — I(21,23)
+                                  ↑
+                              END endpoint
 ```
 
-Its center is:
+This is an `I-R-I` mirror, and its **center rune `R` has value 4** in the 0-based Gematria Primus system:
 
 ```text
-R = 4
+φ²(21) = 4
+μ(4)   = 0
+R      = 4
 ```
 
-So the value hidden under the zero:
+Here the retained number does **not** appear as a radius. Instead, it matches the numerical value of the center of the mirror already occupied by the `END` endpoint. This is the local structure from which the route continues toward [`11-IS.md`](../plaintext-i-found/11-IS.md).
+
+The distinction matters: **the rule retains a number; the local geometry determines what that number can describe**.
+
+## 4. DEATH → SEE: a hidden 4 helps identify the next mirror
+
+[`12-DEATH.md`](../plaintext-i-found/12-DEATH.md) finishes at **E(26,1)**. Its key again has phase **2**, with full Möbius state **`(+1,0,+1)`**, the pattern associated with an **OUTER** position in the project's route model.
+
+At the endpoint, the coordinate calculation gives:
 
 ```text
-4
+Row:    26 → φ(26)=12 → φ(12)=4
+Column:  1 → φ(1)=1   → φ(1)=1
+
+T₂(26,1) = (4,1)
+
+μ(4) = 0
+μ(1) = +1
+
+V₂(26,1) = (0,+1) = (0[4],+1)
 ```
 
-is immediately reproduced as the numerical value of the next mirror center.
+Three constraints can now be considered together: **OUTER** from the key state, **RIGHT-compatible** from the surviving column sign, and **4** retained from the unresolved row component.
 
-This is stronger than a general radius coincidence:
-
-```text
-φ²(21)=4
-↓
-μ(4)=0
-↓
-END endpoint enters I-R-I
-↓
-R=4
-```
-
----
-
-## 6. Example: DEATH → SEE
-
-`DEATH` ends at:
-
-```text
-E(26,1)
-```
-
-with:
-
-```text
-p=2
-```
-
-Calculate the underlying coordinate values.
-
-Row:
-
-```text
-26
-→ φ(26)=12
-→ φ(12)=4
-```
-
-Column:
-
-```text
-1
-→ φ(1)=1
-→ φ(1)=1
-```
-
-Therefore:
-
-```text
-T₂(26,1)=(4,1)
-```
-
-Apply Möbius:
-
-```text
-μ(4)=0
-μ(1)=+1
-```
-
-so:
-
-```text
-V₂(26,1)=(0,+1)
-```
-
-The retained form is:
-
-```text
-(0[4], +1)
-```
-
-The active key state is:
-
-```text
-M=(+1,0,+1)
-```
-
-which is already associated with:
-
-```text
-OUTER
-```
-
-The surviving coordinate sign gives:
-
-```text
-RIGHT-compatible
-```
-
-and the hidden coordinate value gives:
-
-```text
-4
-```
-
-So the local search constraints become:
-
-```text
-OUTER
-+
-RIGHT-compatible
-+
-structural value 4
-```
-
-The matching nearby mirror is:
+One step diagonally up-right from `E(26,1)` lies **EA(25,2)**. It is the left outer of an exact horizontal mirror:
 
 ```text
 EA(25,2) —4— J(25,6) —4— EA(25,10)
+    ↑
+  OUTER
 ```
 
-or:
+The mirror is `EA-J-EA`, and its radius is **4**. Its left outer lies on the right-compatible side of the `DEATH` endpoint, matching the structural role indicated by the full Möbius state. This provides a local source for the radius used to open [`13-SEE.md`](../plaintext-i-found/13-SEE.md).
 
-```text
-EA-J-EA
-```
+An earlier interpretation also noticed that the plaintext through `DEATH` forms **12 route blocks**, with `φ(12)=4`. That remains a numerical cross-check, but **the pre-Möbius coordinate value `φ²(26)=4` supplies the more direct local connection**. There is no need to derive the search radius from the number of chapters.
 
-This gives a direct local source for the `4` used after `DEATH`.
+The move to `EA(25,2)` also illustrates why a surviving sign is a **compatibility constraint**, not necessarily a literal single-axis instruction: the row sign is unresolved, so the geometry can supply the upward part of a diagonal approach.
 
-It is therefore stronger than deriving `4` indirectly from the number of recovered plaintext blocks:
+## 5. What the three appearances of 4 establish
 
-```text
-12 blocks
-→ φ(12)=4
-```
+The three cases can be compared without conflating a geometric radius with a rune's numerical value:
 
-The block-count relation can remain a numerical cross-check, but it is no longer required as the primary route-selection mechanism.
+| Transition | Endpoint | `T₂` | `V₂` | Where the retained `4` appears |
+|---|---|---|---|---|
+| [`OF THE → END`](../plaintext-i-found/10-END.md) | `J(19,16)` | `(6,4)` | `(+1,0)` | Radius of `F-X-F` and `J-B-J` |
+| [`END → IS`](../plaintext-i-found/11-IS.md) | `I(21,23)` | `(4,10)` | `(0,+1)` | Center rune `R=4` of `I-R-I` |
+| [`DEATH → SEE`](../plaintext-i-found/13-SEE.md) | `E(26,1)` | `(4,1)` | `(0,+1)` | Radius of `EA-J-EA` |
 
----
+In all three cases, **the coordinate component reduced to zero had the pre-Möbius value 4**, and the next local structure contains a matching numerical or geometric feature. The examples support retaining that value for structural comparison. They do not establish that every zero must indicate radius 4—or that a match by itself uniquely determines the next step.
 
-## 7. Three consecutive appearances of the hidden 4
+Mathematically, `μ(t)=0` whenever `t` is divisible by the square of a prime. Other values besides 4 can therefore occur beneath a zero, including **8** and **12**. The general rule is to retain **the actual `φᵖ(n)`**, not to substitute 4 automatically.
 
-The late route gives three closely related examples:
+## 6. How the rule fits the route
 
-| Endpoint | Phase | Pre-Möbius layer `T_p` | Selector `V_p` | Value hidden by `0` | Local continuation |
-|---|---:|---|---|---:|---|
-| `J(19,16)` after `THE` | `2` | `(6,4)` | `(+1,0)` | `4` | radius-4 `F-X-F` / `J-B-J` geometry |
-| `I(21,23)` after `END` | `2` | `(4,10)` | `(0,+1)` | `4` | enters `I-R-I`, where `R=4` |
-| `E(26,1)` after `DEATH` | `2` | `(4,1)` | `(0,+1)` | `4` | radius-4 `EA-J-EA` candidate for `SEE` |
+Each earlier rule supplies a different part of the search. [`02-key-phase-selection.md`](./02-key-phase-selection.md) establishes the active phase; [`03-totient-movement.md`](./03-totient-movement.md) explains inherited movement magnitudes; [`04-coordinate-selector.md`](./04-coordinate-selector.md) converts phase and coordinates into directional constraints; and [`05-center-outer-states.md`](./05-center-outer-states.md) relates the full key state to mirror roles.
 
-The important repetition is not merely:
+The **Hidden Value Rule** adds one instruction: **keep the numerical value before Möbius reduction whenever the selector returns zero**. Match it against nearby mirror radii, center rune values, or other explicitly identifiable structural scales, while respecting the surviving signs and CENTER / OUTER information.
 
-```text
-0 appears three times
-```
-
-but:
-
-```text
-the same hidden value 4
-appears under the zero
-and is immediately relevant to the next local structure.
-```
-
----
-
-## 8. Relationship to the existing rules
-
-This rule does not replace the coordinate selector.
-
-It refines it.
-
-The current division becomes:
-
-```text
-01 Core Mechanics
-→ arithmetic / rune operations
-
-02 Key Phase Selection
-→ choose active key rotation
-
-03 Totient Movement
-→ movement magnitudes
-
-04 Coordinate Selector
-→ directional signs
-
-05 Center / Outer States
-→ structural role
-
-06 Hidden Value Rule
-→ preserve the unsigned value hidden beneath selector zero
-```
-
-The combined route logic can now be written as:
-
-```text
-active key
-↓
-phase p
-↓
-T_p(r,c) = (φ^p(r), φ^p(c))
-↓
-V_p(r,c) = μ(T_p)
-↓
-
-non-zero components
-→ directional constraints
-
-zero components
-→ no directional sign
-→ retain their pre-Möbius values
-
-full key Möbius state
-→ CENTER / OUTER role
-
-local geometry
-→ resolves the compatible structure
-```
-
----
-
-## 9. Important limitation
-
-The evidence currently supports **retention**, not a universal interpretation of every retained value.
-
-In particular, the rule should **not** be written as:
-
-```text
-selector zero means radius 4
-```
-
-That would be too specific and mathematically incorrect.
-
-The correct rule is:
-
-```text
-if μ(φ^p(n))=0,
-retain φ^p(n)
-as an unsigned structural value.
-```
-
-For the strongest observed late-route cases:
-
-```text
-φ^p(n)=4
-```
-
-which is why:
-
-```text
-0[4]
-```
-
-repeats.
-
-Other squareful pre-Möbius values could also produce `0` and would need to be tested separately.
-
----
-
-## 10. Evidence status
-
-The strongest evidence is:
-
-```text
-END → IS
-
-φ²(21)=4
-μ(4)=0
-↓
-I(21,23) is an outer of I-R-I
-↓
-R=4
-```
-
-and:
-
-```text
-DEATH → SEE
-
-φ²(26)=4
-μ(4)=0
-↓
-OUTER + RIGHT-compatible + 4
-↓
-EA(25,2) —4— J(25,6) —4— EA(25,10)
-```
-
-Together with the `THE → END` radius-4 cross-check, the repeated pattern suggests that Möbius zero is not an information-destroying state.
-
-The current working rule is therefore:
-
-# **Hidden Value Rule**
-
-```text
-A coordinate selector zero cancels directional sign,
-not the pre-Möbius totient value that produced it.
-
-If:
-
-φ^p(n)=t
-and
-μ(t)=0,
-
-then:
-
-0 → direction unresolved
-and
-t → retained as an unsigned structural parameter.
-```
-
-This retained value can then be matched against the local mirror geometry together with the surviving coordinate sign and the active CENTER / OUTER state.
+This is a rule for **preserving a candidate constraint**, not a theorem that every retained value has a single fixed meaning. The three observed transitions give concrete tests of the idea; determining when a particular hidden value should be activated remains part of the broader route-selection problem.
