@@ -2,9 +2,7 @@
 
 ## 1. Locate the node
 
-After WEATHER, move one cell right: E(14,18) → A(14,19).
-
-The previous key gives two distances: I = 10 and φ(I) = 4. At A(14,19), phase 2 selects UP + RIGHT: μ(φ²(14)) = −1; μ(φ²(19)) = +1.
+From WEATHER: E(14,18) → A(14,19).
 
 | Row | Column 19 | Column 23 | Column 27 |
 |:---:|:---:|:---:|:---:|
@@ -12,9 +10,9 @@ The previous key gives two distances: I = 10 and φ(I) = 4. At A(14,19), phase 2
 | 14 | A | NG | A |
 | 24 | | C | |
 
-From A, move 4 cells right to NG(14,23). From NG, move 10 cells up and down to H(4,23) and C(24,23).
+Phase 2 selects UP + RIGHT at A: μ(φ²(14)) = −1; μ(φ²(19)) = +1.
 
-A–NG–A is a horizontal mirror. The vertical H–NG–C forms the key.
+The previous key supplies 4 = φ(I) and 10 = I. From A, move RIGHT 4 to NG; from NG, move UP/DOWN 10 to H and C. The middle row is a mirror; the middle column supplies the key.
 
 ## 2. Derive the key
 
@@ -27,7 +25,7 @@ A–NG–A is a horizontal mirror. The vertical H–NG–C forms the key.
 
 ## 3. Read and decrypt
 
-Read five cells upward from A(14,19). Subtract the repeating H–NG–C key modulo 29.
+Read upward from A(14,19). Subtract the repeating key modulo 29.
 
 | Cell | Ciphertext | Key | Subtraction (mod 29) | Plaintext |
 |:---:|:---:|:---:|:---:|:---:|
@@ -39,8 +37,8 @@ Read five cells upward from A(14,19). Subtract the repeating H–NG–C key modu
 
 ### TURNS
 
-For the next stage, φ(NG = 21) = 12. Phase 0 gives V₀(14,19) = (+1, −1): DOWN + LEFT.
+For COLD, φ(NG = 21) = 12. Phase 0 gives V₀(14,19) = (+1, −1) → DOWN + LEFT.
 
-From A(14,19), DOWN 12 reaches TH(26,19), the center of H–TH–H. LEFT 12 reaches G(14,7), where COLD begins.
+From A(14,19): DOWN 12 → TH(26,19), center of H–TH–H; LEFT 12 → G(14,7), where COLD begins.
 
 Continue to [04 — COLD](./04-COLD.md).
