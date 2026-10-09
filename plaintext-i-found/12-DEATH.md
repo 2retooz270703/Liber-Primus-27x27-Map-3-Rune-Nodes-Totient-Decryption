@@ -21,7 +21,6 @@ J–B–J provides the key. The connected J–C–J and C–OE–C mirrors lead 
 | Totient signature | φ(J = 11) = 10; φ(T = 16) = 8; φ(J = 11) = 10 | (10, 8, 10) |
 | Möbius signature | μ(10) = +1; μ(8) = 0; μ(10) = +1 | (+1, 0, +1) |
 | Rotation | (1 + 0 + 1) mod 3 = 2 | J–J–T |
-| Direction | At B(23,12), V₂ = (μ(10), μ(2)) | (+1, −1) → DOWN + LEFT |
 | Movement | Down-right 2; down-left 4; up-left 1; left 4 | D(21,10) → B(23,12) → J(27,8) → C(26,7) → C(26,3) |
 
 ## 3. Read and decrypt
