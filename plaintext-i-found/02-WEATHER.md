@@ -2,7 +2,7 @@
 
 AS I GO, THE WEATHER
 
-## 1. Continue from the end of AS I GO THE
+## 1. Continue from the end of AS I GO, THE
 
 The previous chapter, [`01-AS-I-GO-THE.md`](./01-AS-I-GO-THE.md), ends at **X(14,4)**. This rune is also the left outer of a small horizontal mirror:
 
@@ -19,7 +19,7 @@ OE = 22
 X-OE-X → X-I-X
 ```
 
-This gives the new key structure **X-I-X**. The transformation also produces the number **10**, which has a second role: it determines how far the route moves from the previous endpoint.
+The transformation ```φ(22) = 10 = I``` also produces the number **10**, which has a second role: it determines how far the route moves from the previous endpoint.
 
 ## 2. The same number leads to the center of the grid
 
