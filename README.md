@@ -21,5 +21,7 @@ Follow the clues, explore the connections, and help solve Liber Primus.
 To understand how the plaintext was recovered and how the pieces connect, explore:
 
 - [`plaintext-i-found/`](./plaintext-i-found/) — step-by-step reconstruction of the recovered plaintext.
+  
 - [`rules/`](./rules/) — the mathematical rules and mechanics behind the route.
+  
 - [`strongest-plaintext-evidence.md`](./strongest-plaintext-evidence.md) — key numerical and structural connections found in the plaintext.
