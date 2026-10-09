@@ -2,16 +2,16 @@
 
 ## 1. Locate the nodes
 
-The DEATH ciphertext ends at E(26,1). The DEATH key has phase 2. At this cell, V₂ = (0, +1) → RIGHT.
+The DEATH key has phase 2. At its final E(26,1), this gives V₂ = (0, +1) → RIGHT.
 
-The matrix center gives φ(NG = 21) = 12 and φ(12) = 4. This provides a radius of 4.
+The matrix center NG = 21 gives φ²(21) = 4, matching the radius of EA–J–EA.
 
-| Node | First outer | Center | Second outer | Radius |
-|:---|:---:|:---:|:---:|:---:|
-| EA–J–EA | EA(25,2) | J(25,6) | EA(25,10) | 4 |
-| E–X–E | E(24,16) | X(25,16) | E(26,16) | 1 |
+| Node | First outer | Center | Second outer |
+|:---|:---:|:---:|:---:|
+| EA–J–EA | EA(25,2) | J(25,6) | EA(25,10) |
+| E–X–E | E(24,16) | X(25,16) | E(26,16) |
 
-EA(25,2) lies one cell up-right from E(26,1). EA–J–EA provides the key; X(25,16) begins the ciphertext.
+EA(25,2) is one cell up-right from E(26,1). EA–J–EA provides the key; X(25,16) begins the ciphertext.
 
 ## 2. Derive the key and starting point
 
@@ -21,7 +21,7 @@ EA(25,2) lies one cell up-right from E(26,1). EA–J–EA provides the key; X(25
 | Totient signature | φ(EA = 28) = 12; φ(I = 10) = 4; φ(EA = 28) = 12 | (12, 4, 12) |
 | Möbius signature | μ(12) = 0; μ(4) = 0; μ(12) = 0 | (0, 0, 0) |
 | Rotation | (0 + 0 + 0) mod 3 = 0 | Key unchanged |
-| Movement | φ(11) + φ²(11) = 10 + 4 = 14 | EA(25,2) → X(25,16) (right 14) |
+| Movement | φ(11) + φ²(11) = 10 + 4 = 14 | EA(25,2) → 14 cells right → X(25,16) |
 
 ## 3. Read and decrypt
 
