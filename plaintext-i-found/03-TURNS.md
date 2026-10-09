@@ -12,7 +12,7 @@ After WEATHER: E(14,18) → A(14,19).
 
 Phase 2 at A selects UP + RIGHT: μ(φ²(14)) = −1; μ(φ²(19)) = +1.
 
-Using the previous values, φ(I) = 4 takes A to NG (RIGHT 4). H and C lie I = 10 cells above and below NG. A–NG–A is a horizontal mirror; H–NG–C forms the key.
+A–NG–A is a horizontal mirror. The vertical H–NG–C forms the key.
 
 ## 2. Derive the key
 
@@ -22,6 +22,7 @@ Using the previous values, φ(I) = 4 takes A to NG (RIGHT 4). H and C lie I = 10
 | Totient signature | φ(H = 8) = 4; φ(NG = 21) = 12; φ(C = 5) = 4 | (4, 12, 4) |
 | Möbius signature | μ(4) = 0; μ(12) = 0; μ(4) = 0 | (0, 0, 0) |
 | Rotation | (0 + 0 + 0) mod 3 = 0 | Key unchanged |
+| Movement | φ(I = 10) = 4; I = 10 | A(14,19) → RIGHT 4 → NG(14,23); NG → UP/DOWN 10 → H(4,23)/C(24,23) |
 
 ## 3. Read and decrypt
 
