@@ -93,13 +93,6 @@ Subtract each key value from the corresponding ciphertext value, modulo 29:
 | `U = 1` | `EA = 28` | `1 − 28 ≡ 2` | **TH** |
 | `X = 14` | `AE = 25` | `14 − 25 ≡ 18` | **E** |
 
-```text
-Ciphertext: L  - AE - N  - TH - P  - U  - X
-Key:        AE - I  - EA - AE - I  - EA - AE
-Plaintext:  A  - S  - I  - G  - O  - TH - E
-```
-
-The result is **AS I GO THE**. The phrase contains eight Latin letters but is represented here by **seven runes**, because **TH** is one rune.
 
 ## 6. The final X opens the next stage
 
