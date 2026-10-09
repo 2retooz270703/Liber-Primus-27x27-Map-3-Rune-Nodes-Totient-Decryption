@@ -44,5 +44,3 @@ From TH(11,16), read five runes diagonally down-right. Subtract the repeating OE
 | Equal prime sums | CRY: 13 + 11 + 103 = 127; NOW THE: 29 + 7 + 19 + 5 + 67 = 127. |
 | Prime index | 127 is the 31st prime; the transformed center I has prime value 31. |
 | OUTER state | (+1, 0, +1) indicates OUTER in the project's interpretation. The final J(15,20) is an outer rune of J(15,20)–D(17,18)–J(19,16). |
-
-These are additional geometric and numerical observations; the decryption is shown above.
