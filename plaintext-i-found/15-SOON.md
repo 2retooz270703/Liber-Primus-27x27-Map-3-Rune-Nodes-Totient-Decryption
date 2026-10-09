@@ -1,12 +1,12 @@
 # 15 — SOON
 
-Two different ciphertexts in the matrix decrypt to SOON.
+Two different routes from X(25,16) decrypt to SOON.
 
-## 1. First route
+## 1. First route — X–D–W–H
 
 The YOU key has phase 1. At X(25,16), this gives V₁ = (0, 0). The project's hidden-value rule retains φ(25) = 20 = L and φ(16) = 8 = H.
 
-Three structures connected to the same EA–EA–EA mirror produce the key:
+H marks the end of the ciphertext. Three structures beginning with L generate the same key:
 
 | Node | First outer | Center | Second outer |
 |:---|:---:|:---:|:---:|
@@ -23,11 +23,11 @@ Three structures connected to the same EA–EA–EA mirror produce the key:
 | Totient signature | φ(L = 20) = 8; φ(R = 4) = 2; φ(EA = 28) = 12 | (8, 2, 12) |
 | Möbius signature | μ(8) = 0; μ(2) = −1; μ(12) = 0 | (0, −1, 0) |
 | Rotation | (0 − 1 + 0) mod 3 = 2 | EA–L–R |
-| Movement | φ(16) = 8 = H | X(25,16) → H(25,19) (right 3) |
+| Movement | H = 8, three cells right of X | X(25,16) → H(25,19) |
 
 ### Read and decrypt
 
-From X(25,16), read four runes rightward. Subtract the repeating EA–L–R key modulo 29.
+Read four runes rightward from X(25,16). Subtract the repeating EA–L–R key modulo 29.
 
 | Cell | Ciphertext | Key | Subtraction (mod 29) | Plaintext |
 |:---:|:---:|:---:|:---:|:---:|
@@ -36,14 +36,16 @@ From X(25,16), read four runes rightward. Subtract the repeating EA–L–R key 
 | (25,18) | W = 7 | R = 4 | 7 − 4 ≡ 3 | O |
 | (25,19) | H = 8 | EA = 28 | 8 − 28 ≡ 9 | N |
 
-## 2. Second route
+## 2. Second route — P–S–U–W
 
-The same X(25,16) belongs to E–X–E. Through the shared E(24,16), it connects to E–TH–E at TH(23,15). Two mirror paths then lead to a second ciphertext and key.
+The same X(25,16) is the center of E–X–E. Through E(24,16), this connects to E–TH–E and its center TH(23,15). Two mirror paths branch from TH:
 
-| Path | Connected mirrors | Destination |
-|:---|:---|:---|
-| Ciphertext | X–TH–X (23,15) → D–X–D (27,11) → P–D–P (27,20) | P(27,24) |
-| Key | D–TH–D (23,15) → D–NG–D (22,17) → IA–D–IA (22,19) → IA–EA–IA (19,13) | EA(19,13) |
+| Step | Ciphertext path | Key path |
+|:---:|:---|:---|
+| 1 | X–TH–X → X(27,11) | D–TH–D → D(22,15) |
+| 2 | D–X–D → D(27,20) | D–NG–D → D(22,19) |
+| 3 | P–D–P → P(27,24) | IA–D–IA → IA(22,16) |
+| 4 | Ciphertext starts at P(27,24) | IA–EA–IA, centered at EA(19,13) |
 
 ### Derive the key
 
@@ -53,11 +55,11 @@ The same X(25,16) belongs to E–X–E. Through the shared E(24,16), it connects
 | Totient signature | φ(IA = 27) = 18; φ(EO = 12) = 4; φ(IA = 27) = 18 | (18, 4, 18) |
 | Möbius signature | μ(18) = 0; μ(4) = 0; μ(18) = 0 | (0, 0, 0) |
 | Rotation | (0 + 0 + 0) mod 3 = 0 | Key unchanged |
-| Movement | Mirror paths from TH(23,15) | P(27,24) (ciphertext); EA(19,13) (key center) |
+| Movement | Two mirror paths from TH(23,15) | P(27,24) for ciphertext; EA(19,13) for key |
 
 ### Read and decrypt
 
-From P(27,24), read four runes rightward. Subtract the repeating IA–EO–IA key modulo 29.
+Read four runes rightward from P(27,24). Subtract the repeating IA–EO–IA key modulo 29.
 
 | Cell | Ciphertext | Key | Subtraction (mod 29) | Plaintext |
 |:---:|:---:|:---:|:---:|:---:|
@@ -70,7 +72,7 @@ From P(27,24), read four runes rightward. Subtract the repeating IA–EO–IA ke
 
 | Connection | Evidence |
 |:---|:---|
-| Shared totient | φ(5) = φ(8) = φ(10) = φ(12) = 4. C, I and EO are the first key's centers; H ends its ciphertext. |
+| Shared totient | φ(5) = φ(8) = φ(10) = φ(12) = 4. C, I and EO generate the first key; H ends its ciphertext. |
 | Prime-valued sum | L + H = 73 + 23 = 96; SOON = 53 + 7 + 7 + 29 = 96. |
 
 ### SOON
