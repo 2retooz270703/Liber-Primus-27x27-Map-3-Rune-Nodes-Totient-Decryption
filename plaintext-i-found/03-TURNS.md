@@ -26,8 +26,6 @@ A–NG–A is a horizontal mirror. The vertical H–NG–C forms the key.
 | Rotation | (0 + 0 + 0) mod 3 = 0 | Key unchanged |
 | Related mirror | I(4,18) – NG(4,19) – I(4,20); φ(I = 10) = 4 | Same (4, 12, 4) signature |
 
-I–NG–I is a separate horizontal mirror in row 4. It has the same totient signature because φ(H) = φ(I) = φ(C) = 4, but the decryption key is H–NG–C.
-
 ## 3. Read and decrypt
 
 Read five cells upward from A(14,19). Subtract the repeating H–NG–C key modulo 29.
