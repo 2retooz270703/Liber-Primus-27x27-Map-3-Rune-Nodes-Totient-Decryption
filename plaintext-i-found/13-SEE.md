@@ -2,16 +2,16 @@
 
 ## 1. Locate the nodes
 
-The DEATH key has phase 2. At its final E(26,1), this gives V₂ = (0, +1) → RIGHT.
+The DEATH key has phase 2. At E(26,1), this gives V₂ = (0, +1) → RIGHT.
 
-The matrix center NG = 21 gives φ²(21) = 4, matching the radius of EA–J–EA.
+Here φ²(26) = φ(12) = 4, matching the radius of EA–J–EA.
 
 | Node | First outer | Center | Second outer |
 |:---|:---:|:---:|:---:|
 | EA–J–EA | EA(25,2) | J(25,6) | EA(25,10) |
 | E–X–E | E(24,16) | X(25,16) | E(26,16) |
 
-EA(25,2) is one cell up-right from E(26,1). EA–J–EA provides the key; X(25,16) begins the ciphertext.
+EA(25,2) is one cell up-right from E(26,1). Its mirror generates the key.
 
 ## 2. Derive the key and starting point
 
