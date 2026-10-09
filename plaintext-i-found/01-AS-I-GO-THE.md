@@ -1,4 +1,4 @@
-# 01 — AS I GO THE
+# 01 — AS I GO, THE
 
 AS I GO, THE
 
@@ -36,7 +36,7 @@ This produces the three-rune key **AE-I-EA**. To determine whether it needs to b
 
 Totient signature: (20,4,12)
 Möbius signature: (0,0,0)
-Phase:              0
+Phase: 0
 ```
 
 **Phase 0** leaves the key in its original order: **AE-I-EA**.
