@@ -2,7 +2,7 @@
 
 ## 1. Locate the node
 
-From WEATHER: E(14,18) → A(14,19).
+After WEATHER: E(14,18) → A(14,19).
 
 | Row | Column 19 | Column 23 | Column 27 |
 |:---:|:---:|:---:|:---:|
@@ -10,22 +10,22 @@ From WEATHER: E(14,18) → A(14,19).
 | 14 | A | NG | A |
 | 24 | | C | |
 
-Phase 2 selects UP + RIGHT at A: μ(φ²(14)) = −1; μ(φ²(19)) = +1.
+Phase 2 at A selects UP + RIGHT: μ(φ²(14)) = −1; μ(φ²(19)) = +1.
 
-The previous key supplies 4 = φ(I) and 10 = I. From A, move RIGHT 4 to NG; from NG, move UP/DOWN 10 to H and C. The middle row is a mirror; the middle column supplies the key.
+Using the previous values, φ(I) = 4 takes A to NG (RIGHT 4). H and C lie I = 10 cells above and below NG. A–NG–A is a horizontal mirror; H–NG–C forms the key.
 
 ## 2. Derive the key
 
 | Step | Calculation | Result |
 |:---|:---|:---|
 | Key | H(4,23) – NG(14,23) – C(24,23) | H–NG–C |
-| Totient | φ(H = 8) = 4; φ(NG = 21) = 12; φ(C = 5) = 4 | (4, 12, 4) |
-| Möbius | μ(4) = 0; μ(12) = 0; μ(4) = 0 | (0, 0, 0) |
+| Totient signature | φ(H = 8) = 4; φ(NG = 21) = 12; φ(C = 5) = 4 | (4, 12, 4) |
+| Möbius signature | μ(4) = 0; μ(12) = 0; μ(4) = 0 | (0, 0, 0) |
 | Rotation | (0 + 0 + 0) mod 3 = 0 | Key unchanged |
 
 ## 3. Read and decrypt
 
-Read upward from A(14,19). Subtract the repeating key modulo 29.
+From A(14,19), read five runes upward. Subtract the repeating H–NG–C key modulo 29.
 
 | Cell | Ciphertext | Key | Subtraction (mod 29) | Plaintext |
 |:---:|:---:|:---:|:---:|:---:|
@@ -37,8 +37,8 @@ Read upward from A(14,19). Subtract the repeating key modulo 29.
 
 ### TURNS
 
-For COLD, φ(NG = 21) = 12. Phase 0 gives V₀(14,19) = (+1, −1) → DOWN + LEFT.
+For COLD, φ(NG = 21) = 12. Phase 0 at A selects DOWN + LEFT: V₀(14,19) = (+1, −1).
 
-From A(14,19): DOWN 12 → TH(26,19), center of H–TH–H; LEFT 12 → G(14,7), where COLD begins.
+From A(14,19), DOWN 12 reaches TH(26,19), center of H–TH–H; LEFT 12 reaches G(14,7), where COLD begins.
 
 Continue to [04 — COLD](./04-COLD.md).
