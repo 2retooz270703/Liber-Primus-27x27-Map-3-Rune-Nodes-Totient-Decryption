@@ -1,147 +1,39 @@
 # 14 — YOU
 
-AS I GO, THE WEATHER TURNS COLD. I MAY CRY NOW. THE IDEA OF THE END IS DEATH. SEE YOU.
+## 1. Locate the node
 
-## 1. Start from the end of SEE
+The SEE key has phase 0. At B(27,14), this gives V₀ = (0, +1) → RIGHT.
 
-The previous chapter, [`13-SEE.md`](./13-SEE.md), ends at **B(27,14)**. Its key, `EA-I-EA`, has **Möbius phase 0** and the neutral signature `(0,0,0)`.
+Its neutral signature (0, 0, 0) retains the center I = 10. Applying φ twice gives φ²(10) = 2, leading 2 cells right to P(27,16).
 
-Applying the coordinate selector at the final `B` gives:
+| Row | Column 14 | Column 16 | Column 18 |
+|:---:|:---:|:---:|:---:|
+| 5 | | P | |
+| 16 | | R | |
+| 27 | B | P | EA |
 
-```text
-μ(27) = 0
-μ(14) = +1
+P(27,16) is the lower outer rune of the vertical P–R–P mirror. Each P is 11 cells from R(16,16).
 
-V₀(27,14) = (0,+1) → RIGHT
-```
+## 2. Derive the key and starting point
 
-The direction is **RIGHT**. To determine the distance, the route uses the project's **`000 → INHERIT`** rule: a neutral key signature preserves the center of the preceding key. Here that center is **I**, whose value is `10`.
+| Step | Calculation | Result |
+|:---|:---|:---|
+| Key | R = 4; φ(4) = 2 = TH | P–TH–P |
+| Totient signature | φ(P = 13) = 12; φ(TH = 2) = 1; φ(P = 13) = 12 | (12, 1, 12) |
+| Möbius signature | μ(12) = 0; μ(1) = +1; μ(12) = 0 | (0, +1, 0) |
+| Rotation | (0 + 1 + 0) mod 3 = 1 | TH–P–P |
+| Movement | φ²(I = 10) = 2; φ(R = 4) = 2 | B → P → EA (right 2 each time) |
 
-Applying Euler's totient twice to this inherited value gives:
+## 3. Read and decrypt
 
-```text
-I = 10
-φ(10) = 4
-φ(4)  = 2 = TH
-```
+From EA(27,18), read three runes diagonally up-left. Subtract the TH–P–P key modulo 29.
 
-The resulting distance is **2 cells**. Moving right from the end of `SEE` reaches:
+| Cell | Ciphertext | Key | Subtraction (mod 29) | Plaintext |
+|:---:|:---:|:---:|:---:|:---:|
+| (27,18) | EA = 28 | TH = 2 | 28 − 2 ≡ 26 | Y |
+| (26,17) | T = 16 | P = 13 | 16 − 13 ≡ 3 | O |
+| (25,16) | X = 14 | P = 13 | 14 − 13 ≡ 1 | U |
 
-```text
-B(27,14) ── RIGHT 2 ──→ P(27,16)
-```
+### YOU
 
-This places us at a rune that belongs to a large, symmetrical structure.
-
-## 2. The P-R-P mirror generates the key
-
-The new cell **P(27,16)** is the lower outer rune of a vertical mirror. Its other outer rune is **P(5,16)**, with **R(16,16)** exactly halfway between them:
-
-```text
-P(5,16)
-   |
-   | 11 cells
-   |
-R(16,16)  ← center
-   |
-   | 11 cells
-   |
-P(27,16)  ← reached from SEE
-```
-
-The mirror is **P-R-P**. As in the earlier chapters, we transform its center using Euler's totient:
-
-```text
-R = 4
-φ(4) = 2 = TH
-
-P-R-P → P-TH-P
-```
-
-Notice that the center produces **2** again — the same value that brought us from `B` to `P`.
-
-Now calculate the Möbius phase of the generated key:
-
-```text
-φ(P=13)  = 12
-φ(TH=2)  =  1
-φ(P=13)  = 12
-
-Totient signature: (12,1,12)
-Möbius signature: (0,+1,0)
-Phase:              1
-```
-
-Phase **1** rotates `P-TH-P` into **TH-P-P**:
-
-```text
-P-TH-P → phase 1 → TH-P-P
-
-Active key: TH-P-P
-```
-
-The key is obtained directly from the mirror's center and its calculated phase.
-
-## 3. The same value leads to the ciphertext
-
-The transformed mirror center is **TH = 2**. Reusing this number as a distance, move another **2 cells RIGHT** from `P(27,16)`:
-
-```text
-P(27,16) ── RIGHT 2 ──→ EA(27,18)
-```
-
-From `EA(27,18)`, the diagonal going up and left passes through **T(26,17)** and reaches **X(25,16)**:
-
-```text
-EA(27,18) → T(26,17) → X(25,16)
-```
-
-This gives the three-rune **ciphertext `EA-T-X`**.
-
-The endpoint is particularly meaningful: **X(25,16) is the same cell where the earlier SEE route began**. The new ciphertext therefore leads back to a position already used in the previous reconstruction.
-
-## 4. Decrypting EA-T-X
-
-Subtract the active key `TH-P-P` from the ciphertext, modulo 29:
-
-| Ciphertext | Key | Calculation | Plaintext |
-|---|---|---|---|
-| `EA = 28` | `TH = 2` | `28 − 2 = 26` | **Y** |
-| `T = 16` | `P = 13` | `16 − 13 = 3` | **O** |
-| `X = 14` | `P = 13` | `14 − 13 = 1` | **U** |
-
-```text
-Ciphertext: EA - T - X
-Key:        TH - P - P
-Plaintext:   Y - O - U
-```
-
-The result is **YOU**. Its final cell is **X(25,16)**, and the mirror that generated its key established **phase 1**.
-
-## 5. How the geometry connects the stages
-
-Several details reinforce the relationship between the end of `SEE`, the new mirror, and the ciphertext.
-
-First, the three main cells on row 27 are evenly spaced:
-
-```text
-B(27,14) ── 2 ── P(27,16) ── 2 ── EA(27,18)
-```
-
-The first distance comes from applying Euler's totient twice to the inherited center **I**. The second uses the value of the transformed **R** center in `P-R-P`. Both calculations give **2**.
-
-Second, the final ciphertext cell **X(25,16)** lies exactly **2 rows above P(27,16)**. It is also the center of the vertical **E-X-E** mirror:
-
-```text
-E(24,16)
-   |
-X(25,16)  ← end of YOU
-   |
-E(26,16)
-```
-
-This matches the **center-oriented signature `(0,+1,0)`** generated by the `P-TH-P` key structure and gives the final `X` another geometric role.
-
-There is also a numerical detail beside the first move: **J(27,15)** lies between `B` and `P`, and its rune value **11** matches the radius of the large `P-R-P` mirror (`27 − 16 = 11`).
-
-Most importantly, the ending of **YOU** returns to **X(25,16)**, while its key supplies **phase 1**. These are precisely the starting cell and inherited phase used in [`15-SOON.md`](./15-SOON.md), where the next word is reconstructed.
+The final X(25,16) is the center of E(24,16)–X(25,16)–E(26,16), matching the key's CENTER state (0, +1, 0).
