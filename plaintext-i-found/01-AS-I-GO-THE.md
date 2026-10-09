@@ -1,61 +1,53 @@
 # 01 — AS I GO, THE
 
-729 runes are arranged in reading order into a 27 × 27 matrix. Coordinates are given as (row, column).
+The 729 runes form a 27 × 27 matrix, filled in reading order. All coordinates below use (row, column).
 
-## 1. Locate the three-rune structure
+## 1. The starting pattern
 
-This 3 × 3 region contains the first node in its middle row:
+A 3 × 3 area of the matrix contains the first three-rune node:
 
-| Matrix row | Column 11 | Column 12 | Column 13 |
-| :---: | :---: | :---: | :---: |
+| Row | Column 11 | Column 12 | Column 13 |
+|:---:|:---:|:---:|:---:|
 | 12 | M | H | M |
 | 13 | AE | J | EA |
 | 14 | EO | AE | OE |
 
-The node is AE (13,11) — J (13,12) — EA (13,13). Its center, J, provides both the key and the first movement distance.
+The middle row, AE(13,11) — J(13,12) — EA(13,13), is the starting node. Its center, J, determines both the key and the first movement.
 
-## 2. Derive the key and starting position
+## 2. The key and starting position
 
-Transform the center J with Euler's totient function, leaving AE and EA unchanged. The Möbius signature determines whether the resulting key is rotated.
+| Step | Calculation | Result |
+|---|---|---|
+| Form the key | J = 11 → φ(11) = 10 = I | AE–I–EA |
+| Totient signature | φ(25) = 20; φ(10) = 4; φ(28) = 12 | (20, 4, 12) |
+| Möbius signature | μ(20) = μ(4) = μ(12) = 0 | (0, 0, 0) |
+| Key rotation | (0 + 0 + 0) mod 3 = 0 | No rotation |
+| Movement | φ(11) + φ(10) = 10 + 4 | 14 cells right |
 
-| Step | Starting values | Calculation | Result |
-| :--- | :--- | :--- | :--- |
-| Create the key | AE — J — EA | φ(J = 11) = 10 = I | AE — I — EA |
-| Totient signature | AE = 25, I = 10, EA = 28 | φ(25) = 20; φ(10) = 4; φ(28) = 12 | (20, 4, 12) |
-| Möbius signature | (20, 4, 12) | μ(20) = 0; μ(4) = 0; μ(12) = 0 | (0, 0, 0) |
-| Key rotation | (0, 0, 0) | (0 + 0 + 0) mod 3 = 0 | Phase 0: no rotation |
-| First movement | J = 11 | φ(11) + φ(10) = 10 + 4 = 14 | 14 cells right |
+Starting at AE(13,11), move 14 cells right to L(13,25). This is where the ciphertext begins.
 
-Start at the node's left rune, AE (13,11). Moving 14 cells right lands on L (13,25), the first ciphertext rune.
+## 3. The decryption
 
-## 3. Decrypt the seven runes
+Read seven runes from L(13,25), continuing into the next row after column 27. Repeat the key AE–I–EA and subtract it from the ciphertext modulo 29.
 
-Read forward from L (13,25), crossing from the end of row 13 to the start of row 14. Repeat the key AE — I — EA and subtract each key value from its ciphertext value modulo 29.
-
-| Position | Matrix cell | Ciphertext | Key | Subtraction (mod 29) | Plaintext |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| 1 | (13,25) | L = 20 | AE = 25 | 20 − 25 ≡ 24 | A |
-| 2 | (13,26) | AE = 25 | I = 10 | 25 − 10 = 15 | S |
-| 3 | (13,27) | N = 9 | EA = 28 | 9 − 28 ≡ 10 | I |
-| 4 | (14,1) | TH = 2 | AE = 25 | 2 − 25 ≡ 6 | G |
-| 5 | (14,2) | P = 13 | I = 10 | 13 − 10 = 3 | O |
-| 6 | (14,3) | U = 1 | EA = 28 | 1 − 28 ≡ 2 | TH |
-| 7 | (14,4) | X = 14 | AE = 25 | 14 − 25 ≡ 18 | E |
-
-Plaintext runes: A — S — I — G — O — TH — E
+| Matrix cell | Cipher rune | Key rune | Subtraction (mod 29) | Plaintext |
+|:---:|:---:|:---:|:---:|:---:|
+| (13,25) | L = 20 | AE = 25 | 20 − 25 ≡ 24 | A |
+| (13,26) | AE = 25 | I = 10 | 25 − 10 = 15 | S |
+| (13,27) | N = 9 | EA = 28 | 9 − 28 ≡ 10 | I |
+| (14,1) | TH = 2 | AE = 25 | 2 − 25 ≡ 6 | G |
+| (14,2) | P = 13 | I = 10 | 13 − 10 = 3 | O |
+| (14,3) | U = 1 | EA = 28 | 1 − 28 ≡ 2 | TH |
+| (14,4) | X = 14 | AE = 25 | 14 − 25 ≡ 18 | E |
 
 ### AS I GO, THE
 
-Spaces and the comma are added for readability.
+The seven plaintext runes are A–S–I–G–O–TH–E. Word spacing and punctuation are added for readability.
 
-## 4. Continue to the next key
+## 4. The next connection
 
-The last ciphertext rune, X (14,4), also begins the next horizontal three-rune node.
+The last ciphertext rune, X(14,4), is also the first rune of another three-rune node:
 
-| Stage | Left cell (14,4) | Center cell (14,5) | Right cell (14,6) |
-| :--- | :---: | :---: | :---: |
-| Original node | X | OE | X |
-| Center calculation | X | φ(OE = 22) = 10 = I | X |
-| Next key | X | I | X |
+X(14,4) — OE(14,5) — X(14,6)
 
-The resulting key, X — I — X, leads into [02 — WEATHER](./02-WEATHER.md).
+Its center gives φ(OE = 22) = 10 = I, changing X–OE–X into X–I–X. This is the key structure for the continuation in [02 — WEATHER](./02-WEATHER.md).
