@@ -1,171 +1,36 @@
 # 13 — SEE
 
-AS I GO, THE WEATHER TURNS COLD. I MAY CRY NOW. THE IDEA OF THE END IS DEATH. SEE.
+## 1. Locate the nodes
 
-## 1. Start from the end of DEATH
+The DEATH ciphertext ends at E(26,1). The DEATH key has phase 2. At this cell, V₂ = (0, +1) → RIGHT.
 
-The previous chapter, [`12-DEATH.md`](./12-DEATH.md), ends at **E(26,1)**. Its key was generated from `J-T-J`, giving **Möbius phase 2**. We carry this phase forward to examine the next position.
+The matrix center gives φ(NG = 21) = 12 and φ(12) = 4. This provides a radius of 4.
 
-The key's totient and Möbius signatures are:
+| Node | First outer | Center | Second outer | Radius |
+|:---|:---:|:---:|:---:|:---:|
+| EA–J–EA | EA(25,2) | J(25,6) | EA(25,10) | 4 |
+| E–X–E | E(24,16) | X(25,16) | E(26,16) | 1 |
 
-```text
-J-T-J → (10,8,10) → (+1,0,+1)
-Phase: 2
-```
+EA(25,2) lies one cell up-right from E(26,1). EA–J–EA provides the key; X(25,16) begins the ciphertext.
 
-The signature `(+1,0,+1)` points toward an **outer rune** of a mirror. Applying phase 2 to the endpoint coordinates gives another clue:
+## 2. Derive the key and starting point
 
-```text
-φ²(26) = 4 → μ(4) = 0
-φ²(1)  = 1 → μ(1) = +1
+| Step | Calculation | Result |
+|:---|:---|:---|
+| Key | J = 11; φ(11) = 10 = I | EA–I–EA |
+| Totient signature | φ(EA = 28) = 12; φ(I = 10) = 4; φ(EA = 28) = 12 | (12, 4, 12) |
+| Möbius signature | μ(12) = 0; μ(4) = 0; μ(12) = 0 | (0, 0, 0) |
+| Rotation | (0 + 0 + 0) mod 3 = 0 | Key unchanged |
+| Movement | φ(11) + φ²(11) = 10 + 4 = 14 | EA(25,2) → X(25,16) (right 14) |
 
-T₂(26,1) = (4,1)
-V₂(26,1) = (0,+1) → RIGHT
-```
+## 3. Read and decrypt
 
-Together, these results direct the search toward an **outer mirror rune on the right-compatible side** of the final `E`.
+From X(25,16), read three runes diagonally down-left. Subtract the EA–I–EA key modulo 29.
 
-## 2. Why the next mirror has radius 4
+| Cell | Ciphertext | Key | Subtraction (mod 29) | Plaintext |
+|:---:|:---:|:---:|:---:|:---:|
+| (25,16) | X = 14 | EA = 28 | 14 − 28 ≡ 15 | S |
+| (26,15) | EA = 28 | I = 10 | 28 − 10 ≡ 18 | E |
+| (27,14) | B = 17 | EA = 28 | 17 − 28 ≡ 18 | E |
 
-The center of the 27×27 matrix contains **NG**, whose rune value is `21`. Euler's totient gives:
-
-```text
-NG = 21
-φ(21) = 12
-φ(12) = 4
-```
-
-The value **12** also appeared in the earlier `TURNS → COLD` transition. There is a further connection: the plaintext recovered through `DEATH` can be grouped into **12 major blocks**:
-
-```text
- 1. AS I GO THE       7. NOW THE
- 2. WEATHER           8. IDEA
- 3. TURNS             9. OF THE
- 4. COLD             10. END
- 5. I MAY            11. IS
- 6. CRY              12. DEATH
-```
-
-Applying the totient once more turns **12 into 4**, giving a radius to investigate. The search now combines three pieces of information: the **outer-rune** signature, the **RIGHT** direction, and **radius 4**.
-
-One cell diagonally up-right from `E(26,1)` is **EA(25,2)**. This rune is the left outer of an exact horizontal mirror:
-
-```text
-EA(25,2) ── 4 ── J(25,6) ── 4 ── EA(25,10)
-```
-
-This is **EA-J-EA**, the only standard mirror of that exact type in the matrix. Its radius matches **4**, and its left outer lies immediately on the right-compatible side of the `DEATH` endpoint.
-
-## 3. EA-J-EA generates the key
-
-The mirror's center is **J(25,6)**. As in the earlier chapters, only the center rune is transformed with Euler's totient:
-
-```text
-J = 11
-φ(11) = 10 = I
-
-EA-J-EA → EA-I-EA
-```
-
-This produces the key **EA-I-EA**. To determine its active phase, calculate the totient and Möbius signatures:
-
-```text
-φ(EA=28) = 12
-φ(I=10)  =  4
-φ(EA=28) = 12
-
-Totient signature: (12,4,12)
-Möbius signature: (0,0,0)
-Phase:              0
-```
-
-With **phase 0**, the key does not rotate:
-
-```text
-Active key: EA-I-EA
-```
-
-Notice that the key itself contains the same **12 → 4** relationship used to find the mirror's radius. It appears here as the first two values of the totient signature.
-
-## 4. The center J leads back to X
-
-The center **J** provides more than the key. The project has already used a movement calculation based on the first two totients of `J`. Applying that same calculation gives:
-
-```text
-J = 11
-φ(11)  = 10
-φ²(11) =  4
-
-10 + 4 = 14
-```
-
-Starting from the mirror's outer rune **EA(25,2)**, move **14 cells RIGHT**:
-
-```text
-EA(25,2) ── RIGHT 14 ──→ X(25,16)
-```
-
-The landing point is **X(25,16)**, a familiar location from the earlier `I MAY → CRY` transition. It is the center of the vertical mirror **E-X-E**:
-
-```text
-E(24,16)
-   |
-X(25,16)  ← center
-   |
-E(26,16)
-```
-
-The route therefore returns to an existing mirror rather than introducing an unrelated starting point.
-
-## 5. The diagonal from X provides the ciphertext
-
-From **X(25,16)**, a straight diagonal going down and left passes through **EA(26,15)** and ends at **B(27,14)**:
-
-```text
-X(25,16) → EA(26,15) → B(27,14)
-```
-
-These three consecutive runes form **ciphertext `X-EA-B`**. The original grid analysis found only one occurrence of this exact directed, contiguous sequence.
-
-The key was already generated by `EA-J-EA`, so the ciphertext and key can now be combined directly.
-
-## 6. Decrypting X-EA-B
-
-Subtract the active key **EA-I-EA** from the ciphertext, modulo 29:
-
-| Ciphertext | Key | Calculation | Plaintext |
-|---|---|---|---|
-| `X = 14` | `EA = 28` | `14 − 28 ≡ 15` | **S** |
-| `EA = 28` | `I = 10` | `28 − 10 = 18` | **E** |
-| `B = 17` | `EA = 28` | `17 − 28 ≡ 18` | **E** |
-
-```text
-Ciphertext: X  - EA - B
-Key:        EA - I  - EA
-Plaintext:  S  - E  - E
-```
-
-The result is **SEE**. The new word is obtained from the nearby radius-4 mirror, its center transformation, the reused **RIGHT 14** movement, and the three-rune diagonal from `X`.
-
-## 7. The endpoint connects to YOU
-
-The reconstructed word ends at **B(27,14)**. Its key **EA-I-EA** has **phase 0** and the neutral Möbius signature `(0,0,0)`.
-
-At this endpoint, the coordinate selector gives:
-
-```text
-μ(27) = 0
-μ(14) = +1
-
-V₀(27,14) = (0,+1) → RIGHT
-```
-
-Under the project's **`000 → INHERIT`** rule, the neutral signature retains the key's center **I**. Applying Euler's totient twice gives the next distance:
-
-```text
-I = 10
-φ(10) = 4
-φ²(10) = 2
-```
-
-That leads **2 cells RIGHT** from `B(27,14)` to **P(27,16)** — the starting point of the mirror construction in [`14-YOU.md`](./14-YOU.md).
+### SEE
