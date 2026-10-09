@@ -47,13 +47,11 @@ From NG(14,14), read five runes to the right. Subtract the repeating key X–X�
 
 These geometric matches are additional observations; the subtraction above produces the plaintext.
 
-After WEATHER, move from E(14,18) to A(14,19). This crossroads introduces the coordinate selector.
-
-The selector uses the Möbius phase of the key that decrypted the last word (here, p = 2) and the crossroads coordinates:
+After WEATHER: E(14,18) → A(14,19). This crossroads introduces the coordinate selector, which uses the last key's Möbius phase (p = 2) to choose directions.
 
 V₂(14,19) = (μ(φ²(14)), μ(φ²(19)))  
 = (μ(2), μ(6)) = (−1, +1) → UP + RIGHT.
 
-Movement distances come from the same key: I = 10 and φ(I) = 4.
+Distances from the same key: I = 10; φ(I) = 4.
 
 Continue to [03 — TURNS](./03-TURNS.md).
