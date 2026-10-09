@@ -2,7 +2,7 @@
 
 ## 1. Locate the node
 
-At A(14,19), the TURNS key's phase 0 gives V₀(14,19) = (+1, −1) → DOWN + LEFT.
+The TURNS key has phase 0. At A(14,19), this gives V₀ = (+1, −1) → DOWN + LEFT.
 
 | Row | Column 18 | Column 19 | Column 20 |
 |:---:|:---:|:---:|:---:|
