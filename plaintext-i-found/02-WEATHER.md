@@ -43,5 +43,3 @@ From NG(14,14), read five runes rightward. Subtract the repeating X–X–I key 
 | Row alignment | W–EA–TH (row 13, columns 14–16) lies above NG–P–EO (row 14). |
 | Diagonal mirror | E(6,10) → NG(10,14) → E(14,18), four steps apart; the only E–NG–E mirror found across all axes and distances. |
 | OUTER state | (+1, 0, +1) indicates OUTER in the project's interpretation; the final E(14,18) is an outer rune of this mirror. |
-
-These are geometric observations; the decryption is shown above.
