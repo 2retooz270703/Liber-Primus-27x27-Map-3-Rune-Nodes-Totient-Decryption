@@ -21,7 +21,7 @@ X-OE-X → X-I-X
 
 The transformation ```φ(22) = 10 = I``` also produces the number **10**, which has a second role: it determines how far the route moves from the previous endpoint.
 
-## 2. The same number leads to the center of the grid
+## 2. The same number 10 leads to the center of the grid
 
 Starting at **X(14,4)**, move **RIGHT 10** along row 14:
 
@@ -29,7 +29,7 @@ Starting at **X(14,4)**, move **RIGHT 10** along row 14:
 X(14,4) → RIGHT 10 → NG(14,14)
 ```
 
-The destination **NG(14,14)** is the exact center of the 27×27 matrix. The connection is particularly clear: the value obtained from the mirror's center, **φ(OE) = 10**, is used both to generate **I** in the key and to reach the center of the entire grid.
+The destination **NG(14,14)** is the exact center of the 27×27 matrix.
 
 From this central cell, the next ciphertext is read along the same row.
 
@@ -53,18 +53,17 @@ Now apply the Möbius function to that signature:
 μ(6) = +1
 
 Möbius signature: (+1,0,+1)
-Phase:              (1+0+1) mod 3 = 2
+Phase: (1+0+1) mod 3 = 2
+Phase = 2
 ```
 
-**Phase 2** rotates the key structure to **X-X-I**. The ciphertext contains five runes, so the three-rune key repeats from the beginning:
+**Phase 2** rotates the key structure to **X-X-I**.
 
 ```text
 X-I-X → phase 2 → X-X-I
 
 Active key: X-X-I-X-X
 ```
-
-The key is now determined by the mirror and its calculated phase.
 
 ## 4. Read the ciphertext and decrypt WEATHER
 
