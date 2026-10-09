@@ -5,6 +5,14 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>0–2 Route Analysis Map</title>
+<script>
+/* Appearance preference only. The map and its analysis scripts are untouched. */
+try {
+  if (localStorage.getItem('liber-primus-map-theme') === 'dark') {
+    document.documentElement.setAttribute('data-theme','dark');
+  }
+} catch (_) { /* Storage may be restricted on some local-file browsers. */ }
+</script>
 <style>
 :root{
   --page:#f4f4f7;--panel:#fff;--ink:#27272c;--muted:#74747d;--line:#dddde3;
@@ -5234,6 +5242,148 @@ body{background:#e9ecf2 !important}
   }
 }
 
+
+/* ============================================================
+   V75 — REFINED DAY / NIGHT APPEARANCE
+   Pure presentation. No cell data, filter or pulse logic changed.
+   Color-only transitions keep grid geometry and scroll stable.
+   ============================================================ */
+.toolbar-dock-actions{
+  display:flex;align-items:center;gap:7px;
+  flex:0 0 auto;
+}
+.controls-wrap .theme-toggle{
+  appearance:none;-webkit-appearance:none;
+  position:relative;isolation:isolate;
+  display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:25px;min-width:34px;min-height:25px;
+  padding:0;border:1px solid rgba(167,184,213,.20);
+  border-radius:8px;background:#222b3a;
+  color:#cfb8ff;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  transition:background-color .22s ease,border-color .22s ease,box-shadow .22s ease;
+}
+.controls-wrap .theme-toggle:hover{
+  background:#30394e;border-color:rgba(177,142,244,.64);
+  box-shadow:0 0 11px rgba(151,112,226,.20);
+}
+.controls-wrap .theme-toggle:focus-visible{
+  outline:2px solid #9ab6ff;outline-offset:2px;
+}
+.controls-wrap .theme-toggle:active{background:#37415a}
+.theme-icon{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .32s ease,transform .4s cubic-bezier(.22,1,.36,1);
+}
+.theme-icon svg{width:16px;height:16px;display:block}
+.theme-icon-moon{opacity:1;transform:rotate(0deg) scale(1)}
+.theme-icon-sun{opacity:0;transform:rotate(-80deg) scale(.65)}
+html[data-theme="dark"] .theme-icon-moon{opacity:0;transform:rotate(65deg) scale(.65)}
+html[data-theme="dark"] .theme-icon-sun{opacity:1;transform:rotate(0deg) scale(1)}
+html[data-theme="dark"] .controls-wrap .theme-toggle{
+  color:#ffd591;
+  border-color:rgba(245,196,116,.32);
+  background:#2b2c36;
+}
+html[data-theme="dark"] .controls-wrap .theme-toggle:hover{
+  border-color:rgba(255,212,149,.68);background:#393947;
+  box-shadow:0 0 12px rgba(255,203,121,.14);
+}
+/* Deep ink palette, distinct grid coordinates, and visible rune glyphs. */
+html[data-theme="dark"]{
+  color-scheme:dark;
+  --page:#0b111c;
+  --panel:#141e2c;
+  --ink:#e6eef9;
+  --muted:#9cacc3;
+  --line:#2e4055;
+  --route:#b795f2;
+  --cipher:#3d2956;
+  --key:#74baff;
+  --mirror:#70c994;
+  --center:#403552;
+}
+body{transition:background-color .27s ease,color .27s ease}
+html[data-theme="dark"] body{background:#0a101a !important;color:#e6eef9}
+/* Transition only colors; never matrix widths/heights, transforms, filters or animation timings. */
+.map-app .grid-shell,
+.map-app .rune-grid th,
+.map-app .rune-grid td,
+.map-app .rune-grid .corner,
+.map-app .rune-grid th.axis-center,
+.map-app .rune-grid td.grid-center,
+.map-app .rune-grid .cipher-layer{
+  transition:background-color .28s ease,color .28s ease,border-color .28s ease !important;
+}
+html[data-theme="dark"] .map-app .grid-shell{
+  background:#0e1621 !important;
+  scrollbar-color:#53637a #111d2b;
+}
+html[data-theme="dark"] .map-app .rune-grid td{
+  background:#141e2d !important;
+  color:#e4ecf7 !important;
+  border-right-color:#2d3d51 !important;
+  border-bottom-color:#2d3d51 !important;
+}
+html[data-theme="dark"] .map-app .rune-grid thead th,
+html[data-theme="dark"] .map-app .rune-grid tbody th,
+html[data-theme="dark"] .map-app .rune-grid .corner{
+  background:#202d3e !important;
+  color:#afc0d6 !important;
+  border-right-color:#3a4a60 !important;
+  border-bottom-color:#3a4a60 !important;
+}
+/* The central coordinate remains a purposeful focal point. */
+html[data-theme="dark"] .map-app .rune-grid th.axis-center{
+  background:#555071 !important;color:#fff !important;
+}
+html[data-theme="dark"] .map-app .rune-grid td.grid-center{
+  background:#41364f !important;color:#fff !important;
+}
+html[data-theme="dark"] .map-app .rune-grid td .cipher-layer{
+  background:rgba(173,115,224,.27) !important;
+}
+html[data-theme="dark"] .map-app .rune-grid td.grid-center .cipher-layer{
+  opacity:.28;
+}
+html[data-theme="dark"] .map-app .rune-grid .route-layer{
+  border-color:#b995f2 !important;
+}
+html[data-theme="dark"] .map-app .rune-grid .key-layer{background:#75bbf3 !important}
+html[data-theme="dark"] .map-app .rune-grid .mirror-layer{background:#78cfa0 !important}
+html[data-theme="dark"] .map-app .rune-grid td.grid-center .route-layer{
+  border-color:#d5bafc !important;
+}
+html[data-theme="dark"] .map-app .rune-grid td.grid-center .key-layer{
+  background:#9acdf9 !important;
+}
+html[data-theme="dark"] .map-app .rune-grid td.grid-center .mirror-layer{
+  background:#9be6b5 !important;
+}
+html[data-theme="dark"] .grid-shell::-webkit-scrollbar-thumb{
+  background:#53637a;border-color:#111d2b;
+}
+html[data-theme="dark"] .grid-shell::-webkit-scrollbar-track{background:#111d2b}
+/* Toolbar matches the night palette without adding an overlay or blur. */
+html[data-theme="dark"] .map-app > .controls-wrap,
+html[data-theme="dark"] .map-app > .controls-wrap.is-collapsed{
+  background:#0b101a !important;
+}
+html[data-theme="dark"] .toolbar-dock{
+  background:linear-gradient(90deg,#0b111c,#151b29);
+  border-bottom-color:rgba(181,199,235,.09);
+}
+html[data-theme="dark"] .map-app .controls-wrap .toolbar-content,
+html[data-theme="dark"] .map-app .controls-wrap.is-collapsed .toolbar-content{
+  background:linear-gradient(180deg,#111824 0%,#0d1420 100%) !important;
+}
+@media(prefers-reduced-motion:reduce){
+  .theme-icon,body,.map-app .grid-shell,
+  .map-app .rune-grid th,.map-app .rune-grid td,
+  .map-app .rune-grid .cipher-layer{transition:none !important}
+}
+
 </style>
 </head>
 <body>
@@ -5246,7 +5396,17 @@ body{background:#e9ecf2 !important}
 <div class="controls-wrap">
 <div class="toolbar-dock">
 <span class="toolbar-dock-title" aria-hidden="true">MAP CONTROLS</span>
-<button aria-expanded="true" aria-controls="toolbar-content" aria-label="Hide controls" class="toolbar-collapse-toggle" id="toolbar-collapse-toggle" title="Hide controls" type="button">⌃</button>
+<div class="toolbar-dock-actions">
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
+    <span class="theme-icon theme-icon-moon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20.2 15.4A8.55 8.55 0 0 1 8.6 3.8 8.6 8.6 0 1 0 20.2 15.4Z"/></svg>
+    </span>
+    <span class="theme-icon theme-icon-sun" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="3.6"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </span>
+  </button>
+  <button aria-expanded="true" aria-controls="toolbar-content" aria-label="Hide controls" class="toolbar-collapse-toggle" id="toolbar-collapse-toggle" title="Hide controls" type="button">⌃</button>
+</div>
 </div>
 <div class="toolbar-content" id="toolbar-content">
 <div aria-label="Plaintext stage selector" class="plaintext-panel plaintext-selector-panel">
@@ -5466,6 +5626,31 @@ document.addEventListener('cut', function(e){ e.preventDefault(); });
   } else {
     initToolbarCollapse();
   }
+})();
+</script>
+
+<script>
+/* Theme toggle is independent of all existing map, filter and drawer handlers. */
+(() => {
+  const button = document.getElementById('theme-toggle');
+  if (!button) return;
+  const root = document.documentElement;
+  const sync = () => {
+    const night = root.getAttribute('data-theme') === 'dark';
+    button.setAttribute('aria-pressed', String(night));
+    const action = night ? 'Switch to light mode' : 'Switch to dark mode';
+    button.setAttribute('aria-label', action);
+    button.title = action;
+  };
+  button.addEventListener('click', () => {
+    const night = root.getAttribute('data-theme') !== 'dark';
+    if (night) root.setAttribute('data-theme', 'dark');
+    else root.removeAttribute('data-theme');
+    try { localStorage.setItem('liber-primus-map-theme', night ? 'dark' : 'light'); }
+    catch (_) { /* Works normally without persistent storage. */ }
+    sync();
+  });
+  sync();
 })();
 </script>
 
