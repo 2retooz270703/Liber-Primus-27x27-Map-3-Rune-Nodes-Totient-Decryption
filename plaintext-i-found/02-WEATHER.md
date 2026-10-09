@@ -24,7 +24,7 @@ NG(14,14) is the center of the 27 × 27 matrix.
 
 ## 3. Read and decrypt
 
-From NG(14,14), read five runes to the right. Subtract the repeating key X–X–I modulo 29.
+From NG(14,14), read five runes rightward. Subtract the repeating X–X–I key modulo 29.
 
 | Cell | Ciphertext | Key | Subtraction (mod 29) | Plaintext |
 |:---:|:---:|:---:|:---:|:---:|
@@ -40,16 +40,17 @@ From NG(14,14), read five runes to the right. Subtract the repeating key X–X�
 
 | Connection | Evidence |
 |:---|:---|
-| Shared transformation | φ(J = 11) = φ(OE = 22) = 10 = I. Both opening nodes produce I. |
-| Row alignment | Row 13, columns 14–16: W–EA–TH; directly below, row 14: NG–P–EO. |
-| Diagonal mirror | E(6,10) → NG(10,14) → E(14,18). Four steps on each side; the only E–NG–E mirror found in the grid across all horizontal, vertical and diagonal directions and distances. |
-| OUTER state | The Möbius signature (+1, 0, +1) corresponds to OUTER in the project's interpretation; the final E(14,18) is an outer rune of E–NG–E. |
+| Shared transformation | φ(J = 11) = φ(OE = 22) = 10 = I. |
+| Row alignment | W–EA–TH (row 13, columns 14–16) lies above NG–P–EO (row 14). |
+| Diagonal mirror | E(6,10) → NG(10,14) → E(14,18), four steps apart; the only E–NG–E mirror found across all axes and distances. |
+| OUTER state | (+1, 0, +1) indicates OUTER in the project's interpretation; E(14,18) is an outer rune of that mirror. |
 
-After WEATHER: E(14,18) → A(14,19). This crossroads introduces the coordinate selector, which uses the last key's Möbius phase (p = 2) to choose directions.
+These are additional geometric observations; the table above shows the decryption.
 
-V₂(14,19) = (μ(φ²(14)), μ(φ²(19)))  
-= (μ(2), μ(6)) = (−1, +1) → UP + RIGHT.
+Next, E(14,18) → A(14,19). This crossroads introduces the coordinate selector, which uses the last decryption key's Möbius phase (p = 2):
 
-Distances from the same key: I = 10; φ(I) = 4.
+V₂(14,19) = (μ(φ²(14)), μ(φ²(19))) = (μ(2), μ(6)) = (−1, +1) → UP + RIGHT.
+
+Movement distances come from the same key: I = 10 and φ(I) = 4.
 
 Continue to [03 — TURNS](./03-TURNS.md).
