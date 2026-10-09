@@ -36,8 +36,6 @@ From NG(14,14), read five runes to the right. Subtract the repeating key Xâ€“Xâ€
 
 ### WEATHER
 
-Five runes spell seven letters because EA and TH are each single runes.
-
 ## 4. Connections in the matrix
 
 | Connection | Evidence |
