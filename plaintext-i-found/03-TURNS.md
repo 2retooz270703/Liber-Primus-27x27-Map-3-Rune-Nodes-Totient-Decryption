@@ -2,7 +2,7 @@
 
 ## 1. Locate the node
 
-The crossroads A(14,19) uses phase 2 from the X–X–I key: V₂(14,19) = (−1, +1) → UP + RIGHT.
+The WEATHER key has phase 2. At A(14,19), this gives V₂ = (−1, +1) → UP + RIGHT.
 
 | Row | Column 19 | Column 23 | Column 27 |
 |:---:|:---:|:---:|:---:|
