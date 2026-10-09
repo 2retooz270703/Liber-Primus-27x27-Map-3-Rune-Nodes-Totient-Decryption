@@ -33,7 +33,8 @@ This produces the three-rune key **AE-I-EA**. To determine whether it needs to b
 φ(AE=25) = 20 → μ(20) = 0
 φ(I=10)  =  4 → μ(4)  = 0
 φ(EA=28) = 12 → μ(12) = 0
-
+```
+```
 Totient signature: (20,4,12)
 Möbius signature: (0,0,0)
 Phase: 0
@@ -43,7 +44,7 @@ Phase: 0
 
 ## 3. The same J center gives the first movement
 
-The center **J** also supplies the movement values. Apply Euler's totient twice, using the second result together with the first:
+Apply Euler's totient twice, using the second result together with the first:
 
 ```text
 J = 11
