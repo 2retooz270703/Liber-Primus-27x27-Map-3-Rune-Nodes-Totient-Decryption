@@ -43,5 +43,3 @@ From C(26,3), read three runes leftward. Subtract the J–J–T key modulo 29.
 | Reused key | J–B–J generates the same J–J–T key used for END. |
 | Passage totals | AS I GO THE WEATHER TURNS COLD = 233; THE IDEA OF THE END IS DEATH = 232; φ(233) = 232. |
 | 17 and 53 | THE IDEA OF THE END IS DEATH contains 17 runes. B = 17; φ(17) = 16; the 16th prime is 53. DEATH = D(23) + EA(28) + TH(2) = 53. |
-
-These are additional numerical observations; the table above shows the decryption.
