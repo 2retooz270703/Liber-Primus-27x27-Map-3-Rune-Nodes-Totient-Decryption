@@ -2,13 +2,9 @@
 
 ## 1. Locate the node
 
-From `WEATHER`: E(14,18) → A(14,19).
+After WEATHER: E(14,18) → A(14,19).
 
-| Step | Calculation | Result |
-|:---|:---|:---|
-| Direction (phase 2) | φ²(14) = 2; φ²(19) = 6; μ(2) = −1; μ(6) = +1 | Up + right |
-| Right 4 | φ(I = 10) = 4 | NG(14,23) |
-| Up / down 10 from NG | I = 10 | H(4,23), C(24,23) |
+Phase 2 selects UP + RIGHT: μ(φ²(14)) = μ(2) = −1; μ(φ²(19)) = μ(6) = +1.
 
 | Row | Column 19 | Column 23 | Column 27 |
 |:---:|:---:|:---:|:---:|
@@ -16,16 +12,20 @@ From `WEATHER`: E(14,18) → A(14,19).
 | 14 | A | NG | A |
 | 24 | | C | |
 
-A–NG–A is a horizontal mirror (4 cells per side). The vertical H–NG–C (10 per side) supplies the key, though its outer runes differ.
+From A, RIGHT 4 (φ(10)) reaches NG(14,23). From NG, UP / DOWN 10 (I = 10) reaches H(4,23) / C(24,23).
+
+A–NG–A is a horizontal mirror. The vertical H–NG–C supplies the key.
 
 ## 2. Derive the key
 
 | Step | Calculation | Result |
 |:---|:---|:---|
 | Key | H(4,23) – NG(14,23) – C(24,23) | H–NG–C |
-| Totient signature | φ(H = 8) = 4; φ(NG = 21) = 12; φ(C = 5) = 4 | (4, 12, 4) |
-| Möbius signature | μ(4) = 0; μ(12) = 0; μ(4) = 0 | (0, 0, 0) |
-| Rotation | (0 + 0 + 0) mod 3 = 0 | Key unchanged |
+| Totient | φ(8) = 4; φ(21) = 12; φ(5) = 4 | (4, 12, 4) |
+| Möbius | μ(4) = 0; μ(12) = 0; μ(4) = 0 | (0, 0, 0) |
+| Phase | (0 + 0 + 0) mod 3 = 0 | No rotation |
+
+I–NG–I has the same signatures: φ(H) = φ(I) = φ(C) = 4.
 
 ## 3. Read and decrypt
 
@@ -41,14 +41,8 @@ Read upward from A(14,19). Subtract the repeating H–NG–C key modulo 29.
 
 ### TURNS
 
-## 4. Continue to COLD
+Next: φ(NG = 21) = 12; phase 0 gives V₀(14,19) = (+1, −1) → DOWN + LEFT.
 
-H–NG–C and I–NG–I share the signatures (4, 12, 4) and (0, 0, 0), since φ(H) = φ(I) = φ(C) = 4.
-
-| From A(14,19) | Calculation | Result |
-|:---|:---|:---|
-| Next movement | V₀ = (+1, −1); φ(NG = 21) = 12 | Down + left, 12 cells |
-| Down 12 | A(14,19) → TH(26,19) | Center of H–TH–H |
-| Left 12 | A(14,19) → G(14,7) | Start of COLD ciphertext |
+From A(14,19): DOWN 12 → TH(26,19), center of H–TH–H; LEFT 12 → G(14,7), start of COLD.
 
 Continue to [04 — COLD](./04-COLD.md).
