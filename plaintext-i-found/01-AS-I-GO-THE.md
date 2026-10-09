@@ -21,35 +21,31 @@ The important part is its middle row: **AE(13,11) – J(13,12) – EA(13,13)**. 
 As in the later chapters, apply Euler's totient function to the center rune while keeping the two outer runes unchanged.
 
 ```text
-J = 11
-φ(11) = 10 = I
+J = 11, φ(11) = 10 = I
 
 AE-J-EA → AE-I-EA
 ```
 
-This produces the three-rune key **AE-I-EA**. 
-
-To determine whether it needs to be rotated, calculate its totient signature
-```text
+This produces the three-rune key **AE-I-EA**. To determine its rotation, first calculate Euler's totient for each rune, then apply the Möbius function to that signature.
+```
 φ(AE=25) = 20
 φ(I=10)  =  4
 φ(EA=28) = 12
-```
 
-and then apply the Möbius function:
-```
 μ(20) = 0
 μ(4)  = 0
 μ(12) = 0
-```
 
-```
 Totient signature: (20,4,12)
 Möbius signature: (0,0,0)
-Phase: 0
 ```
 
-**Phase 0** leaves the key in its original order: **AE-I-EA**.
+```
+Phase: (0+0+0) mod 3 = 0
+Phase = 0
+```
+
+Phase 0 leaves the key in its original order: **AE-I-EA**.
 
 ## 3. The same J center gives the first movement
 
