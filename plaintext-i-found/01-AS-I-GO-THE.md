@@ -109,8 +109,7 @@ X(14,4) — OE(14,5) — X(14,6)
 The shared endpoint therefore leads directly into **X-OE-X**. Transforming its center produces the next key structure:
 
 ```text
-OE = 22
-φ(22) = 10 = I
+OE = 22, φ(22) = 10 = I
 
 X-OE-X → X-I-X
 ```
