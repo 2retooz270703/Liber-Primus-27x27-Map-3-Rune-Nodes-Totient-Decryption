@@ -5091,6 +5091,149 @@ body{background:#e9ecf2 !important}
   .controls-wrap .toolbar-content{transition:none !important}
 }
 
+/* ============================================================
+   V74 — COMPOSITOR-ONLY TOOLBAR MOTION
+   ============================================================ */
+
+/* ============================================================
+   V74 — COMPOSITOR-ONLY TOOLBAR MOTION
+   The fold never animates height/padding or resizes the 27x27 table.
+   A fixed-size 30px dock stays pinned while a GPU-composited control
+   sheet slides over the matrix. All matrix/glow/filter code is intact.
+   ============================================================ */
+
+/* The dock is the only part of the toolbar that occupies document space.
+   This means clicking HIDE cannot force 729 table cells to reflow. */
+.map-app > .controls-wrap,
+.map-app > .controls-wrap.is-collapsed{
+  position:relative !important;
+  display:block !important;
+  flex:0 0 30px !important;
+  height:30px !important;
+  min-height:30px !important;
+  max-height:30px !important;
+  overflow:visible !important;
+  padding:0 !important;
+  margin:0 !important;
+  border:0 !important;
+  background:#111722 !important;
+  contain:layout style;
+}
+.controls-wrap .toolbar-dock{
+  position:relative !important;
+  z-index:3;
+  height:30px !important;
+  min-height:30px !important;
+}
+
+/* Opening/closing touches ONLY transform and opacity, both GPU friendly.
+   The independent .grid-shell keeps a constant viewport and scroll offset. */
+.map-app .controls-wrap .toolbar-content,
+.map-app .controls-wrap.is-collapsed .toolbar-content{
+  position:absolute !important;
+  z-index:2 !important;
+  top:30px !important;
+  left:0 !important;
+  right:0 !important;
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  max-height:none !important;
+  margin:0 !important;
+  display:flex !important;
+  padding:12px 16px 13px !important;
+  overflow:visible !important;
+  border:0 !important;
+  border-top:1px solid rgba(180,194,219,.07) !important;
+  border-radius:0 0 13px 13px !important;
+  background:linear-gradient(180deg,#141b27 0%,#111722 100%) !important;
+  box-shadow:0 13px 26px rgba(10,15,24,.20),0 2px 7px rgba(10,15,24,.12) !important;
+  transform-origin:top center !important;
+  transform:translate3d(0,0,0) !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  pointer-events:auto !important;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  will-change:transform,opacity;
+  transition:transform .32s cubic-bezier(.22,1,.36,1),
+             opacity .22s cubic-bezier(.2,.7,.3,1),
+             visibility 0s linear 0s !important;
+}
+.map-app .controls-wrap.is-collapsed .toolbar-content{
+  /* We slide and fade, without ever animating the table layout. */
+  transform:translate3d(0,-16px,0) scale3d(.985,.95,1) !important;
+  opacity:0 !important;
+  visibility:hidden !important;
+  pointer-events:none !important;
+  transition:transform .28s cubic-bezier(.32,0,.42,1),
+             opacity .20s ease-in,
+             visibility 0s linear .28s !important;
+}
+/* Earlier CSS suppressed children's display when collapsed. Maintain
+   the exact same button arrangement in either state. */
+.map-app .controls-wrap.is-collapsed .plaintext-selector-panel{
+  display:block !important;
+}
+.map-app .controls-wrap.is-collapsed .layerbar{
+  display:flex !important;
+}
+
+/* Rotate the existing chevron with the panel instead of swapping glyphs.
+   No change to the toggle's click handler, accessibility or state. */
+.controls-wrap .toolbar-collapse-toggle{
+  transform:translateZ(0) !important;
+  transition:background-color .16s ease,border-color .16s ease !important;
+}
+.controls-wrap .toolbar-collapse-toggle:active{background:#303a4d !important}
+
+/* Isolate scroll work from the floating controls and avoid animated scroll
+   position changes while the panel is opening. */
+.map-app > .grid-shell{
+  transform:none !important;
+  scroll-behavior:auto !important;
+  overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;
+}
+@media(max-width:1099px){
+  .map-app .controls-wrap .toolbar-content,
+  .map-app .controls-wrap.is-collapsed .toolbar-content{
+    padding:10px 11px 11px !important;
+  }
+}
+@media(max-width:899px){
+  .map-app .controls-wrap .toolbar-content,
+  .map-app .controls-wrap.is-collapsed .toolbar-content{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    gap:8px !important;
+    padding:9px 10px 12px !important;
+  }
+  .map-app .controls-wrap .layerbar,
+  .map-app .controls-wrap.is-collapsed .layerbar{
+    display:grid !important;
+    grid-template-columns:auto repeat(2,minmax(0,1fr)) !important;
+  }
+}
+@media(max-width:390px){
+  .map-app .controls-wrap .toolbar-content,
+  .map-app .controls-wrap.is-collapsed .toolbar-content{
+    padding-left:7px !important;
+    padding-right:7px !important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  /* The controls still fold; reduced-motion users get a quick dissolve. */
+  .map-app .controls-wrap .toolbar-content,
+  .map-app .controls-wrap.is-collapsed .toolbar-content{
+    transition:opacity .12s linear,visibility 0s linear .12s !important;
+  }
+  .map-app .controls-wrap.is-collapsed .toolbar-content{
+    transform:none !important;
+  }
+}
+
 </style>
 </head>
 <body>
