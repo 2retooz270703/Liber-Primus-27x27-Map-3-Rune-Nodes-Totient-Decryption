@@ -2,14 +2,19 @@
 
 ## 1. Locate the node
 
-After TURNS, return to A(14,19). The previous key gives φ(NG = 21) = 12. Phase 0 selects DOWN + LEFT: V₀(14,19) = (+1, −1).
+After TURNS, return to A(14,19).
 
-| Movement from A(14,19) | Destination | Role |
-|:---|:---|:---|
-| DOWN 12 | TH(26,19) | Center of H–TH–H |
-| LEFT 12 | G(14,7) | Ciphertext start |
+| Row | Column 18 | Column 19 | Column 20 |
+|:---:|:---:|:---:|:---:|
+| 25 | W | H | EA |
+| 26 | G | TH | H |
+| 27 | EA | H | D |
 
-## 2. Derive the key
+At A, the TURNS key's phase 0 gives V₀(14,19) = (+1, −1) → DOWN + LEFT.
+
+The vertical H–TH–H forms the next key; G(14,7) begins the ciphertext.
+
+## 2. Derive the key and starting point
 
 | Step | Calculation | Result |
 |:---|:---|:---|
@@ -17,6 +22,7 @@ After TURNS, return to A(14,19). The previous key gives φ(NG = 21) = 12. Phase 
 | Totient signature | φ(H = 8) = 4; φ(U = 1) = 1; φ(H = 8) = 4 | (4, 1, 4) |
 | Möbius signature | μ(4) = 0; μ(1) = +1; μ(4) = 0 | (0, +1, 0) |
 | Rotation | (0 + 1 + 0) mod 3 = 1 | U–H–H |
+| Movement | φ(NG = 21) = 12 | A → TH (down 12); A → G (left 12) |
 
 ## 3. Read and decrypt
 
@@ -31,16 +37,15 @@ From G(14,7), read four runes upward. Subtract the repeating U–H–H key modul
 
 ### COLD
 
-This completes the sequence: AS I GO, THE WEATHER TURNS COLD.
-
 ## 4. Connections to I MAY
 
 | Connection | Evidence |
 |:---|:---|
-| CENTER state | The Möbius signature (0, +1, 0) indicates CENTER in the project's interpretation. The final A(11,7) is the center of EA(10,7)–A(11,7)–EA(12,7). |
-| Shared signature | EA–A–EA gives (φ(28), φ(24), φ(28)) = (12, 8, 12). The next transformed node, NG–T–NG, has the same signature. |
-| Next direction | Phase 1 at A(11,7): μ(φ(11)) = μ(10) = +1; μ(φ(7)) = μ(6) = +1 → DOWN + RIGHT. |
+| CENTER state | (0, +1, 0) indicates CENTER in the project's interpretation; the final A(11,7) is the center of EA(10,7)–A(11,7)–EA(12,7). |
+| Shared signature | EA–A–EA and NG–T–NG both give (12, 8, 12). The latter comes from NG–B–NG through φ(B = 17) = 16 = T. |
 
-Using the key's values 4 and 1: A(11,7) → DOWN 4 → S(15,7) → RIGHT 1 → B(15,8), center of NG–B–NG.
+For I MAY, the COLD key's phase 1 gives V₁(11,7) = (μ(φ(11)), μ(φ(7))) = (μ(10), μ(6)) = (+1, +1) → DOWN + RIGHT.
+
+Using distances 4 and 1: A(11,7) → S(15,7) (down 4) → B(15,8) (right 1), center of NG–B–NG.
 
 Continue to [05 — I MAY](./05-I-MAY.md).
