@@ -2,13 +2,13 @@
 
 ## 1. Locate the node
 
-The previous section ends at X(14,4), the left rune of X–OE–X.
-
 | Row | Column 4 | Column 5 | Column 6 |
 |:---:|:---:|:---:|:---:|
 | 13 | C/K | B | L |
 | 14 | X | OE | X |
 | 15 | NG | AE | C/K |
+
+The central OE(14,5) forms the node X–OE–X, starting at X(14,4).
 
 ## 2. Derive the key and starting point
 
@@ -40,17 +40,8 @@ From NG(14,14), read five runes rightward. Subtract the repeating X–X–I key 
 
 | Connection | Evidence |
 |:---|:---|
-| Shared transformation | φ(J = 11) = φ(OE = 22) = 10 = I. |
 | Row alignment | W–EA–TH (row 13, columns 14–16) lies above NG–P–EO (row 14). |
 | Diagonal mirror | E(6,10) → NG(10,14) → E(14,18), four steps apart; the only E–NG–E mirror found across all axes and distances. |
-| OUTER state | (+1, 0, +1) indicates OUTER in the project's interpretation; E(14,18) is an outer rune of that mirror. |
+| OUTER state | (+1, 0, +1) indicates OUTER in the project's interpretation; the final E(14,18) is an outer rune of this mirror. |
 
-These are additional geometric observations; the table above shows the decryption.
-
-Next, E(14,18) → A(14,19). This crossroads introduces the coordinate selector, which uses the last decryption key's Möbius phase (p = 2):
-
-V₂(14,19) = (μ(φ²(14)), μ(φ²(19))) = (μ(2), μ(6)) = (−1, +1) → UP + RIGHT.
-
-Movement distances come from the same key: I = 10 and φ(I) = 4.
-
-Continue to [03 — TURNS](./03-TURNS.md).
+These are geometric observations; the decryption is shown above.
