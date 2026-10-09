@@ -101,8 +101,6 @@ Plaintext:  A  - S  - I  - G  - O  - TH - E
 
 The result is **AS I GO THE**. The phrase contains eight Latin letters but is represented here by **seven runes**, because **TH** is one rune.
 
-The central connection in this first stage is that **J** supplies both parts of the reconstruction: its first totient value becomes the center of the key, while the sum of its first two totient values provides the movement to the ciphertext.
-
 ## 6. The final X opens the next stage
 
 The last ciphertext rune is **X(14,4)**. This cell is also the left outer of a small horizontal mirror:
