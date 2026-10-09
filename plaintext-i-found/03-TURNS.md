@@ -10,9 +10,9 @@ After WEATHER: E(14,18) → A(14,19).
 | 14 | A | NG | A |
 | 24 | | C | |
 
-Phase 2 at A selects UP + RIGHT: μ(φ²(14)) = −1; μ(φ²(19)) = +1.
+At A, the WEATHER key's phase 2 gives V₂(14,19) = (−1, +1) → UP + RIGHT.
 
-A–NG–A is a horizontal mirror. The vertical H–NG–C forms the key.
+A–NG–A is a horizontal mirror; the vertical H–NG–C forms the key.
 
 ## 2. Derive the key
 
@@ -22,7 +22,7 @@ A–NG–A is a horizontal mirror. The vertical H–NG–C forms the key.
 | Totient signature | φ(H = 8) = 4; φ(NG = 21) = 12; φ(C = 5) = 4 | (4, 12, 4) |
 | Möbius signature | μ(4) = 0; μ(12) = 0; μ(4) = 0 | (0, 0, 0) |
 | Rotation | (0 + 0 + 0) mod 3 = 0 | Key unchanged |
-| Movement | φ(I = 10) = 4; I = 10 | A(14,19) → RIGHT 4 → NG(14,23); NG → UP/DOWN 10 → H(4,23)/C(24,23) |
+| Movement | φ(I = 10) = 4; I = 10 | A → NG (right 4); NG → H/C (up/down 10) |
 
 ## 3. Read and decrypt
 
@@ -38,8 +38,8 @@ From A(14,19), read five runes upward. Subtract the repeating H–NG–C key mod
 
 ### TURNS
 
-For COLD, φ(NG = 21) = 12. Phase 0 at A selects DOWN + LEFT: V₀(14,19) = (+1, −1).
+For COLD, the TURNS key gives phase 0 and φ(NG = 21) = 12. At A(14,19), V₀ = (+1, −1) → DOWN + LEFT.
 
-From A(14,19), DOWN 12 reaches TH(26,19), center of H–TH–H; LEFT 12 reaches G(14,7), where COLD begins.
+DOWN 12 reaches TH(26,19), center of H–TH–H; LEFT 12 reaches G(14,7), where COLD begins.
 
 Continue to [04 — COLD](./04-COLD.md).
