@@ -10,7 +10,7 @@ At A(14,19), the TURNS key's phase 0 gives V₀(14,19) = (+1, −1) → DOWN + L
 | 26 | G | TH | H |
 | 27 | EA | H | D |
 
-The vertical H–TH–H forms the key-generating node; G(14,7) starts the ciphertext.
+TH(26,19) is the center of the vertical H–TH–H node.
 
 ## 2. Derive the key and starting point
 
@@ -33,11 +33,6 @@ From G(14,7), read four runes upward. Subtract the repeating U–H–H key modul
 | (12,7) | EA = 28 | H = 8 | 28 − 8 ≡ 20 | L |
 | (11,7) | A = 24 | U = 1 | 24 − 1 ≡ 23 | D |
 
+The final A(11,7) is the center of EA(10,7)–A(11,7)–EA(12,7), matching the key's CENTER state (0, +1, 0).
+
 ### COLD
-
-## 4. Connections in the matrix
-
-| Connection | Evidence |
-|:---|:---|
-| Endpoint mirror | COLD ends at A(11,7), the center of EA(10,7)–A(11,7)–EA(12,7). |
-| CENTER state | The key's Möbius signature (0, +1, 0) indicates CENTER in the project's interpretation, matching the endpoint's position. |
