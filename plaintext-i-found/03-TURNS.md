@@ -2,7 +2,7 @@
 
 ## 1. Locate the node
 
-After WEATHER: E(14,18) → A(14,19).
+The crossroads A(14,19) uses phase 2 from the X–X–I key: V₂(14,19) = (−1, +1) → UP + RIGHT.
 
 | Row | Column 19 | Column 23 | Column 27 |
 |:---:|:---:|:---:|:---:|
@@ -10,9 +10,7 @@ After WEATHER: E(14,18) → A(14,19).
 | 14 | A | NG | A |
 | 24 | | C | |
 
-At A, the WEATHER key's phase 2 gives V₂(14,19) = (−1, +1) → UP + RIGHT.
-
-A–NG–A is a horizontal mirror; the vertical H–NG–C forms the key.
+A–NG–A is a horizontal mirror; the vertical H–NG–C forms the key. The X–X–I key also supplies the movement distances I = 10 and φ(I) = 4.
 
 ## 2. Derive the key
 
@@ -37,9 +35,3 @@ From A(14,19), read five runes upward. Subtract the repeating H–NG–C key mod
 | (10,19) | W = 7 | NG = 21 | 7 − 21 ≡ 15 | S |
 
 ### TURNS
-
-For COLD, the TURNS key gives phase 0 and φ(NG = 21) = 12. At A(14,19), V₀ = (+1, −1) → DOWN + LEFT.
-
-DOWN 12 reaches TH(26,19), center of H–TH–H; LEFT 12 reaches G(14,7), where COLD begins.
-
-Continue to [04 — COLD](./04-COLD.md).
