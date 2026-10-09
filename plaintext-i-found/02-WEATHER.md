@@ -45,8 +45,6 @@ From NG(14,14), read five runes to the right. Subtract the repeating key X–X�
 | Diagonal mirror | E(6,10) → NG(10,14) → E(14,18). Four steps on each side; the only E–NG–E mirror found in the grid across all horizontal, vertical and diagonal directions and distances. |
 | OUTER state | The Möbius signature (+1, 0, +1) corresponds to OUTER in the project's interpretation; the final E(14,18) is an outer rune of E–NG–E. |
 
-These geometric matches are additional observations; the subtraction above produces the plaintext.
-
 After WEATHER: E(14,18) → A(14,19). This crossroads introduces the coordinate selector, which uses the last key's Möbius phase (p = 2) to choose directions.
 
 V₂(14,19) = (μ(φ²(14)), μ(φ²(19)))  
