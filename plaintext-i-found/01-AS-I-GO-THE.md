@@ -47,14 +47,12 @@ Phase = 0
 
 Phase 0 leaves the key in its original order: **AE-I-EA**.
 
-## 3. The same J center gives the first movement
+## 3. The same J gives the first movement
 
 Apply Euler's totient twice, using the second result together with the first:
 
 ```text
-J = 11
-φ(11) = 10
-φ(10) = 4
+J = 11, φ(11) = 10, φ(10) = 4
 
 10 + 4 = 14
 ```
