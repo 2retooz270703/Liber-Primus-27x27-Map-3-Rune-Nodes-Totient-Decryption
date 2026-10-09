@@ -38,6 +38,7 @@ From L(25,25), read three runes rightward. Subtract the E–IA–IA key modulo 2
 
 | Connection | Evidence |
 |:---|:---|
-| Shared endpoint mirror | W(25,27)–NG(26,27)–W(27,27) connects the end of THEN to the secondary SOON route. |
-| Matching phase | W–NG–W → W–EO–W gives (6, 4, 6) → (+1, 0, +1), phase 2. At W(25,27), T₂ = (8, 6) and V₂ = (0, +1), as at H(25,19). |
-| Totient sum | SEE + YOU + SOON = 51 + 30 + 30 = 111; φ(111) = 72 = 18 + 27 + 27, the sum of E–IA–IA. |
+| Shared mirror | W(25,27)–NG(26,27)–W(27,27) connects the final runes of THEN and the second SOON route. |
+| Mirror phase | φ(NG = 21) = 12 = EO. The W–EO–W key gives (6, 4, 6) → (+1, 0, +1), so its phase is 2. |
+| Same direction | Phase 2 at W(25,27) gives T₂ = (8, 6) and V₂ = (0, +1) → RIGHT. These match the values at H(25,19), the end of the first SOON route. |
+| Matching sums | SEE, YOU and SOON have rune-value totals of 51, 30 and 30: together, 111. φ(111) = 72. The THEN key E–IA–IA also totals 18 + 27 + 27 = 72. |
