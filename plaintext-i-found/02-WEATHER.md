@@ -45,6 +45,15 @@ From NG(14,14), read five runes to the right. Subtract the repeating key X–X�
 | Diagonal mirror | E(6,10) → NG(10,14) → E(14,18). Four steps on each side; the only E–NG–E mirror found in the grid across all horizontal, vertical and diagonal directions and distances. |
 | OUTER state | The Möbius signature (+1, 0, +1) corresponds to OUTER in the project's interpretation; the final E(14,18) is an outer rune of E–NG–E. |
 
-From the final E(14,18), the next cell is A(14,19). Phase 2 gives V₂(14,19) = (−1, +1) → UP + RIGHT, with inherited distances I = 10 and φ(10) = 4.
+These geometric matches are additional observations; the subtraction above produces the plaintext.
+
+After WEATHER, move from E(14,18) to A(14,19). This crossroads introduces the coordinate selector.
+
+The selector uses the Möbius phase of the key that decrypted the last word (here, p = 2) and the crossroads coordinates:
+
+V₂(14,19) = (μ(φ²(14)), μ(φ²(19)))  
+= (μ(2), μ(6)) = (−1, +1) → UP + RIGHT.
+
+Movement distances come from the same key: I = 10 and φ(I) = 4.
 
 Continue to [03 — TURNS](./03-TURNS.md).
