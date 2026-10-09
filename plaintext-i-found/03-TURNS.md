@@ -2,9 +2,9 @@
 
 ## 1. Locate the node
 
-After WEATHER: E(14,18) → A(14,19).
+After WEATHER, move one cell right: E(14,18) → A(14,19).
 
-Phase 2 selects UP + RIGHT: μ(φ²(14)) = μ(2) = −1; μ(φ²(19)) = μ(6) = +1.
+The previous key gives two distances: I = 10 and φ(I) = 4. At A(14,19), phase 2 selects UP + RIGHT: μ(φ²(14)) = −1; μ(φ²(19)) = +1.
 
 | Row | Column 19 | Column 23 | Column 27 |
 |:---:|:---:|:---:|:---:|
@@ -12,24 +12,25 @@ Phase 2 selects UP + RIGHT: μ(φ²(14)) = μ(2) = −1; μ(φ²(19)) = μ(6) = 
 | 14 | A | NG | A |
 | 24 | | C | |
 
-From A, RIGHT 4 (φ(10)) reaches NG(14,23). From NG, UP / DOWN 10 (I = 10) reaches H(4,23) / C(24,23).
+From A, move 4 cells right to NG(14,23). From NG, move 10 cells up and down to H(4,23) and C(24,23).
 
-A–NG–A is a horizontal mirror. The vertical H–NG–C supplies the key.
+A–NG–A is a horizontal mirror. The vertical H–NG–C forms the key.
 
 ## 2. Derive the key
 
 | Step | Calculation | Result |
 |:---|:---|:---|
 | Key | H(4,23) – NG(14,23) – C(24,23) | H–NG–C |
-| Totient | φ(8) = 4; φ(21) = 12; φ(5) = 4 | (4, 12, 4) |
+| Totient | φ(H = 8) = 4; φ(NG = 21) = 12; φ(C = 5) = 4 | (4, 12, 4) |
 | Möbius | μ(4) = 0; μ(12) = 0; μ(4) = 0 | (0, 0, 0) |
-| Phase | (0 + 0 + 0) mod 3 = 0 | No rotation |
+| Rotation | (0 + 0 + 0) mod 3 = 0 | Key unchanged |
+| Related mirror | I(4,18) – NG(4,19) – I(4,20); φ(I = 10) = 4 | Same (4, 12, 4) signature |
 
-I–NG–I has the same signatures: φ(H) = φ(I) = φ(C) = 4.
+I–NG–I is a separate horizontal mirror in row 4. It has the same totient signature because φ(H) = φ(I) = φ(C) = 4, but the decryption key is H–NG–C.
 
 ## 3. Read and decrypt
 
-Read upward from A(14,19). Subtract the repeating H–NG–C key modulo 29.
+Read five cells upward from A(14,19). Subtract the repeating H–NG–C key modulo 29.
 
 | Cell | Ciphertext | Key | Subtraction (mod 29) | Plaintext |
 |:---:|:---:|:---:|:---:|:---:|
@@ -41,8 +42,8 @@ Read upward from A(14,19). Subtract the repeating H–NG–C key modulo 29.
 
 ### TURNS
 
-Next: φ(NG = 21) = 12; phase 0 gives V₀(14,19) = (+1, −1) → DOWN + LEFT.
+For the next stage, φ(NG = 21) = 12. Phase 0 gives V₀(14,19) = (+1, −1): DOWN + LEFT.
 
-From A(14,19): DOWN 12 → TH(26,19), center of H–TH–H; LEFT 12 → G(14,7), start of COLD.
+From A(14,19), DOWN 12 reaches TH(26,19), the center of H–TH–H. LEFT 12 reaches G(14,7), where COLD begins.
 
 Continue to [04 — COLD](./04-COLD.md).
