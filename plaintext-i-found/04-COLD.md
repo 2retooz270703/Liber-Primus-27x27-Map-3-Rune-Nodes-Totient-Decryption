@@ -46,6 +46,6 @@ From G(14,7), read four runes upward. Subtract the repeating U–H–H key modul
 
 For I MAY, the COLD key's phase 1 gives V₁(11,7) = (μ(φ(11)), μ(φ(7))) = (μ(10), μ(6)) = (+1, +1) → DOWN + RIGHT.
 
-Using distances 4 and 1: A(11,7) → S(15,7) (down 4) → B(15,8) (right 1), center of NG–B–NG
+Using distances 4 and 1: A(11,7) → S(15,7) (down 4) → B(15,8) (right 1), center of NG–B–NG.
 
 Continue to [05 — I MAY](./05-I-MAY.md).
