@@ -38,6 +38,4 @@ From L(13,25), read forward across the row boundary. Subtract the repeating key 
 
 ### AS I GO, THE
 
-The final rune X(14,4) begins the next node: X–OE–X, at columns 4–6 of row 14. Since φ(OE = 22) = 10 = I, its key is X–I–X.
 
-Continue to [02 — WEATHER](./02-WEATHER.md).
