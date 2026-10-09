@@ -24,7 +24,6 @@ A–NG–A is a horizontal mirror. The vertical H–NG–C forms the key.
 | Totient | φ(H = 8) = 4; φ(NG = 21) = 12; φ(C = 5) = 4 | (4, 12, 4) |
 | Möbius | μ(4) = 0; μ(12) = 0; μ(4) = 0 | (0, 0, 0) |
 | Rotation | (0 + 0 + 0) mod 3 = 0 | Key unchanged |
-| Related mirror | I(4,18) – NG(4,19) – I(4,20); φ(I = 10) = 4 | Same (4, 12, 4) signature |
 
 ## 3. Read and decrypt
 
