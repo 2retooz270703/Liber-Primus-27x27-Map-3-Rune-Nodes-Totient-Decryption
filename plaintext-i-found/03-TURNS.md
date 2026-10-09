@@ -1,12 +1,14 @@
 # 03 — TURNS
 
-## 1. Locate the key
+## 1. Locate the node
 
-After WEATHER ends at E(14,18), move one cell right to A(14,19). The previous key supplies phase 2 and the distances 10 and 4.
+From `WEATHER`: E(14,18) → A(14,19).
 
-At A(14,19), φ²(14) = 2 and φ²(19) = 6. Thus V₂ = (μ(2), μ(6)) = (−1, +1): up and right.
-
-Move 4 cells right to NG(14,23). The surrounding runes form a cross:
+| Step | Calculation | Result |
+|:---|:---|:---|
+| Direction (phase 2) | φ²(14) = 2; φ²(19) = 6; μ(2) = −1; μ(6) = +1 | Up + right |
+| Right 4 | φ(I = 10) = 4 | NG(14,23) |
+| Up / down 10 from NG | I = 10 | H(4,23), C(24,23) |
 
 | Row | Column 19 | Column 23 | Column 27 |
 |:---:|:---:|:---:|:---:|
@@ -14,7 +16,7 @@ Move 4 cells right to NG(14,23). The surrounding runes form a cross:
 | 14 | A | NG | A |
 | 24 | | C | |
 
-The horizontal A–NG–A has a distance of 4 on each side. Vertically, H and C are 10 cells from NG. The vertical sequence H–NG–C becomes the key structure; it is not a matching-rune mirror.
+A–NG–A is a horizontal mirror (4 cells per side). The vertical H–NG–C (10 per side) supplies the key, though its outer runes differ.
 
 ## 2. Derive the key
 
@@ -27,7 +29,7 @@ The horizontal A–NG–A has a distance of 4 on each side. Vertically, H and C 
 
 ## 3. Read and decrypt
 
-From A(14,19), read five runes upward. Subtract the repeating key H–NG–C modulo 29.
+Read upward from A(14,19). Subtract the repeating H–NG–C key modulo 29.
 
 | Cell | Ciphertext | Key | Subtraction (mod 29) | Plaintext |
 |:---:|:---:|:---:|:---:|:---:|
@@ -41,13 +43,12 @@ From A(14,19), read five runes upward. Subtract the repeating key H–NG–C mod
 
 ## 4. Continue to COLD
 
-H–NG–C and I–NG–I share the totient signature (4, 12, 4), since φ(H) = φ(I) = φ(C) = 4. Both give the Möbius signature (0, 0, 0).
+H–NG–C and I–NG–I share the signatures (4, 12, 4) and (0, 0, 0), since φ(H) = φ(I) = φ(C) = 4.
 
-Return to A(14,19), not the final W(10,19). The key center NG gives φ(21) = 12, while phase 0 gives V₀(14,19) = (+1, −1): down and left.
-
-| Move from A(14,19) | Destination | Role |
+| From A(14,19) | Calculation | Result |
 |:---|:---|:---|
-| Down 12 | TH(26,19) | Center of H–TH–H |
-| Left 12 | G(14,7) | Start of the next ciphertext |
+| Next movement | V₀ = (+1, −1); φ(NG = 21) = 12 | Down + left, 12 cells |
+| Down 12 | A(14,19) → TH(26,19) | Center of H–TH–H |
+| Left 12 | A(14,19) → G(14,7) | Start of COLD ciphertext |
 
 Continue to [04 — COLD](./04-COLD.md).
