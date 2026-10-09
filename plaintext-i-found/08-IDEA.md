@@ -32,4 +32,9 @@ From J(15,20), read three runes diagonally down-left. Subtract the U–A–A key
 
 ### IDEA
 
-The key's Möbius signature (0, +1, 0) indicates CENTER in the project's interpretation. The final D(17,18) is the center of the diagonal J(15,20)–D(17,18)–J(19,16).
+## 4. Connections in the matrix
+
+| Connection | Evidence |
+|:---|:---|
+| Diagonal mirror | J(15,20)–D(17,18)–J(19,16), with D(17,18) at the center. |
+| CENTER state | The key's Möbius signature (0, +1, 0) indicates CENTER in the project's interpretation, matching the final D. |
