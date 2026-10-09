@@ -79,7 +79,7 @@ Ciphertext: L  - AE - N  - TH - P  - U  - X
 Key:        AE - I  - EA - AE - I  - EA - AE
 ```
 
-## 5. Decrypt AS I GO THE
+## 5. Decrypt AS I GO, THE
 
 Subtract each key value from the corresponding ciphertext value, modulo 29:
 
