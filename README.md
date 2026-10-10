@@ -21,5 +21,3 @@
 <h3 align="center">
   Click the GIF to explore my interactive 27×27 map
 </h3>
-
----
