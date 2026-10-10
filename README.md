@@ -6,7 +6,7 @@
 </p>
 <!-- AUTO-PLAINTEXT:END -->
 
-Click the banner to see how the plaintext was found.
+**Click to see how I found the plaintext.**
 
 ---
 
@@ -16,7 +16,7 @@ Click the banner to see how the plaintext was found.
   </a>
 </p>
 
-Click the GIF to explore my interactive 27×27 map.
+**Click to see my 27×27 map.**
 
 ---
 ### About
