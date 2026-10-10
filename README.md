@@ -6,6 +6,15 @@
 </p>
 <!-- AUTO-PLAINTEXT:END -->
 
+
+
+<p align="center">
+  <strong>Click the banner to see how the plaintext was found.</strong>
+</p>
+
+---
+
+
 <p align="center">
   <a href="https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/">
     <img src="./example.gif" alt="Liber Primus Interactive Route Map" width="850">
