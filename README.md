@@ -1,6 +1,8 @@
 <!-- AUTO-PLAINTEXT:START -->
 <p align="center">
-  <img src="./assets/plaintext-banner.svg" width="900" alt="Recovered plaintext">
+  <a href="https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/tree/main/plaintext-i-found">
+    <img src="./assets/plaintext-banner.svg" width="900" alt="Recovered plaintext">
+  </a>
 </p>
 <!-- AUTO-PLAINTEXT:END -->
 
