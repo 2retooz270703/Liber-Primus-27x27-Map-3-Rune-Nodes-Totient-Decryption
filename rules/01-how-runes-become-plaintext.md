@@ -1,50 +1,68 @@
 # 01 — How Runes Become Plaintext
 
-The 729 runes from pages 0–2 form a 27 × 27 matrix, filled left to right, row by row. Coordinates are written as (row, column), starting at (1,1).
+The decryption uses a three-rune key. Euler's totient (`φ`) helps form it, Möbius (`μ`) fixes its order, and subtraction modulo 29 reveals the text.
 
-Each rune has a Gematria Primus index from 0 to 28. These indices are used for decryption, not the separate prime-number values. Runes such as TH, EA, and NG each count as one symbol.
+Three-rune structure → key → phase → repeating key → plaintext
 
-These steps explain decryption once the key and ciphertext have been located. Choosing the next node and reading direction is a separate problem.
+## 1. The rune numbers
 
-## 1. Find a three-rune node
+The 729 runes from pages 0–2 are arranged into a **27 × 27 matrix**, left to right and row by row. Positions use `(row, column)`, starting at `(1,1)`.
 
-| Row | Column 4 | Column 5 | Column 6 |
-|:---:|:---:|:---:|:---:|
-| 13 | C/K | B | L |
-| 14 | X | OE | X |
-| 15 | NG | AE | C/K |
+Each rune has a **Gematria Primus index from 0 to 28**. These are not the separate prime-number values. `TH`, `EA`, and `NG`, for example, are each **one rune**, not two letters for calculation purposes.
 
-The central OE(14,5) forms the mirror X–OE–X. A mirror has matching outer runes, equally spaced around its center. It can be horizontal, vertical, or diagonal.
+## 2. How a key is formed
 
-Some keys also come from non-mirrored triples, such as H–NG–C in [TURNS](../plaintext-i-found/03-TURNS.md), which is used directly.
+A selected three-rune structure supplies the key. In a *mirror*, the two outer runes match and are equally spaced from the center. Mirrors can run horizontally, vertically, or diagonally.
 
-## 2. Derive and rotate the key
+Usually, only the center changes: replace its index with `φ(center)` and convert that number back into a rune.
 
-For a mirrored node, keep the outer runes and transform the center using Euler's totient function φ. Then apply φ and the Möbius function μ to the resulting key to determine its phase.
+| Original structure | Center transformation | Key |
+|:---:|:---:|:---:|
+| H–TH–H | TH = 2 → φ(2) = 1 = U | H–U–H |
 
-| Step | Calculation | Result |
+`φ(n)` counts the integers from 1 to *n* that share no factor with *n* other than 1.
+
+Not every selected structure is a mirror. For example, the non-mirrored `H–NG–C` is used directly as a key in [TURNS](../plaintext-i-found/03-TURNS.md).
+
+## 3. How the key's order is chosen
+
+A three-rune key has **three possible starting positions**. Its *phase* chooses one by calculation, rather than by trying different orders.
+
+Apply `φ` to **all three runes of the key**, then `μ` to the three results. **Add the Möbius values modulo 3** to get the phase:
+
+| Operation | Calculation | Result |
 |:---|:---|:---|
-| Key | OE = 22; φ(22) = 10 = I | X–I–X |
-| Totient signature | φ(X = 14) = 6; φ(I = 10) = 4; φ(X = 14) = 6 | (6, 4, 6) |
-| Möbius signature | μ(6) = +1; μ(4) = 0; μ(6) = +1 | (+1, 0, +1) |
-| Rotation | (1 + 0 + 1) mod 3 = 2 | X–X–I |
+| Totient signature | φ(8), φ(1), φ(8) | (4, 1, 4) |
+| Möbius signature | μ(4), μ(1), μ(4) | (0, +1, 0) |
+| Phase | (0 + 1 + 0) mod 3 | 1 |
 
-φ(n) counts numbers up to n that have no common factor with n except 1. μ(n) is 0 if n contains a squared prime factor; otherwise it is +1 or −1 according to the number of distinct prime factors (μ(1) = +1).
+`μ(n)` is **0** if a squared prime divides *n*; otherwise it is **+1** or **−1** for an even or odd number of distinct prime factors. In particular, `μ(1) = +1`.
 
-The Möbius sum modulo 3 gives the phase: 0 keeps the key unchanged, 1 shifts it left once, and 2 shifts it left twice. The full Möbius signature is also retained for structural comparisons.
+The phase rotates the key to the left:
 
-## 3. Read and decrypt
+| Phase | Order for H–U–H |
+|:---:|:---:|
+| 0 | H–U–H |
+| 1 | U–H–H |
+| 2 | H–H–U |
 
-For WEATHER, read five runes rightward from NG(14,14). Repeat the X–X–I key as X–X–I–X–X, then subtract each key index from its ciphertext index modulo 29. Negative results wrap back into the range 0–28.
+The example gives **phase 1**, so the active key is `U–H–H`. Keep the full Möbius signature `(0,+1,0)` as well: later rules also use its individual signs.
 
-| Cell | Ciphertext | Key | Subtraction (mod 29) | Plaintext |
-|:---:|:---:|:---:|:---:|:---:|
-| (14,14) | NG = 21 | X = 14 | 21 − 14 ≡ 7 | W |
-| (14,15) | P = 13 | X = 14 | 13 − 14 ≡ 28 | EA |
-| (14,16) | EO = 12 | I = 10 | 12 − 10 ≡ 2 | TH |
-| (14,17) | O = 3 | X = 14 | 3 − 14 ≡ 18 | E |
-| (14,18) | E = 18 | X = 14 | 18 − 14 ≡ 4 | R |
+## 4. How the text is recovered
 
-The five plaintext runes W–EA–TH–E–R spell WEATHER.
+Repeat the rotated key for as many runes as the selected ciphertext contains. Then subtract rune indices, **ciphertext minus key, modulo 29**.
 
-### WEATHER
+For the four-rune ciphertext `G–J–EA–A`:
+
+| | 1 | 2 | 3 | 4 |
+|:---|:---:|:---:|:---:|:---:|
+| Ciphertext | G = 6 | J = 11 | EA = 28 | A = 24 |
+| Key | U = 1 | H = 8 | H = 8 | U = 1 |
+| Subtract (mod 29) | 5 | 3 | 20 | 23 |
+| Plaintext | C | O | L | D |
+
+The result is **COLD**. Modulo 29 keeps the answer between 0 and 28: for example, `13 − 27 = −14 ≡ 15 (mod 29)`.
+
+---
+
+These rules explain **how a chosen key decrypts a chosen ciphertext**. They do not yet determine which structure to use next, where the ciphertext starts, or which direction to read. Those are separate parts of the route reconstruction.
