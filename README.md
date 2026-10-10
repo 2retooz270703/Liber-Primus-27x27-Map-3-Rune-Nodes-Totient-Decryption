@@ -7,7 +7,7 @@
 <!-- AUTO-PLAINTEXT:END -->
 
 <h3 align="center">
-  Click the banner to see how the plaintext was found.
+  Click the banner to see how the plaintext was found
 </h3>
 
 ---
@@ -19,7 +19,7 @@
 </p>
 
 <h3 align="center">
-  Click the GIF to explore my interactive 27×27 map.
+  Click the GIF to explore my interactive 27×27 map
 </h3>
 
 ---
