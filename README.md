@@ -26,9 +26,9 @@
 
 <p align="center">
   <a href="./rules/">
-    <img src="./assets/rules-button.svg" width="430" alt="Explore Rules and Methods">
+    <img src="./assets/rules-button.svg" width="300" alt="Explore Rules and Methods">
   </a>
   <a href="./strongest-plaintext-evidence.md">
-    <img src="./assets/evidence-button.svg" width="430" alt="View Plaintext Evidence">
+    <img src="./assets/evidence-button.svg" width="300" alt="View Plaintext Evidence">
   </a>
 </p>
