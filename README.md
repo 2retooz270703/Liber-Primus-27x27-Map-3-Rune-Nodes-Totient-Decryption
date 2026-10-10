@@ -23,7 +23,3 @@
 </h3>
 
 ---
-  
-- [`rules/`](./rules/) — the mathematical rules and mechanics behind the route.
-  
-- [`strongest-plaintext-evidence.md`](./strongest-plaintext-evidence.md) — key numerical and structural connections found in the plaintext.
