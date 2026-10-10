@@ -6,14 +6,11 @@
 </p>
 <!-- AUTO-PLAINTEXT:END -->
 
-
-
 <p align="center">
   <strong>Click the banner to see how the plaintext was found.</strong>
 </p>
 
 ---
-
 
 <p align="center">
   <a href="https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/">
@@ -21,16 +18,8 @@
   </a>
 </p>
 
-Follow the clues, explore the connections, and help solve Liber Primus.
-
 <p align="center">
-  <a href="https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/">
-    <img
-      src="https://img.shields.io/github/directory-file-count/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/plaintext-i-found?type=file&label=Open%20Interactive%20Map%20%C2%B7%20Stages%20Found&style=flat&labelColor=202631&color=A9CDEA&cacheSeconds=300"
-      alt="Open Interactive Map · Stages Found"
-      width="400"
-    >
-  </a>
+  <strong>Click the GIF above to explore the map I created.</strong>
 </p>
 
 ---
