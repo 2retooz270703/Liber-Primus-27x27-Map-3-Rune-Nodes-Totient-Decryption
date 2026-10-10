@@ -6,9 +6,9 @@
 </p>
 <!-- AUTO-PLAINTEXT:END -->
 
-<p align="center">
-  <strong>Click the banner to see how the plaintext was found.</strong>
-</p>
+<h3 align="center">
+  Click the banner to see how the plaintext was found.
+</h3>
 
 ---
 
@@ -18,10 +18,9 @@
   </a>
 </p>
 
-<p align="center">
-  <strong>Click the GIF to explore my interactive 27×27 rune map.</strong>
-</p>
-
+<h3 align="center">
+  Click the GIF to explore my interactive 27×27 map.
+</h3>
 
 ---
 
