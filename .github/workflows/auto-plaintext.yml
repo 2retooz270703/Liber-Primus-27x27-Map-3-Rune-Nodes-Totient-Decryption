@@ -1,3 +1,4 @@
+
 name: Auto-update animated plaintext banner
 
 on:
@@ -16,6 +17,7 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
+
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -37,196 +39,555 @@ jobs:
           from functools import lru_cache
           from pathlib import Path
           from PIL import Image, ImageDraw, ImageFont, ImageOps
-          
-          # Input: numbered Markdown filenames only; not the content of the files.
+
+          # =========================
+          # 1. Collect plaintext
+          # =========================
+
           folder = Path('plaintext-i-found')
+
           if not folder.is_dir():
               raise SystemExit('Missing plaintext-i-found/ folder')
+
           stages = []
+
           for file in folder.glob('*.md'):
-              match = re.fullmatch(r'(\d+)-(.+)\.md', file.name, re.I)
+              match = re.fullmatch(
+                  r'(\d+)-(.+)\.md',
+                  file.name,
+                  re.I
+              )
+
               if match:
-                  stages.append((int(match.group(1)), match.group(2).replace('-', ' ')))
+                  stages.append((
+                      int(match.group(1)),
+                      match.group(2).replace('-', ' ')
+                  ))
+
           if not stages:
-              raise SystemExit('No numbered .md files in plaintext-i-found/')
+              raise SystemExit('No numbered plaintext files found.')
+
           stages.sort(key=lambda p: p[0])
+
           if len({index for index, _ in stages}) != len(stages):
-              raise SystemExit('Duplicate plaintext file numbers')
-          plaintext = ' '.join(piece for _, piece in stages).strip()
-          
-          source_gif = next((p for p in [Path('assets/example.gif'), Path('example.gif')] if p.is_file()), None)
+              raise SystemExit('Duplicate plaintext file numbers.')
+
+          plaintext = ' '.join(
+              piece for _, piece in stages
+          ).strip()
+
+          # =========================
+          # 2. Find background GIF
+          # =========================
+
+          source_gif = next(
+              (
+                  p for p in [
+                      Path('assets/example.gif'),
+                      Path('example.gif')
+                  ]
+                  if p.is_file()
+              ),
+              None
+          )
+
           if source_gif is None:
-              raise SystemExit('No example.gif found in assets/ or repository root')
-          
-          # Earlier typography restored: clean white letters, light shadow, no heavy outline.
+              raise SystemExit(
+                  'No example.gif found in assets/ or repository root.'
+              )
+
+          # =========================
+          # 3. Visual settings
+          # =========================
+
           WIDTH = 1100
+
           FONT_SIZE = 35
           LINE_HEIGHT = 60
+
           PADDING_X = 90
           PADDING_Y = 75
+
           MIN_HEIGHT = 300
           RADIUS = 30
-          FONT_PATH = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
-          font = ImageFont.truetype(FONT_PATH, FONT_SIZE)
-          measure = ImageDraw.Draw(Image.new('RGB', (1, 1)))
+
+          FONT_PATH = (
+              '/usr/share/fonts/truetype/dejavu/'
+              'DejaVuSans-Bold.ttf'
+          )
+
+          font = ImageFont.truetype(
+              FONT_PATH,
+              FONT_SIZE
+          )
+
+          measure = ImageDraw.Draw(
+              Image.new('RGB', (1, 1))
+          )
+
           max_width = WIDTH - 2 * PADDING_X
+
           words = plaintext.split()
-          
-          # Wrap by rendered pixel width (not an arbitrary character count).
+
+          # =========================
+          # 4. Automatic line wrapping
+          # =========================
+
           lines = []
           current = ''
+
           for word in words:
               candidate = (current + ' ' + word).strip()
-              if measure.textlength(candidate, font=font) <= max_width:
+
+              if measure.textlength(
+                  candidate,
+                  font=font
+              ) <= max_width:
                   current = candidate
+
               else:
                   if current:
                       lines.append(current)
                       current = ''
-                  # An unusually long single filename word is safely split.
-                  while word and measure.textlength(word, font=font) > max_width:
+
+                  # Safely split an unusually long word
+                  while word and measure.textlength(
+                      word,
+                      font=font
+                  ) > max_width:
+
                       end = 1
-                      while end < len(word) and measure.textlength(word[:end+1], font=font) <= max_width:
+
+                      while (
+                          end < len(word)
+                          and measure.textlength(
+                              word[:end + 1],
+                              font=font
+                          ) <= max_width
+                      ):
                           end += 1
+
                       lines.append(word[:end])
                       word = word[end:]
+
                   current = word
+
           if current:
               lines.append(current)
-          
-          # Make lines of similar visual length, avoiding a lonely final word.
-          if len(words) <= 160 and all(measure.textlength(w, font=font) <= max_width for w in words):
+
+          # =========================
+          # 5. Balance line lengths
+          # =========================
+
+          if (
+              len(words) <= 160
+              and all(
+                  measure.textlength(w, font=font) <= max_width
+                  for w in words
+              )
+          ):
+
               num_lines = len(lines)
-              target_width = measure.textlength(plaintext, font=font) / num_lines
-          
+
+              target_width = (
+                  measure.textlength(
+                      plaintext,
+                      font=font
+                  ) / num_lines
+              )
+
               @lru_cache(None)
               def balanced(start, count):
+
                   if count == 0:
-                      return (0.0, ()) if start == len(words) else (float('inf'), ())
+                      if start == len(words):
+                          return (0.0, ())
+                      return (float('inf'), ())
+
                   best = (float('inf'), ())
+
                   stop = len(words) - count + 2
+
                   for end in range(start + 1, stop):
+
                       piece = ' '.join(words[start:end])
-                      width = measure.textlength(piece, font=font)
+
+                      width = measure.textlength(
+                          piece,
+                          font=font
+                      )
+
                       if width > max_width:
                           break
-                      remaining_cost, remaining_lines = balanced(end, count - 1)
-                      cost = (width - target_width)**2 + remaining_cost
+
+                      remaining_cost, remaining_lines = balanced(
+                          end,
+                          count - 1
+                      )
+
+                      cost = (
+                          (width - target_width) ** 2
+                          + remaining_cost
+                      )
+
                       if cost < best[0]:
-                          best = (cost, (piece,) + remaining_lines)
+                          best = (
+                              cost,
+                              (piece,) + remaining_lines
+                          )
+
                   return best
-          
-              _, balanced_lines = balanced(0, num_lines)
+
+              _, balanced_lines = balanced(
+                  0,
+                  num_lines
+              )
+
               if balanced_lines:
                   lines = list(balanced_lines)
-          
-          # No height cap. Additional words add rows and increase the GIF's height.
-          HEIGHT = max(MIN_HEIGHT, len(lines) * LINE_HEIGHT + 2 * PADDING_Y)
-          
-          # Transparent rounded corners.
-          corner_mask = Image.new('L', (WIDTH, HEIGHT), 0)
-          ImageDraw.Draw(corner_mask).rounded_rectangle((0, 0, WIDTH - 1, HEIGHT - 1), radius=RADIUS, fill=255)
-          transparent_area = corner_mask.point(lambda value: 255 if value < 128 else 0)
-          
+
+          # =========================
+          # 6. Automatic height
+          # =========================
+
+          # No maximum height limit.
+          # Additional plaintext adds new rows.
+
+          HEIGHT = max(
+              MIN_HEIGHT,
+              len(lines) * LINE_HEIGHT + 2 * PADDING_Y
+          )
+
+          # Rounded transparent corners
+
+          corner_mask = Image.new(
+              'L',
+              (WIDTH, HEIGHT),
+              0
+          )
+
+          ImageDraw.Draw(
+              corner_mask
+          ).rounded_rectangle(
+              (0, 0, WIDTH - 1, HEIGHT - 1),
+              radius=RADIUS,
+              fill=255
+          )
+
+          transparent_area = corner_mask.point(
+              lambda value: 255 if value < 128 else 0
+          )
+
+          # =========================
+          # 7. Generate animated GIF
+          # =========================
+
           frames = []
           durations = []
+
           with Image.open(source_gif) as src:
-              total_frames = getattr(src, 'n_frames', 1)
-              # Compress frame count on tall banners, retaining animation length.
-              budget = max(12, min(80, round(80 * 450 / HEIGHT)))
-              step = max(1, math.ceil(total_frames / budget))
+
+              total_frames = getattr(
+                  src,
+                  'n_frames',
+                  1
+              )
+
+              # Reduce frame count for tall banners,
+              # retaining total animation duration.
+
+              budget = max(
+                  12,
+                  min(
+                      80,
+                      round(80 * 450 / HEIGHT)
+                  )
+              )
+
+              step = max(
+                  1,
+                  math.ceil(total_frames / budget)
+              )
+
               palette = None
+
               for index in range(total_frames):
+
                   src.seek(index)
-                  duration = max(20, int(src.info.get('duration', 100) or 100))
+
+                  duration = max(
+                      20,
+                      int(
+                          src.info.get('duration', 100)
+                          or 100
+                      )
+                  )
+
                   if index % step:
                       durations[-1] += duration
                       continue
+
                   durations.append(duration)
+
                   source_frame = src.convert('RGB')
-                  # Cover without stretching; preserve recognizable map when banner grows tall.
-                  background = ImageOps.fit(source_frame, (WIDTH, HEIGHT), method=Image.Resampling.LANCZOS)
+
+                  # =========================
+                  # 8. Adaptive background
+                  # =========================
+
+                  # Scale without distortion
+
+                  background = ImageOps.fit(
+                      source_frame,
+                      (WIDTH, HEIGHT),
+                      method=Image.Resampling.LANCZOS
+                  )
+
                   base = background.convert('RGBA')
+
+                  # Preserve map context for tall banners
+
                   if HEIGHT > 550:
-                      full_map = ImageOps.contain(source_frame, (WIDTH, HEIGHT), method=Image.Resampling.LANCZOS).convert('RGBA')
+
+                      full_map = ImageOps.contain(
+                          source_frame,
+                          (WIDTH, HEIGHT),
+                          method=Image.Resampling.LANCZOS
+                      ).convert('RGBA')
+
                       full_map.putalpha(42)
-                      base.alpha_composite(full_map, ((WIDTH - full_map.width)//2, (HEIGHT - full_map.height)//2))
-          
-                  # Earlier look: gentle violet tint, soft highlight and a readable white label.
-                  base = Image.alpha_composite(base, Image.new('RGBA', (WIDTH, HEIGHT), (24, 16, 40, 145)))
-                  glow = Image.new('RGBA', (WIDTH, HEIGHT), (0, 0, 0, 0))
+
+                      base.alpha_composite(
+                          full_map,
+                          (
+                              (WIDTH - full_map.width) // 2,
+                              (HEIGHT - full_map.height) // 2
+                          )
+                      )
+
+                  # =========================
+                  # 9. Original visual style
+                  # =========================
+
+                  # Gentle violet overlay
+
+                  base = Image.alpha_composite(
+                      base,
+                      Image.new(
+                          'RGBA',
+                          (WIDTH, HEIGHT),
+                          (24, 16, 40, 145)
+                      )
+                  )
+
+                  # Soft inner glow
+
+                  glow = Image.new(
+                      'RGBA',
+                      (WIDTH, HEIGHT),
+                      (0, 0, 0, 0)
+                  )
+
                   ImageDraw.Draw(glow).rounded_rectangle(
-                      (18, 18, WIDTH-19, HEIGHT-19), radius=RADIUS-8,
+                      (
+                          18,
+                          18,
+                          WIDTH - 19,
+                          HEIGHT - 19
+                      ),
+                      radius=RADIUS - 8,
                       fill=(120, 90, 180, 38)
                   )
-                  base = Image.alpha_composite(base, glow)
-                  painter = ImageDraw.Draw(base)
-                  painter.rounded_rectangle(
-                      (2, 2, WIDTH-3, HEIGHT-3), radius=RADIUS-2,
-                      outline=(225, 215, 255, 120), width=2
+
+                  base = Image.alpha_composite(
+                      base,
+                      glow
                   )
-                  top = (HEIGHT - len(lines)*LINE_HEIGHT) // 2
+
+                  painter = ImageDraw.Draw(base)
+
+                  # Subtle border
+
+                  painter.rounded_rectangle(
+                      (
+                          2,
+                          2,
+                          WIDTH - 3,
+                          HEIGHT - 3
+                      ),
+                      radius=RADIUS - 2,
+                      outline=(225, 215, 255, 120),
+                      width=2
+                  )
+
+                  # =========================
+                  # 10. Beautiful centered text
+                  # =========================
+
+                  top = (
+                      HEIGHT - len(lines) * LINE_HEIGHT
+                  ) // 2
+
                   for row, line in enumerate(lines):
-                      center_y = top + row*LINE_HEIGHT + LINE_HEIGHT//2
-                      painter.text(
-                          (WIDTH//2 + 2, center_y + 2), line,
-                          anchor='mm', font=font, fill=(0, 0, 0, 120)
+
+                      center_y = (
+                          top
+                          + row * LINE_HEIGHT
+                          + LINE_HEIGHT // 2
                       )
+
+                      # Soft text shadow
+
                       painter.text(
-                          (WIDTH//2, center_y), line,
-                          anchor='mm', font=font, fill=(255, 255, 255, 255)
+                          (
+                              WIDTH // 2 + 2,
+                              center_y + 2
+                          ),
+                          line,
+                          anchor='mm',
+                          font=font,
+                          fill=(0, 0, 0, 120)
                       )
-          
+
+                      # Clean white plaintext
+
+                      painter.text(
+                          (
+                              WIDTH // 2,
+                              center_y
+                          ),
+                          line,
+                          anchor='mm',
+                          font=font,
+                          fill=(255, 255, 255, 255)
+                      )
+
+                  # =========================
+                  # 11. GIF optimization
+                  # =========================
+
                   rgb = base.convert('RGB')
+
                   if palette is None:
-                      palette = rgb.quantize(colors=255, method=Image.Quantize.MEDIANCUT)
-                  frame = rgb.quantize(palette=palette, dither=Image.Dither.NONE)
-                  frame.paste(255, (0, 0, WIDTH, HEIGHT), transparent_area)
+                      palette = rgb.quantize(
+                          colors=255,
+                          method=Image.Quantize.MEDIANCUT
+                      )
+
+                  frame = rgb.quantize(
+                      palette=palette,
+                      dither=Image.Dither.NONE
+                  )
+
+                  frame.paste(
+                      255,
+                      (0, 0, WIDTH, HEIGHT),
+                      transparent_area
+                  )
+
                   frames.append(frame)
-          
-          output = Path('assets/plaintext-banner.gif')
-          output.parent.mkdir(parents=True, exist_ok=True)
-          frames[0].save(
-              output, save_all=True, append_images=frames[1:],
-              duration=durations, loop=0, disposal=2,
-              transparency=255, optimize=False
+
+          # =========================
+          # 12. Save animated banner
+          # =========================
+
+          output = Path(
+              'assets/plaintext-banner.gif'
           )
-          
-          # Rewrite only the guarded plaintext block. Leave map GIF and captions untouched.
+
+          output.parent.mkdir(
+              parents=True,
+              exist_ok=True
+          )
+
+          frames[0].save(
+              output,
+              save_all=True,
+              append_images=frames[1:],
+              duration=durations,
+              loop=0,
+              disposal=2,
+              transparency=255,
+              optimize=False
+          )
+
+          # =========================
+          # 13. Update README
+          # =========================
+
           readme = Path('README.md')
-          content = readme.read_text(encoding='utf-8')
+
+          content = readme.read_text(
+              encoding='utf-8'
+          )
+
           start = '<!-- AUTO-PLAINTEXT:START -->'
           end = '<!-- AUTO-PLAINTEXT:END -->'
+
           block = (
               f'{start}\n'
               '<p align="center">\n'
               '  <a href="./plaintext-i-found/">\n'
-              '    <img src="./assets/plaintext-banner.gif" width="900" alt="Plaintext found in the 27x27 matrix">\n'
+              '    <img src="./assets/plaintext-banner.gif" '
+              'width="900" alt="Plaintext found in the 27x27 matrix">\n'
               '  </a>\n'
               '</p>\n'
               f'{end}'
           )
+
           if start in content and end in content:
-              content = re.sub(re.escape(start) + r'.*?' + re.escape(end), lambda _: block, content, flags=re.S)
+
+              content = re.sub(
+                  re.escape(start)
+                  + r'.*?'
+                  + re.escape(end),
+                  lambda _: block,
+                  content,
+                  flags=re.S
+              )
+
           elif start in content or end in content:
-              raise SystemExit('README contains only one AUTO-PLAINTEXT marker; fix both markers')
+
+              raise SystemExit(
+                  'README contains only one AUTO-PLAINTEXT marker.'
+              )
+
           elif '## Live Route Analysis' in content:
-              content = content.replace('## Live Route Analysis', block + '\n\n## Live Route Analysis', 1)
+
+              content = content.replace(
+                  '## Live Route Analysis',
+                  block + '\n\n## Live Route Analysis',
+                  1
+              )
+
           else:
               content = block + '\n\n' + content
-          readme.write_text(content, encoding='utf-8')
-          print(f'Created {output} with {len(frames)} frames, {len(lines)} lines, {WIDTH}x{HEIGHT}, {output.stat().st_size/1048576:.1f} MiB')
+
+          readme.write_text(
+              content,
+              encoding='utf-8'
+          )
+
+          print(
+              f'Created {output} with {len(frames)} frames, '
+              f'{len(lines)} lines, '
+              f'{WIDTH}x{HEIGHT}, '
+              f'{output.stat().st_size / 1048576:.1f} MiB'
+          )
           PY
 
       - name: Commit updated banner
         shell: bash
         run: |
           git add README.md assets/plaintext-banner.gif
+
           if git diff --cached --quiet; then
             echo 'No changes needed.'
             exit 0
           fi
+
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
           git commit -m 'Update animated plaintext banner'
           git push
