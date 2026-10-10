@@ -21,3 +21,7 @@
 <h3 align="center">
   Click the GIF to explore my interactive 27×27 map
 </h3>
+
+---
+
+Be sure to check out the [rules](./rules/) folder, where I've tried to explain the methods used in this project as clearly as possible. You can also explore [strongest-plaintext-evidence.md](./strongest-plaintext-evidence.md) for a closer look at the key evidence supporting my plaintext findings.
