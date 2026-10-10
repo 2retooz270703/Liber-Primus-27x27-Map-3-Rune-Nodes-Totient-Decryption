@@ -1,22 +1,17 @@
 # 01 — How Runes Become Plaintext
 
-729 runes form a **27 × 27 matrix**, filled row by row from `(1,1)`. Use rune **indices 0–28**, not prime values; names like `TH`, `EA`, and `NG` each represent one rune.
+729 runes → 27 × 27 grid. Each rune has an index **0–28**, not a prime value. `TH`, `EA`, and `NG` each count as one rune.
 
-Three runes → Key → Rotation → Plaintext
+## 1. Change the center
 
-## 1. Make the key
+| | Left | Center | Right |
+|:---|:---:|:---:|:---:|
+| Structure | X | OE = 22 | X |
+| Key | X | I = 10 | X |
 
-Keep the outer runes; apply Euler's totient **φ** to the center.
+**φ(22) = 10 = I.** Only the center changes; the outer runes stay in place.
 
-| Structure | Center | Key |
-|:---:|:---:|:---:|
-| X–OE–X | φ(22) = 10 = I | X–I–X |
-
-`φ(n)` counts the integers from 1 to n that are coprime to n. A mirror has matching outer runes equally spaced around its center, in a row, column, or diagonal.
-
-## 2. Choose the key's rotation
-
-Apply **φ**, then Möbius **μ**, to all three key values.
+## 2. Rotate the key
 
 | | Left | Center | Right |
 |:---|:---:|:---:|:---:|
@@ -24,28 +19,34 @@ Apply **φ**, then Möbius **μ**, to all three key values.
 | φ | 6 | 4 | 6 |
 | μ | +1 | 0 | +1 |
 
-**Phase:** (+1 + 0 + 1) mod 3 = **2**
+**Phase = (1 + 0 + 1) mod 3 = 2.** Rotate the key left by two positions.
 
 | Phase 0 | Phase 1 | Phase 2 |
 |:---:|:---:|:---:|
 | X–I–X | I–X–X | **X–X–I** |
 
-`μ(n)` is 0 if n contains a squared prime factor; otherwise +1 or −1 for an even or odd number of distinct prime factors. `μ(1) = +1`. Keep the full signature `(+1, 0, +1)` for later rules.
+Keep the full Möbius pattern `(+1, 0, +1)` for the route rules.
 
-## 3. Decrypt
+## 3. Subtract to reveal the text
 
-Repeat the rotated key. Subtract **key from ciphertext**, modulo 29.
+Repeat the rotated key. Subtract its rune indices from the ciphertext **modulo 29**.
 
-| Ciphertext | Key | (C − K) mod 29 | Plaintext |
-|:---:|:---:|:---:|:---:|
-| NG = 21 | X = 14 | 21 − 14 = 7 | W |
-| P = 13 | X = 14 | 13 − 14 ≡ 28 | EA |
-| EO = 12 | I = 10 | 12 − 10 = 2 | TH |
-| O = 3 | X = 14 | 3 − 14 ≡ 18 | E |
-| E = 18 | X = 14 | 18 − 14 = 4 | R |
+| | 1 | 2 | 3 | 4 | 5 |
+|:---|:---:|:---:|:---:|:---:|:---:|
+| Ciphertext | NG = 21 | P = 13 | EO = 12 | O = 3 | E = 18 |
+| − Key | X = 14 | X = 14 | I = 10 | X = 14 | X = 14 |
+| = Plaintext | W = 7 | EA = 28 | TH = 2 | E = 18 | R = 4 |
 
-### WEATHER
+**W–EA–TH–E–R → WEATHER**
 
-A negative result wraps into 0–28 (for example, −1 ≡ 28 mod 29). Some stages use a direct, non-mirrored key such as `H–NG–C`.
+<details>
+<summary>Definitions and exceptions</summary>
 
-This explains **how to decrypt** once the key and ciphertext are known—not how their locations or reading direction are chosen.
+- **φ(n)** (Euler's totient) counts integers from 1 to `n` that are coprime to `n`.
+- **μ(n)** (Möbius function) is `0` if `n` has a squared prime factor; otherwise it is `+1` or `−1` for an even or odd number of distinct prime factors. `μ(1) = +1`.
+- **Modulo 29** wraps results into `0–28`: `13 − 14 = −1 ≡ 28`, which is `EA`.
+- **Structures:** Mirrors have matching outer runes at equal distances from their center. A non-mirrored triple, such as `H–NG–C`, can also supply a key without the same center transformation.
+
+</details>
+
+The calculations explain **how** a key decrypts ciphertext. Selecting the key's location, the ciphertext, and its reading direction remains a separate problem.
