@@ -1,10 +1,11 @@
-
-name: Auto-update plaintext banner
+name: Auto-update animated plaintext banner
 
 on:
   push:
     paths:
       - 'plaintext-i-found/**'
+      - 'assets/example.gif'
+      - 'example.gif'
       - '.github/workflows/auto-plaintext.yml'
   workflow_dispatch:
 
@@ -16,109 +17,212 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v4
 
-      - name: Generate clickable plaintext banner
+      - name: Install Pillow
+        run: python3 -m pip install pillow
+
+      - name: Generate animated plaintext banner
         run: |
           python3 - <<'PY'
           import re
-          import textwrap
           from pathlib import Path
-          from xml.sax.saxutils import escape
+          from PIL import Image, ImageDraw, ImageFont, ImageOps, ImageSequence
 
-          folder = Path('plaintext-i-found')
+          # ---------- 1. Collect plaintext from filenames ----------
+          folder = Path("plaintext-i-found")
           stages = []
 
-          for file in folder.glob('*.md'):
-              match = re.fullmatch(
-                  r'(\d+)-(.+)\.md', file.name, re.I
-              )
-              if match:
-                  stages.append((
-                      int(match.group(1)),
-                      match.group(2).replace('-', ' ')
-                  ))
+          for file in folder.glob("*.md"):
+              m = re.fullmatch(r"(\d+)-(.+)\.md", file.name, re.I)
+              if m:
+                  number = int(m.group(1))
+                  words = m.group(2).replace("-", " ")
+                  stages.append((number, words))
 
-          stages.sort(key=lambda item: item[0])
+          stages.sort(key=lambda x: x[0])
 
           if not stages:
-              raise SystemExit('No numbered plaintext files found.')
+              raise SystemExit("No numbered plaintext files found in plaintext-i-found/")
 
-          numbers = [number for number, _ in stages]
-
+          numbers = [n for n, _ in stages]
           if len(numbers) != len(set(numbers)):
-              raise SystemExit('Duplicate stage number.')
+              raise SystemExit("Duplicate stage numbers found.")
 
-          plaintext = ' '.join(
-              words for _, words in stages
+          plaintext = " ".join(words for _, words in stages).strip()
+
+          # ---------- 2. Find source GIF ----------
+          possible_gifs = [
+              Path("assets/example.gif"),
+              Path("example.gif"),
+          ]
+
+          source_gif = None
+          for path in possible_gifs:
+              if path.exists():
+                  source_gif = path
+                  break
+
+          if source_gif is None:
+              raise SystemExit("Could not find source GIF. Put it in assets/example.gif or example.gif")
+
+          # ---------- 3. Banner settings ----------
+          OUT_W = 1100
+          OUT_H = 300
+          RADIUS = 28
+          TEXT_COLOR = (255, 255, 255, 255)
+          BORDER_COLOR = (212, 197, 246, 110)
+          OVERLAY_COLOR = (38, 22, 58, 130)
+          FONT_PATH = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+          FONT_SIZE = 28
+          PADDING_X = 70
+          LINE_SPACING = 18
+
+          font = ImageFont.truetype(FONT_PATH, FONT_SIZE)
+
+          def wrap_text_by_pixels(text, font, max_width):
+              words = text.split()
+              lines = []
+              current = ""
+
+              dummy = Image.new("RGBA", (10, 10))
+              draw = ImageDraw.Draw(dummy)
+
+              for word in words:
+                  test = word if not current else current + " " + word
+                  bbox = draw.textbbox((0, 0), test, font=font)
+                  width = bbox[2] - bbox[0]
+                  if width <= max_width:
+                      current = test
+                  else:
+                      if current:
+                          lines.append(current)
+                      current = word
+
+              if current:
+                  lines.append(current)
+
+              return lines
+
+          def rounded_mask(size, radius):
+              mask = Image.new("L", size, 0)
+              d = ImageDraw.Draw(mask)
+              d.rounded_rectangle((0, 0, size[0], size[1]), radius=radius, fill=255)
+              return mask
+
+          # ---------- 4. Open GIF ----------
+          im = Image.open(source_gif)
+
+          duration = im.info.get("duration", 100)
+          loop = im.info.get("loop", 0)
+
+          frames_out = []
+
+          text_lines = wrap_text_by_pixels(plaintext, font, OUT_W - PADDING_X * 2)
+
+          dummy = Image.new("RGBA", (OUT_W, OUT_H))
+          dummy_draw = ImageDraw.Draw(dummy)
+
+          line_heights = []
+          max_line_width = 0
+
+          for line in text_lines:
+              bbox = dummy_draw.textbbox((0, 0), line, font=font)
+              w = bbox[2] - bbox[0]
+              h = bbox[3] - bbox[1]
+              max_line_width = max(max_line_width, w)
+              line_heights.append(h)
+
+          total_text_height = sum(line_heights) + LINE_SPACING * (len(text_lines) - 1)
+
+          mask = rounded_mask((OUT_W, OUT_H), RADIUS)
+
+          for frame in ImageSequence.Iterator(im):
+              fr = frame.convert("RGBA")
+              fr = ImageOps.fit(fr, (OUT_W, OUT_H), method=Image.Resampling.LANCZOS)
+
+              base = Image.new("RGBA", (OUT_W, OUT_H), (0, 0, 0, 0))
+              base.alpha_composite(fr)
+
+              # dark overlay for readability
+              overlay = Image.new("RGBA", (OUT_W, OUT_H), OVERLAY_COLOR)
+              base = Image.alpha_composite(base, overlay)
+
+              # subtle extra central glow
+              glow = Image.new("RGBA", (OUT_W, OUT_H), (0, 0, 0, 0))
+              gd = ImageDraw.Draw(glow)
+              gd.rounded_rectangle(
+                  (18, 18, OUT_W - 18, OUT_H - 18),
+                  radius=RADIUS - 8,
+                  fill=(90, 65, 140, 30)
+              )
+              base = Image.alpha_composite(base, glow)
+
+              draw = ImageDraw.Draw(base)
+
+              # border
+              draw.rounded_rectangle(
+                  (1, 1, OUT_W - 2, OUT_H - 2),
+                  radius=RADIUS,
+                  outline=BORDER_COLOR,
+                  width=2
+              )
+
+              # text
+              y = (OUT_H - total_text_height) / 2
+              for i, line in enumerate(text_lines):
+                  bbox = draw.textbbox((0, 0), line, font=font)
+                  w = bbox[2] - bbox[0]
+                  h = bbox[3] - bbox[1]
+                  x = (OUT_W - w) / 2
+
+                  # soft shadow
+                  draw.text((x + 1, y + 1), line, font=font, fill=(0, 0, 0, 100))
+                  draw.text((x, y), line, font=font, fill=TEXT_COLOR)
+
+                  y += h + LINE_SPACING
+
+              # apply rounded corners
+              rounded = Image.new("RGBA", (OUT_W, OUT_H), (0, 0, 0, 0))
+              rounded.paste(base, (0, 0), mask=mask)
+
+              frames_out.append(rounded)
+
+          # ---------- 5. Save animated banner ----------
+          out_path = Path("assets/plaintext-banner.gif")
+          out_path.parent.mkdir(parents=True, exist_ok=True)
+
+          frames_out[0].save(
+              out_path,
+              save_all=True,
+              append_images=frames_out[1:],
+              duration=duration,
+              loop=loop,
+              optimize=True,
+              disposal=2
           )
 
-          lines = textwrap.wrap(
-              plaintext,
-              width=36,
-              break_long_words=False,
-              break_on_hyphens=False
-          )
+          # ---------- 6. Update README ----------
+          readme = Path("README.md")
+          text = readme.read_text(encoding="utf-8")
 
-          width = 1100
-          line_height = 60
-          height = max(230, 120 + line_height * len(lines))
-
-          first_baseline = (
-              (height - (len(lines) - 1) * line_height) / 2 + 12
-          )
-
-          rows = '\n'.join(
-              f'<text x="550" y="{first_baseline + i * line_height:g}">'
-              f'{escape(line)}</text>'
-              for i, line in enumerate(lines)
-          )
-
-          svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
-          <defs>
-            <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#34214F"/>
-              <stop offset="50%" stop-color="#60438E"/>
-              <stop offset="100%" stop-color="#2C719B"/>
-            </linearGradient>
-            <radialGradient id="glow" cx="15%" cy="0%" r="95%">
-              <stop offset="0%" stop-color="#B38BFC" stop-opacity=".26"/>
-              <stop offset="100%" stop-color="#B38BFC" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
-          <rect x="1" y="1" width="1098" height="{height-2}" rx="28" fill="url(#bg)"/>
-          <rect x="1" y="1" width="1098" height="{height-2}" rx="28" fill="url(#glow)"/>
-          <rect x="2" y="2" width="1096" height="{height-4}" rx="27" fill="none" stroke="#D4C5F6" stroke-opacity=".4" stroke-width="2"/>
-          <g font-family="Arial, Helvetica, sans-serif" font-size="35" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">
-          {rows}
-          </g>
-          </svg>
-          '''
-
-          target = Path('assets/plaintext-banner.svg')
-          target.parent.mkdir(parents=True, exist_ok=True)
-          target.write_text(svg, encoding='utf-8')
-
-          readme = Path('README.md')
-          text = readme.read_text(encoding='utf-8')
-
-          start = '<!-- AUTO-PLAINTEXT:START -->'
-          end = '<!-- AUTO-PLAINTEXT:END -->'
+          start = "<!-- AUTO-PLAINTEXT:START -->"
+          end = "<!-- AUTO-PLAINTEXT:END -->"
 
           url = (
-              'https://github.com/2retooz270703/'
-              'Liber-Primus-27x27-Map-3-Rune-Nodes-'
-              'Totient-Decryption/tree/main/plaintext-i-found'
+              "https://github.com/2retooz270703/"
+              "Liber-Primus-27x27-Map-3-Rune-Nodes-"
+              "Totient-Decryption/tree/main/plaintext-i-found"
           )
 
           block = (
-              f'{start}\n'
+              f"{start}\n"
               '<p align="center">\n'
               f'  <a href="{url}">\n'
-              '    <img src="./assets/plaintext-banner.svg" '
-              'width="900" alt="Recovered plaintext">\n'
+              '    <img src="./assets/plaintext-banner.gif" width="900" alt="Recovered plaintext">\n'
               '  </a>\n'
-              f'</p>\n{end}'
+              '</p>\n'
+              f"{end}"
           )
 
           if start in text and end in text:
@@ -128,28 +232,28 @@ jobs:
                   text,
                   flags=re.S
               )
-          elif '## Live Route Analysis' in text:
+          elif "## Live Route Analysis" in text:
               text = text.replace(
-                  '## Live Route Analysis',
-                  block + '\n\n## Live Route Analysis',
+                  "## Live Route Analysis",
+                  block + "\n\n## Live Route Analysis",
                   1
               )
           else:
-              text = block + '\n\n' + text
+              text = block + "\n\n" + text
 
-          readme.write_text(text, encoding='utf-8')
+          readme.write_text(text, encoding="utf-8")
           PY
 
       - name: Commit changes if needed
         run: |
-          git add README.md assets/plaintext-banner.svg
+          git add README.md assets/plaintext-banner.gif
 
           if git diff --cached --quiet; then
             exit 0
           fi
 
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git commit -m 'Automatically update plaintext banner'
+          git commit -m "Automatically update animated plaintext banner"
           git push
