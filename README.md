@@ -1,3 +1,9 @@
+<!-- AUTO-PLAINTEXT:START -->
+<p align="center">
+  <img src="./assets/plaintext-banner.svg" width="900" alt="Recovered plaintext">
+</p>
+<!-- AUTO-PLAINTEXT:END -->
+
 <p align="center">
   <a href="https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/">
     <img src="./example.gif" alt="Liber Primus Interactive Route Map" width="850">
