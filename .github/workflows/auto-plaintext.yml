@@ -1,0 +1,135 @@
+
+name: Auto-update plaintext banner
+
+on:
+  push:
+    paths:
+      - 'plaintext-i-found/**'
+      - '.github/workflows/auto-plaintext.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Generate SVG and add it above the map
+        run: |
+          python3 - <<'PY'
+          import re
+          import textwrap
+          from pathlib import Path
+          from xml.sax.saxutils import escape
+
+          folder = Path('plaintext-i-found')
+          stages = []
+
+          for file in folder.glob('*.md'):
+              match = re.fullmatch(
+                  r'(\d+)-(.+)\.md', file.name, re.I
+              )
+              if match:
+                  stages.append((
+                      int(match.group(1)),
+                      match.group(2).replace('-', ' ')
+                  ))
+
+          stages.sort(key=lambda item: item[0])
+
+          if not stages:
+              raise SystemExit('No numbered plaintext files found.')
+
+          numbers = [number for number, _ in stages]
+          if len(numbers) != len(set(numbers)):
+              raise SystemExit('Duplicate stage number.')
+
+          plaintext = ' '.join(words for _, words in stages)
+
+          lines = textwrap.wrap(
+              plaintext,
+              width=36,
+              break_long_words=False,
+              break_on_hyphens=False
+          )
+
+          width, line_height = 1100, 60
+          height = max(230, 120 + line_height * len(lines))
+          first_baseline = (
+              (height - (len(lines) - 1) * line_height) / 2 + 12
+          )
+
+          rows = '\n'.join(
+              f'<text x="550" y="{first_baseline + i * line_height:g}">'
+              f'{escape(line)}</text>'
+              for i, line in enumerate(lines)
+          )
+
+          svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
+          <defs>
+            <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#34214F"/>
+              <stop offset="50%" stop-color="#60438E"/>
+              <stop offset="100%" stop-color="#2C719B"/>
+            </linearGradient>
+            <radialGradient id="glow" cx="15%" cy="0%" r="95%">
+              <stop offset="0%" stop-color="#B38BFC" stop-opacity=".26"/>
+              <stop offset="100%" stop-color="#B38BFC" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect x="1" y="1" width="1098" height="{height-2}" rx="28" fill="url(#bg)"/>
+          <rect x="1" y="1" width="1098" height="{height-2}" rx="28" fill="url(#glow)"/>
+          <rect x="2" y="2" width="1096" height="{height-4}" rx="27" fill="none" stroke="#D4C5F6" stroke-opacity=".4" stroke-width="2"/>
+          <g font-family="Arial, Helvetica, sans-serif" font-size="35" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">
+          {rows}
+          </g>
+          </svg>
+          '''
+
+          target = Path('assets/plaintext-banner.svg')
+          target.parent.mkdir(parents=True, exist_ok=True)
+          target.write_text(svg, encoding='utf-8')
+
+          readme = Path('README.md')
+          text = readme.read_text(encoding='utf-8')
+
+          start = '<!-- AUTO-PLAINTEXT:START -->'
+          end = '<!-- AUTO-PLAINTEXT:END -->'
+
+          block = (
+              f'{start}\n'
+              '<p align="center">\n'
+              '  <img src="./assets/plaintext-banner.svg" width="900" alt="Recovered plaintext">\n'
+              f'</p>\n{end}'
+          )
+
+          if start in text and end in text:
+              text = re.sub(
+                  re.escape(start) + r'.*?' + re.escape(end),
+                  lambda _: block,
+                  text,
+                  flags=re.S
+              )
+          elif '## Live Route Analysis' in text:
+              text = text.replace(
+                  '## Live Route Analysis',
+                  block + '\n\n## Live Route Analysis',
+                  1
+              )
+          else:
+              text = block + '\n\n' + text
+
+          readme.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Commit changes if needed
+        run: |
+          git add README.md assets/plaintext-banner.svg
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Automatically update plaintext banner'
+          git push
