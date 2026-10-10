@@ -23,10 +23,6 @@
 </h3>
 
 ---
-
-To understand how the plaintext was recovered and how the pieces connect, explore:
-
-- [`plaintext-i-found/`](./plaintext-i-found/) — step-by-step reconstruction of the recovered plaintext.
   
 - [`rules/`](./rules/) — the mathematical rules and mechanics behind the route.
   
