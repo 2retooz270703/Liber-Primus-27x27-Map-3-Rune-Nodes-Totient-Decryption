@@ -14,13 +14,14 @@
 
 <p align="center">
   <a href="https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/">
-    <img src="./example.gif" alt="Liber Primus Interactive Route Map" width="850">
+    <img src="./example.gif" alt="Liber Primus Interactive Route Map" width="900">
   </a>
 </p>
 
 <p align="center">
-  <strong>Click the GIF above to explore the map I created.</strong>
+  <strong>Click the GIF to explore my interactive 27×27 rune map.</strong>
 </p>
+
 
 ---
 
