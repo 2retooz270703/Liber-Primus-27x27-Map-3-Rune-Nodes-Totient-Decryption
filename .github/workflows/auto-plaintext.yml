@@ -14,10 +14,11 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v7
 
-      - name: Generate SVG and add it above the map
+      - name: Generate clickable plaintext banner
         run: |
           python3 - <<'PY'
           import re
@@ -44,10 +45,13 @@ jobs:
               raise SystemExit('No numbered plaintext files found.')
 
           numbers = [number for number, _ in stages]
+
           if len(numbers) != len(set(numbers)):
               raise SystemExit('Duplicate stage number.')
 
-          plaintext = ' '.join(words for _, words in stages)
+          plaintext = ' '.join(
+              words for _, words in stages
+          )
 
           lines = textwrap.wrap(
               plaintext,
@@ -56,8 +60,10 @@ jobs:
               break_on_hyphens=False
           )
 
-          width, line_height = 1100, 60
+          width = 1100
+          line_height = 60
           height = max(230, 120 + line_height * len(lines))
+
           first_baseline = (
               (height - (len(lines) - 1) * line_height) / 2 + 12
           )
@@ -99,10 +105,19 @@ jobs:
           start = '<!-- AUTO-PLAINTEXT:START -->'
           end = '<!-- AUTO-PLAINTEXT:END -->'
 
+          url = (
+              'https://github.com/2retooz270703/'
+              'Liber-Primus-27x27-Map-3-Rune-Nodes-'
+              'Totient-Decryption/tree/main/plaintext-i-found'
+          )
+
           block = (
               f'{start}\n'
               '<p align="center">\n'
-              '  <img src="./assets/plaintext-banner.svg" width="900" alt="Recovered plaintext">\n'
+              f'  <a href="{url}">\n'
+              '    <img src="./assets/plaintext-banner.svg" '
+              'width="900" alt="Recovered plaintext">\n'
+              '  </a>\n'
               f'</p>\n{end}'
           )
 
@@ -128,8 +143,13 @@ jobs:
       - name: Commit changes if needed
         run: |
           git add README.md assets/plaintext-banner.svg
-          if git diff --cached --quiet; then exit 0; fi
+
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
           git commit -m 'Automatically update plaintext banner'
           git push
