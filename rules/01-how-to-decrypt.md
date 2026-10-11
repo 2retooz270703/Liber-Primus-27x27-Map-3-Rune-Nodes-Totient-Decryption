@@ -4,9 +4,7 @@
 
 A three-rune structure supplies the key. Usually, the outer runes stay the same while the center changes through Euler's totient function, φ.
 
-φ(n) counts the integers from 1 to n that have no common factor with n except 1. For example, φ(10) = 4, counting 1, 3, 7, and 9.
-
-For X–OE–X, only the center changes:
+For X–OE–X:
 
 | | Left | Center | Right |
 |:---|:---:|:---:|:---:|
@@ -17,7 +15,7 @@ X–OE–X → X–I–X
 
 In general: **a–b–c → a–φ(b)–c**.
 
-A mirror has matching outer runes at equal distances from the center. Non-mirrored structures also occur: H–NG–C, for example, is used directly without changing its center.
+Non-mirrored structures also occur: H–NG–C, for example, is used directly without changing its center.
 
 ## 2. Choose the rotation
 
@@ -25,13 +23,7 @@ The key has three possible starting positions. Its **phase** (0, 1, or 2) determ
 
 First apply φ to each rune of the key, then apply the Möbius function μ to those results.
 
-| μ(n) | Meaning | Example |
-|:---:|:---|:---|
-| 0 | A prime factor repeats | μ(4) = 0 (4 = 2 × 2) |
-| +1 | An even number of distinct prime factors | μ(6) = +1 (6 = 2 × 3) |
-| −1 | An odd number of distinct prime factors | μ(2) = −1 |
-
-For X–I–X, the values are:
+For X–I–X:
 
 | | Left | Center | Right |
 |:---|:---:|:---:|:---:|
@@ -41,7 +33,7 @@ For X–I–X, the values are:
 
 Add the three μ values. The remainder after division by 3 gives the phase:
 
-P = (1 + 0 + 1) mod 3 = 2
+p = (1 + 0 + 1) mod 3 = 2
 
 Rotate the key two places to the left:
 
@@ -51,7 +43,7 @@ Rotate the key two places to the left:
 
 For any key with indices k₁, k₂, k₃, the same rule is:
 
-**P = [μ(φ(k₁)) + μ(φ(k₂)) + μ(φ(k₃))] mod 3**
+**p = [μ(φ(k₁)) + μ(φ(k₂)) + μ(φ(k₃))] mod 3**
 
 Keep the full μ signature (+1, 0, +1) as well; later rules use it separately from the phase.
 
