@@ -33,7 +33,7 @@ The result is a sign for each coordinate. Rows increase downward; columns increa
 | +1 | DOWN | RIGHT |
 | 0 | No direction | No direction |
 
-For **COLD → I MAY**, the ciphertext ends at **A(11,7)**. The COLD key has phase **1**, so apply φ once, then μ:
+For COLD → I MAY, the ciphertext ends at A(11,7). The COLD key has phase 1, so apply φ once, then μ:
 
 | | Row 11 | Column 7 |
 |:---|:---:|:---:|
@@ -41,17 +41,17 @@ For **COLD → I MAY**, the ciphertext ends at **A(11,7)**. The COLD key has pha
 | μ | μ(10) = +1 | μ(6) = +1 |
 | Direction | DOWN | RIGHT |
 
-**DOWN + RIGHT**, using the distances **4** and **1** from Section 1:
+DOWN + RIGHT, using the distances 4 and 1 from Section 1:
 
-**A(11,7) → DOWN 4 → S(15,7) → RIGHT 1 → B(15,8)**
+A(11,7) → DOWN 4 → S(15,7) → RIGHT 1 → B(15,8).
 
-B(15,8) is the center of the next structure, NG–B–NG. The signs select possible directions, but do not specify the order of the moves or uniquely select a destination.
+B(15,8) is the center of the next structure, NG–B–NG.
 
 In short, for coordinates (r,c) and phase p:
 
 **Vₚ(r,c) = (μ(φᵖ(r)), μ(φᵖ(c)))**
 
-Here φᵖ means applying φ exactly p times. The formula uses the *coordinate numbers*, not the rune values at those cells.
+Here φᵖ means applying φ exactly p times.
 
 ## 3. When μ gives zero
 
