@@ -47,7 +47,6 @@ The two blocks contain several further connections:
 | DEATH key | 7th prime = 17 = B; φ(17) = 16 = T | The center of J–B–J changes B → T |
 | Final word DEATH | 16th prime = 53; 23 + 28 + 2 = 53 | D–EA–TH has index sum 53 |
 
-The complete second chain is **7 → 17 → 16 → 53 → DEATH**. Its **17 → 16** step matches the actual center transformation in the DEATH key.
 
 ## 3. Eight wraps in both blocks
 
