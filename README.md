@@ -6,9 +6,7 @@
 </p>
 <!-- AUTO-PLAINTEXT:END -->
 
-<p align="center">
-  Click to see how I found the plaintext.
-</p>
+Click to see how I found the plaintext.
 
 ---
 
@@ -18,9 +16,7 @@
   </a>
 </p>
 
-<p align="center">
-  Click to see my 27×27 map.
-</p>
+Click to see my 27×27 map.
 
 ---
 ### About
