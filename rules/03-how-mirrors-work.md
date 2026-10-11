@@ -1,37 +1,25 @@
 # 03 — How Mirrors Work
 
-*Mirrors → Shared cells → Möbius states*
-
-A mirror is a three-rune structure with matching outer runes. Mirrors can link different parts of the matrix, while the full Möbius signature can help identify the role of a ciphertext endpoint.
-
 ## 1. Recognize a mirror
 
 The outer runes must be equally spaced from the center, along a row, column, or diagonal.
 
-For example, **J–D–J** is a diagonal mirror:
+For example, J–D–J is a diagonal mirror:
 
 | | First outer | Center | Second outer |
 |:---|:---:|:---:|:---:|
 | Rune | J | D | J |
 | Cell | (15,20) | (17,18) | (19,16) |
 
-Each J is **2 diagonal steps** from D(17,18). This distance is the mirror's *radius*.
-
-Not every three-rune structure is a mirror. For example, `H–NG–C` has different outer runes.
-
 ## 2. Follow shared cells
 
-One cell can belong to several structures. Its role depends on which structure we are looking at.
+One cell can belong to several structures.
 
 | Cell | Structure | Role |
 |:---|:---|:---:|
 | J(19,16) | OE–J–OE | CENTER |
 | J(19,16) | J–D–J, J–B–J | OUTER |
 | R(21,22) | I–R–I, H–R–H | CENTER |
-
-For example, **END** ends at I(21,23), an outer of **I–R–I**. Its center, R(21,22), is also the center of **H–R–H**, which supplies the key for **IS**.
-
-Shared cells connect structures, but do not by themselves determine which one to follow next.
 
 ## 3. Check the Möbius state
 
