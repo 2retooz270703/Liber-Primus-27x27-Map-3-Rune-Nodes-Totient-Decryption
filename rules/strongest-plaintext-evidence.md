@@ -1,7 +1,5 @@
 # Strongest Plaintext Evidence
 
-*Starting point → Plaintext totals → Numerical connections*
-
 These patterns were found after reconstructing the candidate plaintext. Sums use rune indices (0–28) unless stated otherwise. `TH`, `EA`, and `NG` each count as one rune.
 
 ## 1. The starting J
