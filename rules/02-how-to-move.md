@@ -55,9 +55,7 @@ Here φᵖ means applying φ exactly p times.
 
 ## 3. When μ gives zero
 
-A zero means **no direction on that axis**. It does not erase the number calculated just before μ.
-
-For example, **END** ends at **I(21,23)** with phase **2**:
+For example, END ends at I(21,23) with phase 2:
 
 | | Row 21 | Column 23 |
 |:---|:---:|:---:|
@@ -71,10 +69,8 @@ Keep both the numbers *before* μ and the signs *after* μ:
 |:---:|:---:|
 | T₂(21,23) = (4, 10) | V₂(21,23) = (0, +1) |
 
-The retained **4** matches the center rune **R = 4** in the nearby **I–R–I** mirror. In other transitions, a retained value matches a mirror's radius instead.
+The retained 4 matches the center rune R = 4 in the nearby I–R–I mirror. In other transitions, a retained value matches a mirror's radius instead.
 
 The general form for retaining these values is:
 
 **Tₚ(r,c) = (φᵖ(r), φᵖ(c))**
-
-A retained value is a possible clue, not an automatic movement command. The calculations constrain the route; they do not yet determine a unique next structure.
