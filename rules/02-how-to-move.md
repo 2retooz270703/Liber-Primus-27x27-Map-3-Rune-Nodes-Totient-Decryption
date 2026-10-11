@@ -2,7 +2,7 @@
 
 ## 1. Find the distance
 
-For example, the **COLD** key is H–U–H. Apply φ to its three rune values:
+For example, the COLD key is H–U–H. Apply φ to its three rune values:
 
 | | Left | Center | Right |
 |:---|:---:|:---:|:---:|
@@ -15,9 +15,9 @@ Other stages use a center's φ value, such as φ(OE) = 10, or add successive val
 
 ## 2. Find the direction
 
-Use the **phase of the previous ciphertext's key**. Apply it to the **coordinates** of the **endpoint** or a nearby transition point. For instance, WEATHER ends at E(14,18), but its next coordinate check uses A(14,19).
+Use the phase of the previous ciphertext's key. Apply it to the coordinates of the endpoint or a nearby transition point. 
 
-The phase tells us how many times to apply φ to each coordinate *before* applying the Möbius function μ:
+For instance, WEATHER ends at E(14,18), but its next coordinate check uses A(14,19).
 
 | Phase | Calculation for a coordinate n |
 |:---:|:---:|
