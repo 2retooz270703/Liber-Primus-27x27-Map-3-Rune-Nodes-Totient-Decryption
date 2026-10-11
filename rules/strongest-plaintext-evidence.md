@@ -93,7 +93,3 @@ The rune count includes the first seven-word block (21), I MAY CRY NOW (10), the
 17 + 10 = 27 = 3³ — 3 words in SEE YOU SOON.
 
 232 + 111 = 343 = 7³ — 7 words in the DEATH block.
-
-The SEE YOU SOON sum is 51 + 30 + 30 = 111. This grouping ends at SOON, before THEN.
-
-These are reproducible numerical correspondences found after the candidate words were reconstructed, not proof of Cicada's intended reading path.
