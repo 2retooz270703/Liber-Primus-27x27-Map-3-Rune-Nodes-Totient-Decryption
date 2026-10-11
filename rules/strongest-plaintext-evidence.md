@@ -3,7 +3,7 @@
 These patterns were found after reconstructing the candidate plaintext. Sums use rune indices (0–28) unless stated otherwise.
 ## 1. The starting J
 
-The red heading on page 0 has **13 runes** (8 + 5), and φ(13) = 12.
+The red heading on page 0 has **13 runes**, and φ(13) = 12.
 
 | Calculation | Result |
 |:---|:---|
