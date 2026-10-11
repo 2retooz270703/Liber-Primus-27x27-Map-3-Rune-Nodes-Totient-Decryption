@@ -18,7 +18,7 @@ The three horizontal cells at radius 1 are:
 
 The proposed departure is the left AE(13,11):
 
-φ(J = 11) + φ(10) = 10 + 4 = 14
+φ(J) + φ(φ(J)) = 10 + 4 = 14
 
 AE(13,11) → RIGHT 14 → L(13,25)
 
