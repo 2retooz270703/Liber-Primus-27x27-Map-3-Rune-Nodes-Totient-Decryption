@@ -32,10 +32,10 @@ The first two complete seven-word segments have totals differing by exactly one:
 
 | Plaintext | Words | Runes | Index sum |
 |:---|:---:|---:|---:|
-| AS I GO, THE WEATHER TURNS COLD | 7 | 21 | **233** |
-| THE IDEA OF THE END IS DEATH | 7 | 17 | **232** |
+| AS I GO, THE WEATHER TURNS COLD | 7 | 21 | 233 |
+| THE IDEA OF THE END IS DEATH | 7 | 17 | 232 |
 
-Because **233 is prime**, its totient is **φ(233) = 232**. The same φ operation is used to generate keys in the reconstruction.
+Because 233 is prime, its totient is φ(233) = 232.
 
 The two blocks contain several further connections:
 
