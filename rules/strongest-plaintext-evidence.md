@@ -43,11 +43,7 @@ AE(13,11) → RIGHT 14 → L(13,25)
 | DEATH key | 7th prime = 17 = B; φ(17) = 16 = T, the J–B–J → J–T–J change |
 | DEATH total | 16th prime = 53; D(23) + EA(28) + TH(2) = 53 |
 
-## 3. Eight wraps in both blocks
-
-During decryption, a wrap occurs when ciphertext minus key is negative and 29 is added.
-
-Plaintext sum = Ciphertext sum − Key sum + 29 × wraps
+## 3. Ciphertext sum = Key sum
 
 | Seven-word block | Ciphertext sum | Key sum | Wraps | Plaintext sum |
 |:---|---:|---:|---:|---:|
