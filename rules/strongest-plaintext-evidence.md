@@ -52,7 +52,7 @@ The two blocks contain several further connections:
 
 A wrap means the subtraction is negative, so 29 is added once. For a whole segment:
 
-**Plaintext sum = Ciphertext sum − Key sum + 29 × wraps**
+Plaintext sum = Ciphertext sum − Key sum + 29 × wraps
 
 ### First block — 233
 
@@ -64,7 +64,7 @@ A wrap means the subtraction is negative, so 29 is added once. For a whole segme
 | COLD | 69 | 18 | 0 | 51 |
 | Total | **299** | **298** | 8 | 233 |
 
-**299 − 298 + 8 × 29 = 233**
+299 − 298 + 8 × 29 = 233
 
 ### Second block — 232
 
