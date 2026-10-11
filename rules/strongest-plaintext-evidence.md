@@ -50,7 +50,7 @@ The two blocks contain several further connections:
 
 ## 3. Eight wraps in both blocks
 
-Each plaintext rune is calculated as **(ciphertext − key) mod 29**. A *wrap* means the subtraction is negative, so **29** is added once.
+Each plaintext rune is calculated as **(ciphertext − key) mod 29**. A wrap means the subtraction is negative, so 29 is added once.
 
 For a whole segment:
 
