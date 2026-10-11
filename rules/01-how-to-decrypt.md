@@ -31,7 +31,7 @@ Apply φ to all three runes of the new key, then apply the Möbius function μ t
 | +1 | An even number of distinct prime factors | μ(6) = +1, since 6 = 2 × 3 |
 | −1 | An odd number of distinct prime factors | μ(2) = −1 |
 
-Also, μ(1) = +1. The +1 and −1 rules apply only when no prime factor is repeated.
+Also, μ(1) = +1.
 
 | | Left | Center | Right |
 |:---|:---:|:---:|:---:|
