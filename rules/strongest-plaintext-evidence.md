@@ -69,7 +69,7 @@ Also, φ(8) = 4.
 
 The next recovered words are "SEE YOU". 
 
-*Seek and you will be found. (2016)*
+*Seek and **you** will be found. (2016)*
 
 ## 5. Four appearances of 51
 
