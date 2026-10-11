@@ -30,7 +30,7 @@ The heading may also relate to the page's word count:
 
 **158 total words − 2 heading words = 156 = 13 × 12**
 
-So the same pair **(13,12)** could describe a 13 × 12 arrangement of the body words. This is a hypothesis, not yet a reading rule; the word count needs independent verification.
+So the same pair **(13,12)** could describe a 13 × 12 arrangement of the body words. This is a hypothesis, not yet a reading rule;
 
 ## 2. Two seven-word blocks
 
