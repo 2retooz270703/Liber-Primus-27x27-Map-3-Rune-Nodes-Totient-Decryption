@@ -82,8 +82,6 @@ The next recovered words are "SEE YOU".
 
 The rune count includes the first seven-word block (21), I MAY CRY NOW (10), the second seven-word block (17), and SEE (3).
 
-51 = 3 × 17: SEE YOU SOON has 3 words, and the second seven-word block has 17 runes.
-
 ## 6. The two cubes
 
 | Plaintext | Words | Runes | Index sum |
