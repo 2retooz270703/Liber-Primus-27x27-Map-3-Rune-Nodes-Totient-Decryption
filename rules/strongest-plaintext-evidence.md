@@ -42,10 +42,10 @@ The two blocks contain several further connections:
 | Connection | Calculation | Meaning |
 |:---|:---|:---|
 | Matrix center | 21 = 3 × 7 = NG | First block: 21 runes; NG(14,14) is the matrix's central rune |
-| Final word COLD | C(5) + O(3) + L(20) + D(23) = 51 | **233 is the 51st prime** |
+| Final word COLD | C(5) + O(3) + L(20) + D(23) = 51 | 233 is the 51st prime |
 | Fibonacci | 7 → F₇ = 13 → F₁₃ = 233 | The seven-word count also leads to 233 |
-| DEATH key | 7th prime = 17 = B; φ(17) = 16 = T | The center of J–B–J changes **B → T** |
-| Final word DEATH | 16th prime = 53; 23 + 28 + 2 = 53 | D–EA–TH has index sum **53** |
+| DEATH key | 7th prime = 17 = B; φ(17) = 16 = T | The center of J–B–J changes B → T |
+| Final word DEATH | 16th prime = 53; 23 + 28 + 2 = 53 | D–EA–TH has index sum 53 |
 
 The complete second chain is **7 → 17 → 16 → 53 → DEATH**. Its **17 → 16** step matches the actual center transformation in the DEATH key.
 
