@@ -4,7 +4,7 @@ These connections were found after reconstructing the candidate plaintext. Sums 
 
 ## 1. The starting J
 
-The red heading on page 0 has 13 runes in two words (8 and 5). The number 13 and its totient, φ(13) = 12, lead to three related calculations:
+The red heading on page 0 has 13 runes. The number 13 and its totient, φ(13) = 12, lead to three related calculations:
 
 | Connection | Calculation | Result |
 |:---|:---|:---|
