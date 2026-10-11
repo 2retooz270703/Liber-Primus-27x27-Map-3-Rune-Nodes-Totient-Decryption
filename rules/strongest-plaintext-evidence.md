@@ -59,13 +59,13 @@ Also, φ(8) = 4.
 | AS I GO, THE WEATHER TURNS COLD | 825 |
 | I MAY CRY NOW | 484 |
 | THE IDEA OF THE END IS DEATH | 854 |
-| Total through DEATH | 2163 |
+| Total through DEATH | **2163** |
 
 2163 = 103 × 7 × 3
 
 | Factor | 103 | 7 | 3 |
 |:---|:---:|:---:|:---:|
-| Rune | **Y** | **O** | **U** |
+| Rune | Y | O | U |
 
 The next recovered words are "SEE YOU". 
 
