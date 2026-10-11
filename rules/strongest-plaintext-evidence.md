@@ -60,57 +60,26 @@ Second: 256 − 256 + 8 × 29 = 232
 
 Both have 8 wraps. Their ciphertext-minus-key differences are 1 and 0, accounting for the one-point difference between 233 and 232. Also, φ(8) = 4.
 
-<details>
-<summary>Show the ciphertext and key calculations</summary>
-
-### First block
-
-| Stage | Ciphertext (sum) | Active key (sum) | Wraps | Plaintext sum |
-|:---|:---|:---|---:|---:|
-| AS I GO THE | L–AE–N–TH–P–U–X (84) | AE–I–EA–AE–I–EA–AE (151) | 5 | 78 |
-| WEATHER | NG–P–EO–O–E (67) | X–X–I–X–X (66) | 2 | 59 |
-| TURNS | A–OE–N–B–W (79) | H–NG–C–H–NG (63) | 1 | 45 |
-| COLD | G–J–EA–A (69) | U–H–H–U (18) | 0 | 51 |
-| Total | **299** | **298** | **8** | **233** |
-
-### Second block
-
-| Stage | Ciphertext (sum) | Active key (sum) | Wraps | Plaintext sum |
-|:---|:---|:---|---:|---:|
-| THE | A–J (35) | OE–OE (44) | 1 | 20 |
-| IDEA | J–E–D (52) | U–A–A (49) | 2 | 61 |
-| OF THE | X–OE–A–J (71) | J–OE–OE–OE (77) | 1 | 23 |
-| END | F–L–I (30) | J–J–T (38) | 2 | 50 |
-| IS | EO–D (35) | TH–H (10) | 0 | 25 |
-| DEATH | C–I–E (33) | J–J–T (38) | 2 | 53 |
-| Total | **256** | **256** | **8** | **232** |
-
-The opening THE of this block comes from NOW THE; the later THE belongs to OF THE. Both use A–J with the key OE–OE and represent separate plaintext occurrences.
-
-</details>
-
-The wrap equations check the selected decryptions. They do not independently establish why those ciphertext cells and keys were chosen.
-
 ## 4. The total through DEATH points to YOU
 
-This section uses prime-valued Gematria Primus, rather than rune indices.
+This section uses prime-valued Gematria Primus.
 
 | Plaintext block | Prime-value sum |
 |:---|---:|
 | AS I GO, THE WEATHER TURNS COLD | 825 |
 | I MAY CRY NOW | 484 |
 | THE IDEA OF THE END IS DEATH | 854 |
-| Total through DEATH | **2163** |
+| Total through DEATH | 2163 |
 
 2163 = 103 × 7 × 3
 
 | Factor | 103 | 7 | 3 |
 |:---|:---:|:---:|:---:|
-| Rune | Y | O | U |
+| Rune | **Y** | **O** | **U** |
 
-The next recovered words are SEE YOU. Reading the prime factors from largest to smallest spells YOU; multiplication itself does not determine their order.
+The next recovered words are "SEE YOU". 
 
-*Seek and you will be found.*
+*Seek and you will be found.* (2016)
 
 ## 5. Four appearances of 51
 
