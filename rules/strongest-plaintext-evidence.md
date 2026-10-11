@@ -33,7 +33,7 @@ AE(13,11) → RIGHT 14 → L(13,25)
 | AS I GO, THE WEATHER TURNS COLD | 7 | 21 | 233 |
 | THE IDEA OF THE END IS DEATH | 7 | 17 | 232 |
 
-233 is prime, so φ(233) = 232. The totals are also linked to their words and the matrix:
+233 is prime, so φ(233) = 232.
 
 | Connection | Calculation and meaning |
 |:---|:---|
