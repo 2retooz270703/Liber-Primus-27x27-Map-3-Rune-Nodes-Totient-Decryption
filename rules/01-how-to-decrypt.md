@@ -1,7 +1,5 @@
 # 01 — How to Decrypt
 
-*Three runes → Key → Rotation → Plaintext*
-
 The 729 runes from pages 0–2 fill a 27 × 27 matrix, row by row. Each rune has an index from 0 to 28 (not its Gematria Primus prime value). `TH`, `EA`, and `NG` each count as one rune.
 
 ## 1. Make the key
