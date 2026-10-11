@@ -1,12 +1,10 @@
-# Strongest Plaintext Evidence
+# Strongest Plaintext Evidenc
 
-*Starting point → Plaintext totals → Numerical connections*
-
-These patterns were noticed **after** the candidate plaintext was reconstructed, not used to choose its words. Unless noted otherwise, sums use rune indices **0–28**, not prime-valued Gematria Primus. `TH`, `EA`, and `NG` each count as one rune.
+These patterns were noticed **after** the candidate plaintext was reconstructed, not used to choose its words. Unless noted otherwise, sums use rune indices **0–28**, not prime-valued Gematria Primus.
 
 ## 1. The starting J
 
-The red heading on page 0 has **13 runes**, split into two words of **8 and 5**. Since φ(13) = 12, those numbers suggest the starting coordinates:
+The red heading on page 0 has 13 runes. Since φ(13) = 12, those numbers suggest the starting coordinates:
 
 | Connection | Calculation | Result |
 |:---|:---|:---|
@@ -173,7 +171,3 @@ Combine the second seven-word block with the following three-word phrase:
 **232 + 111 = 343 = 7³** — the cube root **7** matches the word count of the DEATH block.
 
 For SEE YOU SOON, the index sum is **51 + 30 + 30 = 111**. The comparison deliberately stops at **SOON**, before the later continuation THEN.
-
----
-
-All calculations can be reproduced from the proposed plaintext and keys. Their numerical agreement is worth investigating, but it does not yet establish a unique route or prove that the relationships were intended by Cicada.
