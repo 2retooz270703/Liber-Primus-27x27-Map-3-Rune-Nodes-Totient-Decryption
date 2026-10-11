@@ -16,7 +16,7 @@ The three horizontal cells at radius 1 are:
 |:---:|:---:|:---:|
 | AE | J | EA |
 
-**AE and EA are different runes**, with reversed Latin labels. This is not a mirror of identical outer runes. The proposed departure is the left **AE(13,11)**:
+The proposed departure is the left **AE(13,11)**:
 
 **φ(J = 11) + φ(10) = 10 + 4 = 14**
 
