@@ -9,7 +9,7 @@ For example, the COLD key is H–U–H. Apply φ to its three rune values:
 | Key | H = 8 | U = 1 | H = 8 |
 | φ | 4 | 1 | 4 |
 
-The next recorded move uses 4 and 1 as distances. Neither number tells us which way to travel.
+The next recorded move uses 4 and 1 as distances.
 
 Other stages use a center's φ value, such as φ(OE) = 10, or add successive values: φ(J) = 10, φ(φ(J)) = 4, giving 14. There is not yet one rule for choosing which distance to use.
 
