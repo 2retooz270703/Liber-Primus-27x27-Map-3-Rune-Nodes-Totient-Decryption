@@ -1,5 +1,3 @@
-These connections were found after reconstructing the candidate plaintext. Sums use rune indices 0–28 unless stated otherwise.
-
 ## 1. The starting J
 
 The red heading on page 0 has 13 runes. The number 13 and its totient, φ(13) = 12, lead to three related calculations:
