@@ -1,7 +1,5 @@
 # Strongest Plaintext Evidence
 
-*Starting point → Block totals → Numerical connections*
-
 Unless noted otherwise, sums use rune indices (0–28), not Gematria Primus prime values. `TH`, `EA`, and `NG` each count as one rune.
 
 ## 1. The starting J
