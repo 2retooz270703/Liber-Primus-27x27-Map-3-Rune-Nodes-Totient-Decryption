@@ -22,11 +22,9 @@ The proposed departure is the left AE(13,11):
 
 AE(13,11) → RIGHT 14 → L(13,25)
 
-Using the reported word count for pages 0–2 gives another possible connection:
+Using the word count for pages 0–2 gives another possible connection:
 
-**158 total words − 2 heading words = 156 = 13 × 12**
-
-The same pair could therefore form a **13 × 12 map of the 156 body words**, preserving their original word boundaries. This has not yet produced a reading instruction. Both starting-point connections were noticed retrospectively.
+158 total words − 2 heading words = 156 = 13 × 12
 
 ## 2. Two seven-word blocks
 
