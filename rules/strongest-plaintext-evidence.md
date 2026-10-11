@@ -13,7 +13,7 @@ The red heading on page 0 has **13 runes**, and φ(13) = 12.
 
 **AE(13,11) — J(13,12) — EA(13,13)**
 
-AE and EA are distinct runes with reversed Latin labels. From the left AE:
+From the left AE:
 
 **φ(11) + φ(10) = 10 + 4 = 14**  
 **AE(13,11) → RIGHT 14 → L(13,25)**
