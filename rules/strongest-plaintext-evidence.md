@@ -21,8 +21,6 @@ AE and EA are distinct runes with reversed Latin labels. From the left AE:
 
 **158 words − 2 heading words = 156 = 13 × 12**
 
-This may suggest a 13 × 12 word map, but no reading rule is established.
-
 ## 2. Two seven-word blocks
 
 | Plaintext | Runes | Index sum |
