@@ -1,27 +1,23 @@
 # 01 — How to Decrypt
 
-*Three runes → Key → Rotation → Plaintext*
-
-The 729 runes from pages 0–2 form a 27 × 27 matrix, filled row by row. Each rune has an index from 0 to 28, rather than its Gematria Primus prime value. `TH`, `EA`, and `NG` each count as one rune.
-
 ## 1. Make the key
 
 A three-rune structure supplies the key. Usually, the outer runes stay the same while the center changes through Euler's totient function, φ.
 
 φ(n) counts the integers from 1 to n that have no common factor with n except 1. For example, φ(10) = 4, counting 1, 3, 7, and 9.
 
-For **X–OE–X**, only the center changes:
+For X–OE–X, only the center changes:
 
 | | Left | Center | Right |
 |:---|:---:|:---:|:---:|
-| Structure | X = 14 | OE = 22 | X = 14 |
-| Key | X = 14 | φ(22) = 10 = I | X = 14 |
+| Structure | X | OE | X |
+| Key | X | φ(22) = 10 = I | X |
 
-**X–OE–X → X–I–X**
+X–OE–X → X–I–X
 
 In general: **a–b–c → a–φ(b)–c**.
 
-A *mirror* has matching outer runes at equal distances from the center. Non-mirrored structures also occur: `H–NG–C`, for example, is used directly without changing its center.
+A mirror has matching outer runes at equal distances from the center. Non-mirrored structures also occur: H–NG–C, for example, is used directly without changing its center.
 
 ## 2. Choose the rotation
 
