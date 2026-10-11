@@ -54,8 +54,6 @@ Also, φ(8) = 4.
 
 ## 4. The total through DEATH points to YOU
 
-This section uses prime-valued Gematria Primus.
-
 | Plaintext block | Prime-value sum |
 |:---|---:|
 | AS I GO, THE WEATHER TURNS COLD | 825 |
@@ -71,7 +69,7 @@ This section uses prime-valued Gematria Primus.
 
 The next recovered words are "SEE YOU". 
 
-*Seek and you will be found.* (2016)
+*Seek and you will be found. (2016)*
 
 ## 5. Four appearances of 51
 
