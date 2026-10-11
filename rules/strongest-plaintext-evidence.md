@@ -52,7 +52,7 @@ Both have **8 wraps** (φ(8) = 4); the ciphertext-minus-key totals differ by **1
 
 ## 4. Prime values spell YOU
 
-This section uses **prime-valued Gematria Primus**, not rune indices.
+This section uses prime-valued Gematria Primus, not rune indices.
 
 | Plaintext | Prime-value sum |
 |:---|---:|
