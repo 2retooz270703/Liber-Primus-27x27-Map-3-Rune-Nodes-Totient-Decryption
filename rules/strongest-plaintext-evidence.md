@@ -1,5 +1,3 @@
-# Strongest
-
 These patterns were noticed **after** the candidate plaintext was reconstructed, not used to choose its words. Unless noted otherwise, sums use rune indices 0–28, not prime-valued Gematria Primus.
 
 ## 1. The starting J
