@@ -88,7 +88,7 @@ The rune count includes the first seven-word block (21), I MAY CRY NOW (10), the
 |:---|---:|---:|---:|
 | THE IDEA OF THE END IS DEATH | 7 | 17 | 232 |
 | SEE YOU SOON | 3 | 10 | 111 |
-| Combined | **10** | **27** | **343** |
+| Combined | 10 | 27 | 343 |
 
 17 + 10 = 27 = 3³ — 3 words in SEE YOU SOON.
 
