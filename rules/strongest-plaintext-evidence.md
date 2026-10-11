@@ -1,8 +1,6 @@
 # Strongest Plaintext Evidence
 
-*Starting coordinates → Numerical patterns → Ciphertext checks*
-
-These connections were found after reconstructing the candidate plaintext. Sums use rune indices 0–28 unless stated otherwise. Each transliteration, including TH, EA and NG, counts as one rune.
+These connections were found after reconstructing the candidate plaintext. Sums use rune indices 0–28 unless stated otherwise.
 
 ## 1. The starting J
 
