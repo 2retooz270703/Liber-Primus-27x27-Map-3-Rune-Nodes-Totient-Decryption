@@ -63,7 +63,7 @@ This section uses **prime-valued Gematria Primus**, not rune indices.
 
 **2163 = 103 × 7 × 3 = Y × O × U**
 
-The factors spell YOU in descending order; factorization alone does not fix that order.
+Seek and **you** will be found.
 
 ## 5. Four appearances of 51
 
