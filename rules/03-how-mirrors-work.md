@@ -23,9 +23,7 @@ One cell can belong to several structures.
 
 ## 3. Check the Möbius state
 
-Rule 01 uses the sum of three μ values to rotate a key. Here we keep all three values, since their positions can also matter.
-
-**NOW THE** and **IDEA** end at different positions in the same **J–D–J** mirror:
+NOW THE and IDEA end at different positions in the same J–D–J mirror:
 
 | | NOW THE | IDEA |
 |:---|:---:|:---:|
@@ -43,14 +41,3 @@ The same pattern appears in four other stages:
 | IS | (0, +1, 0) | D(21,10) | CENTER of E–D–E |
 | WEATHER | (+1, 0, +1) | E(14,18) | OUTER of E–NG–E |
 | END | (+1, 0, +1) | I(21,23) | OUTER of I–R–I |
-
-These observations suggest two possible constraints:
-
-**(0, +1, 0) → CENTER-compatible**  
-**(+1, 0, +1) → OUTER-compatible**
-
-Different signatures can produce the same phase: (0, +1, 0) and (+1, −1, +1) both give phase 1. Their geometric roles need not be the same.
-
-Other states, including (0, 0, 0) and (+1, +1, +1), do not yet have an established CENTER / OUTER meaning.
-
-These are repeated correspondences, not a rule that uniquely selects the next mirror. Distance, direction, and geometry must still agree.
