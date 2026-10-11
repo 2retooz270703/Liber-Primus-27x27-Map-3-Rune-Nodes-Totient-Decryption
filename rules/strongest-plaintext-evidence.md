@@ -78,7 +78,7 @@ Plaintext sum = Ciphertext sum − Key sum + 29 × wraps
 | DEATH | 33 | 38 | 2 | 53 |
 | Total | **256** | **256** | 8 | 232 |
 
-**256 − 256 + 8 × 29 = 232**
+256 − 256 + 8 × 29 = 232
 
 Both blocks have **8 wraps**, but their ciphertext-minus-key totals are **1** and **0**. This accounts for the one-point difference between **233** and **232**. Another numerical connection is φ(8) = 4.
 
