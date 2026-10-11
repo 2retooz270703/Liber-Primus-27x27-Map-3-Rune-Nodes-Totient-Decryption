@@ -62,7 +62,7 @@ A wrap means the subtraction is negative, so 29 is added once. For a whole segme
 | WEATHER | 67 | 66 | 2 | 59 |
 | TURNS | 79 | 63 | 1 | 45 |
 | COLD | 69 | 18 | 0 | 51 |
-| **Total** | **299** | **298** | **8** | **233** |
+| Total | **299** | **298** | 8 | 233 |
 
 **299 − 298 + 8 × 29 = 233**
 
