@@ -54,7 +54,7 @@ First: 299 − 298 + 8 × 29 = 233
 
 Second: 256 − 256 + 8 × 29 = 232
 
-Both have 8 wraps. Their ciphertext-minus-key differences are 1 and 0, accounting for the one-point difference between 233 and 232. Also, φ(8) = 4.
+Also, φ(8) = 4.
 
 ## 4. The total through DEATH points to YOU
 
