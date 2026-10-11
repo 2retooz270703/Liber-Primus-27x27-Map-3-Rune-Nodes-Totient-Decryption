@@ -18,9 +18,9 @@ The three horizontal cells at radius 1 are:
 
 The proposed departure is the left AE(13,11):
 
-**φ(J = 11) + φ(10) = 10 + 4 = 14**
+φ(J = 11) + φ(10) = 10 + 4 = 14
 
-**AE(13,11) → RIGHT 14 → L(13,25)**
+AE(13,11) → RIGHT 14 → L(13,25)
 
 Using the reported word count for pages 0–2 gives another possible connection:
 
