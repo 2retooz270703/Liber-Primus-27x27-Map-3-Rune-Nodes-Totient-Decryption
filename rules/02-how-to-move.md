@@ -1,7 +1,5 @@
 # 02 — How to Move
 
-*Distance → Direction → Next structure*
-
 Numbers from earlier keys provide possible distances. The current coordinates and the key's phase provide possible directions.
 
 ## 1. How far?
