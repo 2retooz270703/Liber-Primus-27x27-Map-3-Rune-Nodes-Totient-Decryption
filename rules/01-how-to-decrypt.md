@@ -23,7 +23,7 @@ A mirror has matching outer runes at equal distances from the center. Non-mirror
 
 The key has three possible starting positions. Its **phase** (0, 1, or 2) determines which order to use.
 
-First apply φ to each rune of the key, then apply the Möbius function μ to those results. μ depends on prime factors:
+First apply φ to each rune of the key, then apply the Möbius function μ to those results.
 
 | μ(n) | Meaning | Example |
 |:---:|:---|:---|
@@ -31,9 +31,7 @@ First apply φ to each rune of the key, then apply the Möbius function μ to th
 | +1 | An even number of distinct prime factors | μ(6) = +1 (6 = 2 × 3) |
 | −1 | An odd number of distinct prime factors | μ(2) = −1 |
 
-Also, μ(1) = +1.
-
-For **X–I–X**, the values are:
+For X–I–X, the values are:
 
 | | Left | Center | Right |
 |:---|:---:|:---:|:---:|
@@ -43,7 +41,7 @@ For **X–I–X**, the values are:
 
 Add the three μ values. The remainder after division by 3 gives the phase:
 
-**p = (1 + 0 + 1) mod 3 = 2**
+P = (1 + 0 + 1) mod 3 = 2
 
 Rotate the key two places to the left:
 
@@ -53,9 +51,9 @@ Rotate the key two places to the left:
 
 For any key with indices k₁, k₂, k₃, the same rule is:
 
-**p = [μ(φ(k₁)) + μ(φ(k₂)) + μ(φ(k₃))] mod 3**
+**P = [μ(φ(k₁)) + μ(φ(k₂)) + μ(φ(k₃))] mod 3**
 
-Keep the full μ signature **(+1, 0, +1)** as well; later rules use it separately from the phase.
+Keep the full μ signature (+1, 0, +1) as well; later rules use it separately from the phase.
 
 ## 3. Reveal the plaintext
 
