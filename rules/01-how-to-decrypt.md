@@ -32,8 +32,6 @@ Apply φ to all three key values, then apply the Möbius function μ to each res
 | −1 | Odd number of distinct prime factors | μ(2) = −1 |
 | 0 | A prime factor repeats | μ(4) = 0 |
 
-Also, μ(1) = +1.
-
 Add the three μ values to find the phase. Here, k₁, k₂ and k₃ are the three key indices.
 
 **p = [μ(φ(k₁)) + μ(φ(k₂)) + μ(φ(k₃))] mod 3**
