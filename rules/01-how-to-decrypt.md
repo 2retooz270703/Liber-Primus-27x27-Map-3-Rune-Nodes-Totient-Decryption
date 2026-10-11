@@ -57,13 +57,7 @@ Keep the full μ signature (+1, 0, +1) as well; later rules use it separately fr
 
 ## 3. Reveal the plaintext
 
-For **WEATHER**, the ciphertext is NG–P–EO–O–E (row 14, columns 14–18). Repeat the rotated key X–X–I to match its five runes: X–X–I–X–X.
-
-Subtract each key index from its ciphertext index:
-
-**Plaintext index = (ciphertext index − key index) mod 29**
-
-`mod 29` keeps the result between 0 and 28. If the subtraction is negative, add 29. For example, 13 − 14 = −1 → 28 = EA.
+For WEATHER, the ciphertext is NG–P–EO–O–E (row 14, columns 14–18). Repeat the rotated key X–X–I to match its five runes: X–X–I–X–X.
 
 | Ciphertext | Key | Subtraction (mod 29) | Plaintext |
 |:---:|:---:|:---:|:---:|
@@ -72,7 +66,3 @@ Subtract each key index from its ciphertext index:
 | EO = 12 | I = 10 | 12 − 10 ≡ 2 | TH |
 | O = 3 | X = 14 | 3 − 14 ≡ 18 | E |
 | E = 18 | X = 14 | 18 − 14 ≡ 4 | R |
-
-**W–EA–TH–E–R → WEATHER**
-
-This decrypts an already selected ciphertext with an already selected key. Finding where to read next is covered by the movement and mirror rules.
