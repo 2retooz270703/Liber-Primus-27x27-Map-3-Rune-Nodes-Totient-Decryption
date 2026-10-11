@@ -68,6 +68,4 @@ For WEATHER, read five ciphertext runes from row 14, columns 14–18: NG–P–E
 
 **W–EA–TH–E–R**
 
-### WEATHER
-
 These steps decrypt a *selected* ciphertext with a *selected* key. Choosing where to read next is covered by the movement and mirror rules.
