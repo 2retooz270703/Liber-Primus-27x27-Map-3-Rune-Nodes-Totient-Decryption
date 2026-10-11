@@ -1,5 +1,3 @@
-# Strongest Plaintext Evidence
-
 These connections were found after reconstructing the candidate plaintext. Sums use rune indices 0–28 unless stated otherwise.
 
 ## 1. The starting J
