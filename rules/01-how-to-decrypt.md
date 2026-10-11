@@ -1,7 +1,5 @@
 # 01 — How to Decrypt
 
-*Three runes → Key → Rotation → Plaintext*
-
 The 729 runes from pages 0–2 fill a 27 × 27 matrix, row by row. Rune indices run from 0 to 28, not the Gematria Primus prime values.
 
 `TH`, `EA`, and `NG` each count as one rune.
