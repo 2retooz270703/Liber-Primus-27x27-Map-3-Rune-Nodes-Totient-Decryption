@@ -109,6 +109,4 @@ The rune count includes the first seven-word block (21), I MAY CRY NOW (10), the
 
 **3, 7, 13** — all three differences are prime numbers.
 
-The prime-value difference, **13**, also equals the rune count of **SEE YOU SOON, THEN**.
-
-The values **7** and **13** also connect to the Fibonacci relation in Section 2: **F₇ = 13** and **F₁₃ = 233** (with F₁ = F₂ = 1). This is a numerical correspondence, not proof of an intentional encoding.
+The values **7** and **13** also connect to the Fibonacci relation in Section 2: **F₇ = 13** and **F₁₃ = 233** (with F₁ = F₂ = 1).
