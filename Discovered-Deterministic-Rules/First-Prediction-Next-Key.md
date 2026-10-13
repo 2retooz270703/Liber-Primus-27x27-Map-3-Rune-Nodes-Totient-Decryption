@@ -1,12 +1,10 @@
-# First Prediction: Know the Next Key in Advance
+# Know the Next Key in Advance
 
-## The idea
+Every cell in the 27×27 matrix has an absolute position from 1 to 729. I decided to investigate whether the positions of the *current ciphertext cells* could predict the Möbius phase of the *next decryption key*.
 
-Every cell in the 27×27 matrix has an **absolute position from 1 to 729**. I decided to investigate whether the positions of the **current ciphertext cells** could predict the Möbius phase of the **next decryption key**.
+I found a surprisingly simple pattern. It matches 7 consecutive transitions from the very beginning. The predicted phases add up to 7, and the formula changes. It then matches 5 more transitions, whose phases also add up to 7. The formula changes again and matches the next 4 transitions.
 
-I found a surprisingly simple pattern. It matches **7 consecutive transitions from the very beginning**. The predicted phases add up to **7**, and the formula changes. It then matches **5 more transitions**, whose phases also add up to **7**. The formula changes again and matches the next **4 transitions**.
-
-This suggests a possible **four-state machine**: the calculation changes each time the accumulated phase sum crosses another multiple of **7**. Our known plaintext appears to begin in the **Direct/+1** state, rather than at the beginning of the proposed cycle.
+This suggests a possible four-state machine: the calculation changes each time the accumulated phase sum crosses another multiple of 7. Our known plaintext appears to begin in the *Direct/+1* state, rather than at the beginning of the proposed cycle.
 
 ### Definitions
 
