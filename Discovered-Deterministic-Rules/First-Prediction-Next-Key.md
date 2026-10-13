@@ -1,8 +1,5 @@
 # First Prediction: Know the Next Key in Advance
 
-> **Working hypothesis — 16/16 phase matches across three observed states of a possible four-state cycle.**  
-> These results reproduce the phases of keys on the *proposed* 27×27 plaintext route. The four-state cycle and the next-key prediction have not yet been independently confirmed.
-
 ## The idea
 
 Every cell in the 27×27 matrix has an **absolute position from 1 to 729**. I decided to investigate whether the positions of the **current ciphertext cells** could predict the Möbius phase of the **next decryption key**.
@@ -10,8 +7,6 @@ Every cell in the 27×27 matrix has an **absolute position from 1 to 729**. I de
 I found a surprisingly simple pattern. It matches **7 consecutive transitions from the very beginning**. The predicted phases add up to **7**, and the formula changes. It then matches **5 more transitions**, whose phases also add up to **7**. The formula changes again and matches the next **4 transitions**.
 
 This suggests a possible **four-state machine**: the calculation changes each time the accumulated phase sum crosses another multiple of **7**. Our known plaintext appears to begin in the **Direct/+1** state, rather than at the beginning of the proposed cycle.
-
-**Important:** `OF` and `THE` are counted as **separate operations**, because they use different decryption keys and phases. The three tables below contain the 16 known transitions.
 
 ### Definitions
 
@@ -114,35 +109,6 @@ If the four-state theory is correct:
 - **`S = 14–20`** → `Reflected/+1` (observed)
 - **`S = 21–27`** → **`Direct/+0` (prediction)**
 - **`S = 28–34`** → `Direct/+1` again (**cycle repeats; untested**)
-
-**Note:** Seeing three states does **not** prove that the fourth follows, or that the algorithm must form a cycle. This is a new, testable extension of the original three-state fit.
-
-### One algorithm for all four states
-
-Let `S` be the sum of the phases **predicted before the current transition**. Set:
-
-$$
-q=\left\lfloor\frac{S}{7}\right\rfloor\bmod 4
-$$
-
-Choose `n` for `q = 0` or `3`, and `730 − n` for `q = 1` or `2`. Add `1` when `q` is even; otherwise, add `0`. Then take the result modulo 3.
-
-```python
-S = 0
-
-for C in ciphertext_stages:
-    q = (S // 7) % 4
-    reflected = q in (1, 2)
-    offset = 1 if q in (0, 2) else 0
-
-    positions = [730 - n if reflected else n for n in C]
-    next_phase = (offset + sum(mobius(n) for n in positions)) % 3
-
-    print(next_phase)
-    S += next_phase
-```
-
-This uses **only the current ciphertext positions and phases previously predicted by the same model**. No known next-key phases are fed back into `S`. It reproduces **16/16** matches for the already selected route across the first three states. The fourth state and the return to the first state remain **untested**.
 
 ## First prediction beyond the known route: after THEN
 
