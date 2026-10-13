@@ -15,11 +15,6 @@
 </p>
 
 ---
-
-## Research & Findings
-
-This project investigates potentially genuine plaintext hidden within the Liber Primus 27×27 matrix, exploring the mathematical and geometric relationships that may reveal its intended decryption path.
-
 ### Key Discoveries
 
 1. **[Discovered Deterministic Rules](./Discovered-Deterministic-Rules/)** - The most significant findings of this research, including potential deterministic methods for predicting the correct decryption path.
