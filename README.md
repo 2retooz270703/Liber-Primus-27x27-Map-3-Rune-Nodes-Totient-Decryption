@@ -6,8 +6,6 @@
 </p>
 <!-- AUTO-PLAINTEXT:END -->
 
-Click to see how I found the plaintext.
-
 ---
 
 <p align="center">
@@ -15,8 +13,6 @@ Click to see how I found the plaintext.
     <img src="./assets/example.gif" alt="Liber Primus Interactive Route Map" width="900">
   </a>
 </p>
-
-Click to see my 27×27 map.
 
 ---
 
