@@ -20,8 +20,17 @@ Click to see my 27×27 map.
 
 ---
 
-### About
+## Research & Findings
 
-This project presents a potentially groundbreaking discovery in the search for the true solution to Liber Primus. I believe the plaintext found within the 27×27 matrix may be genuine. You can explore how each part of the plaintext was found in the [plaintext-i-found](./plaintext-i-found/) folder, follow the entire process on my [interactive map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/), learn about the methods I used in the [rules](./rules/) folder, and examine the strongest supporting evidence in [strongest-plaintext-evidence.md](./rules/strongest-plaintext-evidence.md).
+This project investigates potentially genuine plaintext hidden within the Liber Primus 27×27 matrix, exploring the mathematical and geometric relationships that may reveal its intended decryption path.
 
-#### [Discovered Deterministic Rules](./Discovered-Deterministic-Rules/)
+### Key Discoveries
+
+1. **[Discovered Deterministic Rules](./Discovered-Deterministic-Rules/)** - The most significant findings of this research, including potential deterministic methods for predicting the correct decryption path.
+
+### Evidence & Methodology
+
+1. **[Strongest Plaintext Evidence](./rules/strongest-plaintext-evidence.md)** — The strongest evidence supporting the authenticity of the recovered plaintext.
+2. **[Plaintext Discoveries](./plaintext-i-found/)** — A step-by-step record of how each plaintext segment was recovered.
+3. **[Decryption Rules](./rules/)** — The mathematical methods, formulas, and geometric relationships used throughout the investigation.
+4. **[Interactive 27×27 Map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)** — Explore the matrix, key nodes, and decryption paths visually.
