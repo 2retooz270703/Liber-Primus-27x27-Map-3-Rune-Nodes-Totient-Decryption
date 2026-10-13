@@ -61,7 +61,7 @@ Result: 5/5 matches. These predicted phases *0 + 2 + 2 + 1 + 2* also sum to 7, b
 
 ## 3. Reflected/+1 — DEATH → THEN
 
-At cumulative `S = 14`, the positions **remain reflected**, but **+1 returns**:
+At cumulative `S = 14`, the positions remain reflected, but +1 returns:
 
 $$
 p_{\text{next}} = \left(1+\sum_{n\in C}\mu(730-n)\right)\bmod 3
@@ -69,12 +69,12 @@ $$
 
 | Current ciphertext → Next key | Möbius sum | Predicted phase | Known key phase | Cumulative Σ phases |
 |:--|--:|--:|--:|--:|
-| `DEATH` → `SEE` | −1 | **0** | 0 ✓ | **14** |
-| `SEE` → `YOU` | 0 | **1** | 1 ✓ | **15** |
-| `YOU` → `SOON` | +1 | **2** | 2 ✓ | **17** |
-| `SOON` → `THEN` | 0 | **1** | 1 ✓ | **18** |
+| `DEATH` → `SEE` | −1 | 0 | 0 ✓ | 14 |
+| `SEE` → `YOU` | 0 | 1 | 1 ✓ | 15 |
+| `YOU` → `SOON` | +1 | 2 | 2 ✓ | 17 |
+| `SOON` → `THEN` | 0 | 1 | 1 ✓ | 18 |
 
-**Result: 4/4 matches.** The four phases sum to **4**, leaving the overall cumulative total at **18**, below the next proposed threshold of **21**.
+Result: 4/4 matches. The four phases sum to 4, leaving the overall cumulative total at 18, below the next proposed threshold of 21.
 
 ---
 
