@@ -6,6 +6,8 @@
 </p>
 <!-- AUTO-PLAINTEXT:END -->
 
+Plaintext.
+
 ---
 
 <p align="center">
@@ -14,7 +16,11 @@
   </a>
 </p>
 
+Map.
+
 ---
+
+
 ### Key Discoveries
 
 1. **[Discovered Deterministic Rules](./Discovered-Deterministic-Rules/)** - The most significant discoveries I’ve made in my research, including potential deterministic methods I’ve identified for predicting the correct decryption path.
