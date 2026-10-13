@@ -93,3 +93,22 @@ The rune count includes the first seven-word block (21), I MAY CRY NOW (10), the
 17 + 10 = 27 = 3³ — 3 words in SEE YOU SOON.
 
 232 + 111 = 343 = 7³ — 7 words in the DEATH block.
+
+## 7. Two four-word blocks
+
+| Plaintext | Words | Runes | Index sum | Prime-value sum |
+|:---|:---:|:---:|---:|---:|
+| I MAY CRY NOW | 4 | 10 | 133 | 484 |
+| SEE YOU SOON, THEN | 4 | 13 | 140 | 497 |
+
+| Difference | Calculation | Result |
+|:---|:---|---:|
+| Runes | 13 − 10 | **3** |
+| Index sum | 140 − 133 | **7** |
+| Prime-value sum | 497 − 484 | **13** |
+
+**3, 7, 13** — all three differences are prime numbers.
+
+The prime-value difference, **13**, also equals the rune count of **SEE YOU SOON, THEN**.
+
+The values **7** and **13** also connect to the Fibonacci relation in Section 2: **F₇ = 13** and **F₁₃ = 233** (with F₁ = F₂ = 1). This is a numerical correspondence, not proof of an intentional encoding.
