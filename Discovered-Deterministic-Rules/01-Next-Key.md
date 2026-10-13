@@ -101,7 +101,7 @@ The THEN ciphertext occupies 673, 674, 675. The current accumulated total is S =
 ```text
 Current cell positions:    673, 674, 675
 Reflected cell positions:   57,  56,  55
-Möbius values:             +1,   0,  +1
-Möbius sum:                 2
-Predicted next phase:      (1 + 2) mod 3 = 0
+Möbius values:              +1,   0,  +1
+Möbius sum:                            2
+Predicted next phase:  (1 + 2) mod 3 = 0
 ```
