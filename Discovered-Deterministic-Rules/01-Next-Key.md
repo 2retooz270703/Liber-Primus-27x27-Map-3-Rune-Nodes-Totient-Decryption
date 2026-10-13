@@ -41,7 +41,7 @@ Result: 7/7 matches. The predicted phases 2 + 0 + 1 + 0 + 1 + 2 + 1 sum to 7. In
 
 ## 2. Reflected/+0 — IDEA → DEATH
 
-At cumulative `S = 7`, the model switches to *reflected cell positions* (`730 − n`) and does not add 1:
+At cumulative S = 7, the model switches to *reflected cell positions* (`730 − n`) and does not add 1:
 
 $$
 p_{\text{next}} = \left(\sum_{n\in C}\mu(730-n)\right)\bmod 3
@@ -61,7 +61,7 @@ Result: 5/5 matches. These predicted phases 0 + 2 + 2 + 1 + 2 also sum to 7, bri
 
 ## 3. Reflected/+1 — DEATH → THEN
 
-At cumulative `S = 14`, the positions remain reflected, but +1 returns:
+At cumulative S = 14, the positions remain reflected, but +1 returns:
 
 $$
 p_{\text{next}} = \left(1+\sum_{n\in C}\mu(730-n)\right)\bmod 3
@@ -84,7 +84,7 @@ The proposed full cycle is:
 
 *Direct/+0 → Direct/+1 → Reflected/+0 → Reflected/+1 → Direct/+0 → ...*
 
-Our known route appears to start at *Direct/+1*. So the sequence observed so far is:
+Our known route appears to start at Direct/+1. So the sequence observed so far is:
 
 *Direct/+1 → Reflected/+0 → Reflected/+1 → [Direct/+0 predicted next]*
 
@@ -96,7 +96,7 @@ $$
 
 ## After THEN
 
-The `THEN` ciphertext occupies 673, 674, 675. The current accumulated total is `S = 18`, so the model stays in `Reflected/+1`:
+The THEN ciphertext occupies 673, 674, 675. The current accumulated total is S = 18, so the model stays in Reflected/+1:
 
 ```text
 Current cell positions:    673, 674, 675
