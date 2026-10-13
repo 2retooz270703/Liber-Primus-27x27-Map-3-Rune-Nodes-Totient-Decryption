@@ -19,7 +19,7 @@ This suggests a possible four-state machine: the calculation changes each time t
 
 ## 1. Direct/+1 — AS I GO THE → IDEA
 
-Use the **original cell positions** and **add 1**:
+Use the original cell positions and add 1:
 
 $$
 p_{\text{next}} = \left(1+\sum_{n\in C}\mu(n)\right)\bmod 3
@@ -27,21 +27,21 @@ $$
 
 | Current ciphertext → Next key | Möbius sum | Predicted phase | Known key phase | Cumulative Σ phases |
 |:--|--:|--:|--:|--:|
-| `AS I GO THE` → `WEATHER` | −2 | **2** | 2 ✓ | **2** |
-| `WEATHER` → `TURNS` | −1 | **0** | 0 ✓ | **2** |
-| `TURNS` → `COLD` | 0 | **1** | 1 ✓ | **3** |
-| `COLD` → `I MAY` | −1 | **0** | 0 ✓ | **3** |
-| `I MAY` → `CRY` | 0 | **1** | 1 ✓ | **4** |
-| `CRY` → `NOW THE` | +1 | **2** | 2 ✓ | **6** |
-| `NOW THE` → `IDEA` | 0 | **1** | 1 ✓ | **7** |
+| `AS I GO THE` → `WEATHER` | −2 | 2 | 2 ✓ | 2 |
+| `WEATHER` → `TURNS` | −1 | 0 | 0 ✓ | 2 |
+| `TURNS` → `COLD` | 0 | 1 | 1 ✓ | 3 |
+| `COLD` → `I MAY` | −1 | 0 | 0 ✓ | 3 |
+| `I MAY` → `CRY` | 0 | 1 | 1 ✓ | 4 |
+| `CRY` → `NOW THE` | +1 | 2 | 2 ✓ | 6 |
+| `NOW THE` → `IDEA` | 0 | 1 | 1 ✓ | 7 |
 
-**Result: 7/7 matches.** The predicted phases `2 + 0 + 1 + 0 + 1 + 2 + 1` sum to **7**. In the proposed model, this triggers the first state change.
+Result: 7/7 matches. The predicted phases *2 + 0 + 1 + 0 + 1 + 2 + 1* sum to 7. In the proposed model, this triggers the first state change.
 
 ---
 
 ## 2. Reflected/+0 — IDEA → DEATH
 
-At cumulative `S = 7`, the model switches to **reflected cell positions** (`730 − n`) and **does not add 1**:
+At cumulative `S = 7`, the model switches to *reflected cell positions* (`730 − n`) and does not add 1:
 
 $$
 p_{\text{next}} = \left(\sum_{n\in C}\mu(730-n)\right)\bmod 3
