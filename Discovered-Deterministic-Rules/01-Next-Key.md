@@ -8,11 +8,11 @@ This suggests a possible four-state machine: the calculation changes each time t
 
 ### Definitions
 
-- **`C`** — the set of cell positions belonging to the *current* ciphertext.
+- **`C`** — the set of cell positions belonging to the current ciphertext.
 - **`n`** — a cell's absolute position (`1–729`), calculated as `n = 27 × (row − 1) + column`.
 - **`μ(n)`** — the Möbius function; its result is `−1`, `0`, or `+1`.
 - **`p_next`** — predicted phase of the next 3-rune decryption key (`0`, `1`, or `2`).
-- **`S`** — cumulative sum of the **previously predicted** next-key phases, initially `S = 0`.
+- **`S`** — cumulative sum of the previously predicted next-key phases, initially `S = 0`.
 - **`730 − n`** — the cell position reflected through the center of the 27×27 matrix (`1 ↔ 729`, `2 ↔ 728`, etc.), since `27² + 1 = 730`.
 
 ---
