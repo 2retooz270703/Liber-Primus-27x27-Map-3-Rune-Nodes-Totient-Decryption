@@ -25,4 +25,4 @@ This project presents a potentially groundbreaking discovery in the search for t
 
 I've put a lot of effort into searching for deterministic rules that could predict the next steps in the decryption process. I've documented my most promising findings in the folder linked below.
 
-## [Discovered Deterministic Rules](./Discovered-Deterministic-Rules/)
+#### [Discovered Deterministic Rules](./Discovered-Deterministic-Rules/)
