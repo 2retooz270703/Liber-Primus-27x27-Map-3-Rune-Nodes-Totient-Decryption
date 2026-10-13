@@ -127,16 +127,3 @@ Predicted next phase:      (1 + 2) mod 3 = 0
 Because the predicted phase is **0**, the cumulative sum **remains at 18** after that prediction; the machine does **not** immediately switch into `Direct/+0`. It would switch only once later predicted phases bring `S` to **21 or higher**.
 
 Every fixed 3-rune key has **only one Möbius phase**, so knowing the next phase in advance could help eliminate incompatible candidate mirrors. **However, multiple 3-rune nodes can have the same phase.** The phase does not uniquely identify the next key; the geometry and plaintext must still support the choice.
-
-## Why this is interesting — and what remains unproven
-
-- The same simple ingredients recur: absolute cell positions, the Möbius function, modulo 3, and the natural central reflection **`730 − n`**.
-- The first **7** matches reach a cumulative phase total of **7**; the next **5** matches add another **7**. The change points therefore follow **phase sums**, not a fixed word count.
-- The next observed block leaves the total at **18**; the four-state proposal makes an explicit prediction for what happens at **21**, and another at **28**.
-- All **16 known transitions** are reproduced by the proposed rule, but these are **in-sample matches**, not 16 independently discovered predictions. The formulas, threshold 7, and state order were inferred from the known sequence.
-- The model assumes the **primary `SOON` ciphertext** (positions `664–667`). The alternative `SOON` ciphertext (positions `726–729`) breaks the phase match to `THEN`.
-- The **true continuation after `THEN` is not independently established**. Matching an English word or finding a nearby mirror with phase 0 is not enough on its own to validate the prediction.
-
-**Next test:** keep the four-state rules fixed, independently establish the next ciphertext and key after `THEN`, and check the predicted **phase 0**. If the route continues, the eventual `S ≥ 21` transition can test whether the machine really enters the unobserved **`Direct/+0`** state.
-
-**Bottom line:** this may be a predictive mechanism connecting the 27×27 matrix, Möbius phases, and a seven-phase counter. For now, it is a **precise, falsifiable hypothesis**, not a proven component of Cicada 3301's cipher.
