@@ -49,13 +49,13 @@ $$
 
 | Current ciphertext → Next key | Möbius sum | Predicted phase | Known key phase | Cumulative Σ phases |
 |:--|--:|--:|--:|--:|
-| `IDEA` → `OF` | 0 | **0** | 0 ✓ | **7** |
-| `OF` → `THE` | −1 | **2** | 2 ✓ | **9** |
-| `THE` → `END` | −1 | **2** | 2 ✓ | **11** |
-| `END` → `IS` | +1 | **1** | 1 ✓ | **12** |
-| `IS` → `DEATH` | −1 | **2** | 2 ✓ | **14** |
+| `IDEA` → `OF` | 0 | 0 | 0 ✓ | 7 |
+| `OF` → `THE` | −1 | 2 | 2 ✓ | 9 |
+| `THE` → `END` | −1 | 2 | 2 ✓ | 11 |
+| `END` → `IS` | +1 | 1 | 1 ✓ | 12 |
+| `IS` → `DEATH` | −1 | 2 | 2 ✓ | 14 |
 
-**Result: 5/5 matches.** These predicted phases `0 + 2 + 2 + 1 + 2` also sum to **7**, bringing the cumulative sum to **14** and triggering another proposed state change.
+Result: 5/5 matches. These predicted phases *0 + 2 + 2 + 1 + 2* also sum to 7, bringing the cumulative sum to 14 and triggering another proposed state change.
 
 ---
 
