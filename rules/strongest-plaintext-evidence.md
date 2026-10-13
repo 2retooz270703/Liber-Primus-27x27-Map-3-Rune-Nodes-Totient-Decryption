@@ -107,6 +107,4 @@ The rune count includes the first seven-word block (21), I MAY CRY NOW (10), the
 | Index sum | 140 − 133 | 7 |
 | Prime-value sum | 497 − 484 | 13 |
 
-3, 7, 13 — all three differences are prime numbers.
-
 The values 7 and 13 also connect to the Fibonacci relation in Section 2: F₇ = 13 and F₁₃ = 233 (with F₁ = F₂ = 1).
