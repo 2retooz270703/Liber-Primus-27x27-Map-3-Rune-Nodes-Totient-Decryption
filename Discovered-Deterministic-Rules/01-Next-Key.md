@@ -80,37 +80,27 @@ Result: 4/4 matches. The four phases sum to 4, leaving the overall cumulative to
 
 ## Hypothesis: a closed cycle of four states
 
-The rule combines **two orientations** (`Direct` or `Reflected`) and **two offsets** (`+0` or `+1`), giving exactly **four possible states**.
+The rule combines two orientations (`Direct` or `Reflected`) and two offsets (`+0` or `+1`), giving exactly four possible states.
 
 The proposed full cycle is:
 
-**`Direct/+0` → `Direct/+1` → `Reflected/+0` → `Reflected/+1` → `Direct/+0` → ...**
+*Direct/+0 → Direct/+1 → Reflected/+0 → Reflected/+1 → Direct/+0 → ...*
 
-Our known route appears to start at **`Direct/+1`**. So the sequence observed so far is:
+Our known route appears to start at *Direct/+1*. So the sequence observed so far is:
 
-**`Direct/+1` → `Reflected/+0` → `Reflected/+1` → [`Direct/+0` predicted next]**
+*Direct/+1 → Reflected/+0 → Reflected/+1 → [Direct/+0 predicted next]*
 
-Each time the accumulated phase sum reaches or crosses the next multiple of **7**, the machine advances one state. Conceptually, its local phase counter resets for the next seven-phase budget; the overall total `S` is kept so that the state can be calculated without manually resetting anything.
+Each time the accumulated phase sum reaches or crosses the next multiple of 7, the machine advances one state.
 
-The **fourth, as-yet-unobserved state** would use the original cell positions again, **without +1**:
-
-### Direct/+0 (predicted fourth state)
+## Direct/+0 (predicted fourth state)
 
 $$
 \boxed{p_{\text{next}}=\left(\sum_{n\in C}\mu(n)\right)\bmod 3}
 $$
 
-If the four-state theory is correct:
+## After THEN
 
-- **`S = 0–6`** → `Direct/+1` (observed)
-- **`S = 7–13`** → `Reflected/+0` (observed)
-- **`S = 14–20`** → `Reflected/+1` (observed)
-- **`S = 21–27`** → **`Direct/+0` (prediction)**
-- **`S = 28–34`** → `Direct/+1` again (**cycle repeats; untested**)
-
-## First prediction beyond the known route: after THEN
-
-The `THEN` ciphertext occupies **673, 674, 675**. The current accumulated total is **`S = 18`**, so the model stays in **`Reflected/+1`**:
+The `THEN` ciphertext occupies 673, 674, 675. The current accumulated total is `S = 18`, so the model stays in `Reflected/+1`:
 
 ```text
 Current cell positions:    673, 674, 675
@@ -119,9 +109,3 @@ Möbius values:             +1,   0,  +1
 Möbius sum:                 2
 Predicted next phase:      (1 + 2) mod 3 = 0
 ```
-
-### **Prediction: the next decryption key after THEN should have phase 0.**
-
-Because the predicted phase is **0**, the cumulative sum **remains at 18** after that prediction; the machine does **not** immediately switch into `Direct/+0`. It would switch only once later predicted phases bring `S` to **21 or higher**.
-
-Every fixed 3-rune key has **only one Möbius phase**, so knowing the next phase in advance could help eliminate incompatible candidate mirrors. **However, multiple 3-rune nodes can have the same phase.** The phase does not uniquely identify the next key; the geometry and plaintext must still support the choice.
