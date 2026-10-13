@@ -35,7 +35,7 @@ $$
 | `CRY` → `NOW THE` | +1 | 2 | 2 ✓ | 6 |
 | `NOW THE` → `IDEA` | 0 | 1 | 1 ✓ | 7 |
 
-Result: 7/7 matches. The predicted phases *2 + 0 + 1 + 0 + 1 + 2 + 1* sum to 7. In the proposed model, this triggers the first state change.
+Result: 7/7 matches. The predicted phases 2 + 0 + 1 + 0 + 1 + 2 + 1 sum to 7. In the proposed model, this triggers the first state change.
 
 ---
 
@@ -55,7 +55,7 @@ $$
 | `END` → `IS` | +1 | 1 | 1 ✓ | 12 |
 | `IS` → `DEATH` | −1 | 2 | 2 ✓ | 14 |
 
-Result: 5/5 matches. These predicted phases *0 + 2 + 2 + 1 + 2* also sum to 7, bringing the cumulative sum to 14 and triggering another proposed state change.
+Result: 5/5 matches. These predicted phases 0 + 2 + 2 + 1 + 2 also sum to 7, bringing the cumulative sum to 14 and triggering another proposed state change.
 
 ---
 
@@ -80,8 +80,6 @@ Result: 4/4 matches. The four phases sum to 4, leaving the overall cumulative to
 
 ## Hypothesis: a closed cycle of four states
 
-The rule combines two orientations (`Direct` or `Reflected`) and two offsets (`+0` or `+1`), giving exactly four possible states.
-
 The proposed full cycle is:
 
 *Direct/+0 → Direct/+1 → Reflected/+0 → Reflected/+1 → Direct/+0 → ...*
@@ -90,12 +88,10 @@ Our known route appears to start at *Direct/+1*. So the sequence observed so far
 
 *Direct/+1 → Reflected/+0 → Reflected/+1 → [Direct/+0 predicted next]*
 
-Each time the accumulated phase sum reaches or crosses the next multiple of 7, the machine advances one state.
-
 ## Direct/+0 (predicted fourth state)
 
 $$
-\boxed{p_{\text{next}}=\left(\sum_{n\in C}\mu(n)\right)\bmod 3}
+p_{\text{next}}=\left(\sum_{n\in C}\mu(n)\right)\bmod 3
 $$
 
 ## After THEN
