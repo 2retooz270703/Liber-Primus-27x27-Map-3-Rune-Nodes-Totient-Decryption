@@ -20,4 +20,4 @@ Map.
 
 ---
 
-If you found this place, then you already know how and what to look at here. This place is my solution to 0–2. Pay special attention to the "-Deterministic-" folder. And remember, I tried my best.
+If you found this place, then you already know how and what to look at here. This place is my solution to 0–2. Pay special attention to the "Deterministic" folder. And remember, I tried my best.
