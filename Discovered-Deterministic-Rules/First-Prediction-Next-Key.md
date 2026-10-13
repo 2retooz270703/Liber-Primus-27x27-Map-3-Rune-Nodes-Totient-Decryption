@@ -1,7 +1,7 @@
 # First Prediction: Know the Next Key in Advance
 
 > **Research finding — 16 matching transitions across three phases of the rule.**  
-> This is a mathematical pattern found in the *proposed* 27×27 plaintext route, **not yet a proven Cicada 3301 decryption rule**.
+> This is a mathematical pattern found in the *proposed* 27×27 plaintext route.
 
 ## The idea
 
