@@ -20,7 +20,7 @@ Map.
 
 ---
 
-## About This Research
+### About This Research
 
 This repository documents my ongoing attempt to decipher **Liber Primus (LP2), pages 0–2** of Cicada 3301.
 
