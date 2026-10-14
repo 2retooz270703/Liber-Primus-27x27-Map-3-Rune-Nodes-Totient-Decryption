@@ -6,8 +6,6 @@ Together, these two predictions determine the complete next-key Möbius signatur
 
 The new pattern has a simple interpretation: **a two-state machine switches whenever a geometrically selected cell has a square-free number under a 90° rotation of the matrix.** The same update rule applies throughout the route, without changing formulas between passages.
 
-> **Research status:** this is a deterministic candidate selected retrospectively from the known route. The 16/16 matches are reproducible, but its prediction beyond `THEN` has not been independently tested. It is not yet established as part of Cicada's original algorithm.
-
 ### Definitions
 
 - **`C`** — the set of `(row, column)` coordinates belonging to the current ciphertext block.
