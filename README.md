@@ -22,9 +22,9 @@ Map.
 
 ### About This Research
 
-This repository documents my ongoing attempt to decipher **Liber Primus (LP2), pages 0–2** of Cicada 3301.
+This repository documents my ongoing attempt to decipher Liber Primus (LP2), pages 0–2 of Cicada 3301.
 
-My approach treats all **729 runes as a single 27×27 matrix**, exploring relationships between rune positions, three-rune key structures, Euler's totient function, the Möbius function, and Gematria Primus.
+My approach treats all 729 runes as a single 27×27 matrix, exploring relationships between rune positions, three-rune key structures, Euler's totient function, the Möbius function, and Gematria Primus.
 
 Through this approach, I have identified a proposed sequence of English plaintext hidden within the matrix. But my main goal goes beyond finding readable words: **I am trying to reconstruct the deterministic algorithm that connects every decryption step and makes the next one predictable.**
 
@@ -38,7 +38,7 @@ Through this approach, I have identified a proposed sequence of English plaintex
 
 This folder documents mathematical rules discovered within the plaintext route, including methods for predicting the next decryption key's phase and its complete Möbius signature.
 
-The latest combined prediction method reproduces **all 16 known consecutive key-signature transitions**, including the rarest signatures, using the geometry of the matrix and the Möbius function.
+The latest combined prediction method reproduces all 16 known consecutive key-signature transitions, including the rarest signatures, using the geometry of the matrix and the Möbius function.
 
 These are reproducible results on the known route, with predictions beyond it still awaiting independent verification.
 
