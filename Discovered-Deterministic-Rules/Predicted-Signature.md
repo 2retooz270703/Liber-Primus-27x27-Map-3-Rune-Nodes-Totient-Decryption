@@ -323,7 +323,7 @@ This is an additional constraint on the search. It does not yet choose a unique 
 
 ---
 
-## 9. What makes the pattern interesting—and what remains unproven
+## 9. What makes the pattern interesting
 
 The candidate has several useful properties:
 
