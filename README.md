@@ -28,6 +28,8 @@ My approach treats all **729 runes as a single 27×27 matrix**, exploring relati
 
 Through this approach, I have identified a proposed sequence of English plaintext hidden within the matrix. But my main goal goes beyond finding readable words: **I am trying to reconstruct the deterministic algorithm that connects every decryption step and makes the next one predictable.**
 
+---
+
 ### Research & Documentation
 
 #### 01. [Discovered Deterministic Rules →](./Discovered-Deterministic-Rules/)
