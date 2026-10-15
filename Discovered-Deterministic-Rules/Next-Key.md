@@ -27,13 +27,13 @@ $$
 
 | Current ciphertext → Next key | Möbius sum | Predicted phase | Known key phase | Cumulative Σ phases |
 |:--|--:|--:|--:|--:|
-| `AS I GO THE` → `WEATHER` | −2 | 2 | 2 ✓ | 2 |
-| `WEATHER` → `TURNS` | −1 | 0 | 0 ✓ | 2 |
-| `TURNS` → `COLD` | 0 | 1 | 1 ✓ | 3 |
-| `COLD` → `I MAY` | −1 | 0 | 0 ✓ | 3 |
-| `I MAY` → `CRY` | 0 | 1 | 1 ✓ | 4 |
-| `CRY` → `NOW THE` | +1 | 2 | 2 ✓ | 6 |
-| `NOW THE` → `IDEA` | 0 | 1 | 1 ✓ | 7 |
+| `AS I GO THE` → `WEATHER` | −2 | 2 | 2 ✅ | 2 |
+| `WEATHER` → `TURNS` | −1 | 0 | 0 ✅ | 2 |
+| `TURNS` → `COLD` | 0 | 1 | 1 ✅ | 3 |
+| `COLD` → `I MAY` | −1 | 0 | 0 ✅ | 3 |
+| `I MAY` → `CRY` | 0 | 1 | 1 ✅ | 4 |
+| `CRY` → `NOW THE` | +1 | 2 | 2 ✅ | 6 |
+| `NOW THE` → `IDEA` | 0 | 1 | 1 ✅ | 7 |
 
 Result: 7/7 matches. The predicted phases 2 + 0 + 1 + 0 + 1 + 2 + 1 sum to 7. In the proposed model, this triggers the first state change.
 
@@ -49,11 +49,11 @@ $$
 
 | Current ciphertext → Next key | Möbius sum | Predicted phase | Known key phase | Cumulative Σ phases |
 |:--|--:|--:|--:|--:|
-| `IDEA` → `OF` | 0 | 0 | 0 ✓ | 7 |
-| `OF` → `THE` | −1 | 2 | 2 ✓ | 9 |
-| `THE` → `END` | −1 | 2 | 2 ✓ | 11 |
-| `END` → `IS` | +1 | 1 | 1 ✓ | 12 |
-| `IS` → `DEATH` | −1 | 2 | 2 ✓ | 14 |
+| `IDEA` → `OF` | 0 | 0 | 0 ✅ | 7 |
+| `OF` → `THE` | −1 | 2 | 2 ✅ | 9 |
+| `THE` → `END` | −1 | 2 | 2 ✅ | 11 |
+| `END` → `IS` | +1 | 1 | 1 ✅ | 12 |
+| `IS` → `DEATH` | −1 | 2 | 2 ✅ | 14 |
 
 Result: 5/5 matches. These predicted phases 0 + 2 + 2 + 1 + 2 also sum to 7, bringing the cumulative sum to 14 and triggering another proposed state change.
 
@@ -69,10 +69,10 @@ $$
 
 | Current ciphertext → Next key | Möbius sum | Predicted phase | Known key phase | Cumulative Σ phases |
 |:--|--:|--:|--:|--:|
-| `DEATH` → `SEE` | −1 | 0 | 0 ✓ | 14 |
-| `SEE` → `YOU` | 0 | 1 | 1 ✓ | 15 |
-| `YOU` → `SOON` | +1 | 2 | 2 ✓ | 17 |
-| `SOON` → `THEN` | 0 | 1 | 1 ✓ | 18 |
+| `DEATH` → `SEE` | −1 | 0 | 0 ✅ | 14 |
+| `SEE` → `YOU` | 0 | 1 | 1 ✅ | 15 |
+| `YOU` → `SOON` | +1 | 2 | 2 ✅ | 17 |
+| `SOON` → `THEN` | 0 | 1 | 1 ✅ | 18 |
 
 Result: 4/4 matches. The four phases sum to 4, leaving the overall cumulative total at 18, below the next proposed threshold of 21.
 
@@ -147,22 +147,22 @@ $$
 
 | Current ciphertext | Phase regime used for this block | Rotated minimum `m` | `μ(m)` | Condition |
 |:--|:--|--:|--:|:--:|
-| `AS I GO THE` | Direct/+1 | 14 | +1 | ✓ |
-| `WEATHER` | Direct/+1 | 365 | +1 | ✓ |
-| `TURNS` | Direct/+1 | 500 | 0 | ✓ |
-| `COLD` | Direct/+1 | 176 | 0 | ✓ |
-| `I MAY` | Direct/+1 | 407 | +1 | ✓ |
-| `CRY` | Direct/+1 | 414 | 0 | ✓ |
-| `NOW THE` | Direct/+1 | 422 | +1 | ✓ |
-| `IDEA` | Reflected/+0 | 470 | −1 | ✓ |
-| `OF` | Reflected/+0 | 388 | 0 | ✓ |
-| `THE` | Reflected/+0 | 414 | 0 | ✓ |
-| `END` | Reflected/+0 | 601 | −1 | ✓ |
-| `IS` | Reflected/+0 | 223 | −1 | ✓ |
-| `DEATH` | Reflected/+1 | 2 | −1 | ✓ |
-| `SEE` | Reflected/+1 | 352 | 0 | ✓ |
-| `YOU` | Reflected/+1 | 408 | 0 | ✓ |
-| `SOON` | Reflected/+1 | 408 | 0 | ✓ |
+| `AS I GO THE` | Direct/+1 | 14 | +1 | ✅ |
+| `WEATHER` | Direct/+1 | 365 | +1 | ✅ |
+| `TURNS` | Direct/+1 | 500 | 0 | ✅ |
+| `COLD` | Direct/+1 | 176 | 0 | ✅ |
+| `I MAY` | Direct/+1 | 407 | +1 | ✅ |
+| `CRY` | Direct/+1 | 414 | 0 | ✅ |
+| `NOW THE` | Direct/+1 | 422 | +1 | ✅ |
+| `IDEA` | Reflected/+0 | 470 | −1 | ✅ |
+| `OF` | Reflected/+0 | 388 | 0 | ✅ |
+| `THE` | Reflected/+0 | 414 | 0 | ✅ |
+| `END` | Reflected/+0 | 601 | −1 | ✅ |
+| `IS` | Reflected/+0 | 223 | −1 | ✅ |
+| `DEATH` | Reflected/+1 | 2 | −1 | ✅ |
+| `SEE` | Reflected/+1 | 352 | 0 | ✅ |
+| `YOU` | Reflected/+1 | 408 | 0 | ✅ |
+| `SOON` | Reflected/+1 | 408 | 0 | ✅ |
 
 **Observed fit: 16/16.**
 
