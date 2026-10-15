@@ -4,7 +4,7 @@
 
 ## Preludium
 
-Of the primeval Priests assum'd power,  
+Of the primeval Priest's assum'd power,  
 When Eternals spurn'd back his religion;  
 And gave him a place in the north,  
 Obscure, shadowy, void, solitary.  
