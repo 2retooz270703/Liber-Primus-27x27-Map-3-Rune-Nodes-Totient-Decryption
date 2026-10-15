@@ -20,27 +20,4 @@ Map.
 
 ---
 
-#### 01. [Discovered Deterministic Rules →](./Discovered-Deterministic-Rules/)
-
-**The most important part of my current research.**
-
-This folder documents mathematical rules discovered within the plaintext route, including methods for predicting the next decryption key's phase and its complete Möbius signature.
-
-The latest combined prediction method reproduces all 16 known consecutive key-signature transitions, including the rarest signatures, using the geometry of the matrix and the Möbius function.
-
-These are reproducible results on the known route, with predictions beyond it still awaiting independent verification.
-
-#### 02. [Plaintext I Found →](./plaintext-i-found/)
-
-The proposed plaintext recovered from pages 0–2, documented step by step.
-
-Each file contains the ciphertext coordinates, three-rune key, mathematical transformations, and modular calculations that produce the corresponding plaintext.
-
-#### 03. [Decryption Rules & Supporting Evidence →](./rules/)
-
-A detailed explanation of the underlying decryption method, including:
-
-- How three-rune keys are constructed and applied.
-- How the algorithm navigates the 27×27 matrix.
-- How mirrored rune structures are used.
-- The strongest mathematical evidence supporting the proposed plaintext.
+I am absolutely convinced that this is the real solution to pages 0–2 of Liber Primus. I don't know if anyone will read this message years from now, or whether anyone will even explore my GitHub repository, but I truly believe this is the actual plaintext. Just put all the evidence together, study the files here, and ask yourself: **Can all of this really be just a coincidence?** "Find your truth." The [interactive map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/) will help you visualize the route, the [plaintext-i-found/](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/tree/main/plaintext-i-found) folder explains each step, and the [rules/](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/tree/main/rules) folder contains all the main rules and ideas I used. I've tried to explain everything as simply and clearly as possible. The [Discovered-Deterministic-Rules/](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/tree/main/Discovered-Deterministic-Rules) folder contains the strongest rules I've discovered, which appear to predict the behavior of the recovered plaintext. I'm convinced there must be an underlying algorithm capable of reconstructing the plaintext within the 27×27 matrix, and I've been trying to find it.
