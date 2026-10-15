@@ -110,7 +110,7 @@ Predicted next phase:  (1 + 2) mod 3 = 0
 
 ## Supplementary finding: the phase regime also constrains a 90°-rotated ciphertext cell
 
-A separate observation connects the *Direct / Reflected choice* to the Möbius value of **one geometrically selected ciphertext cell after a 90° clockwise rotation**.
+A separate observation connects the *Direct / Reflected choice* to the Möbius value of one geometrically selected ciphertext cell after a 90° clockwise rotation.
 
 ### 1. Select the rotated leftmost cell
 
@@ -145,8 +145,6 @@ $$
 \end{aligned}}
 $$
 
-Equivalently, a *negative* nonzero value would contradict the observed Direct pattern, whereas a *positive* nonzero value would contradict the observed Reflected pattern. A zero is allowed in either regime.
-
 | Current ciphertext | Phase regime used for this block | Rotated minimum `m` | `μ(m)` | Condition |
 |:--|:--|--:|--:|:--:|
 | `AS I GO THE` | Direct/+1 | 14 | +1 | ✓ |
@@ -166,7 +164,7 @@ Equivalently, a *negative* nonzero value would contradict the observed Direct pa
 | `YOU` | Reflected/+1 | 408 | 0 | ✓ |
 | `SOON` | Reflected/+1 | 408 | 0 | ✓ |
 
-**Observed fit: 16/16.** More specifically, the Direct segment contains **four `+1` values and three zeros**, and the Reflected segments together contain **four `−1` values and five zeros**.
+**Observed fit: 16/16.**
 
 The sign change occurs at the same boundary as the phase model's first regime change: after the cumulative phase sum reaches **`S = 7`**, the model changes from **Direct/+1** to **Reflected/+0**. At **`S = 14`**, only the additive constant changes (**Reflected/+0 → Reflected/+1**), and the observed sign restriction does not change. This suggests that the additional condition may track **Direct versus Reflected**, rather than the `+0`/`+1` offset.
 
