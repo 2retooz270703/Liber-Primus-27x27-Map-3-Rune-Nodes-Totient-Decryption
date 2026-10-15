@@ -108,3 +108,53 @@ The rune count includes the first seven-word block (21), I MAY CRY NOW (10), the
 | Prime-value sum | 497 − 484 | 13 |
 
 The values 7 and 13 also connect to the Fibonacci relation in Section 2: F₇ = 13 and F₁₃ = 233 (with F₁ = F₂ = 1).
+
+## 8. The opening LP1 warning matches the first LP2 sentence
+
+The opening warning in LP1 says:
+
+```text
+BELIEVE NOTHNG FROM THIS BOOC
+EXCEPT WHAT YOV CNOW TO BE TRVE
+TEST THE CNOWLEDGE
+FIND YOVR TRVTH
+```
+
+A **seven-word passage crossing the line break** between `TRVE` and `TEST` is:
+
+**YOV CNOW TO BE TRVE TEST THE**
+
+Compare it with the first recovered sentence proposed for LP2 pages 0–2:
+
+**AS I GO, THE WEATHER TURNS COLD.**
+
+| Property | LP2: AS I GO ... COLD | LP1: YOV CNOW ... THE |
+|:---|---:|---:|
+| Words | **7** | **7** |
+| Runes | **21** | **21** |
+| Prime-value sum | **825** | **825** |
+| Rune-index sum | **233** | **232** |
+
+These counts use Gematria Primus rune segmentation (`TH` and `EA` are single runes; LP1's `V` represents `U`). The sums can be checked word by word:
+
+| LP2 word | Runes | Index sum | Prime sum | LP1 word | Runes | Index sum | Prime sum |
+|:---|---:|---:|---:|:---|---:|---:|---:|
+| AS | 2 | 39 | 150 | YOV | 3 | 30 | 113 |
+| I | 1 | 10 | 31 | CNOW | 4 | 24 | 68 |
+| GO | 2 | 9 | 24 | TO | 2 | 19 | 66 |
+| THE | 2 | 20 | 72 | BE | 2 | 35 | 128 |
+| WEATHER | 5 | 59 | 211 | TRVE | 4 | 39 | 140 |
+| TURNS | 5 | 45 | 155 | TEST | 4 | 65 | 238 |
+| COLD | 4 | 51 | 182 | THE | 2 | 20 | 72 |
+| **Total** | **21** | **233** | **825** | **Total** | **21** | **232** | **825** |
+
+The one-point difference is the same number pair already present in Section 2:
+
+- The **first LP2 seven-word block** has rune-index sum **233**.
+- The **LP1 warning passage** has rune-index sum **232**.
+- The **second LP2 seven-word block**, `THE IDEA OF THE END IS DEATH`, also has rune-index sum **232**.
+- Since **233 is prime**, **φ(233) = 232**.
+
+The location gives the match an additional thematic connection: rather than coming from an arbitrary passage deep in LP1, the seven words belong to its **opening instruction to test what one knows to be true**. That is an especially suggestive place to find a numerical parallel with the proposed beginning of LP2.
+
+**Interpretation:** the exact `7 words / 21 runes / prime sum 825` match, together with the `233 / 232` index relationship, is a striking cross-text correspondence. It is consistent with the possibility of an intentional marker, but **does not by itself prove deliberate placement or authenticate the proposed LP2 plaintext**; the significance should also be tested against alternative passages and selection rules.
