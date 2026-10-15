@@ -20,4 +20,17 @@ Map.
 
 ---
 
-I am absolutely convinced that this is the real solution to pages 0–2 of Liber Primus. I don't know if anyone will read this message years from now, or whether anyone will even explore my GitHub repository, but I truly believe this is the actual plaintext. Just put all the evidence together, study the files here, and ask yourself: **Can all of this really be just a coincidence?** "Find your truth." The [interactive map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/) will help you visualize the route, the [plaintext-i-found/](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/tree/main/plaintext-i-found) folder explains each step, and the [rules/](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/tree/main/rules) folder contains all the main rules and ideas I used. I've tried to explain everything as simply and clearly as possible. The [Discovered-Deterministic-Rules/](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/tree/main/Discovered-Deterministic-Rules) folder contains the strongest rules I've discovered, which appear to predict the behavior of the recovered plaintext. I'm convinced there must be an underlying algorithm capable of reconstructing the plaintext within the 27×27 matrix, and I've been trying to find it.
+# Discovered Deterministic Rules
+
+#### 1. [Next-Key Prediction — Phase, Signature & Geometry](Discovered-Deterministic-Rules/Unified-Geometric-Key-Prediction.md)
+
+Interconnected geometric rules that predict the next decryption key using ciphertext positions in the 27×27 matrix.
+
+- **Phase:** Möbius sums with Direct/Reflected switching at multiples of 7.
+- **Signature:** A 90° clockwise rotation and a simple mod-2 rule predict the complete next-key Möbius signature.
+- **Sign rule:** The selected cell satisfies `μ(m) ∈ {0, +1}` in Direct mode and `μ(m) ∈ {0, −1}` in Reflected mode.
+- **Geometry:** All three mechanisms use 0°, 90°, or 180° rotations of the same matrix.
+
+**Verified on the known route:** 16/16 phase and signature matches; 17/17 sign-rule matches.
+
+---
