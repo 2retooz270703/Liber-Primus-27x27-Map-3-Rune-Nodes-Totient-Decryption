@@ -105,3 +105,96 @@ Möbius values:              +1,   0,  +1
 Möbius sum:                            2
 Predicted next phase:  (1 + 2) mod 3 = 0
 ```
+
+---
+
+## Supplementary finding: the phase regime also constrains a 90°-rotated ciphertext cell
+
+The phase-prediction rule above uses the Möbius values of **all cells in the current ciphertext**, using either their direct absolute positions `n` or their central reflections `730 − n`. A separate observation connects the **Direct / Reflected choice** to the Möbius value of **one geometrically selected ciphertext cell after a 90° clockwise rotation**.
+
+This is an additional, empirical constraint. It does **not** follow algebraically from the phase formula and must not be treated as part of the proven decryption algorithm.
+
+### 1. Select the rotated leftmost cell
+
+Let `(r,c)` denote the original one-based row and column of a ciphertext cell in the 27×27 matrix, with rows increasing downward and columns increasing to the right. Under a 90° clockwise rotation:
+
+$$
+(r,c)\longmapsto(c,28-r).
+$$
+
+Its absolute position in the rotated matrix is therefore:
+
+$$
+n_{90}(r,c)=27(c-1)+28-r.
+$$
+
+For the current ciphertext cell set `C`, take the **minimum** rotated position:
+
+$$
+\boxed{m(C)=\min_{(r,c)\in C}\left[27(c-1)+28-r\right]}.
+$$
+
+In the original matrix, this selects the **leftmost occupied column**, then the **lowest ciphertext cell in that column**. It is the same deterministic selection used for the outer-signature update in `Predicted-Signature.md`. The selected cell is *not necessarily* the first or last rune in reading order.
+
+### 2. New observed condition: Direct and Reflected allow opposite signs
+
+Across the 16 recorded transitions from `AS I GO THE → WEATHER` through `SOON → THEN`, the selected cell obeys:
+
+$$
+\boxed{\begin{aligned}
+\text{Direct regime:}\quad &\mu(m)\in\{0,+1\},\\
+\text{Reflected regime:}\quad &\mu(m)\in\{0,-1\}.
+\end{aligned}}
+$$
+
+Equivalently, a **negative** nonzero value would contradict the observed Direct pattern, whereas a **positive** nonzero value would contradict the observed Reflected pattern. A zero is allowed in either regime.
+
+| Current ciphertext | Phase regime used for this block | Rotated minimum `m` | `μ(m)` | Condition |
+|:--|:--|--:|--:|:--:|
+| `AS I GO THE` | Direct/+1 | 14 | +1 | ✓ |
+| `WEATHER` | Direct/+1 | 365 | +1 | ✓ |
+| `TURNS` | Direct/+1 | 500 | 0 | ✓ |
+| `COLD` | Direct/+1 | 176 | 0 | ✓ |
+| `I MAY` | Direct/+1 | 407 | +1 | ✓ |
+| `CRY` | Direct/+1 | 414 | 0 | ✓ |
+| `NOW THE` | Direct/+1 | 422 | +1 | ✓ |
+| `IDEA` | Reflected/+0 | 470 | −1 | ✓ |
+| `OF` | Reflected/+0 | 388 | 0 | ✓ |
+| `THE` | Reflected/+0 | 414 | 0 | ✓ |
+| `END` | Reflected/+0 | 601 | −1 | ✓ |
+| `IS` | Reflected/+0 | 223 | −1 | ✓ |
+| `DEATH` | Reflected/+1 | 2 | −1 | ✓ |
+| `SEE` | Reflected/+1 | 352 | 0 | ✓ |
+| `YOU` | Reflected/+1 | 408 | 0 | ✓ |
+| `SOON` | Reflected/+1 | 408 | 0 | ✓ |
+
+**Observed fit: 16/16.** More specifically, the Direct segment contains **four `+1` values and three zeros**, and the Reflected segments together contain **four `−1` values and five zeros**. Thus the sign distinction is supported by eight nonzero observations, not sixteen independent sign tests.
+
+The sign change occurs at the same boundary as the phase model's first regime change: after the cumulative phase sum reaches **`S = 7`**, the model changes from **Direct/+1** to **Reflected/+0**. At **`S = 14`**, only the additive constant changes (**Reflected/+0 → Reflected/+1**), and the observed sign restriction does not change. This suggests that the additional condition may track **Direct versus Reflected**, rather than the `+0`/`+1` offset.
+
+### 3. How this becomes a filter after `THEN`
+
+The existing phase model gives `p_next = 0` after `THEN`, leaving the cumulative total at **`S = 18`**. Under the proposed cycle, the **next ciphertext block** should still be processed in **Reflected/+1**. Therefore a candidate for the first block after `THEN` must satisfy, **if this supplementary hypothesis continues to hold**:
+
+$$
+\boxed{\mu\!\left(\min_{(r,c)\in C_{\mathrm{candidate}}}[27(c-1)+28-r]\right)\in\{-1,0\}}.
+$$
+
+This is a *ciphertext-location constraint*: it can rule out candidate blocks based on the location of their rotated-leftmost cell, regardless of the English plaintext they produce. It does **not** predict the complete next key, plaintext, or exact cell coordinates.
+
+For example, the proposed continuation `THING IS NOT REAL` can be checked block by block, using the phase regime predicted along that candidate route:
+
+| Candidate block | Selected cell | `m` | `μ(m)` | Candidate route's regime | Outcome |
+|:--|:--|--:|--:|:--|:--:|
+| `THING` | `I(22,13)` | 330 | +1 | Reflected | ✗ |
+| `IS` | `W(25,18)` | 462 | +1 | Reflected | ✗ |
+| `NOT` | `C(11,14)` | 368 | 0 | Direct (after proposed `S = 21` switch) | ✓ |
+| `REAL` | `I(12,2)` | 43 | −1 | Direct | ✗ |
+
+On these coordinates, **3 of 4** blocks violate the supplementary sign condition. This counts *against* that continuation **if** the sign rule generalizes, but does not independently disprove it: the condition was discovered by examining the known route, and the fourth phase regime is still an unverified extension of the model.
+
+### 4. What would test the hypothesis next?
+
+Once the cumulative sum reaches **`S = 21`**, the four-state proposal switches to **Direct/+0**. The new observation makes a specific additional prediction: nonzero `μ(m)` values should then become **`+1` rather than `−1`**. A future independently confirmed ciphertext block in that regime would be a useful out-of-sample test.
+
+**Interpretation and limitation.** The phase formula and this sign condition use *different* views of the same 27×27 matrix: direct/centrally reflected positions of the **whole block**, versus a 90°-rotated position of **one extreme cell**. Their agreement at the regime boundary is intriguing. However, both patterns were noticed on the same 16-transition route and could be influenced by rule selection after seeing the data. Treat this as a promising **candidate filter**, not established evidence of Cicada 3301's intended construction.
