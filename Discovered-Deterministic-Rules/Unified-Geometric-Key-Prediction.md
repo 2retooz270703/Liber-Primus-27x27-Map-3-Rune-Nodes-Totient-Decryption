@@ -179,6 +179,43 @@ $$
 
 The sign restriction changes when the position transform switches from `n` to `730−n` at **`S=7`**. It does **not** change when only the offset switches from `+0` to `+1` at **`S=14`**. This suggests a possible connection to the *geometric mode*, not the additive constant.
 
+### Prime-factor parity behind the Direct/Reflected sign split
+
+The sign of the Möbius function has a simple arithmetic interpretation. For a **square-free** integer `m`, let `ω(m)` be its number of **distinct prime factors**. Then:
+
+$$
+\mu(m)=(-1)^{\omega(m)}
+$$
+
+Thus **an even number of distinct prime factors gives `μ(m)=+1`**, while **an odd number gives `μ(m)=−1`**. If any prime factor is repeated, `μ(m)=0` and the parity rule does not apply.
+
+The following are **all the selected positions with nonzero `μ(m)`** among the 17 known ciphertext blocks (including `THEN`):
+
+**Direct mode — `μ(m)=+1`**
+
+| Current ciphertext | Rotated position `m` | Prime factorization | `ω(m)` |
+|:--|--:|:--|--:|
+| `AS I GO THE` | 14 | `2 × 7` | 2 |
+| `WEATHER` | 365 | `5 × 73` | 2 |
+| `I MAY` | 407 | `11 × 37` | 2 |
+| `NOW THE` | 422 | `2 × 211` | 2 |
+
+All **four** nonzero Direct cases have **exactly two distinct prime factors**, not merely an even number.
+
+**Reflected mode — `μ(m)=−1`**
+
+| Current ciphertext | Rotated position `m` | Prime factorization | `ω(m)` |
+|:--|--:|:--|--:|
+| `IDEA` | 470 | `2 × 5 × 47` | 3 |
+| `END` | 601 | `601` (prime) | 1 |
+| `IS` | 223 | `223` (prime) | 1 |
+| `DEATH` | 2 | `2` (prime) | 1 |
+| `THEN` | 651 | `3 × 7 × 31` | 3 |
+
+All **five** nonzero Reflected cases have an **odd number of distinct prime factors**: one or three. The `THEN` position provides the fifth such example; its following key is still unknown.
+
+**Interpretation:** The Direct/Reflected sign restriction can be expressed as **even/odd prime-factor parity for square-free selected positions**. This is an *arithmetic explanation of Rule C*, **not** a separate independent prediction: the parity distinction follows from the definition of `μ`. The more specific observation that all four nonzero Direct positions have exactly *two* distinct prime factors is descriptive and has not been tested on new ciphertexts.
+
 A compact combined notation is
 
 $$
