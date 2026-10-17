@@ -46,8 +46,9 @@ I'm not asking you to believe me. I'm asking you to examine the evidence, follow
 
 This project represents an enormous amount of investigation, experimentation, and effort. I have tried my best to understand what Cicada 3301 may have hidden in these pages.
 
+---
 
-### Where to Start
+## Where to Start
 
 If you want to understand what I found, I recommend exploring the following materials in this order:
 
