@@ -56,7 +56,7 @@ If you want to understand what I found, I recommend exploring the following mate
 
 Explore the proposed plaintext route, ciphertext positions, three-rune keys, and geometric structures directly inside the matrix.
 
-**2. [Plaintext I Found — All 17 Stages](./plaintext-i-found/)**
+**2. [Plaintext I Found — All 16 Stages](./plaintext-i-found/)**
 
 The most important part of this project. Each file documents a proposed plaintext segment, its ciphertext coordinates, the corresponding key, and the calculations used to recover it.
 
