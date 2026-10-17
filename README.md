@@ -48,6 +48,8 @@ If you are new to this project, I recommend following the steps below. You do no
 
 ### 1. See What I Found
 
+---
+
 **[Interactive 27×27 Matrix — Live Map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)**
 
 The best place to begin. Explore the proposed hidden plaintext directly inside the original 27×27 rune matrix. You can follow each stage and examine the ciphertext cells, three-rune keys, geometric routes, and mirror structures.
