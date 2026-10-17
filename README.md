@@ -32,7 +32,7 @@ I genuinely don't know what the probability of that would be. I don't claim that
 
 But the more I investigated, the more connections I found.
 
-**I want you to decide for yourself whether coincidences like these can really happen.**
+I want you to decide for yourself whether coincidences like these can really happen.
 
 I'm not asking you to believe me. I'm asking you to examine the evidence, follow the coordinates, reproduce the calculations, and reach your own conclusion.
 
