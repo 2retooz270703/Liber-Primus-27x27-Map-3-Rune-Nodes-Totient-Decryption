@@ -48,7 +48,6 @@ This project represents an enormous amount of investigation, experimentation, an
 
 ---
 
-
 ## Where to Start — Explore the Evidence
 
 If you are new to this project, I recommend following the steps below. You do not need to understand everything immediately. Start with the plaintext and the interactive map, then explore the mathematical evidence and the proposed decryption method.
@@ -61,7 +60,7 @@ The best place to begin. Explore the proposed hidden plaintext directly inside t
 
 **[Recovered Plaintext — All 16 Stages](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/tree/main/plaintext-i-found)**
 
-Detailed documentation of all 16 proposed plaintext stages, from **AS I GO THE** to **THEN**. Each file contains the corresponding coordinates, decryption keys, and calculations.
+Detailed documentation of all 16 proposed plaintext stages, from AS I GO THE to THEN. Each file contains the corresponding coordinates, decryption keys, and calculations.
 
 ### 2. Examine the Strongest Evidence
 
@@ -69,17 +68,17 @@ Detailed documentation of all 16 proposed plaintext stages, from **AS I GO THE**
 
 A collection of the most striking numerical and structural connections I discovered, including relationships involving rune values, prime numbers, Euler's totient function, and the text of Liber Primus itself.
 
-Read this if you want to understand **why I believe the plaintext may be genuine rather than coincidental**.
+Read this if you want to understand why I believe the plaintext may be genuine rather than coincidental.
 
 ### 3. Understand How the Decryption Works
 
 These three documents explain the proposed mathematical and geometric system:
 
-- **[How to Decrypt](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/blob/main/rules/01-how-to-decrypt.md)** — Three-rune keys, totient transformations, Möbius signatures, and modular decryption.
+**[How to Decrypt](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/blob/main/rules/01-how-to-decrypt.md)** — Three-rune keys, totient transformations, Möbius signatures, and modular decryption.
 
-- **[How to Move Through the Matrix](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/blob/main/rules/02-how-to-move.md)** — Geometric movement, ciphertext positions, and the relationships between keys and coordinates.
+**[How to Move Through the Matrix](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/blob/main/rules/02-how-to-move.md)** — Geometric movement, ciphertext positions, and the relationships between keys and coordinates.
 
-- **[How the Mirrors Work](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/blob/main/rules/03-how-mirrors-work.md)** — Symmetric three-rune structures and their role in the proposed decryption.
+**[How the Mirrors Work](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/blob/main/rules/03-how-mirrors-work.md)** — Symmetric three-rune structures and their role in the proposed decryption.
 
 ### 4. Explore the Deterministic Discoveries
 
@@ -89,15 +88,15 @@ These three documents explain the proposed mathematical and geometric system:
 
 Here I document mathematical rules that appear to predict properties of the next decryption key from the current ciphertext.
 
-The proposed system reproduces the next-key Möbius signatures across **16 out of 16 recorded transitions** along the selected plaintext route.
+The proposed system reproduces the next-key Möbius signatures across 16 out of 16 recorded transitions along the selected plaintext route.
 
 These results still require independent validation, but they are among the strongest reasons I believe this project deserves serious examination.
 
 ---
 
-### One Last Thing
+#### One Last Thing
 
-If you find something that I missed, if you discover a better explanation, or if you can extend the proposed plaintext beyond **THEN**, I would genuinely love to see it.
+If you find something that I missed, if you discover a better explanation, or if you can extend the proposed plaintext beyond THEN, I would genuinely love to see it.
 
 I want this work to be tested, questioned, challenged, and improved.
 
