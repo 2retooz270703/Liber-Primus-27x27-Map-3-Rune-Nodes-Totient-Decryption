@@ -1,5 +1,3 @@
-*LIBER PRIMUS II · PAGES 0–2*
-
 # The 27 × 27 Matrix
 
 **A Geometric Decryption Report**
@@ -11,8 +9,6 @@
 The proposed reading of the 27 × 27 matrix begins with a simple distinction: a rune provides a **cipher value**, while the cell containing it provides a **geometric position**. The two types of information can be used together. A three-rune structure supplies a decryption key; number-theoretic functions determine how that key is aligned; and positions in the grid help connect one recovered passage to another.
 
 This report develops that idea as one continuous method rather than as three separate sets of instructions. Each operation is introduced through a concrete example, with the relevant calculation shown alongside its meaning.
-
-> **The central idea:** the proposed plaintext is read through three complementary layers: **decryption** establishes what a selected group of runes says; **movement** investigates where the reading may continue; and **mirror geometry** checks how the chosen cells fit into the larger matrix.
 
 **Contents**
 
@@ -70,7 +66,7 @@ Take the structure **`X–OE–X`**. The center rune `OE` has index `22`, and $\
 
 $$
 \mathrm{X-OE-X}
-\quad\xrightarrow{\;\varphi(22)=10\;}\quad
+\quad\xrightarrow{\\varphi(22)=10\}\quad
 \mathrm{X-I-X}.
 $$
 
