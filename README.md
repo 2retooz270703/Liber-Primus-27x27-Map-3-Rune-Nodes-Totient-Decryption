@@ -1,26 +1,12 @@
-<h1 align="center">PLAINTEXT.</h1>
 
 <p align="center">
-  <em>A geometric investigation of Liber Primus LP2, pages 0–2</em>
+  <em>
+    As I go, the weather turns cold.<br>
+    I may cry now.<br>
+    The idea of the end is death.<br>
+    See you soon, then.
+  </em>
 </p>
-
----
-
-## A Personal Message
-
-I believe I may have found a way into the unsolved pages 0–2 of *Liber Primus LP2*.
-
-I understand how significant that claim is. Liber Primus has resisted years of investigation, and an intriguing pattern is not necessarily an intentional one. That is precisely why I want this work to be examined through its **coordinates, calculations, and reproducible rules**, rather than accepted on the strength of a claim.
-
-My research begins with the 729 runes arranged as a **27 × 27 matrix**. Within that arrangement, I have identified a proposed sequence of readable plaintext, three-rune decryption keys, interconnected geometric structures, and numerical relationships involving **Euler's totient function**, **the Möbius function**, and **modular arithmetic**.
-
-The most important part of the investigation is not a single word or coincidence. It is the way several different properties appear to connect. On the selected plaintext route, rules derived from the geometry reproduce the next-key Möbius signature across **16 of 16 recorded transitions**. Other recorded relationships concern the next ciphertext's leftmost cell, reading axis, and direction.
-
-These results have not been independently established as Cicada 3301's intended solution. The 16/16 result describes the documented route, not a statistical proof that the route is unique. But the consistency is compelling enough that I believe the work deserves careful examination.
-
-**I am not asking you to take my word for it.** Explore the matrix. Check the rune values. Recalculate the predictions. Look for alternative explanations, and test whether the rules survive beyond the examples from which they were developed.
-
-I have put a great deal of time and effort into this research. What matters most to me is finding out whether these connections reveal something genuinely hidden in Liber Primus.
 
 ---
 
