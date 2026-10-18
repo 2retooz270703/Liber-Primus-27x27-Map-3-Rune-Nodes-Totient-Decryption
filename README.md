@@ -65,3 +65,5 @@ Combines this result with the 270° rule to constrain the reading direction.
 An examination of the most notable numerical relationships found throughout the proposed plaintext.
 
 Includes rune-index sums, prime-number correspondences, Euler's totient function, recurring numerical patterns, and connections to other passages of *Liber Primus*.
+
+---
