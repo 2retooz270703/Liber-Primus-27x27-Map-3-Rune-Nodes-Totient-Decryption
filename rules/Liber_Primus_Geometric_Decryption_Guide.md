@@ -149,17 +149,7 @@ Here $C_j$ is a ciphertext index, $K_j$ is the repeated, aligned key index, and 
 4. `O (3)` − `X (14)` ≡ `18` → **E**
 5. `E (18)` − `X (14)` = `4` → **R**
 
-The negative differences wrap around within the 29-rune alphabet. The resulting sequence is:
-
-$$
-\mathrm{W\;\cdot\;EA\;\cdot\;TH\;\cdot\;E\;\cdot\;R}
-$$
-
-> **Recovered reading — WEATHER**
->
-> Five ciphertext runes produce five plaintext runes under the derived key, the calculated phase, and modular subtraction.
-
-The key point is that the English word is obtained only **after** the rune-index calculations. The phase calculation selects an alignment from the key's own arithmetic rather than from the appearance of the resulting English word.
+The negative differences wrap around within the 29-rune alphabet.
 
 This completes the **decryption** operation for an already selected ciphertext block. It does not yet determine which ciphertext block should be read next.
 
@@ -178,7 +168,7 @@ The direction operation has one compact formula. The examples show several ways 
 
 ### Step 1 — Convert a coordinate into direction signs
 
-Let $(r,c)$ be a chosen anchor cell and let $p\in\{0,1,2\}$ be the phase of the **current** key. Define $\varphi^p$ to mean *apply the totient function exactly $p$ times*; $\varphi^0(n)=n$.
+Let $(r,c)$ be a chosen anchor cell and let $p\in\{0,1,2\}$ be the phase of the **current** key. Define $\varphi^p$ to mean *apply the totient function exactly p times*; $\varphi^0(n)=n$.
 
 First retain the transformed coordinates:
 
@@ -415,4 +405,4 @@ Here $\varphi^p$ denotes **iteration**, not exponentiation, and phase $p$ belong
 
 ---
 
-*Research source:* [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption). This document consolidates the recorded decryption, coordinate-movement, and mirror observations for the selected LP2 pages 0–2 reading. The separate next-key signature-prediction model is not part of this guide.
+*Research source:* [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption). This document consolidates the recorded decryption, coordinate-movement, and mirror observations for the selected LP2 pages 0–2 reading.
