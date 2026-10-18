@@ -12,7 +12,6 @@
     See you soon, then.
   </em>
 </p>
-  
 
 ---
 
@@ -22,25 +21,25 @@ Start by exploring the proposed plaintext within the **27 × 27 rune matrix**. E
 
 #### [Interactive Matrix ↗](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)
 
-Explore the live matrix, follow the plaintext route, and inspect the ciphertext cells, key structures, and supporting mirrors.
+Explore the **live matrix**, follow the plaintext route, and inspect the ciphertext cells, key structures, and supporting mirrors.
 
 #### [Plaintext Records ↗](./plaintext-i-found/)
 
-Examine the recovered passages individually, including their coordinates, rune values, and step-by-step decryption calculations.
+Examine the **recovered passages** individually, including their coordinates, rune values, and step-by-step decryption calculations.
 
 ---
 
-## The Decryption System
+#### The Decryption System
 
 Four connected reports document the mathematical and geometric mechanics of the proposed decryption.
 
-### [00 — The Decryption Method ↗](./start-reading-here/00-decryption-method.md)
+#### [00 — The Decryption Method ↗](./start-reading-here/00-decryption-method.md)
 
 The foundation of the system. Explains how **three-rune structures** produce decryption keys, how Euler's totient and Möbius functions determine their **cyclic alignment**, and how modular subtraction reveals plaintext.
 
 Also introduces coordinate movement and mirror geometry.
 
-### [01 — Predicting the Next-Key Signature ↗](./start-reading-here/01-next-key-signature.md)
+#### [01 — Predicting the Next-Key Signature ↗](./start-reading-here/01-next-key-signature.md)
 
 Describes how the current ciphertext predicts the next **key's phase** and complete **Möbius signature**.
 
