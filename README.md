@@ -1,3 +1,4 @@
+---
 
 <p align="center">
   <em>
@@ -37,21 +38,19 @@ Four connected reports document the mathematical and geometric mechanics of the 
 
 The foundation of the system. Explains how **three-rune structures** produce decryption keys, how Euler's totient and Möbius functions determine their **cyclic alignment**, and how modular subtraction reveals plaintext.
 
-Also introduces coordinate movement and mirror geometry.
-
 #### [01 — Predicting the Next-Key Signature ↗](./start-reading-here/01-next-key-signature.md)
 
 Describes how the current ciphertext predicts the next **key's phase** and complete **Möbius signature**.
 
-Explores cumulative phase cycles, **Direct** and **Reflected** modes, and the relationship between **90°** and **180°** matrix rotations.
+Explores cumulative phase cycles, **Direct** and **Reflected** modes, and the relationship between 90° and 180° matrix rotations.
 
-### [02 — The Leftmost Cell and Rotations ↗](./start-reading-here/02-leftmost-cell-and-rotations.md)
+#### [02 — The Leftmost Cell and Rotations ↗](./start-reading-here/02-leftmost-cell-and-rotations.md)
 
 Examines the leftmost ciphertext cell and its own Möbius state.
 
 Introduces the **270° rotation rule**, which predicts whether the leftmost cell of the next ciphertext will be its beginning or end, and shows how all four matrix rotations are connected.
 
-### [03 — Predicting the Reading Axis ↗](./start-reading-here/03-predicting-axis-and-reading-direction.md)
+#### [03 — Predicting the Reading Axis ↗](./start-reading-here/03-predicting-axis-and-reading-direction.md)
 
 Explains how the next ciphertext's **horizontal**, **vertical**, or **diagonal** axis can be predicted.
 
@@ -59,12 +58,10 @@ Combines this result with the 270° rule to constrain the reading direction.
 
 ---
 
-## Numerical & Structural Evidence
+#### Numerical & Structural Evidence
 
-### [Strongest Plaintext Evidence ↗](./start-reading-here/strongest-plaintext-evidence.md)
+#### [Strongest Plaintext Evidence ↗](./start-reading-here/strongest-plaintext-evidence.md)
 
 An examination of the most notable numerical relationships found throughout the proposed plaintext.
 
 Includes rune-index sums, prime-number correspondences, Euler's totient function, recurring numerical patterns, and connections to other passages of *Liber Primus*.
-
-These findings complement the geometric predictions and provide additional material for independent examination.
