@@ -10,82 +10,55 @@
 
 ---
 
-## Explore the Research
+## About This Research
 
-The investigation begins with the proposed plaintext hidden within the **27 × 27 rune matrix**. Every recorded passage can be examined through its coordinates, ciphertext, decryption key, and geometric connections.
+This repository documents a proposed reading of **Liber Primus LP2, pages 0–2**, within a **27 × 27 rune matrix**. The plaintext is only the starting point: each recorded passage is accompanied by its ciphertext cells, decryption key, and the calculations used to read it.
 
-**[Interactive Matrix ↗](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)** — Explore the plaintext, key structures, reading paths, and supporting mirrors directly within the matrix.
+The investigation also explores whether the matrix contains a geometric system connecting one passage to the next. The documentation separates the **decryption method**, the **predictive rules**, and the **additional numerical evidence** so each can be examined independently.
 
-**[Plaintext Records ↗](./plaintext-i-found/)** — Examine the individual plaintext stages, their coordinates, and the calculations used to decrypt them.
+## Begin with the Matrix
+
+**[Interactive 27 × 27 Matrix ↗](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)**  
+Follow the proposed reading on the original grid. Inspect ciphertext locations, three-rune keys, reading paths, and the mirror structures linking them.
+
+**[Plaintext Records ↗](./plaintext-i-found/)**  
+Check the passages one by one, with their coordinates, key values, and rune-by-rune decryption calculations.
 
 ---
 
-## Research Documentation
+## The Four Reports
 
-Four reports present the proposed decryption system, progressing from its mathematical foundations to the prediction of subsequent ciphertext properties.
+The reports form a single reading sequence: **how the text is decrypted**, then **what the current ciphertext may reveal about the next one**.
 
-### [00 — The Decryption Method](./rules/00-decryption-method.md)
+### 00 · [The Decryption Method](./start-reading-here/00-decryption-method.md)
 
-**Foundations of the geometric decryption system.**
+The foundation. Learn how three-rune structures become keys, how Euler's totient and Möbius functions determine their cyclic alignment, and how subtraction modulo 29 produces plaintext. The report also introduces coordinate movement and mirror geometry.
 
-Explains how three-rune structures become decryption keys, how Euler's totient and Möbius functions determine their cyclic alignment, and how subtraction modulo 29 produces plaintext.
+### 01 · [Predicting the Next-Key Signature](./start-reading-here/01-next-key-signature.md)
 
-Also introduces coordinate movement and the geometric relationships between mirrored rune structures.
+From the **current ciphertext's coordinates**, calculate the predicted phase and three-component Möbius signature of the next key. This report explains the Direct and Reflected modes, cumulative phase cycles, and the role of the 90° and 180° rotations. The proposed rule matches **16/16 recorded transitions** on the selected route.
 
-### [01 — Predicting the Next-Key Signature](./Discovered-Deterministic-Rules/01-next-key-signature.md)
+### 02 · [The Leftmost Cell and Rotations](./start-reading-here/02-leftmost-cell-and-rotations.md)
 
-**Predicting the mathematical structure of the next key.**
+Move from the key to the next ciphertext's geometry. Explore the leftmost cell's own Möbius state and the **270° rotation rule**, which predicts whether that cell is the **beginning or end** of the next reading. The four matrix rotations are explained as parts of one system.
 
-Introduces the phase-prediction algorithm, cumulative phase cycles, and the Direct and Reflected calculation modes.
+### 03 · [Predicting the Reading Axis](./start-reading-here/03-predicting-axis-and-reading-direction.md)
 
-Shows how the current ciphertext and a 90° rotation determine the next key's complete Möbius signature, with matching predictions across **16/16 recorded transitions** on the selected route.
-
-Includes the predicted signature following `THEN`.
-
-### [02 — The Leftmost Cell and Matrix Rotations](./Discovered-Deterministic-Rules/02-leftmost-cell-and-rotations.md)
-
-**Predicting whether the next ciphertext begins or ends at its leftmost cell.**
-
-Examines the relationship between the leftmost cell and its own Möbius state, including the numerical constraints associated with each geometric mode.
-
-Introduces the **270° rotation rule** for predicting the cell's position within the reading order and explains how the four rotations — 0°, 90°, 180°, and 270° — form a connected geometric system.
-
-### [03 — Predicting the Reading Axis and Direction](./Discovered-Deterministic-Rules/03-predicting-axis-and-reading-direction.md)
-
-**Determining the geometric orientation of the next ciphertext.**
-
-Presents the rule for predicting whether the next reading follows a horizontal, vertical, or diagonal axis.
-
-Combines this prediction with the 270° rule from Report 02 to establish the role of the leftmost cell and narrow down the reading direction. For diagonal paths, the remaining slope is resolved through the candidate geometry.
-
-Together, the three predictive reports describe how properties of the next ciphertext and its key can be constrained **before accepting a proposed plaintext continuation**.
+Bring the predictions together. Determine whether the next ciphertext follows a **horizontal, vertical, or diagonal** axis, then combine that result with the leftmost-cell rule to constrain its reading direction. Diagonal candidates still require a geometric check of their slope.
 
 ---
 
 ## Numerical & Structural Evidence
 
-### [Strongest Plaintext Evidence](./rules/strongest-plaintext-evidence.md)
+**[Strongest Plaintext Evidence ↗](./start-reading-here/strongest-plaintext-evidence.md)**  
+An accompanying report on the numerical correspondences found along the proposed route: rune-index sums, prime-number relationships, totients, repeated quantities, and connections with other passages of *Liber Primus*.
 
-A collection of the most notable mathematical relationships found throughout the proposed plaintext.
-
-Includes rune-index sums, prime-number relationships, Euler's totient function, recurring numerical structures, and connections to other passages in *Liber Primus*.
-
-These findings complement the geometric predictions and provide additional material for investigating whether the proposed reading reflects an intentional structure.
-
----
+These observations are kept separate from the predictive rules: a numerical correspondence and a rule that predicts a new result are different forms of evidence.
 
 ## Independent Verification
 
-Every major finding is documented with the intention of making the research reproducible.
+Every claim is intended to be traceable back to the matrix. To review the work, **check the recorded cells and keys**, reproduce the modular decryption, and recalculate the predictions in Reports 01–03. Then test alternative paths and new candidates without changing the rules to fit them.
 
-The investigation can be examined at three levels:
+The **16/16 matches** describe the selected recorded route; whether the same rules hold on independently chosen continuations remains the key question. Corrections, alternative explanations, and independent reproductions are welcome.
 
-1. **Decryption** — Verify the ciphertext coordinates, three-rune keys, phase calculations, and recovered plaintext.
-2. **Geometric predictions** — Recalculate the documented transitions using the rules in Reports 01–03.
-3. **Independent testing** — Evaluate alternative paths and apply the existing rules to new candidates without modifying them to fit the results.
-
-The reported **16/16 predictive matches** describe the selected plaintext route. Establishing whether the rules generalize beyond that route remains an important part of the investigation.
-
-I welcome independent verification, alternative interpretations, corrections, and new discoveries.
-
-*The objective is not simply to defend a proposed solution, but to determine what is actually hidden within these pages.*
+*The goal is to discover what these pages actually contain.*
