@@ -16,11 +16,11 @@
 
 ---
 
-#### Begin with the Matrix
+**Begin with the Matrix**
 
 Start by exploring the proposed plaintext within the 27 × 27 rune matrix. Each passage can be examined through its coordinates, decryption key, and geometric connections.
 
-#### [Interactive Matrix ↗](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)
+#### **[Interactive Matrix ↗](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)**
 
 **Explore the live matrix, follow the plaintext route, and inspect the ciphertext cells, key structures, and supporting mirrors.**
 
@@ -30,7 +30,7 @@ Examine the recovered passages individually, including their coordinates, rune v
 
 ---
 
-#### The Decryption System
+**The Decryption System**
 
 Four connected reports document the mathematical and geometric mechanics of the proposed decryption.
 
@@ -58,7 +58,7 @@ Combines this result with the 270° rule to constrain the reading direction.
 
 ---
 
-#### Numerical & Structural Evidence
+**Numerical & Structural Evidence**
 
 #### [Strongest Plaintext Evidence ↗](./Start-reading-here/strongest-plaintext-evidence.md)
 
