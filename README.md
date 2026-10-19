@@ -30,13 +30,15 @@ Start by exploring the proposed plaintext within the 27 × 27 rune matrix. Each 
 
 #### **[Interactive Matrix ↗](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)**
 
+---
 
-Explore the live matrix, follow the plaintext route, and inspect the ciphertext cells, key structures, and supporting mirrors.
+**Use plaintext-i-found/ as a reference**
+
+
+To explore the map, start with `01.md`. It provides a brief, clear introduction to what to look for and how to begin navigating the map. Some things may not make sense at first, but it should give you a basic understanding of the idea behind it.
 
 
 #### [Plaintext Records ↗](./plaintext-i-found/)
-
-Examine the recovered passages individually, including their coordinates, rune values, and step-by-step decryption calculations.
 
 ---
 
