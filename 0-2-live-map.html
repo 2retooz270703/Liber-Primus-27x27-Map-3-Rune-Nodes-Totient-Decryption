@@ -5791,135 +5791,129 @@ body{transition:background-color .27s ease,color .27s ease}
 
 
 /* =============================================================
-   V81 — AURORA CRYSTAL / ONE PALE GLASS INSTRUMENT
-   Presentation-only skin. Keeps all cell coordinates, data, overlays,
-   original highlight colors, active states and JavaScript unchanged.
+   V82 — PURE WHITE MATRIX / LOW-PAINT SCROLLING
+   Static cell/axis presentation only. The stage logic, every
+   evidence overlay, and all neon/glow keyframes are unchanged.
    ============================================================= */
-:root{color-scheme:light}
-html,body{
-  background:
-    radial-gradient(ellipse 55% 30% at 6% 9%,rgba(222,205,241,.27),transparent 86%),
-    radial-gradient(ellipse 55% 42% at 96% 88%,rgba(198,223,232,.24),transparent 85%),
-    #f7f7f6 !important;
-}
-/* Single floating pane: depth comes from its edges, not strong blue fills. */
+:root{color-scheme:light;--line:#e9ebf1}
+html,body{background:#f9fafc !important}
+
+/* An actual white canvas rather than a textured, blurred glass sheet. */
 .map-app > .grid-shell{
   position:relative;
-  background:
-    radial-gradient(ellipse 70% 45% at 10% -13%,rgba(222,213,239,.24),transparent 100%),
-    radial-gradient(ellipse 55% 45% at 98% 108%,rgba(209,232,229,.25),transparent 100%),
-    linear-gradient(145deg,rgba(244,246,250,.96),rgba(239,241,246,.93)) !important;
-  border:1px solid rgba(255,255,255,.96) !important;
-  border-radius:22px !important;
-  box-shadow:
-    0 22px 64px rgba(50,55,74,.075),
-    0 5px 17px rgba(46,54,75,.042),
-    0 0 0 1px rgba(143,151,172,.16),
-    inset 0 1px 0 rgba(255,255,255,1),
-    inset 0 -1px 0 rgba(168,177,192,.09) !important;
-  scrollbar-color:rgba(166,174,189,.6) transparent;
+  background:#ffffff !important;
+  border:1px solid #e3e6ee !important;
+  border-radius:15px !important;
+  box-shadow:0 8px 25px rgba(42,49,69,.065) !important;
+  scrollbar-width:thin;
+  scrollbar-color:#bdc3d1 #f8f9fc;
+  /* Paint/layout isolation keeps the moving scroll surface separate
+     from the fixed controls, without affecting the glow keyframes. */
+  contain:layout paint style;
 }
-/* A clear, even rhythm of tiny floating crystal panes (no blue checkerboard). */
 .map-app .rune-grid{
-  background:transparent !important;
+  background:#fff !important;
   border-collapse:separate !important;
   border-spacing:0 !important;
 }
-.map-app .rune-grid th,
-.map-app .rune-grid td{
-  border-right:0 !important;
-  border-bottom:0 !important;
-}
+/* Single inexpensive background and hairlines instead of 729 translucent,
+   shadow-casting micro-panels. Cell positions/sizes stay identical. */
 .map-app .rune-grid td,
 .map-app .rune-grid tbody tr:nth-child(even) td:not(.grid-center),
 .map-app .rune-grid td:not(.grid-center){
-  background:transparent !important;
+  background:#ffffff !important;
+  border-right:1px solid #ebedf2 !important;
+  border-bottom:1px solid #ebedf2 !important;
   box-shadow:none !important;
 }
-/* Microbevels preserve pixel-perfect cell positions for overlays. */
 .map-app .rune-grid td::before{
-  content:"";
-  position:absolute;
-  inset:1.5px;
-  z-index:0;
-  pointer-events:none;
-  border-radius:5px;
-  border:1px solid rgba(255,255,255,.77);
-  background:
-    linear-gradient(150deg,rgba(255,255,255,.90) 0%,rgba(255,255,255,.55) 46%,rgba(248,249,252,.32) 100%);
-  box-shadow:
-    0 1px 2px rgba(86,94,113,.042),
-    inset 0 1px 0 rgba(255,255,255,.89),
-    inset 0 -1px 1px rgba(183,190,204,.10);
+  display:none !important;
+  content:none !important;
 }
 .map-app .rune-grid td .rune{
-  color:#373b46;
+  color:#353745;
   font-weight:400;
-  text-shadow:0 1px 0 rgba(255,255,255,.80);
+  text-shadow:none;
 }
-/* Axis rails are smoked pearlescent glass, visually separate from data. */
+/* Top column numbers and left row numbers: two quiet, coordinated rails.
+   Solid backgrounds avoid the costly per-header backdrop blurs. */
 .map-app .rune-grid thead th,
 .map-app .rune-grid tbody th,
 .map-app .rune-grid .corner{
-  background:
-    linear-gradient(156deg,rgba(255,255,255,.93) 0%,rgba(240,239,245,.87) 56%,rgba(227,231,239,.81) 100%) !important;
-  color:#72798a !important;
+  background:#f8f9fc !important;
+  color:#74798b !important;
   font-family:"Avenir Next","Helvetica Neue",Inter,system-ui,sans-serif !important;
   font-size:10px !important;
   font-weight:600 !important;
-  letter-spacing:.015em !important;
-  border-right:1px solid rgba(177,180,196,.18) !important;
-  border-bottom:1px solid rgba(177,180,196,.18) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.97),
-    inset 1px 0 0 rgba(255,255,255,.65),
-    inset 0 -1px 0 rgba(151,157,178,.09) !important;
-  -webkit-backdrop-filter:blur(8px) saturate(122%);
-  backdrop-filter:blur(8px) saturate(122%);
+  letter-spacing:.02em !important;
+  border-right:1px solid #e1e4ed !important;
+  border-bottom:1px solid #e1e4ed !important;
+  box-shadow:none !important;
+  -webkit-backdrop-filter:none !important;
+  backdrop-filter:none !important;
 }
-/* Quiet delineation between coordinates and the cipher surface. */
 .map-app .rune-grid thead th{
-  border-bottom:1px solid rgba(160,151,179,.29) !important;
+  background:#f9f8fc !important;
+  border-bottom-color:#d9dce8 !important;
 }
 .map-app .rune-grid tbody th{
-  border-right:1px solid rgba(160,151,179,.29) !important;
+  background:#f8f9fc !important;
+  border-right-color:#d9dce8 !important;
 }
-.map-app .rune-grid thead th.axis-center,
+.map-app .rune-grid .corner{
+  background:#eff1f7 !important;
+  border-right-color:#d7dbe6 !important;
+  border-bottom-color:#d7dbe6 !important;
+}
+/* Subtle five-step anchors make the outer numbering easier to track. */
+.map-app .rune-grid thead th:nth-child(5n + 1):not(.corner),
+.map-app .rune-grid tbody tr:nth-child(5n) > th{
+  color:#625d78 !important;
+  background:#f4f2f9 !important;
+}
+/* The 14 labels use the exact same weight, background and separators
+   as the other axis labels — no bold/purple highlight around 14. */
+.map-app .rune-grid thead th.axis-center{
+  color:#74798b !important;
+  font-weight:600 !important;
+  background:#f9f8fc !important;
+  border-right-color:#e1e4ed !important;
+  border-bottom-color:#d9dce8 !important;
+}
 .map-app .rune-grid tbody th.axis-center{
-  color:#756390 !important;
-  background:
-    linear-gradient(152deg,rgba(251,247,255,.98),rgba(224,210,242,.79)) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,1),
-    inset 0 -1px 0 rgba(163,141,188,.16) !important;
+  color:#74798b !important;
+  font-weight:600 !important;
+  background:#f8f9fc !important;
+  border-right-color:#d9dce8 !important;
+  border-bottom-color:#e1e4ed !important;
 }
-/* Preserve special center's dark value instead of washing it out. */
+/* Preserve the actual central cipher cell, its rune and its overlays. */
 .map-app .rune-grid td.grid-center{
   background:var(--center) !important;
-}
-.map-app .rune-grid td.grid-center::before{
-  background:linear-gradient(150deg,rgba(86,79,99,.78),rgba(47,44,55,.55));
-  border-color:rgba(255,255,255,.10);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.14);
+  border-color:#655d6b !important;
 }
 .map-app .rune-grid td.grid-center .rune{
   color:#fff !important;
   text-shadow:0 1px 3px rgba(0,0,0,.32);
 }
-/* Dedicated, unobtrusive scrollbars. */
-.map-app > .grid-shell::-webkit-scrollbar{height:9px;width:9px}
-.map-app > .grid-shell::-webkit-scrollbar-track{background:rgba(242,243,247,.75);border-radius:9px}
+/* All scrolling is direct, with no per-cell color transition or blur. */
+.map-app .rune-grid th,
+.map-app .rune-grid td{
+  transition:none !important;
+}
+.map-app > .grid-shell::-webkit-scrollbar{width:9px;height:9px}
+.map-app > .grid-shell::-webkit-scrollbar-track{background:#f8f9fc;border-radius:9px}
 .map-app > .grid-shell::-webkit-scrollbar-thumb{
-  background:rgba(167,172,188,.48);
-  border:2px solid rgba(245,246,249,.95);
+  background:#bbc1ce;
+  border:2px solid #f8f9fc;
   border-radius:9px;
 }
 @media(max-width:700px){
-  .map-app > .grid-shell{border-radius:16px !important}
-  .map-app .rune-grid td::before{inset:1px;border-radius:4px}
+  .map-app > .grid-shell{border-radius:12px !important}
   .map-app .rune-grid thead th,
   .map-app .rune-grid tbody th{font-size:9.5px !important}
 }
+
 </style>
 </head>
 <body>
