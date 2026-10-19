@@ -5791,113 +5791,135 @@ body{transition:background-color .27s ease,color .27s ease}
 
 
 /* =============================================================
-   V79 — LIGHT-ONLY FROSTED GLASS MATRIX
-   Presentation only: no changes to stage navigation, layer
-   toggles, rune data, cipher/key/mirror colors, or glow animation.
+   V81 — AURORA CRYSTAL / ONE PALE GLASS INSTRUMENT
+   Presentation-only skin. Keeps all cell coordinates, data, overlays,
+   original highlight colors, active states and JavaScript unchanged.
    ============================================================= */
-:root { color-scheme:light; }
-html, body { background:#eaf0f8 !important; }
-
-/* A quiet, translucent backdrop gives the individual glass tiles depth. */
-.map-app > .grid-shell {
+:root{color-scheme:light}
+html,body{
   background:
-    radial-gradient(ellipse 72% 56% at 9% 3%, rgba(179,196,241,.28), transparent 77%),
-    radial-gradient(ellipse 58% 60% at 92% 32%, rgba(205,184,242,.24), transparent 78%),
-    radial-gradient(ellipse 74% 55% at 50% 94%, rgba(165,214,232,.19), transparent 76%),
-    linear-gradient(155deg,#f2f6ff 0%,#f9fbff 46%,#eef3fc 100%) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.95),
-    inset 0 12px 28px rgba(119,141,188,.055) !important;
-  border-top:1px solid rgba(255,255,255,.85) !important;
-  scrollbar-color:rgba(145,164,201,.56) #eef3fb;
+    radial-gradient(ellipse 55% 30% at 6% 9%,rgba(222,205,241,.27),transparent 86%),
+    radial-gradient(ellipse 55% 42% at 96% 88%,rgba(198,223,232,.24),transparent 85%),
+    #f7f7f6 !important;
 }
-.map-app .rune-grid {background:transparent !important;}
-
-/* Fine seams + specular inset highlights, without changing cell size. */
+/* Single floating pane: depth comes from its edges, not strong blue fills. */
+.map-app > .grid-shell{
+  position:relative;
+  background:
+    radial-gradient(ellipse 70% 45% at 10% -13%,rgba(222,213,239,.24),transparent 100%),
+    radial-gradient(ellipse 55% 45% at 98% 108%,rgba(209,232,229,.25),transparent 100%),
+    linear-gradient(145deg,rgba(244,246,250,.96),rgba(239,241,246,.93)) !important;
+  border:1px solid rgba(255,255,255,.96) !important;
+  border-radius:22px !important;
+  box-shadow:
+    0 22px 64px rgba(50,55,74,.075),
+    0 5px 17px rgba(46,54,75,.042),
+    0 0 0 1px rgba(143,151,172,.16),
+    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 -1px 0 rgba(168,177,192,.09) !important;
+  scrollbar-color:rgba(166,174,189,.6) transparent;
+}
+/* A clear, even rhythm of tiny floating crystal panes (no blue checkerboard). */
+.map-app .rune-grid{
+  background:transparent !important;
+  border-collapse:separate !important;
+  border-spacing:0 !important;
+}
 .map-app .rune-grid th,
-.map-app .rune-grid td {
-  border-right:1px solid rgba(136,156,191,.24) !important;
-  border-bottom:1px solid rgba(136,156,191,.24) !important;
+.map-app .rune-grid td{
+  border-right:0 !important;
+  border-bottom:0 !important;
 }
-.map-app .rune-grid td:not(.grid-center) {
-  background:linear-gradient(152deg,
-    rgba(255,255,255,.80) 0%,
-    rgba(251,253,255,.61) 46%,
-    rgba(228,237,252,.41) 100%) !important;
+.map-app .rune-grid td,
+.map-app .rune-grid tbody tr:nth-child(even) td:not(.grid-center),
+.map-app .rune-grid td:not(.grid-center){
+  background:transparent !important;
+  box-shadow:none !important;
+}
+/* Microbevels preserve pixel-perfect cell positions for overlays. */
+.map-app .rune-grid td::before{
+  content:"";
+  position:absolute;
+  inset:1.5px;
+  z-index:0;
+  pointer-events:none;
+  border-radius:5px;
+  border:1px solid rgba(255,255,255,.77);
+  background:
+    linear-gradient(150deg,rgba(255,255,255,.90) 0%,rgba(255,255,255,.55) 46%,rgba(248,249,252,.32) 100%);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.87),
-    inset 1px 0 0 rgba(255,255,255,.55),
-    inset 0 -1px 0 rgba(186,205,235,.055) !important;
+    0 1px 2px rgba(86,94,113,.042),
+    inset 0 1px 0 rgba(255,255,255,.89),
+    inset 0 -1px 1px rgba(183,190,204,.10);
 }
-.map-app .rune-grid tbody tr:nth-child(even) td:not(.grid-center) {
-  background:linear-gradient(152deg,
-    rgba(250,252,255,.76) 0%,
-    rgba(240,246,255,.55) 52%,
-    rgba(224,236,252,.37) 100%) !important;
+.map-app .rune-grid td .rune{
+  color:#373b46;
+  font-weight:400;
+  text-shadow:0 1px 0 rgba(255,255,255,.80);
 }
-
-/* Both sticky numbered coordinate axes become real frosted glass. */
+/* Axis rails are smoked pearlescent glass, visually separate from data. */
 .map-app .rune-grid thead th,
 .map-app .rune-grid tbody th,
-.map-app .rune-grid .corner {
-  background:linear-gradient(148deg,
-    rgba(255,255,255,.94) 0%,
-    rgba(240,244,255,.83) 54%,
-    rgba(219,229,250,.73) 100%) !important;
-  color:#62708b !important;
-  font-weight:650 !important;
-  letter-spacing:.015em;
+.map-app .rune-grid .corner{
+  background:
+    linear-gradient(156deg,rgba(255,255,255,.93) 0%,rgba(240,239,245,.87) 56%,rgba(227,231,239,.81) 100%) !important;
+  color:#72798a !important;
+  font-family:"Avenir Next","Helvetica Neue",Inter,system-ui,sans-serif !important;
+  font-size:10px !important;
+  font-weight:600 !important;
+  letter-spacing:.015em !important;
+  border-right:1px solid rgba(177,180,196,.18) !important;
+  border-bottom:1px solid rgba(177,180,196,.18) !important;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.99),
-    inset 1px 0 0 rgba(255,255,255,.70),
-    1px 1px 3px rgba(96,117,164,.045) !important;
-  -webkit-backdrop-filter:blur(8px) saturate(130%);
-  backdrop-filter:blur(8px) saturate(130%);
+    inset 0 1px 0 rgba(255,255,255,.97),
+    inset 1px 0 0 rgba(255,255,255,.65),
+    inset 0 -1px 0 rgba(151,157,178,.09) !important;
+  -webkit-backdrop-filter:blur(8px) saturate(122%);
+  backdrop-filter:blur(8px) saturate(122%);
 }
-/* A subtle divider helps the axes stay distinguishable during scrolling. */
-.map-app .rune-grid thead th {border-bottom-color:rgba(118,139,178,.36) !important;}
-.map-app .rune-grid tbody th {border-right-color:rgba(118,139,178,.36) !important;}
-.map-app .rune-grid .corner {
-  background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(226,235,251,.85)) !important;
+/* Quiet delineation between coordinates and the cipher surface. */
+.map-app .rune-grid thead th{
+  border-bottom:1px solid rgba(160,151,179,.29) !important;
 }
-
-/* Coordinate 14 stays prominent, but is now a lavender glass tile. */
-.map-app .rune-grid th.axis-center {
-  background:linear-gradient(147deg,
-    rgba(231,221,249,.98),
-    rgba(207,213,245,.88) 54%,
-    rgba(191,209,239,.80)) !important;
-  color:#584779 !important;
-  border-color:rgba(147,128,185,.35) !important;
+.map-app .rune-grid tbody th{
+  border-right:1px solid rgba(160,151,179,.29) !important;
+}
+.map-app .rune-grid thead th.axis-center,
+.map-app .rune-grid tbody th.axis-center{
+  color:#756390 !important;
+  background:
+    linear-gradient(152deg,rgba(251,247,255,.98),rgba(224,210,242,.79)) !important;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.91),
-    inset 1px 0 0 rgba(255,255,255,.57),
-    0 1px 7px rgba(105,83,156,.065) !important;
+    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 -1px 0 rgba(163,141,188,.16) !important;
 }
-
-/* Preserve the original central rune fill and every overlay color. */
-.map-app .rune-grid td.grid-center {
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.22),
-    inset 1px 0 0 rgba(255,255,255,.12),
-    inset 0 -1px 0 rgba(0,0,0,.08) !important;
+/* Preserve special center's dark value instead of washing it out. */
+.map-app .rune-grid td.grid-center{
+  background:var(--center) !important;
 }
-.grid-shell::-webkit-scrollbar-thumb {
-  background:rgba(155,174,211,.63);
-  border-color:#eef3fb;
+.map-app .rune-grid td.grid-center::before{
+  background:linear-gradient(150deg,rgba(86,79,99,.78),rgba(47,44,55,.55));
+  border-color:rgba(255,255,255,.10);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14);
 }
-.grid-shell::-webkit-scrollbar-track {background:#eef3fb;}
-
-/* No change to row heights or fixed mobile table width. */
-@media(max-width:700px) {
+.map-app .rune-grid td.grid-center .rune{
+  color:#fff !important;
+  text-shadow:0 1px 3px rgba(0,0,0,.32);
+}
+/* Dedicated, unobtrusive scrollbars. */
+.map-app > .grid-shell::-webkit-scrollbar{height:9px;width:9px}
+.map-app > .grid-shell::-webkit-scrollbar-track{background:rgba(242,243,247,.75);border-radius:9px}
+.map-app > .grid-shell::-webkit-scrollbar-thumb{
+  background:rgba(167,172,188,.48);
+  border:2px solid rgba(245,246,249,.95);
+  border-radius:9px;
+}
+@media(max-width:700px){
+  .map-app > .grid-shell{border-radius:16px !important}
+  .map-app .rune-grid td::before{inset:1px;border-radius:4px}
   .map-app .rune-grid thead th,
-  .map-app .rune-grid tbody th,
-  .map-app .rune-grid .corner {
-    -webkit-backdrop-filter:blur(6px) saturate(120%);
-    backdrop-filter:blur(6px) saturate(120%);
-  }
+  .map-app .rune-grid tbody th{font-size:9.5px !important}
 }
-
 </style>
 </head>
 <body>
