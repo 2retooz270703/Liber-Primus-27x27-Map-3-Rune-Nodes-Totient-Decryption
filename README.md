@@ -16,10 +16,9 @@
 
 ---
 
-**Begin with the Matrix**
+**If this is your first time exploring my repository, start by taking a look at the interactive HTML map**
 
-Start by exploring the proposed plaintext within the 27 × 27 rune matrix. Each passage can be examined through its coordinates, decryption key, and geometric connections.
-
+I created it specifically to make it easier to verify my findings. So open it up and take some time to explore the map visually.
 
 <p align="center">
   <a href="https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/0-2-live-map.html">
