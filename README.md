@@ -76,7 +76,7 @@ Introduces two related formulas predicting whether the next ciphertext’s endpo
 
 #### [06 — Ciphertext Ray & Möbius Deviation](Start-reading-here/06-predicting-next-ciphertext-ray-and-mobius-deviation.md)
 
-A geometric navigation rule matching 16/16 transitions, with Möbius-controlled one-cell deviations and the unique SEE–YOU mirror symmetry.
+A geometric rule showing that the next ciphertext begins on or within one cell of eight directional rays from the previous ciphertext’s leftmost cell (16/16 transitions). One-cell deviations are linked to zero Möbius values, with a remarkable mirror symmetry between SEE and YOU.
 
 ---
 
