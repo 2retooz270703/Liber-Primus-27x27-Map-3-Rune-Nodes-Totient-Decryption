@@ -16,15 +16,13 @@
 
 ---
 
-**If you're visiting this repository for the first time, start by opening the interactive HTML map**
-
----
-
 <p align="center">
   <a href="https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/0-2-live-map.html">
     <img src="map.png" alt="Liber Primus 27×27 Interactive Map" width="900">
   </a>
 </p>
+
+**If you're visiting this repository for the first time, start by opening the interactive HTML map**
 
 I created it specifically to make it easier to verify my findings. So open it up and take some time to explore the map visually.
 
