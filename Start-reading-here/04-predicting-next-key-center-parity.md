@@ -243,6 +243,42 @@ Each formula gives **16/16 matches**, and the pair gives **16/16 joint parity ma
 
 The rules were identified by searching this recorded sequence. The table establishes the fit and makes the calculations reproducible; it does not constitute a test on previously unseen transitions.
 
+### Selecting the SOON key center
+
+The **YOU → SOON** transition illustrates how the two parity rules can distinguish between different centers that produce the **same numerical key**. Three documented nodes yield `L–R–EA`: **`L–C–EA` at `(25,7)`**, **`L–I–EA` at `(20,15)`**, and **`L–EO–EA` at `(25,14)`**. Their middle runes all transform to `R`, because:
+
+$$
+\varphi(5)=\varphi(10)=\varphi(12)=4=\mathrm{R}.
+$$
+
+The numerical key alone therefore does not distinguish these three possible centers. The parity rules supply an additional criterion using only the preceding **YOU** block:
+
+$$
+B=(27,18),\qquad E=(25,16),\qquad M=(16,16).
+$$
+
+The column prediction is:
+
+$$
+c'\equiv1+27+25+16=69\equiv1\pmod 2.
+$$
+
+For the row prediction, $n_0(B)=720$, so $n_2(B)=730-720=10$ and $\mu(10)=+1$. Hence:
+
+$$
+r'\equiv1+18+25+16+1=61\equiv1\pmod 2.
+$$
+
+The next key center must therefore lie in an **odd row and an odd column**:
+
+| Original node | Center | Row parity | Column parity | Both filters |
+|---|---|---|---|---|
+| **L–C–EA** | **C(25,7)** | **Odd** | **Odd** | **Pass** |
+| L–I–EA | I(20,15) | Even | Odd | Fails the row condition |
+| L–EO–EA | EO(25,14) | Odd | Even | Fails the column condition |
+
+**Each rule alone leaves two possibilities; together, they single out exactly `C(25,7)` among the three documented centers.** This gives a precise parity-based criterion for the recorded choice of the `L–C–EA` node, while the derived numerical key remains `L–R–EA` in all three cases. Because that center was already included when the formulas were fitted, this is a consistency check within the recorded route, not an additional independent validation.
+
 ---
 
 ## After THEN
