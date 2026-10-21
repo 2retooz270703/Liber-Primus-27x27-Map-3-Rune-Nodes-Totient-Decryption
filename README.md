@@ -16,7 +16,7 @@
 
 ---
 
-**If this is your first time exploring my repository, start by taking a look at the interactive HTML map**
+**If you're visiting this repository for the first time, start by opening the interactive HTML map**
 
 ---
 
