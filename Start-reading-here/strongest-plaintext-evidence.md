@@ -8,7 +8,7 @@
 
 ---
 
-The proposed reading of *Liber Primus* LP2, pages 0–2, contains more than a sequence of English words. When the recovered passages are grouped and measured by their **rune counts, rune-index sums, and assigned prime values**, several numerical relationships appear across different parts of the text. Some also point back to the geometry of the **27 × 27 matrix** and to a passage from LP1.
+The proposed reading of *Liber Primus* LP2, pages 0–2, contains more than a sequence of English words. When the recovered passages are grouped and measured by their **rune counts, rune-index sums, and assigned prime values**, several numerical relationships appear across different parts of the text. Some also point back to the geometry of the **27 × 27 matrix**, a passage from LP1, and the numerical matrices in LP1.
 
 This report gathers the strongest of those recorded correspondences and explains them one at a time. The aim is to make each calculation easy to follow: **what is being counted, where each number comes from, and what the result connects to**.
 
@@ -16,7 +16,7 @@ These are observations on the **selected plaintext route**. They are presented s
 
 **Contents**
 
-[01. The opening geometry](#the-opening-geometry) · [02. Two seven-word passages](#two-seven-word-passages) · [03. Ciphertext and key totals](#ciphertext-and-key-totals) · [04. The sum that spells YOU](#the-sum-that-spells-you) · [05. Four appearances of 51](#four-appearances-of-51) · [06. Two perfect cubes](#two-perfect-cubes) · [07. Two four-word passages](#two-four-word-passages) · [08. The LP1 correspondence](#the-lp1-correspondence)
+[01. The opening geometry](#the-opening-geometry) · [02. Two seven-word passages](#two-seven-word-passages) · [03. Ciphertext and key totals](#ciphertext-and-key-totals) · [04. The sum that spells YOU](#the-sum-that-spells-you) · [05. Four appearances of 51](#four-appearances-of-51) · [06. Two perfect cubes](#two-perfect-cubes) · [07. Two four-word passages](#two-four-word-passages) · [08. The LP1 correspondence](#the-lp1-correspondence) · [09. The LP1 matrix connection](#the-lp1-matrix-connection)
 
 ---
 
@@ -376,9 +376,72 @@ The exact agreement in **word count, rune count, and prime-value sum**, together
 
 ---
 
+## The LP1 Matrix Connection
+
+### From FORM to a number in the second matrix
+
+A further correspondence connects the same **233 / 232** pair to the two numerical matrices in LP1.
+
+The center of the first matrix is **FORM**, whose Gematria Primus prime-value sum is **91**:
+
+$$
+\mathrm{FORM}=2+7+11+71=91.
+$$
+
+Let $p_n$ denote the **n-th prime**, with $p_1=2$. The 91st prime is 467; doubling it gives 934:
+
+$$
+\boxed{p_{91}=467,\qquad 2p_{91}=934.}
+$$
+
+The number **934** appears immediately **above and below the center of the second LP1 matrix**. In its one-based 5 × 5 coordinates, these are cells **`(2,3)`** and **`(4,3)`**, surrounding the central **809**.
+
+### Recovering the two passage totals
+
+Applying Euler's totient function to 934 gives:
+
+$$
+\varphi(934)=\varphi(2\times467)=466=2\times233.
+$$
+
+Thus the first passage's index sum can be recovered as:
+
+$$
+\boxed{\frac{\varphi(934)}{2}=233.}
+$$
+
+Applying the totient function once more gives the second passage's sum:
+
+$$
+\boxed{\varphi(\varphi(934))=\varphi(466)=\varphi(2\times233)=232.}
+$$
+
+Both results match the totals already recorded in [Two Seven-Word Passages](#two-seven-word-passages):
+
+| Proposed LP2 passage | Rune-index sum | Expression from the LP1 number 934 |
+|---|---:|---|
+| **AS I GO, THE WEATHER TURNS COLD** | **233** | $\varphi(934)/2$ |
+| **THE IDEA OF THE END IS DEATH** | **232** | $\varphi(\varphi(934))$ |
+
+The relationship between the two totals also remains:
+
+$$
+\varphi(233)=232.
+$$
+
+### Reading the connection
+
+The complete calculation starts with **FORM = 91** at the center of the first LP1 matrix, takes the **91st prime**, doubles it to obtain **934** from the second matrix, and uses the totient function to recover **233 and 232** from the proposed LP2 reading.
+
+This connects **both LP1 matrices**, **prime-number indexing**, **Euler's totient function**, and **the two previously recorded seven-word passage totals**. The starting 91 is a **prime-value sum**; the resulting 233 and 232 are **rune-index sums**. The calculation relates these different numerical representations without identifying them as the same kind of measurement.
+
+The arithmetic is exact. Whether it reflects an intentional connection to the selected plaintext remains a hypothesis requiring further independent checks.
+
+---
+
 ## Reading the Evidence Together
 
-The patterns in this report operate at several levels. Some arise from the **geometry of the opening matrix**, others from the **structure of the proposed English passages**, and others from **rune-index or prime-value arithmetic**. The LP1 comparison adds a possible connection across the two parts of *Liber Primus*.
+The patterns in this report operate at several levels. Some arise from the **geometry of the opening matrix**, others from the **structure of the proposed English passages**, and others from **rune-index or prime-value arithmetic**. The LP1 comparisons add possible connections across the two parts of *Liber Primus*, through both a text passage and the numerical matrices. The matrix connection links the central FORM value of 91 to 934, then to the same 233 / 232 passage totals through prime-number indexing and the totient function.
 
 The most useful way to examine these findings is to keep three questions separate:
 
