@@ -437,11 +437,19 @@ This connects **both LP1 matrices**, **prime-number indexing**, **Euler's totien
 
 The arithmetic is exact. Whether it reflects an intentional connection to the selected plaintext remains a hypothesis requiring further independent checks.
 
+### Two further correspondences involving the matrix centers
+
+The center of the second LP1 magic square is **809**, the **140th prime number**. Interestingly, **140** is also the exact Gematria Primus **rune-index sum** of the 13 runes in **`SEE YOU SOON, THEN`** (51 + 30 + 30 + 29).
+
+The first square has **FORM = 91** at its center, and $\varphi(91)=72$. Similarly, **`SEE YOU SOON`** has a rune-index sum of **111**, with $\varphi(111)=72$. This also matches the **derived key for `THEN`**: **`E–IA–IA`** = 18 + 27 + 27 = **72**.
+
+These are exact numerical correspondences within the selected reading; whether they were intentionally encoded remains to be established.
+
 ---
 
 ## Reading the Evidence Together
 
-The patterns in this report operate at several levels. Some arise from the **geometry of the opening matrix**, others from the **structure of the proposed English passages**, and others from **rune-index or prime-value arithmetic**. The LP1 comparisons add possible connections across the two parts of *Liber Primus*, through both a text passage and the numerical matrices. The matrix connection links the central FORM value of 91 to 934, then to the same 233 / 232 passage totals through prime-number indexing and the totient function.
+The patterns in this report operate at several levels. Some arise from the **geometry of the opening matrix**, others from the **structure of the proposed English passages**, and others from **rune-index or prime-value arithmetic**. The LP1 comparisons add possible connections across the two parts of *Liber Primus*, through both a text passage and the numerical matrices. The matrix connection links the central FORM value of 91 to 934, then to the same 233 / 232 passage totals through prime-number indexing and the totient function. Further center-value correspondences link 809 to the 140-rune-index total of `SEE YOU SOON, THEN`, and $\varphi(91)=\varphi(111)=72$ to the derived key for `THEN`.
 
 The most useful way to examine these findings is to keep three questions separate:
 
