@@ -16,13 +16,15 @@
 
 ---
 
+**If you're visiting this repository for the first time, start by opening the interactive HTML map**
+
+---
+
 <p align="center">
   <a href="https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/0-2-live-map.html">
     <img src="map.png" alt="Liber Primus 27×27 Interactive Map" width="900">
   </a>
 </p>
-
-**If you're visiting this repository for the first time, start by opening the interactive HTML map**
 
 I created it specifically to make it easier to verify my findings. So open it up and take some time to explore the map visually.
 
@@ -44,33 +46,25 @@ The documents below contain my research into the discovered plaintext. Most of i
 
 ---
 
-The foundation of the system. Explains how three-rune structures produce decryption keys, how Euler's totient and Möbius functions determine their cyclic alignment, and how modular subtraction reveals plaintext.
-
 #### [00 — The Decryption Method](./Start-reading-here/00-decryption-method.md)
 
----
-
-Describes how the current ciphertext predicts the next key's phase and complete Möbius signature. Explores cumulative phase cycles, Direct and Reflected modes, and the relationship between 90° and 180° matrix rotations.
+The foundation of the system. Explains how three-rune structures produce decryption keys, how Euler's totient and Möbius functions determine their cyclic alignment, and how modular subtraction reveals plaintext.
 
 #### [01 — Predicting the Next-Key Signature](./Start-reading-here/01-next-key-signature.md)
 
----
-
-Examines the leftmost ciphertext cell and its own Möbius state. Introduces the 270° rotation rule, which predicts whether the leftmost cell of the next ciphertext will be its beginning or end, and shows how all four matrix rotations are connected.
+Describes how the current ciphertext predicts the next key's phase and complete Möbius signature. Explores cumulative phase cycles, Direct and Reflected modes, and the relationship between 90° and 180° matrix rotations.
 
 #### [02 — The Leftmost Cell and Rotations](./Start-reading-here/02-leftmost-cell-and-rotations.md)
 
----
-
-Explains how the next ciphertext's horizontal, vertical, or diagonal axis can be predicted. Combines this result with the 270° rule to constrain the reading direction.
+Examines the leftmost ciphertext cell and its own Möbius state. Introduces the 270° rotation rule, which predicts whether the leftmost cell of the next ciphertext will be its beginning or end, and shows how all four matrix rotations are connected.
 
 #### [03 — Predicting the Reading Axis](./Start-reading-here/03-predicting-axis-and-reading-direction.md)
 
----
-
-Explains how two coordinate formulas predict whether the next key’s center lies in an even or odd row and column. Both rules match all 16 recorded transitions. After THEN, their combined parity filter reduces the 44 mirror nodes with signature (+1,+1,+1) to 16 candidates.
+Explains how the next ciphertext's horizontal, vertical, or diagonal axis can be predicted. Combines this result with the 270° rule to constrain the reading direction.
 
 #### [04 — Predicting the Next Key’s Center Parity](./Start-reading-here/04-predicting-next-key-center-parity.md)
+
+Explains how two coordinate formulas predict whether the next key’s center lies in an even or odd row and column. Both rules match all 16 recorded transitions. After THEN, their combined parity filter reduces the 44 mirror nodes with signature (+1,+1,+1) to 16 candidates.
 
 ---
 
