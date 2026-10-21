@@ -1,6 +1,14 @@
 ---
 
 <p align="center">
+  <a href="https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/0-2-live-map.html">
+    <img src="map.png" alt="Liber Primus 27×27 Interactive Map" width="900">
+  </a>
+</p>
+
+---
+
+<p align="center">
   <em>
     As I go, the weather turns cold.<br>
     I may cry now.
@@ -15,12 +23,6 @@
 </p>
 
 ---
-
-<p align="center">
-  <a href="https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/0-2-live-map.html">
-    <img src="map.png" alt="Liber Primus 27×27 Interactive Map" width="900">
-  </a>
-</p>
 
 **1. If you're visiting this repository for the first time, start by opening the interactive HTML map**
 
