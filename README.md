@@ -16,10 +16,6 @@
 
 ---
 
-**If you're visiting this repository for the first time, start by opening the interactive HTML map**
-
----
-
 <p align="center">
   <a href="https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/0-2-live-map.html">
     <img src="map.png" alt="Liber Primus 27×27 Interactive Map" width="900">
@@ -27,6 +23,8 @@
 </p>
 
 ---
+
+**If you're visiting this repository for the first time, start by opening the interactive HTML map**
 
 I created it specifically to make it easier to verify my findings. So open it up and take some time to explore the map visually.
 
@@ -75,3 +73,5 @@ Explains how two coordinate formulas predict whether the next key’s center lie
 Some of the most unusual connections worth exploring. If you ask me which one is my favorite, it's the fact that the sum of the Gematria Primus values of all runes from AS I GO through DEATH equals 2163, which factorizes as 3 × 7 × 103. These three prime numbers correspond exactly to the runes spelling YOU in Gematria Primus (Y = 103, O = 7, U = 3), revealing a striking connection to Cicada 3301's 2016 message: "Seek and you will be found."
 
 #### [Strongest Plaintext Evidence](./Start-reading-here/strongest-plaintext-evidence.md)
+
+---
