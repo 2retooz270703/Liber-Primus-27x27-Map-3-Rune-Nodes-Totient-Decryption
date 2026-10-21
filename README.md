@@ -64,6 +64,10 @@ Explains how the next ciphertext's horizontal, vertical, or diagonal axis can be
 
 Explains how two coordinate formulas predict whether the next key’s center lies in an even or odd row and column. Both rules match all 16 recorded transitions. After THEN, their combined parity filter reduces the 44 mirror nodes with signature (+1,+1,+1) to 16 candidates.
 
+#### [05 — Predicting the Next Ciphertext’s Row Parity](./Start-reading-here/05-predicting-next-ciphertext-row-parity.md)
+
+Introduces two related formulas predicting whether the next ciphertext’s endpoint and leftmost cell lie in even or odd rows. They connect the current phase and key center with a 180° rotation and the earlier center-parity rule. Both match all 16 recorded transitions and the proposed THE, giving conditional 17/17. After THEN, they reduce the possible leftmost cells from 337 to 186.
+
 ---
 
 **Also, take a look at this file. I believe it contains the strongest evidence confirming the discovered plaintext**
