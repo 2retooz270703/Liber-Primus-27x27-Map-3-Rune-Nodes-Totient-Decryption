@@ -226,7 +226,7 @@ The factorization therefore reads **`YOU`**.
 
 This is particularly interesting because the next proposed recovered passage contains **`SEE YOU`**. The earlier numerical total appears to anticipate a word in the subsequent reading.
 
-The phrase *“Seek and you will be found”* is also noted in the project's Cicada 3301 context (2016). It provides a thematic comparison, distinct from the arithmetic factorization itself.
+The phrase *“Seek and you will be found”* is also noted in the project's 3301 context (2016). It provides a thematic comparison, distinct from the arithmetic factorization itself.
 
 ---
 
