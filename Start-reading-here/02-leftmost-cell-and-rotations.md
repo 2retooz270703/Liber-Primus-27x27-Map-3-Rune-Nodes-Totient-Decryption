@@ -399,13 +399,29 @@ $$
 
 Thus **THEN passes its own Reflected sign check**. For a proposed following ciphertext still in that geometric regime, its new leftmost cell must have a 90° Möbius value in **`{−1, 0}`**.
 
-One explored continuation, **THE**, uses `L(24,27) → L(23,26)`. Its leftmost cell is **`L(23,26)`**, the **last** cell in that reading. For this cell:
+The candidate continuation **THE KEY IS TO GO** uses **J(22,21) → W(21,20)** for THE, under the derived key **N–E–N** from the original node centered on **M(20,17)**. Its leftmost cell is **W(21,20)**, the last cell read. For this cell:
 
 $$
-n_1(23,26)=680
+n_1(21,20)=27(20-1)+28-21=520.
 $$
 
-Since `680 = 2³ × 5 × 17`, $\mu(680)=0$. This candidate therefore satisfies **both** the predicted END role and the Reflected leftmost-cell class. These constraints describe a compatible candidate, not a unique selection among possible continuations.
+Since **520 = 2³ × 5 × 13**, μ(520)=0. This THE therefore satisfies the predicted **END** role and the **Reflected** leftmost-cell class.
+
+### Boundary checks through THE KEY IS TO GO
+
+The current endpoint E and the current original center rune h determine each next boundary. The final column evaluates the selected next leftmost cell separately.
+
+| Candidate transition | n₃(E) / μ(n₃(E)) | φ(h) | Predicted next role | Next leftmost cell L′ | n₁(L′) / μ(n₁(L′)) |
+|---|---|---:|---|---|---|
+| THEN → THE | 25 / 0 | 18 | END | (21,20) | 520 / 0 |
+| THE → KEY | 210 / +1 | 18 | BEGINNING | (21,4) | 88 / 0 |
+| KEY → IS | 640 / 0 | 4 | END | (19,6) | 144 / 0 |
+| IS → TO | 586 / +1 | 4 | BEGINNING | (9,16) | 424 / 0 |
+| TO → GO | 278 / +1 | 18 | BEGINNING | (9,20) | 532 / 0 |
+
+All five boundary predictions match the selected reading orders. In particular, KEY is read upward from its bottommost cell, IS ends at its leftmost cell, and TO begins at its leftmost cell.
+
+All five selected leftmost cells have μ(n₁)=0, which is allowed in both sign classes. Their compatibility with Reflected does not by itself select that regime. These candidate checks are separate from the historical 16/16 boundary fit and do not locate a unique next ciphertext.
 
 ---
 
