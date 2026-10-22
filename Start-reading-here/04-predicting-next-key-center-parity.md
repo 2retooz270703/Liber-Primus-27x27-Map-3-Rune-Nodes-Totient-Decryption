@@ -8,7 +8,7 @@
 
 A completed ciphertext block can provide another constraint on the **next decryption key**: whether the center of its original three-rune node lies in an **even or odd row and column**. Two compact formulas use the current ciphertext's beginning and endpoint, together with the center of its current key node, to predict these two properties.
 
-The **column rule** uses only three row numbers and an additive constant. The **row rule** shares the same basic structure, but uses the beginning's column and adds the Möbius value of its absolute cell number after a **180° rotation**. On the selected LP2 pages 0–2 route, both rules match **all 16 recorded transitions**. They also agree with the explored **THEN → THE** continuation, giving a conditional **17/17** on that extended route.
+The **column rule** uses only three row numbers and an additive constant. The **row rule** shares the same basic structure, but uses the beginning's column and adds the Möbius value of its absolute cell number after a **180° rotation**. On the selected LP2 pages 0–2 route, both rules match **all 16 recorded transitions**. They also agree with the **THEN → THE** realization used in **THE KEY IS TO GO**, giving a conditional **17/17** on that extended route.
 
 This report adds a **location filter** to the earlier reports. [Report 01](01-next-key-signature.md) predicts the next key's numerical signature; [Report 02](02-leftmost-cell-and-rotations.md) examines leftmost-cell geometry; and [Report 03](03-predicting-axis-and-reading-direction.md) predicts the next ciphertext's axis and reading orientation. The present formulas constrain the **next key-node center**, rather than the next ciphertext's cells.
 
@@ -338,44 +338,56 @@ The even-row and odd-column rows show each filter applied separately to the sign
 
 **Both filters reduce the 44 eligible mirror nodes to 16**, removing approximately **64%**. Distinct centers decrease from **36 to 12**. A spatial node is counted by its three cell positions; different nodes can share a center or yield the same numerical key. These counts concern **mirrored nodes with the center-totient transformation**, not every possible non-mirrored key construction.
 
-### The E–O–E candidate
+### The N–M–N candidate
 
-The explored next key node is:
-
-$$
-\mathrm{E}(26,16)\;–\;\mathrm{O}(26,21)\;–\;\mathrm{E}(26,26).
-$$
-
-Its center **`(26,21)`** lies in an **even row and an odd column**, so it survives both filters. It is immediately **one cell left of the current THEN key center `(26,22)`**, and is the nearest remaining center to that current center by ordinary Euclidean distance.
-
-The original center rune `O` has index **3**. Transforming it gives $\varphi(3)=2=\mathrm{TH}$, so the derived key is:
+The THE realization in the candidate continuation **THE KEY IS TO GO** uses the original node:
 
 $$
-\mathrm{E-O-E}\longmapsto\mathrm{E-TH-E}.
+\mathrm{N}(17,17)\;–\;\mathrm{M}(20,17)\;–\;\mathrm{N}(23,17).
 $$
 
-Its indices are $(18,2,18)$. The signature is:
+Its center **(20,17)** lies in an **even row and an odd column**, matching both predictions from THEN. The mirror is vertical, with radius **3**.
+
+The original center rune M has index **19**. Transforming it gives φ(19)=18=E:
 
 $$
-\bigl(\mu(\varphi(18)),\mu(\varphi(2)),\mu(\varphi(18))\bigr)
-=\bigl(\mu(6),\mu(1),\mu(6)\bigr)
+\mathrm{N-M-N}\longmapsto\mathrm{N-E-N}.
+$$
+
+The derived key has indices **(9,18,9)** and signature:
+
+$$
+\bigl(\mu(\varphi(9)),\mu(\varphi(18)),\mu(\varphi(9))\bigr)
+=\bigl(\mu(6),\mu(6),\mu(6)\bigr)
 =(+1,+1,+1).
 $$
 
-Its phase is **0**, so the key begins with `E–TH`. The proposed ciphertext **`L(24,27) → L(23,26)`** then gives:
+Its phase is **0**. The selected ciphertext **J(22,21) → W(21,20)** gives:
 
 | Cell | Ciphertext index | Key index | Subtraction modulo 29 | Plaintext |
 |---|---:|---:|---|---|
-| `(24,27)` | `L = 20` | `E = 18` | `20 − 18 = 2` | **TH** |
-| `(23,26)` | `L = 20` | `TH = 2` | `20 − 2 = 18` | **E** |
-
-This is the explored **THE** continuation. By comparison, the `D–U–D` node centered on **`(25,12)`** has an odd row and an even column, so it fails both parity conditions.
+| `(22,21)` | `J = 11` | `N = 9` | `11 − 9 = 2` | **TH** |
+| `(21,20)` | `W = 7` | `E = 18` | `7 − 18 ≡ 18` | **E** |
 
 ### The conditional seventeenth match
 
-For **THEN → THE**, both formulas predict **`(0,1)`**. The candidate center `(26,21)` has exactly those parities. Including this continuation therefore gives **17/17 matches for each formula on the extended route**.
+For **THEN → THE**, the formulas predict **(row parity, column parity)=(0,1)**. The selected center **(20,17)** matches. Including this first candidate transition gives conditional **17/17** for each formula.
 
-THE was already an explored candidate. This is **agreement with that candidate**, rather than independent confirmation that it is the intended next plaintext. Its surviving center is one of the **12 remaining centers**; the parity equations themselves do not instruct the reader to choose the nearest one.
+This center is one of the **12 remaining centers** after the signature and parity filters. The parity rules establish compatibility; they do not select this exact center or its plaintext uniquely. The candidate was found using the constraints, so its agreement is not independent validation.
+
+### Center checks through THE KEY IS TO GO
+
+For each row, the next-center bits are calculated from the current B, E, and M before comparison with the selected next center.
+
+| Candidate transition | Current B | Current E | Current M | Selected next center | Predicted (row, column) |
+|---|---|---|---|---|---|
+| THEN → THE | (25,25) | (25,27) | (26,22) | (20,17) | (0,1) |
+| THE → KEY | (22,21) | (21,20) | (20,17) | (12,16) | (0,0) |
+| KEY → IS | (21,4) | (19,4) | (12,16) | (17,9) | (1,1) |
+| IS → TO | (18,7) | (19,6) | (17,9) | (8,25) | (0,1) |
+| TO → GO | (9,16) | (8,17) | (8,25) | (12,14) | (0,0) |
+
+All five selected centers match both parity bits. These candidate-extension checks are separate from the historical 16-transition fitting set.
 
 ---
 
@@ -391,23 +403,23 @@ The predictions concern the **key-node center**, not the next ciphertext's begin
 
 The recorded fit does not establish a unique formula or a complete traversal algorithm. The source-node choices are part of the input, and other expressions can fit the same historical sequence while extrapolating differently. Future transitions with independent support are needed to test whether this particular pair continues to hold.
 
-If the explored THE is used as the current block, its inputs are:
+If the N–M–N THE realization is used as the current block, its inputs are:
 
 $$
-B=(24,27),\qquad E=(23,26),\qquad M=(26,21).
+B=(22,21),\qquad E=(21,20),\qquad M=(20,17).
 $$
 
-Here $n_2(B)=82$ and $\mu(82)=+1$. The same pair then predicts:
+Here n₂(B)=142 and μ(142)=+1. The same pair predicts:
 
 $$
-c'\equiv1+24+23+26=74\equiv0\pmod 2,
+c'\equiv1+22+21+20=64\equiv0\pmod2,
 $$
 
 $$
-r'\equiv1+27+23+26+1=78\equiv0\pmod 2.
+r'\equiv1+21+21+20+1=64\equiv0\pmod2.
 $$
 
-**After the candidate THE, this pair predicts an EVEN ROW and an EVEN COLUMN for the following key center.** This forecast belongs specifically to the two formulas documented here and remains unverified against a subsequent independently supported key.
+**After this THE, the next original key center is predicted to have an EVEN ROW and an EVEN COLUMN.** The selected KEY center **H(12,16)** matches both bits. This is agreement within the candidate continuation, not an independently authenticated next key.
 
 ---
 
@@ -460,4 +472,4 @@ The last relation follows algebraically from the two parity rules; it is not an 
 
 ---
 
-*Research source:* [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption). Calculations use the supplied snapshot at commit `d5eed3f10428372c7202ceebc65cc3bdead0819d`, the selected 17-block route with `OF` and `THE` separate, the primary SOON ciphertext and its `L–C–EA` original node, and the additional explored THEN → THE continuation. The 16/16 historical fits and conditional 17/17 extended fits describe that selected route; they do not independently establish an intended or unique Cicada 3301 decryption.
+*Research source:* [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption). Calculations use the supplied snapshot at commit `d5eed3f10428372c7202ceebc65cc3bdead0819d`, the selected 17-block route with `OF` and `THE` separate, the primary SOON ciphertext and its `L–C–EA` original node, and the candidate THEN → THE continuation using the N–M–N node centered on M(20,17). The 16/16 historical fits and conditional 17/17 extended fits describe that selected route; they do not independently establish an intended or unique Cicada 3301 decryption.
