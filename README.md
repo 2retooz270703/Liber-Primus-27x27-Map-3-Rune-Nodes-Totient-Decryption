@@ -24,10 +24,10 @@
 
 > [!TIP]
 > **If you're visiting this repository for the first time, start by opening the interactive HTML map**
->
-> I created it specifically to make it easier to verify my findings. So open it up and take some time to explore the map visually.
->
-> #### **[Interactive Matrix](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)**
+
+I created it specifically to make it easier to verify my findings. So open it up and take some time to explore the map visually.
+
+#### **[Interactive Matrix](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)**
 
 ---
 
