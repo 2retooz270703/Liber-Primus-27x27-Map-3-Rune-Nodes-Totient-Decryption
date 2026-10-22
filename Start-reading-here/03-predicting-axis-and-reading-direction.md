@@ -219,9 +219,9 @@ The numerical inputs come from the selected ciphertext endpoints and original ke
 
 ### Explored continuation — THEN → THE
 
-17. **`THEN → THE`** — `μ(754) + μ(5) = −1 − 1 = −2` → **diagonal**; **END** → **leftward**, specifically **up-left** on the selected `L–L` candidate.
+17. **`THEN → THE`** — `μ(754) + μ(5) = −1 − 1 = −2` → **diagonal**; **END** → **leftward**, specifically **up-left** on the selected `J–W` candidate at `(22,21) → (21,20)`.
 
-The axis result matches **all 16 recorded transitions on the fixed primary route**. Including the explored `THEN → THE` candidate gives **17/17 axis matches on that extended route**. The preceding 270° rule independently reproduces the **BEGINNING/END** label on the 16 recorded transitions; the proposed `THE` also matches its subsequent END prediction. These figures refer to a chosen reading route with specified original nodes, not to a unique selection of every ciphertext from the full matrix.
+The axis result matches **all 16 recorded transitions on the fixed primary route**. Including the explored `THEN → THE` candidate gives conditional **17/17 axis matches on that extended route**. The preceding 270° rule independently reproduces the **BEGINNING/END** label on the 16 recorded transitions; the proposed `THE` also matches its subsequent END prediction. These figures refer to a chosen reading route with specified original nodes, not to a unique selection of every ciphertext from the full matrix.
 
 ---
 
@@ -313,7 +313,7 @@ $$
 \tau_{\mathrm{next}}=[\mu(25)+\varphi(27)]\bmod 2=0
 $$
 
-The following ciphertext's **leftmost cell should be its END**. Together, the two predictions constrain the continuation to a **leftward-reading diagonal** (`↖` or `↙`). The explored THE candidate runs from `L(24,27)` to `L(23,26)`, making its leftmost cell the endpoint and selecting **up-left** (`↖`) through its actual coordinates.
+The following ciphertext's **leftmost cell should be its END**. Together, the two predictions constrain the continuation to a **leftward-reading diagonal** (`↖` or `↙`). The THE realization used in **THE KEY IS TO GO** runs from `J(22,21)` to `W(21,20)`, making its leftmost cell the endpoint and selecting **up-left** (`↖`) through its actual coordinates.
 
 ---
 
@@ -340,10 +340,24 @@ The calculations now provide three concrete properties of the explored continuat
 2. **Next ciphertext axis:** **DIAGONAL**, since the axis score is **−2** (this report).
 3. **Next leftmost-cell boundary:** **END**, since the 270° boundary result is **0** (Report 02).
 
-These fix a **diagonal reading toward the left**. In the selected candidate **THE**, the two ciphertext cells are `L(24,27) → L(23,26)`, giving the actual **up-left** slope. Its leftmost cell, `L(23,26)`, is the endpoint, as predicted; its 90°-rotated Möbius value is **0**, which also satisfies the Reflected-mode leftmost-cell condition from Report 02.
+These fix a **diagonal reading toward the left**. In the selected candidate **THE**, the two ciphertext cells are `J(22,21) → W(21,20)`, giving the actual **up-left** slope. Its leftmost cell, `W(21,20)`, is the endpoint, as predicted; its 90° index is **520**, with Möbius value **0**, which also satisfies the Reflected-mode leftmost-cell condition from Report 02.
 
 The result is a coherent set of constraints on this candidate. **The axis and boundary equations alone do not distinguish up-left from down-left diagonals or locate the unique next plaintext.** Their value is that they reject incompatible axes and boundary orientations before further geometric and decryption checks.
 
+
+### Axis and direction checks through THE KEY IS TO GO
+
+The selected THE uses the **N–M–N** original node centered on **M(20,17)**, producing **N–E–N**. Keeping every selected original node fixed gives the following checks. The first row is the same THEN → THE example already worked above.
+
+| Candidate transition | A | G | μ(A), μ(G) → score | Predicted axis / boundary | Selected reading |
+|---|---:|---:|---|---|---|
+| THEN → THE | 754 | 5 | −1, −1 → -2 | DIAGONAL / END | up-left ↖ |
+| THE → KEY | 672 | 10 | 0, +1 → +1 | VERTICAL / BEGINNING | up ↑ |
+| KEY → IS | 499 | 30 | −1, −1 → -2 | DIAGONAL / END | down-left ↙ |
+| IS → TO | 705 | 2 | −1, −1 → -2 | DIAGONAL / BEGINNING | up-right ↗ |
+| TO → GO | 712 | 4 | 0, 0 → 0 | HORIZONTAL / BEGINNING | right → |
+
+All five axes and boundary roles agree with the selected ciphertexts. A diagonal's up/down slope is supplied by the selected coordinates; the axis and boundary formulas constrain the diagonal axis and left/right sense. These are conditional candidate checks, not five independent predictions of previously unknown words.
 ---
 
 ## Formula Reference
