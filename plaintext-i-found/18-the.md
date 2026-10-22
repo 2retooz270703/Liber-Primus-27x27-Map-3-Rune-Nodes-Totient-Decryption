@@ -44,4 +44,4 @@ From **J(22,21)**, read 2 runes diagonally up-left. Subtract the aligned key mod
 | Rows from Report 05 | Both the endpoint and the leftmost cell are W(21,20), in odd row 21, as predicted. |
 | GP total points to the key center | GP(THEN)=101 and GP(THE KEY IS TO GO)=429. Their sum is 530=27(20−1)+17=n₀(M(20,17)), the center of this THE key node. This is a numerical observation on the selected continuation. |
 
-This is the **N–M–N** realization of THE at J(22,21) → W(21,20), not the separate E–O–E realization at (24,27) → (23,26). The explicit formulas in Reports 01–06 pass. The additional rotated line mask mentioned in Report 05 does not include its leftmost cell (21,20); treating that mask as compulsory would reject this entry transition.
+This is the **N–M–N** realization of THE at J(22,21) → W(21,20), not the separate E–O–E realization at (24,27) → (23,26). The explicit formulas in Reports 01–06 pass.
