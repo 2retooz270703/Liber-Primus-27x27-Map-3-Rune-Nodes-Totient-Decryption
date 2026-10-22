@@ -390,15 +390,15 @@ This supports investigating the **leftmost cell as a distinguished geometric anc
 
 ## Conditional Test After THEN
 
-The next step of the candidate route is not independently authenticated. Nevertheless, the new rule can be calculated **before choosing a next word**.
+The candidate continuation **THE KEY IS TO GO** is checked separately from the historical 16-transition reconstruction. The gate and ray definitions are unchanged.
 
-For recorded `THEN`:
+For recorded THEN:
 
 $$
 L_{\mathrm{THEN}}=(25,25),\qquad E_{\mathrm{THEN}}=(25,27).
 $$
 
-The current endpoint has:
+The endpoint gives:
 
 $$
 \begin{aligned}
@@ -407,20 +407,45 @@ n_3(25,27)&=25, &\mu(25)&=0.
 \end{aligned}
 $$
 
-Consequently **`q(THEN)=1`**, and the next ciphertext beginning may be on a ray or one grid cell away.
-
-The proposed `THE` ciphertext starts at **`(24,27)`** and continues to `(23,26)`. Relative to `L_THEN=(25,25)`:
+Thus **q(THEN)=1**. The selected THE starts at **J(22,21)** and ends at **W(21,20)**, using the N–M–N source node centered on M(20,17). From L_THEN:
 
 $$
-(\Delta r,\Delta c)=(-1,+2),\qquad
-\boxed{d_8=1\le q=1.}
+(\Delta r,\Delta c)=(-3,-4),\qquad
+d_8=\min(3,4,1)=1\le q=1.
 $$
 
-So the **candidate `THEN → THE` passes**. It also starts one cell directly above the endpoint of `THEN`, `(25,27)`, but that separate endpoint-to-start alignment is observed on only part of the historical route and is **not** part of the universal 16/16 inequality.
+The entry into THE therefore passes the existing allowance without changing the rule.
 
-For the proposed `THE` endpoint `(23,26)`, both `n₀=620` and `n₃=50` have Möbius value zero. The rule therefore also **permits**, but does not select, a one-cell deviation for the following transition. One previously considered `SEA` placement starts at `(20,27)` and satisfies this bound.
+### The next step is an exact ray
 
-**Crucially, the ray inequality does not make `THE` unique.** A previous geometric count, even after fixing a two-rune up-left reading path, a particular next-leftmost μ class, and an endpoint-row parity, still found **84 candidate starts** passing the Möbius-gated ray after `THEN`. Those 84 are geometric placements under the stated assumptions, not 84 verified correct plaintexts.
+For this THE endpoint **W(21,20)**:
+
+$$
+n_0=560,\qquad n_3=210,\qquad
+\mu(560)=0,\quad\mu(210)=+1.
+$$
+
+Consequently **q(THE)=0**: the following beginning must lie exactly on a ray from **L_THE=(21,20)**. KEY begins at **N(21,4)**, 16 cells directly left, so **d₈=0**.
+
+### Ray checks through THE KEY IS TO GO
+
+| Candidate transition | Current L | Next B′ | Δr, Δc | μ(n₀(E)), μ(n₃(E)) | q | d₈ |
+|---|---|---|---|---|---:|---:|
+| THEN → THE | (25,25) | (22,21) | (-3,-4) | (0,0) | 1 | 1 |
+| THE → KEY | (21,20) | (21,4) | (0,-16) | (0,+1) | 0 | 0 |
+| KEY → IS | (21,4) | (18,7) | (-3,3) | (0,0) | 1 | 0 |
+| IS → TO | (19,6) | (9,16) | (-10,10) | (0,+1) | 0 | 0 |
+| TO → GO | (9,16) | (9,20) | (0,4) | (+1,+1) | 0 | 0 |
+
+All five candidate transitions satisfy **d₈≤q**. Only THEN → THE uses a one-cell deviation. KEY → IS has q=1 but d₈=0, confirming the same permission-versus-requirement distinction seen in SEE → YOU.
+
+The ray origin must remain **L**. For KEY, this is its beginning N(21,4), not its endpoint EA(19,4). For TO, it is its beginning U(9,16), not its endpoint NG(8,17); the next GO begins at H(9,20), four cells right of U.
+
+### A shared diagonal in the selected continuation
+
+The KEY beginning **N(21,4)**, both IS cells **X(18,7), OE(19,6)**, and both TO cells **U(9,16), NG(8,17)** lie on **r+c=25**. IS is read down-left and TO up-right on this same diagonal. This is an exact geometric connection within the selected candidate.
+
+The inequality and gate do not select that particular diagonal, its travel distances, or a unique plaintext. These five checks concern a continuation found using the constraints and should not be treated as independent authentication of the words.
 
 ---
 
