@@ -83,5 +83,3 @@ A geometric rule showing that the next ciphertext begins on or within one cell o
 If you ask me which one is my favorite, it's the fact that the sum of the Gematria Primus values of all runes from AS I GO through DEATH equals 2163, which factorizes as 3 × 7 × 103. These three prime numbers correspond exactly to the runes spelling YOU in Gematria Primus (Y = 103, O = 7, U = 3), revealing a striking connection to 3301's 2016 message: "Seek and you will be found."
 
 #### [Strongest Plaintext Evidence](./Start-reading-here/strongest-plaintext-evidence.md)
-
----
