@@ -20,8 +20,6 @@
   </em>
 </p>
 
----
-
 <sub>I believe 3301 deliberately left geometric clues for the first 17 stages, from AS I GO to THEN, allowing manual discovery. DEATH appears at stage 13. From stage 18 onward, the continuation is found using the same formulas and rules that generate the first 17 stages.</sub>
 
 ---
