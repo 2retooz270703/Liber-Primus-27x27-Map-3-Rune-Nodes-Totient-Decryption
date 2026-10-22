@@ -23,7 +23,7 @@
 ---
 
 > [!TIP]
-> **If you're visiting this repository for the first time, start by opening the interactive HTML map**
+> **If you're visiting this repository for the first time, start by opening the interactive HTML map.**
 
 I created it specifically to make it easier to verify my findings. So open it up and take some time to explore the map visually.
 
@@ -31,7 +31,7 @@ I created it specifically to make it easier to verify my findings. So open it up
 
 ---
 
-**After exploring the interactive map, open the folder below and briefly look through the files to get an overview of the project**
+**After exploring the interactive map, open the folder below and briefly look through the files to get an overview of the project.**
 
 Some things might not make sense at first, but it should help you understand the overall concept.
 
@@ -39,7 +39,7 @@ Some things might not make sense at first, but it should help you understand the
 
 ---
 
-**Once you've taken a look, explore how I discovered and reconstructed the plaintext path**
+**Once you've taken a look, explore how I discovered and reconstructed the plaintext path.**
 
 The documents below contain my research into the discovered plaintext. Most of it was found manually, and I believe it is correct because it stood out geometrically. My manual discoveries were based on the methods described in `00.md`, so I recommend reading that file carefully. I was confident in the accuracy of what I had found, so I began searching for patterns in how the plaintext was generated. This led to the creation of `01.md`, `02.md`, and the subsequent files. What makes these findings particularly interesting is that the system I discovered does not appear to be random.
 
@@ -78,7 +78,7 @@ A geometric rule showing that the next ciphertext begins on or within one cell o
 ---
 
 > [!TIP]
-> **Also, take a look at the file below. I believe it contains the strongest evidence confirming the discovered plaintext**
+> **Also, take a look at the file below. I believe it contains the strongest evidence confirming the discovered plaintext.**
 
 If you ask me which one is my favorite, it's the fact that the sum of the Gematria Primus values of all runes from AS I GO through DEATH equals 2163, which factorizes as 3 × 7 × 103. These three prime numbers correspond exactly to the runes spelling YOU in Gematria Primus (Y = 103, O = 7, U = 3), revealing a striking connection to 3301's 2016 message: "Seek and you will be found."
 
