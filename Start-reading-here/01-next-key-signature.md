@@ -168,7 +168,7 @@ $$
 p_{\mathrm{next}}=\left(1+\sum_{n\in C}\mu(730-n)\right)\bmod 3
 $$
 
-This matches the following **4 recorded transitions**. At the end of the currently documented route, the cumulative total is `S = 18`, so this mode is still active.
+This matches the following **4 recorded transitions**. At the end of the primary 17-block route, the cumulative total is `S = 18`, so this mode is still active.
 
 **Mode IV — Direct/+0 · `21 ≤ S < 28`**
 
@@ -453,6 +453,32 @@ $$
 
 The arithmetic for the current `THEN` ciphertext is directly checkable. The **next-key signature** is a prediction to apply to the continuation, not an independently established next key. In particular, this signature alone does **not** uniquely specify the three rune indices or a plaintext word.
 
+
+### The THE realization used in the candidate continuation
+
+The candidate **THE KEY IS TO GO** begins with ciphertext **J(22,21) → W(21,20)**. Its original key node is the vertical mirror:
+
+$$
+\mathrm{N}(17,17)\;–\;\mathrm{M}(20,17)\;–\;\mathrm{N}(23,17).
+$$
+
+The center transforms by φ(M = 19) = 18 = E, giving **N–E–N**, with indices **(9,18,9)**. Its signature is **(+1,+1,+1)** and its phase is **0**, matching the prediction from THEN. Subtracting N–E from J–W modulo 29 gives **TH–E**.
+
+### Signature checks through THE KEY IS TO GO
+
+The same rules are kept fixed for all five candidate transitions. Every row uses the current block's ciphertext and the incoming cumulative total S.
+
+| Candidate transition | S before | Reflected Σμ | Current selected m / μ(m) | Predicted next phase | Predicted next signature | S after |
+|---|---:|---:|---|---:|---|---:|
+| THEN → THE | 18 | 2 | 651 / −1 | 0 | (+1,+1,+1) | 18 |
+| THE → KEY | 18 | 0 | 520 / 0 | 1 | (+1,−1,+1) | 19 |
+| KEY → IS | 19 | 0 | 88 / 0 | 1 | (+1,−1,+1) | 20 |
+| IS → TO | 20 | -1 | 144 / 0 | 0 | (+1,+1,+1) | 20 |
+| TO → GO | 20 | -1 | 424 / 0 | 0 | (+1,+1,+1) | 20 |
+
+Each predicted signature matches its selected derived key: **N–E–N, TH–R–TH, W–R–W, X–E–X, TH–TH–TH**. After THEN changes the outer state from 0 to 1, it remains 1 through these five keys. All five candidate blocks use **Reflected/+1**, with S between **18 and 20**.
+
+These are five conditional consistency checks of a candidate found using the constraints. They are separate from the 16-transition historical fit and do not establish a unique key, route, or plaintext.
 ---
 
 ## Formula Reference
