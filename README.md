@@ -49,25 +49,37 @@ The documents below contain my research into the discovered plaintext. Most of i
 
 The foundation of the system. Explains how three-rune structures produce decryption keys, how Euler's totient and Möbius functions determine their cyclic alignment, and how modular subtraction reveals plaintext.
 
+---
+
 #### [01 — Predicting the Next-Key Signature](./Start-reading-here/01-next-key-signature.md)
 
 Describes how the current ciphertext predicts the next key's phase and complete Möbius signature. Explores cumulative phase cycles, Direct and Reflected modes, and the relationship between 90° and 180° matrix rotations.
+
+---
 
 #### [02 — The Leftmost Cell and Rotations](./Start-reading-here/02-leftmost-cell-and-rotations.md)
 
 Examines the leftmost ciphertext cell and its own Möbius state. Introduces the 270° rotation rule, which predicts whether the leftmost cell of the next ciphertext will be its beginning or end, and shows how all four matrix rotations are connected.
 
+---
+
 #### [03 — Predicting the Reading Axis](./Start-reading-here/03-predicting-axis-and-reading-direction.md)
 
 Explains how the next ciphertext's horizontal, vertical, or diagonal axis can be predicted. Combines this result with the 270° rule to constrain the reading direction.
+
+---
 
 #### [04 — Predicting the Next Key’s Center Parity](./Start-reading-here/04-predicting-next-key-center-parity.md)
 
 Explains how two coordinate formulas predict whether the next key’s center lies in an even or odd row and column. Both rules match all 16 recorded transitions. After THEN, their combined parity filter reduces the 44 mirror nodes with signature (+1,+1,+1) to 16 candidates.
 
+---
+
 #### [05 — Predicting the Next Ciphertext’s Row Parity](./Start-reading-here/05-predicting-next-ciphertext-row-parity.md)
 
 Introduces two related formulas predicting whether the next ciphertext’s endpoint and leftmost cell lie in even or odd rows. They connect the current phase and key center with a 180° rotation and the earlier center-parity rule. Both match all 16 recorded transitions and the proposed THE, giving conditional 17/17. After THEN, they reduce the possible leftmost cells from 337 to 186.
+
+---
 
 #### [06 — Ciphertext Ray & Möbius Deviation](Start-reading-here/06-predicting-next-ciphertext-ray-and-mobius-deviation.md)
 
@@ -80,7 +92,3 @@ A geometric rule showing that the next ciphertext begins on or within one cell o
 Some of the most unusual connections worth exploring. If you ask me which one is my favorite, it's the fact that the sum of the Gematria Primus values of all runes from AS I GO through DEATH equals 2163, which factorizes as 3 × 7 × 103. These three prime numbers correspond exactly to the runes spelling YOU in Gematria Primus (Y = 103, O = 7, U = 3), revealing a striking connection to 3301's 2016 message: "Seek and you will be found."
 
 #### [Strongest Plaintext Evidence](./Start-reading-here/strongest-plaintext-evidence.md)
-
----
-
-I believe 3301 deliberately left geometric clues for the first 17 stages, from AS I GO to THEN, allowing manual discovery. DEATH appears at stage 13. From stage 18 onward, the continuation is found using the same formulas and rules that generate the first 17 stages.
