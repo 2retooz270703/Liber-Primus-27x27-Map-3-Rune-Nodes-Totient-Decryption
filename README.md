@@ -43,6 +43,10 @@ Some things might not make sense at first, but it should help you understand the
 
 The documents below contain my research into the discovered plaintext. Most of it was found manually, and I believe it is correct because it stood out geometrically. My manual discoveries were based on the methods described in `00.md`, so I recommend reading that file carefully. I was confident in the accuracy of what I had found, so I began searching for patterns in how the plaintext was generated. This led to the creation of `01.md`, `02.md`, and the subsequent files. What makes these findings particularly interesting is that the system I discovered does not appear to be random.
 
+From “AS I GO” to “THEN,” there are exactly 17 plaintext-generation steps, with “DEATH” appearing precisely at step 13. This suggests a deliberate structure: the 17 steps appear designed to reveal the underlying algorithm. Beyond this point, rules 01, 02, and onward apply, while certain rules from 00, such as the coordinate selector and center/outer rule, no longer work.
+
+---
+
 #### [00 — The Decryption Method](./Start-reading-here/00-decryption-method.md)
 
 The foundation of the system. Explains how three-rune structures produce decryption keys, how Euler's totient and Möbius functions determine their cyclic alignment, and how modular subtraction reveals plaintext.
