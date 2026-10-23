@@ -22,9 +22,9 @@
 
 ---
 
-<sub>The first 17 stages, from AS I GO to THEN, used ciphertext cells 61 times: 54 unique cells, plus 7 repeated uses. Summing their Gematria Primus prime values, including those repetitions, gives 3274. 3274 + 27 = 3301. Here, 27 is the side length of our 27 × 27 matrix. This looks like the author’s signature.</sub>
+`The first 17 stages, from AS I GO to THEN, used ciphertext cells 61 times: 54 unique cells, plus 7 repeated uses. Summing their Gematria Primus prime values, including those repetitions, gives 3274. 3274 + 27 = 3301. Here, 27 is the side length of our 27 × 27 matrix. This looks like the author’s signature.`
 
-<sub>Moreover, the 54 unique cells have a total GP value of 2867, while the sum of their absolute positions is 26083. The crazy part is that 26083 is the 2867th prime number.</sub>
+`Moreover, the 54 unique cells have a total GP value of 2867, while the sum of their absolute positions is 26083. The crazy part is that 26083 is the 2867th prime number.`
 
 ---
 
@@ -54,25 +54,37 @@ The documents below contain my research into the discovered plaintext. Most of i
 
 The foundation of the system. Explains how three-rune structures produce decryption keys, how Euler's totient and Möbius functions determine their cyclic alignment, and how modular subtraction reveals plaintext.
 
+---
+
 #### [01 — Predicting the Next-Key Signature](./Start-reading-here/01-next-key-signature.md)
 
 Describes how the current ciphertext predicts the next key's phase and complete Möbius signature. Explores cumulative phase cycles, Direct and Reflected modes, and the relationship between 90° and 180° matrix rotations.
+
+---
 
 #### [02 — The Leftmost Cell and Rotations](./Start-reading-here/02-leftmost-cell-and-rotations.md)
 
 Examines the leftmost ciphertext cell and its own Möbius state. Introduces the 270° rotation rule, which predicts whether the leftmost cell of the next ciphertext will be its beginning or end, and shows how all four matrix rotations are connected.
 
+---
+
 #### [03 — Predicting the Reading Axis](./Start-reading-here/03-predicting-axis-and-reading-direction.md)
 
 Explains how the next ciphertext's horizontal, vertical, or diagonal axis can be predicted. Combines this result with the 270° rule to constrain the reading direction.
+
+---
 
 #### [04 — Predicting the Next Key’s Center Parity](./Start-reading-here/04-predicting-next-key-center-parity.md)
 
 Explains how two coordinate formulas predict whether the next key’s center lies in an even or odd row and column. Both rules match all 16 recorded transitions. After THEN, their combined parity filter reduces the 44 mirror nodes with signature (+1,+1,+1) to 16 candidates.
 
+---
+
 #### [05 — Predicting the Next Ciphertext’s Row Parity](./Start-reading-here/05-predicting-next-ciphertext-row-parity.md)
 
 Introduces two related formulas predicting whether the next ciphertext’s endpoint and leftmost cell lie in even or odd rows. They connect the current phase and key center with a 180° rotation and the earlier center-parity rule. Both match all 16 recorded transitions and the proposed THE, giving conditional 17/17. After THEN, they reduce the possible leftmost cells from 337 to 186.
+
+---
 
 #### [06 — Ciphertext Ray & Möbius Deviation](Start-reading-here/06-predicting-next-ciphertext-ray-and-mobius-deviation.md)
 
@@ -93,5 +105,3 @@ From “AS I GO” to “THEN,” there are exactly 17 plaintext-generation step
 I suspect Cicada only needed to carefully design the first 17 stages, making them as interconnected as possible, both geometrically and numerically. I've already explored these relationships in detail in this post. My theory is that they used a specific set of formulas and constraints to construct these stages, and their purpose was to help the solver discover those exact rules. Once identified, the same rules could be extended across the rest of the 27×27 matrix to reconstruct the remaining plaintext. This could explain the illustrations of crossroads and directional signs, as well as the phrase "SEE YOU SOON, THEN".
 
 Essentially, this would be a geometric method of encrypting plaintext within a matrix. The first 17 stages would serve as both clues and part of the algorithm. After stage 17, a simple program could continue placing ciphertexts and keys according to the same constraints, including cell rotations of 0°, 90°, 180°, and 270°, Möbius predictions, and geometric relationships. Without knowing these rules, the matrix would look like a chaotic collection of unrelated cells. But applying the correct formulas would reveal the hidden message. Cicada wouldn't need to explain the method at all. The solver would discover the first 17 stages, derive the formulas, and use them to find the rest of the plaintext. All Cicada had to do was design those initial stages and then distribute the remaining plaintext programmatically using the same rules.
-
----
