@@ -74,4 +74,4 @@ My hypothesis is that the first **17 stages**, ending with **THEN**, were arrang
 
 Some rules from **00** stop working after THEN, while the later notes explore constraints that might continue to apply. The next challenge is to find **meaningful plaintext beyond THEN** without adjusting the rules just to fit a desired phrase.
 
-<sub>This is an independent investigation and a proposed reconstruction.</sub>
+<sub>This is an independent investigation and a proposed reconstruction</sub>
