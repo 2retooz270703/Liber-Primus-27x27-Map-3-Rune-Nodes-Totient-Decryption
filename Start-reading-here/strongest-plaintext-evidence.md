@@ -16,7 +16,17 @@ These are observations on the **selected plaintext route**. They are presented s
 
 **Contents**
 
-[01. The opening geometry](#the-opening-geometry) · [02. Two seven-word passages](#two-seven-word-passages) · [03. Ciphertext and key totals](#ciphertext-and-key-totals) · [04. The sum that spells YOU](#the-sum-that-spells-you) · [05. Four appearances of 51](#four-appearances-of-51) · [06. Two perfect cubes](#two-perfect-cubes) · [07. Two four-word passages](#two-four-word-passages) · [08. The LP1 correspondence](#the-lp1-correspondence) · [09. The LP1 matrix connection](#the-lp1-matrix-connection)
+1. [The opening geometry](#the-opening-geometry)
+2. [Two seven-word passages](#two-seven-word-passages)
+3. [Ciphertext and key totals](#ciphertext-and-key-totals)
+4. [The sum that spells YOU](#the-sum-that-spells-you)
+5. [Four appearances of 51](#four-appearances-of-51)
+6. [Two perfect cubes](#two-perfect-cubes)
+7. [Two four-word passages](#two-four-word-passages)
+8. [The LP1 correspondence](#the-lp1-correspondence)
+9. [The LP1 matrix connection](#the-lp1-matrix-connection)
+10. [The full-route sum and 3301](#the-full-route-sum-and-3301)
+11. [Cell values and prime-indexed positions](#cell-values-and-prime-indexed-positions)
 
 ---
 
@@ -24,7 +34,7 @@ These are observations on the **selected plaintext route**. They are presented s
 
 The following distinctions are important throughout the report.
 
-A **rune count** counts rune symbols, not English letters. A transliteration such as `TH` or `EA` can represent one rune. A **rune-index sum** adds the numerical indices of those symbols in the project's 29-rune alphabet. A **prime-value sum** instead adds the prime numbers assigned to the corresponding runes. These are two different totals and should not be confused.
+A **rune count** counts rune symbols, not English letters. A transliteration such as `TH` or `EA` can represent one rune. A **rune-index sum** adds the numerical indices of those symbols in the project's 29-rune alphabet, numbered **0 through 28**. A **prime-value sum**, written **GP**, instead adds the corresponding Gematria Primus prime values: index 0 maps to 2, index 1 to 3, and so on through index 28, which maps to 109. These are two different totals and should not be confused.
 
 Matrix coordinates are written as **(row, column)**, beginning at 1. For example, `J(13,12)` is the rune `J` in row 13, column 12. The symbol $\varphi(n)$ denotes **Euler's totient function**.
 
@@ -447,9 +457,88 @@ These are exact numerical correspondences within the selected reading; whether t
 
 ---
 
+## The Full-Route Sum and 3301
+
+### 61 ciphertext-cell uses across the first 17 stages
+
+The first **17 decryption stages**, ending at `THEN`, produce the following proposed plaintext:
+
+```text
+AS I GO, THE WEATHER TURNS COLD.
+I MAY CRY NOW.
+THE IDEA OF THE END IS DEATH.
+SEE YOU SOON, THEN.
+```
+
+This block involves **61 uses of ciphertext cells**, covering **54 distinct coordinates**. The difference represents **7 additional uses of previously counted cells**. Each repeated use contributes again to the full-route total.
+
+Let $C_t$ be the ciphertext rune used at step $t$. Summing the **GP prime values of the ciphertext runes before key subtraction** gives:
+
+$$
+\sum_{t=1}^{61}\operatorname{GP}(C_t)=3274.
+$$
+
+Adding the side length of the **27 × 27 matrix** produces the signature number **3301**:
+
+$$
+\boxed{3274+27=3301.}
+$$
+
+This is a possible **authorial checksum**: the ciphertext total for the complete selected block combines with the matrix dimension to recover 3301.
+
+The calculation uses the **main `SOON` placement in row 25**. The recorded alternative in row 27 gives a full-route GP total of **3214**, for which $3214+27=3241$. Both placements decrypt to `SOON`, so this numerical condition distinguishes the two recorded routes even though their plaintext is the same.
+
+---
+
+## Cell Values and Prime-Indexed Positions
+
+### The 54 unique cells link content to location
+
+A second calculation counts each of the **54 distinct ciphertext cells exactly once**. Let $U$ denote this set of coordinates.
+
+An **absolute position** is the cell's one-based number in the original matrix, counted from left to right across each row, starting at the top-left cell. For row $r$ and column $c$:
+
+$$
+a(r,c)=27(r-1)+c,\qquad 1\leq a(r,c)\leq729.
+$$
+
+For example, cell **`L(13,25)`** has absolute position **349** and GP prime value **73**. These are separate measurements of the same cell.
+
+For the complete set $U$, the two sums are:
+
+$$
+\sum_{u\in U}\operatorname{GP}(C_u)=2867,
+\qquad
+\sum_{u\in U}a_u=26083.
+$$
+
+The connection is exact: **26083 is the 2867th prime number**. With $p_n$ denoting the $n$-th prime and $p_1=2$:
+
+$$
+\boxed{p_{2867}=26083.}
+$$
+
+In other words, **the sum of the ciphertext rune values gives the prime's ordinal number, while the sum of the cells' absolute positions gives the prime itself**.
+
+### Keeping the counting conventions distinct
+
+| Measurement | Count every ciphertext-cell use | Count each distinct cell once |
+|---|---:|---:|
+| Number of counted entries | 61 | 54 |
+| Ciphertext GP prime-value sum | **3274** | **2867** |
+| Absolute-position sum | 29848 | **26083** |
+
+The **3301 equality** counts every use, including repetitions. The **prime-index equality** counts each coordinate once, in the original matrix orientation. Both describe the selected `AS I GO`–`THEN` route, using two explicitly defined counting conventions.
+
+The prime-index equality is a property of the **visited set of cells**; it does not determine their reading order or the keys. These are exact, reproducible numerical observations. Their interpretation as intentional clues should be tested against alternative routes using the same counting and numbering conventions.
+
+---
+
 ## Reading the Evidence Together
 
 The patterns in this report operate at several levels. Some arise from the **geometry of the opening matrix**, others from the **structure of the proposed English passages**, and others from **rune-index or prime-value arithmetic**. The LP1 comparisons add possible connections across the two parts of *Liber Primus*, through both a text passage and the numerical matrices. The matrix connection links the central FORM value of 91 to 934, then to the same 233 / 232 passage totals through prime-number indexing and the totient function. Further center-value correspondences link 809 to the 140-rune-index total of `SEE YOU SOON, THEN`, and $\varphi(91)=\varphi(111)=72$ to the derived key for `THEN`.
+
+The full-route ciphertext checks add two further correspondences: **$3274+27=3301$** when every use is counted, and **$p_{2867}=26083$** when the 54 distinct cells are counted once. The first relates the route's ciphertext content to the matrix dimension; the second relates cell content to absolute position.
 
 The most useful way to examine these findings is to keep three questions separate:
 
