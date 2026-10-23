@@ -76,7 +76,7 @@ The **54 unique ciphertext cells** have a GP sum of 2867, while their absolute p
 
 The plaintext GP sum from **AS I GO** through **DEATH** is 2163. Its prime factors match the rune values in **YOU**: U = 3, O = 7, Y = 103.
 
-Whether these relationships were deliberately built into the matrix remains an open question. **[Plaintext evidence](./Start-reading-here/strongest-plaintext-evidence.md)** contains the calculations and discusses a possible connection to Cicada's 2016 message.
+Whether these relationships were deliberately built into the matrix remains an open question. **[Plaintext evidence](./Start-reading-here/strongest-plaintext-evidence.md)** contains the calculations and discusses a possible connection to Cicada's 2016 message. (Seek and you will be found).
 
 ## Current direction
 
