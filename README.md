@@ -42,8 +42,6 @@ Some things might not make sense at first, but it should help you understand the
 
 The documents below contain my research into the discovered plaintext. Most of it was found manually, and I believe it is correct because it stood out geometrically. My manual discoveries were based on the methods described in `00.md`, so I recommend reading that file carefully. I was confident in the accuracy of what I had found, so I began searching for patterns in how the plaintext was generated. This led to the creation of `01.md`, `02.md`, and the subsequent files. What makes these findings particularly interesting is that the system I discovered does not appear to be random.
 
-From “AS I GO” to “THEN,” there are exactly 17 plaintext-generation steps, with “DEATH” appearing precisely at step 13. This suggests a deliberate structure: the 17 steps appear designed to reveal the underlying algorithm. Beyond this point, rules 01, 02, and onward apply, while certain rules from 00, such as the coordinate selector and center/outer rule, no longer work.
-
 ---
 
 #### [00 — The Decryption Method](./Start-reading-here/00-decryption-method.md)
@@ -81,3 +79,11 @@ A geometric rule showing that the next ciphertext begins on or within one cell o
 If you ask me which one is my favorite, it's the fact that the sum of the Gematria Primus values of all runes from AS I GO through DEATH equals 2163, which factorizes as 3 × 7 × 103. These three prime numbers correspond exactly to the runes spelling YOU in Gematria Primus (Y = 103, O = 7, U = 3), revealing a striking connection to 3301's 2016 message: "Seek and you will be found."
 
 #### [Strongest Plaintext Evidence](./Start-reading-here/strongest-plaintext-evidence.md)
+
+---
+
+From “AS I GO” to “THEN,” there are exactly 17 plaintext-generation steps, with “DEATH” appearing precisely at step 13. This suggests a deliberate structure: the 17 steps appear designed to reveal the underlying algorithm. Beyond this point, rules 01, 02, and onward apply, while certain rules from 00, such as the coordinate selector and center/outer rule, no longer work.
+
+I suspect Cicada only needed to carefully design the first 17 stages, making them as interconnected as possible, both geometrically and numerically. I've already explored these relationships in detail in this post. My theory is that they used a specific set of formulas and constraints to construct these stages, and their purpose was to help the solver discover those exact rules. Once identified, the same rules could be extended across the rest of the 27×27 matrix to reconstruct the remaining plaintext. This could explain the illustrations of crossroads and directional signs, as well as the phrase "SEE YOU SOON, THEN".
+
+Essentially, this would be a geometric method of encrypting plaintext within a matrix. The first 17 stages would serve as both clues and part of the algorithm. After stage 17, a simple program could continue placing ciphertexts and keys according to the same constraints, including cell rotations of 0°, 90°, 180°, and 270°, Möbius predictions, and geometric relationships. Without knowing these rules, the matrix would look like a chaotic collection of unrelated cells. But applying the correct formulas would reveal the hidden message. Cicada wouldn't need to explain the method at all. The solver would discover the first 17 stages, derive the formulas, and use them to find the rest of the plaintext. All Cicada had to do was design those initial stages and then distribute the remaining ciphertext programmatically using the same rules.
