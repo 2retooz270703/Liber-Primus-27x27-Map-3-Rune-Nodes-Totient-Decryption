@@ -66,7 +66,7 @@ Read the documents in order. Each builds on the previous one.
 
 The GP sum from **AS I GO** through **DEATH** is 2163. Its prime factors match the values of the runes spelling **YOU** (U = 3, O = 7, Y = 103), an interesting parallel to Cicada's 2016 message, *“Seek and you will be found.”*
 
-**[Read the strongest plaintext evidence →](./Start-reading-here/strongest-plaintext-evidence.md)**
+**[Read the strongest plaintext evidence](./Start-reading-here/strongest-plaintext-evidence.md)**
 
 ## What I'm trying to find out
 
