@@ -475,7 +475,7 @@ This block involves **61 uses of ciphertext cells**, covering **54 distinct coor
 Let $C_t$ be the ciphertext rune used at step $t$. Summing the **GP prime values of the ciphertext runes before key subtraction** gives:
 
 $$
-\sum_{t=1}^{61}\operatorname{GP}(C_t)=3274.
+\sum_{t=1}^{61}GP(C_t)=3274.
 $$
 
 Adding the side length of the **27 × 27 matrix** produces the signature number **3301**:
@@ -507,7 +507,7 @@ For example, cell **`L(13,25)`** has absolute position **349** and GP prime valu
 For the complete set $U$, the two sums are:
 
 $$
-\sum_{u\in U}\operatorname{GP}(C_u)=2867,
+\sum_{u\in U}GP(C_u)=2867,
 \qquad
 \sum_{u\in U}a_u=26083.
 $$
