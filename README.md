@@ -15,10 +15,7 @@ Research into a proposed plaintext reconstruction of pages 0–2 of Cicada 3301'
 
 ## Proposed reading
 
-> As I go, the weather turns cold.  
-> I may cry now.  
-> The idea of the end is death.  
-> See you soon, then.
+> *As I go, the weather turns cold. I may cry now. The idea of the end is death. See you soon, then.*
 
 **Recorded route:** [17 stages](./plaintext-i-found/), from **AS I GO** to **THEN**.  
 **Proposed continuation:** *The key is to go*
