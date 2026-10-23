@@ -1,85 +1,61 @@
-<h1 align="center">Liber Primus</h1>
+<picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-cover-mobile-dark.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-cover-dark.svg">
+  <source media="(max-width: 600px)" srcset="./assets/readme-cover-mobile.svg">
+  <img src="./assets/readme-cover.svg" alt="Liber Primus — LP2, pages 0–2. Plaintext and geometry." width="100%">
+</picture>
 
 <p align="center">
-  <strong>LP2 · Pages 0–2</strong><br>
-  <sub>27 × 27 rune matrix · A proposed plaintext reconstruction</sub>
-</p>
-
-<p align="center">
-  <a href="https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/"><strong>Interactive matrix</strong></a>
+  <a href="https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/"><strong>Open the matrix</strong></a>
   &nbsp; · &nbsp;
-  <a href="./plaintext-i-found/">Plaintext records</a>
-  &nbsp; · &nbsp;
-  <a href="./Start-reading-here/00-decryption-method.md">Decryption method</a>
+  <a href="./Start-reading-here/00-decryption-method.md">Read the method</a>
 </p>
 
----
+Research into a proposed plaintext reconstruction of pages 0–2 of Cicada 3301's *Liber Primus*, using a **27 × 27 rune matrix**, three-rune keys, and geometric constraints.
 
-<p align="center"><sub>PROPOSED PLAINTEXT</sub></p>
+## Proposed reading
 
-<p align="center">
-  <em>As I go, the weather turns cold.<br>
-  I may cry now.</em>
-</p>
+> As I go, the weather turns cold.  
+> I may cry now.  
+> The idea of the end is death.  
+> See you soon, then.
 
-<p align="center">
-  <em>The idea of the end is death.<br>
-  See you soon, then.</em>
-</p>
-
-<p align="center">
-  <sub>AS I GO → THEN · 17 recorded stages</sub>
-</p>
-
-<p align="center">
-  <em>The key is to go…</em><br>
-  <sub>Proposed continuation</sub>
-</p>
-
----
-
-## About the project
-
-This repository investigates pages 0–2 of Cicada 3301's *Liber Primus* as a **27 × 27 rune matrix**. It documents a proposed plaintext path, the keys used to recover it, and the relationships between their positions.
-
-The method constructs three-rune keys using Euler's totient and Möbius functions, then applies modular subtraction. Most of the initial path was found manually. The research now asks whether its geometric patterns can help predict the next words.
-
-Use the **[interactive matrix](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)** to follow the path visually and the **[plaintext records](./plaintext-i-found/)** to inspect individual stages.
+**Recorded route:** [17 stages](./plaintext-i-found/), from **AS I GO** to **THEN**.  
+**Proposed continuation:** *The key is to go…*
 
 ## Research notes
 
-The notes build on one another. Begin with **00**, then continue in order.
+Begin with **00** for key construction and modular subtraction. Notes **01–06** examine constraints on subsequent keys and ciphertext positions.
 
-| No. | Note | Focus |
-| :---: | --- | --- |
-| 00 | [Decryption method](./Start-reading-here/00-decryption-method.md) | Three-rune keys and plaintext extraction. |
-| 01 | [Next-key signature](./Start-reading-here/01-next-key-signature.md) | The next key's phase and Möbius signature. |
-| 02 | [Leftmost cell & rotations](./Start-reading-here/02-leftmost-cell-and-rotations.md) | Whether the leftmost ciphertext cell is its beginning or end. |
-| 03 | [Reading axis & direction](./Start-reading-here/03-predicting-axis-and-reading-direction.md) | The next ciphertext's axis and reading direction. |
-| 04 | [Key-center parity](./Start-reading-here/04-predicting-next-key-center-parity.md) | Even or odd rows and columns for the next key's center. |
-| 05 | [Ciphertext row parity](./Start-reading-here/05-predicting-next-ciphertext-row-parity.md) | Row parity of the next ciphertext's endpoint and leftmost cell. |
-| 06 | [Ciphertext ray & Möbius deviation](./Start-reading-here/06-predicting-next-ciphertext-ray-and-mobius-deviation.md) | An eight-direction geometric rule with at most a one-cell deviation. |
+| Document | Subject |
+| --- | --- |
+| [00 · Decryption method](./Start-reading-here/00-decryption-method.md) | Key construction and modular subtraction. |
+| [01 · Next-key signature](./Start-reading-here/01-next-key-signature.md) | Predicting phase and Möbius signature. |
+| [02 · Leftmost cell & rotations](./Start-reading-here/02-leftmost-cell-and-rotations.md) | Rotations and ciphertext endpoints. |
+| [03 · Reading axis & direction](./Start-reading-here/03-predicting-axis-and-reading-direction.md) | How each ciphertext block is read. |
+| [04 · Key-center parity](./Start-reading-here/04-predicting-next-key-center-parity.md) | Even or odd center coordinates. |
+| [05 · Ciphertext row parity](./Start-reading-here/05-predicting-next-ciphertext-row-parity.md) | Even or odd endpoint and anchor rows. |
+| [06 · Ciphertext ray & deviation](./Start-reading-here/06-predicting-next-ciphertext-ray-and-mobius-deviation.md) | Eight-direction rays; conditional one-cell deviations. |
 
-## Numerical observations
+## Selected observations
 
-**GP** denotes the Gematria Primus prime values assigned to the runes.
+**GP** refers to the Gematria Primus prime values assigned to the runes.
 
-> **3274 + 27 = 3301**
+- **3274 + 27 = 3301** — the ciphertext GP total across the first 17 stages, plus the matrix's side length.
+- **26083 is the 2867th prime** — the absolute-position sum and GP sum of the 54 unique ciphertext cells used in those stages.
+- **2163 = 3 × 7 × 103** — the plaintext GP sum through **DEATH** factors into the rune values of **YOU**: U = 3, O = 7, Y = 103.
 
-Across the first 17 stages, **61 ciphertext-cell uses**—54 unique cells and 7 repeated uses—have a total GP value of 3274. Adding the matrix's side length gives 3301.
+<details>
+<summary>Counting details</summary>
 
-> **26083 is the 2867th prime**
+The total **3274** counts **61 ciphertext-cell uses**: 54 unique cells and 7 repeated uses. The totals **2867** and **26083** count each of those 54 cells once. The plaintext total **2163** covers the passage from **AS I GO** through **DEATH**.
 
-The **54 unique ciphertext cells** have a GP sum of 2867, while their absolute positions sum to 26083.
+</details>
 
-> **2163 = 3 × 7 × 103**
+The **[evidence report](./Start-reading-here/strongest-plaintext-evidence.md)** gives the calculations and context, including a possible connection to Cicada's 2016 message. Whether these relationships were intentional remains an open question.
 
-The plaintext GP sum from **AS I GO** through **DEATH** is 2163. Its prime factors match the rune values in **YOU**: U = 3, O = 7, Y = 103.
+## Ongoing work
 
-Whether these relationships were deliberately built into the matrix remains an open question. **[Plaintext evidence](./Start-reading-here/strongest-plaintext-evidence.md)** contains the calculations and discusses a possible connection to Cicada's 2016 message. (Seek and you will be found).
+Most of the initial route was found manually. The working hypothesis is that its geometry can help predict further plaintext. Some constraints in note 00 stop holding after **THEN**; the later notes investigate which may continue to apply.
 
-## Current direction
-
-The working hypothesis is that the first **17 stages**, ending with **THEN**, reveal a geometric method for finding subsequent words.
-
-Some constraints described in note 00 no longer hold after THEN. The later notes explore which constraints may continue to apply. The goal is to extend the plaintext with meaningful, grammatical phrases that satisfy those constraints without changing the rules to fit a preferred reading.
+The goal is to find meaningful, grammatical continuations that satisfy the existing constraints without adjusting the rules to fit a preferred phrase.
