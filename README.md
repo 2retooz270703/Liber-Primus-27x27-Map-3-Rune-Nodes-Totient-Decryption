@@ -60,8 +60,6 @@ Read the documents in order. Each builds on the previous one.
 - **[05 — Ciphertext Row Parity](./Start-reading-here/05-predicting-next-ciphertext-row-parity.md)** — Predicting row parity for the next ciphertext's endpoint and leftmost cell; narrows 337 candidates to 186 after THEN.
 - **[06 — Ciphertext Ray & Möbius Deviation](./Start-reading-here/06-predicting-next-ciphertext-ray-and-mobius-deviation.md)** — Testing an eight-direction geometric rule with at most a one-cell deviation.
 
-The rules in **04–06** match all **16 transitions** along the recorded 17-stage path. This is evidence about the *proposed path*, not yet independent proof of a correct decryption.
-
 ## More plaintext evidence
 
 **2163 = 3 × 7 × 103**
