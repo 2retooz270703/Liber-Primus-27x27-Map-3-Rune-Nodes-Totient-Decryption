@@ -73,5 +73,3 @@ The GP sum from **AS I GO** through **DEATH** is 2163. Its prime factors match t
 My hypothesis is that the first **17 stages**, ending with **THEN**, were arranged to reveal a geometric decryption method. **DEATH** appears at stage 13. The positions of keys and ciphertext cells, their rotations, and their Möbius values may provide rules for finding the next words.
 
 Some rules from **00** stop working after THEN, while the later notes explore constraints that might continue to apply. The next challenge is to find **meaningful plaintext beyond THEN** without adjusting the rules just to fit a desired phrase.
-
-<sub>This is an independent investigation and a proposed reconstruction</sub>
