@@ -19,8 +19,6 @@ Research into a proposed plaintext reconstruction of pages 0–2 of Cicada 3301'
 > I may cry now.  
 > The idea of the end is death.  
 > See you soon, then.
-> 
-> The key is to go ...
 
 **Recorded route:** [17 stages](./plaintext-i-found/), from **AS I GO** to **THEN**.  
 **Proposed continuation:** *The key is to go*
