@@ -59,8 +59,10 @@ The first relationship resembles a possible **3301 signature**. The second links
 For a first visit, the most useful reading order is:
 
 1. **[Open the interactive matrix](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)** — Inspect the proposed ciphertext, key locations, and plaintext path visually. The map was built to make the geometric relationships easier to check.
+   
 2. **[Browse the plaintext records](./plaintext-i-found/)** — See the individual plaintext stages and their supporting records in the matrix.
-3. **[Start with the decryption method (00)](./Start-reading-here/00-decryption-method.md)** — Understand the three-rune key construction before moving on to the transition rules in 01–06.
+
+3. **[Start with the decryption method](./Start-reading-here/00-decryption-method.md)** — Understand the three-rune key construction before moving on to the transition rules in 01–06.
 
 The initial plaintext path was found largely by manual exploration. The later documents examine whether the observed geometry and arithmetic can be turned into **rules that constrain the next stage**.
 
@@ -106,7 +108,3 @@ Under this interpretation, the **27 × 27 matrix** is more than a grid of rune v
 Some rules described in **00**—notably the coordinate selector and center/outer rule—no longer appear to hold after **THEN**. The rules in **01–06** are attempts to identify constraints that remain useful beyond the initial stages. It is possible that the opening path was carefully constructed as a guide, while later plaintext was placed systematically.
 
 The central open question is whether those constraints can identify **new, meaningful plaintext after THEN** without introducing arbitrary exceptions. This repository documents the proposed path, the calculations behind it, and the rules needed to test that idea.
-
-<p align="center">
-  <sub>Independent research · Proposed reconstruction, not a confirmed solution to Liber Primus</sub>
-</p>
