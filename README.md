@@ -22,9 +22,13 @@
 
 ---
 
-`The first 17 stages, from AS I GO to THEN, used ciphertext cells 61 times: 54 unique cells, plus 7 repeated uses. Summing their Gematria Primus prime values, including those repetitions, gives 3274. 3274 + 27 = 3301. Here, 27 is the side length of our 27 × 27 matrix. This looks like the author’s signature.`
+```text
+The first 17 stages, from AS I GO to THEN, used ciphertext cells 61 times: 54 unique cells, plus 7 repeated uses. Summing their Gematria Primus prime values, including those repetitions, gives 3274. 3274 + 27 = 3301. Here, 27 is the side length of our 27 × 27 matrix. This looks like the author’s signature.
+```
 
-`Moreover, the 54 unique cells have a total GP value of 2867, while the sum of their absolute positions is 26083. The crazy part is that 26083 is the 2867th prime number.`
+```text
+Moreover, the 54 unique cells have a total GP value of 2867, while the sum of their absolute positions is 26083. The crazy part is that 26083 is the 2867th prime number.
+```
 
 ---
 
