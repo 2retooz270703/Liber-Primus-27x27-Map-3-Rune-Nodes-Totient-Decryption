@@ -289,13 +289,13 @@ A stronger statistical test would compare the rule against alternatives (other d
 
 | Quantity | Formula or instruction |
 |---|---|
-| Absolute position | $n_0(r,c)=27(r-1)+c$ |
-| Current last outer arm | $Z=\operatorname*{arg\,max}_{X\in\{O_1,O_2\}}n_0(X)$, where $O_1,O_2$ are the original two outer node cells |
-| Current leftmost ciphertext cell | Minimum column, breaking ties by **maximum row** |
-| Eight-direction step distance | $d_{\infty}(Z,L)=\max(\lvert r_Z-r_L\rvert,\lvert c_Z-c_L\rvert)$ |
-| Residue | $\rho=d_{\infty}(Z,L)\bmod3$ |
-| Next type for $\rho=2$ | **NON-MIRROR** (different outer runes) |
-| Next type for $\rho=0$ or $1$ | **MIRROR** (equal outer runes) |
+| Absolute position | `n0(r,c) = 27 * (r - 1) + c` |
+| Current last outer arm | `Z` is whichever of the two original outer cells (`O1`, `O2`) has the **higher absolute index `n0`**. |
+| Current leftmost ciphertext cell | `L` has the smallest column; if tied, choose the cell with the **largest row**. |
+| Eight-direction step distance | `d = max(abs(rZ - rL), abs(cZ - cL))` |
+| Residue | `rho = d mod 3` |
+| Next type when `rho = 2` | **NON-MIRROR** (different outer runes) |
+| Next type when `rho = 0` or `rho = 1` | **MIRROR** (equal outer runes) |
 | Recorded reconstruction | **16/16** matches: 14 mirrored + 2 non-mirrored outcomes |
 | Selected `THEN → … → GO` extension | **5/5** conditional matches; all five next keys are mirrors |
 
