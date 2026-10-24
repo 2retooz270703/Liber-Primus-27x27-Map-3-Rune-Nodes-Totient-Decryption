@@ -54,7 +54,7 @@
   <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-library-mobile-dark.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-library-dark.svg">
   <source media="(max-width: 600px)" srcset="./assets/readme-library-mobile.svg">
-  <img src="./assets/readme-library.svg" alt="Research library. Begin with note 00 and continue through 01–06." width="100%">
+  <img src="./assets/readme-library.svg" alt="Research library. Begin with note 00 and continue through 01–08." width="100%">
 </picture>
 
 <a href="./Start-reading-here/00-decryption-method.md">
@@ -117,6 +117,24 @@
   <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-note-06-dark.svg">
   <source media="(max-width: 600px)" srcset="./assets/readme-note-06-mobile.svg">
   <img src="./assets/readme-note-06.svg" alt="06 — Ciphertext ray &amp; deviation. Eight-direction rays; conditional one-cell deviations." width="100%">
+</picture>
+</a>
+
+<a href="./Start-reading-here/07-predicting-next-key-mirror-status.md">
+<picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-note-07-mobile-dark.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-note-07-dark.svg">
+  <source media="(max-width: 600px)" srcset="./assets/readme-note-07-mobile.svg">
+  <img src="./assets/readme-note-07.svg" alt="07 — Next-key mirror status. Predicting mirror status from distance modulo 3." width="100%">
+</picture>
+</a>
+
+<a href="./Start-reading-here/08-minimum-ciphertext-block-length.md">
+<picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-note-08-mobile-dark.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-note-08-dark.svg">
+  <source media="(max-width: 600px)" srcset="./assets/readme-note-08-mobile.svg">
+  <img src="./assets/readme-note-08.svg" alt="08 — Minimum block length. A proposed two-rune minimum for standalone blocks." width="100%">
 </picture>
 </a>
 
