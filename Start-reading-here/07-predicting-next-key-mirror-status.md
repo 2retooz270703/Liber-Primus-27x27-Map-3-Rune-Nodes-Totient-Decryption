@@ -292,7 +292,7 @@ A stronger statistical test would compare the rule against alternatives (other d
 | Absolute position | $n_0(r,c)=27(r-1)+c$ |
 | Current last outer arm | $Z=\operatorname*{arg\,max}_{X\in\{O_1,O_2\}}n_0(X)$, where $O_1,O_2$ are the original two outer node cells |
 | Current leftmost ciphertext cell | Minimum column, breaking ties by **maximum row** |
-| Eight-direction step distance | $d_{\infty}(Z,L)=\max(|r_Z-r_L|,|c_Z-c_L|)$ |
+| Eight-direction step distance | $d_{\infty}(Z,L)=\max(\lvert r_Z-r_L\rvert,\lvert c_Z-c_L\rvert)$ |
 | Residue | $\rho=d_{\infty}(Z,L)\bmod3$ |
 | Next type for $\rho=2$ | **NON-MIRROR** (different outer runes) |
 | Next type for $\rho=0$ or $1$ | **MIRROR** (equal outer runes) |
