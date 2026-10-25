@@ -8,7 +8,7 @@
 
 ---
 
-The proposed reading of *Liber Primus* LP2, pages 0–2, contains more than a sequence of English words. When the recovered passages are grouped and measured by their **rune counts, rune-index sums, and assigned prime values**, several numerical relationships appear across different parts of the text. Some also point back to the geometry of the **27 × 27 matrix**, a passage from LP1, and the numerical matrices in LP1.
+The proposed reading of *Liber Primus* LP2, pages 0–2, contains more than a sequence of English words. When the recovered passages are grouped and measured by their **rune counts, rune-index sums, and assigned prime values**, several numerical relationships appear across different parts of the text. Some also point back to the geometry of the **27 × 27 matrix**, a passage from LP1, and the numerical matrices in LP1. The continuation through **`THE KEY IS TO GO`** produces an especially striking result: its cumulative index sum maps directly back to the original `J(13,12)` cell, while its cumulative prime-value sum identifies the total number of admissible mirrored nodes.
 
 This report gathers the strongest of those recorded correspondences and explains them one at a time. The aim is to make each calculation easy to follow: **what is being counted, where each number comes from, and what the result connects to**.
 
@@ -27,6 +27,7 @@ These are observations on the **selected plaintext route**. They are presented s
 9. [The LP1 matrix connection](#the-lp1-matrix-connection)
 10. [The full-route sum and 3301](#the-full-route-sum-and-3301)
 11. [Cell values and prime-indexed positions](#cell-values-and-prime-indexed-positions)
+12. [The GO closure: a return to J](#the-go-closure-a-return-to-j)
 
 ---
 
@@ -534,11 +535,87 @@ The prime-index equality is a property of the **visited set of cells**; it does 
 
 ---
 
+## The GO Closure: A Return to J
+
+### The 21st generation block completes a 27-word reading
+
+The proposed continuation beyond `THEN` is **`THE KEY IS TO GO`**, with **`GO` appearing as the 21st generation block**. At this exact endpoint, the accumulated plaintext contains **27 English words** — the same number as the side length of the **27 × 27 rune matrix**.
+
+| Consecutive plaintext passage | Words | Rune-index sum | GP prime-value sum |
+|---|---:|---:|---:|
+| `AS I GO, THE WEATHER TURNS COLD` | 7 | 233 | 825 |
+| `I MAY CRY NOW` | 4 | 133 | 484 |
+| `THE IDEA OF THE END IS DEATH` | 7 | 232 | 854 |
+| `SEE YOU SOON, THEN` | 4 | 140 | 497 |
+| **`THE KEY IS TO GO`** | **5** | **122** | **429** |
+| **Total through GO** | **27** | **860** | **3089** |
+
+The endpoint is therefore marked by both **generation-block position 21** and a **27-word total**. More importantly, the two numerical totals independently lead to properties of the matrix and its permitted key structures.
+
+### 860 → 336: the plaintext returns to its starting cell
+
+Adding the **rune indices** of the complete 27-word reading gives:
+
+$$
+233+133+232+140+122=\boxed{860}.
+$$
+
+Applying Euler's totient function yields:
+
+$$
+\boxed{\varphi(860)=336}.
+$$
+
+The number **336** is not merely associated with the starting rune. It is the **exact absolute, one-based position** of **`J(13,12)`** in the 27 × 27 matrix, using the same row-major coordinate convention defined earlier:
+
+$$
+a(13,12)=27(13-1)+12=\boxed{336}.
+$$
+
+This is the original center rune of the **`AE(13,11)–J(13,12)–EA(13,13)`** structure established in [The Opening Geometry](#the-opening-geometry). The arithmetic now closes the circle:
+
+$$
+\boxed{\text{27-word plaintext through GO}\ \longrightarrow\ 860\ \xrightarrow{\ \varphi\ }\ 336\ \longrightarrow\ J(13,12)}.
+$$
+
+**The extended plaintext points back, numerically and exactly, to the cell from which the proposed construction began.** This is a genuine arithmetic closure in the selected route: it does not require interpreting a word, choosing a different coordinate orientation, or moving the starting point. It should be distinguished from a physical return of the navigation path to that cell.
+
+### 3089: a prime-number index matching the entire admissible node set
+
+The second cumulative total uses **Gematria Primus prime values** for the same passages:
+
+$$
+825+484+854+497+429=\boxed{3089}.
+$$
+
+Here **3089 is prime**, and its position in the ordered sequence of primes is **442**:
+
+$$
+\boxed{p_{442}=3089}.
+$$
+
+That ordinal matches the project's enumerated inventory of **exactly 442 admissible mirrored three-rune nodes** across the complete matrix, under the totient/Möbius key-generation rules **after excluding the F branches**. This comparison uses the **global set of eligible nodes**, not merely the keys selected along the `GO` route.
+
+Thus, the complete reading through `GO` yields two complementary numerical references:
+
+- **Rune-index sum → totient → position 336:** the **original `J` cell**.
+- **GP sum → prime ordinal 442:** the **total population of admissible mirrored nodes**.
+
+### Why this endpoint stands out
+
+The same continuation produces a **21st-block endpoint**, a **27-word text** matching the matrix dimension, a **totient return to the exact starting coordinate**, and a **prime-index match to the matrix-wide admissible-node count**. The last two are especially compelling because they connect separate levels of the construction: **the accumulated plaintext to the origin of the route**, and **the accumulated prime values to the global key-space inventory**.
+
+These correspondences provide **strong additional structural evidence for the selected `THE KEY IS TO GO` continuation**. The arithmetic is exact; the 442-node comparison relies on the project's specified admissibility filter and should be reproduced from the complete node inventory. Establishing whether the entire combination is exceptional among competing valid continuations remains the appropriate next test. But taken together, these results identify `GO` as a particularly consequential endpoint, not just another plausible plaintext fragment.
+
+---
+
 ## Reading the Evidence Together
 
 The patterns in this report operate at several levels. Some arise from the **geometry of the opening matrix**, others from the **structure of the proposed English passages**, and others from **rune-index or prime-value arithmetic**. The LP1 comparisons add possible connections across the two parts of *Liber Primus*, through both a text passage and the numerical matrices. The matrix connection links the central FORM value of 91 to 934, then to the same 233 / 232 passage totals through prime-number indexing and the totient function. Further center-value correspondences link 809 to the 140-rune-index total of `SEE YOU SOON, THEN`, and $\varphi(91)=\varphi(111)=72$ to the derived key for `THEN`.
 
 The full-route ciphertext checks add two further correspondences: **$3274+27=3301$** when every use is counted, and **$p_{2867}=26083$** when the 54 distinct cells are counted once. The first relates the route's ciphertext content to the matrix dimension; the second relates cell content to absolute position.
+
+The continuation to **`THE KEY IS TO GO`** adds a particularly coherent endpoint. At **generation block 21**, the reading reaches **27 words**; its cumulative rune-index sum is **860**, and **$\varphi(860)=336$** leads precisely to the opening **`J(13,12)`** cell. Independently, its cumulative GP value is **3089**, the **442nd prime**, matching the reported **442 admissible mirrored three-rune nodes** after the F-branch exclusions. These are exact, distinct connections between the recovered text, the route's original coordinate, and the matrix-wide key inventory.
 
 The most useful way to examine these findings is to keep three questions separate:
 
