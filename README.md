@@ -19,7 +19,7 @@
   <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-reading-mobile-dark.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-reading-dark.svg">
   <source media="(max-width: 600px)" srcset="./assets/readme-reading-mobile.svg">
-  <img src="./assets/readme-reading.svg" alt="Proposed plaintext: As I go, the weather turns cold. I may cry now. The idea of the end is death. See you soon, then. Proposed continuation: The key is to go." width="100%">
+  <img src="./assets/readme-reading.svg" alt="Proposed plaintext: As I go, the weather turns cold. I may cry now. The idea of the end is death. See you soon, then. The key is to go to the east of the map. 28 stages and 27 transitions, AS I GO to MAP." width="100%">
 </picture>
 </a>
 
