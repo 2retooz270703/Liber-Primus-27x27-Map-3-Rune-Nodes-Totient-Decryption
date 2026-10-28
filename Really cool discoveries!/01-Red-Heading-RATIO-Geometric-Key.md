@@ -45,13 +45,13 @@ The second word, considered independently, is:
 All rune indices in this note are **0–28**, not Gematria Primus prime weights.
 Coordinates are **1-based `(row,column)`**. The project's decryption equation is:
 
-\[
+$$
 P_i=(C_i-K_i)\bmod 29,
-\]
+$$
 
 where a three-rune key is repeated when the ciphertext block is longer than
-three runes. Euler's totient is denoted by \(\varphi\), and the Möbius function
-by \(\mu\).
+three runes. Euler's totient is denoted by $\varphi$, and the Möbius function
+by $\mu$.
 
 ## 2. The existing `MAP` geometry
 
@@ -78,16 +78,16 @@ observation:
 From the first point to the second, the movement is **one row down and four
 columns right**:
 
-\[
+$$
 \Delta=(17-16,\;13-9)=(+1,+4).
-\]
+$$
 
 **Repeat exactly the same movement once more from the endpoint**:
 
-\[
+$$
 (16,9)\xrightarrow{(+1,+4)}(17,13)
 \xrightarrow{(+1,+4)}\boxed{(18,17)}.
-\]
+$$
 
 The matrix cell **`(18,17)` is `R`**. Equivalently, `AE(17,13)` is the exact
 midpoint of the two points `(16,9)` and `(18,17)`. No rune was changed in
@@ -100,9 +100,9 @@ opening `AE–J–EA` source node. Using this established opening cell as one ar
 the newly reached **`R(18,17)`** as a center, and reflecting the opening arm
 through that center gives the opposite arm:
 
-\[
+$$
 2(18,17)-(13,12)=(23,22).
-\]
+$$
 
 The matrix rune at `(23,22)` is **`TH`**.
 
@@ -131,28 +131,28 @@ independently recorded opening cell `J` determines the remaining arm.**
 Apply the project's familiar **center-only Euler totient transformation** to
 the newly identified original node. The Gematria Primus index of `R` is `4`:
 
-\[
+$$
 \varphi(4)=2=\mathrm{TH}.
-\]
+$$
 
 The outer runes remain unchanged:
 
-\[
-\boxed{J-R-TH\longrightarrow J-TH-TH}.
-\]
+```text
+J–R–TH  →  J–TH–TH
+```
 
 | Derived key element | Rune index | Totient of index | Möbius of totient |
 |:---:|---:|---:|---:|
-| J | 11 | \(\varphi(11)=10\) | \(\mu(10)=+1\) |
-| TH | 2 | \(\varphi(2)=1\) | \(\mu(1)=+1\) |
-| TH | 2 | \(\varphi(2)=1\) | \(\mu(1)=+1\) |
+| J | 11 | $\varphi(11)=10$ | $\mu(10)=+1$ |
+| TH | 2 | $\varphi(2)=1$ | $\mu(1)=+1$ |
+| TH | 2 | $\varphi(2)=1$ | $\mu(1)=+1$ |
 
 The derived key's full signature is **`(+1,+1,+1)`**, and its cyclic rotation
 phase is:
 
-\[
+$$
 p=(1+1+1)\bmod3=0.
-\]
+$$
 
 **No rotation is needed.** For a five-rune target, repeat the three-rune key:
 
@@ -182,19 +182,20 @@ position:
 | 4 | NG | 21 | J | 11 | 21 − 11 = 10 | **I** |
 | 5 | C/K | 5 | TH | 2 | 5 − 2 = 3 | **O** |
 
-\[
-\boxed{S-Y-E-NG-C\longrightarrow R-A-T-I-O}.
-\]
+```text
+S–Y–E–NG–C  →  R–A–T–I–O  →  RATIO
+```
 
 **Candidate plaintext: `RATIO`.** Every subtraction is already nonnegative,
 so none of these five differences even needs modulo wrapping. The index sums
 provide a simple checksum:
 
-\[
-\underbrace{85}_{\text{red ciphertext}}-
-\underbrace{28}_{\text{five consumed key indices}}=
-\underbrace{57}_{\text{RATIO plaintext indices}}.
-\]
+$$
+85-(11+2+2+11+2)=57.
+$$
+
+Here, **85** is the ciphertext index sum, **28** is the sum of the five
+key indices, and **57** is the resulting plaintext index sum.
 
 The five output indices are `(4,24,16,10,3)`, which decode unambiguously to
 `R–A–T–I–O` in the project's 29-rune alphabet. `RATIO` is a recognizable
@@ -214,10 +215,13 @@ heading's thirteen cells**:
 
 The arms lie two columns from the center. Since the rune index of `O` is `3`,
 
-\[
-\varphi(3)=2=\mathrm{TH},\qquad
-J-O-TH\longrightarrow J-TH-TH.
-\]
+$$
+\varphi(3)=2=\mathrm{TH}.
+$$
+
+```text
+J–O–TH  →  J–TH–TH
+```
 
 This gives **the same derived key and the same `RATIO` arithmetic**.
 
@@ -280,10 +284,10 @@ This number **by itself is not unusual**. With the observed rune frequencies
 (`J`: 24, `TH`: 30, `O/R/G`: 20/22/29), a rough random-permutation baseline
 predicts approximately
 
-\[
+$$
 14976\times\frac{24}{729}\times\frac{30}{728}
 \times\frac{20+22+29}{727}\approx1.98
-\]
+$$
 
 such center-totient source nodes for this *already specified* key. Thus the
 global count of two is not statistical confirmation. The narrower finding is
@@ -304,9 +308,10 @@ IA (27) + TH  (2) = 29
 
 Consequently,
 
-\[
-C-(J,TH,TH)\equiv C+(E,IA,IA)\pmod{29}.
-\]
+$$
+C-(\mathrm{J},\mathrm{TH},\mathrm{TH})
+\equiv C+(\mathrm{E},\mathrm{IA},\mathrm{IA})\pmod{29}.
+$$
 
 Adding the `THEN` key to the second heading word also yields `RATIO` **if
 that key is restarted at the word boundary**. This is the *same mathematical
@@ -326,9 +331,9 @@ The two word groups have the following rune-index sums:
 
 Their difference equals the index of the opening rune `J`:
 
-\[
+$$
 96-85=11=\mathrm{J}.
-\]
+$$
 
 The previously recorded opening argument also used the heading's 13-rune
 length and `φ(13)=12` to identify the coordinate `J(13,12)`. The new key
