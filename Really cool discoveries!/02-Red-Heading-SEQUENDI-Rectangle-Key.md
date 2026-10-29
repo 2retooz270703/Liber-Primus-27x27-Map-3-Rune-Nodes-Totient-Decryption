@@ -253,7 +253,7 @@ established instruction for constructing arbitrary later rectangles.
 
 ### Geometry diagram
 
-![The SEQUENDI rectangle, its two equal squared distances from J, and the MAP and RATIO source cells](../assets/discoveries/02-sequendi-rectangle.png)
+![The SEQUENDI rectangle, its two equal squared distances from J, and the MAP and RATIO source cells](../assets/02-sequendi-rectangle.png)
 
 *The supplied diagram is reproduced unchanged. Gold dashed segments connect
 J to the two X corners; blue marks identify the original MAP source and the
