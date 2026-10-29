@@ -23,12 +23,12 @@
 </picture>
 </a>
 
-<a href="./Really%20cool%20discoveries!/01-Red-Heading-RATIO-Geometric-Key.md">
+<a href="./Really%20cool%20discoveries!/02-Red-Heading-SEQUENDI-Rectangle-Key.md">
 <picture>
   <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-red-heading-mobile-dark.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-red-heading-dark.svg">
   <source media="(max-width: 600px)" srcset="./assets/readme-red-heading-mobile.svg">
-  <img src="./assets/readme-red-heading.svg" alt="The red heading: eight red runes in the first word remain unknown; the five red runes S–Y–E–NG–C yield the candidate RATIO under the repeated key J–TH–TH. Open the geometric key and full calculation." width="100%">
+  <img src="./assets/readme-red-heading.svg" alt="The red heading: reverse the first eight runes, then subtract the repeating rectangle-corner key X–N–X–C modulo 29 to obtain SECUENDI, interpreted as Latin SEQUENDI. The second word yields RATIO under J–TH–TH. Latin reading: SEQUENDI RATIO, a method of following. GP total 557 is prime; both word GP sums have Euler totient 160. Open finding 02." width="100%">
 </picture>
 </a>
 
