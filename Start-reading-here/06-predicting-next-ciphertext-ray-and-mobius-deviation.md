@@ -79,12 +79,6 @@ $$
 
 The candidate passes because **1 ≤ 1**.
 
-## 5. What the result establishes
-
-All **16 transitions** in the selected research reconstruction pass: **12 exact alignments** and **4 one-cell offsets**. Independent validation is still needed.
-
-The rule filters candidate positions. It does not choose the ray, travel distance, side of an offset, key, or plaintext.
-
 ---
 
 Source: [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption).
