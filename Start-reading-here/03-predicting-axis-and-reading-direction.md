@@ -1,7 +1,5 @@
 # Predicting the Reading Axis
 
-**Axis and reading direction · LP2 pages 0–2**
-
 Use the current block’s first cell, last cell, and original key node to predict the next block’s axis and reading order.
 
 ## 1. Inputs
@@ -93,8 +91,3 @@ $$
 The next leftmost cell is read **last**. The predicted direction is therefore **up-left or down-left**.
 
 The candidate THE reads **`J(22,21) → W(21,20)`**, matching the up-left option.
-
----
-
-Source: [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption).
-
