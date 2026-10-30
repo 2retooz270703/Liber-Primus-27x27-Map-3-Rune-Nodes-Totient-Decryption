@@ -1,7 +1,5 @@
 # Filtering the Next Ciphertext’s Beginning
 
-**Ray alignment and allowed offset · LP2 pages 0–2**
-
 The next beginning is checked against eight rays from the current block’s leftmost cell. A condition at the current endpoint determines whether a one-cell offset is allowed.
 
 ## 1. Inputs
@@ -78,8 +76,3 @@ $$
 $$
 
 The candidate passes because **1 ≤ 1**.
-
----
-
-Source: [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption).
-
