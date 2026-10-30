@@ -1,7 +1,5 @@
 # Decryption Method
 
-**LP2 pages 0–2 · 27 × 27 matrix**
-
 This guide explains the proposed method for a selected ciphertext block and its three-rune key node.
 
 ## 1. Basics
