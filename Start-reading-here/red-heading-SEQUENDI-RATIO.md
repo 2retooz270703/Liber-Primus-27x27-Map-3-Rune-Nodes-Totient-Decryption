@@ -1,122 +1,103 @@
-# The Red Heading: SEQUENDI RATIO
+# Reading the Red Heading
 
-**Two candidate key constructions · LP2 pages 0–2**
+**Candidate title: SEQUENDI RATIO — “a method of following”**
 
-The selected keys produce the literal output **SECUENDI RATIO**. The proposed Latin reading, **SEQUENDI RATIO**, means approximately **“a method of following.”**
+The two keys below produce **SECUENDI RATIO**. Reading its C/K rune as Q gives the proposed Latin spelling **SEQUENDI RATIO**. The alphabet has no separate Q rune; this interpretation leaves the rune’s value, 5, unchanged.
 
-## 1. Ciphertext, method, and anchors
+## 1. What is being decrypted?
 
-The red heading occupies **row 1, columns 1–13** of the 27 × 27 matrix:
+The red heading contains these two groups, occupying the first 13 cells of the matrix’s top row:
 
 **`S H E O G M IA F • S Y E NG C`**
 
-The two words contain **8 and 5 runes**. The separator occupies no cell; `IA` and `NG` each represent one rune.
+The first group has eight runes; the second has five. Labels such as IA and NG each represent one rune.
 
-Use rune indices **0–28** and repeated-key subtraction:
+| Group | Reading direction | Repeating key |
+| :--- | :--- | :--- |
+| First eight runes | Right to left | X–N–X–C |
+| Last five runes | Left to right | J–TH–TH |
 
-$$
-P_i=(C_i-K_i)\bmod29.
-$$
+Each word starts with the first rune of its own key.
 
-Coordinates are `(row, column)`, starting from 1; rows increase downward and columns to the right. Both constructions use these anchors from the proposed route:
+## 2. How the subtraction works
 
-| Anchor | Position or source |
+Each rune has a number from **0 to 28**. Subtract the key rune’s number from the encrypted rune’s number. If the answer is negative, add **29**. Convert the result back to a rune.
+
+For example, the first word begins with F when read backwards:
+
+**F(0) − X(14) = −14; add 29 to get 15, which is S.**
+
+Repeat the key until the word ends.
+
+## 3. First word: a key from four corners
+
+### Find the key in the matrix
+
+Coordinates use **(row, column)**, counted from 1. Rows increase downward; columns increase to the right.
+
+Four matrix cells form this rectangle:
+
+| Row | Column 3 | Column 9 |
+| :--- | :--- | :--- |
+| 6 | X | N |
+| 24 | C/K | X |
+
+Start at the upper-left corner and read clockwise: **X → N → X → C**. These four runes form the repeating key.
+
+The rectangle connects to earlier parts of the proposed plaintext route:
+
+- The two opposite X corners are equally distant from the opening **J(13,12)**.
+- The original MAP key source, **EO(15,9)–X(16,9)–I(17,9)**, lies along the rectangle’s right side. Its center rune X supplies the symbol used for the opposite corners.
+
+The reported search finds one rectangle satisfying these conditions.
+
+### Read backwards and subtract
+
+Reverse the order of the eight heading runes. Keep IA together as one symbol.
+
+| Step | Rune sequence |
 | :--- | :--- |
-| Opening J | J(13,12) |
-| Original MAP node | EO(15,9) – X(16,9) – I(17,9) |
-| MAP node center M | X(16,9) |
-| MAP ciphertext endpoint E | AE(17,13) |
+| Read the encrypted word backwards | F · IA · M · G · O · E · H · S |
+| Repeat the key | X · N · X · C · X · N · X · C |
+| After subtraction | S · E · C · U · E · N · D · I |
 
-**MAP is part of the candidate continuation**, so constructions based on it inherit that uncertainty.
+The literal result is **SECUENDI**.
 
-## 2. First word: SECUENDI
+## 4. Second word: a key built from MAP
 
-### Select the rectangle
+### Find the three key cells
 
-Use the MAP center’s rune, **X**. Find pairs of X cells that:
+Use the proposed MAP stage:
 
-1. Are equally distant from the opening J.
-2. Form opposite corners of a rectangle with sides parallel to the grid.
-3. Place the entire original MAP node along one side.
+1. Its original key center is **X(16,9)**.
+2. Its ciphertext ends at **AE(17,13)**: one row down and four columns right.
+3. Repeat that move from AE. It reaches **R(18,17)**.
+4. The opening **J(13,12)** is five rows above and five columns left of R. Continue five rows down and five columns right from R to reach **TH(23,22)**.
 
-The reported search selects one rectangle:
-
-| Clockwise order | Corner | Rune | Coordinate |
-| ---: | :--- | :--- | :--- |
-| 1 | Upper left | X | (6,3) |
-| 2 | Upper right | N | (6,9) |
-| 3 | Lower right | X | (24,9) |
-| 4 | Lower left | C/K | (24,3) |
-
-The two X corners each have **squared distance 130** from J. The MAP source lies along the right side, at column 9.
-
-This selector was formulated **after the word and key were found**. Its uniqueness applies to these specific conditions.
-
-### Decrypt
-
-Read the corners clockwise from the upper left to obtain the direct, period-four key **X–N–X–C**.
-
-Reverse the first ciphertext word **by rune**, keeping IA intact, then repeat the key:
-
-| Stage | Rune indices |
-| :--- | :--- |
-| Ciphertext, right to left | 0, 27, 19, 6, 3, 18, 8, 15 |
-| Repeated key | 14, 9, 14, 5, 14, 9, 14, 5 |
-| Output modulo 29 | 15, 18, 5, 1, 18, 9, 23, 10 |
-
-**Literal result: S–E–C–U–E–N–D–I → SECUENDI.**
-
-## 3. Second word: RATIO
-
-### Extend the MAP displacement
-
-Extend the vector from the MAP center M to its endpoint E by the same amount:
-
-$$
-R'=2E-M=2(17,13)-(16,9)=(18,17).
-$$
-
-That cell contains **R**. Reflect the opening J through this new center:
-
-$$
-Z=2R'-J=2(18,17)-(13,12)=(23,22).
-$$
-
-That cell contains **TH**, giving the equally spaced diagonal node:
+These three cells form an equally spaced diagonal:
 
 **`J(13,12) – R(18,17) – TH(23,22)`**
 
-Apply Euler’s totient to the center’s rune index: **φ(4) = 2**, turning R into TH. The derived key is **J–TH–TH = (11,2,2)**.
+Apply the project’s center-rune transformation: **R has index 4, and φ(4) = 2**, the index of TH. The key becomes **J–TH–TH**.
 
-Its Möbius signature **(+1,+1,+1)** gives phase **0**. Repeat the key in this order.
+The project’s phase calculation gives **0**, so this key stays in that order.
 
-### Decrypt
+### Read forwards and subtract
 
-Read the second ciphertext word **left to right**:
-
-| Stage | Rune indices |
+| Step | Rune sequence |
 | :--- | :--- |
-| Ciphertext | 15, 26, 18, 21, 5 |
-| Repeated key | 11, 2, 2, 11, 2 |
-| Output modulo 29 | 4, 24, 16, 10, 3 |
+| Read the encrypted word forwards | S · Y · E · NG · C |
+| Repeat the key | J · TH · TH · J · TH |
+| Subtract rune numbers | R · A · T · I · O |
 
-**Result: R–A–T–I–O → RATIO.**
+The result is **RATIO**.
 
-## 4. The Latin interpretation
+## 5. What remains uncertain
 
-The first output’s third rune is **C/K, index 5**. The alphabet has no separate Q rune.
+These remain candidate constructions. Both depend on the proposed MAP reading, and the rectangle conditions were formulated after finding the first word and key.
 
-Reading that symbol as **Q** gives **SEQUENDI RATIO**. This is a proposed spelling convention; the numerical output remains **SECUENDI RATIO**, with every rune index unchanged.
-
-## 5. What remains unresolved
-
-The two words use different key lengths and reading directions. No established general rule yet predicts both constructions, their starting positions, or the reversal of the first word.
-
-The heading also fails the existing rules for the next ordinary block after MAP. It remains a **separate heading hypothesis**.
-
-The specified keys reproduce all 13 output runes. Whether these choices reflect the intended cipher requires independent evidence.
+A general rule has yet to explain the different key shapes, reading directions, and starting positions. The heading also does not fit the existing rules for the next ordinary block after MAP, so it remains a separate heading hypothesis.
 
 ---
 
 Source: [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption).
-
