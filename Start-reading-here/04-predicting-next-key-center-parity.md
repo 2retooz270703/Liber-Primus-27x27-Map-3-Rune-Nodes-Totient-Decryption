@@ -79,12 +79,6 @@ The next center’s row should be **even**.
 
 This leaves **13 even rows × 14 odd columns = 182 eligible cells** out of 729. The candidate THE uses an original center at **(20,17)**, which passes both conditions.
 
-## 5. What the result establishes
-
-Both formulas match **16/16 recorded transitions** used to find them. Unseen transitions have not yet been tested, and the candidate THE is a conditional check.
-
-The formulas narrow the search for the next original center. They do not identify its exact coordinates, a unique key, or plaintext.
-
 ---
 
 Source: [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption).
