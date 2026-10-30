@@ -1,12 +1,4 @@
-*LIBER PRIMUS II · PAGES 0–2*
-
 # Strongest Plaintext Evidence
-
-**A Numerical and Structural Correspondence Report**
-
-*Rune values · Prime numbers · Euler's totient · Passage structure · LP1 connections*
-
----
 
 The proposed reading of *Liber Primus* LP2, pages 0–2, contains more than a sequence of English words. When the recovered passages are grouped and measured by their **rune counts, rune-index sums, and assigned prime values**, several numerical relationships appear across different parts of the text. Some also point back to the geometry of the **27 × 27 matrix**, a passage from LP1, and the numerical matrices in LP1. The continuation through **`THE KEY IS TO GO`** produces an especially striking result: its cumulative index sum maps directly back to the original `J(13,12)` cell, while its cumulative prime-value sum identifies the total number of admissible mirrored nodes.
 
@@ -615,18 +607,4 @@ The patterns in this report operate at several levels. Some arise from the **geo
 
 The full-route ciphertext checks add two further correspondences: **$3274+27=3301$** when every use is counted, and **$p_{2867}=26083$** when the 54 distinct cells are counted once. The first relates the route's ciphertext content to the matrix dimension; the second relates cell content to absolute position.
 
-The continuation to **`THE KEY IS TO GO`** adds a particularly coherent endpoint. At **generation block 21**, the reading reaches **27 words**; its cumulative rune-index sum is **860**, and **$\varphi(860)=336$** leads precisely to the opening **`J(13,12)`** cell. Independently, its cumulative GP value is **3089**, the **442nd prime**, matching the reported **442 admissible mirrored three-rune nodes** after the F-branch exclusions. These are exact, distinct connections between the recovered text, the route's original coordinate, and the matrix-wide key inventory.
-
-The most useful way to examine these findings is to keep three questions separate:
-
-1. **Does the calculation reproduce the recorded numbers?** The equations above make these equalities straightforward to check.
-2. **How was the passage or grouping selected?** Word boundaries, the chosen route, and the rune-to-number mapping matter to each comparison.
-3. **Would the same pattern remain distinctive among alternative readings?** That is the stronger test of whether a numerical match is meaningful rather than coincidental.
-
-None of these correspondences needs to be treated as a standalone proof. Their significance lies in how often the **same values connect different kinds of measurements** within the selected reading — and in whether those relationships survive comparison with other plausible routes.
-
-The related reports in the project address a complementary question: whether the geometry can **predict properties of the next key or ciphertext before a continuation is chosen**. These numerical observations provide supporting context for that predictive work, rather than replacing it.
-
----
-
-*Research source:* [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption). The calculations and selected passage groupings in this document are consolidated from the project's recorded **Strongest Plaintext Evidence** notes.
+The continuation to **`THE KEY IS TO GO`** adds a particularly coherent endpoint. At **generation block 21**, the reading reaches **27 words**; its cumulative rune-index sum is **860**, and **$\varphi(860)=336$** leads precisely to the opening **`J(13,12)`** cell. Independently, its cumulative GP value is **3089**, the **442nd prime**, matching the reported **442 admissible mirrored three-rune nodes** after the F-branch exclusions.
