@@ -104,10 +104,6 @@ $$
 
 The destination, **`B(15,8)`**, is the center of **`NG–B–NG`**, the node used for I MAY.
 
-## 4. What remains unresolved
-
-The decryption is reproducible once the block and key are specified. A complete route still needs rules for choosing the anchor, movement distances, and next node.
-
 ---
 
 Source: [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption).
