@@ -94,10 +94,6 @@ The next leftmost cell is read **last**. The predicted direction is therefore **
 
 The candidate THE reads **`J(22,21) → W(21,20)`**, matching the up-left option.
 
-## 5. What the result establishes
-
-Both rules match **16/16 recorded transitions** with the selected original nodes. This is a fit to that route. The rules constrain a candidate’s axis and reading order; they do not determine its exact cells, a unique key, or plaintext.
-
 ---
 
 Source: [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption).
