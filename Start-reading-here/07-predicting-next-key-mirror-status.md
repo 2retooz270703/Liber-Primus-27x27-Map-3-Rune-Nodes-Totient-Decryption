@@ -63,12 +63,6 @@ $$
 
 TURNS uses **H–NG–C**. Its outer runes H and C differ, matching the prediction.
 
-## 5. What the result establishes
-
-The rule matches **16/16 transitions** in the selected research reconstruction: **14 mirror** and **2 non-mirror** outcomes. The non-mirror predictions are WEATHER → TURNS and YOU → SOON. Always predicting mirror would already score 14/16.
-
-The rule was found using this route; independent validation is still needed. It predicts the node’s class, while its exact runes, location, and the next plaintext remain undetermined.
-
 ---
 
 Source: [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption).
