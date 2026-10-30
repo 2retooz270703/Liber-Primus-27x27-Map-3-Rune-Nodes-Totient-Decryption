@@ -1,7 +1,5 @@
 # Predicting the Next Ciphertext’s Row Parity
 
-**Endpoint and leftmost cell · LP2 pages 0–2**
-
 Two rules predict whether the next block’s endpoint and leftmost cell lie in **even or odd rows**.
 
 ## 1. Inputs
@@ -83,8 +81,3 @@ $$
 | Leftmost cell L′ | 0 + 1 + 0 + 1 ≡ 0 | Even | (14,7) |
 
 Both predictions match. The endpoint and leftmost cell are different cells here.
-
----
-
-Source: [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption).
-
