@@ -110,7 +110,3 @@ Phase **0** and outer value **1** give:
 **Next signature: `(+1,+1,+1)`. Next phase: `0`.**
 
 The running total stays at **18**; carry forward **a = 1**.
-
----
-
-Source: [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption).
