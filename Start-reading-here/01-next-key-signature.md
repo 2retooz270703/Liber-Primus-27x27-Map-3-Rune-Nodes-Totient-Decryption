@@ -1,7 +1,5 @@
 # Predicting the Next Key
 
-**Möbius signatures · LP2 pages 0–2**
-
 This method predicts the next key’s **phase and signature** from the current ciphertext’s coordinates.
 
 ## 1. Inputs
