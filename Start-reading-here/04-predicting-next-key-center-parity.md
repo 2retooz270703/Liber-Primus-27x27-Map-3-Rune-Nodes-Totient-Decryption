@@ -1,7 +1,5 @@
 # Predicting the Next Key’s Center Parity
 
-**Row and column parity · LP2 pages 0–2**
-
 Two formulas use the current block’s coordinates to predict whether the next original key-node center lies in an **even or odd row and column**.
 
 ## 1. Inputs
@@ -78,8 +76,3 @@ The next center’s row should be **even**.
 **Prediction: (row parity, column parity) = (0,1) — even row, odd column.**
 
 This leaves **13 even rows × 14 odd columns = 182 eligible cells** out of 729. The candidate THE uses an original center at **(20,17)**, which passes both conditions.
-
----
-
-Source: [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption).
-
