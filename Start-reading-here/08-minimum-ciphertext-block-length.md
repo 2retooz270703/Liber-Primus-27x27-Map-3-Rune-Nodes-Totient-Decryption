@@ -1,7 +1,5 @@
 # Minimum Ciphertext Block Length
 
-**Two-rune search filter · LP2 pages 0–2**
-
 ## 1. Proposed rule
 
 Require **at least two runes per independently decrypted ciphertext block** when searching for continuations.
@@ -25,8 +23,3 @@ A block may contain several English words. Count runes using the project’s **2
 The word **I** in **I MAY** belongs to the four-rune block and receives no separate key assignment.
 
 A three-rune key node can still decrypt a two-rune ciphertext block.
-
----
-
-Source: [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption).
-
