@@ -1,155 +1,40 @@
-<picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-cover-mobile-dark.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-cover-dark.svg">
-  <source media="(max-width: 600px)" srcset="./assets/readme-cover-mobile.svg">
-  <img src="./assets/readme-cover.svg" alt="Liber Primus — LP2, pages 0–2. Plaintext and geometry." width="100%">
-</picture>
+I want to clarify a little what exactly I’m working on and what I’m doing, so that my train of thought is clearer.
 
-<a href="https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/">
-<picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-explore-mobile-dark.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-explore-dark.svg">
-  <source media="(max-width: 600px)" srcset="./assets/readme-explore-mobile.svg">
-  <img src="./assets/readme-explore.svg" alt="Open the interactive matrix to inspect ciphertext, keys and the proposed plaintext path." width="100%">
-</picture>
-</a>
+As I’ve said before, the idea behind my project is that pages 0–2 represent an encrypted block of data in the form of a square, with information contained inside it. The dots are directional indicators or beacons, although the exact principle behind how they work is still unclear. In other words, the body of 0–2 is not made up of words or word separators. It’s one large block of data.
 
-<a href="./plaintext-i-found/">
-<picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-reading-mobile-dark.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-reading-dark.svg">
-  <source media="(max-width: 600px)" srcset="./assets/readme-reading-mobile.svg">
-  <img src="./assets/readme-reading.svg" alt="Proposed plaintext: As I go, the weather turns cold. I may cry now. The idea of the end is death. See you soon, then. The key is to go to the east of the map. 28 stages and 27 transitions, AS I GO to MAP." width="100%">
-</picture>
-</a>
+Each cell is potentially a plaintext letter that can be decrypted using a specific key. The key is taken from 3-rune triplets, usually mirrored ones. This is what I initially discovered. I found the rules for when to rotate this key, and I found my first few plaintexts, ranging from AS I GO… to SEE YOU SOON, THEN. I also constantly checked numerological connections as I progressed, and I’m convinced that this is the most coherent plaintext I’ve managed to extract from the matrix using this method. Basically, you move through the cells of the matrix, subtracting the key at different phases, and you get the intended word.
 
-<a href="./Really%20cool%20discoveries!/02-Red-Heading-SEQUENDI-Rectangle-Key.md">
-<picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-red-heading-mobile-dark.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-red-heading-dark.svg">
-  <source media="(max-width: 600px)" srcset="./assets/readme-red-heading-mobile.svg">
-  <img src="./assets/readme-red-heading.svg" alt="The red heading: reverse the first eight runes, then subtract the repeating rectangle-corner key X–N–X–C modulo 29 to obtain SECUENDI, interpreted as Latin SEQUENDI. The second word yields RATIO under J–TH–TH. Latin reading: SEQUENDI RATIO, a method of following. GP total 557 is prime; both word GP sums have Euler totient 160. Open finding 02." width="100%">
-</picture>
-</a>
+---
 
-<a href="./Start-reading-here/00-decryption-method.md">
-<picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-method-mobile-dark.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-method-dark.svg">
-  <source media="(max-width: 600px)" srcset="./assets/readme-method-mobile.svg">
-  <img src="./assets/readme-method.svg" alt="Worked example: AE–J–EA → AE–I–EA. Move 14 columns. Subtract modulo 29 to obtain AS I GO, THE." width="100%">
-</picture>
-</a>
+Next, I decided to investigate and look for formulas that predict the spatial relationships between the ciphertexts and keys I had found. Because if this is a program or an algorithm, something must be generating it. There must be some kind of pattern. And I found formulas that, using only the knowledge of the current ciphertext (which cells are used at this stage), the current key, and the current phase, predict the exact properties of the next ciphertext.
 
-<a href="./Start-reading-here/06-predicting-next-ciphertext-ray-and-mobius-deviation.md">
-<picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-geometry-mobile-dark.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-geometry-dark.svg">
-  <source media="(max-width: 600px)" srcset="./assets/readme-geometry-mobile.svg">
-  <img src="./assets/readme-geometry.svg" alt="Eight-ray constraint with a conditional one-cell allowance. Fits 16 recorded transitions on the proposed route." width="100%">
-</picture>
-</a>
+For example, formulas that predict the next key signature, or simply the Möbius value of its three runes, exactly, as well as the parity of the column and row of its center, the parity of the left cell, the parity of the ciphertext’s endpoint, and even the axis along which it is positioned.
 
-<a href="./Start-reading-here/strongest-plaintext-evidence.md">
-<picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-numbers-mobile-dark.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-numbers-dark.svg">
-  <source media="(max-width: 600px)" srcset="./assets/readme-numbers-mobile.svg">
-  <img src="./assets/readme-numbers.svg" alt="Numerical observations: 3274 + 27 = 3301; 26083 is the 2867th prime; 2163 = 3 × 7 × 103." width="100%">
-</picture>
-</a>
+In short, without going into too much detail, I found formulas along the known route that precisely describe the properties of the next key and ciphertext, and this eliminates many possible branches when trying to crack the cipher and explore different paths.
 
-<picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-library-mobile-dark.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-library-dark.svg">
-  <source media="(max-width: 600px)" srcset="./assets/readme-library-mobile.svg">
-  <img src="./assets/readme-library.svg" alt="Research library. Begin with note 00 and continue through 01–08." width="100%">
-</picture>
+---
 
-<a href="./Start-reading-here/00-decryption-method.md">
-<picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-note-00-mobile-dark.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-note-00-dark.svg">
-  <source media="(max-width: 600px)" srcset="./assets/readme-note-00-mobile.svg">
-  <img src="./assets/readme-note-00.svg" alt="00 — Decryption method. Key construction and modular subtraction." width="100%">
-</picture>
-</a>
+And yet, a successful result was that these rules predicted the branch: THE KEY IS TO GO TO THE EAST OF THE MAP. It satisfies a large number of parameters and stands out in terms of its geometry and its connection to the previous plaintext.
 
-<a href="./Start-reading-here/01-next-key-signature.md">
-<picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-note-01-mobile-dark.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-note-01-dark.svg">
-  <source media="(max-width: 600px)" srcset="./assets/readme-note-01-mobile.svg">
-  <img src="./assets/readme-note-01.svg" alt="01 — Next-key signature. Predicting phase and Möbius signature." width="100%">
-</picture>
-</a>
+The point is that I don’t know whether this branch is genuine, since it was found through a computer brute-force search. But again, if some algorithm generates these properties, then this branch satisfies them and could potentially be part of that algorithm. So that’s quite an interesting result. With such a large number of constraints, the resulting branches are often less meaningful, and this particular branch really stood out in terms of both meaning and geometry. So this could be called a kind of cracking of the cipher. At least, I had established the rules in advance and obtained an intriguing result.
 
-<a href="./Start-reading-here/02-leftmost-cell-and-rotations.md">
-<picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-note-02-mobile-dark.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-note-02-dark.svg">
-  <source media="(max-width: 600px)" srcset="./assets/readme-note-02-mobile.svg">
-  <img src="./assets/readme-note-02.svg" alt="02 — Leftmost cell &amp; rotations. Rotations and ciphertext endpoints." width="100%">
-</picture>
-</a>
+---
 
-<a href="./Start-reading-here/03-predicting-axis-and-reading-direction.md">
-<picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-note-03-mobile-dark.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-note-03-dark.svg">
-  <source media="(max-width: 600px)" srcset="./assets/readme-note-03-mobile.svg">
-  <img src="./assets/readme-note-03.svg" alt="03 — Reading axis &amp; direction. How each ciphertext block is read." width="100%">
-</picture>
-</a>
+So the main idea now, since I’ve reached a dead end, is to try to find new formulas that narrow down the 27/27 route even further, and see whether they produce similarly interesting and meaningful plaintext. If they do, there’s a possibility that the same algorithm is still responsible for all of this. In other words, the point of my project right now is not to manually fit the answer, or even search manually at all, but to try to find very strict constraining rules. So strict that only one branch could remain available — presumably the real plaintext.
 
-<a href="./Start-reading-here/04-predicting-next-key-center-parity.md">
-<picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-note-04-mobile-dark.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-note-04-dark.svg">
-  <source media="(max-width: 600px)" srcset="./assets/readme-note-04-mobile.svg">
-  <img src="./assets/readme-note-04.svg" alt="04 — Key-center parity. Even or odd center coordinates." width="100%">
-</picture>
-</a>
+I’ve looked at the formulas, and they really don’t seem random. I can see that the left cell of the ciphertext is constantly used for predictions, which makes me think that this is clearly some kind of algorithm that arranges ciphertext cells across the matrix, taking into account parities, distances, and so on. In other words, my formulas don’t look that random, and that’s exactly why I find them so interesting. Simple operations are constantly used, such as rotations by 0, 90, 180, and 270 degrees, and the Möbius value is simply taken to provide a controlling signal.
 
-<a href="./Start-reading-here/05-predicting-next-ciphertext-row-parity.md">
-<picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-note-05-mobile-dark.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-note-05-dark.svg">
-  <source media="(max-width: 600px)" srcset="./assets/readme-note-05-mobile.svg">
-  <img src="./assets/readme-note-05.svg" alt="05 — Ciphertext row parity. Even or odd endpoint and anchor rows." width="100%">
-</picture>
-</a>
+In other words, their algorithm could have not only filled the matrix with ciphertext cells, but also with the necessary background/auxiliary cells that provide the required Möbius signal for the main cells. And this is how they could have gradually created an entire 27×27 square, where some cells are the main ones hiding the plaintext, while others are auxiliary cells hiding pointers and rules for the algorithm.
 
-<a href="./Start-reading-here/06-predicting-next-ciphertext-ray-and-mobius-deviation.md">
-<picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-note-06-mobile-dark.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-note-06-dark.svg">
-  <source media="(max-width: 600px)" srcset="./assets/readme-note-06-mobile.svg">
-  <img src="./assets/readme-note-06.svg" alt="06 — Ciphertext ray &amp; deviation. Eight-direction rays; conditional one-cell deviations." width="100%">
-</picture>
-</a>
+---
 
-<a href="./Start-reading-here/07-predicting-next-key-mirror-status.md">
-<picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-note-07-mobile-dark.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-note-07-dark.svg">
-  <source media="(max-width: 600px)" srcset="./assets/readme-note-07-mobile.svg">
-  <img src="./assets/readme-note-07.svg" alt="07 — Next-key mirror status. Predicting mirror status from distance modulo 3." width="100%">
-</picture>
-</a>
+Judging by the frequency analysis, they may have applied the same principle to the entirety of LP as well. In other words, I’m not just working on solving 0–2. Potentially, this is the very same algorithm used to encrypt the entire Liber Primus.
 
-<a href="./Start-reading-here/08-minimum-ciphertext-block-length.md">
-<picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-note-08-mobile-dark.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-note-08-dark.svg">
-  <source media="(max-width: 600px)" srcset="./assets/readme-note-08-mobile.svg">
-  <img src="./assets/readme-note-08.svg" alt="08 — Minimum block length. A proposed two-rune minimum for standalone blocks." width="100%">
-</picture>
-</a>
+My proposed title, SECUENDI RATIO, which means “method of following,” even supports this idea, because a “method of following” essentially describes a rule or an algorithm. In other words, they named or characterized the entirety of 0–2 as a “method of following,” because I think the purpose of 0–2 is to show how the encryption principle itself works, and then apply it to other pages, possibly even combining the remaining pages into one large square and simply applying the algorithm discovered in 0–2.
 
-<picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/readme-outlook-mobile-dark.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-outlook-dark.svg">
-  <source media="(max-width: 600px)" srcset="./assets/readme-outlook-mobile.svg">
-  <img src="./assets/readme-outlook.svg" alt="Ongoing work: find grammatical continuations beyond THEN under the existing constraints." width="100%">
-</picture>
+I understand that the other pages also contain quotation marks, numbers, and all of that seems genuine and looks like a one-time pad, but I think all those quotation marks and other elements are illusions. I think it’s all the same clever encryption algorithm disguised as ordinary text.
+
+That’s why 0–2 is so important. So far, I haven’t been able to understand the connections between the transitions. The only thing I’ve successfully managed to find is the constraining formulas. That’s the most promising result I’ve achieved so far.
+
+
+
