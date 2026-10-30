@@ -111,10 +111,6 @@ Phase **0** and outer value **1** give:
 
 The running total stays at **18**; carry forward **a = 1**.
 
-## 4. What the result establishes
-
-The three tested modes reproduce **16 recorded next-key signatures** on the selected route. The mode schedule was fitted to that route; the fourth mode remains untested. The prediction constrains the next key’s signature but does not uniquely identify its runes or plaintext.
-
 ---
 
 Source: [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption).
