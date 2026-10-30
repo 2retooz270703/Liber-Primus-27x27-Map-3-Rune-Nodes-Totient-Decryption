@@ -74,7 +74,3 @@ The block at **row 14, columns 14–18** gives:
 A negative result wraps around: `13 − 14 = −1 ≡ 28 (mod 29)`.
 
 **`W–EA–TH–E–R` → WEATHER**
-
----
-
-Source: [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption).
