@@ -78,7 +78,3 @@ $$
 **The next block’s leftmost cell should be its END.**
 
 The candidate THE reads **`J(22,21) → W(21,20)`**, ending at its leftmost cell as predicted. That cell’s 90° index is **520**, with `μ(520) = 0`, also allowed in the Reflected class.
-
----
-
-Source: [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption).
