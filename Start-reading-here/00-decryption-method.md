@@ -75,35 +75,6 @@ A negative result wraps around: `13 − 14 = −1 ≡ 28 (mod 29)`.
 
 **`W–EA–TH–E–R` → WEATHER**
 
-## 3. Move to the next key
-
-Use the **current key’s phase p** and a chosen anchor cell. Apply `φ` to each coordinate **p times**, then apply `μ`. At phase 0, apply `μ` directly to the original coordinates.
-
-| Sign | Row direction | Column direction |
-| :---: | :--- | :--- |
-| −1 | Up | Left |
-| +1 | Down | Right |
-| 0 | Unspecified | Unspecified |
-
-Zero leaves a direction unresolved; it does not necessarily mean no movement.
-
-### Example: COLD → I MAY
-
-COLD uses **`H–U–H`**, with indices `(8,1,8)`. Its totient values are **`(4,1,4)`**, giving phase **1**. The anchor is **`A(11,7)`**:
-
-$$
-(11,7)\xrightarrow{\varphi}(10,6)
-\xrightarrow{\mu}(+1,+1).
-$$
-
-Both signs are positive: **down and right**. The recorded move uses distances **4 rows** and **1 column**:
-
-$$
-(11,7)\longrightarrow(15,7)\longrightarrow(15,8).
-$$
-
-The destination, **`B(15,8)`**, is the center of **`NG–B–NG`**, the node used for I MAY.
-
 ---
 
 Source: [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption).
