@@ -1,97 +1,83 @@
-# The 27 × 27 Matrix
+# Decryption Method
 
-**Decryption method · LP2 pages 0–2**
+**LP2 pages 0–2 · 27 × 27 matrix**
 
-This proposed method combines three-rune keys, a calculated key phase, and movement through the matrix. The examples below show how each part works and where the route remains unresolved.
+This guide explains the proposed method for a selected ciphertext block and its three-rune key node.
 
-## 1. Conventions
+## 1. Basics
 
-- **Coordinates:** `(row, column)`, numbered from 1. Rows increase downward; columns increase to the right.
-- **Rune indices:** values in the 29-rune alphabet, used for decryption modulo 29. They are separate from cell coordinates.
-- **Euler’s totient, φ(n):** the number of positive integers up to `n` that are coprime to `n`.
-- **Möbius function, μ(n):** `0` if `n` has a repeated prime factor; otherwise `+1` for an even number of distinct prime factors and `−1` for an odd number. In particular, `μ(1) = +1`.
+- **Coordinates:** `(row, column)`, starting from 1. Rows increase downward; columns increase to the right.
+- **Rune indices:** values from 0 to 28, used for subtraction modulo 29.
+- **φ(n), Euler’s totient:** counts the integers from 1 to n that share no factor with n other than 1.
+- **μ(n), Möbius:** zero if a prime square divides n; otherwise +1 for an even number of distinct prime factors and −1 for an odd number. `μ(1) = +1`.
 
-## 2. Decrypt a ciphertext block
+## 2. Decrypt a block
 
-### Build the key
+### Step 1 — Build the key
 
-For structures that use the center transformation, keep the outer runes and replace the center index with its totient:
+For nodes using the center transformation, replace the center index with its totient and keep the outer runes:
 
 $$
 (a,b,c)\longmapsto\bigl(a,\varphi(b),c\bigr).
 $$
 
-For example, `OE = 22` and `φ(22) = 10 = I`, so:
+For example, `OE = 22` and `φ(22) = 10 = I`:
 
 **`X–OE–X` → `X–I–X`**
 
-Some keys, including the non-mirrored `H–NG–C`, are used directly. The transformation is not applied to every structure.
+Some nodes supply the key unchanged and skip this transformation.
 
-### Calculate the phase and align the key
+### Step 2 — Calculate the phase and align the key
 
-For the derived key in its **unrotated order**, calculate a three-value signature:
-
-$$
-\sigma_i=\mu(\varphi(k_i)),\qquad i=1,2,3.
-$$
-
-Add the signature values and reduce modulo 3:
+For the unrotated key `K = (k₁,k₂,k₃)`, calculate:
 
 $$
-p=(\sigma_1+\sigma_2+\sigma_3)\bmod 3.
+\sigma_i=\mu(\varphi(k_i)),
+$$
+
+$$
+p=(\sigma_1+\sigma_2+\sigma_3)\bmod3.
 $$
 
 For `X–I–X`:
 
-| Key rune | Index | φ(index) | μ(φ(index)) |
+| Rune | Index | φ(index) | μ(φ(index)) |
 | :--- | ---: | ---: | ---: |
 | X | 14 | 6 | +1 |
 | I | 10 | 4 | 0 |
 | X | 14 | 6 | +1 |
 
-The signature is `(+1, 0, +1)`, giving `p = 2`.
+The signature is `(+1,0,+1)`, so **p = 2**.
 
-Rotate the key **left by p positions**. Here, `X–I–X` becomes **`X–X–I`**. This changes the order of the key elements; it does not rotate the matrix.
+Rotate the key **left by p positions**: `X–I–X` becomes **`X–X–I`**.
 
-### Subtract the repeated key
+### Step 3 — Subtract the repeated key
 
-Repeat the aligned key across the ciphertext and subtract rune indices modulo 29:
+Repeat the aligned key across the ciphertext. For each rune, subtract the matching key index modulo 29:
 
 $$
-P_j=(C_j-K_j)\bmod 29.
+P=(C-K)\bmod29.
 $$
 
-Here, `C` is the ciphertext, `K` is the repeated aligned key, and `P` is the plaintext.
+`C` is the ciphertext index, `K` the matching key index, and `P` the plaintext index.
 
-The **WEATHER** example uses row 14, columns 14–18:
+The block at **row 14, columns 14–18** gives:
 
-| Ciphertext | Key | Result modulo 29 | Plaintext |
-| :--- | :--- | ---: | :--- |
-| NG (21) | X (14) | 7 | W |
-| P (13) | X (14) | 28 | EA |
-| EO (12) | I (10) | 2 | TH |
-| O (3) | X (14) | 18 | E |
-| E (18) | X (14) | 4 | R |
+| Ciphertext | Repeated key | Plaintext |
+| :--- | :--- | :--- |
+| NG (21) | X (14) | W (7) |
+| P (13) | X (14) | EA (28) |
+| EO (12) | I (10) | TH (2) |
+| O (3) | X (14) | E (18) |
+| E (18) | X (14) | R (4) |
+
+A negative result wraps around: `13 − 14 = −1 ≡ 28 (mod 29)`.
 
 **`W–EA–TH–E–R` → WEATHER**
 
-## 3. Find the next position
+## 3. Move to the next key
 
-Movement uses the **current key’s phase** and a chosen anchor cell `(r, c)`. Direction and distance are calculated separately.
-
-### Calculate direction signs
-
-Apply the totient function to each coordinate `p` times, then apply the Möbius function:
-
-$$
-T_p(r,c)=\bigl(\varphi^p(r),\varphi^p(c)\bigr)
-$$
-
-$$
-V_p(r,c)=\bigl(\mu(\varphi^p(r)),\mu(\varphi^p(c))\bigr).
-$$
-
-`φᵖ` means **repeated application**, not exponentiation. At phase 0, the coordinates stay unchanged before applying `μ`.
+Use the **current key’s phase p** and a chosen anchor cell. Apply `φ` to each coordinate **p times**, then apply `μ`. At phase 0, apply `μ` directly to the original coordinates.
 
 | Sign | Row direction | Column direction |
 | :---: | :--- | :--- |
@@ -99,103 +85,28 @@ $$
 | +1 | Down | Right |
 | 0 | Unspecified | Unspecified |
 
-A zero leaves that direction unresolved. It does not necessarily mean “do not move.” Keep the transformed values in `Tₚ` as well as the signs in `Vₚ`.
+Zero leaves a direction unresolved; it does not necessarily mean no movement.
 
 ### Example: COLD → I MAY
 
-The **COLD** key is `H–U–H`, with indices `(8, 1, 8)`:
-
-- Totient values: `(4, 1, 4)`.
-- Möbius signature: `(0, +1, 0)`.
-- Phase: `p = 1`.
-
-The anchor is the ciphertext endpoint, **`A(11,7)`**. Applying `φ` once gives:
+COLD uses **`H–U–H`**, with indices `(8,1,8)`. Its totient values are **`(4,1,4)`**, giving phase **1**. The anchor is **`A(11,7)`**:
 
 $$
-T_1(11,7)=(10,6),\qquad V_1(11,7)=(+1,+1).
+(11,7)\xrightarrow{\varphi}(10,6)
+\xrightarrow{\mu}(+1,+1).
 $$
 
-The signs indicate **down and right**. This transition uses the key’s totient values **4** and **1** as the row and column distances:
+Both signs are positive: **down and right**. The recorded move uses distances **4 rows** and **1 column**:
 
 $$
-(11,7)\xrightarrow{\text{down 4}}(15,7)
-\xrightarrow{\text{right 1}}(15,8).
+(11,7)\longrightarrow(15,7)\longrightarrow(15,8).
 $$
 
-The destination is **`B(15,8)`**, the center of `NG–B–NG`, the next recorded structure for **I MAY**.
+The destination, **`B(15,8)`**, is the center of **`NG–B–NG`**, the node used for I MAY.
 
-### Other distance calculations
+## 4. What remains unresolved
 
-The route also includes:
-
-- A single totient: `OE = 22`, so `φ(22) = 10`.
-- A sum of successive totients: `J = 11`, so `φ(11) + φ(10) = 10 + 4 = 14`.
-
-These calculations produce the recorded distances, but there is no universal rule yet for choosing between them.
-
-### Example: retain a value when its sign is zero
-
-The **END** ciphertext ends at **`I(21,23)`**, with phase `p = 2`:
-
-$$
-21\xrightarrow{\varphi}12\xrightarrow{\varphi}4,
-\qquad
-23\xrightarrow{\varphi}22\xrightarrow{\varphi}10.
-$$
-
-Therefore:
-
-$$
-T_2(21,23)=(4,10),\qquad V_2(21,23)=(0,+1).
-$$
-
-The column sign points right; the row direction is unspecified. The retained value **4** matches the index of **R**, the center rune of the nearby `I–R–I` mirror.
-
-## 4. Check mirror geometry
-
-A **mirror** has two identical outer runes at equal, opposite offsets from a center. It may be horizontal, vertical, or diagonal.
-
-For example, `J–D–J` occupies **`J(15,20)`**, **`D(17,18)`**, and **`J(19,16)`**. The outer cells have the center as their midpoint:
-
-$$
-\frac{(15,20)+(19,16)}{2}=(17,18).
-$$
-
-### Endpoint roles and key signatures
-
-For **NOW THE**, the key `OE–I–OE` has totient values `(10, 4, 10)` and signature `(+1, 0, +1)`. For **IDEA**, `A–U–A` gives `(8, 1, 8)` and signature `(0, +1, 0)`.
-
-Their endpoints occupy the outer and center positions of the same `J–D–J` mirror. Four other passages follow the same pattern:
-
-| Passage | Key signature | Endpoint | Role | Mirror |
-| :--- | :--- | :--- | :--- | :--- |
-| NOW THE | (+1, 0, +1) | J(15,20) | Outer | J–D–J |
-| IDEA | (0, +1, 0) | D(17,18) | Center | J–D–J |
-| COLD | (0, +1, 0) | A(11,7) | Center | EA–A–EA |
-| IS | (0, +1, 0) | D(21,10) | Center | E–D–E |
-| WEATHER | (+1, 0, +1) | E(14,18) | Outer | E–NG–E |
-| END | (+1, 0, +1) | I(21,23) | Outer | I–R–I |
-
-In these examples, **`(0, +1, 0)` corresponds to a center**, while **`(+1, 0, +1)` corresponds to an outer cell**. This provides a consistency check for a candidate passage.
-
-### Shared cells
-
-One cell can belong to several structures:
-
-| Cell | Roles |
-| :--- | :--- |
-| J(19,16) | Center of `OE–J–OE`; outer cell of `J–D–J` and `J–B–J` |
-| R(21,22) | Center of both `I–R–I` and `H–R–H` |
-
-These overlaps connect structures at exact coordinates, but do not by themselves select the next branch.
-
-## 5. What remains unresolved
-
-For a specified ciphertext block and derived key, the phase and modulo-29 plaintext calculation are reproducible. A complete traversal still needs rules for:
-
-- **Choosing the anchor.** It is often the ciphertext endpoint, but the check after WEATHER uses `A(14,19)`, next to the endpoint `E(14,18)`.
-- **Choosing distances.** Different transitions use individual totient values, paired values, or sums.
-- **Choosing the continuation.** Mirror roles and shared cells help compare candidates, but do not yet determine a unique route.
+The decryption is reproducible once the block and key are specified. A complete route still needs rules for choosing the anchor, movement distances, and next node.
 
 ---
 
