@@ -1,475 +1,226 @@
-# Predicting the Next Key's Center Parity
+# Predicting the Next Key’s Center Parity
 
-**A Coordinate Parity Prediction Report**
+**Row and column parity · LP2 pages 0–2**
 
-*27 × 27 matrix · Next-key centers · Row and column parity · Rotational Möbius correction*
+Two formulas predict whether the next original key-node center lies in an **even or odd row and column**, using coordinates from the current block.
 
----
+## 1. Inputs
 
-A completed ciphertext block can provide another constraint on the **next decryption key**: whether the center of its original three-rune node lies in an **even or odd row and column**. Two compact formulas use the current ciphertext's beginning and endpoint, together with the center of its current key node, to predict these two properties.
+The matrix has **27 rows and 27 columns**, numbered from 1. Coordinates are `(row, column)`; rows increase downward and columns increase to the right.
 
-The **column rule** uses only three row numbers and an additive constant. The **row rule** shares the same basic structure, but uses the beginning's column and adds the Möbius value of its absolute cell number after a **180° rotation**. On the selected LP2 pages 0–2 route, both rules match **all 16 recorded transitions**. They also agree with the **THEN → THE** realization used in **THE KEY IS TO GO**, giving a conditional **17/17** on that extended route.
+| Symbol | Meaning |
+| :--- | :--- |
+| B | First cell read in the current ciphertext |
+| E | Last cell read in the current ciphertext |
+| M | Current original key-node center, before any center-totient transformation |
+| M′ = (r′, c′) | Next original key-node center |
 
-This report adds a **location filter** to the earlier reports. [Report 01](01-next-key-signature.md) predicts the next key's numerical signature; [Report 02](02-leftmost-cell-and-rotations.md) examines leftmost-cell geometry; and [Report 03](03-predicting-axis-and-reading-direction.md) predicts the next ciphertext's axis and reading orientation. The present formulas constrain the **next key-node center**, rather than the next ciphertext's cells.
+For a cell `X`, `r(X)` and `c(X)` are its row and column coordinates. These are **coordinate numbers**, not rune indices or prime values.
 
-**Contents**
+The output is a pair of parity bits, ordered **(row, column)**:
 
-[01. Foundations](#foundations) · [02. Predicting the column parity](#predicting-the-column-parity) · [03. Predicting the row parity](#predicting-the-row-parity) · [04. The shared structure](#the-shared-structure) · [05. Verification across the route](#verification-across-the-route) · [06. After THEN](#after-then) · [07. Reading the result](#reading-the-result) · [Formula reference](#formula-reference)
+- **0 = even.**
+- **1 = odd.**
 
----
+For example, `(0,1)` means **even row, odd column**. It is a parity label, not a cell coordinate.
 
-## Foundations
+## 2. Predict the two parities
 
-### Three inputs from the current block
+### Column parity
 
-Coordinates are **one-based**: `(1,1)` is the upper-left cell of the 27 × 27 matrix. Rows increase downward, and columns increase to the right.
-
-For the **current** ciphertext and its key node, define:
-
-- **`B` — beginning:** the first cell in the ciphertext's actual reading order.
-- **`E` — endpoint:** the last cell in that reading order.
-- **`M` — original key-node center:** the coordinate of the central cell in the three-rune structure supplying the current key, before any center-totient transformation.
-
-For any cell `X`, write its row and column as $r(X)$ and $c(X)$. These are ordinary **coordinate numbers from 1 to 27**, not the index or prime value of the rune occupying the cell.
-
-Let the **next** original key-node center be:
+Add the three current row coordinates and 1, then reduce modulo 2:
 
 $$
-M'=(r',c').
+c'\equiv1+r(B)+r(E)+r(M)\pmod 2.
 $$
 
-The prime mark identifies the **next center**. The formulas predict only the residues $r'\bmod 2$ and $c'\bmod 2$, not the complete coordinates.
+This rule uses only row numbers.
 
-### Interpreting the two outputs
+### Row parity
 
-Apply the same interpretation to either coordinate:
-
-| Result modulo 2 | Row prediction | Column prediction |
-|---:|---|---|
-| **0** | The next center lies in an **even row**. | The next center lies in an **even column**. |
-| **1** | The next center lies in an **odd row**. | The next center lies in an **odd column**. |
-
-For example, the pair **`(0,1)`** means **even row, odd column**. It does not mean the coordinate `(0,1)`: the matrix coordinates still range from 1 to 27.
-
-### The reflected absolute cell number
-
-The original absolute position of a cell is:
+First calculate the beginning’s absolute position and its position after a **180° turn**:
 
 $$
-n_0(r,c)=27(r-1)+c.
+n_0(B)=27\bigl(r(B)-1\bigr)+c(B),\qquad
+n_2(B)=730-n_0(B).
 $$
 
-A **180° rotation** about the matrix center sends:
+Then calculate:
 
 $$
-(r,c)\longmapsto(28-r,28-c).
+r'\equiv1+c(B)+r(E)+r(M)+\mu\bigl(n_2(B)\bigr)\pmod 2.
 $$
 
-The absolute position after that rotation is:
+The Möbius value is **0** when the integer has a repeated prime factor and **±1** when it is square-free. Modulo 2:
+
+- **μ = 0:** keep the parity of the other terms.
+- **μ = +1 or −1:** toggle it.
+
+Only square-freeness matters here; both nonzero signs have the same effect.
+
+### Shared structure
+
+Both rules contain `1 + r(E) + r(M)`. Adding them modulo 2 cancels this common term:
 
 $$
-\boxed{n_2(r,c)=730-n_0(r,c)}.
+r'+c'\equiv r(B)+c(B)+\mu\bigl(n_2(B)\bigr)\pmod 2.
 $$
 
-Here **730 = 27² + 1**. The rotation changes the cell's position for the numerical calculation; it does not change which original cell is designated `B`.
+This gives the next center’s checkerboard class using only the current beginning. It follows from the two rules and adds no independent constraint.
 
-The row formula applies the ordinary **Möbius function** to $n_2(B)$. Its values are $-1$, $0$, and $+1$: zero means the integer contains a squared prime factor, while a nonzero value means it is square-free.
+## 3. Worked example: COLD → I MAY
 
----
+COLD begins at **`G(14,7)`**, ends at **`A(11,7)`**, and uses the original node centered on **`TH(26,19)`**.
 
-## Predicting the Column Parity
-
-### Three row numbers and one constant
-
-Add the current ciphertext's beginning row, endpoint row, and current key-node center row, then add 1 and reduce modulo 2:
+The beginning’s absolute positions are:
 
 $$
-\boxed{c'\equiv1+r(B)+r(E)+r(M)\pmod 2}.
+n_0(B)=358,\qquad n_2(B)=730-358=372.
 $$
 
-**Interpretation:** `0 = EVEN COLUMN`; `1 = ODD COLUMN`.
+Since `372 = 2² × 3 × 31`, `μ(372) = 0`.
 
-No rune values, absolute cell numbers, totients, or Möbius values enter this calculation. Its inputs are simply the **three original row coordinates**.
-
-### Example — WEATHER → TURNS
-
-The current block **WEATHER** has:
-
-- **Beginning:** `NG(14,14)`.
-- **Endpoint:** `E(14,18)`.
-- **Original key-node center:** `OE(14,5)`.
-
-All three row numbers are 14, so:
-
-$$
-c'\equiv1+14+14+14=43\equiv1\pmod 2.
-$$
-
-The next key center should therefore occupy an **odd column**. The recorded TURNS node is centered on **`NG(14,23)`**: column **23** satisfies the prediction.
-
-### A geometric reading of the same expression
-
-Modulo 2, addition and subtraction have the same effect. The column rule can therefore also be written as:
-
-$$
-c'\equiv1+r(M)+\bigl[r(E)-r(B)\bigr]\pmod 2.
-$$
-
-The ciphertext contributes the **parity of its vertical displacement** from beginning to endpoint. This is an equivalent expression of the same rule, not another independent observation.
-
----
-
-## Predicting the Row Parity
-
-### The beginning's column and a reflected Möbius correction
-
-For the row prediction, use the beginning's **column**, the endpoint's row, the current key-node center's row, and the Möbius value of the beginning's reflected absolute position:
-
-$$
-\boxed{r'\equiv1+c(B)+r(E)+r(M)+\mu\bigl(n_2(B)\bigr)\pmod 2}.
-$$
-
-**Interpretation:** `0 = EVEN ROW`; `1 = ODD ROW`.
-
-The first three variable inputs are coordinate numbers from **1 to 27**. Only the last term uses an **absolute position from 1 to 729**, obtained after the 180° rotation and then passed through $\mu$.
-
-### What the Möbius correction does
-
-Because the result is taken modulo 2:
-
-- **`μ = 0`:** leave the parity of the other terms unchanged.
-- **`μ = +1` or `μ = −1`:** toggle that parity.
-
-In this calculation, **both nonzero signs have the same effect**: $-1\equiv+1\pmod 2$. The Möbius term therefore tests square-freeness; its sign is not being interpreted as a movement direction.
-
-### Example — COLD → I MAY
-
-The current COLD block has:
-
-$$
-B=(14,7),\qquad E=(11,7),\qquad M=(26,19).
-$$
-
-The beginning's original and reflected absolute positions are:
-
-$$
-n_0(B)=27(14-1)+7=358,
-$$
-
-$$
-n_2(B)=730-358=372.
-$$
-
-Since $372=2^2\times3\times31$, its Möbius value is **0**. Substituting into the row rule gives:
-
-$$
-r'\equiv1+7+11+26+0=45\equiv1\pmod 2.
-$$
-
-The next center should lie in an **odd row**. The column rule gives:
+**Column:**
 
 $$
 c'\equiv1+14+11+26=52\equiv0\pmod 2.
 $$
 
-Together, the rules predict **odd row, even column**. The recorded I MAY key node is centered on **`B(15,8)`**, matching both outputs.
-
----
-
-## The Shared Structure
-
-### One common term
-
-Both formulas contain the same contribution from the endpoint and the current node center. Define:
+**Row:**
 
 $$
-T=1+r(E)+r(M).
+r'\equiv1+7+11+26+0=45\equiv1\pmod 2.
 $$
 
-Then the pair becomes:
+The prediction is **odd row, even column**. The recorded I MAY node is centered on **`B(15,8)`**, matching both bits.
 
-$$
-\boxed{c'\equiv T+r(B)\pmod 2},
-$$
+## 4. Check against the recorded route
 
-$$
-\boxed{r'\equiv T+c(B)+\mu\bigl(n_2(B)\bigr)\pmod 2}.
-$$
+All inputs below belong to the current block. The next center is the recorded comparison target. OF and THE are separate blocks; SOON uses the primary ciphertext and the original **`L–C–EA`** node centered on **`C(25,7)`**.
 
-The **column prediction** adds the beginning's row to the common term. The **row prediction** adds its column and the reflected Möbius correction. This is a direct algebraic connection between the two expressions.
+| Transition | B | E | M | Next center | Predicted (row, column) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| AS I GO THE → WEATHER | (13,25) | (14,4) | (13,12) | (14,5) | (0,1) |
+| WEATHER → TURNS | (14,14) | (14,18) | (14,5) | (14,23) | (0,1) |
+| TURNS → COLD | (14,19) | (10,19) | (14,23) | (26,19) | (0,1) |
+| COLD → I MAY | (14,7) | (11,7) | (26,19) | (15,8) | (1,0) |
+| I MAY → CRY | (26,19) | (26,16) | (15,8) | (25,16) | (1,0) |
+| CRY → NOW THE | (19,16) | (17,16) | (25,16) | (19,16) | (1,0) |
+| NOW THE → IDEA | (11,16) | (15,20) | (19,16) | (11,16) | (1,0) |
+| IDEA → OF | (15,20) | (17,18) | (11,16) | (17,18) | (1,0) |
+| OF → THE | (18,15) | (18,16) | (17,18) | (19,16) | (1,0) |
+| THE → END | (19,17) | (19,16) | (19,16) | (23,12) | (1,0) |
+| END → IS | (19,23) | (21,23) | (23,12) | (21,22) | (1,0) |
+| IS → DEATH | (21,9) | (21,10) | (21,22) | (23,12) | (1,0) |
+| DEATH → SEE | (26,3) | (26,1) | (23,12) | (25,6) | (1,0) |
+| SEE → YOU | (25,16) | (27,14) | (25,6) | (16,16) | (0,0) |
+| YOU → SOON | (27,18) | (25,16) | (16,16) | (25,7) | (1,1) |
+| SOON → THEN | (25,16) | (25,19) | (25,7) | (26,22) | (0,0) |
 
-### A consequence for the next center's checkerboard class
+Each formula matches **16/16 transitions**, and both bits match jointly in all 16. The rules were found by searching this sequence; unseen transitions have not yet been tested. The two match counts are not independent experiments.
 
-Adding the two congruences cancels their common contribution:
+### Distinguishing the SOON centers
 
-$$
-\boxed{r'+c'\equiv r(B)+c(B)+\mu\bigl(n_2(B)\bigr)\pmod 2}.
-$$
-
-Thus the **parity of the next center's coordinate sum** can be expressed using only the current beginning. This determines its checkerboard class, but is already implied by the two coordinate predictions; it adds no independent constraint.
-
-The shared form is consistent with the possibility that both rules describe consequences of a common underlying process. It does not, by itself, establish that the expressions were used by the authors or derive them from a known symmetry.
-
----
-
-## Verification Across the Route
-
-### The fixed sequence and its inputs
-
-The following table checks the **16 recorded transitions**, from **AS I GO THE → WEATHER** through **SOON → THEN**. The columns `B`, `E`, and `M` are inputs from the current block; the next center is the recorded comparison target. The last column gives the calculated **`(row parity, column parity)`**. Every pair matches the displayed next center.
-
-As in the preceding reports, **OF and THE are separate blocks**, and **SOON uses the primary ciphertext**. Its original key node is **`L–C–EA`, centered on `C(25,7)`**. This node choice is part of the verification input: another node producing the same derived key can have different center coordinates.
-
-| No. | Transition | Current B | Current E | Current M | Next center | Predicted (row, column) |
-|---:|---|---|---|---|---|---|
-| 1 | **AS I GO THE → WEATHER** | `(13,25)` | `(14,4)` | `(13,12)` | `(14,5)` | `(0,1)` |
-| 2 | **WEATHER → TURNS** | `(14,14)` | `(14,18)` | `(14,5)` | `(14,23)` | `(0,1)` |
-| 3 | **TURNS → COLD** | `(14,19)` | `(10,19)` | `(14,23)` | `(26,19)` | `(0,1)` |
-| 4 | **COLD → I MAY** | `(14,7)` | `(11,7)` | `(26,19)` | `(15,8)` | `(1,0)` |
-| 5 | **I MAY → CRY** | `(26,19)` | `(26,16)` | `(15,8)` | `(25,16)` | `(1,0)` |
-| 6 | **CRY → NOW THE** | `(19,16)` | `(17,16)` | `(25,16)` | `(19,16)` | `(1,0)` |
-| 7 | **NOW THE → IDEA** | `(11,16)` | `(15,20)` | `(19,16)` | `(11,16)` | `(1,0)` |
-| 8 | **IDEA → OF** | `(15,20)` | `(17,18)` | `(11,16)` | `(17,18)` | `(1,0)` |
-| 9 | **OF → THE** | `(18,15)` | `(18,16)` | `(17,18)` | `(19,16)` | `(1,0)` |
-| 10 | **THE → END** | `(19,17)` | `(19,16)` | `(19,16)` | `(23,12)` | `(1,0)` |
-| 11 | **END → IS** | `(19,23)` | `(21,23)` | `(23,12)` | `(21,22)` | `(1,0)` |
-| 12 | **IS → DEATH** | `(21,9)` | `(21,10)` | `(21,22)` | `(23,12)` | `(1,0)` |
-| 13 | **DEATH → SEE** | `(26,3)` | `(26,1)` | `(23,12)` | `(25,6)` | `(1,0)` |
-| 14 | **SEE → YOU** | `(25,16)` | `(27,14)` | `(25,6)` | `(16,16)` | `(0,0)` |
-| 15 | **YOU → SOON** | `(27,18)` | `(25,16)` | `(16,16)` | `(25,7)` | `(1,1)` |
-| 16 | **SOON → THEN** | `(25,16)` | `(25,19)` | `(25,7)` | `(26,22)` | `(0,0)` |
-
-Each formula gives **16/16 matches**, and the pair gives **16/16 joint parity matches** on this fixed route. These are two restrictions on the same next centers, so their match counts should not be treated as independent experiments.
-
-The rules were identified by searching this recorded sequence. The table establishes the fit and makes the calculations reproducible; it does not constitute a test on previously unseen transitions.
-
-### Selecting the SOON key center
-
-The **YOU → SOON** transition illustrates how the two parity rules can distinguish between different centers that produce the **same numerical key**. Three documented nodes yield `L–R–EA`: **`L–C–EA` at `(25,7)`**, **`L–I–EA` at `(20,15)`**, and **`L–EO–EA` at `(25,14)`**. Their middle runes all transform to `R`, because:
+Three documented nodes produce the same derived key **`L–R–EA`** by applying Euler’s totient function, `φ`, to the center rune’s index:
 
 $$
 \varphi(5)=\varphi(10)=\varphi(12)=4=\mathrm{R}.
 $$
 
-The numerical key alone therefore does not distinguish these three possible centers. The parity rules supply an additional criterion using only the preceding **YOU** block:
+The preceding YOU block has `B = (27,18)`, `E = (25,16)`, and `M = (16,16)`. Its reflected beginning is `n₂(B) = 10`, with `μ(10) = +1`:
 
 $$
-B=(27,18),\qquad E=(25,16),\qquad M=(16,16).
+c'\equiv1+27+25+16=69\equiv1\pmod 2,
 $$
-
-The column prediction is:
-
-$$
-c'\equiv1+27+25+16=69\equiv1\pmod 2.
-$$
-
-For the row prediction, $n_0(B)=720$, so $n_2(B)=730-720=10$ and $\mu(10)=+1$. Hence:
 
 $$
 r'\equiv1+18+25+16+1=61\equiv1\pmod 2.
 $$
 
-The next key center must therefore lie in an **odd row and an odd column**:
+The prediction is **odd row, odd column**:
 
-| Original node | Center | Row parity | Column parity | Both filters |
-|---|---|---|---|---|
-| **L–C–EA** | **C(25,7)** | **Odd** | **Odd** | **Pass** |
-| L–I–EA | I(20,15) | Even | Odd | Fails the row condition |
-| L–EO–EA | EO(25,14) | Odd | Even | Fails the column condition |
+| Original node | Center | Parity (row, column) | Result |
+| :--- | :--- | :--- | :--- |
+| L–C–EA | C(25,7) | (1,1) | Pass |
+| L–I–EA | I(20,15) | (0,1) | Fails row condition |
+| L–EO–EA | EO(25,14) | (1,0) | Fails column condition |
 
-**Each rule alone leaves two possibilities; together, they single out exactly `C(25,7)` among the three documented centers.** This gives a precise parity-based criterion for the recorded choice of the `L–C–EA` node, while the derived numerical key remains `L–R–EA` in all three cases. Because that center was already included when the formulas were fitted, this is a consistency check within the recorded route, not an additional independent validation.
+Each filter alone leaves two possibilities. Together, they select **`C(25,7)` among these three centers**. That center was already part of the fitting sequence, so this is a consistency check within the recorded route.
 
----
+## 5. Prediction after THEN
 
-## After THEN
+THEN runs from **`L(25,25)`** to **`W(25,27)`**. Its original **`IA–IA–IA`** node is centered on **`IA(26,22)`**.
 
-### Calculate the two predicted parities
-
-The THEN ciphertext runs from **`L(25,25)`** to **`W(25,27)`**. Its original `IA–IA–IA` key node has center **`IA(26,22)`**. Therefore:
-
-$$
-B=(25,25),\qquad E=(25,27),\qquad M=(26,22).
-$$
-
-For the **column**:
+For the column:
 
 $$
 c'\equiv1+25+25+26=77\equiv1\pmod 2.
 $$
 
-For the **row**, first reflect the beginning:
-
-$$
-n_0(B)=27(25-1)+25=673,
-$$
-
-$$
-n_2(B)=730-673=57.
-$$
-
-Since $57=3\times19$, $\mu(57)=+1$. Consequently:
+The beginning has `n₀(B) = 673`, so `n₂(B) = 57 = 3 × 19` and `μ(57) = +1`. For the row:
 
 $$
 r'\equiv1+25+25+26+1=78\equiv0\pmod 2.
 $$
 
-The prediction is:
+**Prediction: even row, odd column — `(0,1)`.**
 
-$$
-\boxed{\text{NEXT KEY CENTER: EVEN ROW, ODD COLUMN}.}
-$$
+### How much remains?
 
-### How much of the candidate space remains?
+The full grid has **13 even rows × 14 odd columns = 182 eligible cells out of 729**.
 
-Across the full matrix, this pair of parities permits **13 even rows × 14 odd columns = 182 cells out of 729**, approximately one quarter of the grid.
-
-Report 01 also predicts the next key's signature **`(+1,+1,+1)`**, with phase **0**. To measure the additional parity filter, enumerate mirrored three-rune nodes along the **horizontal, vertical, and both diagonal axes**, at every radius for which both outer cells lie inside the matrix. Transform the center rune through $\varphi$ to obtain the key, then retain nodes whose derived-key signature is `(+1,+1,+1)`.
-
-This gives **44 spatial nodes at 36 distinct centers**, representing **26 distinct numerical keys** before the parity filter:
+[Report 01](01-next-key-signature.md) also predicts signature **`(+1,+1,+1)`**, phase **0**. The snapshot’s enumeration considers mirrored nodes on horizontal, vertical, and both diagonal axes, at every valid radius. Each center rune’s index is transformed through `φ` before checking the derived-key signature.
 
 | Restriction | Spatial nodes | Distinct centers | Distinct numerical keys |
-|---|---:|---:|---:|
-| Signature `(+1,+1,+1)` only | 44 | 36 | 26 |
+| :--- | ---: | ---: | ---: |
+| Signature only | 44 | 36 | 26 |
 | Signature + even row | 21 | 16 | 16 |
 | Signature + odd column | 25 | 18 | 18 |
-| **Signature + both parity filters** | **16** | **12** | **12** |
+| Signature + both parities | 16 | 12 | 12 |
 
-The even-row and odd-column rows show each filter applied separately to the signature-qualified set. Their intersection is the final row.
+The middle two rows apply each parity filter separately. Their intersection reduces **44 nodes to 16**, removing about **64%**, and **36 centers to 12**.
 
-**Both filters reduce the 44 eligible mirror nodes to 16**, removing approximately **64%**. Distinct centers decrease from **36 to 12**. A spatial node is counted by its three cell positions; different nodes can share a center or yield the same numerical key. These counts concern **mirrored nodes with the center-totient transformation**, not every possible non-mirrored key construction.
+A spatial node is identified by its three cell positions; nodes may share a center or numerical key. These counts cover mirrored nodes with center-totient derivation, excluding other key constructions.
 
-### The N–M–N candidate
+### Candidate N–M–N
 
-The THE realization in the candidate continuation **THE KEY IS TO GO** uses the original node:
+The candidate THE uses the vertical mirror:
 
-$$
-\mathrm{N}(17,17)\;–\;\mathrm{M}(20,17)\;–\;\mathrm{N}(23,17).
-$$
+**`N(17,17) – M(20,17) – N(23,17)`**
 
-Its center **(20,17)** lies in an **even row and an odd column**, matching both predictions from THEN. The mirror is vertical, with radius **3**.
+Its center **`M(20,17)`** has the predicted even row and odd column. The mirror radius is **3**.
 
-The original center rune M has index **19**. Transforming it gives φ(19)=18=E:
+Since `φ(M = 19) = 18 = E`, the derived key is **`N–E–N`**, with indices `(9,18,9)`. Their totients are `(6,6,6)`, giving signature **`(+1,+1,+1)`** and phase **0**.
 
-$$
-\mathrm{N-M-N}\longmapsto\mathrm{N-E-N}.
-$$
+The selected ciphertext decrypts as follows:
 
-The derived key has indices **(9,18,9)** and signature:
+| Ciphertext cell | Key index | Plaintext modulo 29 |
+| :--- | :--- | :--- |
+| J(22,21), index 11 | N = 9 | 11 − 9 = 2 → TH |
+| W(21,20), index 7 | E = 18 | 7 − 18 ≡ 18 → E |
 
-$$
-\bigl(\mu(\varphi(9)),\mu(\varphi(18)),\mu(\varphi(9))\bigr)
-=\bigl(\mu(6),\mu(6),\mu(6)\bigr)
-=(+1,+1,+1).
-$$
+**`TH–E` → THE**
 
-Its phase is **0**. The selected ciphertext **J(22,21) → W(21,20)** gives:
+This center is one of the **12 remaining centers**. Including THEN → THE gives conditional **17/17** for both parity rules, without uniquely selecting this center or plaintext.
 
-| Cell | Ciphertext index | Key index | Subtraction modulo 29 | Plaintext |
-|---|---:|---:|---|---|
-| `(22,21)` | `J = 11` | `N = 9` | `11 − 9 = 2` | **TH** |
-| `(21,20)` | `W = 7` | `E = 18` | `7 − 18 ≡ 18` | **E** |
+## 6. Checks through THE KEY IS TO GO
 
-### The conditional seventeenth match
+Each row calculates both bits from the current block before comparison with the selected next center.
 
-For **THEN → THE**, the formulas predict **(row parity, column parity)=(0,1)**. The selected center **(20,17)** matches. Including this first candidate transition gives conditional **17/17** for each formula.
-
-This center is one of the **12 remaining centers** after the signature and parity filters. The parity rules establish compatibility; they do not select this exact center or its plaintext uniquely. The candidate was found using the constraints, so its agreement is not independent validation.
-
-### Center checks through THE KEY IS TO GO
-
-For each row, the next-center bits are calculated from the current B, E, and M before comparison with the selected next center.
-
-| Candidate transition | Current B | Current E | Current M | Selected next center | Predicted (row, column) |
-|---|---|---|---|---|---|
+| Transition | Current B | Current E | Current M | Selected next center | Predicted (row, column) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | THEN → THE | (25,25) | (25,27) | (26,22) | (20,17) | (0,1) |
 | THE → KEY | (22,21) | (21,20) | (20,17) | (12,16) | (0,0) |
 | KEY → IS | (21,4) | (19,4) | (12,16) | (17,9) | (1,1) |
 | IS → TO | (18,7) | (19,6) | (17,9) | (8,25) | (0,1) |
 | TO → GO | (9,16) | (8,17) | (8,25) | (12,14) | (0,0) |
 
-All five selected centers match both parity bits. These candidate-extension checks are separate from the historical 16-transition fitting set.
+All five selected centers match both bits. For THE → KEY, `n₂(B) = 142` and `μ(142) = +1`; both coordinate sums are **64**, predicting even row and even column, as at **`H(12,16)`**.
+
+These candidate checks are separate from the 16-transition fitting set. The candidates were found using the constraints, so their agreement is not independent validation. The formulas filter **original key-node centers**; they do not locate a unique center, select the ciphertext, or establish a complete traversal rule. Further independently supported transitions are needed to test the pair.
 
 ---
 
-## Reading the Result
+Source: [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption).
 
-### What the pair contributes
-
-These formulas constrain **where the next original key node may be centered** using inputs available from the current block. They do not require a candidate word as a numerical input. After THEN, their practical contribution is the **44 → 16** reduction within the signature-qualified mirror-node set.
-
-The predictions concern the **key-node center**, not the next ciphertext's beginning, endpoint, or leftmost cell. A candidate still needs a suitable key, ciphertext, reading geometry, and decryption result under the rules described in the earlier reports.
-
-### What remains to be tested
-
-The recorded fit does not establish a unique formula or a complete traversal algorithm. The source-node choices are part of the input, and other expressions can fit the same historical sequence while extrapolating differently. Future transitions with independent support are needed to test whether this particular pair continues to hold.
-
-If the N–M–N THE realization is used as the current block, its inputs are:
-
-$$
-B=(22,21),\qquad E=(21,20),\qquad M=(20,17).
-$$
-
-Here n₂(B)=142 and μ(142)=+1. The same pair predicts:
-
-$$
-c'\equiv1+22+21+20=64\equiv0\pmod2,
-$$
-
-$$
-r'\equiv1+21+21+20+1=64\equiv0\pmod2.
-$$
-
-**After this THE, the next original key center is predicted to have an EVEN ROW and an EVEN COLUMN.** The selected KEY center **H(12,16)** matches both bits. This is agreement within the candidate continuation, not an independently authenticated next key.
-
----
-
-## Formula Reference
-
-All coordinates are **one-based**. `B` and `E` are the beginning and endpoint of the **current** ciphertext. `M` is the center coordinate of its **current original key node**. The next original center is $M'=(r',c')$.
-
-**1 · Original absolute cell position**
-
-$$
-n_0(r,c)=27(r-1)+c
-$$
-
-**2 · Absolute position after a 180° rotation**
-
-$$
-n_2(r,c)=730-n_0(r,c)
-$$
-
-**3 · Predict the next center's column parity**
-
-$$
-\boxed{c'\equiv1+r(B)+r(E)+r(M)\pmod 2}
-$$
-
-**4 · Predict the next center's row parity**
-
-$$
-\boxed{r'\equiv1+c(B)+r(E)+r(M)+\mu\bigl(n_2(B)\bigr)\pmod 2}
-$$
-
-**Interpretation for either coordinate:** `0 = EVEN`; `1 = ODD`.
-
-**5 · Shared term and derived checkerboard relation**
-
-$$
-T=1+r(E)+r(M)
-$$
-
-$$
-c'\equiv T+r(B)\pmod 2,\qquad
-r'\equiv T+c(B)+\mu\bigl(n_2(B)\bigr)\pmod 2
-$$
-
-$$
-r'+c'\equiv r(B)+c(B)+\mu\bigl(n_2(B)\bigr)\pmod 2
-$$
-
-The last relation follows algebraically from the two parity rules; it is not an additional independent test.
-
----
-
-*Research source:* [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption). Calculations use the supplied snapshot at commit `d5eed3f10428372c7202ceebc65cc3bdead0819d`, the selected 17-block route with `OF` and `THE` separate, the primary SOON ciphertext and its `L–C–EA` original node, and the candidate THEN → THE continuation using the N–M–N node centered on M(20,17). The 16/16 historical fits and conditional 17/17 extended fits describe that selected route; they do not independently establish an intended or unique Cicada 3301 decryption.
+Snapshot: `d5eed3f10428372c7202ceebc65cc3bdead0819d`.
