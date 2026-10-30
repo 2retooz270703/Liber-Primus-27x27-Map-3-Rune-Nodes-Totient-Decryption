@@ -84,12 +84,6 @@ $$
 
 Both predictions match. The endpoint and leftmost cell are different cells here.
 
-## 4. What the result establishes
-
-Each rule matches **16/16 recorded transitions** used to find it. Independent validation is still needed.
-
-The rules filter row parity; they do not determine columns, exact cells, or plaintext. When E′ and L′ are the same cell, both conditions apply to that one cell.
-
 ---
 
 Source: [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption).
