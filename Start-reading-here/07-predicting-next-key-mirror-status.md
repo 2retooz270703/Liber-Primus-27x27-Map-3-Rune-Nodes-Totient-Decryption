@@ -1,7 +1,5 @@
 # Predicting the Next Key’s Mirror Status
 
-**Original node geometry · LP2 pages 0–2**
-
 The distance between two cells in the current block predicts whether the next original key node has matching outer runes.
 
 ## 1. Define the node type
@@ -62,8 +60,3 @@ $$
 **Prediction: the next node is non-mirror.**
 
 TURNS uses **H–NG–C**. Its outer runes H and C differ, matching the prediction.
-
----
-
-Source: [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption).
-
