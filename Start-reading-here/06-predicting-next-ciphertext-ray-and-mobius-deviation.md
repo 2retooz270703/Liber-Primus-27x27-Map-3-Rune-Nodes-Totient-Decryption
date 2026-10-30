@@ -242,7 +242,3 @@ This is an exact relationship within the selected continuation. The filter does 
 - A stricter condition using the 180° Möbius value separates exact and unit offsets on all 16 recorded steps, but rejects THEN → THE. A sharper historical fit can extrapolate worse.
 
 Further tests should keep the rule fixed and use independently supported new transitions.
-
----
-
-Data: `LP2_mobius_ray_all_16.csv`. Analyses: `LP2_mobius_gated_ray_report.md` and `LP2_SEE_YOU_mobius_rarity_audit.md` (21 October 2026). Counts and comparisons refer to the selected project route.
