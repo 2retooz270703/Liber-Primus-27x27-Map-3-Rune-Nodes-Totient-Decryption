@@ -2,7 +2,7 @@
 
 **SEQUENDI RATIO — “a method of following”**
 
-The two keys below produce **SECUENDI RATIO**. Reading its C/K rune as Q gives the proposed Latin spelling **SEQUENDI RATIO**. The alphabet has no separate Q rune; this interpretation leaves the rune’s value, 5, unchanged.
+The two keys below produce **SECUENDI RATIO**. Reading its C/K rune as Q gives the proposed Latin spelling **SEQUENDI RATIO**.
 
 ## 1. What is being decrypted?
 
@@ -81,7 +81,3 @@ The project’s phase calculation gives **0**, so this key stays in that order.
 | Subtract rune numbers | R · A · T · I · O |
 
 The result is **RATIO**.
-
----
-
-Source: [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption).
