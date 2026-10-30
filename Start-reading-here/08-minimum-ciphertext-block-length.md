@@ -26,14 +26,6 @@ The word **I** in **I MAY** belongs to the four-rune block and receives no separ
 
 A three-rune key node can still decrypt a two-rune ciphertext block.
 
-## 3. Basis and use
-
-All **17 selected blocks**, from **AS I GO, THE** through **THEN**, satisfy this minimum.
-
-Single-rune outputs are easy to fit accidentally. The filter removes candidates assembled from independently keyed one-cell decryptions. Apply it before the other decryption, key, and coordinate checks.
-
-**Status:** an empirical search filter. Single-cell decryption remains mathematically possible; a two-rune minimum has not been established as a requirement of the original cipher.
-
 ---
 
 Source: [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption).
