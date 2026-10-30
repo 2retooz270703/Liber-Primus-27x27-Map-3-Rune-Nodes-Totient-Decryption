@@ -79,10 +79,6 @@ $$
 
 The candidate THE reads **`J(22,21) → W(21,20)`**, ending at its leftmost cell as predicted. That cell’s 90° index is **520**, with `μ(520) = 0`, also allowed in the Reflected class.
 
-## 5. What the result establishes
-
-On the selected route, the class check matches **17/17 blocks** and the boundary rule matches **16/16 transitions**. The candidate THE is a separate conditional check. These conditions constrain candidates but do not determine exact coordinates or a unique plaintext.
-
 ---
 
 Source: [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption).
