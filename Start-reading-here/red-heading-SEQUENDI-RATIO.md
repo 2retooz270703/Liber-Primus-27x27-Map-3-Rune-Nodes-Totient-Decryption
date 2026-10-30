@@ -19,17 +19,7 @@ The first group has eight runes; the second has five. Labels such as IA and NG e
 
 Each word starts with the first rune of its own key.
 
-## 2. How the subtraction works
-
-Each rune has a number from **0 to 28**. Subtract the key rune’s number from the encrypted rune’s number. If the answer is negative, add **29**. Convert the result back to a rune.
-
-For example, the first word begins with F when read backwards:
-
-**F(0) − X(14) = −14; add 29 to get 15, which is S.**
-
-Repeat the key until the word ends.
-
-## 3. First word: a key from four corners
+## 2. First word: a key from four corners
 
 ### Find the key in the matrix
 
@@ -63,7 +53,7 @@ Reverse the order of the eight heading runes. Keep IA together as one symbol.
 
 The literal result is **SECUENDI**.
 
-## 4. Second word: a key built from MAP
+## 3. Second word: a key built from MAP
 
 ### Find the three key cells
 
@@ -91,12 +81,6 @@ The project’s phase calculation gives **0**, so this key stays in that order.
 | Subtract rune numbers | R · A · T · I · O |
 
 The result is **RATIO**.
-
-## 5. What remains uncertain
-
-These remain candidate constructions. Both depend on the proposed MAP reading, and the rectangle conditions were formulated after finding the first word and key.
-
-A general rule has yet to explain the different key shapes, reading directions, and starting positions. The heading also does not fit the existing rules for the next ordinary block after MAP, so it remains a separate heading hypothesis.
 
 ---
 
