@@ -1,6 +1,6 @@
 # Reading the Red Heading
 
-**Candidate title: SEQUENDI RATIO — “a method of following”**
+**SEQUENDI RATIO — “a method of following”**
 
 The two keys below produce **SECUENDI RATIO**. Reading its C/K rune as Q gives the proposed Latin spelling **SEQUENDI RATIO**. The alphabet has no separate Q rune; this interpretation leaves the rune’s value, 5, unchanged.
 
