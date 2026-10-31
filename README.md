@@ -1,5 +1,7 @@
 Plaintext discovered so far:
 
+---
+
 <div align="center">
 
 AS I GO, THE WEATHER TURNS COLD.  
