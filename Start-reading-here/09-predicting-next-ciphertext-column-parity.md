@@ -1,7 +1,5 @@
 # Predicting the Next Ciphertext’s Column Parity
 
-**Leftmost cell · LP2 pages 0–2**
-
 This rule predicts whether the next block’s **leftmost cell** lies in an even or odd column. It uses only the current ciphertext and its original key node.
 
 ## 1. Inputs
@@ -152,12 +150,3 @@ Continuing the same key stream along the same diagonal produces **MAPLIFE as one
 | MAPLIFE, 7 runes | (19,11) → (13,17) | 1 | 19 + 1 + 0 + 1 = 21 | Odd |
 
 These are conditional forecasts for two choices of the current block’s boundary. The rule itself does not decide where that block ends.
-
-## 7. Use with the other rules
-
-Use this condition alongside the [row-parity rules](05-predicting-next-ciphertext-row-parity.md) and the other key and geometry constraints. It supplies one column-parity bit, leaving the exact cell, key, and plaintext undetermined.
-
----
-
-Source: [Liber Primus — 27×27 Map, 3-Rune Nodes & Totient Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption).
-
