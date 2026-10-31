@@ -4,29 +4,21 @@ As I’ve said before, the idea behind my project is that pages 0–2 represent 
 
 Each cell is potentially a plaintext letter that can be decrypted using a specific key. The key is taken from 3-rune triplets, usually mirrored ones. This is what I initially discovered. I found the rules for when to rotate this key, and I found my first few plaintexts, ranging from AS I GO… to SEE YOU SOON, THEN. I also constantly checked numerological connections as I progressed, and I’m convinced that this is the most coherent plaintext I’ve managed to extract from the matrix using this method. Basically, you move through the cells of the matrix, subtracting the key at different phases, and you get the intended word.
 
----
-
 Next, I decided to investigate and look for formulas that predict the spatial relationships between the ciphertexts and keys I had found. Because if this is a program or an algorithm, something must be generating it. There must be some kind of pattern. And I found formulas that, using only the knowledge of the current ciphertext (which cells are used at this stage), the current key, and the current phase, predict the exact properties of the next ciphertext.
 
 For example, formulas that predict the next key signature, or simply the Möbius value of its three runes, exactly, as well as the parity of the column and row of its center, the parity of the left cell, the parity of the ciphertext’s endpoint, and even the axis along which it is positioned.
 
 In short, without going into too much detail, I found formulas along the known route that precisely describe the properties of the next key and ciphertext, and this eliminates many possible branches when trying to crack the cipher and explore different paths.
 
----
-
 And yet, a successful result was that these rules predicted the branch: THE KEY IS TO GO TO THE EAST OF THE MAP. It satisfies a large number of parameters and stands out in terms of its geometry and its connection to the previous plaintext.
 
 The point is that I don’t know whether this branch is genuine, since it was found through a computer brute-force search. But again, if some algorithm generates these properties, then this branch satisfies them and could potentially be part of that algorithm. So that’s quite an interesting result. With such a large number of constraints, the resulting branches are often less meaningful, and this particular branch really stood out in terms of both meaning and geometry. So this could be called a kind of cracking of the cipher. At least, I had established the rules in advance and obtained an intriguing result.
-
----
 
 So the main idea now, since I’ve reached a dead end, is to try to find new formulas that narrow down the 27/27 route even further, and see whether they produce similarly interesting and meaningful plaintext. If they do, there’s a possibility that the same algorithm is still responsible for all of this. In other words, the point of my project right now is not to manually fit the answer, or even search manually at all, but to try to find very strict constraining rules. So strict that only one branch could remain available — presumably the real plaintext.
 
 I’ve looked at the formulas, and they really don’t seem random. I can see that the left cell of the ciphertext is constantly used for predictions, which makes me think that this is clearly some kind of algorithm that arranges ciphertext cells across the matrix, taking into account parities, distances, and so on. In other words, my formulas don’t look that random, and that’s exactly why I find them so interesting. Simple operations are constantly used, such as rotations by 0, 90, 180, and 270 degrees, and the Möbius value is simply taken to provide a controlling signal.
 
 In other words, their algorithm could have not only filled the matrix with ciphertext cells, but also with the necessary background/auxiliary cells that provide the required Möbius signal for the main cells. And this is how they could have gradually created an entire 27×27 square, where some cells are the main ones hiding the plaintext, while others are auxiliary cells hiding pointers and rules for the algorithm.
-
----
 
 Judging by the frequency analysis, they may have applied the same principle to the entirety of LP as well. In other words, I’m not just working on solving 0–2. Potentially, this is the very same algorithm used to encrypt the entire Liber Primus.
 
@@ -35,6 +27,3 @@ My proposed title, SECUENDI RATIO, which means “method of following,” even s
 I understand that the other pages also contain quotation marks, numbers, and all of that seems genuine and looks like a one-time pad, but I think all those quotation marks and other elements are illusions. I think it’s all the same clever encryption algorithm disguised as ordinary text.
 
 That’s why 0–2 is so important. So far, I haven’t been able to understand the connections between the transitions. The only thing I’ve successfully managed to find is the constraining formulas. That’s the most promising result I’ve achieved so far.
-
-
-
