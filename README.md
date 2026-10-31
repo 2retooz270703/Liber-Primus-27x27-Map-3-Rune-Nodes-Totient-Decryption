@@ -1,3 +1,18 @@
+Plaintext discovered so far:
+
+<div align="center">
+
+AS I GO, THE WEATHER TURNS COLD.  
+I MAY CRY NOW.  
+THE IDEA OF THE END IS DEATH.  
+SEE YOU SOON, THEN.  
+THE KEY IS TO GO TO THE EAST OF THE MAP.  
+
+
+</div>
+
+---
+
 I want to clarify a little what exactly I’m working on and what I’m doing, so that my train of thought is clearer.
 
 As I’ve said before, the idea behind my project is that pages 0–2 represent an encrypted block of data in the form of a square, with information contained inside it. The dots are directional indicators or beacons, although the exact principle behind how they work is still unclear. In other words, the body of 0–2 is not made up of words or word separators. It’s one large block of data.
