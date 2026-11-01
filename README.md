@@ -18,13 +18,11 @@ Plaintext discovered as of November 1, 2026
 
 ---
 
-## What this project proposes
+## The Approach
 
-My starting hypothesis is that the body of LP2 pages 0–2 should be treated as **one encrypted 27 × 27 data matrix**, rather than as ordinary lines of text with spaces between words. A cell can participate in a ciphertext block, in a key structure, or possibly in a separate system of navigation clues. I suspect that the dots act as markers or directional signals, but their full role has **not** been established.
+My starting hypothesis is that LP2 pages 0–2 should be treated as a single 27 × 27 matrix of runes, rather than as ordinary lines of text. I believe that the words and sentences we seem to recognize when reading these pages are an illusion. The runes may have been arranged to look like readable text, while the actual message is encrypted within the matrix itself.
 
-The approach is to recover a sequence of ciphertext blocks from the matrix and decrypt them with keys obtained from **three-rune nodes**. Many of these nodes have matching outer runes; others do not. The method combines rune indices, Euler's totient function, the Möbius function, geometric movement, key rotation, and subtraction modulo 29.
-
-The goal is not merely to find readable English. It is to discover a **deterministic rule for moving from one block to the next**: a rule that selects the next key and ciphertext without having to choose the most meaningful-looking answer manually.
+Instead of reading the runes in their visible order, I study the matrix as a whole, looking for patterns and relationships between individual cells.
 
 ## How the proposed decryption works
 
