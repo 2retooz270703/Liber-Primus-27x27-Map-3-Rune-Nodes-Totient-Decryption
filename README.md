@@ -11,10 +11,6 @@
 
 ---
 
-**[Explore the interactive 27 × 27 map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)** · **[Follow the plaintext, block by block](./plaintext-i-found/)** · **[Start with the decryption method](./Start-reading-here/)**
-
----
-
 ## The Approach
 
 My hypothesis is that LP2 pages 0–2 should be treated as a single 27 × 27 matrix of runes, rather than as ordinary lines of text. I believe that the words and sentences we seem to recognize when reading these pages are an illusion. The runes may have been arranged to look like readable text, while the actual message is encrypted within the matrix itself.
@@ -78,18 +74,3 @@ See **[plaintext-i-found/](./plaintext-i-found/)** for all **28 numbered block r
 **The red heading.** In the separate [red-heading analysis](./Start-reading-here/red-heading-SEQUENDI-RATIO.md), two proposed keys decrypt the heading into the literal rune sequence **SECUENDI RATIO**. Interpreting the `C/K` rune as `Q` suggests the Latin **SEQUENDI RATIO**, approximately *“a method of following.”* This reading is a **hypothesis**, not an established translation of an authenticated heading. If correct, it could describe the procedure needed to navigate the matrix.
 
 **A possible wider application.** My longer-term hypothesis is that pages 0–2 might demonstrate a method also relevant to other pages of *Liber Primus*. This is speculative. The project does not yet show that the remaining pages use the same construction or that apparently textual features elsewhere are decoys.
-
-## The open problem
-
-The formulas currently filter many possible transitions, but they do **not** yet derive a single next key, starting cell, direction, and block length from the current state alone. The next work is to:
-
-1. Find stronger, preferably deterministic relationships between consecutive blocks, including any role played by the dots.
-2. Separate rules established **before** a candidate search from patterns noticed **after** a readable result was found.
-3. Test the complete method on unseen transitions and competing branches, rather than only on the route used to develop it.
-
-**The objective is a reproducible algorithm that finds the plaintext because the rules require it — not because the selected words sound right.**
-
----
-
-**Repository:** [Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption)  
-**Interactive matrix:** [Open the live map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)
