@@ -1,9 +1,5 @@
 # 02 — WEATHER
 
-This example shows how a three-rune node in the **27 × 27 matrix** yields a key, a starting position at the matrix center, and five decrypted runes. It also records three geometric connections associated with the result.
-
-**Notation:** Coordinates are **1-based** and written `(row, column)`. Rune numbers are indices in the **29-rune alphabet**. `φ` is Euler's totient function; `μ` is the Möbius function.
-
 ## 1. Find the three-rune node
 
 The relevant section of the matrix is:
