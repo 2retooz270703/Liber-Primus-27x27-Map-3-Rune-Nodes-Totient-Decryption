@@ -6,11 +6,7 @@ This example shows how the preceding **WEATHER** key provides a directional rule
 
 ## 1. Find the directional anchor and key
 
-The preceding word, **WEATHER**, uses the final key `X–X–I`, whose rotation phase is **2**. In the project's directional rule, this phase corresponds to:
-
-`V₂ = (−1, +1) → UP + RIGHT`
-
-Apply this direction at the rune **`A (14,19)`**. The relevant matrix positions are:
+The preceding word, **WEATHER**, uses the final key `X–X–I`, whose rotation phase is **2**. The relevant matrix positions are:
 
 | Row | Column 19 | Column 23 | Column 27 |
 |:---:|:---:|:---:|:---:|
@@ -78,5 +74,3 @@ Repeat the key `H–NG–C` over the five ciphertext runes. For each position, s
 **Decrypted rune sequence:** `T · U · R · N · S`
 
 **Proposed reading: TURNS**
-
-All five decrypted runes correspond directly to the five letters of `TURNS`. No spacing or multi-letter rune expansion is required.
