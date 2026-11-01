@@ -1,14 +1,11 @@
-Plaintext discovered as of November 1, 2026
-
----
 
 <p align="center">
   <em>
-    AS I GO, THE WEATHER TURNS COLD.<br>
-    I MAY CRY NOW.<br>
-    THE IDEA OF THE END IS DEATH.<br>
-    SEE YOU SOON, THEN.<br>
-    THE KEY IS TO GO TO THE EAST OF THE MAP.
+    As I go, the weather turns cold.<br>
+    I may cry now.<br>
+    The idea of the end is death.<br>
+    See you soon, then.<br>
+    The key is to go to the east of the map.
   </em>
 </p>
 
