@@ -17,26 +17,9 @@ My hypothesis is that LP2 pages 0–2 should be treated as a single 27 × 27 mat
 
 Instead of reading the runes in their visible order, I study the matrix as a whole, looking for patterns and relationships between individual cells.
 
-## How the proposed decryption works
+See [Report 00](./Start-reading-here/00-decryption-method.md) for a complete worked example.
 
-1. **Choose a three-rune key node** in the matrix. For applicable nodes, replace the center rune's index `b` by `φ(b)`; some recorded non-mirror nodes use their original indices without this replacement.
-2. **Calculate its signature.** For the derived key indices `k₁, k₂, k₃`, compute `μ(φ(k₁)), μ(φ(k₂)), μ(φ(k₃))`. Their sum modulo 3 determines the cyclic left-rotation of the key.
-3. **Read a selected ciphertext path** from the matrix, using its recorded starting cell, axis, direction, and length.
-4. **Repeat the rotated key** and subtract its indices from the ciphertext indices, modulo 29, to obtain plaintext runes.
 
-For example, the original node `X–OE–X` becomes `X–I–X` after the center transformation. Its Möbius phase is `2`, so its aligned key is `X–X–I`. Applying it to five cells beginning at the matrix center `(14,14)` yields **WEATHER**.
-
-The arithmetic is reproducible once the cells and node have been selected. **Selecting the correct cells and node is the unresolved cryptanalytic problem.** See [Report 00](./Start-reading-here/00-decryption-method.md) for a complete worked example.
-
-## The transition rules: the main research result
-
-After reconstructing the initial route, I searched for relationships between each **current** ciphertext/key and the properties of the **next** one. This produced a collection of proposed rules based on simple operations: coordinate rotations by 90°, 180°, or 270°; parity; distances; greatest common divisors; and Möbius values of cell positions.
-
-The rules constrain different aspects of the next block: its key signature and phase, the parity of its key center, the axis and reading boundary, the row and column parity of selected cells, the next starting point's geometric relation to the current block, and whether the next node is mirrored.
-
-An especially recurring input is the **leftmost cell of the current ciphertext**. This makes me suspect that the positions of the blocks may be related by a consistent geometric construction rather than being chosen independently.
-
-These are **constraints, not yet a complete transition algorithm**. The early rules were developed against the recorded route and therefore need independent testing. Their agreement with a continuation is useful for ranking or rejecting candidates, but it is not proof of a unique solution.
 
 ### Research notes and formulas
 
