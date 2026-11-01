@@ -88,8 +88,6 @@ Repeat the key `X–X–I` over these five ciphertext runes. For each position, 
 
 ## 5. Connections in the matrix
 
-The following observations concern the **positions of runes in the matrix**, not additional steps required for the modular subtraction above.
-
 ### A matching sequence directly above the ciphertext
 
 The first three decrypted runes, `W–EA–TH`, also occur together in **row 13, columns 14–16**. They sit directly above the first three ciphertext cells, `NG–P–EO`, in **row 14, columns 14–16**.
@@ -100,21 +98,3 @@ The first three decrypted runes, `W–EA–TH`, also occur together in **row 13,
 | 14 | **NG** | **P** | **EO** |
 
 Thus, the decrypted opening `W–EA–TH` has a spatial counterpart **one row above** its ciphertext positions.
-
-### A diagonal E–NG–E mirror
-
-A separate diagonal passes through these cells:
-
-`E (6,10) → NG (10,14) → E (14,18)`
-
-Each step moves **4 rows down and 4 columns right**, making `NG (10,14)` the midpoint of an `E–NG–E` arrangement.
-
-The last cell, **`E (14,18)`**, is also the **fifth and final ciphertext cell** used to decrypt `WEATHER`. Here `E` is the *ciphertext* rune; it decrypts to `R`.
-
-The project's recorded search identifies this as the **only E–NG–E mirror across the axes and distances examined**. That uniqueness is a reported search result, separate from the arithmetic demonstration.
-
-### The OUTER interpretation
-
-The key's Möbius signature is **`(+1, 0, +1)`**. In the project's geometric interpretation, this is classified as **OUTER**.
-
-The final ciphertext cell, `E (14,18)`, is indeed **one of the two outer endpoints** of the diagonal `E–NG–E` mirror. This connects the project's OUTER label to a specific position in the matrix; it is an interpretive connection rather than an additional decryption operation.
