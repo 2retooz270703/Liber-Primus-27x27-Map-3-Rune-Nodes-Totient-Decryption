@@ -36,7 +36,7 @@ Use **S before the transition** to choose the calculation. Each sum includes **a
 | 0 ≤ S < 7 | Direct/+1 | (1 + Σμ(n)) mod 3 |
 | 7 ≤ S < 14 | Reflected/+0 | Σμ(730−n) mod 3 |
 | 14 ≤ S < 21 | Reflected/+1 | (1 + Σμ(730−n)) mod 3 |
-| 21 ≤ S < 28 | Direct/+0 — untested | Σμ(n) mod 3 |
+| 21 ≤ S < 28 | Direct/+0 | Σμ(n) mod 3 |
 
 `730−n` is the cell’s absolute position after a **180° turn**. The result is the predicted next phase: **0, 1, or 2**.
 
