@@ -20,7 +20,7 @@ Plaintext discovered as of November 1, 2026
 
 ## The Approach
 
-My starting hypothesis is that LP2 pages 0–2 should be treated as a single 27 × 27 matrix of runes, rather than as ordinary lines of text. I believe that the words and sentences we seem to recognize when reading these pages are an illusion. The runes may have been arranged to look like readable text, while the actual message is encrypted within the matrix itself.
+My hypothesis is that LP2 pages 0–2 should be treated as a single 27 × 27 matrix of runes, rather than as ordinary lines of text. I believe that the words and sentences we seem to recognize when reading these pages are an illusion. The runes may have been arranged to look like readable text, while the actual message is encrypted within the matrix itself.
 
 Instead of reading the runes in their visible order, I study the matrix as a whole, looking for patterns and relationships between individual cells.
 
