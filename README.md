@@ -14,7 +14,7 @@ Plaintext discovered as of November 1, 2026
 
 ---
 
-**[Explore the interactive 27 × 27 map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)** · **[Follow the plaintext, block by block](./plaintext-i-found/)** · **[Start with the decryption method](./Start-reading-here/00-decryption-method.md)**
+**[Explore the interactive 27 × 27 map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)** · **[Follow the plaintext, block by block](./plaintext-i-found/)** · **[Start with the decryption method](./Start-reading-here/)**
 
 ---
 
