@@ -1,12 +1,8 @@
 # 03 — TURNS
 
-This example shows how the preceding **WEATHER** key provides a directional rule, how the geometry of the **27 × 27 matrix** identifies a new three-rune key, and how five ciphertext runes decrypt to `TURNS`.
-
-**Notation:** Coordinates are **1-based** and written `(row, column)`. Rune numbers are indices in the **29-rune alphabet**. `φ` is Euler's totient function; `μ` is the Möbius function.
-
 ## 1. Find the directional anchor and key
 
-The preceding word, **WEATHER**, uses the final key `X–X–I`, whose rotation phase is **2**. The relevant matrix positions are:
+The relevant matrix positions are:
 
 | Row | Column 19 | Column 23 | Column 27 |
 |:---:|:---:|:---:|:---:|
@@ -47,13 +43,11 @@ The **totient signature** is `(4, 12, 4)`, and the **Möbius signature** is `(0,
 
 ## 3. Locate the ciphertext start
 
-The ciphertext starts at the directional anchor **`A (14,19)`**, not at the center of the vertical key, `NG (14,23)`.
+The ciphertext starts at **`A (14,19)`**, not at the center of the vertical key, `NG (14,23)`.
 
 Following the **UP** direction, read five consecutive cells in **column 19**, decreasing the row number by 1 each time:
 
 `(14,19) → (13,19) → (12,19) → (11,19) → (10,19)`
-
-The **RIGHT** movement described in Section 1 locates the key geometry. It does **not** change the starting cell of this ciphertext reading.
 
 ## 4. Read and decrypt the ciphertext
 
