@@ -52,7 +52,7 @@ Apply **one cyclic left rotation**:
 
 ## 3. Locate the ciphertext start
 
-The same distance, **12**, is used in the **LEFT** direction from the anchor `A (14,19)`:
+The same distance, **12**, is used in the **LEFT** direction from `A (14,19)`:
 
 `(14,19) → 12 cells left → (14,7)`
 
@@ -66,8 +66,6 @@ The two movements have different purposes:
 From `G (14,7)`, the recorded ciphertext reading goes **upward** through four consecutive cells in column 7:
 
 `(14,7) → (13,7) → (12,7) → (11,7)`
-
-The **DOWN + LEFT** rule locates the node and start; it should not be confused with the **UP** direction used to read the ciphertext.
 
 ## 4. Read and decrypt the ciphertext
 
@@ -87,21 +85,3 @@ Repeat the key `U–H–H` over the four ciphertext runes. For each position, su
 **Decrypted rune sequence:** `C · O · L · D`
 
 **Proposed reading: COLD**
-
-All four decrypted runes correspond directly to the four letters of `COLD`. No multi-letter rune expansion is required.
-
-## 5. A connection at the ciphertext endpoint
-
-The final ciphertext cell, **`A (11,7)`**, is the center of a second vertical three-rune arrangement:
-
-| Row | Column 7 |
-|:---:|:---:|
-| 10 | **EA** |
-| **11** | **A** |
-| 12 | **EA** |
-
-This produces **`EA–A–EA`**, centered on the last cell read during the `COLD` decryption.
-
-The key `U–H–H` has the Möbius signature **`(0, +1, 0)`**, which the project interprets as a **CENTER** state. The endpoint falling at the center of `EA–A–EA` is therefore an additional geometric correspondence.
-
-This observation is **not needed for the modular subtraction** that yields `COLD`; it is a separate positional connection worth tracking across the sequence.
