@@ -1,9 +1,5 @@
 # 07 — NOW THE
 
-This example shows how the **CRY** construction supplies a six-cell movement, how the vertical `OE–J–OE` node produces a new key, and how five ciphertext runes decrypt to `NOW THE`. It also records geometric and numerical connections between this reading and **CRY**.
-
-**Notation:** Coordinates are **1-based** and written `(row, column)`. Rune numbers are indices in the **29-rune alphabet**. `φ` is Euler's totient function; `μ` is the Möbius function. Prime values refer to **Gematria Primus (GP)**, not rune indices.
-
 ## 1. Find the three-rune node
 
 In the preceding **CRY** example, the center of the `E–X–E` node is **`X (25,16)`**. Its totient gives the movement distance:
@@ -28,7 +24,7 @@ Read the cells in **column 16**:
 - **Center:** `J (19,16)` — the rune used to derive the next key's center.
 - **Bottom:** `OE (20,16)`.
 
-**Node: `OE–J–OE`.** The same six-cell movement that located the `CRY` ciphertext start now identifies the node used for this key.
+**Node: `OE–J–OE`.**
 
 ## 2. Derive and align the decryption key
 
@@ -73,8 +69,6 @@ The two six-cell movements have different purposes:
 - **`X (25,16) → J (19,16)`:** finds the center of the new key node.
 - **`S (17,16) → TH (11,16)`:** finds the start of the new ciphertext.
 
-The **distance** is calculated from `φ(X) = 6`. Applying it to the preceding ciphertext endpoint to select the next start is part of the project's recorded route.
-
 ## 4. Read and decrypt the ciphertext
 
 From `TH (11,16)`, read **five consecutive cells diagonally down and right**: one row down and one column right at each step.
@@ -99,11 +93,7 @@ Repeat the final key `OE–OE–I` across these cells. Subtract each **key rune 
 
 **Proposed reading: NOW THE**
 
-`TH` is **one rune** in the 29-rune alphabet. The space between `NOW` and `THE` is added when rendering the sequence as English; it is not a separate decrypted symbol.
-
 ## 5. Connections in the matrix
-
-These are **additional correspondences**, not operations needed to produce the plaintext by modular subtraction.
 
 ### Two mirrors share the same center and distance
 
@@ -135,13 +125,3 @@ Using **Gematria Primus prime values** for the *decrypted runes*:
 `13 + 11 + 103 = 29 + 7 + 19 + 5 + 67 = 127`
 
 **127 is the 31st prime.** The transformed center rune of the new key, `I`, also has **GP value 31**. This relates the common plaintext GP sum to the central rune of `OE–I–OE`, but it does not determine the decryption key or the reading direction on its own.
-
-### The OUTER interpretation at the endpoint
-
-The key has Möbius signature **`(+1, 0, +1)`**, classified as **OUTER** in the project's geometric interpretation.
-
-The final ciphertext cell, **`J (15,20)`**, is an outer endpoint of the diagonal arrangement:
-
-`J (15,20) → D (17,18) → J (19,16)`
-
-Each step moves **2 rows down and 2 columns left**. This gives the OUTER classification a corresponding endpoint in the matrix. It is an **interpretive geometric match**, not an additional requirement for decrypting `NOW THE`.
