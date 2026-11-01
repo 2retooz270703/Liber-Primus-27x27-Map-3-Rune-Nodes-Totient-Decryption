@@ -86,8 +86,6 @@ Repeat the key `X–X–I` over these five ciphertext runes. For each position, 
 
 **Proposed reading: WEATHER**
 
-`EA` and `TH` are each **one rune** in the 29-rune alphabet. Together, the five decrypted runes spell the seven-letter word `WEATHER`.
-
 ## 5. Connections in the matrix
 
 The following observations concern the **positions of runes in the matrix**, not additional steps required for the modular subtraction above.
