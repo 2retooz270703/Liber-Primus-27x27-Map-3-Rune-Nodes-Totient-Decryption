@@ -1,16 +1,6 @@
 # 04 — COLD
 
-This example shows how the preceding **TURNS** key supplies a direction and movement distance, how a three-rune node in the **27 × 27 matrix** produces the next key, and how four ciphertext runes decrypt to `COLD`.
-
-**Notation:** Coordinates are **1-based** and written `(row, column)`. Rune numbers are indices in the **29-rune alphabet**. `φ` is Euler's totient function; `μ` is the Möbius function.
-
-## 1. Find the directional anchor and three-rune node
-
-The preceding word, **TURNS**, uses the final key `H–NG–C`, whose rotation phase is **0**. In the project's directional rule, this phase corresponds to:
-
-`V₀ = (+1, −1) → DOWN + LEFT`
-
-Apply this direction at the rune **`A (14,19)`**, the starting cell used for `TURNS`.
+## 1. Find the three-rune node
 
 The movement distance comes from the preceding key's center rune, `NG`:
 
@@ -30,7 +20,7 @@ Read the three cells in **column 19**:
 - **Center:** `TH (26,19)` — the rune used to derive the key's center.
 - **Bottom:** `H (27,19)`.
 
-**Node: `H–TH–H`.** Its center is exactly 12 rows below the directional anchor.
+**Node: `H–TH–H`.**
 
 ## 2. Derive and align the decryption key
 
@@ -44,15 +34,13 @@ The unrotated key is therefore **`H–U–H`**.
 
 ### Calculate its rotation
 
-For each rune in the derived key, apply `φ` to its index, then apply `μ` to that result:
-
 | Key rune | Rune index | Totient | Möbius value |
 |:---:|:---:|:---:|:---:|
 | H | 8 | φ(8) = 4 | μ(4) = 0 |
 | U | 1 | φ(1) = 1 | μ(1) = +1 |
 | H | 8 | φ(8) = 4 | μ(4) = 0 |
 
-The **totient signature** is `(4, 1, 4)`, and the **Möbius signature** is `(0, +1, 0)`. The sum of the Möbius values determines the number of cyclic left rotations:
+The sum of the Möbius values determines the number of cyclic left rotations:
 
 `Rotation = (0 + 1 + 0) mod 3 = 1`
 
