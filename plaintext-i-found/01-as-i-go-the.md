@@ -83,5 +83,3 @@ Repeat the key `AE–I–EA` over these seven ciphertext runes. For each positio
 **Decrypted rune sequence:** `A · S · I · G · O · TH · E`
 
 **Proposed reading: AS I GO, THE**
-
-`TH` is **one rune** in the 29-rune alphabet. The spaces and comma are added for readability; they are not produced by the subtraction itself.
