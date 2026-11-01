@@ -1,14 +1,6 @@
 # 05 — I MAY
 
-This example shows how the preceding **COLD** key determines a movement from the previous ciphertext endpoint, how a vertical node in the **27 × 27 matrix** supplies the next key, and how four ciphertext runes decrypt to `I MAY`.
-
-**Notation:** Coordinates are **1-based** and written `(row, column)`. Rune numbers are indices in the **29-rune alphabet**. `φ` is Euler's totient function; `μ` is the Möbius function.
-
 ## 1. Find the directional anchor and three-rune node
-
-The preceding word, **COLD**, uses the final key `U–H–H`, whose rotation phase is **1**. In the project's directional rule, this phase corresponds to:
-
-`V₁ = (+1, +1) → DOWN + RIGHT`
 
 Start at **`A (11,7)`**, the last ciphertext cell used for `COLD`.
 
@@ -17,7 +9,7 @@ The movement distances come from the preceding key's runes:
 - **DOWN:** `H = 8 → φ(8) = 4` rows.
 - **RIGHT:** `U = 1 → φ(1) = 1` column.
 
-Apply both movements to the anchor:
+Apply both movements:
 
 `A (11,7) → down 4, right 1 → B (15,8)`
 
@@ -37,7 +29,7 @@ The destination `B (15,8)` lies midway between two `NG` runes in **column 8**:
 - **Center:** `B (15,8)` — the rune used to derive the key's center.
 - **Bottom:** `NG (17,8)` — 2 rows below `B`.
 
-**Node: `NG–B–NG`.** The directional movement finds its center; the two outer runes complete the vertical arrangement.
+**Node: `NG–B–NG`.**
 
 ## 2. Derive and align the decryption key
 
@@ -78,8 +70,6 @@ From `TH (26,19)`, read **leftward** across four consecutive cells in row 26:
 
 `(26,19) → (26,18) → (26,17) → (26,16)`
 
-The **DOWN + RIGHT** rule above explains how to locate the new key node. The selection of the previous node center as this ciphertext's starting point is a **separate part of the recorded reading**, not a consequence of those two movement distances alone.
-
 ## 4. Read and decrypt the ciphertext
 
 Repeat the key `NG–T–NG` over the four ciphertext runes. For each position, subtract the **key's rune index** from the **ciphertext rune index**, modulo 29:
@@ -99,8 +89,6 @@ Repeat the key `NG–T–NG` over the four ciphertext runes. For each position, 
 
 **Proposed reading: I MAY**
 
-All four runes decrypt directly to `I`, `M`, `A`, and `Y`. The **space is inserted when interpreting the sequence as English**; it is not an additional decrypted rune.
-
 ## 5. A matching signature at the preceding endpoint
 
 The starting anchor **`A (11,7)`** is also the center of the vertical `EA–A–EA` arrangement noted at the end of the **COLD** example:
@@ -119,4 +107,4 @@ This is **identical to the totient signature** of the newly derived `NG–T–NG
 
 `NG–T–NG → (φ(21), φ(16), φ(21)) = (12, 8, 12)`
 
-Thus, the **previous ciphertext endpoint** and the **next key** share the same totient signature even though their rune sequences are different. This is an additional numerical correspondence; it is **not required** for the subtraction that produces `I MAY`.
+Thus, the **previous ciphertext endpoint** and the **next key** share the same totient signature even though their rune sequences are different.
