@@ -1,20 +1,18 @@
-# Liber Primus — LP2, Pages 0–2
+Plaintext discovered as of November 1, 2026
 
-**A proposed plaintext reconstruction and a geometric decryption model for the 27 × 27 rune matrix.**
+---
 
-**Plaintext documented:** 29 October 2026 (in the project archive)  
-**README updated:** 1 November 2026  
-**Status:** Independent research; the reading has **not** been authenticated as Cicada 3301's intended plaintext.
+<p align="center">
+  <em>
+    AS I GO, THE WEATHER TURNS COLD.<br>
+    I MAY CRY NOW.<br>
+    THE IDEA OF THE END IS DEATH.<br>
+    SEE YOU SOON, THEN.<br>
+    THE KEY IS TO GO TO THE EAST OF THE MAP.
+  </em>
+</p>
 
-## Proposed plaintext
-
-> **AS I GO, THE WEATHER TURNS COLD.**  
-> **I MAY CRY NOW.**  
-> **THE IDEA OF THE END IS DEATH.**  
-> **SEE YOU SOON, THEN.**  
-> **THE KEY IS TO GO TO THE EAST OF THE MAP.**
-
-The first four sentences comprise the **original recorded route (17 ciphertext blocks, ending at `THEN`)**. The final sentence is a **candidate continuation (blocks 18–28)** found by searching for placements that satisfy the project's proposed constraints. Every chosen block can be decrypted with the specified operations; this does not establish that the placements are unique or intentional.
+---
 
 **[Explore the interactive 27 × 27 map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)** · **[Follow the plaintext, block by block](./plaintext-i-found/)** · **[Start with the decryption method](./Start-reading-here/00-decryption-method.md)**
 
