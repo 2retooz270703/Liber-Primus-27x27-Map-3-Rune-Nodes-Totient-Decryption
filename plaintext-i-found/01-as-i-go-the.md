@@ -1,8 +1,6 @@
 # 01 — AS I GO, THE
 
-This example shows how a three-rune node in the **27 × 27 matrix** yields a key, a starting position, and seven decrypted runes.
-
-**Notation:** Coordinates are **1-based** and written `(row, column)`. Rune numbers are indices in the **29-rune alphabet**. `φ` is Euler's totient function; `μ` is the Möbius function.
+Coordinates are **1-based** and written `(row, column)`. Rune numbers are indices in the **29-rune alphabet**. `φ` is Euler's totient function; `μ` is the Möbius function.
 
 ## 1. Find the three-rune node
 
