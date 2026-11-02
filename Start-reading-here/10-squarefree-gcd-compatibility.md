@@ -1,4 +1,4 @@
-# 10 — Squarefree-GCD Compatibility of the Next Key and Ciphertext
+# Squarefree-GCD Compatibility of the Next Key and Ciphertext
 
 This proposed filter links the **original center of the next key node** to the **beginning, leftmost cell, and endpoint of the next ciphertext**. Four comparisons must avoid a zero Möbius value.
 
