@@ -1,5 +1,3 @@
----
-
 <p align="center">
   <em>
     As I go, the weather turns cold.<br>
