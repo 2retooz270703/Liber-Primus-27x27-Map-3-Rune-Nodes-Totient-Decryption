@@ -1,3 +1,4 @@
+---
 
 <p align="center">
   <em>
@@ -11,16 +12,6 @@
 
 ---
 
-### While you're here, take a closer look. This might be worth your attention.
-
-My hypothesis is that LP2 pages 0–2 should be treated as a single 27 × 27 matrix of runes, rather than as ordinary lines of text. I believe that the words and sentences we seem to recognize when reading these pages are an illusion. The runes may have been arranged to look like readable text, while the actual message is encrypted within the matrix itself.
-
-Instead of reading the runes in their visible order, I study the matrix as a whole, looking for patterns and relationships between individual cells.
-
-I won’t make this introduction unnecessarily long. I simply want to bring my work to your attention, encourage you to verify my calculations, and hopefully inspire others to explore and build upon what I believe is a promising approach.
-
----
-
 Start with [Report 00](./Start-reading-here/00-decryption-method.md).
 
-
+---
