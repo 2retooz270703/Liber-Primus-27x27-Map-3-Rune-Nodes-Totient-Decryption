@@ -13,5 +13,3 @@
 ---
 
 Start with [Report 00](./Start-reading-here/00-decryption-method.md).
-
----
