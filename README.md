@@ -20,5 +20,3 @@ Instead of reading the runes in their visible order, I study the matrix as a who
 ---
 
 For a better understanding of how it all works, start with [Report 00](./Start-reading-here/00-decryption-method.md).
-
-The most important evidence for my discovery is collected in [Strongest Plaintext Evidence](./Start-reading-here/strongest-plaintext-evidence.md). I believe it provides strong evidence that what I've found is real. Perhaps it will take years for others to recognize it.
