@@ -82,14 +82,11 @@ Read these in order for the full model, or go directly to a specific constraint.
 | [09](./Start-reading-here/09-predicting-next-ciphertext-column-parity.md) | Ciphertext column parity | Predicts the column parity of the next leftmost cell. |
 | [10](./Start-reading-here/10-squarefree-gcd-compatibility.md) | Squarefree-GCD compatibility | Tests four numerical relationships between a proposed key center and ciphertext cells. |
 
-The reports include worked examples. Check the rule set stated in each walkthrough when evaluating a route; the presence of a newer report does not establish that every earlier candidate passes it.
+The reports include worked examples. Check the rule set stated in each walkthrough when evaluating a route.
 
 ## Plaintext walkthroughs
 
 Each walkthrough identifies the source node, key, phase, ciphertext cells, and resulting runes. The numbering follows the interactive map. **A block can contain several English words.**
-
-<details>
-<summary><strong>Browse all 28 block walkthroughs</strong></summary>
 
 ### Original reconstruction — blocks 01–17
 
@@ -129,7 +126,7 @@ Each walkthrough identifies the source node, key, phase, ciphertext cells, and r
 | 27 | [THE](./plaintext-i-found/27-the.md) |
 | 28 | [MAP](./plaintext-i-found/28-map.md) |
 
-</details>
+
 
 ## Structural evidence and the red heading
 
@@ -145,21 +142,6 @@ The report gives the counting conventions and separates exact numerical equaliti
 
 A separate **[red-heading analysis](./Start-reading-here/red-heading-SEQUENDI-RATIO.md)** documents the literal output **`SECUENDI RATIO`**, interpreted as Latin **`SEQUENDI RATIO`** — “a method of following” — with the C/K rune read as Q.
 
-## Using the interactive map
-
-**[Open the hosted map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)** and select a block from the stage menu. Use the previous/next buttons or the left/right arrow keys to move between stages.
-
-The four layer controls show **Route**, **Ciphertext**, **Key structures**, and **Supporting mirrors**. Hover over a marked cell to inspect its coordinate and stage annotations.
-
-For offline use, download the repository or clone it:
-
-```bash
-git clone https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption.git
-cd Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption
-```
-
-Open **`0-2-live-map.html`** in a browser. The map is self-contained: no installation, build step, or server is required. **[View the map source](./0-2-live-map.html)**.
-
 ## Conventions
 
 | Notation | Meaning |
@@ -172,9 +154,3 @@ Open **`0-2-live-map.html`** in a browser. The map is self-contained: no install
 | `GP` | Gematria Primus **prime values**, distinct from rune indices: indices 0–28 correspond to primes 2–109. |
 | Absolute position | Row-major cell number, `n₀(r,c) = 27(r−1) + c`, from **1 to 729**. |
 | Rotation | Clockwise matrix rotation used to calculate cell indices; distinct from cyclic rotation of a three-rune key. |
-
-## Further research and contributions
-
-The priorities are to determine exact next-block locations, compare competing plaintext branches under the same constraints, and test transition predictions on material beyond the sequence used to develop them.
-
-**[Open an issue](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/issues)** with a proposed continuation, correction, or counterexample. Include the ciphertext coordinates and reading order, original key-node coordinates, transformation mode, phase, decrypted runes, and the reports tested. This makes a result directly reproducible and comparable with the documented route.
