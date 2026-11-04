@@ -1,22 +1,19 @@
 # Liber Primus — 27 × 27 Map
 
-Spatial cryptanalysis of **Cicada 3301’s Liber Primus, LP2 pages 0–2**.
+As i go, the weather turns cold.  
+I may cry now.  
+The idea of the end is death.  
+See you soon, then.  
+The key is to go to the east of the map.
 
-This project arranges the pages’ **729 runes into a single 27 × 27 matrix** and investigates how its geometry connects ciphertext, key material, and reading order. The proposed method combines **three-rune key nodes**, **Euler’s totient function**, **Möbius signatures**, and **repeating-key subtraction modulo 29**.
+---
 
-The repository contains an interactive map, explicit decryption calculations, and proposed rules for following the route from one block to the next.
+This project arranges the pages’ 729 runes into a single 27 × 27 matrix and investigates how its geometry connects ciphertext, key material, and reading order. The proposed method combines *three-rune key nodes*, *Euler’s totient function*, *Möbius signatures*, and *repeating-key subtraction modulo 29*.
 
-**[Open the interactive map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)** · **[Read the method](./Start-reading-here/00-decryption-method.md)** · **[Browse the plaintext](#plaintext-walkthroughs)** · **[Review the evidence](./Start-reading-here/strongest-plaintext-evidence.md)**
+[Open the interactive map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)
 
-## Proposed plaintext
 
-> As I go, the weather turns cold.  
-> I may cry now.  
-> The idea of the end is death.  
-> See you soon, then.  
-> The key is to go to the east of the map.
 
-**Research status:** Blocks **01–17**, ending at `THEN`, form the reconstruction used to develop the transition model. Blocks **18–28**, beginning with `THE KEY IS TO GO`, are a candidate continuation. The walkthroughs document the selected cells and their decryption; a unique, independently validated LP2 solution remains the research objective. Word spacing, punctuation, and conventional English spellings are editorial.
 
 For a first pass, read **[Report 00](./Start-reading-here/00-decryption-method.md)**, follow the **[opening block](./plaintext-i-found/01-as-i-go-the.md)**, and compare its coordinates with the **[map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)**.
 
