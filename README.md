@@ -2,7 +2,7 @@
 
 <sub>4.11.2026</sub>
 
-As i go, the weather turns cold.  
+As I go, the weather turns cold.  
 I may cry now.  
 
 The idea of the end is death.  
