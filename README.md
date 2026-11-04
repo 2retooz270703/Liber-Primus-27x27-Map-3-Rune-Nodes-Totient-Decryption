@@ -1,10 +1,15 @@
-# Liber Primus — 27 × 27 Map
+# Plaintext
+
+<sub>4.11.2026</sub>
 
 As i go, the weather turns cold.  
 I may cry now.  
+
 The idea of the end is death.  
 See you soon, then.  
-The key is to go to the east of the map.
+
+The key is to go to the east of the map.  
+Life may be the death of you.
 
 ---
 
