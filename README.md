@@ -89,8 +89,6 @@ Read these in order for the full model, or go directly to a specific constraint.
 | [09](./Start-reading-here/09-predicting-next-ciphertext-column-parity.md) | Ciphertext column parity | Predicts the column parity of the next leftmost cell. |
 | [10](./Start-reading-here/10-squarefree-gcd-compatibility.md) | Squarefree-GCD compatibility | Tests four numerical relationships between a proposed key center and ciphertext cells. |
 
-The reports include worked examples. Check the rule set stated in each walkthrough when evaluating a route.
-
 ## Plaintext walkthroughs
 
 Each walkthrough identifies the source node, key, phase, ciphertext cells, and resulting runes. The numbering follows the interactive map. **A block can contain several English words.**
@@ -131,9 +129,13 @@ Each walkthrough identifies the source node, key, phase, ciphertext cells, and r
 | 25 | [EAST](./plaintext-i-found/25-east.md) |
 | 26 | [OF](./plaintext-i-found/26-of.md) |
 | 27 | [THE](./plaintext-i-found/27-the.md) |
-| 28 | [MAP](./plaintext-i-found/28-map.md) |
-
-
+| 28 | [MAP LIFE](./plaintext-i-found/28-map.md) |
+| 29 | [MAY](./plaintext-i-found/29-may.md) |
+| 30 | [BE](./plaintext-i-found/30-be.md) |
+| 31 | [THE](./plaintext-i-found/31-the.md) |
+| 32 | [DEATH](./plaintext-i-found/32-death.md) |
+| 33 | [OF](./plaintext-i-found/33-of.md) |
+| 34 | [YOU](./plaintext-i-found/34-you.md) |
 
 ## Structural evidence and the red heading
 
