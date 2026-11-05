@@ -166,3 +166,13 @@ I created this [interactive 27 × 27 map](https://2retooz270703.github.io/Liber-
 | `GP` | Gematria Primus prime values, distinct from rune indices: indices 0–28 correspond to primes 2–109. |
 | Absolute position | Row-major cell number, `n₀(r,c) = 27(r−1) + c`, from 1 to 729. |
 | Rotation | Clockwise matrix rotation used to calculate cell indices; distinct from cyclic rotation of a three-rune key. |
+
+---
+
+Bach composed puzzle canons in which the performer had to reconstruct the correct way of performing the music from incomplete notation. Perhaps something similar is happening here. The earlier stages of the algorithm seem more obvious and interconnected, while the later ones become increasingly difficult to reconstruct.
+
+I wonder if the constraining formulas are actually different voices of a single mathematical canon, each expressing a different aspect of the same underlying structure. The algorithm might not necessarily determine a unique next position, but instead allow multiple possible paths, each satisfying certain mathematical constraints.
+
+Perhaps the key lies in finding the correct harmony between these voices. Each formula alone may allow many possible paths, but only their proper combination would produce the true music, the original plaintext hidden within the matrix.
+
+In this interpretation, the challenge is not simply to discover more constraints, but to reconstruct the underlying canon and understand how its voices are meant to interact. The true plaintext would then emerge not from any single formula, but from the harmony of the entire mathematical composition.
