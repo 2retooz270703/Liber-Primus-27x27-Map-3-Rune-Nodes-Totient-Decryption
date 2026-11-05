@@ -20,7 +20,7 @@ Life may be the death of you.
 
 This project arranges the pages’ 729 runes into a single 27 × 27 matrix and investigates how its geometry connects ciphertext, key material, and reading order. The proposed method combines *three-rune key nodes*, *Euler’s totient function*, *Möbius signatures*, and *repeating-key subtraction modulo 29*.
 
-For a first pass, read **[Report 00](./Start-reading-here/00-decryption-method.md)**, follow the **[opening block](./plaintext-i-found/01-as-i-go-the.md)**, and compare its coordinates with the **[map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)**.
+For a first pass, read **[Report 00](./Start-reading-here/00-decryption-method.md)**, follow the **[opening block](./plaintext-i-found/01-as-i-go-the.md)**, and compare its coordinates with the **[interactive map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)**.
 
 ## How the method works
 
