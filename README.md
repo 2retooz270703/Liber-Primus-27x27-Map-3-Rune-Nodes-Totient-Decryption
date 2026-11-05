@@ -26,7 +26,7 @@ For a first pass, read **[Report 00](./Start-reading-here/00-decryption-method.m
 
 ### 1. Identify a three-rune node
 
-A key node consists of three equally spaced cells on a horizontal, vertical, or 45° diagonal line. Nodes may be **mirror** structures with equal outer runes, or **non-mirror** structures with different outer runes.
+A key node consists of three equally spaced cells on a horizontal, vertical, or 45° diagonal line. Nodes may be *mirror* structures with equal outer runes, or *non-mirror* structures with different outer runes.
 
 ### 2. Derive the key
 
@@ -48,7 +48,7 @@ $$
 p=(\sigma_1+\sigma_2+\sigma_3)\bmod3.
 $$
 
-Rotate the three-rune key **left by `p` positions**.
+Rotate the three-rune key *left by `p` positions*.
 
 ### 4. Decrypt the selected ciphertext
 
@@ -64,7 +64,7 @@ The transition reports use the current block’s geometry and key data to predic
 
 ### Worked example: WEATHER
 
-The node **`X–OE–X`**, at row 14, columns 4–6, becomes **`X–I–X`** because `φ(22) = 10`. Its signature is `(+1, 0, +1)`, giving phase **2** and the aligned key **`X–X–I`**.
+The node `X–OE–X`, at row 14, columns 4–6, becomes `X–I–X` because `φ(22) = 10`. Its signature is `(+1, 0, +1)`, giving phase 2 and the aligned key `X–X–I`.
 
 Read row 14, columns 14–18:
 
@@ -76,7 +76,7 @@ Read row 14, columns 14–18:
 | (14,17) | O = 3 | X = 14 | 3 − 14 ≡ 18 | **E** |
 | (14,18) | E = 18 | X = 14 | 18 − 14 ≡ 4 | **R** |
 
-The result is **WEATHER**. `EA` and `TH` each represent one rune. See the **[complete calculation](./plaintext-i-found/02-weather.md)** for the node, movement, coordinates, and subtraction table.
+The result is WEATHER. `EA` and `TH` each represent one rune. See the **[complete calculation](./plaintext-i-found/02-weather.md)** for the node, movement, coordinates, and subtraction table.
 
 ## Method and transition reports
 
@@ -98,7 +98,7 @@ Read these in order for the full model, or go directly to a specific constraint.
 
 ## Plaintext walkthroughs
 
-Each walkthrough identifies the source node, key, phase, ciphertext cells, and resulting runes. The numbering follows the interactive map. **A block can contain several English words.**
+Each walkthrough identifies the source node, key, phase, ciphertext cells, and resulting runes. The numbering follows the interactive map. A block can contain several English words.
 
 ### Original reconstruction — blocks 01–17
 
@@ -150,9 +150,9 @@ The **[Strongest Plaintext Evidence](./Start-reading-here/strongest-plaintext-ev
 
 | Observation | Recorded relationship |
 | :--- | :--- |
-| Two seven-word passages | The rune-index sums of `AS I GO, THE WEATHER TURNS COLD` and `THE IDEA OF THE END IS DEATH` are **233** and **232**; `φ(233) = 232`. |
-| Ciphertext total through `THEN` | Counting every ciphertext-cell use on the main `SOON` route gives a GP total of **3274**; `3274 + 27 = 3301`. |
-| Return to the opening cell through `GO` | The cumulative plaintext-index sum is **860**; `φ(860) = 336`, the absolute position of **`J(13,12)`**. |
+| Two seven-word passages | The rune-index sums of `AS I GO, THE WEATHER TURNS COLD` and `THE IDEA OF THE END IS DEATH` are 233 and 232; `φ(233) = 232`. |
+| Ciphertext total through `THEN` | Counting every ciphertext-cell use on the main `SOON` route gives a GP total of 3274; **`3274 + 27 = 3301`**. |
+| Return to the opening cell through `GO` | The cumulative plaintext-index sum is 860; `φ(860) = 336`, the absolute position of `J(13,12)`. |
 
 A separate **[red-heading analysis](./Start-reading-here/red-heading-SEQUENDI-RATIO.md)** documents the literal output **`SECUENDI RATIO`**, interpreted as Latin **`SEQUENDI RATIO`** — “a method of following” — with the C/K rune read as Q.
 
@@ -161,10 +161,10 @@ A separate **[red-heading analysis](./Start-reading-here/red-heading-SEQUENDI-RA
 | Notation | Meaning |
 | :--- | :--- |
 | `(row, column)` | One-based coordinates; rows increase downward, columns to the right. |
-| Rune index | A value from **0 to 28**, used in subtraction modulo 29. |
+| Rune index | A value from 0 to 28, used in subtraction modulo 29. |
 | `TH`, `EA`, and other multi-letter labels | Each label represents one rune. |
 | `φ(n)` | Euler’s totient: the number of integers from 1 to `n` coprime to `n`. |
 | `μ(n)` | Möbius function: zero when a prime square divides `n`; otherwise +1 or −1 according to the parity of its distinct prime-factor count. `μ(1) = +1`. |
-| `GP` | Gematria Primus **prime values**, distinct from rune indices: indices 0–28 correspond to primes 2–109. |
-| Absolute position | Row-major cell number, `n₀(r,c) = 27(r−1) + c`, from **1 to 729**. |
+| `GP` | Gematria Primus prime values, distinct from rune indices: indices 0–28 correspond to primes 2–109. |
+| Absolute position | Row-major cell number, `n₀(r,c) = 27(r−1) + c`, from 1 to 729. |
 | Rotation | Clockwise matrix rotation used to calculate cell indices; distinct from cyclic rotation of a three-rune key. |
