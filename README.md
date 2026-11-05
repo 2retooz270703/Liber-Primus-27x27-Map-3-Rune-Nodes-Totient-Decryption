@@ -20,7 +20,7 @@ Life may be the death of you.
 
 This project arranges the pages’ 729 runes into a single 27 × 27 matrix and investigates how its geometry connects ciphertext, key material, and reading order. The proposed method combines *three-rune key nodes*, *Euler’s totient function*, *Möbius signatures*, and *repeating-key subtraction modulo 29*.
 
-For a first pass, read **[Report 00](./Start-reading-here/00-decryption-method.md)**, follow the **[opening block](./plaintext-i-found/01-as-i-go-the.md)**, and compare its coordinates with the **[interactive map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/)**.
+For a first pass, read [Report 00](./Start-reading-here/00-decryption-method.md), follow the [opening block](./plaintext-i-found/01-as-i-go-the.md), and compare its coordinates with the [interactive map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/).
 
 ## How the method works
 
@@ -76,7 +76,7 @@ Read row 14, columns 14–18:
 | (14,17) | O = 3 | X = 14 | 3 − 14 ≡ 18 | **E** |
 | (14,18) | E = 18 | X = 14 | 18 − 14 ≡ 4 | **R** |
 
-The result is WEATHER. `EA` and `TH` each represent one rune. See the **[complete calculation](./plaintext-i-found/02-weather.md)** for the node, movement, coordinates, and subtraction table.
+The result is WEATHER. `EA` and `TH` each represent one rune. See the [complete calculation](./plaintext-i-found/02-weather.md) for the node, movement, coordinates, and subtraction table.
 
 ## Method and transition reports
 
@@ -146,9 +146,9 @@ Each walkthrough identifies the source node, key, phase, ciphertext cells, and r
 
 ## Structural evidence and the red heading
 
-The **[Strongest Plaintext Evidence](./Start-reading-here/strongest-plaintext-evidence.md)** report examines relationships between the selected reading, its ciphertext, the matrix, and LP1.
+The [Strongest Plaintext Evidence](./Start-reading-here/strongest-plaintext-evidence.md) report examines relationships between the selected reading, its ciphertext, the matrix, and LP1.
 
-A separate **[red-heading analysis](./Start-reading-here/red-heading-SEQUENDI-RATIO.md)** documents the literal output SECUENDI RATIO, interpreted as Latin SEQUENDI RATIO — “a method of following” — with the C/K rune read as Q.
+A separate [red-heading analysis](./Start-reading-here/red-heading-SEQUENDI-RATIO.md) documents the literal output SECUENDI RATIO, interpreted as Latin SEQUENDI RATIO — “a method of following” — with the C/K rune read as Q.
 
 ## Conventions
 
