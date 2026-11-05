@@ -150,11 +150,11 @@ The **[Strongest Plaintext Evidence](./Start-reading-here/strongest-plaintext-ev
 
 | Observation | Recorded relationship |
 | :--- | :--- |
-| Two seven-word passages | The rune-index sums of `AS I GO, THE WEATHER TURNS COLD` and `THE IDEA OF THE END IS DEATH` are 233 and 232; `φ(233) = 232`. |
-| Ciphertext total through `THEN` | Counting every ciphertext-cell use on the main `SOON` route gives a GP total of 3274; **`3274 + 27 = 3301`**. |
-| Return to the opening cell through `GO` | The cumulative plaintext-index sum is 860; `φ(860) = 336`, the absolute position of `J(13,12)`. |
+| Two seven-word passages | The rune-index sums of AS I GO, THE WEATHER TURNS COLD and THE IDEA OF THE END IS DEATH are 233 and 232; φ(233) = 232. |
+| Ciphertext total through THEN | Counting every ciphertext-cell use on the main SOON route gives a GP total of 3274; 3274 + 27 = **3301**. |
+| Return to the opening cell through GO | The cumulative plaintext-index sum is 860; φ(860) = 336, the absolute position of J(13,12). |
 
-A separate **[red-heading analysis](./Start-reading-here/red-heading-SEQUENDI-RATIO.md)** documents the literal output **`SECUENDI RATIO`**, interpreted as Latin **`SEQUENDI RATIO`** — “a method of following” — with the C/K rune read as Q.
+A separate **[red-heading analysis](./Start-reading-here/red-heading-SEQUENDI-RATIO.md)** documents the literal output SECUENDI RATIO, interpreted as Latin SEQUENDI RATIO — “a method of following” — with the C/K rune read as Q.
 
 ## Conventions
 
