@@ -168,3 +168,11 @@ A separate **[red-heading analysis](./Start-reading-here/red-heading-SEQUENDI-RA
 | `GP` | Gematria Primus prime values, distinct from rune indices: indices 0–28 correspond to primes 2–109. |
 | Absolute position | Row-major cell number, `n₀(r,c) = 27(r−1) + c`, from 1 to 729. |
 | Rotation | Clockwise matrix rotation used to calculate cell indices; distinct from cyclic rotation of a three-rune key. |
+
+## Interactive Map
+
+I created this [interactive 27 × 27 map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/) to visualize the ciphertext blocks, key nodes, and proposed plaintext directly on the matrix.
+
+---
+
+If you’ve read this far, I hope you’ve found this idea interesting. I’d love to see what you can discover—and I hope you’ll get further than I have.
