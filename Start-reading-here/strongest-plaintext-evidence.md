@@ -2,6 +2,8 @@
 
 The proposed reading of *Liber Primus* LP2, pages 0–2, contains more than a sequence of English words. When the recovered passages are grouped and measured by their **rune counts, rune-index sums, and assigned prime values**, several numerical relationships appear across different parts of the text. Some also point back to the geometry of the **27 × 27 matrix**, a passage from LP1, and the numerical matrices in LP1. The continuation through **`THE KEY IS TO GO`** produces an especially striking result: its cumulative index sum maps directly back to the original `J(13,12)` cell, while its cumulative prime-value sum identifies the total number of admissible mirrored nodes.
 
+The extended reading now completes **THE KEY IS TO GO TO THE EAST OF THE MAP** and continues into **LIFE MAY BE THE DEATH OF YOU**. The additions below document the continuous MAP LIFE block, the geometry of the new sentence, and two exact equalities between ciphertext coordinates and consumed rune indices: **row total = key-index total = 202**, and **column total = ciphertext-index total = 180**.
+
 This report gathers the strongest of those recorded correspondences and explains them one at a time. The aim is to make each calculation easy to follow: **what is being counted, where each number comes from, and what the result connects to**.
 
 These are observations on the **selected plaintext route**. They are presented separately from the predictive rules: an exact arithmetic equality can be reproduced directly, while the interpretation of that equality as an intentional clue requires additional testing.
@@ -20,6 +22,15 @@ These are observations on the **selected plaintext route**. They are presented s
 10. [The full-route sum and 3301](#the-full-route-sum-and-3301)
 11. [Cell values and prime-indexed positions](#cell-values-and-prime-indexed-positions)
 12. [The GO closure: a return to J](#the-go-closure-a-return-to-j)
+13. [Completing the map instruction](#completing-the-map-instruction)
+14. [MAP LIFE: one continuous block](#map-life-one-continuous-block)
+15. [Another seven-word passage: LIFE MAY BE THE DEATH OF YOU](#another-seven-word-passage-life-may-be-the-death-of-you)
+16. [The reflection between MAY and YOU](#the-reflection-between-may-and-you)
+17. [Coordinates match ciphertext and key indices](#coordinates-match-ciphertext-and-key-indices)
+18. [The new branch, 729 cells, and the previous keys](#the-new-branch-729-cells-and-the-previous-keys)
+19. [How selective are the new relationships?](#how-selective-are-the-new-relationships)
+20. [The current reading boundary](#the-current-reading-boundary)
+21. [Reading the evidence together](#reading-the-evidence-together)
 
 ---
 
@@ -30,6 +41,8 @@ The following distinctions are important throughout the report.
 A **rune count** counts rune symbols, not English letters. A transliteration such as `TH` or `EA` can represent one rune. A **rune-index sum** adds the numerical indices of those symbols in the project's 29-rune alphabet, numbered **0 through 28**. A **prime-value sum**, written **GP**, instead adds the corresponding Gematria Primus prime values: index 0 maps to 2, index 1 to 3, and so on through index 28, which maps to 109. These are two different totals and should not be confused.
 
 Matrix coordinates are written as **(row, column)**, beginning at 1. For example, `J(13,12)` is the rune `J` in row 13, column 12. The symbol $\varphi(n)$ denotes **Euler's totient function**.
+
+Block numbers follow the interactive map: **GO is block 22**, **MAP LIFE is block 28**, and the final **YOU is block 34**. An English word boundary need not be a decryption-block boundary. Unless a distinct-cell set is explicitly specified, each actual ciphertext or key use is counted again when repeated. The notation $p_n$ means the n-th prime, with $p_1=2$.
 
 For how these rune values are used in the actual decryption, see **[Report 00 — The Decryption Method](./00-decryption-method.md)**. Here, the focus is the numerical structure of the resulting passages.
 
@@ -297,7 +310,7 @@ $$
 232+111=343=7^3
 $$
 
-These exponents echo the respective word counts: **3 words** in `SEE YOU SOON` and **7 words** in the preceding `DEATH` passage. The observed relationship is thus not only that the totals are cubes, but that **their exponents are present in the passage structure itself**.
+The cube bases echo the respective word counts: **3 words** in `SEE YOU SOON` and **7 words** in the preceding `DEATH` passage. Both exponents are 3; the values matching the word counts are the **bases, 3 and 7**.
 
 ---
 
@@ -442,7 +455,7 @@ The arithmetic is exact. Whether it reflects an intentional connection to the se
 
 ### Two further correspondences involving the matrix centers
 
-The center of the second LP1 magic square is **809**, the **140th prime number**. Interestingly, **140** is also the exact Gematria Primus **rune-index sum** of the 13 runes in **`SEE YOU SOON, THEN`** (51 + 30 + 30 + 29).
+The center of the second LP1 magic square is **809**, the **140th prime number**. Interestingly, **140** is also the exact **rune-index sum** of the 13 runes in **`SEE YOU SOON, THEN`** (51 + 30 + 30 + 29).
 
 The first square has **FORM = 91** at its center, and $\varphi(91)=72$. Similarly, **`SEE YOU SOON`** has a rune-index sum of **111**, with $\varphi(111)=72$. This also matches the **derived key for `THEN`**: **`E–IA–IA`** = 18 + 27 + 27 = **72**.
 
@@ -529,9 +542,9 @@ The prime-index equality is a property of the **visited set of cells**; it does 
 
 ## The GO Closure: A Return to J
 
-### The 21st generation block completes a 27-word reading
+### The 22nd decryption block completes a 27-word reading
 
-The proposed continuation beyond `THEN` is **`THE KEY IS TO GO`**, with **`GO` appearing as the 21st generation block**. At this exact endpoint, the accumulated plaintext contains **27 English words** — the same number as the side length of the **27 × 27 rune matrix**.
+The proposed continuation beyond `THEN` is **`THE KEY IS TO GO`**, with **`GO` appearing as the 22nd decryption block**. At this exact endpoint, the accumulated plaintext contains **27 English words** — the same number as the side length of the **27 × 27 rune matrix**.
 
 | Consecutive plaintext passage | Words | Rune-index sum | GP prime-value sum |
 |---|---:|---:|---:|
@@ -542,7 +555,7 @@ The proposed continuation beyond `THEN` is **`THE KEY IS TO GO`**, with **`GO` a
 | **`THE KEY IS TO GO`** | **5** | **122** | **429** |
 | **Total through GO** | **27** | **860** | **3089** |
 
-The endpoint is therefore marked by both **generation-block position 21** and a **27-word total**. More importantly, the two numerical totals independently lead to properties of the matrix and its permitted key structures.
+The endpoint is therefore marked by both **map-block position 22** and a **27-word total**. More importantly, the two numerical totals independently lead to properties of the matrix and its permitted key structures.
 
 ### 860 → 336: the plaintext returns to its starting cell
 
@@ -595,11 +608,452 @@ Thus, the complete reading through `GO` yields two complementary numerical refer
 
 ### Why this endpoint stands out
 
-The same continuation produces a **21st-block endpoint**, a **27-word text** matching the matrix dimension, a **totient return to the exact starting coordinate**, and a **prime-index match to the matrix-wide admissible-node count**. The last two are especially compelling because they connect separate levels of the construction: **the accumulated plaintext to the origin of the route**, and **the accumulated prime values to the global key-space inventory**.
+The same continuation produces a **22nd-block endpoint**, a **27-word text** matching the matrix dimension, a **totient return to the exact starting coordinate**, and a **prime-index match to the matrix-wide admissible-node count**. The last two are especially compelling because they connect separate levels of the construction: **the accumulated plaintext to the origin of the route**, and **the accumulated prime values to the global key-space inventory**.
 
 These correspondences provide **strong additional structural evidence for the selected `THE KEY IS TO GO` continuation**. The arithmetic is exact; the 442-node comparison relies on the project's specified admissibility filter and should be reproduced from the complete node inventory. Establishing whether the entire combination is exceptional among competing valid continuations remains the appropriate next test. But taken together, these results identify `GO` as a particularly consequential endpoint, not just another plausible plaintext fragment.
 
 ---
+
+## Completing the Map Instruction
+
+### From GO to the complete sentence
+
+The selected continuation after THEN now reads:
+
+> **THE KEY IS TO GO TO THE EAST OF THE MAP.**
+
+It contains **11 English words and 25 runes**. Its two consecutive parts have the following plaintext totals:
+
+| Portion of the instruction | Words | Runes | Rune-index sum | GP sum |
+|---|---:|---:|---:|---:|
+| THE KEY IS TO GO — blocks 18–22 | 5 | 11 | 122 | 429 |
+| TO THE EAST OF THE MAP — blocks 23–28, through MAP only | 6 | 14 | 177 | 651 |
+| **Complete instruction** | **11** | **25** | **299** | **1080** |
+
+The boundary after MAP is an **English word boundary inside the extended block 28**. The same ciphertext and key continue into LIFE; the MAP-only totals remain valid when that boundary is stated explicitly.
+
+### 530: the entry to the continuation
+
+The word THEN has **GP = 101**. Adding the GP of the next five words gives:
+
+$$
+GP(\text{THEN})+GP(\text{THE KEY IS TO GO})=101+429=\boxed{530}.
+$$
+
+The first new block, THE (18), uses the original center **`M(20,17)`**. Its absolute position is:
+
+$$
+a(20,17)=27(20-1)+17=\boxed{530}.
+$$
+
+Thus the GP total of **THEN THE KEY IS TO GO** equals the position of the key center that begins this continuation. This uses the original source center, before its center-totient transformation.
+
+### 359: TO THE EAST and the preceding rune count
+
+The next three words contain **seven runes**:
+
+| Word | Decrypted runes | Runes | GP sum |
+|---|---|---:|---:|
+| TO | T · O | 2 | 66 |
+| THE | TH · E | 2 | 72 |
+| EAST | EA · S · T | 3 | 221 |
+| **TO THE EAST** | | **7** | **359** |
+
+The accumulated plaintext through the preceding GO contains **72 runes**, and **359 is the 72nd prime**:
+
+$$
+\boxed{GP(\text{TO THE EAST})=359=p_{72}.}
+$$
+
+This connects the GP of the new three-word group with the rune count of the text immediately before it. The intervening THE also has **GP = 72**; that is a word-value coincidence within the same comparison, not another independent count of the preceding text.
+
+### Seven eastern cells and seven western cells
+
+The fourteen ciphertext cells for **TO THE EAST OF THE MAP** split into two equal groups on opposite sides of the matrix's central column 14:
+
+| Plaintext group | Ciphertext cells in reading order | Runes | Side of the matrix |
+|---|---|---:|---|
+| TO | (12,23), (12,22) | 2 | East |
+| THE | (9,19), (9,18) | 2 | East |
+| EAST | (14,24), (15,23), (16,22) | 3 | East |
+| **TO THE EAST** | **Columns 18–24** | **7** | **All east of column 14** |
+| OF | (6,12), (7,13) | 2 | West |
+| THE | (20,12), (20,13) | 2 | West |
+| MAP | (19,11), (18,12), (17,13) | 3 | West |
+| **OF THE MAP** | **Columns 11–13** | **7** | **All west of column 14** |
+
+In particular, the ciphertext producing the word **EAST** occupies columns **24, 23, and 22**, on the eastern side of the map. The two seven-rune groups are a geometric partition of the selected placement; they are not claimed to be mirror images or a rule that forces every coordinate.
+
+The three EAST ciphertext runes have **GP = 5 + 29 + 13 = 47**. This equals **GP(X)**, the original center rune of the preceding THE source and, later, the MAP LIFE source. This additional comparison uses GP values, not the ordinary index **X = 14**.
+
+### 299: the instruction and the opening ciphertext
+
+The complete instruction's **plaintext-index sum is 299**. The same number was recorded earlier as the **ciphertext-index sum of AS I GO, THE WEATHER TURNS COLD**:
+
+$$
+\boxed{\sum P_{\text{THE KEY IS TO GO TO THE EAST OF THE MAP}}
+=299
+=\sum C_{\text{AS I GO, THE WEATHER TURNS COLD}}.}
+$$
+
+The compared passages have different lengths: **25 plaintext runes** in the instruction and **21 ciphertext runes** in the opening passage. The equality concerns their totals, not a rune-by-rune correspondence. It is an additional exact cross-passage observation on the selected route.
+
+---
+
+## MAP LIFE: One Continuous Block
+
+### The same key continues beyond MAP
+
+Block 28 uses the original, non-mirror source **EO–X–I**, at **(15,9), (16,9), (17,9)**. Its phase is **1**, producing the aligned key **X–I–EO**, with indices **(14,10,12)**.
+
+The ciphertext continues along the same up-right diagonal for **seven consecutive cells**:
+
+| Order | Ciphertext cell | Ciphertext index | Consumed key index | Plaintext rune |
+|---:|---|---:|---:|---|
+| 1 | R(19,11) | 4 | 14 | M = 19 |
+| 2 | C/K(18,12) | 5 | 10 | A = 24 |
+| 3 | AE(17,13) | 25 | 12 | P = 13 |
+| 4 | C/K(16,14) | 5 | 14 | L = 20 |
+| 5 | L(15,15) | 20 | 10 | I = 10 |
+| 6 | EO(14,16) | 12 | 12 | F = 0 |
+| 7 | O(13,17) | 3 | 14 | E = 18 |
+
+Each plaintext index is **(ciphertext index − consumed key index) mod 29**. The result is **M·A·P·L·I·F·E**, read as **MAP LIFE**. LIFE does not receive another key, phase calculation, or independent block number.
+
+| Portion of block 28 | Runes | Plaintext-index sum | Plaintext GP |
+|---|---:|---:|---:|
+| MAP | 3 | 56 | 211 |
+| LIFE | 4 | 48 | 173 |
+| **MAP LIFE** | **7** | **104** | **384** |
+
+### Transposed word-end coordinates
+
+MAP ends at **(17,13)**, while the complete block ends at **(13,17)**:
+
+$$
+\boxed{(17,13)\longrightarrow(13,17).}
+$$
+
+Both points lie on the same anti-diagonal, **row + column = 30**. Reflection across **row = column** exchanges them. The geometric observation therefore belongs to a continuous seven-rune decryption, rather than to two separately placed words.
+
+### The earlier MAP reflection remains an internal landmark
+
+The opening center **J(13,12)** and the MAP LIFE source center **X(16,9)** are reflections across **row − column = 4**. The MAP word-end **P = (17,13)** lies on this axis, with equal squared distances:
+
+$$
+d^2(J,P)=4^2+1^2=17,
+\qquad
+d^2(X,P)=1^2+4^2=17.
+$$
+
+This connects the original starting center, the source center of MAP LIFE, and the internal MAP boundary. It should not be reassigned to the later endpoint **(13,17)**.
+
+For the next transition, the complete seven-cell block and its actual endpoint **(13,17)** must be used. The extended block predicts a **horizontal** next ciphertext, matching MAY. Truncating the block after MAP changes that prediction to **diagonal**. The extension into LIFE therefore matters to the transition calculation as well as to the wording.
+
+See the [block 28 walkthrough](../plaintext-i-found/28-map-life.md) for the source, subtraction, and endpoint checks.
+
+---
+
+## Another Seven-Word Passage: LIFE MAY BE THE DEATH OF YOU
+
+### Separating the sentence from the decryption blocks
+
+The new sentence is:
+
+> **LIFE MAY BE THE DEATH OF YOU.**
+
+Like the opening AS I GO passage and THE IDEA OF THE END IS DEATH, it contains **seven English words**. Here, however, the first word is already produced by the last four cells of MAP LIFE. Only the following **six words** are newly decrypted as blocks **29–34**.
+
+| Scope | Words | Runes | Plaintext-index sum | Plaintext GP |
+|---|---:|---:|---:|---:|
+| LIFE — inside block 28 | 1 | 4 | 48 | 173 |
+| MAY BE THE DEATH OF YOU — blocks 29–34 | 6 | 15 | 210 | 796 |
+| **Complete sentence** | **7** | **19** | **258** | **969** |
+
+The distinction between **15 runes after LIFE** and **19 runes in the complete sentence** is essential to the following calculations.
+
+### 210 returns to LIFE through the totient function
+
+LIFE has indices **L = 20, I = 10, F = 0, E = 18**, summing to **48**. The following six words have plaintext-index sum **210**:
+
+$$
+\boxed{\varphi(210)=\varphi(2\times3\times5\times7)=48
+=20+10+0+18.}
+$$
+
+The last YOU ciphertext, at **(6,11), (6,12), (6,13)**, has indices **28, 11, 9**, also summing to **48**. Thus the same number occurs as the LIFE plaintext-index sum, the totient of the following plaintext-index sum, and the last ciphertext-index sum.
+
+### 113 connects the first ciphertext to the last plaintext
+
+The MAY ciphertext has indices **6, 5, 22**, giving GP **17 + 13 + 83 = 113**. The final plaintext YOU has indices **26, 3, 1**, giving GP **103 + 7 + 3 = 113**:
+
+$$
+\boxed{GP(C_{\mathrm{MAY}})=GP(P_{\mathrm{YOU}})=113.}
+$$
+
+YOU itself has index sum **30**, and **113 is the 30th prime**:
+
+$$
+GP(\mathrm{YOU})=p_{26+3+1}=p_{30}=113.
+$$
+
+The suffix total also satisfies **210 = 7 × 30**, where 7 is the complete sentence's word count. These are exact relationships, but the intrinsic values of YOU repeat wherever the same word is found; they do not by themselves select this placement or the words between MAY and YOU.
+
+---
+
+## The Reflection Between MAY and YOU
+
+### The first and last blocks reflect in reading order
+
+The first and last ciphertext blocks after LIFE occupy the same three columns:
+
+| Reading order | MAY ciphertext | YOU ciphertext |
+|---:|---|---|
+| 1 | (18,11) | (6,11) |
+| 2 | (18,12) | (6,12) |
+| 3 | (18,13) | (6,13) |
+
+Reflection across **row 12** exchanges the blocks, preserving their reading order:
+
+$$
+(r,c)\longmapsto(24-r,c).
+$$
+
+Both ciphertext cells of **OF**, at **(12,18) and (12,17)**, lie on the reflection axis. This is an exact relation between the first block, an intermediate block, and the last block. It does not assert that all six blocks form a symmetric figure.
+
+MAY also shares **C/K(18,12)** with MAP LIFE. Both uses subtract **I = 10** and yield **A = 24**. The MAY source's lower outer cell, **AE(17,13)**, is the MAP word-end. These are concrete shared-cell connections between the two sentences.
+
+### The final source reuses an earlier node
+
+YOU uses the mirror **H–R–H**, at **(21,17), (21,22), (21,27)**. It is the same original node used for the earlier **IS (12)**. The center transformation gives **H–TH–H**, and phase 1 aligns the key as **TH–H–H**. All three components are consumed by YOU.
+
+The source and derived index sums match the two ends of LIFE:
+
+| Measurement | Index sum | Corresponding LIFE rune |
+|---|---:|---|
+| Original H–R–H | 8 + 4 + 8 = **20** | First rune: **L = 20** |
+| Derived H–TH–H | 8 + 2 + 8 = **18** | Last rune: **E = 18** |
+
+The node is not literally decrypted into LE; its two sums match those rune indices.
+
+Its original GP is **23 + 11 + 23 = 57 = 3 × 19**, where 3 is the node length and 19 is the complete sentence's rune count. Its derived GP is **23 + 5 + 23 = 51**. This also returns to the number 51 discussed earlier, although here 51 is a **key GP total**, not a COLD or SEE index sum.
+
+The final ciphertext's original absolute positions provide another local correspondence:
+
+$$
+146+147+148=441=21^2,
+$$
+
+where **21** is the row of the final key center. This is a supplementary relationship between ciphertext positions and the final key center.
+
+---
+
+## Coordinates Match Ciphertext and Key Indices
+
+### Exactly what is counted
+
+Take the **15 ciphertext-cell uses** producing **MAY BE THE DEATH OF YOU**, excluding LIFE. For each use, record its row number, column number, ciphertext rune index, and the aligned key index actually subtracted. Coordinates are **1-based**; rune indices are **0–28**.
+
+For example, MAY uses **(18,11), (18,12), (18,13)**:
+
+- Its row contribution is **18 + 18 + 18 = 54**.
+- Its column contribution is **11 + 12 + 13 = 36**.
+- Its ciphertext-index contribution is **6 + 5 + 22 = 33**.
+- Its consumed-key contribution is **16 + 10 + 25 = 51**.
+
+The individual MAY totals are different. The two matches emerge when the contributions of **all six blocks** are added:
+
+| Block | Runes | Sum of rows | Sum of columns | Sum of ciphertext indices | Sum of consumed key indices |
+|---|---:|---:|---:|---:|---:|
+| MAY | 3 | 54 | 36 | 33 | 51 |
+| BE | 2 | 51 | 23 | 5 | 28 |
+| THE | 2 | 22 | 23 | 36 | 45 |
+| DEATH | 3 | 33 | 27 | 25 | 30 |
+| OF | 2 | 24 | 35 | 33 | 30 |
+| YOU | 3 | 18 | 36 | 48 | 18 |
+| **Total** | **15** | **202** | **180** | **180** | **202** |
+
+Thus:
+
+$$
+\boxed{\sum r=\sum K=202,\qquad\sum c=\sum C=180.}
+$$
+
+These are **exact integer equalities**, before any reduction modulo 29. They connect the locations of the selected ciphertext cells to the indices of their ciphertext and consumed key stream.
+
+Only consumed components are counted. In the two-rune blocks BE, THE, and OF, the unused third component of the aligned key contributes nothing. A repeated cell or key component contributes again whenever it is actually used; the calculation does not deduplicate the whole route.
+
+### Checking the modular subtraction
+
+The same ciphertext and key totals reproduce the suffix's plaintext-index sum:
+
+$$
+210=180-202+8\times29.
+$$
+
+There are **eight actual wraparounds**. This last identity follows from modular subtraction and verifies the bookkeeping. The additional observations are the equalities with **row and column sums**; modular subtraction does not require them.
+
+The scope cannot silently be widened to include LIFE. For the complete nineteen-rune sentence, the row/key totals become **260 / 252**, and the column/ciphertext totals become **242 / 220**. The stated matches belong specifically to the **six-block continuation after LIFE**.
+
+---
+
+## The New Branch, 729 Cells, and the Previous Keys
+
+### Prime-value totals of the consumed data
+
+The next comparisons use **GP prime values**, rather than the indices used in the coordinate equalities:
+
+| Block after LIFE | Ciphertext GP | Consumed key GP | Plaintext GP |
+|---|---:|---:|---:|
+| MAY | 113 | 191 | 271 |
+| BE | 14 | 96 | 128 |
+| THE | 132 | 176 | 72 |
+| DEATH | 92 | 105 | 203 |
+| OF | 124 | 114 | 9 |
+| YOU | 175 | 51 | 113 |
+| **Total after LIFE** | **650** | **733** | **796** |
+
+LIFE adds **173** to the plaintext GP, so the complete sentence has **GP = 173 + 796 = 969**.
+
+### Two exact references to the matrix's 729 cells
+
+The consumed key GP after LIFE is **733**. Subtracting LIFE's **four-rune length** gives the matrix's cell count:
+
+$$
+\boxed{GP(K_{\text{after LIFE}})-4=733-4=729=27^2.}
+$$
+
+A second expression uses the complete sentence's GP and the suffix ciphertext GP:
+
+$$
+\boxed{GP(P_{\text{LIFE sentence}})-\varphi(GP(C_{\text{after LIFE}}))
+=969-\varphi(650)=969-240=729.}
+$$
+
+Here **650 = 2 × 5² × 13**, giving **φ(650) = 240**. The second formula deliberately compares the **19-rune plaintext sentence** with the **15-rune ciphertext suffix**. The two scopes are different and are specified rather than hidden.
+
+### 969 connects the sentence's length and its final key
+
+The complete sentence contains **19 runes**, and the fully consumed final key TH–H–H has **GP = 51**:
+
+$$
+\boxed{969=19\times51.}
+$$
+
+The same GP is also the number of ways to choose three positions from nineteen:
+
+$$
+\boxed{969=\binom{19}{3}=\frac{19\times18\times17}{3\times2\times1}.}
+$$
+
+The choice size **3** matches the three-rune node length. These are related descriptions of the same number: at a fixed length of 19, the binomial equality implies a quotient of 51. They should not be counted as statistically independent confirmations.
+
+### 576 links the new sentence to TO THE EAST OF THE MAP
+
+Factorizing **969 = 3 × 17 × 19** gives:
+
+$$
+\boxed{\varphi(969)=2\times16\times18=576=24^2.}
+$$
+
+The value **24** is the accumulated state **S** after MAP LIFE. More specifically, **576** is also the GP total of the key stream actually consumed by the preceding six-word segment **TO THE EAST OF THE MAP**:
+
+| Earlier block | Key components consumed through this word | Consumed key GP |
+|---|---|---:|
+| TO (23) | G · D | 106 |
+| THE (24) | X · S | 100 |
+| EAST (25) | O · D · E | 163 |
+| OF (26) | H · H | 46 |
+| THE (27) | J · TH | 42 |
+| MAP — first three runes of block 28 | X · I · EO | 119 |
+| **Total through MAP** | **14 consumed components** | **576** |
+
+Therefore:
+
+$$
+\boxed{\varphi(GP(\text{LIFE MAY BE THE DEATH OF YOU}))
+=GP(K_{\text{TO THE EAST OF THE MAP}})=576.}
+$$
+
+This is a direct numerical bridge between the two consecutive passages and their selected keys. The earlier total stops at the **MAP word-end**. Including the following four key uses that produce LIFE would add **166**, changing that earlier key total to **742**.
+
+The coordinate matches and the consumed-data GP relationships survive the three documented source variants obtained when reverse source-node readings are allowed. Those variants change an unused third component in BE. Relationships based on the sum of every full three-rune key are less stable and are not used as primary evidence here.
+
+---
+
+## How Selective Are the New Relationships?
+
+### Comparison within the saved search catalogue
+
+The saved bounded search contains **200,664 different strings**, represented by **600,549 saved routes**, with six to nine new words after LIFE. It includes many grammatically unnatural combinations and is not an exhaustive catalogue of all possible continuations.
+
+A matched subset contains **14,218 different strings** with exactly **six new words** and **19 runes including LIFE**, with word boundaries falling between whole runes. Within that subset:
+
+| Condition satisfied by at least one saved placement of a string | Strings |
+|---|---:|
+| Sum of rows = sum of consumed key indices | 88 |
+| Sum of columns = sum of ciphertext indices | 92 |
+| **Both coordinate equalities together** | **1** |
+
+The string satisfying both is **MAY BE THE DEATH OF YOU**. This demonstrates selectivity within the saved comparison set. It is not a probability that the result occurred by chance, and it does not establish Cicada authorship: the properties were investigated after the sentence had been found, and the candidates are neither exhaustive nor equally likely.
+
+### Testing the final block without a dictionary
+
+A separate enumeration fixes only **MAY BE THE DEATH OF**, including all **13** admissible source/placement configurations for those five words. The final plaintext is left unspecified. All allowed straight final ciphertext segments of **2–27 runes**, their source nodes, and the permitted direct or center-totient operations are considered.
+
+| Successive conditions | Remaining final ciphertext/source assignments |
+|---|---:|
+| Model constraints 01–10 | **80,341** |
+| Plus both coordinate equalities | **3** |
+| Plus consumed key GP = 729 + LIFE's four runes | **1** |
+| Plus the second GP relation to 729 | **1** |
+
+The remaining assignment uses ciphertext **(6,11) → (6,13)** and the final **H–R–H** source, producing **YOU**. Neither the word YOU nor its length of three runes was supplied as a lexical constraint. The second GP relation also holds for the survivor; it does not reduce the final count further.
+
+When reverse source-node readings are additionally allowed, the analogous counts are **466,437 → 12 → 3**. All three survivors have the same YOU ciphertext geometry and final source; they differ in the earlier BE source's unused component.
+
+The canonical **80,341 → 3 → 1** counts were independently reproduced by a second enumerator. Nevertheless, the numerical criteria came from the already observed sentence. This is a **retrospective selection test**, not a successful prediction made before seeing YOU.
+
+### Sums do not recover the word order
+
+All **720 = 6!** permutations of the six fixed block assignments preserve their coordinate and rune totals. The sum equalities therefore cannot determine the English order by themselves.
+
+With those ciphertext cells and source nodes held fixed, the transition rules admit only:
+
+> **MAY → BE → THE → DEATH → OF → YOU.**
+
+The two kinds of evidence have different roles: the numerical equalities constrain the selected collection of cells and keys, while the transition checks constrain their order. This permutation test does not establish uniqueness among every alternative placement or source configuration.
+
+---
+
+## The Current Reading Boundary
+
+The accumulated plaintext totals now distinguish four relevant boundaries:
+
+| Boundary on the selected route | Map block | English words | Runes | Plaintext-index sum | Plaintext GP |
+|---|---|---:|---:|---:|---:|
+| Through GO | 22 | 27 | 72 | 860 | 3089 |
+| Through MAP | Inside block 28 | 33 | 86 | 1037 | 3740 |
+| Through MAP LIFE | Complete block 28 | 34 | 90 | 1085 | 3913 |
+| **Through final YOU** | **34** | **40** | **105** | **1295** | **4709** |
+
+The selected reading is therefore:
+
+```text
+AS I GO, THE WEATHER TURNS COLD.
+I MAY CRY NOW.
+
+THE IDEA OF THE END IS DEATH.
+SEE YOU SOON, THEN.
+
+THE KEY IS TO GO TO THE EAST OF THE MAP.
+LIFE MAY BE THE DEATH OF YOU.
+```
+
+The incoming transition to YOU is evaluated at **S = 27** and produces **S = 28**. The documented phase-mode schedule supplies no next outgoing mode at that value. The numerical relationships do not fill that missing definition, prove that YOU is the intended final word, or establish that pages 0–2 have been completely decrypted.
+
+---
+
 
 ## Reading the Evidence Together
 
@@ -607,4 +1061,13 @@ The patterns in this report operate at several levels. Some arise from the **geo
 
 The full-route ciphertext checks add two further correspondences: **$3274+27=3301$** when every use is counted, and **$p_{2867}=26083$** when the 54 distinct cells are counted once. The first relates the route's ciphertext content to the matrix dimension; the second relates cell content to absolute position.
 
-The continuation to **`THE KEY IS TO GO`** adds a particularly coherent endpoint. At **generation block 21**, the reading reaches **27 words**; its cumulative rune-index sum is **860**, and **$\varphi(860)=336$** leads precisely to the opening **`J(13,12)`** cell. Independently, its cumulative GP value is **3089**, the **442nd prime**, matching the reported **442 admissible mirrored three-rune nodes** after the F-branch exclusions.
+The continuation to **`THE KEY IS TO GO`** adds a particularly coherent endpoint. At **map block 22**, the reading reaches **27 words**; its cumulative rune-index sum is **860**, and **$\varphi(860)=336$** leads precisely to the opening **`J(13,12)`** cell. Independently, its cumulative GP value is **3089**, the **442nd prime**, matching the reported **442 admissible mirrored three-rune nodes** after the F-branch exclusions.
+
+
+The complete map instruction adds a **530** reference to its first key center, a **359 = p₇₂** reference to the preceding rune count, and a division of its final fourteen ciphertext cells into **seven eastern and seven western cells**. Its index sum **299** also matches the opening seven-word passage's ciphertext-index sum. MAP continues into LIFE along the same diagonal and key stream, with transposed word-end coordinates **(17,13)** and **(13,17)**.
+
+The new seven-word LIFE sentence adds an ordered **MAY ↔ YOU reflection**, with OF on its axis, and the recurring value **48** in LIFE, the suffix totient, and the last ciphertext. The final H–R–H source reuses an earlier IS node and supplies index sums matching LIFE's first and last runes.
+
+The most direct new location/content comparison is the pair **Σ rows = Σ consumed key indices = 202** and **Σ columns = Σ ciphertext indices = 180**, over the fifteen runes after LIFE. GP calculations add the two references to **729**, the equality **969 = 19 × 51 = C(19,3)**, and the bridge **φ(969) = 576** to the keys actually consumed by TO THE EAST OF THE MAP.
+
+These observations use explicitly stated boundaries and counting conventions. Some are algebraically related; several reuse the same fixed words, source nodes, or totals. Their recorded selectivity supports further investigation of this route, while the post-selection search limits prevent interpreting the catalogue frequencies as probabilities of authenticity. A stronger test would apply the same criteria, fixed in advance, to material not selected for these numerical properties.
