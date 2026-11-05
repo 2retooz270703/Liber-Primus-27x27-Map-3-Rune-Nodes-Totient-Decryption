@@ -2,7 +2,7 @@
 
 <sub>4.11.2026</sub>
 
-Red runes: Secuendi Ratio ("The method of following.")
+**Red runes: Secuendi Ratio ("The method of following.")**
 
 As I go, the weather turns cold.  
 I may cry now.  
@@ -13,6 +13,7 @@ See you soon, then.
 The key is to go to the east of the map.  
 Life may be the death of you.
 
+---
 ---
 
 This project arranges the pages’ 729 runes into a single 27 × 27 matrix and investigates how its geometry connects ciphertext, key material, and reading order. The proposed method combines *three-rune key nodes*, *Euler’s totient function*, *Möbius signatures*, and *repeating-key subtraction modulo 29*.
