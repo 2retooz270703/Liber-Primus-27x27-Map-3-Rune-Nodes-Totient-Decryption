@@ -43,7 +43,7 @@ Some documented nodes use their original indices directly. Each walkthrough spec
 For the derived key in its unrotated order, calculate its Möbius signature and phase:
 
 $$
-\sigma_i=\mu\!\left(\varphi(k_i)\right),
+\sigma_i=\mu\\left(\varphi(k_i)\right),
 \qquad
 p=(\sigma_1+\sigma_2+\sigma_3)\bmod3.
 $$
