@@ -118,7 +118,7 @@ Each walkthrough identifies the source node, key, phase, ciphertext cells, and r
 | 16 | [SOON](./plaintext-i-found/16-soon.md) |
 | 17 | [THEN](./plaintext-i-found/17-then.md) |
 
-### Candidate continuation — blocks 18–28
+### Candidate continuation — blocks 18–34
 
 | Block | Proposed reading |
 | :---: | :--- |
