@@ -68,9 +68,13 @@ The node **`X–OE–X`**, at row 14, columns 4–6, becomes **`X–I–X`** bec
 
 Read row 14, columns 14–18:
 
-| Ciphertext indices | Repeated key indices | Plaintext indices | Plaintext runes |
-| :--- | :--- | :--- | :--- |
-| `21, 13, 12, 3, 18` | `14, 14, 10, 14, 14` | `7, 28, 2, 18, 4` | `W · EA · TH · E · R` |
+| Cell | Ciphertext | Key | Calculation (mod 29) | Decrypted rune |
+|:---:|:---:|:---:|:---:|:---:|
+| (14,14) | NG = 21 | X = 14 | 21 − 14 ≡ 7 | **W** |
+| (14,15) | P = 13 | X = 14 | 13 − 14 ≡ 28 | **EA** |
+| (14,16) | EO = 12 | I = 10 | 12 − 10 ≡ 2 | **TH** |
+| (14,17) | O = 3 | X = 14 | 3 − 14 ≡ 18 | **E** |
+| (14,18) | E = 18 | X = 14 | 18 − 14 ≡ 4 | **R** |
 
 The result is **WEATHER**. `EA` and `TH` each represent one rune. See the **[complete calculation](./plaintext-i-found/02-weather.md)** for the node, movement, coordinates, and subtraction table.
 
