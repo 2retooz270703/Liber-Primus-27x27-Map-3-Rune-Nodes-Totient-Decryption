@@ -150,8 +150,6 @@ The **[Strongest Plaintext Evidence](./Start-reading-here/strongest-plaintext-ev
 | Ciphertext total through `THEN` | Counting every ciphertext-cell use on the main `SOON` route gives a GP total of **3274**; `3274 + 27 = 3301`. |
 | Return to the opening cell through `GO` | The cumulative plaintext-index sum is **860**; `φ(860) = 336`, the absolute position of **`J(13,12)`**. |
 
-The report gives the counting conventions and separates exact numerical equalities from their interpretation as intentional clues.
-
 A separate **[red-heading analysis](./Start-reading-here/red-heading-SEQUENDI-RATIO.md)** documents the literal output **`SECUENDI RATIO`**, interpreted as Latin **`SEQUENDI RATIO`** — “a method of following” — with the C/K rune read as Q.
 
 ## Conventions
