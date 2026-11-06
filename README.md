@@ -1,6 +1,10 @@
 # Plaintext
 
+<sub>Plaintext recovered using my decryption approach.</sub>
+
 <sub>4.11.2026</sub>
+
+---
 
 **Red runes: Secuendi Ratio ("The method of following.")**
 
