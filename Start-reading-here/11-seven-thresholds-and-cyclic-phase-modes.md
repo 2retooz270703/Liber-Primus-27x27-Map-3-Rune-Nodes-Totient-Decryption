@@ -88,7 +88,7 @@ The phase values below are taken from the keys documented in [`plaintext-i-found
 | **08** | **IDEA** | **1** | **6** | **7** | **Reflected/+0** |
 | **13** | **DEATH** | **2** | **12** | **14** | **Reflected/+1** |
 | **23** | **TO** | **1** | **20** | **21** | **Direct/+0** |
-| **34** | **YOU** | **1** | **27** | **28** | **Direct/+1*** |
+| **34** | **YOU** | **1** | **27** | **28** | **Direct/+1** |
 
 The last three threshold words, taken in numerical order, read:
 
