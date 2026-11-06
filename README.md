@@ -1,11 +1,5 @@
 # Plaintext
 
-<sub>Plaintext extracted using my decryption approach.</sub>
-
-<sub>4.11.2026</sub>
-
----
-
 **Red runes: Secuendi Ratio ("The method of following.")**
 
 As I go, the weather turns cold.  
@@ -16,6 +10,11 @@ See you soon, then.
 
 The key is to go to the east of the map.  
 Life may be the death of you.
+
+---
+
+<sub>Plaintext extracted using my decryption approach.</sub>  
+<sub>4.11.2026</sub>
 
 ---
 ---
