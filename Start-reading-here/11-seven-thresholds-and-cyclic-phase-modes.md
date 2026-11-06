@@ -1,6 +1,6 @@
-# 11 — Seven-Phase Thresholds and Cyclic Mode Transitions
+# Seven-Phase Thresholds and Cyclic Mode Transitions
 
-**Status: proposed continuation filter and cyclic extension of [Report 01](01-next-key-signature.md).** The 34 selected plaintext blocks satisfy the no-skipping condition. A return to **Direct/+1** at `S = 28` follows from the proposed cyclic extension; its use to predict a subsequent block has **not yet been validated**.
+**Status: proposed continuation filter and cyclic extension of [Report 01](01-next-key-signature.md).** The 34 selected plaintext blocks satisfy the no-skipping condition. A return to **Direct/+1** at `S = 28` follows from the proposed cyclic extension.
 
 ## 1. State and terminology
 
