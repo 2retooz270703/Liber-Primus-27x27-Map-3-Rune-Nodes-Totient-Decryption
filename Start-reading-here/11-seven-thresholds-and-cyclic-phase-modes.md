@@ -90,15 +90,11 @@ The phase values below are taken from the keys documented in [`plaintext-i-found
 | **23** | **TO** | **1** | **20** | **21** | **Direct/+0** |
 | **34** | **YOU** | **1** | **27** | **28** | **Direct/+1*** |
 
-`*` The mode at `S = 28` is **proposed by Rule B**, not yet confirmed by an outgoing block. The incoming transition **OF (33) → YOU (34)** is still calculated in the already documented **Direct/+0** mode, using `S = 27`.
-
 The last three threshold words, taken in numerical order, read:
 
 > **DEATH TO YOU**
 
-This is an intelligible English phrase. The highlighted words are **not consecutive words in the plaintext**: they come from blocks `13`, `23`, and `34`, at `S = 14, 21, 28`. The earlier threshold word is **IDEA** (`S = 7`), which can be *interpreted* as an introductory label, yielding the speculative secondary reading **“IDEA: DEATH TO YOU.”** This is a textual observation, **not a demonstrated second cipher or authenticated hidden message**.
-
-The boundary words also belong to meaningful parts of the selected reading: **DEATH (13)** ends *“The idea of the end is death.”*; **TO (23)** occurs inside *“The key is to go to the east of the map.”*; and **YOU (34)** ends *“Life may be the death of you.”* Thus **not every mode switch occurs at a sentence ending**.
+This is an intelligible English phrase. The highlighted words are **not consecutive words in the plaintext**: they come from blocks `13`, `23`, and `34`, at `S = 14, 21, 28`. The earlier threshold word is **IDEA** (`S = 7`), which can be *interpreted* as an introductory label, yielding the secondary reading **“IDEA: DEATH TO YOU.”**
 
 ## 5. Complete phase trace (34 selected blocks)
 
@@ -162,15 +158,3 @@ $$
 The outer signature state of YOU is `a = 0`. Its leftmost cell `(6,11)` gives the 90° clockwise index `m = 27(11−1)+28−6 = 292` and `μ(292)=0`, so the outer state remains `a_{35}=0`. Applying Report 01's signature table gives:
 
 **Conditional next-key prediction: `p₃₅ = 2`, signature `(0,−1,0)`, and `S₃₅ = 30`.**
-
-This proposed transition also satisfies Rule A: **28 → 30** does not skip a multiple of seven. No block 35 has been identified or verified; this is a **falsifiable consequence of the cyclic extension**, not an observed continuation.
-
-## 7. Evidence and limitations
-
-- **Observed consistency:** All 34 selected blocks meet Rule A. The four thresholds are reached exactly at `S = 7, 14, 21, 28`.
-- **New hypothesis:** The four-mode schedule restarts at `S = 28`. The next outgoing prediction is untested and must not be presented as a validated rule of the original cipher.
-- **Retrospective selection:** Both rules are motivated by the already selected plaintext route. Any reduction in alternative branches must be measured on the full search space, including rejected branches, rather than claimed from the selected route alone.
-- **Chance baseline:** Randomly reordering the observed phases while preserving their counts gives exact no-skipping at `7, 14, 21, 28` in **47,232 / 116,280 ≈ 40.62%** of distinct nonzero-phase orders (the 13 zero phases do not affect threshold crossings). Therefore, the no-skipping observation alone is not statistically rare under this null model.
-- **Secondary message:** **DEATH TO YOU** is a notable phrase extracted at three consecutive thresholds, but its interpretive significance requires independent validation.
-
-**Practical use:** Treat Rule A as an additional **candidate-rejection filter** and Rule B as an explicit, **testable extrapolation** of Report 01. Neither changes the already documented phases or decryptions in blocks 01–34.
