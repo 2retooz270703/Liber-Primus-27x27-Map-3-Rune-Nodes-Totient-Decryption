@@ -29,19 +29,19 @@ The rotations change the **numerical indices** used in the test; they do not cha
 A proposed next block passes only when **all four** are satisfied:
 
 $$
-G_1:\quad \mu\!\left(\gcd(n_0(M'),n_0(B'))\right)\ne 0
+G_1:\quad \mu\\left(\gcd(n_0(M'),n_0(B'))\right)\ne 0
 $$
 
 $$
-G_2:\quad \mu\!\left(\gcd(n_0(M'),n_0(L'))\right)\ne 0
+G_2:\quad \mu\\left(\gcd(n_0(M'),n_0(L'))\right)\ne 0
 $$
 
 $$
-G_3:\quad \mu\!\left(\gcd(n_1(M'),n_3(E'))\right)\ne 0
+G_3:\quad \mu\\left(\gcd(n_1(M'),n_3(E'))\right)\ne 0
 $$
 
 $$
-G_4:\quad \mu\!\left(\gcd(n_0(M'),n_2(E'))\right)\ne 0
+G_4:\quad \mu\\left(\gcd(n_0(M'),n_2(E'))\right)\ne 0
 $$
 
 Here, `gcd` is the greatest common divisor. The Möbius function `μ(n)` equals **0** when `n` is divisible by a prime square (4, 9, 25, 49, ...); otherwise it is **+1 or −1**.
