@@ -133,7 +133,7 @@ This is an intelligible English phrase. The highlighted words are **not consecut
 | 31 | THE | 0 | 24 | 24 | D+0 |
 | 32 | DEATH | 1 | 24 | 25 | D+0 |
 | 33 | OF | 2 | 25 | 27 | D+0 |
-| **34** | **YOU** | **1** | **27** | **28** | **D+1*** |
+| **34** | **YOU** | **1** | **27** | **28** | **D+1** |
 
 `D` = Direct; `R` = Reflected. The displayed **mode after** is the one selected for the **next** prediction. The 34 recorded phases contain **13 zeros, 14 ones, and 7 twos**, for a final sum of **28**. `MAP LIFE` is **one continuous ciphertext block** and contributes its phase only once.
 
