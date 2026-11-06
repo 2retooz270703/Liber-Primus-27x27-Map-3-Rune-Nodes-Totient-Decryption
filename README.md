@@ -1,6 +1,6 @@
 # Plaintext
 
-<sub>Plaintext recovered using my decryption approach.</sub>
+<sub>Plaintext extracted using my decryption approach.</sub>
 
 <sub>4.11.2026</sub>
 
