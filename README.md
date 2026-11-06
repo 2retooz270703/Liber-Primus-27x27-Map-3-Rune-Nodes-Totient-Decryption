@@ -247,10 +247,4 @@ quotation marks and other elements are illusions. I think it’s all the same cl
 encryption algorithm disguised as ordinary text.
 That’s why 0–2 is so important.
 
-Bach composed puzzle canons in which the performer had to reconstruct the correct way of performing the music from incomplete notation. Perhaps something similar is happening here. The earlier stages of the algorithm seem more obvious and interconnected, while the later ones become increasingly difficult to reconstruct.
-
-I wonder if the constraining formulas are actually different voices of a single mathematical canon, each expressing a different aspect of the same underlying structure. The algorithm might not necessarily determine a unique next position, but instead allow multiple possible paths, each satisfying certain mathematical constraints.
-
-Perhaps the key lies in finding the correct harmony between these voices. Each formula alone may allow many possible paths, but only their proper combination would produce the true music, the original plaintext hidden within the matrix.
-
-The true plaintext would then emerge not from any single formula, but from the harmony of the entire mathematical composition.
+Bach composed puzzle canons in which the performer had to reconstruct the correct way of performing the music from incomplete notation. Perhaps something similar is happening here. The earlier stages of the algorithm seem more obvious and interconnected, while the later ones become increasingly difficult to reconstruct. I wonder if the constraining formulas are actually different voices of a single mathematical canon, each expressing a different aspect of the same underlying structure. The algorithm might not necessarily determine a unique next position, but instead allow multiple possible paths, each satisfying certain mathematical constraints. Perhaps the key lies in finding the correct harmony between these voices. Each formula alone may allow many possible paths, but only their proper combination would produce the true music, the original plaintext hidden within the matrix. The true plaintext would then emerge not from any single formula, but from the harmony of the entire mathematical composition.
