@@ -173,10 +173,84 @@ I created this [interactive 27 × 27 map](https://2retooz270703.github.io/Liber-
 
 ---
 
+I want to clarify a little what exactly I’m working on and what I’m doing, so that
+my train of thought is clearer.
+As I’ve said before, the idea behind my project is that pages 0–2 represent an
+encrypted block of data in the form of a square, with information contained
+inside it. The dots are directional indicators or beacons, although the exact
+principle behind how they work is still unclear. In other words, the body of 0–2
+is not made up of words or word separators. It’s one large block of data.
+Each cell is potentially a plaintext letter that can be decrypted using a specific
+key. The key is taken from 3-rune triplets, usually mirrored ones. This is what I
+initially discovered. I found the rules for when to rotate this key, and I found my
+first few plaintexts, ranging from AS I GO… to SEE YOU SOON, THEN. I also
+constantly checked numerological connections as I progressed, and I’m
+convinced that this is the most coherent plaintext I’ve managed to extract from
+the matrix using this method. Basically, you move through the cells of the
+matrix, subtracting the key at different phases, and you get the intended plaintext.
+
+Next, I decided to investigate and look for formulas that predict the spatial
+relationships between the ciphertexts and keys I had found. Because if this is a
+program or an algorithm, something must be generating it. There must be some
+kind of pattern. And I found formulas that, using only the knowledge of the
+current ciphertext (which cells are used at this stage), the current key, and the
+current phase, predict the exact properties of the next ciphertext.
+For example, formulas that predict the next key signature, or simply the Möbius
+value of its three runes, exactly, as well as the parity of the column and row of
+its center, the parity of the left cell, the parity of the ciphertext’s endpoint, and
+even the axis along which it is positioned.
+In short, without going into too much detail, I found formulas along the known
+route that precisely describe the properties of the next key and ciphertext, and
+this eliminates many possible branches when trying to crack the cipher and
+explore different paths.
+
+And yet, a successful result was that these rules predicted the branch: THE
+KEY IS TO GO TO THE EAST OF THE MAP. It satisfies a large number of
+parameters and stands out in terms of its geometry and its connection to the
+previous plaintext.
+The point is that I don’t know whether this branch is genuine, since it was found
+through a computer brute-force search. But again, if some algorithm generates
+these properties, then this branch satisfies them and could potentially be part
+of that algorithm. So that’s quite an interesting result. With such a large number
+of constraints, the resulting branches are often less meaningful, and this
+particular branch really stood out in terms of both meaning and geometry.
+
+I’ve looked at the formulas, and they really don’t seem random. I can see that
+the left cell of the ciphertext is constantly used for predictions, which makes
+me think that this is clearly some kind of algorithm that arranges ciphertext
+cells across the matrix, taking into account parities, distances, and so on. In
+other words, my formulas don’t look that random, and that’s exactly why I find
+them so interesting. Simple operations are constantly used, such as rotations
+by 0, 90, 180, and 270 degrees, and the Möbius value is simply taken to provide
+a controlling signal.
+In other words, their algorithm could have not only filled the matrix with
+ciphertext cells, but also with the necessary background/auxiliary cells that
+provide the required Möbius signal for the main cells. And this is how they
+could have gradually created an entire 27×27 square, where some cells are the
+main ones hiding the plaintext, while others are auxiliary cells hiding pointers
+and rules for the algorithm.
+
+Judging by the frequency analysis, they may have applied the same principle to
+the entirety of LP as well. In other words, I’m not just working on solving 0–2.
+Potentially, this is the very same algorithm used to encrypt the entire Liber
+Primus.
+My proposed title, SECUENDI RATIO, which means “method of following,” even
+supports this idea, because a “method of following” essentially describes a rule
+or an algorithm. In other words, they named or characterized the entirety of 0–
+2 as a “method of following,” because I think the purpose of 0–2 is to show how
+the encryption principle itself works, and then apply it to other pages, possibly
+even combining the remaining pages into one large square and simply applying
+the algorithm discovered in 0–2.
+I understand that the other pages also contain quotation marks, numbers, and
+all of that seems genuine and looks like a one-time pad, but I think all those
+quotation marks and other elements are illusions. I think it’s all the same clever
+encryption algorithm disguised as ordinary text.
+That’s why 0–2 is so important.
+
 Bach composed puzzle canons in which the performer had to reconstruct the correct way of performing the music from incomplete notation. Perhaps something similar is happening here. The earlier stages of the algorithm seem more obvious and interconnected, while the later ones become increasingly difficult to reconstruct.
 
 I wonder if the constraining formulas are actually different voices of a single mathematical canon, each expressing a different aspect of the same underlying structure. The algorithm might not necessarily determine a unique next position, but instead allow multiple possible paths, each satisfying certain mathematical constraints.
 
 Perhaps the key lies in finding the correct harmony between these voices. Each formula alone may allow many possible paths, but only their proper combination would produce the true music, the original plaintext hidden within the matrix.
 
-In this interpretation, the challenge is not simply to discover more constraints, but to reconstruct the underlying canon and understand how its voices are meant to interact. The true plaintext would then emerge not from any single formula, but from the harmony of the entire mathematical composition.
+The true plaintext would then emerge not from any single formula, but from the harmony of the entire mathematical composition.
