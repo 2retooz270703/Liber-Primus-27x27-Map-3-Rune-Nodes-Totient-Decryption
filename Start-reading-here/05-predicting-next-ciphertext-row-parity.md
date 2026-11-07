@@ -55,6 +55,58 @@ $$
 
 Here, the Möbius input is the center’s **row number** `r(M)`.
 
+### Direct implementation
+
+Supply the current and proposed next ciphertext cells as nonempty lists of 1-based `(row, column)` coordinates **in reading order**. `current_key_center` is the current original center M. `current_phase` is the current derived key's phase, reduced modulo 3 before use. The supplied `mu` function must evaluate the Möbius function on positive integers.
+
+The prediction returns two bits, labeled `endpoint` and `leftmost`: **0 = even row, 1 = odd row**. The next-center row bit b is calculated internally from the current block. The acceptance function requires both predicted row parities to match the proposed next ciphertext.
+
+```python
+def expected_next_row_parities(
+    current_cipher_cells, current_key_center, current_phase, mu
+):
+    """Predict the next endpoint and leftmost row bits: 0 = even, 1 = odd."""
+    B = current_cipher_cells[0]
+    E = current_cipher_cells[-1]
+    M = current_key_center
+    p = current_phase % 3
+
+    def n180(cell):
+        r, c = cell
+        return 730 - (27 * (r - 1) + c)
+
+    b = (1 + B[1] + E[0] + M[0] + mu(n180(B))) % 2
+    endpoint = (1 + p + mu(n180(M))) % 2
+    leftmost = (b + 1 + p + mu(M[0])) % 2
+
+    return {"endpoint": int(endpoint), "leftmost": int(leftmost)}
+
+
+def ciphertext_row_parities(cipher_cells):
+    """Return the actual endpoint and leftmost row parity bits."""
+    E = cipher_cells[-1]
+    L = min(cipher_cells, key=lambda cell: (cell[1], -cell[0]))
+    return {"endpoint": int(E[0] % 2), "leftmost": int(L[0] % 2)}
+
+
+def accepts_next_row_parities(
+    current_cipher_cells, current_key_center, current_phase,
+    next_cipher_cells, mu
+):
+    """Apply both predicted row parities to a proposed next ciphertext."""
+    predicted = expected_next_row_parities(
+        current_cipher_cells, current_key_center, current_phase, mu
+    )
+    return ciphertext_row_parities(next_cipher_cells) == predicted
+
+
+# Keep a proposed next ciphertext only if:
+# accepts_next_row_parities(
+#     current_cipher_cells, current_key_center, current_phase,
+#     next_cipher_cells, mu
+# )
+```
+
 ## 3. Example: TURNS → COLD
 
 For TURNS, the current inputs are:
