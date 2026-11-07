@@ -92,7 +92,7 @@ These are three different tests. A zero Möbius value contributes 0 in each term
 ### C. Select the exact axis
 
 $$
-\boxed{\operatorname{axis}_{i+1}=2b+d.}
+\boxed{\mathrm{axis}_{i+1}=2b+d}
 $$
 
 Use the numbering in Section 1. The calculation needs no following plaintext, next-source coordinates or rune values, chosen next length, block number, or accumulated phase S.
