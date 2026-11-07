@@ -1,6 +1,6 @@
 # Predicting the Next Key-Node Axis Group
 
-**Status: retrospective candidate filter; 33/33 agreement with the selected 34-block route.** The proposed formula predicts one bit of the next **original key node's** undirected axis. It adds a restriction to the earlier filters and reduces the number of distinct decrypted rune strings. Its agreement with the recorded route has been reproduced, but its place in Cicada 3301's intended method remains unestablished.
+The proposed formula predicts one bit of the next **original key node's** undirected axis. It adds a restriction to the earlier filters and reduces the number of distinct decrypted rune strings.
 
 ## 1. What is new?
 
@@ -161,113 +161,7 @@ Independent integer factorization reproduced the Möbius values for every intege
 
 In every one of the 33 local searches, **both axis groups remain possible after the earlier filters and their continuation check**. The new rule therefore removes alternatives at every position; it does not simply restate a bit already forced there.
 
-## 6. Candidate reduction and plaintext effect
-
-The comparison uses the previous audit's search domain:
-
-- **10,891 source-and-operation assignments**, using a canonical source order;
-- equally spaced three-cell nodes on the four axes, with nonzero rune indices;
-- either the original center or its Euler-totient transformation, with duplicate identical operations omitted;
-- **62,712 directed straight ciphertext blocks** of length 2…27;
-- the incoming constraints of Reports 01–11.
-
-The baseline also requires each proposed next assignment to admit at least one further assignment under the earlier model. No next word or prescribed next-block length is used in this local enumeration.
-
-The additional ray filter in the table is the exact-deviation proposal from [Report 12](12-predicting-exact-ray-deviation.md), `d₈(L,B′)=q(1−z)`.
-
-| Filters, added to the same baseline | Source + ciphertext assignments | Distinct plaintext rune strings | Ciphertext geometries |
-| --- | ---: | ---: | ---: |
-| Earlier constraints and earlier continuation check | 952,484 | 735,331 | 10,752 |
-| + this key-axis group rule | 499,283 | 428,690 | 10,727 |
-| + only Report 12 | 762,553 | 584,146 | 8,913 |
-| + both new filters | 397,989 | 341,707 | 8,888 |
-| + both, also required in the further-step existence check | 397,436 | 341,199 | 8,888 |
-
-**These are sums of 33 separate local searches with the current recorded block fixed, not counts of complete routes.** Distinct strings are counted once within each local search and then summed. Here *plaintext* means the rune sequence produced by subtraction modulo 29; no English dictionary or language score is applied.
-
-The axis rule alone removes **47.58% of assignments** and **41.70% of distinct rune strings** from the baseline. Its effect therefore extends beyond deleting duplicate sources of the same output. Its main selectivity concerns the key source: the number of possible ciphertext geometries changes only slightly.
-
-Together with Report 12, it removes **58.22% of assignments** and **53.53% of distinct strings**. Requiring a further step that satisfies both new filters removes another **553 assignments**. Every recorded transition survives all rows. These combined results demonstrate compatible pruning, not statistical independence of the filters.
-
-The counts retain the cyclic phase extension of [Report 11](11-seven-thresholds-and-cyclic-phase-modes.md) where needed at or beyond S=28. The axis formula itself does not depend on that extension.
-
-## 7. Alternative sources and complete text-conditioned routes
-
-### THE (10)
-
-For THE **block 10**, the earlier model permits the recorded vertical source centered at **(19,16)** and two center-operation assignments for a diagonal source:
-
-$$
-(9,6)\;–\;(11,8)\;–\;(13,10).
-$$
-
-The incoming axis prediction is V / NE–SW. It retains the vertical source and excludes both assignments of the NW–SE source. Substituting that diagonal source also makes its outgoing axis prediction disagree with the recorded END source.
-
-This is a selection among sources that produce the same local plaintext, rather than a rejection of an unrelated unreadable candidate.
-
-### Full routes with the proposed plaintext fixed
-
-A separate enumeration fixes the **entire proposed plaintext rune sequence, its division into 34 blocks, and the first recorded assignment**. It allows the following source nodes and ciphertext positions to vary throughout the stated domain. Each transition is evaluated from the candidate state actually reached. No successor is required after the final YOU.
-
-Routes are counted separately when a source, its order, or its center operation differs, even if the resulting text and ciphertext positions coincide.
-
-| Permitted source orders | Earlier model | + axis rule | + only Report 12 | + both |
-| --- | ---: | ---: | ---: | ---: |
-| Canonical orders only | 3 | 1 | 3 | 1 |
-| Including reversed orders: 20,967 source-and-operation assignments | 9 | 2 | 9 | 2 |
-
-All complete surviving routes use the **recorded ciphertext geometries**. The earlier alternatives concern THE (10) and, when reversed orders are allowed, BE (30). After the axis rule, THE's source is resolved, while BE retains two choices:
-
-| BE source in key order | Axis |
-| --- | --- |
-| `(14,15) → (20,9) → (26,3)` | NE–SW |
-| `(24,25) → (16,25) → (8,25)` | Vertical |
-
-The NW–SE source `(27,16) → (20,9) → (13,2)` is excluded on entry.
-
-This establishes improved source selection **conditional on the proposed text and segmentation**. It does not establish that this text is unique among other possible messages. The canonical-order result must also be read alongside the two surviving routes when reversed source orders are admitted.
-
-## 8. Retrospective robustness and selection controls
-
-### A defined family of short geometric formulas
-
-The structural comparison examined expressions of the form
-
-$$
-\mathbf1[\mu(n_a(P)+n_b(R))=s]
-\oplus
-\mathbf1[\mu(n_a(Q)+n_b(R))=s],
-$$
-
-where P and Q are different members of `{B,E,L,M,Z,U}`, R is any member of that set, U is the upper/left source arm, a and b are the four rotations, and s is −1, 0, or +1. B and E are the current ciphertext's first and last cells in reading order.
-
-There are **4,320 structural templates**, or **8,640 models including the overall output inversion**, for a fixed binary target. The reported formula is the **only 33/33 model in this family** for the axis-group target. The next-best distinct prediction pattern matches 29/33.
-
-For this target, selection within the same family gives:
-
-| Transitions used to select exact models | Models remaining | Agreement on the rest |
-| --- | ---: | ---: |
-| First 16 | 1 | 17/17 |
-| Last 17 | 1 | 16/16 |
-| Odd-numbered transitions | 1 | 16/16 |
-| Even-numbered transitions | 1 | 17/17 |
-| Any 32, omitting one transition | 1 in each of 33 checks | 1/1 in every check |
-
-With this target fixed, the model is already unique after the first 11 transitions. If the target is also selected among the **three ways of partitioning four axes into two pairs**, ten exact models remain after those 11 transitions; only this model remains after the first 16.
-
-Simple substitutions also change the fit: using B instead of L gives 29/33; E instead of L gives 25/33; the opposite source arm instead of Z gives 19/33. Testing equality of the `μ=0` indicators instead of the `μ<0` indicators gives 20/33; using `μ>0` gives 21/33, with the output convention held fixed.
-
-**These are retrospective robustness checks.** The family and target were investigated after the whole route was available. The remaining 17 transitions are therefore not an independently withheld test. Uniqueness here is limited to the declared family, not to all possible formulas.
-
-### Broader search controls
-
-The broader search considered **2,630 distinct nonconstant binary feature patterns** and **39 binary targets defined on all 33 transitions**. For controls, the current recorded inputs are held fixed, and one assignment is sampled uniformly from the earlier admissible next-assignment pool at each position, after the baseline continuation check. Information is measured as the negative base-2 logarithm of a target pattern's probability under this conditional model.
-
-For the fixed axis-group target, exact summation over the **3,443,431 distinct affine prediction patterns using at most two features, counted up to overall inversion**, gives a conditional probability of **0.07488%** that some model in that class fits exactly. When target selection is included, **218 of 10,000** saved control sets contain a two-feature fit at least as informative as the observed one: **2.18%**.
-
-These reproduce the earlier audit's conditional controls. They account for the declared feature search to the stated extent; they do not reproduce the prior selection of the plaintext, source geometries, or all research choices. They are not probabilities that Cicada designed this rule or that the proposed plaintext is correct.
-
-## 9. A fixed prediction after YOU (34)
+## 6. A fixed prediction after YOU (34)
 
 The last recorded YOU has
 
@@ -296,44 +190,6 @@ Report 12 separately predicts
 $$
 \boxed{d_8((6,11),B_{35})=1.}
 $$
-
-Both constraints can be checked before inspecting a proposed continuation's plaintext. Neither requires extending the phase schedule beyond S=28.
-
-If the cyclic phase extension and other earlier constraints are additionally adopted, the next-block enumeration is:
-
-| Search after YOU | Assignments | Distinct plaintext rune strings |
-| --- | ---: | ---: |
-| Earlier incoming constraints, without the continuation check | 10,631 | — |
-| + axis rule, still without the continuation check | 9,174 | — |
-| Earlier constraints and earlier continuation check | 6,916 | 6,352 |
-| + axis rule | 5,953 | 5,465 |
-| + both new filters | 2,137 | 1,947 |
-
-The final row contains **13 source-and-operation assignments and 325 ciphertext geometries**. Requiring a further step satisfying both new filters leaves it unchanged. A dash means that the distinct-string count was not reported for that row.
-
-**No next word is established.** The remaining rune outputs are alternatives, not recovered English continuations. An ending at the recorded YOU also remains possible.
-
-## 10. Interpretation and audit scope
-
-The result is a compact additional constraint with reproducible agreement and a measured effect on decrypted outputs. Its useful contribution is a previously free bit of source geometry. Complete four-axis selection, radius, exact position, and next-block length remain unresolved by this formula.
-
-The main outstanding test is a transition established on other grounds and evaluated with the formula held fixed. Searches with and without this filter should remain distinguishable so that an incompatible new candidate can be assessed without silently changing the rule.
-
-The audit used the 7 November 2026 project snapshot with SHA-256:
-
-```text
-d4d4ff04ec907c895643efbbae490d811bd1a4528db7d13acba4c4f08a9c7e4f
-```
-
-The recorded route uses the source for SOON centered at `(25,7)`, as in the preceding full audit. Agreement is conditional on those selected source assignments, with alternatives examined as described above.
-
-The separately distributed `LP2_axis_candidate_deep_check_reproducibility.zip` contains the input archive, the earlier audit data, and the new calculations. With Python 3.10+ and NumPy, `python3 run_reproduction.py` repeats the checks. Key result files are:
-
-- `investigation/independent_trace.json` — the formula's inputs, Möbius values, and predictions;
-- `investigation/combined_counts.json` and `combined_totals.json` — local pruning and distinct-output counts;
-- `investigation/template_stability.json` — the structural-family and split checks;
-- `investigation/literal_route_totals.json` and `literal_route_totals_reversed.json` — complete routes conditional on the proposed text;
-- `investigation/after_YOU_sources.json` and `after_YOU_candidates.jsonl` — the remaining next-block assignments.
 
 ## Appendix: all 33 recorded transitions
 
@@ -374,7 +230,3 @@ Every recorded next source lies in the predicted group. Block numbers distinguis
 | 31→32 | THE → DEATH | 894 | 650 | −1 | 0 | H / NW–SE |
 | 32→33 | DEATH → OF | 542 | 571 | +1 | −1 | H / NW–SE |
 | 33→34 | OF → YOU | 944 | 941 | 0 | −1 | H / NW–SE |
-
----
-
-**Related reports:** [00 — Decryption method](00-decryption-method.md) · [03 — Ciphertext axis and direction](03-predicting-axis-and-reading-direction.md) · [04 — Key-center parity](04-predicting-next-key-center-parity.md) · [07 — Key mirror status](07-predicting-next-key-mirror-status.md) · [11 — Phase thresholds and cyclic modes](11-seven-thresholds-and-cyclic-phase-modes.md) · [12 — Exact ray deviation](12-predicting-exact-ray-deviation.md).
