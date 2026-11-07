@@ -47,7 +47,7 @@ $$
 $$
 
 $$
-d_8(L,B')=\min\\left(
+d_8(L,B')=\min\left(
 |\Delta r|,\ |\Delta c|,\ \bigl||\Delta r|-|\Delta c|\bigr|
 \right).
 $$
@@ -59,20 +59,20 @@ This is the **ray-offset score** used in Report 06, **not** the ordinary Chebysh
 **Step A — Determine whether an offset is possible (unchanged from Report 06).** Evaluate the *current endpoint* `E`:
 
 $$
-q=\mathbf1\\left[
-\mu\\left(n_0(E)\right)=0
+q=\mathbf1\left[
+\mu\left(n_0(E)\right)=0
 \ \land\ 
-\mu\\left(n_3(E)\right)=0
+\mu\left(n_3(E)\right)=0
 \right].
 $$
 
 **Step B — Resolve the allowance using the current beginning.** Evaluate the *current beginning* `B`:
 
 $$
-z=\mathbf1\\left[
-\mu\\left(n_0(B)\right)=0
+z=\mathbf1\left[
+\mu\left(n_0(B)\right)=0
 \ \land\ 
-\mu\\left(n_1(B)\right)=0
+\mu\left(n_1(B)\right)=0
 \right].
 $$
 
@@ -91,16 +91,51 @@ $$
 
 The only new constraint is the distinction between the last two rows. **Do not replace `B` by `L`:** the test is performed on the first cell *read*, while the geometric ray remains anchored at `L`.
 
-A direct implementation is:
+### Direct implementation
+
+Supply the current ciphertext cells **in reading order**, using 1-based `(row, column)` coordinates. The supplied `mu` function must evaluate the Möbius function on positive integers.
+
+The required offset is calculated from the current beginning B and endpoint E. The acceptance check separately locates L using the stated leftmost-cell convention, then compares the candidate next beginning with the required offset.
 
 ```python
-def expected_offset(B, E, mu, n0, n1, n3):
-    q = (mu(n0(E)) == 0 and mu(n3(E)) == 0)
-    z = (mu(n0(B)) == 0 and mu(n1(B)) == 0)
+def expected_next_ray_offset(current_cipher_cells, mu):
+    """Return the required offset, 0 or 1, from the current block only."""
+    B = current_cipher_cells[0]
+    E = current_cipher_cells[-1]
+
+    def n0(cell):
+        r, c = cell
+        return 27 * (r - 1) + c
+
+    def n90(cell):
+        r, c = cell
+        return 27 * (c - 1) + 28 - r
+
+    def n270(cell):
+        r, c = cell
+        return 27 * (27 - c) + r
+
+    q = (mu(n0(E)) == 0 and mu(n270(E)) == 0)
+    z = (mu(n0(B)) == 0 and mu(n90(B)) == 0)
     return int(q and not z)
 
+
+def ray_offset(leftmost_cell, next_beginning):
+    """Return the report's d8 score relative to the current leftmost cell."""
+    dr = abs(next_beginning[0] - leftmost_cell[0])
+    dc = abs(next_beginning[1] - leftmost_cell[1])
+    return min(dr, dc, abs(dr - dc))
+
+
+def accepts_next_beginning(current_cipher_cells, next_beginning, mu):
+    """Apply the exact-offset filter to a candidate next first cell."""
+    L = min(current_cipher_cells, key=lambda cell: (cell[1], -cell[0]))
+    required = expected_next_ray_offset(current_cipher_cells, mu)
+    return ray_offset(L, next_beginning) == required
+
+
 # Keep a candidate next beginning B_next only if:
-# ray_offset(L, B_next) == expected_offset(B, E, mu, n0, n1, n3)
+# accepts_next_beginning(current_cipher_cells, B_next, mu)
 ```
 
 ## 4. Three worked transitions
