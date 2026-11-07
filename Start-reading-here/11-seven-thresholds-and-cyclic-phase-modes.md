@@ -79,6 +79,60 @@ The proposed cycle is:
 
 **Timing matters:** When a block's phase makes `S` reach a threshold, the **new mode applies to the outgoing transition from that block**, not retroactively to the transition that produced it.
 
+### Direct implementation
+
+Supply every cell of the current ciphertext block as a nonempty list of 1-based `(row, column)` coordinates. The supplied `mu` function must evaluate the Möbius function on positive integers. `MAP LIFE`, for example, is supplied as one continuous block.
+
+`S_current` is a nonnegative integer: the accumulated phase sum **after the current block**, hence **before the transition being checked**. The candidate's `next_phase` is its derived-key phase, either 0, 1, or 2.
+
+The acceptance function checks both the deterministic phase forecast under Rule B and the no-skipping condition under Rule A. It leaves the predicted phase unchanged.
+
+```python
+def cyclic_phase_mode(S_current):
+    """Return (use_180_degree_indices, additive_offset) for the next forecast."""
+    q = (S_current // 7) % 4
+    reflected = q in (1, 2)
+    offset = 1 if q in (0, 2) else 0
+    return reflected, offset
+
+
+def expected_next_phase(current_cipher_cells, S_current, mu):
+    """Predict the next phase from all current ciphertext cells and current S."""
+    reflected, offset = cyclic_phase_mode(S_current)
+    mobius_sum = 0
+
+    for r, c in current_cipher_cells:
+        n = 27 * (r - 1) + c
+        if reflected:
+            n = 730 - n
+        mobius_sum += mu(n)
+
+    return int((offset + mobius_sum) % 3)
+
+
+def skips_seven_threshold(S_before, next_phase):
+    """Test Rule A; S_before >= 0 and next_phase is 0, 1, or 2."""
+    return next_phase == 2 and S_before % 7 == 6
+
+
+def accepts_next_phase(current_cipher_cells, S_current, next_phase, mu):
+    """Apply the cyclic phase forecast and no-skipping filter together."""
+    predicted = expected_next_phase(current_cipher_cells, S_current, mu)
+    return (
+        next_phase == predicted
+        and not skips_seven_threshold(S_current, next_phase)
+    )
+
+
+# Keep a candidate next key only if:
+# accepts_next_phase(current_cipher_cells, S_current, next_phase, mu)
+#
+# Only after acceptance, update the accumulated sum once:
+# S_next = S_current + next_phase
+```
+
+Use `S_next` to select the mode for the following outgoing transition. In particular, the forecast that reaches `S_next = 28` still uses the mode active before that transition; **Direct/+1** applies when forecasting from the block that has reached 28.
+
 ## 4. Four exact threshold hits in the selected 34-block route
 
 The phase values below are taken from the keys documented in [`plaintext-i-found/`](../plaintext-i-found/). The accumulating sum reaches every successive threshold without skipping one.
