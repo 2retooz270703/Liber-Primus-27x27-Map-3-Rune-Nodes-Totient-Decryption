@@ -1,6 +1,6 @@
 # Predicting the Exact Next-Ciphertext Ray Deviation
 
-**Status: new, retrospective candidate filter; 33/33 agreement with the currently selected 34-block route.** This report refines [Report 06](06-predicting-next-ciphertext-ray-and-mobius-deviation.md). The agreement is exact for the recorded route, but the proposed rule has **not** been established as part of Cicada 3301's intended method, nor tested on an independently validated continuation.
+This report refines [Report 06](06-predicting-next-ciphertext-ray-and-mobius-deviation.md). 
 
 ## 1. What is new?
 
@@ -47,7 +47,7 @@ $$
 $$
 
 $$
-d_8(L,B')=\min\!\left(
+d_8(L,B')=\min\\left(
 |\Delta r|,\ |\Delta c|,\ \bigl||\Delta r|-|\Delta c|\bigr|
 \right).
 $$
@@ -59,20 +59,20 @@ This is the **ray-offset score** used in Report 06, **not** the ordinary Chebysh
 **Step A — Determine whether an offset is possible (unchanged from Report 06).** Evaluate the *current endpoint* `E`:
 
 $$
-q=\mathbf1\!\left[
-\mu\!\left(n_0(E)\right)=0
+q=\mathbf1\\left[
+\mu\\left(n_0(E)\right)=0
 \ \land\ 
-\mu\!\left(n_3(E)\right)=0
+\mu\\left(n_3(E)\right)=0
 \right].
 $$
 
 **Step B — Resolve the allowance using the current beginning.** Evaluate the *current beginning* `B`:
 
 $$
-z=\mathbf1\!\left[
-\mu\!\left(n_0(B)\right)=0
+z=\mathbf1\\left[
+\mu\\left(n_0(B)\right)=0
 \ \land\ 
-\mu\!\left(n_1(B)\right)=0
+\mu\\left(n_1(B)\right)=0
 \right].
 $$
 
