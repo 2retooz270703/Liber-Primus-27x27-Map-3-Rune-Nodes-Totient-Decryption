@@ -105,8 +105,6 @@ Read these in order for the full model, or go directly to a specific constraint.
 
 Each walkthrough identifies the source node, key, phase, ciphertext cells, and resulting runes. The numbering follows the interactive map. A block can contain several English words.
 
-### Original reconstruction — blocks 01–17
-
 | Block | Proposed reading |
 | :---: | :--- |
 | 01 | [AS I GO, THE](./plaintext-i-found/01-as-i-go-the.md) |
@@ -126,11 +124,6 @@ Each walkthrough identifies the source node, key, phase, ciphertext cells, and r
 | 15 | [YOU](./plaintext-i-found/15-YOU.md) |
 | 16 | [SOON](./plaintext-i-found/16-soon.md) |
 | 17 | [THEN](./plaintext-i-found/17-then.md) |
-
-### Candidate continuation — blocks 18–34
-
-| Block | Proposed reading |
-| :---: | :--- |
 | 18 | [THE](./plaintext-i-found/18-the.md) |
 | 19 | [KEY](./plaintext-i-found/19-key.md) |
 | 20 | [IS](./plaintext-i-found/20-is.md) |
