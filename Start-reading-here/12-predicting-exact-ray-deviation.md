@@ -184,9 +184,7 @@ An exploratory candidate enumeration for the **existing selected route and its f
 | **Other 24 transitions** | **801** | **801** | **0** |
 | **All 33 transitions** | **1,428** | **1,243** | **185** |
 
-For the nine informative transitions, this is **185/627 ≈ 29.5%** fewer candidates. Across all 33, it is **185/1,428 ≈ 13.0%** fewer candidates. The `SEE → YOU` row produces no additional pruning *in that particular candidate pool*, even though its exact prediction is correct; all 59 candidates already had `d₈=0`.
-
-**Scope of these counts:** They are an exploratory, route-conditioned comparison, **not** an exhaustive search of all 27×27 grid paths, alternative key-center choices, ciphertext lengths, or plaintext readings. Their values depend on the underlying enumeration and earlier filters; they are **not** a probability of authenticity or a proof of uniqueness. The audit data for this comparison are in `ray_pruning.csv` (research working data, not included in the published project archive at the time of this report).
+For the nine informative transitions, this is **185/627 ≈ 29.5%** fewer candidates. Across all 33, it is **185/1,428 ≈ 13.0%** fewer candidates.
 
 ## 7. A falsifiable prediction beyond the recorded route
 
@@ -214,36 +212,8 @@ $$
 \boxed{\ d_8\bigl((6,11),B_{35}\bigr)=1\ }.
 $$
 
-**If the same rule continues beyond block 34, the next ciphertext must begin exactly one ray-offset unit away from the eight lines through `(6,11)`**, rather than directly on a line. This is a conditional and currently unverified prediction. It can be tested before inspecting the plaintext of a proposed block 35. It does **not** depend on assuming the cyclic phase extension in [Report 11](11-seven-thresholds-and-cyclic-phase-modes.md).
+**If the same rule continues beyond block 34, the next ciphertext must begin exactly one ray-offset unit away from the eight lines through `(6,11)`**, rather than directly on a line.
 
 ## 8. Interpretation and limits
 
-The proposed linkage is arithmetically specific: **square factors in rotated indices at the endpoint enable an offset; square factors at the beginning decide whether the enabled offset must be zero instead.** This fits the project's recurring use of Möbius zeroes and squarefree restrictions, especially [Report 10](10-squarefree-gcd-compatibility.md). The connection is a **mathematical analogy within the present model**, not direct evidence of a biological, DNA-based, or other authorial encoding scheme.
-
-There are several reasons not to overstate the result:
-
-1. **Selection after observation.** The condition was identified by examining the same 33-transition route it fits. The two `q=1, z=1` cases are precisely the exceptional on-ray cases, so the fit is susceptible to post-selection bias.
-2. **Only nine discriminating observations.** The other 24 transitions are already forced onto rays by Report 06. Even 9/9 cannot be converted into a calibrated significance level without accounting for the many candidate formulas and models examined.
-3. **Dependent constraints.** Both reports use the same grid, rotations, and Möbius function; the new test is not automatically independent of previously selected geometries, key nodes, or GCD conditions.
-4. **Unmeasured generalization.** No independently verified 35th block currently establishes predictive success. A genuinely blind continuation and matched randomization tests would be much stronger evidence.
-5. **No plaintext authentication.** The rule filters **positions**. It cannot establish that selected English words represent the true Liber Primus plaintext.
-
-**Recommended validation:** Freeze this formula now; enumerate next-block candidates with it enabled and disabled under identical assumptions; report candidate retention for each step and for alternative source nodes; then assess performance on new, withheld transitions. For a statistical null, preserve the fixed ciphertext/key data and relevant earlier constraints while randomizing the associations between blocks (or use carefully defined matched control routes). Re-running a search for a *different* formula after inspecting failures would not constitute a blind test.
-
-## 9. Conclusion
-
-The exact-deviation proposal is a **useful, deterministic refinement of Report 06 within the currently selected route**:
-
-$$
-\boxed{
-\text{Old: }d_8\le q
-\qquad\longrightarrow\qquad
-\text{Proposed: }d_8=q(1-z)
-}
-$$
-
-It agrees with **33/33 recorded transitions**, resolves **9/9 genuinely ambiguous offset cases**, and removes **185 of 1,428 (≈13.0%)** candidates in the exploratory route-conditioned enumeration. Its strongest next test is the explicit, not-yet-checked prediction **`d₈((6,11),B₃₅)=1`**. These are promising consistency and pruning results, **not proof of Cicada 3301 authorial intent**.
-
----
-
-**Related reports:** [02 — Leftmost cell and rotations](02-leftmost-cell-and-rotations.md) · [03 — Axis and reading direction](03-predicting-axis-and-reading-direction.md) · [06 — Ray allowance](06-predicting-next-ciphertext-ray-and-mobius-deviation.md) · [10 — Squarefree GCD](10-squarefree-gcd-compatibility.md) · [11 — Cyclic phase modes](11-seven-thresholds-and-cyclic-phase-modes.md).
+The proposed linkage is arithmetically specific: **square factors in rotated indices at the endpoint enable an offset; square factors at the beginning decide whether the enabled offset must be zero instead.** This fits the project's recurring use of Möbius zeroes and squarefree restrictions, especially [Report 10](10-squarefree-gcd-compatibility.md).
