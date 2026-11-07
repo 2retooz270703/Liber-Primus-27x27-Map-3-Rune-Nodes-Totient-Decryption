@@ -58,6 +58,50 @@ $$
 
 **An allowance of 1 permits an offset; it does not require one.**
 
+### Direct implementation
+
+Supply `current_cipher_cells` as a nonempty list of all current ciphertext coordinates **in reading order**, using 1-based `(row, column)` pairs. `next_beginning` is the coordinate pair of the first cell read in the proposed next block. The supplied `mu` function must evaluate the Möbius function on positive integers.
+
+The allowance is calculated at the current endpoint E. The acceptance check separately locates L, measures the grid-offset score from L, and applies **`d8 <= q`**. Thus an allowance of 1 accepts both score 0 and score 1.
+
+```python
+def next_ray_offset_allowance(current_cipher_cells, mu):
+    """Return q: 0 allows only score 0; 1 allows score 0 or 1."""
+    E = current_cipher_cells[-1]
+
+    def n0(cell):
+        r, c = cell
+        return 27 * (r - 1) + c
+
+    def n270(cell):
+        r, c = cell
+        return 27 * (27 - c) + r
+
+    return int(mu(n0(E)) == 0 and mu(n270(E)) == 0)
+
+
+def ray_offset(leftmost_cell, next_beginning):
+    """Return the report's d8 score relative to the current leftmost cell."""
+    dr = abs(next_beginning[0] - leftmost_cell[0])
+    dc = abs(next_beginning[1] - leftmost_cell[1])
+    return min(dr, dc, abs(dr - dc))
+
+
+def accepts_next_beginning_with_allowance(
+    current_cipher_cells, next_beginning, mu
+):
+    """Check the next beginning against the endpoint-derived allowance."""
+    L = min(current_cipher_cells, key=lambda cell: (cell[1], -cell[0]))
+    q = next_ray_offset_allowance(current_cipher_cells, mu)
+    return ray_offset(L, next_beginning) <= q
+
+
+# Keep a proposed next beginning B_next only if:
+# accepts_next_beginning_with_allowance(
+#     current_cipher_cells, B_next, mu
+# )
+```
+
 ## 4. Example: OF → THE
 
 For OF, **L = (18,15)** and **E = (18,16)**. The following THE begins at **B′ = (19,17)**.
