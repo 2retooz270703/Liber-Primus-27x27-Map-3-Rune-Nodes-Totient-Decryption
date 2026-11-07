@@ -225,12 +225,6 @@ other words, my formulas don’t look that random, and that’s exactly why I fi
 them so interesting. Simple operations are constantly used, such as rotations
 by 0, 90, 180, and 270 degrees, and the Möbius value is simply taken to provide
 a controlling signal.
-In other words, their algorithm could have not only filled the matrix with
-ciphertext cells, but also with the necessary background/auxiliary cells that
-provide the required Möbius signal for the main cells. And this is how they
-could have gradually created an entire 27×27 square, where some cells are the
-main ones hiding the plaintext, while others are auxiliary cells hiding pointers
-and rules for the algorithm.
 
 Judging by the frequency analysis, they may have applied the same principle to
 the entirety of LP as well. In other words, I’m not just working on solving 0–2.
