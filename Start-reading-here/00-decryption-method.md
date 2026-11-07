@@ -72,3 +72,95 @@ The block at **row 14, columns 14–18** gives:
 A negative result wraps around: `13 − 14 = −1 ≡ 28 (mod 29)`.
 
 **`W–EA–TH–E–R` → WEATHER**
+
+### Direct implementation
+
+The inputs here are **integer rune indices** read from the selected matrix cells. Supply the ciphertext in reading order and the original node's three indices in **outer–center–outer** order. Set `transform_center=True` to apply φ to the center, or `False` for an unchanged key. The original input sequences are preserved.
+
+Ciphertext and plaintext indices range from 0 to 28. This implementation requires **positive key indices, 1…28**, because the signature calculation uses φ and μ on positive integers; a zero key component is rejected explicitly. The functions `mu` and `phi` below can also be passed to the other reports' implementations.
+
+The result contains the unrotated derived key, its signature and phase, the aligned key, and the plaintext rune indices. Call the function once per independently decrypted block, including all its words. Block-length and continuation filters are applied separately.
+
+```python
+from operator import index as integer_index
+
+
+def phi(n):
+    """Euler's totient for a positive integer; phi(1) = 1."""
+    n = integer_index(n)
+    if n < 1:
+        raise ValueError("phi requires a positive integer.")
+
+    result = n
+    remaining = n
+    factor = 2
+    while factor * factor <= remaining:
+        if remaining % factor == 0:
+            result -= result // factor
+            while remaining % factor == 0:
+                remaining //= factor
+        factor += 1
+    if remaining > 1:
+        result -= result // remaining
+    return result
+
+
+def mu(n):
+    """Mobius function for a positive integer; mu(1) = 1."""
+    n = integer_index(n)
+    if n < 1:
+        raise ValueError("mu requires a positive integer.")
+
+    sign = 1
+    factor = 2
+    while factor * factor <= n:
+        if n % factor == 0:
+            n //= factor
+            sign = -sign
+            if n % factor == 0:
+                return 0
+        factor += 1
+    return -sign if n > 1 else sign
+
+
+def decrypt_block(ciphertext_indices, original_node_runes, transform_center):
+    """Derive, align and repeat a three-rune key; subtract modulo 29."""
+    ciphertext = [integer_index(v) for v in ciphertext_indices]
+    key = [integer_index(v) for v in original_node_runes]
+
+    if len(key) != 3:
+        raise ValueError("The original node must contain three rune indices.")
+    if any(not 1 <= k <= 28 for k in key):
+        raise ValueError("This signature calculation requires key indices 1..28.")
+    if any(not 0 <= c <= 28 for c in ciphertext):
+        raise ValueError("Ciphertext rune indices must be in 0..28.")
+
+    if transform_center:
+        key[1] = phi(key[1])
+
+    signature = tuple(mu(phi(k)) for k in key)
+    phase = int(sum(signature) % 3)
+    aligned_key = key[phase:] + key[:phase]
+    plaintext = tuple(
+        (c - aligned_key[j % 3]) % 29 for j, c in enumerate(ciphertext)
+    )
+
+    return {
+        "unrotated_key": tuple(key),
+        "signature": signature,
+        "phase": phase,
+        "aligned_key": tuple(aligned_key),
+        "plaintext": plaintext,
+    }
+
+
+# WEATHER example:
+# result = decrypt_block(
+#     [21, 13, 12, 3, 18], [14, 22, 14], transform_center=True
+# )
+# result["unrotated_key"] == (14, 10, 14)
+# result["signature"] == (1, 0, 1)
+# result["phase"] == 2
+# result["aligned_key"] == (14, 14, 10)
+# result["plaintext"] == (7, 28, 2, 18, 4)  # W-EA-TH-E-R
+```
