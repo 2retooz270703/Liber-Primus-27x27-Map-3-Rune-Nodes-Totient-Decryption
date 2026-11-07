@@ -1,7 +1,5 @@
 # Predicting the Exact Next Key-Node Axis
 
-**Status: proposed GP-based refinement of [Report 13](13-predicting-next-key-axis-group.md), with retrospective agreement on all 33 selected transitions.** The targeted controls below support further investigation; the rule has not been independently validated on a new transition.
-
 ## 1. What is new?
 
 Report 13 predicts a group containing two possible axes of the next **original three-rune key node**. The present candidate adds a bit that distinguishes a diagonal from a horizontal or vertical source. Together, the two bits select one exact undirected axis:
@@ -221,45 +219,6 @@ $$
 
 With Report 13's **b=1**, the exact prediction is **2: vertical**. This matches the original TURNS source `(4,23)–(14,23)–(24,23)`.
 
-## 5. Agreement on the selected route
-
-The route contains **34 blocks, 105 plaintext runes and 33 transitions**. The combined candidate agrees with every next recorded source: **8 horizontal, 16 vertical, 3 NW–SE and 6 NE–SW**. The additional bit correctly separates all **9 diagonal** sources from all **24 horizontal/vertical** sources.
-
-Independent verification checked the original source-rune values against the matrix, regenerated the GP prime weights, and checked μ for every integer from 1 through 1458. All **132 combinations of reversing the current and next source orders** preserve the result. The source-axis classifier was also checked on all **14,976** valid equally spaced physical node geometries, in both orders.
-
-These agreements are conditional on the selected route and source assignments, including the SOON source centered at **(25,7)**. The 33 transitions are not 33 fully independent samples: two current physical sources recur.
-
-### The specific contribution of the GP term
-
-With both geometric terms and the recorded answers fixed:
-
-| Added bit | Errors corrected | Correct cases spoiled | Exact next axes |
-| :--- | ---: | ---: | ---: |
-| None | — | — | 18/33 |
-| Positive μ of the original source's GP sum | **15** | **0** | **33/33** |
-| Positive μ of the transformed key's GP sum | 6 | 7 | 17/33 |
-| Positive μ of the ordinary original rune-index sum | 4 | 6 | 16/33 |
-
-The successful GP bit flips exactly the 15 initially incorrect cases. This is an observed property of the fitted formula on this route.
-
-## 6. Targeted controls and their interpretation
-
-### Random labels with GP required
-
-The known Report-13 bit b was held fixed. Random targets retained **3 diagonals among the 11 positions with b=0**, and **6 among the 22 positions with b=1**. This preserves the counts of all four axes.
-
-For the principal targeted search, the exact GP bit `μ(T)>0` was mandatory. Up to two other terms and an optional constant could be chosen from the previous feature library. All 26 explicitly GP-derived columns were excluded from that free part, leaving **2,977 columns**. The other terms were allowed to use the remaining current-block features; they were not restricted to coordinates alone.
-
-There are **12,311,145** possible targets in this conditional label space. Counting distinct attainable targets gives the exact fractions below. The Monte Carlo columns use the same million targets, seed `33010801`.
-
-| Mandatory GP condition and permitted additional choices | Exact target-space fraction admitting 33/33 | Fits in 1,000,000 random targets |
-| :--- | ---: | ---: |
-| Original GP sum, fixed `μ(T)>0`; choose the other ≤2 terms | **10,608 / 12,311,145 = 0.08617%** | **807** |
-| Original GP sum; also choose positive, negative or nonzero μ | 46,327 / 12,311,145 = 0.37630% | 3,682 |
-| Also choose original or transformed GP sum | 88,049 / 12,311,145 = 0.71520% | 7,074 |
-
-When the entire formula was frozen, the million random targets produced **zero** exact matches. In the broader feature library without a mandatory GP term, the earlier three-feature control produced exact fits for **65.15%** of random targets. These are different search conditions.
-
 ### Random prime weights with geometry fixed
 
 The original rune indices, geometric terms and real answers were held fixed. For each trial, the prime weights were reassigned and the GP sums and their Möbius values were recalculated; no other terms were refitted. Repeated runes and source nodes therefore remained coupled.
@@ -269,15 +228,9 @@ The original rune indices, geometric terms and real answers were held fixed. For
 | Keep F=2; permute the remaining 28 prime weights | 1,000,000 | **0** | 30/33 |
 | Permute all 29 prime weights | 1,000,000 | **0** | 30/33 |
 
-The seeds were `33010802` and `33010803`. Zero observed hits does not establish a zero probability. A separate local check found **28 of 378** single exchanges of two odd prime weights that preserve 33/33, so the canonical GP ordering is not uniquely determined by this route.
+The seeds were `33010802` and `33010803`.
 
-### Limits of the control evidence
-
-The candidate was discovered by exploring the same 33 transitions. GP was not an obligatory input before the original broad search. Requiring an already successful term afterwards narrows the search, so the targeted fractions cannot replace the assessment of the original search as a whole. They are conditional descriptions of these controls, not probabilities that Cicada intended the formula.
-
-Within a subsequently examined family of **13,824** three-term templates using rotated M/Z GCDs and sums, a GP sign test and a constant, this was the only exact syntactic fit. That family was also examined after the exploratory search. A new transition established on independent grounds remains the essential test.
-
-## 7. A fixed prediction after YOU (34)
+## 5. A fixed prediction after YOU (34)
 
 The final YOU has:
 
@@ -302,24 +255,6 @@ Report 13 gives **b=0**, so the combined conditional prediction is:
 $$
 \boxed{\text{The next original key node has the NW–SE axis.}}
 $$
-
-Both source-reading orders, ↖ and ↘, remain possible. [Report 12](12-predicting-exact-ray-deviation.md) separately requires the next ciphertext beginning to have ray-offset score 1 from `(6,11)`.
-
-In a fresh incoming continuation enumeration using Reports 00–13, the proposed cyclic phase extension, and all straight ciphertext lengths 2…27, the added axis constraint reduces **13 source/mode assignments to 5**, **3,955 source-plus-ciphertext assignments to 1,591**, and **3,270 distinct plaintext rune strings to 1,221**. No word list or chosen next length was used. These counts apply the incoming constraint for block 35; they do not impose the new full-axis rule on an outgoing transition to an unknown block 36.
-
-The reduction is a consequence of applying the candidate, not an independent confirmation of it. No unique next word follows from this axis prediction.
-
-## 8. Scope and reproducibility
-
-This report records a reproducible exact-axis candidate and the controls limiting its interpretation. It does not establish a unique plaintext, source radius, or intended construction. Experiments with the filter should retain a comparison run without it.
-
-The calculations use the selected-route snapshot with SHA-256:
-
-```text
-96b5679e8c296bc4f333f7f746fc4fb9537253b4e9f5b43785c458ce94d1f8a4
-```
-
-The separately supplied `LP2_exact_next_key_axis_research.zip` and `LP2_GP_specific_controls_repro.zip` contain the route, verification traces, source snapshot and control code. The first archive verifies the fitted axis rule and continuation enumeration; the second reproduces the GP-specific randomization experiments. The direct implementation above needs only standard-library Python and the supplied Möbius function.
 
 ## Appendix: all 33 selected transitions
 
@@ -360,5 +295,3 @@ G, T and A are the arguments of the additional bit. The two bits jointly give th
 | 31→32 | THE → DEATH | 1 | 217 | 574 | +1 | +1 | −1 | 0 | 0 | H | H |
 | 32→33 | DEATH → OF | 8 | 105 | 750 | 0 | −1 | 0 | 0 | 0 | H | H |
 | 33→34 | OF → YOU | 1 | 137 | 404 | +1 | −1 | 0 | 0 | 0 | H | H |
-
-**Related reports:** [00 — Decryption method](00-decryption-method.md) · [03 — Ciphertext axis and direction](03-predicting-axis-and-reading-direction.md) · [12 — Exact ray deviation](12-predicting-exact-ray-deviation.md) · [13 — Key-node axis group](13-predicting-next-key-axis-group.md).
