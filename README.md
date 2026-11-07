@@ -173,6 +173,8 @@ I created this [interactive 27 × 27 map](https://2retooz270703.github.io/Liber-
 
 ---
 
+## Let me explain my reasoning
+
 I want to clarify a little what exactly I’m working on and what I’m doing, so that
 my train of thought is clearer.
 As I’ve said before, the idea behind my project is that pages 0–2 represent an
