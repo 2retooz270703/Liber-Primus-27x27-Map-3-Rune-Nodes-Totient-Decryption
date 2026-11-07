@@ -41,6 +41,41 @@ Take `d mod 3` and predict the **next** original node’s type:
 | 0 or 1 | Mirror — equal outer runes |
 | 2 | Non-mirror — different outer runes |
 
+### Direct implementation
+
+`current_node` contains the three original current-node coordinates. Supply `current_cipher_cells` as a nonempty list of ciphertext coordinates in reading order. All coordinates are 1-based `(row, column)` pairs.
+
+The prediction returns **1 for a mirror node and 0 for a non-mirror node**. To check a proposed next key, supply its three **original rune indices** in outer–center–outer order as `next_node_runes`, before any center transformation or cyclic key rotation.
+
+```python
+def expected_next_key_mirror_bit(current_node, current_cipher_cells):
+    """Predict the next original node's type: 1 = mirror, 0 = non-mirror."""
+    Z = max(current_node, key=lambda cell: (cell[0], cell[1]))
+    L = min(current_cipher_cells, key=lambda cell: (cell[1], -cell[0]))
+
+    distance = max(abs(Z[0] - L[0]), abs(Z[1] - L[1]))
+    return int(distance % 3 != 2)
+
+
+def original_node_mirror_bit(original_node_runes):
+    """Compare the outer rune indices before key transformation or rotation."""
+    return int(original_node_runes[0] == original_node_runes[2])
+
+
+def accepts_next_key_mirror_status(
+    current_node, current_cipher_cells, next_node_runes
+):
+    """Check a proposed next original node against the predicted mirror bit."""
+    predicted = expected_next_key_mirror_bit(current_node, current_cipher_cells)
+    return original_node_mirror_bit(next_node_runes) == predicted
+
+
+# Keep a proposed next key only if:
+# accepts_next_key_mirror_status(
+#     current_node, current_cipher_cells, next_node_runes
+# )
+```
+
 ## 4. Example: WEATHER → TURNS
 
 WEATHER’s original node is:
