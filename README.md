@@ -99,6 +99,7 @@ Read these in order for the full model, or go directly to a specific constraint.
 | [09](./Start-reading-here/09-predicting-next-ciphertext-column-parity.md) | Ciphertext column parity | Predicts the column parity of the next leftmost cell. |
 | [10](./Start-reading-here/10-squarefree-gcd-compatibility.md) | Squarefree-GCD compatibility | Tests four numerical relationships between a proposed key center and ciphertext cells. |
 | [11](./Start-reading-here/11-seven-thresholds-and-cyclic-phase-modes.md) | Seven-phase thresholds and cyclic modes | Tests exact hits at multiples of seven and proposes a repeating four-mode cycle every 28 phase units. |
+| [12](./Start-reading-here/12-predicting-exact-ray-deviation.md) | Deterministic ray deviation using Möbius zeroes | Introduces a new rule that determines the exact 0-or-1 offset from geometric rays using rotated cell indices, matching all 33 recorded transitions (33/33) and reducing possible branches. |
 
 ## Plaintext walkthroughs
 
