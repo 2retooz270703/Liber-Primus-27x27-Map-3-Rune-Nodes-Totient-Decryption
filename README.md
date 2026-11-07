@@ -100,6 +100,7 @@ Read these in order for the full model, or go directly to a specific constraint.
 | [10](./Start-reading-here/10-squarefree-gcd-compatibility.md) | Squarefree-GCD compatibility | Tests four numerical relationships between a proposed key center and ciphertext cells. |
 | [11](./Start-reading-here/11-seven-thresholds-and-cyclic-phase-modes.md) | Seven-phase thresholds and cyclic modes | Tests exact hits at multiples of seven and proposes a repeating four-mode cycle every 28 phase units. |
 | [12](./Start-reading-here/12-predicting-exact-ray-deviation.md) | Deterministic ray deviation using Möbius zeroes | Introduces a new rule that determines the exact 0-or-1 offset from geometric rays using rotated cell indices, matching all 33 recorded transitions (33/33) and reducing possible branches. |
+| [13](./Start-reading-here/13-predicting-next-key-axis-group.md) | Deterministic axis-group prediction using Möbius signs | Introduces a new rule that determines the next key node's axis group using rotated cell indices and Möbius signs, matching all 33 recorded transitions (33/33) and narrowing the possible axes. |
 
 ## Plaintext walkthroughs
 
