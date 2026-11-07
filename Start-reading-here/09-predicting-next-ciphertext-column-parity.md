@@ -59,6 +59,74 @@ Add the four terms, then take the remainder modulo 2:
 
 Either nonzero Möbius value toggles parity. Counting nonzero values gives the same parity as summing their signs.
 
+### Direct implementation
+
+Supply the current and proposed next ciphertext cells as nonempty lists of 1-based `(row, column)` coordinates **in reading order**. `current_key_center` is the center M of the current original node. The supplied `mu` function must evaluate the Möbius function on positive integers.
+
+`current_phase` is the current derived key's phase; the code reduces it modulo 3 before selecting the center rotation. `mirror_bit` is 1 when the original node's outer rune indices match and 0 otherwise. Use the same original node for the center and mirror bit.
+
+The helper `original_node_mirror_bit` calculates that bit from three original rune indices in **outer–center–outer** order. The prediction returns **0 for an even column and 1 for an odd column**. The acceptance function compares it with the proposed next ciphertext's actual leftmost column.
+
+```python
+def original_node_mirror_bit(original_node_runes):
+    """Compare the outer rune indices before key transformation or rotation."""
+    return int(original_node_runes[0] == original_node_runes[2])
+
+
+def expected_next_column_parity(
+    current_cipher_cells, current_key_center, current_phase, mirror_bit, mu
+):
+    """Predict the next leftmost column: 0 = even, 1 = odd."""
+    B = current_cipher_cells[0]
+    M = current_key_center
+    p = current_phase % 3
+
+    def n0(cell):
+        r, c = cell
+        return 27 * (r - 1) + c
+
+    def n90(cell):
+        r, c = cell
+        return 27 * (c - 1) + 28 - r
+
+    s = sum(mu(n90(cell)) for cell in current_cipher_cells)
+
+    if p == 0:
+        center_index = 730 - n0(M)    # 180 degrees
+    elif p == 1:
+        center_index = 730 - n90(M)   # 270 degrees clockwise
+    else:
+        center_index = n0(M)          # No rotation: p == 2
+
+    t = mu(center_index)
+    return int((B[0] + s + mirror_bit + t) % 2)
+
+
+def leftmost_column_parity(cipher_cells):
+    """Return the actual leftmost column's parity, using the stated tie rule."""
+    L = min(cipher_cells, key=lambda cell: (cell[1], -cell[0]))
+    return int(L[1] % 2)
+
+
+def accepts_next_column_parity(
+    current_cipher_cells, current_key_center, current_phase, mirror_bit,
+    next_cipher_cells, mu
+):
+    """Apply the predicted parity to a proposed next ciphertext block."""
+    predicted = expected_next_column_parity(
+        current_cipher_cells, current_key_center, current_phase, mirror_bit, mu
+    )
+    return leftmost_column_parity(next_cipher_cells) == predicted
+
+
+# m = original_node_mirror_bit(current_node_runes)
+# Keep a proposed next ciphertext only if:
+# accepts_next_column_parity(
+#     current_cipher_cells, current_key_center, current_phase,
+#     m, next_cipher_cells, mu
+# )
+```
+
 ## 4. Example: WEATHER → TURNS
 
 WEATHER begins at **B = (14,14)** and uses the original center **M = (14,5)** with phase **p = 2**. Its node is **X–OE–X**, so **m = 1**.
