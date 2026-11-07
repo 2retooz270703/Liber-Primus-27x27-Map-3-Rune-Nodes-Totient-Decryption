@@ -219,17 +219,6 @@ $$
 
 With Report 13's **b=1**, the exact prediction is **2: vertical**. This matches the original TURNS source `(4,23)–(14,23)–(24,23)`.
 
-### Random prime weights with geometry fixed
-
-The original rune indices, geometric terms and real answers were held fixed. For each trial, the prime weights were reassigned and the GP sums and their Möbius values were recalculated; no other terms were refitted. Repeated runes and source nodes therefore remained coupled.
-
-| Prime-weight randomization | Trials | Exact 33/33 results | Best result |
-| :--- | ---: | ---: | ---: |
-| Keep F=2; permute the remaining 28 prime weights | 1,000,000 | **0** | 30/33 |
-| Permute all 29 prime weights | 1,000,000 | **0** | 30/33 |
-
-The seeds were `33010802` and `33010803`.
-
 ## 5. A fixed prediction after YOU (34)
 
 The final YOU has:
