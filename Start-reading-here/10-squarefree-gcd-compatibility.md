@@ -1,7 +1,5 @@
 # Squarefree-GCD Compatibility of the Next Key and Ciphertext
 
-This proposed filter links the **original center of the next key node** to the **beginning, leftmost cell, and endpoint of the next ciphertext**. Four comparisons must avoid a zero Möbius value.
-
 ## 1. Inputs and cell indices
 
 The matrix is **27 × 27**. Coordinates are `(row, column)`, starting from 1; rows increase downward and columns to the right.
