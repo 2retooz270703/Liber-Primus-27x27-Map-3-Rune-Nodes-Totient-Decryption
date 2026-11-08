@@ -106,30 +106,3 @@ def accepts_next_row_parities(
 #     next_cipher_cells, mu
 # )
 ```
-
-## 3. Example: TURNS → COLD
-
-For TURNS, the current inputs are:
-
-**`B = (14,19), E = (10,19), M = (14,23), p = 0`.**
-
-The required values are:
-
-| Input | Value | Möbius value |
-| :--- | ---: | ---: |
-| n₂(M) | 356 = 2² × 89 | 0 |
-| n₂(B) | 360 = 2³ × 3² × 5 | 0 |
-| r(M) | 14 = 2 × 7 | +1 |
-
-The predicted next-center row bit is:
-
-$$
-b=[1+19+10+14+0]\bmod2=0.
-$$
-
-| Target | Calculation modulo 2 | Predicted row | Recorded cell |
-| :--- | :--- | :--- | :--- |
-| Endpoint E′ | 1 + 0 + 0 ≡ 1 | Odd | (11,7) |
-| Leftmost cell L′ | 0 + 1 + 0 + 1 ≡ 0 | Even | (14,7) |
-
-Both predictions match. The endpoint and leftmost cell are different cells here.
