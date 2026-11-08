@@ -7,7 +7,7 @@
 The radius is the number of grid steps from the original source's center to either outer cell:
 
 $$
-R=\max\bigl(|r_U-r_M|,\;|c_U-c_M|\bigr),
+R=\max\bigl(|r_U-r_M|,\|c_U-c_M|\bigr),
 $$
 
 where `U` is either outer cell. A diagonal source with displacement `(3,3)` has radius **3**, not its Euclidean length. Valid equally spaced three-cell nodes in the 27 × 27 grid have `1≤R≤13`.
