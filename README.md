@@ -11,10 +11,12 @@ See you soon, then.
 The key is to go to the east of the map.  
 Life may be the death of you.
 
+Go, do as I ask.
+
 ---
 
 <sub>Plaintext extracted using my decryption approach.</sub>  
-<sub>4.11.2026</sub>
+<sub>8.11.2026</sub>
 
 ---
 ---
