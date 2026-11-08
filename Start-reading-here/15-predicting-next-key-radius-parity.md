@@ -1,7 +1,5 @@
 # Predicting the Parity of the Next Key-Node Radius
 
-It removes **48.70%** of the physical source-node candidates.
-
 ## 1. What the rule predicts
 
 [Report 14](14-predicting-exact-next-key-axis.md) selects the next original key node's undirected axis. This report proposes one more bit: whether that node's **physical radius is even or odd**.
