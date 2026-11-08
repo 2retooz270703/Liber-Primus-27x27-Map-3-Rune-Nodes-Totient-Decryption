@@ -84,39 +84,3 @@ def accepts_next_key_center_parities(
 #     current_cipher_cells, current_key_center, next_key_center, mu
 # )
 ```
-
-## 4. Example: after THEN
-
-THEN has:
-
-- **B = (25,25)** — first cell.
-- **E = (25,27)** — last cell.
-- **M = (26,22)** — original key-node center.
-
-### Column
-
-$$
-c'\equiv1+25+25+26=77\equiv1\pmod2.
-$$
-
-The next center’s column should be **odd**.
-
-### Row
-
-The reflected beginning has index:
-
-$$
-n_2(B)=730-673=57=3\times19,\qquad\mu(57)=+1.
-$$
-
-Therefore:
-
-$$
-r'\equiv1+25+25+26+1=78\equiv0\pmod2.
-$$
-
-The next center’s row should be **even**.
-
-**Prediction: (row parity, column parity) = (0,1) — even row, odd column.**
-
-This leaves **13 even rows × 14 odd columns = 182 eligible cells** out of 729. The candidate THE uses an original center at **(20,17)**, which passes both conditions.
