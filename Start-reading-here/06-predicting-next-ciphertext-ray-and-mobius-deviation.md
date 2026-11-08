@@ -1,6 +1,6 @@
 # Filtering the Next Ciphertext’s Beginning
 
-The next beginning is checked against eight rays from the current block’s leftmost cell. A condition at the current endpoint determines whether a one-cell offset is allowed.
+The next beginning is checked against eight rays from the current block’s leftmost cell. A condition at the current endpoint determines whether a **one-cell offset** is allowed.
 
 ## 1. Inputs
 
