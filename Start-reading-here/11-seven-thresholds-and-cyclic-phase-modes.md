@@ -1,7 +1,5 @@
 # Seven-Phase Thresholds and Cyclic Mode Transitions
 
-**Status: proposed continuation filter and cyclic extension of [Report 01](01-next-key-signature.md).** The 34 selected plaintext blocks satisfy the no-skipping condition. A return to **Direct/+1** at `S = 28` follows from the proposed cyclic extension.
-
 ## 1. State and terminology
 
 Let `p_i ∈ {0,1,2}` be the Möbius phase of the **i-th derived key**, as defined in the [decryption method](00-decryption-method.md). Let `S_i` be the running sum **after** that block:
