@@ -131,67 +131,7 @@ def accepts_next_phase(current_cipher_cells, S_current, next_phase, mu):
 
 Use `S_next` to select the mode for the following outgoing transition. In particular, the forecast that reaches `S_next = 28` still uses the mode active before that transition; **Direct/+1** applies when forecasting from the block that has reached 28.
 
-## 4. Four exact threshold hits in the selected 34-block route
-
-The phase values below are taken from the keys documented in [`plaintext-i-found/`](../plaintext-i-found/). The accumulating sum reaches every successive threshold without skipping one.
-
-| Block | Plaintext | Phase | S before | S after | Mode after |
-| ---: | :--- | ---: | ---: | ---: | :--- |
-| **08** | **IDEA** | **1** | **6** | **7** | **Reflected/+0** |
-| **13** | **DEATH** | **2** | **12** | **14** | **Reflected/+1** |
-| **23** | **TO** | **1** | **20** | **21** | **Direct/+0** |
-| **34** | **YOU** | **1** | **27** | **28** | **Direct/+1** |
-
-The last three threshold words, taken in numerical order, read:
-
-> **DEATH TO YOU**
-
-This is an intelligible English phrase. The highlighted words are **not consecutive words in the plaintext**: they come from blocks `13`, `23`, and `34`, at `S = 14, 21, 28`. The earlier threshold word is **IDEA** (`S = 7`), which can be *interpreted* as an introductory label, yielding the secondary reading **“IDEA: DEATH TO YOU.”**
-
-## 5. Complete phase trace (34 selected blocks)
-
-| # | Block | p | S before | S after | Mode after |
-| ---: | :--- | ---: | ---: | ---: | :--- |
-| 01 | AS I GO THE | 0 | 0 | 0 | D+1 |
-| 02 | WEATHER | 2 | 0 | 2 | D+1 |
-| 03 | TURNS | 0 | 2 | 2 | D+1 |
-| 04 | COLD | 1 | 2 | 3 | D+1 |
-| 05 | I MAY | 0 | 3 | 3 | D+1 |
-| 06 | CRY | 1 | 3 | 4 | D+1 |
-| 07 | NOW THE | 2 | 4 | 6 | D+1 |
-| **08** | **IDEA** | **1** | **6** | **7** | **R+0** |
-| 09 | OF | 0 | 7 | 7 | R+0 |
-| 10 | THE | 2 | 7 | 9 | R+0 |
-| 11 | END | 2 | 9 | 11 | R+0 |
-| 12 | IS | 1 | 11 | 12 | R+0 |
-| **13** | **DEATH** | **2** | **12** | **14** | **R+1** |
-| 14 | SEE | 0 | 14 | 14 | R+1 |
-| 15 | YOU | 1 | 14 | 15 | R+1 |
-| 16 | SOON | 2 | 15 | 17 | R+1 |
-| 17 | THEN | 1 | 17 | 18 | R+1 |
-| 18 | THE | 0 | 18 | 18 | R+1 |
-| 19 | KEY | 1 | 18 | 19 | R+1 |
-| 20 | IS | 1 | 19 | 20 | R+1 |
-| 21 | TO | 0 | 20 | 20 | R+1 |
-| 22 | GO | 0 | 20 | 20 | R+1 |
-| **23** | **TO** | **1** | **20** | **21** | **D+0** |
-| 24 | THE | 1 | 21 | 22 | D+0 |
-| 25 | EAST | 1 | 22 | 23 | D+0 |
-| 26 | OF | 0 | 23 | 23 | D+0 |
-| 27 | THE | 0 | 23 | 23 | D+0 |
-| 28 | MAP LIFE | 1 | 23 | 24 | D+0 |
-| 29 | MAY | 0 | 24 | 24 | D+0 |
-| 30 | BE | 0 | 24 | 24 | D+0 |
-| 31 | THE | 0 | 24 | 24 | D+0 |
-| 32 | DEATH | 1 | 24 | 25 | D+0 |
-| 33 | OF | 2 | 25 | 27 | D+0 |
-| **34** | **YOU** | **1** | **27** | **28** | **D+1** |
-
-`D` = Direct; `R` = Reflected. The displayed **mode after** is the one selected for the **next** prediction. The 34 recorded phases contain **13 zeros, 14 ones, and 7 twos**, for a final sum of **28**. `MAP LIFE` is **one continuous ciphertext block** and contributes its phase only once.
-
-## 6. Conditional prediction after YOU
-
-Rule B makes a specific, testable prediction that the original finite schedule in Report 01 does **not** make.
+## 4. Conditional prediction after YOU
 
 At **YOU (34)**, `S = 28`; thus the proposed cycle selects **Direct/+1** for the transition to block 35. The three current ciphertext cells are `(6,11)`, `(6,12)`, `(6,13)`:
 
