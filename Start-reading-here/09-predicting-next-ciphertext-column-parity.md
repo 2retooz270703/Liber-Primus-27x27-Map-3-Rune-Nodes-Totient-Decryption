@@ -1,7 +1,5 @@
 # Predicting the Next Ciphertext’s Column Parity
 
-This rule predicts whether the next block’s leftmost cell lies in an **even or odd column**. It uses only the current ciphertext and its original key node.
-
 ## 1. Inputs
 
 The matrix is **27 × 27**. Coordinates are `(row, column)`, starting from 1; rows increase downward and columns to the right. For a cell X, `r(X)` is its row and `c(X)` its column.
