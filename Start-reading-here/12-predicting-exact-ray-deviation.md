@@ -1,7 +1,5 @@
 # Predicting the Exact Next-Ciphertext Ray Deviation
 
-This report refines [Report 06](06-predicting-next-ciphertext-ray-and-mobius-deviation.md). 
-
 ## 1. What is new?
 
 [Report 06](06-predicting-next-ciphertext-ray-and-mobius-deviation.md) evaluates the next ciphertext's **beginning** against eight horizontal, vertical, and 45° diagonal rays through the current ciphertext's **leftmost cell**. Its endpoint-based Möbius condition sets an allowance `q`:
@@ -137,63 +135,3 @@ def accepts_next_beginning(current_cipher_cells, next_beginning, mu):
 # Keep a candidate next beginning B_next only if:
 # accepts_next_beginning(current_cipher_cells, B_next, mu)
 ```
-
-## 4. Three worked transitions
-
-### A. OF (09) → THE (10): an offset is required
-
-The selected **OF** ciphertext reads `B=(18,15) → E=(18,16)`, with `L=(18,15)`. Its endpoint indices are:
-
-- `n₀(E) = 475 = 5² × 19`, so `μ(n₀(E)) = 0`.
-- `n₃(E) = 315 = 3² × 5 × 7`, so `μ(n₃(E)) = 0`.
-
-Therefore **`q = 1`**. At the beginning, `n₀(B) = 474` has `μ(474) = −1`, while `n₁(B) = 388` has `μ(388) = 0`. Consequently **`z = 0`**, and the proposed rule requires **`d₈ = 1`**.
-
-The recorded next beginning is `B′=(19,17)`. Relative to `L=(18,15)`, `Δr=1` and `Δc=2`, giving
-
-$$
-d_8=\min(1,2,1)=\boxed{1}.
-$$
-
-The selected transition meets the **exact** requirement, not merely Report 06's allowance.
-
-### B. SEE (14) → YOU (15): the apparent exception is on-ray
-
-For **SEE**, `B=(25,16)`, `E=(27,14)`, and `L=(27,14)`.
-
-- At `E`: `n₀(E)=716`, `n₃(E)=378`; both have Möbius value **0**. Thus **`q=1`**.
-- At `B`: `n₀(B)=664`, `n₁(B)=408`; both have Möbius value **0**. Thus **`z=1`**.
-
-The new prediction is **`d₈=q(1-z)=0`**. The selected next ciphertext begins at `B′=(27,18)`, on the same row as `L=(27,14)`, so **`d₈=0`**, as required.
-
-### C. KEY (19) → IS (20): a second on-ray exception
-
-For **KEY**, `B=(21,4)`, `E=(19,4)`, and `L=(21,4)`.
-
-- At `E`: `n₀(E)=490`, `n₃(E)=640`; both have Möbius value **0**. Thus **`q=1`**.
-- At `B`: `n₀(B)=544`, `n₁(B)=88`; both have Möbius value **0**. Thus **`z=1`**.
-
-The new prediction is **`d₈=0`**. The selected **IS** begins at `B′=(18,7)`, giving `Δr=−3`, `Δc=+3`: a perfect 45° diagonal from `L`, and hence **`d₈=0`**.
-
-These two on-ray cases are particularly informative: Report 06 allowed both `0` and `1`, while the new beginning-based test specifically predicts `0`.
-
-## 5. Audit of the selected 33 transitions
-
-There are **34 selected ciphertext blocks** and therefore **33 recorded transitions**. All 33 agree with the proposed exact-deviation rule.
-
-Of these:
-
-- **24** have `q=0`; both the old and new rules already require `d₈=0`. These cases provide **no additional discrimination**.
-- **9** have `q=1`; these are the **informative cases**. Seven have `z=0` and observed `d₈=1`; two have `z=1` and observed `d₈=0`.
-
-| Transition | Current → next | `q` | `z` | Predicted `d₈` | Observed `d₈` | Match |
-| ---: | :--- | :---: | :---: | :---: | :---: | :---: |
-| 08→09 | IDEA → OF | 1 | 0 | **1** | 1 | Yes |
-| 09→10 | OF → THE | 1 | 0 | **1** | 1 | Yes |
-| 12→13 | IS → DEATH | 1 | 0 | **1** | 1 | Yes |
-| 13→14 | DEATH → SEE | 1 | 0 | **1** | 1 | Yes |
-| 14→15 | SEE → YOU | 1 | 1 | **0** | 0 | Yes |
-| 17→18 | THEN → THE | 1 | 0 | **1** | 1 | Yes |
-| 19→20 | KEY → IS | 1 | 1 | **0** | 0 | Yes |
-| 24→25 | THE → EAST | 1 | 0 | **1** | 1 | Yes |
-| 29→30 | MAY → BE | 1 | 0 | **1** | 1 | Yes |
