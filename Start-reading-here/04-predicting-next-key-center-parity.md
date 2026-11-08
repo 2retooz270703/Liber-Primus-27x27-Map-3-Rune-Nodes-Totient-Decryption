@@ -1,6 +1,6 @@
 # Predicting the Next Key’s Center Parity
 
-Two formulas use the current block’s coordinates to predict whether the next original key-node center lies in an **even or odd row and column**.
+Two formulas use the current block’s coordinates to predict whether the next original key-node center lies in an even or odd row and column.
 
 ## 1. Inputs
 
