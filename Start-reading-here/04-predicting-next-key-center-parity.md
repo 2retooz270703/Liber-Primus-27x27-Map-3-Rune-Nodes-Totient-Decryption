@@ -1,7 +1,5 @@
 # Predicting the Next Key’s Center Parity
 
-Two formulas use the current block’s coordinates to predict whether the next original key-node center lies in an **even or odd** row and column.
-
 ## 1. Inputs
 
 The matrix is **27 × 27**. Coordinates are `(row, column)`, starting from 1; rows increase downward and columns to the right.
