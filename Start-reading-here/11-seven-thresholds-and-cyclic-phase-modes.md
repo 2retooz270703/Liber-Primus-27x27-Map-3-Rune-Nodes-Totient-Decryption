@@ -47,8 +47,6 @@ Otherwise the transition satisfies this particular filter. A phase of `2` is **n
 | 27 | 2 | 29 | **Reject** | Skips 28 |
 | 27 | 1 | 28 | Keep | Lands on 28 |
 
-**Application order:** Predict the next phase using the active formula from Report 01; apply this filter to the resulting phase and accumulated sum. Do **not** change a predicted phase of `2` into `1` just to pass the filter. If the deterministic prediction skips a threshold, that proposed transition is incompatible with this additional rule.
-
 ## 3. Proposed rule B — The four modes repeat cyclically
 
 Report 01 specifies four consecutive intervals, each seven phase-units wide. The proposed extension treats those four intervals as **one repeating cycle of length 28**.
