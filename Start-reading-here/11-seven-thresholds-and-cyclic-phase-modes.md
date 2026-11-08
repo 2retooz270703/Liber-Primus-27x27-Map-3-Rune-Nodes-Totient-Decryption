@@ -126,5 +126,3 @@ def accepts_next_phase(current_cipher_cells, S_current, next_phase, mu):
 # Only after acceptance, update the accumulated sum once:
 # S_next = S_current + next_phase
 ```
-
-Use `S_next` to select the mode for the following outgoing transition. In particular, the forecast that reaches `S_next = 28` still uses the mode active before that transition; **Direct/+1** applies when forecasting from the block that has reached 28.
