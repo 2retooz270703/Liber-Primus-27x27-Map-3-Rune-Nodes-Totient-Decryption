@@ -1,6 +1,6 @@
 # Predicting the Next Ciphertext’s Column Parity
 
-This rule predicts whether the next block’s **leftmost cell** lies in an even or odd column. It uses only the current ciphertext and its original key node.
+This rule predicts whether the next block’s leftmost cell lies in an **even or odd column**. It uses only the current ciphertext and its original key node.
 
 ## 1. Inputs
 
