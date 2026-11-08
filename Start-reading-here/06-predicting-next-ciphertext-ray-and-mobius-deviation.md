@@ -102,21 +102,3 @@ def accepts_next_beginning_with_allowance(
 # )
 ```
 
-## 4. Example: OF → THE
-
-For OF, **L = (18,15)** and **E = (18,16)**. The following THE begins at **B′ = (19,17)**.
-
-At E:
-
-- `n₀(E) = 475 = 5² × 19`.
-- `n₃(E) = 315 = 3² × 5 × 7`.
-
-Both indices contain a squared prime factor, so both Möbius values are zero and **q = 1**.
-
-Measure from L:
-
-$$
-(\Delta r,\Delta c)=(1,2),\qquad d_8=\min(1,2,1)=1.
-$$
-
-The candidate passes because **1 ≤ 1**.
