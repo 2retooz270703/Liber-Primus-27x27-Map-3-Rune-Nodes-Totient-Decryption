@@ -1,7 +1,5 @@
 # The Leftmost Cell
 
-Two checks help evaluate a continuation: whether a block’s leftmost cell fits its mode, and whether the next block’s leftmost cell is read **first or last**.
-
 ## 1. Inputs
 
 The matrix is **27 × 27**. Coordinates are `(row, column)`, starting from 1; rows increase downward and columns to the right. After rotation, cells are numbered row by row from 1 to 729.
