@@ -1,7 +1,5 @@
 # Predicting the Next Key’s Mirror Status
 
-The distance between two cells in the current block predicts whether the next original key node **has matching outer runes**.
-
 ## 1. Define the node type
 
 Use the **original three-rune node** in the matrix, before transforming its center rune or rotating the derived key. Its cells lie on a horizontal, vertical, or 45° diagonal line at equal spacing.
