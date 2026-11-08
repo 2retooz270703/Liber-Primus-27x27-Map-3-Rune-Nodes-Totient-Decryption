@@ -101,6 +101,8 @@ Read these in order for the full model, or go directly to a specific constraint.
 | [11](./Start-reading-here/11-seven-thresholds-and-cyclic-phase-modes.md) | Seven-phase thresholds and cyclic modes | Tests exact hits at multiples of seven and proposes a repeating four-mode cycle every 28 phase units. |
 | [12](./Start-reading-here/12-predicting-exact-ray-deviation.md) | Deterministic ray deviation using Möbius zeroes | Introduces a new rule that determines the exact 0-or-1 offset from geometric rays using rotated cell indices, matching all 33 recorded transitions (33/33) and reducing possible branches. |
 | [13](./Start-reading-here/13-predicting-next-key-axis-group.md) | Axis-group prediction using Möbius signs | Introduces a new rule that determines the next key node's axis group using rotated cell indices and Möbius signs, matching all 33 recorded transitions (33/33) and narrowing the possible axes. |
+| [14](./Start-reading-here/14-predicting-exact-next-key-axis.md) | Exact next key-axis prediction using Möbius signs and GP weights | Extends Report 13 with a new diagonal bit derived from rotated cell indices, Möbius signs, and original rune prime weights, predicting the exact axis of the next key node instead of narrowing it to two possibilities. |
+| [15](./Start-reading-here/15-predicting-next-key-radius-parity.md) | Next key-node radius parity prediction using Möbius signs | Introduces a new XOR-based rule combining coordinate parity and Möbius sign tests to predict whether the next key node's radius is even or odd, further narrowing the possible source nodes. |
 
 ## Plaintext walkthroughs
 
