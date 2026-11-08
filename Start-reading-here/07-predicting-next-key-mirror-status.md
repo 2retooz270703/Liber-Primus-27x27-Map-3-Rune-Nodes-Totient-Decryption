@@ -1,6 +1,6 @@
 # Predicting the Next Key’s Mirror Status
 
-The distance between two cells in the current block predicts whether the next original key node has matching outer runes.
+The distance between two cells in the current block predicts whether the next original key node **has matching outer runes**.
 
 ## 1. Define the node type
 
