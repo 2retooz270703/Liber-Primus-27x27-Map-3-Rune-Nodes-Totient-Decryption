@@ -1,6 +1,6 @@
 # Predicting the Parity of the Next Key-Node Radius
 
-**Report 15. Status: a proposed geometric constraint with independently reproduced agreement on all 33 selected transitions.** It removes **48.70%** of the physical source-node candidates remaining after the selected earlier geometric filters. Its fit is retrospective; no new plaintext or independently established transition is demonstrated here.
+It removes **48.70%** of the physical source-node candidates.
 
 ## 1. What the rule predicts
 
@@ -45,7 +45,7 @@ $$
 
 These are the absolute indices of the same cell after clockwise rotations by 0°, 90°, 180° and 270°. They do not instruct the reader to select different rune cells. Keep index sums as **ordinary integers**; do not reduce them modulo 729 or 29.
 
-The Möbius function has values −1, 0 and +1. It vanishes when an integer has a squared prime factor; otherwise its sign records the parity of the number of distinct prime factors, with μ(1)=+1. See [NIST DLMF, Eq. 27.2.12](https://dlmf.nist.gov/27.2#E12).
+The Möbius function has values −1, 0 and +1. It vanishes when an integer has a squared prime factor; otherwise its sign records the parity of the number of distinct prime factors, with μ(1)=+1.
 
 ## 3. Proposed parity rule
 
@@ -235,23 +235,6 @@ $$
 
 Therefore `b=c=0` and the predicted parity is **odd**. The recorded THEN source has radius **1**.
 
-## 6. Agreement on the selected route
-
-The verification reconstructs **34 documented blocks and 33 transitions** from the supplied project snapshot. The next radii contain **21 odd and 12 even** outcomes. An always-odd baseline obtains **21/33 = 63.64%**; the proposed formula obtains **33/33**.
-
-The classes are **unequal**, rather than approximately 50:50. Nevertheless, the fit is not explained by a constant majority-class prediction.
-
-### Contribution of each term
-
-| Expression retained | Correct next-radius parities |
-| :--- | ---: |
-| a ⊕ b, omitting c | 21/33 |
-| a ⊕ c, omitting b | 19/33 |
-| b ⊕ c, omitting a | 18/33 |
-| **a ⊕ b ⊕ c** | **33/33** |
-
-All three terms contribute on this route. In particular, adding c to a ⊕ b corrects exactly 12 errors and spoils no correct cases. These are descriptions of the fitted expression; they are not independent validation of its discovery.
-
 ### All 33 transitions
 
 The values g and s are the integer arguments defined in Section 3. “Prediction” is the forecast for the **next** original source.
@@ -292,114 +275,7 @@ The values g and s are the integer arguments defined in Section 3. “Prediction
 | 32→33 | DEATH → OF | 1 | 1 | +1 | 466 | +1 | Even | 4 |
 | 33→34 | OF → YOU | 0 | 1 | +1 | 923 | +1 | Odd | 5 |
 
-## 7. How much it narrows the source search
-
-Enumerate every equally spaced physical three-cell source on the four undirected axes, with radius 1…13 and all cells inside the grid. This gives **14,976 source geometries**, counting a source and its reverse once.
-
-For each of the 33 transitions, hold the current recorded block fixed and apply:
-
-- the next source's exact axis from Report 14;
-- the next center's row and column parities from [Report 04](04-predicting-next-key-center-parity.md);
-- the next source's equal-outer-rune status from [Report 07](07-predicting-next-key-mirror-status.md).
-
-All three forecasts were recomputed from the current state and checked against the next recorded source before counting.
-
-| Filters applied | Physical source-node candidates, summed over 33 local searches |
-| :--- | ---: |
-| Reports 04, 07 and 14 | 11,896 |
-| Those filters plus radius parity | **6,103** |
-| Removed by the parity filter | **5,793 — 48.70%** |
-
-These are **sums of separate local source searches**, not complete-route counts, unique global nodes, source/transformation assignments, or distinct plaintext strings. A physical source can be counted at several transitions.
-
-The reduction varies from **28.57% to 61.68%** across the local searches. It demonstrates practical selectivity beyond the stated axis/center/mirror filters. It does not establish statistical independence from those rules or predict the survival rate of complete text routes.
-
-## 8. SOON: source dependence and the earlier filters
-
-The SOON document gives three original sources that all transform to the same numerical key, `L–R–EA`. The parity expression is sensitive to which physical source is supplied.
-
-However, **numerical-key equivalence is not the same as eligibility under the incoming geometric constraints**. From YOU (15), Reports 04 and 14 predict a **horizontal source centered on an odd row and odd column**. Report 07 predicts unequal outer rune symbols.
-
-| SOON source | Center | Physical axis | Outgoing radius-parity forecast | Incoming geometric checks |
-| :--- | :---: | :--- | :---: | :--- |
-| L–C–EA | (25,7) | Horizontal | Odd — agrees with THEN | Pass |
-| L–I–EA | (20,15) | Vertical | Even — disagrees with THEN | Fails axis and center-row parity |
-| L–EO–EA | (25,14) | Horizontal | Odd — agrees with THEN | Fails center-column parity |
-
-This sharpens the earlier warning about SOON. The formula is **not invariant under substituting every numerically equivalent source**. But the documented alternative that reverses its prediction is already excluded by the earlier incoming geometric rules. It is therefore not a counterexample within that constrained route.
-
-The correct scope is a rule about **selected physical source states**, not a rule determined by the numerical key alone. This check covers the three documented SOON sources; it does not prove invariance or uniqueness over every possible source assignment.
-
-## 9. How unusual is the formula?
-
-### A narrow, fully specified family
-
-A new exhaustive check held the checkerboard term a and the anchor pairs fixed, while allowing all rotations and Möbius sign tests:
-
-$$
-F=a\oplus
-t_g\!\left(\mu\!\left(\gcd(n_j(Z),n_k(L))\right)\right)
-\oplus
-t_s\!\left(\mu\!\left(n_\ell(B)+n_m(E)\right)\right)
-\oplus\varepsilon,
-$$
-
-with `j,k,ℓ,m∈{0,1,2,3}`, `ε∈{0,1}`, and each test independently chosen from **negative, positive, nonzero**.
-
-There are:
-
-$$
-4^4\cdot3^2\cdot2=\boxed{4,608}
-$$
-
-parameter combinations. They produced 4,608 distinct prediction vectors on this route. **Exactly one** fitted all 33 labels:
-
-| Parameter | Unique exact choice |
-| :--- | :--- |
-| GCD rotations (j,k) | (2,2): both 180° |
-| Sum rotations (ℓ,m) | (1,1): both 90° |
-| GCD Möbius test | Negative |
-| Sum Möbius test | Positive |
-| Constant ε | 0 |
-
-Thus the selected combination stands out among close rotation/sign substitutions. The family was constructed around the already found expression. Its uniqueness is **relative to this family**, not a corrected significance test for the original discovery or a proof that no simpler formula exists.
-
-### The original broad search
-
-The archived radius report states that a bank of **2,622 distinct binary predicates** produced **four exact three-term XOR representations**. If every unordered triple of distinct columns is allowed, the syntax alone permits:
-
-$$
-\binom{2622}{3}=3,000,887,740
-$$
-
-triplets. Their predictions are correlated, so this is not a count of independent statistical tests. It does show why discovering a short perfect fit after a broad search needs a control that repeats the same search.
-
-The four original expressions and the complete feature bank were not present in the retrieved verifier. Their reported count is retained as provenance, **not independently reproduced here**. The new 4,608-expression check does not recreate that broader search.
-
-### Conflicting archived shuffle claims
-
-| Available source | Reported result for at least four exact XOR triplets |
-| :--- | :--- |
-| Supplied screenshot | 0 of 30 shuffled label sets |
-| Saved `lp_new_radius_rules_report.md` | 2 of 30 shuffled label sets |
-
-The screenshot additionally reports at least one exact fit in **11 of 30** shuffles. The underlying permutation script and complete search specification were unavailable in the retrieved materials, so the discrepancy cannot be resolved from the surviving counts. **Neither 0/30 nor 2/30 is promoted to a verified significance result in this report. No million-shuffle result is claimed here.**
-
-### Why a frozen-formula probability is insufficient
-
-If all 33 labels were uniformly reassigned while preserving exactly 21 odd and 12 even outcomes, one *previously fixed* prediction vector would match the entire target with probability:
-
-$$
-\frac{1}{\binom{33}{12}}
-=\frac{1}{354,817,320}
-\approx2.82\times10^{-9}.
-$$
-
-This is a combinatorial result under that stated label model. It is **not the discovery's p-value**: the formula, feature choices and route were selected after examining the data. The route also contains overlapping cells and repeated sources rather than 33 independent random samples.
-
-A million shuffles of the frozen formula would therefore be expected to give very few exact matches even when a broad search can find other perfect formulas. A meaningful discovery control must repeat the allowed formula search, with its constants, complements, feature construction and source-selection choices specified in advance.
-
-## 10. A fixed forecast after YOU (34)
+## 6. A fixed forecast after YOU (34)
 
 The last documented block has:
 
@@ -427,104 +303,3 @@ Thus:
 $$
 \boxed{\text{If a next original source follows, its radius is predicted EVEN.}}
 $$
-
-The geometric rules already predict **NW–SE**, an **odd-row/even-column** center and **equal outer rune symbols**. Within that local physical-source pool:
-
-| Filters after YOU | Sources retained | Radii represented |
-| :--- | ---: | :--- |
-| Reports 04, 07 and 14 | 21 | — |
-| Plus this report's parity | **6** | **2, 4, 6** |
-
-The separate exploratory bound `R′≤φ(r_B)+|c_B−c_E|` from the earlier radius audit would give `R′≤4` and leave **5** of those physical sources, with radii **2 or 4**. That upper bound is a different fitted hypothesis; it is not derived from the parity equation and is not required by this report.
-
-The parity prediction itself does not require extending the phase schedule beyond `S=28`. Selecting a transformed key, signature or new plaintext may require additional assumptions. YOU may also be terminal; no successor is assumed to exist.
-
-## 11. Evidence assessment and practical use
-
-The strongest verified result is **a concise current-state formula that fits every selected next-radius parity and removes nearly half of the stated remaining source candidates**. It is also the only exact expression in the explicitly defined 4,608-variant family.
-
-The principal limitations concern discovery and validation:
-
-- The formula was found on the route it fits. The proposed plaintext and source assignments are not an independent validation set.
-- The broad search admits other exact expressions, according to the archived report; its shuffle evidence is inconsistent and was not reproducible from the retrieved script.
-- The equation uses coordinates only. It does not by itself authenticate the rune arrangement or the English reading; the relationship between those coordinates and rune-based source selection requires separate evidence.
-- No derivation from the decryption mechanism explains why these particular rotations, anchors and opposite Möbius signs should govern the next radius.
-
-For continued exploration, keep the formula fixed and record its forecast **before choosing the next source or reading**. Retain a comparison search without it so that a failing but otherwise supported continuation is visible. A genuinely new source established without using this parity condition would provide a meaningful test.
-
-**Assessment: a useful and locally distinctive research filter, with unestablished global uniqueness and unestablished evidence of intentional design.**
-
-## 12. Verification and source scope
-
-This report independently parsed the **attached** project archive:
-
-```text
-Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption-main(20261107-135538).zip
-SHA-256:
-d4d4ff04ec907c895643efbbae490d811bd1a4528db7d13acba4c4f08a9c7e4f
-```
-
-The parsed `0-2-live-map.html` has SHA-256:
-
-```text
-80c83b6a18a110150a47b6f010b85504bc2bee94d10a35b6ec340934d1b500d7
-```
-
-The attached snapshot predates the archive named in the saved radius audit. Nevertheless, recomputation reproduced **every one of its 33 radius/parity rows and every per-transition source count** used in Section 7.
-
-Parsing retained the documented corrections:
-
-1. Block 09 OF ciphertext is `(18,15)→(18,16)`; the extra shared-node annotation at `(19,16)` is not a ciphertext endpoint.
-2. Block 17 THEN reads `(25,25)→(25,26)→(25,27)`; the HTML lacks the usual order tags.
-3. SOON uses the original `L–C–EA` source centered at `(25,7)`, as in Report 14. The three documented source alternatives were checked separately.
-
-The audit checked all 729 cells and all four rotation-index maps, verified the Möbius implementation against an independent prime sieve for 1…1458, regenerated all 14,976 physical source geometries, and recomputed incoming Reports 04/07/14 on all 33 transitions.
-
-The documented route makes **105 ciphertext rune uses across 94 distinct matrix cells**. These counts describe the selected reconstruction, not independent evidence that the remaining matrix has been decrypted.
-
-The implementation in Section 4 was executed against all 33 transitions and both source orders. The 4,608-variant family was enumerated exhaustively as defined in Section 9.
-
-**Research and verification date:** 8 November 2026.
-
-## Appendix: complete current-input trace
-
-These are the inputs needed to reproduce every parity prediction without inferring coordinates from the proposed words. The comparison radii and integer arguments appear in Section 6. For a source center M and the canonical outer cell Z, the other outer cell is `2M−Z`.
-
-| Current block | M | Z | B | E | L |
-| :--- | :---: | :---: | :---: | :---: | :---: |
-| 01 — AS I GO, THE | (13,12) | (13,13) | (13,25) | (14,4) | (14,1) |
-| 02 — WEATHER | (14,5) | (14,6) | (14,14) | (14,18) | (14,14) |
-| 03 — TURNS | (14,23) | (24,23) | (14,19) | (10,19) | (14,19) |
-| 04 — COLD | (26,19) | (27,19) | (14,7) | (11,7) | (14,7) |
-| 05 — I MAY | (15,8) | (17,8) | (26,19) | (26,16) | (26,16) |
-| 06 — CRY | (25,16) | (26,16) | (19,16) | (17,16) | (19,16) |
-| 07 — NOW THE | (19,16) | (20,16) | (11,16) | (15,20) | (11,16) |
-| 08 — IDEA | (11,16) | (14,19) | (15,20) | (17,18) | (17,18) |
-| 09 — OF | (17,18) | (19,16) | (18,15) | (18,16) | (18,15) |
-| 10 — THE | (19,16) | (20,16) | (19,17) | (19,16) | (19,16) |
-| 11 — END | (23,12) | (27,8) | (19,23) | (21,23) | (21,23) |
-| 12 — IS | (21,22) | (21,27) | (21,9) | (21,10) | (21,9) |
-| 13 — DEATH | (23,12) | (27,8) | (26,3) | (26,1) | (26,1) |
-| 14 — SEE | (25,6) | (25,10) | (25,16) | (27,14) | (27,14) |
-| 15 — YOU | (16,16) | (27,16) | (27,18) | (25,16) | (25,16) |
-| 16 — SOON | (25,7) | (25,10) | (25,16) | (25,19) | (25,16) |
-| 17 — THEN | (26,22) | (27,22) | (25,25) | (25,27) | (25,25) |
-| 18 — THE | (20,17) | (23,17) | (22,21) | (21,20) | (21,20) |
-| 19 — KEY | (12,16) | (13,16) | (21,4) | (19,4) | (21,4) |
-| 20 — IS | (17,9) | (17,15) | (18,7) | (19,6) | (19,6) |
-| 21 — TO | (8,25) | (11,25) | (9,16) | (8,17) | (9,16) |
-| 22 — GO | (12,14) | (19,14) | (9,20) | (9,21) | (9,20) |
-| 23 — TO | (17,17) | (23,23) | (12,23) | (12,22) | (12,22) |
-| 24 — THE | (14,4) | (17,4) | (9,19) | (9,18) | (9,18) |
-| 25 — EAST | (13,17) | (20,24) | (14,24) | (16,22) | (16,22) |
-| 26 — OF | (19,26) | (20,25) | (6,12) | (7,13) | (6,12) |
-| 27 — THE | (24,1) | (25,1) | (20,12) | (20,13) | (20,12) |
-| 28 — MAPLIFE | (16,9) | (17,9) | (19,11) | (13,17) | (19,11) |
-| 29 — MAY | (14,13) | (17,13) | (18,11) | (18,13) | (18,11) |
-| 30 — BE | (20,9) | (26,3) | (25,12) | (26,11) | (26,11) |
-| 31 — THE | (10,20) | (14,16) | (11,11) | (11,12) | (11,11) |
-| 32 — DEATH | (14,7) | (14,13) | (10,10) | (12,8) | (12,8) |
-| 33 — OF | (9,17) | (9,21) | (12,18) | (12,17) | (12,17) |
-
-**Related reports:** [00 — Decryption method](00-decryption-method.md) · [04 — Next-key center parity](04-predicting-next-key-center-parity.md) · [07 — Next-key mirror status](07-predicting-next-key-mirror-status.md) · [14 — Exact next-key axis](14-predicting-exact-next-key-axis.md).
-
