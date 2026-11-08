@@ -75,23 +75,3 @@ def accepts_next_key_mirror_status(
 #     current_node, current_cipher_cells, next_node_runes
 # )
 ```
-
-## 4. Example: WEATHER → TURNS
-
-WEATHER’s original node is:
-
-**`X(14,4) – OE(14,5) – X(14,6)`**
-
-Its right outer cell is **Z = (14,6)**. The current ciphertext’s leftmost cell is **L = (14,14)**.
-
-$$
-d=\max(|14-14|,|6-14|)=\max(0,8)=8.
-$$
-
-$$
-8\bmod3=2.
-$$
-
-**Prediction: the next node is non-mirror.**
-
-TURNS uses **H–NG–C**. Its outer runes H and C differ, matching the prediction.
