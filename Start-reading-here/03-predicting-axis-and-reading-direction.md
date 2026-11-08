@@ -156,29 +156,3 @@ def accepts_next_axis_and_boundary(
 #     next_cipher_cells, mu, phi
 # )
 ```
-
-## 4. Example: after THEN
-
-THEN begins at **`L(25,25)`**, ends at **`W(25,27)`**, and uses the original center **`IA(26,22)`**, with rune index `h = 27`.
-
-### Axis
-
-$$
-A=57+697=754,\qquad G=\gcd(705,55)=5.
-$$
-
-$$
-q=\mu(754)+\mu(5)=-1-1=-2.
-$$
-
-The next axis is **diagonal**.
-
-### Reading direction
-
-$$
-\tau=[\mu(25)+\varphi(27)]\bmod2=(0+18)\bmod2=0.
-$$
-
-The next leftmost cell is read **last**. The predicted direction is therefore **up-left or down-left**.
-
-The candidate THE reads **`J(22,21) → W(21,20)`**, matching the up-left option.
