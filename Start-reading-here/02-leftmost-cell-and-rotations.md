@@ -119,27 +119,3 @@ def accepts_next_reading_boundary(
 # Also check the proposed next block in its own mode:
 # accepts_leftmost_mode(next_cipher_cells, next_reflected, mu)
 ```
-
-## 4. Example: after THEN
-
-THEN is in **Reflected/+1**. Its leftmost cell is **`L(25,25)`**, its endpoint is **`W(25,27)`**, and its original center rune is **`IA = 27`**.
-
-### Current leftmost cell
-
-$$
-n_1(25,25)=651=3\times7\times31,\qquad\mu(651)=-1.
-$$
-
-The value −1 fits the Reflected mode.
-
-### Next reading boundary
-
-For the endpoint, `n₃(25,27) = 25` and `μ(25) = 0`. The original center gives `φ(27) = 18`:
-
-$$
-\tau_{\mathrm{next}}=(0+18)\bmod2=0.
-$$
-
-**The next block’s leftmost cell should be its END.**
-
-The candidate THE reads **`J(22,21) → W(21,20)`**, ending at its leftmost cell as predicted. That cell’s 90° index is **520**, with `μ(520) = 0`, also allowed in the Reflected class.
