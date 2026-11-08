@@ -126,33 +126,3 @@ def accepts_next_column_parity(
 #     m, next_cipher_cells, mu
 # )
 ```
-
-## 4. Example: WEATHER → TURNS
-
-WEATHER begins at **B = (14,14)** and uses the original center **M = (14,5)** with phase **p = 2**. Its node is **X–OE–X**, so **m = 1**.
-
-First calculate s from all five ciphertext cells:
-
-| Current cell X | n₁(X) | μ(n₁(X)) |
-| :--- | ---: | ---: |
-| (14,14) | 365 | +1 |
-| (14,15) | 392 | 0 |
-| (14,16) | 419 | −1 |
-| (14,17) | 446 | +1 |
-| (14,18) | 473 | +1 |
-
-Thus **s = 1 + 0 − 1 + 1 + 1 = 2**.
-
-Phase 2 selects the center’s unrotated index:
-
-$$
-n_0(M)=356=2^2\times89,\qquad t=\mu(356)=0.
-$$
-
-The total is:
-
-$$
-r(B)+s+m+t=14+2+1+0=17.
-$$
-
-**Prediction: odd column.** TURNS has leftmost cell **(14,19)**, which matches.
