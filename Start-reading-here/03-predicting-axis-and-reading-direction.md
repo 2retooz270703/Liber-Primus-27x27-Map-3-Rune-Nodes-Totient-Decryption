@@ -1,7 +1,5 @@
 # Predicting the Reading Axis
 
-Use the current block’s first cell, last cell, and original key node to predict the **next block’s axis** and reading order.
-
 ## 1. Inputs
 
 The matrix is **27 × 27**. Coordinates are `(row, column)`, starting from 1; rows increase downward and columns to the right.
