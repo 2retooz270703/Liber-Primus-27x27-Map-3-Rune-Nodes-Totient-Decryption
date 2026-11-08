@@ -1,7 +1,5 @@
 # Predicting the Next Key
 
-This method predicts the **next key’s phase** and **signature** from the current ciphertext’s coordinates.
-
 ## 1. Inputs
 
 For the **derived key in unrotated order**, the signature contains one value `μ(φ(rune index))` per rune. Its phase is the sum of those values modulo 3, as defined in the [decryption method](00-decryption-method.md).
