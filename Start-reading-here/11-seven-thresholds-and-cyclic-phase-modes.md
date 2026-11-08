@@ -128,23 +128,3 @@ def accepts_next_phase(current_cipher_cells, S_current, next_phase, mu):
 ```
 
 Use `S_next` to select the mode for the following outgoing transition. In particular, the forecast that reaches `S_next = 28` still uses the mode active before that transition; **Direct/+1** applies when forecasting from the block that has reached 28.
-
-## 4. Conditional prediction after YOU
-
-At **YOU (34)**, `S = 28`; thus the proposed cycle selects **Direct/+1** for the transition to block 35. The three current ciphertext cells are `(6,11)`, `(6,12)`, `(6,13)`:
-
-| Cell | n | μ(n) |
-| :--- | ---: | ---: |
-| (6,11) | 146 | +1 |
-| (6,12) | 147 | 0 |
-| (6,13) | 148 | 0 |
-
-Therefore:
-
-$$
-p_{35}=(1+1+0+0)\bmod3=\boxed{2}.
-$$
-
-The outer signature state of YOU is `a = 0`. Its leftmost cell `(6,11)` gives the 90° clockwise index `m = 27(11−1)+28−6 = 292` and `μ(292)=0`, so the outer state remains `a_{35}=0`. Applying Report 01's signature table gives:
-
-**Conditional next-key prediction: `p₃₅ = 2`, signature `(0,−1,0)`, and `S₃₅ = 30`.**
