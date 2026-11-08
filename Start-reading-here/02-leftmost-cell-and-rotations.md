@@ -1,6 +1,6 @@
 # The Leftmost Cell
 
-Two checks help evaluate a continuation: whether a block’s leftmost cell fits its mode, and whether the next block’s leftmost cell is read first or last.
+Two checks help evaluate a continuation: whether a block’s **leftmost cell** fits its mode, and whether the next block’s leftmost cell is read **first or last**.
 
 ## 1. Inputs
 
