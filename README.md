@@ -149,10 +149,6 @@ The [Strongest Plaintext Evidence](./Start-reading-here/strongest-plaintext-evid
 
 A separate [red-heading analysis](./Start-reading-here/red-heading-SEQUENDI-RATIO.md) documents the literal output SECUENDI RATIO, interpreted as Latin SEQUENDI RATIO — “a method of following” — with the C/K rune read as Q.
 
-## Interactive Map
-
-I created this [interactive 27 × 27 map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/) to visualize the ciphertext blocks, key nodes, and proposed plaintext directly on the matrix.
-
 ## Conventions
 
 | Notation | Meaning |
@@ -165,6 +161,10 @@ I created this [interactive 27 × 27 map](https://2retooz270703.github.io/Liber-
 | `GP` | Gematria Primus prime values, distinct from rune indices: indices 0–28 correspond to primes 2–109. |
 | Absolute position | Row-major cell number, `n₀(r,c) = 27(r−1) + c`, from 1 to 729. |
 | Rotation | Clockwise matrix rotation used to calculate cell indices; distinct from cyclic rotation of a three-rune key. |
+
+## Interactive Map
+
+I created this [interactive 27 × 27 map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/) to visualize the ciphertext blocks, key nodes, and proposed plaintext directly on the matrix.
 
 ---
 
