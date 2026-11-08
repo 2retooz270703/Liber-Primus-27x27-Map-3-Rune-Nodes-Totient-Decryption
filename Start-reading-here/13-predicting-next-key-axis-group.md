@@ -1,6 +1,6 @@
 # Predicting the Next Key-Node Axis Group
 
-The proposed formula predicts one bit of the next **original key node's** undirected axis. It adds a restriction to the earlier filters and reduces the number of distinct decrypted rune strings.
+The proposed formula predicts one bit of the next **original key node's** undirected axis.
 
 ## 1. What is new?
 
