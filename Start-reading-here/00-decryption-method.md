@@ -1,7 +1,5 @@
 # Decryption Method
 
-This guide explains the proposed method for a selected ciphertext block and its three-rune key node.
-
 ## 1. Basics
 
 - **Coordinates:** `(row, column)`, starting from 1. Rows increase downward; columns increase to the right.
