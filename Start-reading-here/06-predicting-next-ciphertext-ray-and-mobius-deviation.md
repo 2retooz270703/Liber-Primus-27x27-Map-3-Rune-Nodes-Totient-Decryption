@@ -1,7 +1,5 @@
 # Filtering the Next Ciphertext’s Beginning
 
-The next beginning is checked against eight rays from the current block’s leftmost cell. A condition at the current endpoint determines whether a **one-cell offset** is allowed.
-
 ## 1. Inputs
 
 The matrix is **27 × 27**. Coordinates are `(row, column)`, starting from 1; rows increase downward and columns to the right.
