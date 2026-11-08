@@ -1,7 +1,5 @@
 # Predicting the Next Ciphertext’s Row Parity
 
-Two rules predict whether the next block’s endpoint and leftmost cell lie in **even or odd rows**.
-
 ## 1. Inputs
 
 The matrix is **27 × 27**. Coordinates are `(row, column)`, starting from 1; rows increase downward and columns to the right.
