@@ -1,6 +1,6 @@
 # Predicting the Next Key-Node Axis Group
 
-The proposed formula predicts one bit of the next **original key node's** undirected axis.
+The formula predicts one bit of the next **original key node's** undirected axis.
 
 ## 1. What is new?
 
