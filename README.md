@@ -146,6 +146,10 @@ Each walkthrough identifies the source node, key, phase, ciphertext cells, and r
 | 32 | [DEATH](./plaintext-i-found/32-death.md) |
 | 33 | [OF](./plaintext-i-found/33-of.md) |
 | 34 | [YOU](./plaintext-i-found/34-you.md) |
+| 35 | [GO](./plaintext-i-found/35-go.md) |
+| 36 | [DO](./plaintext-i-found/36-do.md) |
+| 37 | [AS](./plaintext-i-found/37-as.md) |
+| 38 | [I ASK](./plaintext-i-found/38-i-ask.md) |
 
 ## Structural evidence and the red heading
 
