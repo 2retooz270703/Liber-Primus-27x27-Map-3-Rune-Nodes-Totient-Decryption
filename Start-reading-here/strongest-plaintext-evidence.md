@@ -1,12 +1,10 @@
 # Strongest Plaintext Evidence
 
-The proposed reading of *Liber Primus* LP2, pages 0–2, contains more than a sequence of English words. When the recovered passages are grouped and measured by their **rune counts, rune-index sums, and assigned prime values**, several numerical relationships appear across different parts of the text. Some also point back to the geometry of the **27 × 27 matrix**, a passage from LP1, and the numerical matrices in LP1. The continuation through **`THE KEY IS TO GO`** produces an especially striking result: its cumulative index sum maps directly back to the original `J(13,12)` cell, while its cumulative prime-value sum identifies the total number of admissible mirrored nodes.
+The proposed reading of *Liber Primus* LP2, pages 0–2, yields numerical correspondences involving **rune counts, rune-index sums, and Gematria Primus values**. These link parts of the plaintext to the geometry of the **27 × 27 matrix**, to three-rune key sources, and to material from LP1.
 
-The extended reading now completes **THE KEY IS TO GO TO THE EAST OF THE MAP** and continues into **LIFE MAY BE THE DEATH OF YOU**. The additions below document the continuous MAP LIFE block, the geometry of the new sentence, and two exact equalities between ciphertext coordinates and consumed rune indices: **row total = key-index total = 202**, and **column total = ciphertext-index total = 180**.
+The route reaches **THE KEY IS TO GO TO THE EAST OF THE MAP** and **LIFE MAY BE THE DEATH OF YOU** before four more blocks extend it through **GO, DO AS I ASK**. That branch links **3301** to the complete plaintext index sum through prime ordinals and Euler's totient. Its last key source reflects the opening source across the main diagonal.
 
-This report gathers the strongest of those recorded correspondences and explains them one at a time. The aim is to make each calculation easy to follow: **what is being counted, where each number comes from, and what the result connects to**.
-
-These are observations on the **selected plaintext route**. They are presented separately from the predictive rules: an exact arithmetic equality can be reproduced directly, while the interpretation of that equality as an intentional clue requires additional testing.
+The numerical correspondences are observations on the **selected plaintext route**, evaluated separately from the decryption and transition rules.
 
 **Contents**
 
@@ -19,7 +17,7 @@ These are observations on the **selected plaintext route**. They are presented s
 7. [Two four-word passages](#two-four-word-passages)
 8. [The LP1 correspondence](#the-lp1-correspondence)
 9. [The LP1 matrix connection](#the-lp1-matrix-connection)
-10. [The full-route sum and 3301](#the-full-route-sum-and-3301)
+10. [The opening route and 3301](#the-opening-route-and-3301)
 11. [Cell values and prime-indexed positions](#cell-values-and-prime-indexed-positions)
 12. [The GO closure: a return to J](#the-go-closure-a-return-to-j)
 13. [Completing the map instruction](#completing-the-map-instruction)
@@ -29,8 +27,9 @@ These are observations on the **selected plaintext route**. They are presented s
 17. [Coordinates match ciphertext and key indices](#coordinates-match-ciphertext-and-key-indices)
 18. [The new branch, 729 cells, and the previous keys](#the-new-branch-729-cells-and-the-previous-keys)
 19. [How selective are the new relationships?](#how-selective-are-the-new-relationships)
-20. [The current reading boundary](#the-current-reading-boundary)
-21. [Reading the evidence together](#reading-the-evidence-together)
+20. [The GO, DO AS I ASK branch](#the-go-do-as-i-ask-branch)
+21. [The current reading boundary](#the-current-reading-boundary)
+22. [Reading the evidence together](#reading-the-evidence-together)
 
 ---
 
@@ -42,7 +41,7 @@ A **rune count** counts rune symbols, not English letters. A transliteration suc
 
 Matrix coordinates are written as **(row, column)**, beginning at 1. For example, `J(13,12)` is the rune `J` in row 13, column 12. The symbol $\varphi(n)$ denotes **Euler's totient function**.
 
-Block numbers follow the interactive map: **GO is block 22**, **MAP LIFE is block 28**, and the final **YOU is block 34**. An English word boundary need not be a decryption-block boundary. Unless a distinct-cell set is explicitly specified, each actual ciphertext or key use is counted again when repeated. The notation $p_n$ means the n-th prime, with $p_1=2$.
+Block numbers follow the recorded plaintext route. **GO (22)** is part of the map instruction. **GO (35)** begins the branch after **YOU (34)**. A single decryption block can contain several English words, as in **MAP LIFE (28)** and **I ASK (38)**. Unless a distinct-cell set is explicitly specified, each actual ciphertext or key use is counted again when repeated. The notation $p_n$ means the $n$th prime, with $p_1=2$.
 
 For how these rune values are used in the actual decryption, see **[Report 00 — The Decryption Method](./00-decryption-method.md)**. Here, the focus is the numerical structure of the resulting passages.
 
@@ -463,7 +462,7 @@ These are exact numerical correspondences within the selected reading; whether t
 
 ---
 
-## The Full-Route Sum and 3301
+## The Opening Route and 3301
 
 ### 61 ciphertext-cell uses across the first 17 stages
 
@@ -476,7 +475,7 @@ THE IDEA OF THE END IS DEATH.
 SEE YOU SOON, THEN.
 ```
 
-This block involves **61 uses of ciphertext cells**, covering **54 distinct coordinates**. The difference represents **7 additional uses of previously counted cells**. Each repeated use contributes again to the full-route total.
+This stretch involves **61 uses of ciphertext cells**, covering **54 distinct coordinates**. The difference represents **7 additional uses of previously counted cells**. Each repeated use contributes again to the total through THEN.
 
 Let $C_t$ be the ciphertext rune used at step $t$. Summing the **GP prime values of the ciphertext runes before key subtraction** gives:
 
@@ -492,7 +491,7 @@ $$
 
 This is a possible **authorial checksum**: the ciphertext total for the complete selected block combines with the matrix dimension to recover 3301.
 
-The calculation uses the **main `SOON` placement in row 25**. The recorded alternative in row 27 gives a full-route GP total of **3214**, for which $3214+27=3241$. Both placements decrypt to `SOON`, so this numerical condition distinguishes the two recorded routes even though their plaintext is the same.
+The calculation uses the **main `SOON` placement in row 25**. The recorded alternative in row 27 gives a GP total of **3214** through THEN, for which $3214+27=3241$. Both placements decrypt to `SOON`, so this numerical condition distinguishes the two recorded routes even though their plaintext is the same.
 
 ---
 
@@ -534,7 +533,7 @@ In other words, **the sum of the ciphertext rune values gives the prime's ordina
 | Ciphertext GP prime-value sum | **3274** | **2867** |
 | Absolute-position sum | 29848 | **26083** |
 
-The **3301 equality** counts every use, including repetitions. The **prime-index equality** counts each coordinate once, in the original matrix orientation. Both describe the selected `AS I GO`–`THEN` route, using two explicitly defined counting conventions.
+The **3301 equality through THEN** counts every use, including repetitions. The **prime-index equality** counts each coordinate once, in the original matrix orientation. Both describe the selected `AS I GO`–`THEN` route, using two explicitly defined counting conventions.
 
 The prime-index equality is a property of the **visited set of cells**; it does not determine their reading order or the keys. These are exact, reproducible numerical observations. Their interpretation as intentional clues should be tested against alternative routes using the same counting and numbering conventions.
 
@@ -901,7 +900,7 @@ The scope cannot silently be widened to include LIFE. For the complete nineteen-
 
 ### Prime-value totals of the consumed data
 
-The next comparisons use **GP prime values**, rather than the indices used in the coordinate equalities:
+The comparisons in this section use **GP prime values** for the LIFE sentence and its six-block suffix through **YOU (34)**.
 
 | Block after LIFE | Ciphertext GP | Consumed key GP | Plaintext GP |
 |---|---:|---:|---:|
@@ -1026,16 +1025,75 @@ The two kinds of evidence have different roles: the numerical equalities constra
 
 ---
 
+## The GO, DO AS I ASK Branch
+
+The continuation after **YOU (34)** consists of four decryption blocks. In **GO | DO | AS | I ASK**, each bar marks a block boundary. **I ASK** is one four-rune block with a continuous key stream across its two words. The branch adds **five English words and ten runes**.
+
+| Block | Plaintext runes | Rune-index sum | GP sum |
+| --- | --- | ---: | ---: |
+| 35 · GO | G · O | 6 + 3 = 9 | 17 + 7 = 24 |
+| 36 · DO | D · O | 23 + 3 = 26 | 89 + 7 = 96 |
+| 37 · AS | A · S/Z | 24 + 15 = 39 | 97 + 53 = 150 |
+| 38 · I ASK | I · A · S/Z · C/K | 10 + 24 + 15 + 5 = 54 | 31 + 97 + 53 + 13 = 194 |
+| **Branch total** | **10 runes** | **128** | **464** |
+
+### Source positions and 3301
+
+In the unrotated matrix, a cell's 1-based row-major position is $n_0(r,c)=27(r-1)+c$. Count each of the three physical cells in each original source node once, including cells whose components are unused in the two-rune blocks.
+
+| Block | Original source cells in reading order | $n_0$ positions | Position sum |
+| --- | --- | --- | ---: |
+| 35 · GO | Y(3,16) · G(7,20) · Y(11,24) | 70, 182, 294 | 546 |
+| 36 · DO | C/K(13,21) · AE(13,11) · AE(13,1) | 345, 335, 325 | 1005 |
+| 37 · AS | J(4,14) · B(6,16) · X(8,18) | 95, 151, 207 | 453 |
+| 38 · I ASK | T(11,13) · M(12,13) · EA(13,13) | 283, 310, 337 | 930 |
+| **Total** | **12 source cells** | | **2934** |
+
+The three-rune key for **I ASK** is **T–M–EA**, with GP **59 + 71 + 109 = 239**. The decryption consumes **T–M–EA–T** across the four ciphertext cells, giving a consumed-stream GP of **298**. The correspondence uses the three-rune key counted once. Adding its GP and the branch's plaintext index sum to the source-position total gives
+
+$$
+\boxed{2934+239+128=3301.}
+$$
+
+### Prime ordinals and the complete reading
+
+The branch's plaintext GP is **464**, and **3301 is the 464th prime**.
+
+$$
+p_{464}=3301.
+$$
+
+The plaintext index sum through **YOU (34)** is **1295**. The branch adds **128**, bringing the total from **AS I GO** through **I ASK** to **1423**. Since $464=2^4\times29$, Euler's totient gives
+
+$$
+\varphi(464)=2^3(29-1)=224.
+$$
+
+The **224th prime** is the complete candidate reading's index sum.
+
+$$
+\boxed{p_{\varphi(464)}=p_{224}=1423=1295+128.}
+$$
+
+### Reflection back to the opening source
+
+The final source **T–M–EA** is the ordered reflection of the opening **AE–J–EA** source across the main diagonal. The map $(r,c)\mapsto(c,r)$ takes **AE(13,11)** to **T(11,13)** and the opening center **J(13,12)** to the final center **M(12,13)**. It fixes **EA(13,13)**, a cell shared by both sources. The original source center of **DO (36)** is also the opening **AE(13,11)** cell.
+
+The sum to 3301 depends on the selected source positions. The prime and totient identities both use the branch's GP of 464. These relationships were identified after the branch was found. The block walkthroughs record the source order, modular subtraction, and incoming transition checks. [GO (35)](../plaintext-i-found/35-go.md) · [DO (36)](../plaintext-i-found/36-do.md) · [AS (37)](../plaintext-i-found/37-as.md) · [I ASK (38)](../plaintext-i-found/38-i-ask.md)
+
+---
+
 ## The Current Reading Boundary
 
-The accumulated plaintext totals now distinguish four relevant boundaries:
+The accumulated plaintext totals distinguish the following boundaries along the selected route.
 
-| Boundary on the selected route | Map block | English words | Runes | Plaintext-index sum | Plaintext GP |
+| Boundary on the selected route | Decryption block | English words | Runes | Plaintext-index sum | Plaintext GP |
 |---|---|---:|---:|---:|---:|
-| Through GO | 22 | 27 | 72 | 860 | 3089 |
+| Through the GO in the map instruction | 22 | 27 | 72 | 860 | 3089 |
 | Through MAP | Inside block 28 | 33 | 86 | 1037 | 3740 |
 | Through MAP LIFE | Complete block 28 | 34 | 90 | 1085 | 3913 |
-| **Through final YOU** | **34** | **40** | **105** | **1295** | **4709** |
+| Through YOU | 34 | 40 | 105 | 1295 | 4709 |
+| **Through I ASK** | **38** | **45** | **115** | **1423** | **5173** |
 
 The selected reading is therefore:
 
@@ -1048,9 +1106,10 @@ SEE YOU SOON, THEN.
 
 THE KEY IS TO GO TO THE EAST OF THE MAP.
 LIFE MAY BE THE DEATH OF YOU.
+GO, DO AS I ASK.
 ```
 
-The incoming transition to YOU is evaluated at **S = 27** and produces **S = 28**. The documented phase-mode schedule supplies no next outgoing mode at that value. The numerical relationships do not fill that missing definition, prove that YOU is the intended final word, or establish that pages 0–2 have been completely decrypted.
+The incoming transition to YOU is evaluated at **S = 27** and produces **S = 28**. The proposed cyclic phase schedule selects **Direct/+1** for the outgoing transition at that point. The four added blocks have phases **2, 0, 2, 0**, bringing the accumulated state to **S = 32** at I ASK. Block 38 is the endpoint of the recorded candidate route. [Report 11 — Cyclic phase modes](./11-seven-thresholds-and-cyclic-phase-modes.md)
 
 ---
 
@@ -1059,7 +1118,7 @@ The incoming transition to YOU is evaluated at **S = 27** and produces **S = 28*
 
 The patterns in this report operate at several levels. Some arise from the **geometry of the opening matrix**, others from the **structure of the proposed English passages**, and others from **rune-index or prime-value arithmetic**. The LP1 comparisons add possible connections across the two parts of *Liber Primus*, through both a text passage and the numerical matrices. The matrix connection links the central FORM value of 91 to 934, then to the same 233 / 232 passage totals through prime-number indexing and the totient function. Further center-value correspondences link 809 to the 140-rune-index total of `SEE YOU SOON, THEN`, and $\varphi(91)=\varphi(111)=72$ to the derived key for `THEN`.
 
-The full-route ciphertext checks add two further correspondences: **$3274+27=3301$** when every use is counted, and **$p_{2867}=26083$** when the 54 distinct cells are counted once. The first relates the route's ciphertext content to the matrix dimension; the second relates cell content to absolute position.
+The ciphertext through THEN gives **$3274+27=3301$** when every use is counted and **$p_{2867}=26083$** when the 54 distinct cells are counted once. The first relates the opening ciphertext content to the matrix dimension. The second relates cell content to absolute position.
 
 The continuation to **`THE KEY IS TO GO`** adds a particularly coherent endpoint. At **map block 22**, the reading reaches **27 words**; its cumulative rune-index sum is **860**, and **$\varphi(860)=336$** leads precisely to the opening **`J(13,12)`** cell. Independently, its cumulative GP value is **3089**, the **442nd prime**, matching the reported **442 admissible mirrored three-rune nodes** after the F-branch exclusions.
 
@@ -1068,6 +1127,8 @@ The complete map instruction adds a **530** reference to its first key center, a
 
 The new seven-word LIFE sentence adds an ordered **MAY ↔ YOU reflection**, with OF on its axis, and the recurring value **48** in LIFE, the suffix totient, and the last ciphertext. The final H–R–H source reuses an earlier IS node and supplies index sums matching LIFE's first and last runes.
 
-The most direct new location/content comparison is the pair **Σ rows = Σ consumed key indices = 202** and **Σ columns = Σ ciphertext indices = 180**, over the fifteen runes after LIFE. GP calculations add the two references to **729**, the equality **969 = 19 × 51 = C(19,3)**, and the bridge **φ(969) = 576** to the keys actually consumed by TO THE EAST OF THE MAP.
+Over the fifteen runes after LIFE, **Σ rows = Σ consumed key indices = 202** and **Σ columns = Σ ciphertext indices = 180**. GP calculations add the two references to **729**, the equality **969 = 19 × 51 = C(19,3)**, and the bridge **φ(969) = 576** to the keys actually consumed by TO THE EAST OF THE MAP.
+
+The two sums that yield **3301** use different parts of the route. The earlier sum uses ciphertext through THEN and the matrix width. The later sum uses the four blocks after YOU, where the totient of the prime ordinal of 3301 links the branch's GP to the index sum through I ASK.
 
 These observations use explicitly stated boundaries and counting conventions. Some are algebraically related; several reuse the same fixed words, source nodes, or totals. Their recorded selectivity supports further investigation of this route, while the post-selection search limits prevent interpreting the catalogue frequencies as probabilities of authenticity. A stronger test would apply the same criteria, fixed in advance, to material not selected for these numerical properties.
