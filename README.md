@@ -1,7 +1,5 @@
 # Plaintext
 
-<sub>Plaintext extracted using my decryption approach.</sub>  
-
 ## Pages 0-2
 
 **Red runes: Secuendi Ratio ("The Way to Proceed")**
@@ -17,13 +15,15 @@ Life may be the death of you.
 Go, do as I ask.
 
 ---
----
+
+<sub>Plaintext extracted using my decryption approach.</sub>  
 
 <sub>The project has been completed.</sub>
 <sub>The final transition is 37, and the final block, block 38, is an exact reflection of the initial block, block 0, across the main diagonal: (13,11), (13,12), (13,13) → (11,13), (12,13), (13,13).</sub>
 
 <sub>Both nodes share the same fixed cell, (13,13). This is the end.</sub>
 
+---
 ---
 
 ## Welcome
