@@ -1,9 +1,5 @@
 # 15 — YOU
 
-This example continues from **SEE**. Its final ciphertext rune leads rightward to a vertical `P–R–P` mirror. That mirror produces a new key, and one further horizontal move reaches three ciphertext runes that decrypt as **YOU**.
-
-**Notation:** Coordinates are **1-based** and written `(row, column)`. Rune numbers are indices in the **29-rune alphabet**. `φ` denotes Euler's totient function; `μ` denotes the Möbius function; `φ²(n)` means `φ(φ(n))`.
-
 ## 1. Find the connected three-rune node
 
 The preceding **SEE** ciphertext ends at **`B (27,14)`**. Its key, `EA–I–EA`, has **rotation phase 0** and Möbius signature `(0, 0, 0)`. Under the project's direction convention, phase 0 at this endpoint gives:
