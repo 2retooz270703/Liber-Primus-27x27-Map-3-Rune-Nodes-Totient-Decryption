@@ -1,9 +1,5 @@
 # 08 — IDEA
 
-This example shows how a diagonal three-rune arrangement produces the key for **IDEA**, how the reading continues from the final ciphertext cell of **NOW THE**, and how the new endpoint coincides with the center of another diagonal mirror.
-
-**Notation:** Coordinates are **1-based** and written `(row, column)`. Rune numbers are indices in the **29-rune alphabet**. `φ` is Euler's totient function; `μ` is the Möbius function.
-
 ## 1. Find the three-rune node
 
 The previous **NOW THE** ciphertext begins at **`TH (11,16)`** and passes through **`A (14,19)`**. These cells belong to a diagonal arrangement with equal outer runes:
@@ -88,8 +84,6 @@ Apply the final key `U–A–A` in that order. Subtract each **key rune index** 
 
 **Proposed reading: IDEA**
 
-`EA` is **one rune** in the 29-rune alphabet, represented by two Latin letters. Thus, three decrypted runes render as the four-letter English word `IDEA`.
-
 ## 5. A geometric connection at the ciphertext endpoint
 
 The final ciphertext cell, **`D (17,18)`**, is the center of a diagonal mirror with matching outer runes:
@@ -105,5 +99,3 @@ The final ciphertext cell, **`D (17,18)`**, is the center of a diagonal mirror w
 Each outer `J` is **2 diagonal grid steps** from the center `D`. The first endpoint, **`J (15,20)`**, is also the starting ciphertext cell for `IDEA`.
 
 The derived key's Möbius signature is **`(0, +1, 0)`**, classified as **CENTER** in the project's geometric interpretation. The ciphertext ends at `D (17,18)`, precisely the **center** of the `J–D–J` arrangement.
-
-This is an **additional geometric correspondence**, not a mathematical operation required to decrypt the three ciphertext runes. The CENTER label describes the project's interpretation of the Möbius signature; it does not independently prove the plaintext or reading path.
