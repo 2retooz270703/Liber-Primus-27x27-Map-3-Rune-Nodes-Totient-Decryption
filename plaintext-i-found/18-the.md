@@ -8,13 +8,11 @@ The selected original key structure is a **vertical mirror** centered on `M (20,
 
 | Mirror | First outer | Center | Second outer | Radius |
 |:---|:---:|:---:|:---:|:---:|
-| `N–M–N` | N (17,17) | **M (20,17)** | N (23,17) | **3 rows** |
+| `N–M–N` | N (17,17) | M (20,17) | N (23,17) | **3 rows** |
 
 The midpoint verifies the mirror:
 
 `(17 + 23) / 2 = 20`, and all three cells are in **column 17**.
-
-This mirror is **the selected candidate node**. The rules below test its key signature and location; they do not, on their own, force the reader to select this particular mirror from every possible node in the matrix.
 
 ## 2. Derive and align the decryption key
 
@@ -65,7 +63,7 @@ The selected next ciphertext starts at **`J (22,21)`** and proceeds **diagonally
 | Next endpoint | **W** | **(21,20)** |
 | Next leftmost cell | **W** | **(21,20)** |
 
-Its endpoint and leftmost cell coincide because the second cell has the smaller column. Thus the proposed reading is **DIAGONAL**, with the **leftmost cell at the END**, as predicted by Reports 02–03. Those rules do not independently select the exact two cells or determine the up-left slope without a candidate placement.
+Its endpoint and leftmost cell coincide because the second cell has the smaller column. Thus the proposed reading is **DIAGONAL**, with the **leftmost cell at the END**, as predicted by Reports 02–03.
 
 ### Check the Möbius-gated incoming ray
 
