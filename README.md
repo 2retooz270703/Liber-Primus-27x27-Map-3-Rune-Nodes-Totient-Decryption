@@ -181,7 +181,7 @@ I created this [interactive 27 × 27 map](https://2retooz270703.github.io/Liber-
 
 ---
 
-## Let me explain my reasoning
+## Let me explain
 
 I want to clarify a little what exactly I’m working on and what I’m doing, so that
 my train of thought is clearer.
