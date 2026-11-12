@@ -145,4 +145,4 @@ The rotated **THEN** key has the same rune-index sum:
 
 `E–IA–IA = 18 + 27 + 27 = 72`
 
-Thus, **`φ(111) = sum(E–IA–IA) = 72`**. The equality is exact, but it is a **numerical observation**, not an independent proof of the ciphertext route or its uniqueness.
+Thus, **`φ(111) = sum(E–IA–IA) = 72`**.
