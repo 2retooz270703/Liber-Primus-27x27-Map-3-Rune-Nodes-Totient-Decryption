@@ -83,19 +83,3 @@ Apply the final key `U–A–A` in that order. Subtract each **key rune index** 
 **Decrypted rune sequence:** `I · D · EA`
 
 **Proposed reading: IDEA**
-
-## 5. A geometric connection at the ciphertext endpoint
-
-The final ciphertext cell, **`D (17,18)`**, is the center of a diagonal mirror with matching outer runes:
-
-`J (15,20) → D (17,18) → J (19,16)`
-
-| Row | Column 16 | Column 18 | Column 20 |
-|:---:|:---:|:---:|:---:|
-| 15 | | | **J** |
-| **17** | | **D** | |
-| 19 | **J** | | |
-
-Each outer `J` is **2 diagonal grid steps** from the center `D`. The first endpoint, **`J (15,20)`**, is also the starting ciphertext cell for `IDEA`.
-
-The derived key's Möbius signature is **`(0, +1, 0)`**, classified as **CENTER** in the project's geometric interpretation. The ciphertext ends at `D (17,18)`, precisely the **center** of the `J–D–J` arrangement.
