@@ -1,9 +1,5 @@
 # 13 — DEATH
 
-This example continues from **IS**. Its last ciphertext rune is the center of a diagonal `E–D–E` mirror. A sequence of connected three-rune nodes leads to a new key and three ciphertext runes that decrypt as **DEATH**.
-
-**Notation:** Coordinates are **1-based** and written `(row, column)`. Rune numbers are indices in the **29-rune alphabet**. `φ` denotes Euler's totient function; `μ` denotes the Möbius function. A diagonal distance counts **grid steps** along the diagonal.
-
 ## 1. Find the connected three-rune nodes
 
 The preceding **IS** ciphertext ends at **`D (21,10)`**, the center of the diagonal `E–D–E` mirror. From that center, move **2 cells down-right**, perpendicular to the mirror, to reach **`B (23,12)`**:
@@ -14,10 +10,10 @@ The following nodes connect this position to the next ciphertext start:
 
 | Mirror | First endpoint | Center | Second endpoint | Radius |
 |:---|:---:|:---:|:---:|:---:|
-| `E–D–E` | E (19,12) | **D (21,10)** | E (23,8) | 2 diagonal steps |
-| `J–B–J` | J (19,16) | **B (23,12)** | **J (27,8)** | 4 diagonal steps |
-| `J–C–J` | J (25,6) | **C (26,7)** | **J (27,8)** | 1 diagonal step |
-| `C–OE–C` | **C (26,3)** | OE (26,5) | **C (26,7)** | 2 horizontal cells |
+| `E–D–E` | E (19,12) | D (21,10) | E (23,8) | 2 diagonal steps |
+| `J–B–J` | J (19,16) | B (23,12) | J (27,8) | 4 diagonal steps |
+| `J–C–J` | J (25,6) | C (26,7) | J (27,8) | 1 diagonal step |
+| `C–OE–C` | C (26,3) | OE (26,5) | C (26,7) | 2 horizontal cells |
 
 The route uses the node positions as follows:
 
@@ -78,8 +74,6 @@ The **recorded ciphertext start** is **`C (26,3)`**. Read **three cells leftward
 
 `C (26,3) → I (26,2) → E (26,1)`
 
-The node arrangement provides a traceable path between the two words. Selecting this route, the leftward reading direction, and the three-rune length are part of the proposed construction; the key calculation alone does **not** establish that this is the only possible path.
-
 ## 4. Read and decrypt the ciphertext
 
 Subtract each key rune index from the corresponding ciphertext rune index, **modulo 29**:
@@ -97,10 +91,6 @@ Subtract each key rune index from the corresponding ciphertext rune index, **mod
 **Decrypted rune sequence:** `D · EA · TH`
 
 **Proposed reading: DEATH**
-
-`EA` and `TH` are each **one rune**, despite representing two Latin letters. Therefore, **three decrypted runes** spell the five-letter word **DEATH**.
-
-All three modular subtractions reproduce this reading from the stated ciphertext cells and rotated key.
 
 ## 5. Numerical connections
 
@@ -137,4 +127,4 @@ The **16th prime** is **53**. Independently, the rune-index sum of **DEATH** is:
 
 `D (23) + EA (28) + TH (2) = 53`
 
-Thus **17 → 16 → 53** connects the key's center, a prime's position, and the decrypted word's rune-index total. This correspondence is exact arithmetically, but it does not independently prove that the selected route or plaintext is unique.
+Thus **17 → 16 → 53** connects the key's center, a prime's position, and the decrypted word's rune-index total.
