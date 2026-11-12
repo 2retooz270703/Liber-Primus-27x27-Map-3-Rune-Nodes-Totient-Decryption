@@ -139,13 +139,3 @@ For the center of the selected `N–M–N` key node:
 Thus:
 
 **`GP(THEN) + GP(THE KEY IS TO GO) = n₀(M (20,17)) = 530`**
-
-The equality is exact. But the total **429 includes the proposed future words `KEY IS TO GO`**, which are **not decrypted in this document**. It is therefore a **post-selection numerical connection**, not an independent derivation of the key center or proof of the subsequent plaintext.
-
-## 7. Status of this continuation
-
-This is the **`N–M–N` realization of THE**, using `J (22,21) → W (21,20)`. It is distinct from the previously explored **`E–O–E` realization** at `(24,27) → (23,26)`; both produce `THE` with different keys and positions. The comparative reports in the supplied repository discuss that earlier realization, so their example coordinates should not be mistaken for the current branch.
-
-**What is established for this candidate:** the mirror geometry, key derivation, modular plaintext and all six listed rule checks are internally consistent with the selected 27 × 27 matrix route.
-
-**What remains open:** whether these constraints choose the intended next block rather than one among several valid candidates, and whether **KEY IS TO GO** can be produced by subsequent equally constrained steps **without adding new discretionary rules**.
