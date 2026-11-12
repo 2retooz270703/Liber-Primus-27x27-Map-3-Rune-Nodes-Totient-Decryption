@@ -2,16 +2,18 @@
 
 ## Pages 0-2
 
-**Red runes: Secuendi Ratio ("The Way to Proceed")**
 
-As I go, the weather turns cold.  
+> [!IMPORTANT]
+> **Red runes: Secuendi Ratio ("The Way to Proceed")**
+>
+> As I go, the weather turns cold.  
 I may cry now.  
-
-The idea of the end is death.  
+>
+> The idea of the end is death.  
 See you soon, then.  
 The key is to go to the east of the map.  
-
-Life may be the death of you.  
+>
+> Life may be the death of you.  
 Go, do as I ask.
 
 ---
