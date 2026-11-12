@@ -73,7 +73,7 @@ Read the cells between these positions **from left to right**:
 
 `L (25,25) → T (25,26) → W (25,27)`
 
-This gives the ciphertext **`L–T–W`**. The direction and both distances are consistent with the stated rules. The choice of this mirror and segment is part of the proposed route; the numerical calculations alone do **not** prove that the continuation is unique.
+This gives the ciphertext **`L–T–W`**.
 
 ## 4. Read and decrypt the ciphertext
 
@@ -93,8 +93,6 @@ Subtract each key rune index from the corresponding ciphertext rune index, **mod
 
 **Proposed reading: THEN**
 
-`TH` is **one rune** in this alphabet. Thus, three decrypted runes spell the four-letter English word **THEN**. All three modular subtractions are exact for the selected ciphertext and key.
-
 ## 5. Geometric and numerical connections
 
 ### The final rune links both SOON routes
@@ -103,7 +101,7 @@ The last ciphertext rune of **THEN**, **`W (25,27)`**, and the last rune of the 
 
 | Mirror | First endpoint | Center | Second endpoint | Radius |
 |:---|:---:|:---:|:---:|:---:|
-| `W–NG–W` | **W (25,27)** | NG (26,27) | **W (27,27)** | 1 vertical cell |
+| `W–NG–W` | W (25,27) | NG (26,27) | W (27,27) | 1 vertical cell |
 
 This is an exact shared geometric feature of the two routes.
 
@@ -127,17 +125,6 @@ The resulting key is **`W–EO–W`**. Its totient and Möbius signatures are:
 `Rotation phase = (1 + 0 + 1) mod 3 = 2`
 
 This matches the **phase 2** used when moving rightward from the end of the main **SOON** ciphertext.
-
-### The same direction and coordinate signature reappear
-
-At **`W (25,27)`**, the phase-2 coordinate transformation gives:
-
-- `φ²(25) = 8`.
-- `φ²(27) = φ(18) = 6`.
-
-Therefore, **`T₂ = (8, 6)`** and **`V₂ = (0, +1) → RIGHT`** under the project's convention.
-
-These are exactly the same coordinate-derived values and direction found at **`H (25,19)`**, the main **SOON** endpoint. This is an additional correspondence between the two locations, not by itself a guarantee of the next reading.
 
 ### The preceding plaintext totals match the THEN key
 
