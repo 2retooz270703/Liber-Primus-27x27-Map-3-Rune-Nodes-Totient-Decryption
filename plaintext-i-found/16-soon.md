@@ -1,11 +1,5 @@
 # 16 — SOON
 
-This example continues from **YOU**. Two different four-rune ciphertexts decrypt as **SOON**. Both routes begin at **`X (25,16)`**, the final ciphertext cell of **YOU**, but they use different keys and different reading paths.
-
-The **main route** derives the same key from three separate mirrors in row 25. An **alternative route**, preserved below, follows connected mirrors to a second ciphertext and key.
-
-**Notation:** Coordinates are **1-based** and written `(row, column)`. Rune numbers are indices in the **29-rune alphabet**. `φ` denotes Euler's totient function; `μ` denotes the Möbius function. `GP` means **Gematria Primus**, which uses prime values rather than rune indices.
-
 ## 1. Find the connected three-rune nodes
 
 The **YOU** ciphertext ends at **`X (25,16)`**. Its key, `TH–P–P`, has **rotation phase 1**. Under the project's direction convention, this gives:
