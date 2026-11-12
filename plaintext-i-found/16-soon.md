@@ -2,11 +2,7 @@
 
 ## 1. Find the connected three-rune nodes
 
-The **YOU** ciphertext ends at **`X (25,16)`**. Its key, `TH–P–P`, has **rotation phase 1**. Under the project's direction convention, this gives:
-
-`V₁ = (0, 0)`
-
-This is a **zero vector**: it does not determine a reading direction. The proposed main route therefore uses additional structure in the matrix.
+The **YOU** ciphertext ends at **`X (25,16)`**.
 
 Apply `φ` to the endpoint's row and column numbers:
 
@@ -19,9 +15,9 @@ More importantly for this decryption, each `EA` is an outer endpoint of a **diff
 
 | Mirror | First endpoint | Center | Second endpoint | Radius |
 |:---|:---:|:---:|:---:|:---:|
-| `L–C–EA` | L (25,4) | **C (25,7)** | EA (25,10) | 3 horizontal cells |
-| `L–I–EA` | L (15,15) | **I (20,15)** | EA (25,15) | 5 vertical cells |
-| `L–EO–EA` | L (25,8) | **EO (25,14)** | EA (25,20) | 6 horizontal cells |
+| `L–C–EA` | L (25,4) | C (25,7) | EA (25,10) | 3 horizontal cells |
+| `L–I–EA` | L (15,15) | I (20,15) | EA (25,15) | 5 vertical cells |
+| `L–EO–EA` | L (25,8) | EO (25,14) | EA (25,20) | 6 horizontal cells |
 
 The three mirrors have **different positions and radii**, but their center runes produce the **same value** under `φ`. This gives a common key without requiring the three centers to lie in one node.
 
