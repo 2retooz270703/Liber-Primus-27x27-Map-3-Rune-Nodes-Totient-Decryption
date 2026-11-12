@@ -1,14 +1,6 @@
 # 18 — THE
 
-*Candidate continuation after THEN: **THE KEY IS TO GO …***
-
-The first **17 plaintext blocks**, from **AS I GO THE** through **THEN**, form the recorded reconstruction used to develop the method. **DEATH is block 13**, and **THEN is block 17**. Those 17 blocks provide **16 observed transitions** on which Reports 01–06 were fitted and checked.
-
-**This document begins the next stage:** block 18 is a **candidate**, not part of that original 17-block fitting sequence. Its proposed ciphertext is `J–W`, decrypted as **THE** using a key derived from a vertical `N–M–N` mirror.
-
-The distinction matters. The basic decryption operations described in Report 00—rune indices, center-to-totient key derivation, Möbius rotation, and subtraction modulo 29—are still used here. But the earlier **coordinate selector** and the **CENTER/OUTER endpoint heuristic** from Report 00 are **not imposed as mandatory rules beyond THEN**. In the selected continuation, the relevant predictive checks are those stated in **Reports 01–06**. Passing them establishes consistency with that rule set, not an authenticated or unique plaintext.
-
-**Notation:** Coordinates are 1-based `(row, column)` in the 27 × 27 matrix. Rune indices belong to the 29-rune alphabet. `φ` is Euler's totient function; `μ` is the Möbius function; `n₀(r,c) = 27(r − 1) + c` is the row-major cell index. **Gematria Primus (GP)** uses prime values and is distinct from rune indices.
+The first **17 plaintext blocks**, from **AS I GO THE** through **THEN**, form the recorded reconstruction used to develop the method. **DEATH is block 13**, and **THEN is block 17**. Those 17 blocks provide **16 observed transitions**.
 
 ## 1. Locate the key node
 
