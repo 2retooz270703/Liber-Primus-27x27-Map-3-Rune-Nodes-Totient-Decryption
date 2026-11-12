@@ -16,13 +16,10 @@ The key is to go to the east of the map.
 > Life may be the death of you.  
 Go, do as I ask.
 
----
-
 <sub>The project has been completed.</sub>
 
 <sub>The final transition is 37, and the final block 38 is an exact reflection of the initial block 0 across the main diagonal: (13,11), (13,12), (13,13) → (11,13), (12,13), (13,13). Both nodes share the same fixed cell, (13,13). This is the end.</sub>
 
----
 ---
 
 # Welcome
