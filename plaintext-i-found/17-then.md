@@ -1,23 +1,13 @@
 # 17 — THEN
 
-This example continues from **SOON**. The main **SOON** ciphertext ends at **`H (25,19)`**. Its key phase points **rightward**, and two totient-derived distances locate the proposed next ciphertext, **`L–T–W`**. A nearby vertical `IA–IA–IA` mirror supplies the key that decrypts those three runes as **THEN**.
-
-The final ciphertext rune also connects to the **alternative SOON route** through a separate `W–NG–W` mirror.
-
-**Notation:** Coordinates are **1-based** and written `(row, column)`. Rune numbers are indices in the **29-rune alphabet**. `φ` denotes Euler's totient function, `μ` denotes the Möbius function, and `φ²(n)` means `φ(φ(n))`. All decryption subtractions are performed **modulo 29**.
-
 ## 1. Find the connected three-rune node
 
-The main **SOON** route uses the rotated key `EA–L–R`, whose **rotation phase is 2**. At its endpoint **`H (25,19)`**, the project's direction convention gives:
-
-`V₂ = (0, +1) → RIGHT`
+The main **SOON** route uses the rotated key `EA–L–R`, its endpoint **`H (25,19)`**.
 
 Apply Euler's totient function twice to the endpoint coordinates:
 
 - **Row 25:** `φ(25) = 20`, then `φ²(25) = φ(20) = 8`.
 - **Column 19:** `φ(19) = 18`, then `φ²(19) = φ(18) = 6`.
-
-The resulting pair is **`T₂ = (8, 6)`**. Both distances are used along the indicated **rightward** direction:
 
 | From | Direction and distance | Reached cell |
 |:---|:---|:---|
@@ -28,15 +18,15 @@ The relevant section of the matrix is:
 
 | Row | Column 19 | Column 22 | Column 25 | Column 26 | Column 27 |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| 25 | **H** | IA | **L** | **T** | **W** |
-| 26 | — | **IA** | — | — | — |
+| 25 | H | IA | L | T | W |
+| 26 | — | IA | — | — | — |
 | 27 | — | IA | — | — | — |
 
 The rune **`IA (25,22)`** lies exactly halfway between **`H (25,19)`** and **`L (25,25)`**: each is **3 columns** away. It is also the upper endpoint of a vertical, equally spaced `IA–IA–IA` mirror:
 
 | Mirror | First endpoint | Center | Second endpoint | Radius |
 |:---|:---:|:---:|:---:|:---:|
-| `IA–IA–IA` | IA (25,22) | **IA (26,22)** | IA (27,22) | **1 vertical cell** |
+| `IA–IA–IA` | IA (25,22) | IA (26,22) | IA (27,22) | **1 vertical cell** |
 
 The **center `IA (26,22)`** generates the next decryption key.
 
