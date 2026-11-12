@@ -1,9 +1,5 @@
 # 11 — END
 
-This example follows **OF THE**. Its last ciphertext cell leads to a pair of intersecting mirrors, while a diagonal `J–B–J` arrangement supplies the next key. The key decrypts three vertically aligned ciphertext runes as **END**.
-
-**Notation:** Coordinates are **1-based** and written `(row, column)`. Rune numbers are indices in the **29-rune alphabet**. `φ` is Euler's totient function; `μ` is the Möbius function.
-
 ## 1. Find the connected three-rune nodes
 
 The preceding **THE** ciphertext ends at **`J (19,16)`**. Move **one cell left** to reach `F (19,15)`:
@@ -92,19 +88,3 @@ Apply the key `J–J–T` to the three ciphertext runes in order. Subtract each 
 **Decrypted rune sequence:** `E · N · D`
 
 **Proposed reading: END**
-
-All three modular subtractions reproduce **END** from the stated cells and rotated key.
-
-## 5. A geometric connection at the ciphertext endpoint
-
-The final ciphertext cell, **`I (21,23)`**, is the right endpoint of a horizontal three-rune mirror:
-
-`I (21,21) → R (21,22) → I (21,23)`
-
-| Row | Column 21 | Column 22 | Column 23 |
-|:---:|:---:|:---:|:---:|
-| **21** | **I** | **R** | **I** |
-
-The key's Möbius signature is **`(+1, 0, +1)`**, classified as **OUTER** in the project's geometric interpretation. The selected ciphertext ends at an **outer** `I` of the `I–R–I` arrangement, matching that classification.
-
-This is an **additional geometric correspondence**, not an arithmetic step required to decrypt **END**. The OUTER interpretation does not independently establish the uniqueness of the selected ciphertext path.
