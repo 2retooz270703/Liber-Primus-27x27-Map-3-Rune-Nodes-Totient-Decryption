@@ -18,7 +18,7 @@ Go, do as I ask.
 
 <sub>The project has been completed.</sub>
 
-<sub>The final transition is 37, and the final block 38 is an exact reflection of the initial block 0 across the main diagonal:</sub>
+<sub>The final transition is 37, and the final block 38 is an exact reflection of the initial block 1 across the main diagonal:</sub>
 
 <sub>(13,11), (13,12), (13,13) → (11,13), (12,13), (13,13).</sub>
 
