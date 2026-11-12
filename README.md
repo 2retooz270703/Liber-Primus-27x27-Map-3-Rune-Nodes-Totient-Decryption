@@ -187,8 +187,6 @@ A separate [red-heading analysis](./Start-reading-here/red-heading-SEQUENDI-RATI
 
 I created this [interactive 27 × 27 map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/) to visualize the ciphertext blocks, key nodes, and proposed plaintext directly on the matrix.
 
----
-
 ## Let me explain
 
 I want to clarify a little what exactly I’m working on and what I’m doing, so that
