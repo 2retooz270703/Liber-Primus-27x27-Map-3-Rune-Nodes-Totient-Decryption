@@ -70,8 +70,6 @@ The **recorded ciphertext start** is **`EA (27,18)`**. Read **three cells diagon
 
 `EA (27,18) → T (26,17) → X (25,16)`
 
-Both horizontal distances follow the stated totient calculations exactly. The choice of this route, the up-left reading direction, and the three-rune length belong to the proposed reading; these calculations alone do **not** establish that the route is unique.
-
 ## 4. Read and decrypt the ciphertext
 
 Apply `TH–P–P` in order. Subtract each **key rune index** from the corresponding **ciphertext rune index**, modulo 29:
@@ -90,19 +88,7 @@ Apply `TH–P–P` in order. Subtract each **key rune index** from the correspon
 
 **Proposed reading: YOU**
 
-All three modular subtractions produce the stated plaintext from the selected cells and rotated key.
-
 ## 5. Geometric connections
-
-### The endpoint is the center of another mirror
-
-The last ciphertext rune, **`X (25,16)`**, is the center of the vertical `E–X–E` mirror:
-
-| Mirror | First endpoint | Center | Second endpoint | Radius |
-|:---|:---:|:---:|:---:|:---:|
-| `E–X–E` | E (24,16) | **X (25,16)** | E (26,16) | 1 vertical cell |
-
-The rotated key's Möbius signature, `(0, +1, 0)`, is interpreted as **CENTER** in this project's framework. The final ciphertext cell occupies precisely the center of `E–X–E`.
 
 ### A shared location with SEE
 
@@ -110,5 +96,3 @@ The same **`X (25,16)`** was the **first ciphertext cell** of **SEE**. It is now
 
 - **SEE** starts at `X (25,16)` and proceeds down-left.
 - **YOU** ends at `X (25,16)` after proceeding up-left.
-
-This creates an exact geometric link between the two consecutive readings. The `CENTER` match and shared cell are additional supporting observations, not independent proof that **YOU** is the only possible continuation after **SEE**.
