@@ -2,9 +2,7 @@
 
 ## 1. Find the connected three-rune node
 
-The preceding **SEE** ciphertext ends at **`B (27,14)`**. Its key, `EA–I–EA`, has **rotation phase 0** and Möbius signature `(0, 0, 0)`. Under the project's direction convention, phase 0 at this endpoint gives:
-
-`V₀ = (0, +1) → RIGHT`
+The preceding **SEE** ciphertext ends at **`B (27,14)`**. Its key, `EA–I–EA`, has **rotation phase 0** and Möbius signature `(0, 0, 0)`.
 
 The neutral signature leaves the key center **`I = 10`** unchanged. Apply Euler's totient function twice to obtain the first movement distance:
 
@@ -18,7 +16,7 @@ This `P` is the lower endpoint of a vertical mirror:
 
 | Mirror | First endpoint | Center | Second endpoint | Radius |
 |:---|:---:|:---:|:---:|:---:|
-| `P–R–P` | P (5,16) | **R (16,16)** | **P (27,16)** | 11 vertical cells |
+| `P–R–P` | P (5,16) | R (16,16) | P (27,16) | 11 vertical cells |
 
 The node is symmetric because `16 − 5 = 11` and `27 − 16 = 11`. Its **center `R (16,16)`** generates the next decryption key; the lower endpoint `P (27,16)` connects it to the previous ciphertext.
 
