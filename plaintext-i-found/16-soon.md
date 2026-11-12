@@ -65,8 +65,6 @@ The endpoint-derived value `φ(16) = 8` corresponds to rune `H`. On this row, th
 
 `X (25,16) → D (25,17) → W (25,18) → H (25,19)`
 
-Thus, the selected ciphertext has **four runes** and ends at **`H (25,19)`**. The equality `φ(16) = H = 8` is a numerical connection to that endpoint. Since `V₁ = (0,0)` does not specify a direction, the **rightward choice and length are not uniquely determined by the vector alone**.
-
 ## 4. Read and decrypt the ciphertext
 
 Subtract each key rune index from the corresponding ciphertext rune index, **modulo 29**. Repeat `EA–L–R` as necessary:
@@ -85,8 +83,6 @@ Subtract each key rune index from the corresponding ciphertext rune index, **mod
 **Decrypted rune sequence:** `S · O · O · N`
 
 **Proposed reading: SOON**
-
-All four modular subtractions are correct for the selected ciphertext and rotated key. The common key from three distinct mirrors is an additional structural correspondence; it does not by itself prove that this ciphertext route is unique.
 
 ## Alternative route — P–S–U–W
 
@@ -116,8 +112,6 @@ At `TH (23,15)`, the route splits: one chain of mirrors locates the **ciphertext
 | Key | `IA–EA–IA` | IA (22,16) → EA (19,13) | 3 diagonal steps up-left; other IA is at (16,10) |
 
 The **ciphertext branch** ends at **`P (27,24)`**. The **key branch** ends at **`EA (19,13)`**, the center of the diagonal `IA–EA–IA` mirror.
-
-These mirror relations specify a traceable geometric route. The selection of this path at each intersection is part of the proposed construction.
 
 ### 3. Derive and align the alternative key
 
@@ -158,8 +152,6 @@ Apply the repeating key `IA–EO–IA` and subtract **modulo 29**:
 
 **Proposed reading: SOON**
 
-The arithmetic is correct for this second ciphertext and key as well. The fact that two selected routes produce the same word is noteworthy, but does not establish that either route was uniquely prescribed.
-
 </details>
 
 ## 5. Numerical and geometric connections
@@ -186,5 +178,3 @@ Using **Gematria Primus prime values** rather than rune indices:
 | `SOON` | S (53) + O (7) + O (7) + N (29) | **96** |
 
 Therefore, **`GP(L) + GP(H) = GP(SOON) = 96`**.
-
-This equality is exact. The number **96 itself is not prime**; the calculation is a sum of prime-valued rune weights. It is an additional numerical observation, not an independent proof of the plaintext or the route.
