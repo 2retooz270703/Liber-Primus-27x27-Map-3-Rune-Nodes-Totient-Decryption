@@ -29,6 +29,11 @@ This project arranges the pages’ 729 runes into a single 27 × 27 matrix and i
 
 For a first pass, read [Report 00](./Start-reading-here/00-decryption-method.md), follow the [opening block](./plaintext-i-found/01-as-i-go-the.md), and compare its coordinates with the [interactive map](https://2retooz270703.github.io/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/).
 
+
+> [!IMPORTANT]
+> [Strongest Plaintext Evidence](./Start-reading-here/strongest-plaintext-evidence.md)
+
+
 ## How the method works
 
 ### 1. Identify a three-rune node
