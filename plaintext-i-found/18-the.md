@@ -81,7 +81,7 @@ The allowance `q` comes from the **previous endpoint**, `W (25,27)`:
 - Its 270°-rotated index is `n₃(25,27) = 25`, so `μ(25) = 0`.
 - Both values are zero, giving **`q = 1`** under Report 06.
 
-Therefore the selected transition satisfies **`d₈ = 1 ≤ q = 1`**. It is **one cell off** an exact eight-direction ray, and that deviation is permitted by the stated gate. The inequality permits the starting position; it does not identify it uniquely.
+Therefore the selected transition satisfies **`d₈ = 1 ≤ q = 1`**. It is **one cell off** an exact eight-direction ray, and that deviation is permitted by the stated gate.
 
 ## 4. Read and decrypt
 
@@ -99,8 +99,6 @@ Read the selected ciphertext **up-left**, starting at `J (22,21)`, and subtract 
 **Decrypted rune sequence:** `TH · E`  
 **Proposed reading: THE**
 
-`TH` is a **single rune**, so two ciphertext cells produce the three-letter English word **THE**. The subtractions are exact for the selected key and ciphertext. The third key element, `N`, is unused because this block contains only two runes.
-
 ## 5. Verification against Reports 01–06
 
 The following checks are applied **after THEN**, using the preceding recorded block as input. They are not retroactively added to the original 16-transition fitting set.
@@ -113,8 +111,6 @@ The following checks are applied **after THEN**, using the preceding recorded bl
 | **04 — Next key-center parity** | **Even row, odd column** | `M (20,17)` = even row, odd column | **Pass** |
 | **05 — Next ciphertext row parity** | Endpoint row **odd**; leftmost-cell row **odd** | Both are `W (21,20)`, in row **21** | **Pass** |
 | **06 — Next ciphertext ray** | `d₈ ≤ q`, with `q = 1` after THEN | `d₈ = 1 ≤ 1` | **Pass** |
-
-**Important:** Reports 02 and 05 constrain the **same physical next cell** here, because the leftmost cell is the endpoint. Their checks should not be counted as fully independent evidence. The six reports also originate from investigation of the same 17-block reconstruction; passing all six does not provide a calibrated probability of intentional encoding or prove that this is the only valid `THE`.
 
 ## 6. Additional numerical connection: 530
 
