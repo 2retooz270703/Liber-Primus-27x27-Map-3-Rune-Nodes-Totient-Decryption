@@ -1,9 +1,5 @@
 # 10 — THE
 
-This example follows **OF** by switching from the diagonal `J–D–J` mirror to the vertical `OE–J–OE` mirror. Both nodes meet at **`J (19,16)`**. The vertical node supplies a key that decrypts two adjacent ciphertext runes as **THE**.
-
-**Notation:** Coordinates are **1-based** and written `(row, column)`. Rune numbers are indices in the **29-rune alphabet**. `φ` is Euler's totient function; `μ` is the Möbius function.
-
 ## 1. Find the connected three-rune nodes
 
 The previous **OF** example uses the diagonal mirror:
@@ -89,5 +85,3 @@ Here, **`TH` is a single rune** in the 29-rune alphabet, so two decrypted runes 
 **Decrypted rune sequence:** `TH · E`
 
 **Proposed reading: THE**
-
-The arithmetic reproduces **THE** from the stated ciphertext cells and rotated key. The shared `J (19,16)` provides a concrete geometric link to **OF**, but that link does not by itself prove this reading is uniquely intended.
