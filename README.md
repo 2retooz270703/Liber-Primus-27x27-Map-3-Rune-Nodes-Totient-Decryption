@@ -28,8 +28,6 @@ Its key-source node is the exact reflection of the opening key-source node acros
 
 The two nodes share **`(13,13)`**, which stays fixed under the reflection.
 
----
-
 # Welcome
 
 This project arranges the pages’ 729 runes into a single 27 × 27 matrix and investigates how its geometry connects ciphertext, key material, and reading order. The proposed method combines *three-rune key nodes*, *Euler’s totient function*, *Möbius signatures*, and *repeating-key subtraction modulo 29*.
