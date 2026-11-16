@@ -120,24 +120,3 @@ With ordered transposition fixed, I removed **I** and searched again with **G + 
 | `GO, PDOEBI, FFS, HS` | T–E–EA | 132 | 886 | 442 |
 
 Check **K** removes the third assignment. The recovered key stream has GP $674=2\times337$, so its totient is **336**, the row-major position of the opening source center `(13,12)`. This supplies an alternative to **I** for the ordered search. It uses the opening center and the state after **YOU**, with no earlier plaintext sum in the test. The project had previously used this totient check in its fixed-prefix endpoint search. [Block 38 endpoint test](https://github.com/2retooz270703/Liber-Primus-27x27-Map-3-Rune-Nodes-Totient-Decryption/blob/main/plaintext-i-found/38-i-ask.md#12-retrospective-endpoint-check-without-a-dictionary)
-
-## 5. Reproduction and scope
-
-The endpoint counts use the map and route in project snapshot `ab9d8190e60009179563ac21b2d750271c2782b3`. The baseline verifier reproduces the 21,342-candidate endpoint search and the 12 ordered continuations from **YOU**.
-
-```bash
-python3 verify.py "/path/to/original-project.zip" --tail 34
-```
-
-To reproduce the ciphertext-only comparison on the ordered continuations, evaluate **X** on every retained path before applying any word list. In the verifier, a path consists of `(node, block)` pairs.
-
-```python
-def passes_ciphertext_check(path):
-    first_cell = path[0][1].start
-    total = sum(cell_value(c) for _, block in path for c in block.cells)
-    return total == POSITION[first_cell][0]
-```
-
-For the two-order comparison, retain both readings of the transposed source and use the same GP, plaintext-index, and center-position targets for each. For the search without **I**, enumerate both center operations for the final key. For each terminal key, the target for the suffix index sum plus three times the sum of the nonterminal center positions is `3301 − GP(final key) − 3 × 310`, or **2,132** for the direct key and **2,136** for the transformed key. At each step, enumerate the source–segment pairs admitted by the transition rules. Close the branch only when its accumulated totals satisfy the chosen equalities. [Reproduction archive](https://chatgpt.com/library?file_id=libfile_179cbd74ead881918550a88c7c067947)
-
-The identities were documented after the candidate route was found. The counts establish uniqueness of the plaintext within the stated search model and prefix. Establishing a decoding rule for the rest of pages 0–2 would require applying fixed conditions to a segment chosen independently of its proposed plaintext.
