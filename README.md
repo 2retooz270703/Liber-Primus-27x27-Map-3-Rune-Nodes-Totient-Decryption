@@ -16,13 +16,17 @@ The key is to go to the east of the map.
 > Life may be the death of you.  
 Go, do as I ask.
 
-<sub>The project has been completed.</sub>
+### Closing the Route
 
-<sub>The final transition is 37, and the final block 38 is an exact reflection of the initial block 1 across the main diagonal:</sub>
+The proposed route ends at **Block 38 — I ASK**, reached on transition 37.
 
-<sub>(13,11), (13,12), (13,13) → (11,13), (12,13), (13,13).</sub>
+Its key-source node is the exact reflection of the opening key-source node across the main diagonal, under `(r, c) → (c, r)`.
 
-<sub>Both nodes share the same fixed cell, (13,13). This is the end.</sub>
+| Opening node · Block 1 | Final node · Block 38 |
+| --- | --- |
+| `(13,11) → (13,12) → (13,13)` | `(11,13) → (12,13) → (13,13)` |
+
+The two nodes share **`(13,13)`**, which stays fixed under the reflection.
 
 ---
 
