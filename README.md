@@ -263,4 +263,4 @@ Bach composed puzzle canons in which the performer had to reconstruct the correc
 
 ## New Strongest Findings
 
-[new-strongest-findings/](./new-strongest-findings/)
+[new-strongest-findings/](./New-strongest-findings/)
