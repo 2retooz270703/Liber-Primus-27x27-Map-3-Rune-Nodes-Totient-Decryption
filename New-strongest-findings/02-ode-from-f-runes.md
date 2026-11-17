@@ -28,11 +28,11 @@ In the proposed pages 0–2 route, all three selected ᚠ runes consume their al
 
 For each of the three transitions, fix the preceding block and its state from the recorded route. Hold the incoming ciphertext segment fixed and enumerate key assignments that satisfy the transition rules **00–15**. Each assignment specifies a source node, its reading orientation, and its center operation when distinct. The search uses the documented key phase and the cyclic phase schedule, with no plaintext dictionary filter on the blocks.
 
-| Block | Incoming state $(S,a)$ | Possible outputs at ᚠ | Compatible assignments | Assignments giving the ODE letter |
+| Block | Incoming state `(S, a)` | Possible outputs at ᚠ | Compatible assignments | Assignments giving the ODE letter |
 | --- | :---: | --- | ---: | ---: |
-| **GO (35)** | $(28,0)$ | O, TH | 2 | **1** |
-| **DEATH (32)** | $(24,0)$ | AE, D, Y | 26 | **12** |
-| **END (11)** | $(9,1)$ | E, IA, L | 5 | **3** |
+| **GO (35)** | `(28, 0)` | O, TH | 2 | **1** |
+| **DEATH (32)** | `(24, 0)` | AE, D, Y | 26 | **12** |
+| **END (11)** | `(9, 1)` | E, IA, L | 5 | **3** |
 
 The three output sets give **18 distinct rune triples** in page order. **ODE** is the only complete entry in the tested English Hunspell word list. Among the $2\times26\times5=260$ combinations of local assignments, $1\times12\times3=36$ produce **ODE**. These counts apply to three separate searches with the recorded incoming states. They measure how the word narrows the available choices within the model.
 
