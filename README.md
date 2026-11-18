@@ -120,6 +120,7 @@ Read these in order for the full model, or go directly to a specific constraint.
 | [16](./Start-reading-here/16-whole-word-block-boundaries.md) | Whole-word block boundaries | Requires each independently decrypted block to contain one or more complete English words and rejects readings that split a word across blocks. |
 | [17](./Start-reading-here/17-xor-next-key-center-column.md) | XOR filter for the next key-center column | Uses the rotated index of the current key center and the Möbius function to filter candidate columns. |
 | [18](./Start-reading-here/18-predicting-next-ciphertext-start-and-end.md) | Next ciphertext start and end | Tests three XOR rules that narrow the possible starts and ends of the next ciphertext segment. |
+| [19](./Start-reading-here/19-predicting-next-ciphertext-start-distance.md) | Predicting the next ciphertext start with two distances | Predicts whether the next ciphertext starts within seven cells of both the current start and leftmost cell, or farther than seven cells from both. Matches all 37 recorded transitions. |
 
 ## Plaintext walkthroughs
 
