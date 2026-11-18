@@ -77,7 +77,7 @@ $$
 \widehat h
 &=g_0(U_1,E_0)\oplus g_-(U_0,B_2)
    \oplus\left(\left\lfloor\frac{E_3}{4}\right\rfloor\bmod 2\right),\\
-h(B',E')&=[\,c(B')>c(B)\,].
+h(B',E')&=[\c(B')>c(B)\].
 \end{aligned}
 $$
 
