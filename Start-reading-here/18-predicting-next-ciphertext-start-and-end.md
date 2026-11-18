@@ -83,7 +83,7 @@ $$
 
 The division extracts bit 2 of $E_3$, counting the least significant bit as bit 0. Equal columns give $h=0$.
 
-The complete acceptance test is $(v,m,h)= \widehat v,\widehat m,\widehat h $. Every input to the forecast comes from the current block.
+The complete acceptance test is $(v,m,h)= (\widehat v,\widehat m,\widehat h) $. Every input to the forecast comes from the current block.
 
 ## 4. Results on the recorded route
 
