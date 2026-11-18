@@ -16,13 +16,13 @@ Use 1-based `(row, column)` coordinates on the 27 × 27 matrix. Rows increase do
 
 | Symbol | Meaning |
 | :--- | :--- |
-| \(U,M,Z\) | Three cells of the current **original** key node, in lexicographic `(row, column)` order. \(U\) is the upper extreme, or the left extreme for a horizontal node. \(M\) is the midpoint. \(Z\) is the opposite extreme. |
-| \(B,E\) | First and last **current ciphertext** cells in reading order |
-| \(L\) | Leftmost current ciphertext cell. At equal columns, choose the larger row. |
-| \(B',E'\) | Beginning and end of a proposed **next ciphertext** segment in reading order |
-| \(X_k=n_k(X)\) | Row-major index of cell \(X\) after a \(90k^\circ\) clockwise rotation |
-| \([P]\) | 1 when proposition \(P\) holds, otherwise 0 |
-| \(\oplus\) | XOR of bits, written `^` in Python |
+| $U,M,Z$ | Three cells of the current **original** key node, in lexicographic `(row, column)` order. $U$ is the upper extreme, or the left extreme for a horizontal node. $M$ is the midpoint. $Z$ is the opposite extreme. |
+| $B,E$ | First and last **current ciphertext** cells in reading order |
+| $L$ | Leftmost current ciphertext cell. At equal columns, choose the larger row. |
+| $B',E'$ | Beginning and end of a proposed **next ciphertext** segment in reading order |
+| $X_k=n_k(X)$ | Row-major index of cell $X$ after a $90k^\circ$ clockwise rotation |
+| $[P]$ | 1 when proposition $P$ holds, otherwise 0 |
+| $\oplus$ | XOR of bits, written `^` in Python |
 
 As in [Report 02](02-leftmost-cell-and-rotations.md) and [Report 14](14-predicting-exact-next-key-axis.md), the four indices are
 
@@ -41,7 +41,7 @@ g_-(a,b)=[\mu(\gcd(a,b))<0],
 g_0(a,b)=[\mu(\gcd(a,b))=0].
 $$
 
-The second indicator is 1 exactly when both arguments share a prime-square factor. The geometric order \(U,M,Z\) stays the same if the original key is read in reverse. For a current block that wraps between rows, use its entire recorded ciphertext sequence to choose \(L\).
+The second indicator is 1 exactly when both arguments share a prime-square factor. The geometric order $U,M,Z$ stays the same if the original key is read in reverse. For a current block that wraps between rows, use its entire recorded ciphertext sequence to choose $L$.
 
 ## 3. The three XOR formulas
 
@@ -56,7 +56,7 @@ v(B',E')
 \end{aligned}
 $$
 
-A tie goes in the vertical sector. The two outer terms use the same pair \(M,L\), with the 180° and 270° rotations exchanged.
+A tie goes in the vertical sector. The two outer terms use the same pair $M,L$, with the 180° and 270° rotations exchanged.
 
 ### B. Möbius sign at the next endpoint
 
@@ -68,7 +68,7 @@ m(B',E')&=[\mu(n_0(E'))<0].
 \end{aligned}
 $$
 
-Here \(\widehat m=0\) admits either \(\mu(n_0(E'))=0\) or \(\mu(n_0(E'))=+1\).
+Here $\widehat m=0$ admits either $\mu(n_0(E'))=0$ or $\mu(n_0(E'))=+1$.
 
 ### C. Side of the next beginning
 
@@ -81,9 +81,9 @@ h(B',E')&=[\,c(B')>c(B)\,].
 \end{aligned}
 $$
 
-The division extracts bit 2 of \(E_3\), counting the least significant bit as bit 0. Equal columns give \(h=0\).
+The division extracts bit 2 of $E_3$, counting the least significant bit as bit 0. Equal columns give $h=0$.
 
-The complete acceptance test is \((v,m,h)=(\widehat v,\widehat m,\widehat h)\). Every input to the forecast comes from the current block.
+The complete acceptance test is $(v,m,h)=(\widehat v,\widehat m,\widehat h)$. Every input to the forecast comes from the current block.
 
 ## 4. Results on the recorded route
 
@@ -115,7 +115,7 @@ The three formulas were selected retrospectively on the recorded route. In an ex
 
 ## 5. Worked example after I ASK
 
-The original key node of **I ASK (38)** has \(U=(11,13)\), \(M=(12,13)\), and \(Z=(13,13)\). Its ciphertext starts at \(B=(5,17)\) and ends at \(E=L=(8,17)\). The forecast is **\((0,0,1)\)**.
+The original key node of **I ASK (38)** has $U=(11,13)$, $M=(12,13)$, and $Z=(13,13)$. Its ciphertext starts at $B=(5,17)$ and ends at $E=L=(8,17)$. The forecast is **$(0,0,1)$**.
 
 If the same transition rules are continued beyond I ASK, Report 17 leaves **7,171** geometries representing **132** ordered ciphertext segments. Adding all three rules leaves **1,080** geometries representing **21** ordered segments. The number of distinct starts falls from 15 to six, and the number of distinct ends falls from 72 to 17. All **39** previously admissible next key centers still occur in at least one surviving geometry.
 
@@ -127,7 +127,7 @@ $$
 
 ### A surviving reading of DIE
 
-The ciphertext segment \((3,22)\to(4,23)\to(5,24)\) contains `B · H · D`, with rune indices \((17,8,23)\). The source node at \((18,10),(18,14),(18,18)\) gives `C/K · D · IA`. With phase 1 the aligned key is `D · IA · C/K`, with indices \((23,27,5)\). Subtraction modulo 29 gives
+The ciphertext segment $(3,22)\to(4,23)\to(5,24)$ contains `B · H · D`, with rune indices $(17,8,23)$. The source node at $(18,10),(18,14),(18,18)$ gives `C/K · D · IA`. With phase 1 the aligned key is `D · IA · C/K`, with indices $(23,27,5)$. Subtraction modulo 29 gives
 
 $$
 (17,8,23)-(23,27,5)\equiv(23,10,18),
@@ -135,9 +135,9 @@ $$
 
 or **`D · I · E`**.
 
-- The end \((5,24)\) lies 6 rows and 11 columns away from \(U\), so \(v=0\).
-- The endpoint's unrotated index is 132, with \(\mu(132)=0\), so \(m=0\).
-- The start has column 22, greater than the current beginning's column 17, so \(h=1\).
+- The end $(5,24)$ lies 6 rows and 11 columns away from $U$, so $v=0$.
+- The endpoint's unrotated index is 132, with $\mu(132)=0$, so $m=0$.
+- The start has column 22, greater than the current beginning's column 17, so $h=1$.
 
 This is one admissible continuation. The same filters also admit **HOW**.
 
