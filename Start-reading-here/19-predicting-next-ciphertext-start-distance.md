@@ -12,41 +12,47 @@ Use 1-based `(row, column)` coordinates on the 27 × 27 matrix. Rows increase do
 
 | Symbol | Meaning |
 | :--- | :--- |
-| \(U\) | First cell of the current original key node in lexicographic `(row, column)` order. It is the upper extreme, or the left extreme for a horizontal node. |
-| \(B,E\) | First and last current ciphertext cells in reading order |
-| \(L\) | Current ciphertext cell in the smallest occupied column. At equal columns, choose the larger row. |
-| \(B_{\mathrm{prev}}\) | Beginning of the preceding ciphertext block. Initialize it to \(B\) on the first transition. |
-| \(B'\) | First cell in reading order of a proposed next ciphertext segment |
-| \([P]\) | 1 when \(P\) is true, otherwise 0 |
-| \(\oplus\) | Bitwise XOR of nonnegative integers, written `^` in Python |
+| $U$ | First cell of the current original key node in lexicographic `(row, column)` order. It is the upper extreme, or the left extreme for a horizontal node. |
+| $B,E$ | First and last current ciphertext cells in reading order |
+| $L$ | Current ciphertext cell in the smallest occupied column. At equal columns, choose the larger row. |
+| $B_{\mathrm{prev}}$ | Beginning of the preceding ciphertext block. Initialize it to $B$ on the first transition. |
+| $B'$ | First cell in reading order of a proposed next ciphertext segment |
+| $\left[P\right]$ | 1 when $P$ is true, otherwise 0 |
+| $\oplus$ | Bitwise XOR of nonnegative integers, written `^` in Python |
 
-For a cell \(X=(r,c)\), the ordinary and 180° rotated row-major indices from [Report 02](02-leftmost-cell-and-rotations.md) are
-
-$$
-n_0(X)=27(r-1)+c,\qquad n_2(X)=730-n_0(X).
-$$
-
-Use the Möbius function \(\mu\) from [Report 00](00-decryption-method.md). Evaluate
+For a cell $X=(r,c)$, the ordinary and 180° rotated row-major indices from [Report 02](02-leftmost-cell-and-rotations.md) are
 
 $$
-a=\bigl[(n_2(B)\oplus n_2(B_{\mathrm{prev}}))\bmod7=0\bigr],
-\qquad
-b=\bigl[\mu(n_0(U)+n_0(E))<0\bigr].
+\begin{aligned}
+n_0(X) &= 27(r-1)+c \\
+n_2(X) &= 730-n_0(X)
+\end{aligned}
 $$
 
-The XOR is evaluated before the remainder. The predicted bit is \(\widehat h=[a=b]\). For two cells \(X,Y\), let
+Use the Möbius function $\mu$ from [Report 00](00-decryption-method.md). Evaluate
 
 $$
-d_\infty(X,Y)=\max\{\,|r(X)-r(Y)|,\ |c(X)-c(Y)|\,\}.
+\begin{aligned}
+a &= \left[(n_2(B)\oplus n_2(B_{\mathrm{prev}}))\bmod 7=0\right] \\
+b &= \left[\mu(n_0(U)+n_0(E))<0\right]
+\end{aligned}
 $$
 
-Accept \(B'\) when
+The XOR is evaluated before the remainder. The predicted bit is $\widehat{h}=\left[a=b\right]$. For two cells $X,Y$, let
 
 $$
-[d_\infty(B',B)\le7]=[d_\infty(B',L)\le7]=\widehat h.
+d_\infty(X,Y)=\max\left\{|r(X)-r(Y)|,\ |c(X)-c(Y)|\right\}
 $$
 
-A start at distance exactly seven is classed as near. Select \(L\) from all current ciphertext cells, including both rows when the recorded block wraps. After accepting the next block, carry the old \(B\) forward as its \(B_{\mathrm{prev}}\).
+Accept $B'$ when
+
+$$
+\left[d_\infty(B',B)\le 7\right]
+=\left[d_\infty(B',L)\le 7\right]
+=\widehat{h}
+$$
+
+A start at distance exactly seven is classed as near. Select $L$ from all current ciphertext cells, including both rows when the recorded block wraps. After accepting the next block, carry the old $B$ forward as its $B_{\mathrm{prev}}$.
 
 ## 3. Results on the recorded route
 
@@ -66,7 +72,7 @@ With equal weight per transition, the filter removes an average of **42.7%** of 
 
 ### Chronological check and random controls
 
-For the specified target \([d_\infty(B',L)\le7]\), the formula was the only match in the tested family using the first 24 transitions. With the formula fixed, it matched **13 of 13** remaining transitions. The distance targets and the threshold of seven were identified using the full route, so this split measures recovery of the formula for a specified target.
+For the specified target $\left[d_\infty(B',L)\le 7\right]$, the formula was the only match in the tested family using the first 24 transitions. With the formula fixed, it matched **13 of 13** remaining transitions. The distance targets and the threshold of seven were identified using the full route, so this split measures recovery of the formula for a specified target.
 
 Each random trial drew one successor independently from each of the 37 candidate pools and repeated the search over the tested single targets and pairs of distance targets, with Boolean formulas of up to two input predicates. A trial counted when a formula matched all 37 sampled outcomes and discarded at least the observed mean fraction of candidates under the same weighting. For a paired target, both observed bits had to equal its prediction at every transition.
 
@@ -81,18 +87,18 @@ In the segment-weighted trials, a compatible geometry was sampled uniformly with
 
 ## 4. Worked example after I ASK
 
-For **I ASK (38)**, use \(B=(5,17)\), \(E=L=(8,17)\), \(U=(11,13)\) and \(B_{\mathrm{prev}}=(22,2)\), the start of **AS (37)**. Then
+For **I ASK (38)**, use $B=(5,17)$, $E=L=(8,17)$, $U=(11,13)$ and $B_{\mathrm{prev}}=(22,2)$, the start of **AS (37)**. Then
 
 $$
 \begin{aligned}
-n_2(B)\oplus n_2(B_{\mathrm{prev}})&=605\oplus161=764,\qquad 764\bmod7=1,\\
-n_0(U)+n_0(E)&=283+206=489=3\cdot163,\qquad \mu(489)=+1.
+n_2(B)\oplus n_2(B_{\mathrm{prev}})&=605\oplus161=764,\qquad 764\bmod 7=1 \\
+n_0(U)+n_0(E)&=283+206=489=3\cdot163,\qquad \mu(489)=+1
 \end{aligned}
 $$
 
 Both bits are zero, so the next start must be near both reference cells.
 
-| Start allowed by Report 18 | Distance from \(B\) | Distance from \(L\) | Report 19 |
+| Start allowed by Report 18 | Distance from $B$ | Distance from $L$ | Report 19 |
 | :--- | ---: | ---: | :--- |
 | `(1,24)` | 7 | 7 | Pass |
 | `(3,22)` | 5 | 5 | Pass |
@@ -101,7 +107,7 @@ Both bits are zero, so the next start must be near both reference cells.
 | `(9,18)` | 4 | 1 | Pass |
 | `(15,24)` | 10 | 7 | Fail |
 
-The **DIE** reading in Report 18 starts at `(3,22)` and follows `(4,23)` and `(5,24)`. The segment therefore passes Report 19. Its ciphertext indices \((17,8,23)\) and aligned key indices \((23,27,5)\) give \((23,10,18)\) modulo 29, or `D · I · E`.
+The **DIE** reading in Report 18 starts at `(3,22)` and follows `(4,23)` and `(5,24)`. The segment therefore passes Report 19. Its ciphertext indices $(17,8,23)$ and aligned key indices $(23,27,5)$ give $(23,10,18)$ modulo 29, or `D · I · E`.
 
 ## 5. Direct implementation and verification
 
