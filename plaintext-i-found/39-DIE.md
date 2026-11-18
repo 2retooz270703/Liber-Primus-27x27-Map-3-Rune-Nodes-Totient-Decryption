@@ -1,6 +1,6 @@
 # 39 — DIE
 
-*Candidate continuation: **GO DO AS I ASK DIE***
+*Candidate continuation: **GO, DO AS I ASK. DIE.***
 
 The non-mirror source `C/K–D–IA` is read from left to right and used directly. Phase 1 aligns it as `D–IA–C/K`. Three ciphertext cells read down-right and decrypt as **D·I·E**.
 
