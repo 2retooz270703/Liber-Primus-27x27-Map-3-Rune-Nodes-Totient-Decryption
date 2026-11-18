@@ -15,6 +15,8 @@ The key is to go to the east of the map.
 >
 > Life may be the death of you.  
 Go, do as I ask.
+>
+> Die.
 
 ### Closing the Route
 
