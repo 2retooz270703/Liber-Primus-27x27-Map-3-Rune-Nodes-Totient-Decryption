@@ -50,9 +50,9 @@ The second indicator is 1 exactly when both arguments share a prime-square facto
 $$
 \begin{aligned}
 \widehat v
-&=g_-(M_2,L_3)\oplus[\mu(Z_3+B_2)>0]\oplus g_-(M_3,L_2),\\
+&=g_-(M_2,L_3)\oplus[\mu(Z_3+B_2)>0]\oplus g_-(M_3,L_2)\\
 v(B',E')
-&=[\|r(E')-r(U)|\ge |c(E')-c(U)|\].
+&=[|r(E')-r(U)|\ge |c(E')-c(U)|].
 \end{aligned}
 $$
 
@@ -63,7 +63,7 @@ A tie goes in the vertical sector. The two outer terms use the same pair $M,L$, 
 $$
 \begin{aligned}
 \widehat m
-&=g_0(M_2,L_0)\oplus g_0(M_1,B_1)\oplus g_0(M_2,E_0),\\
+&=g_0(M_2,L_0)\oplus g_0(M_1,B_1)\oplus g_0(M_2,E_0)\\
 m(B',E')&=[\mu(n_0(E'))<0].
 \end{aligned}
 $$
@@ -76,8 +76,8 @@ $$
 \begin{aligned}
 \widehat h
 &=g_0(U_1,E_0)\oplus g_-(U_0,B_2)
-   \oplus\left(\left\lfloor\frac{E_3}{4}\right\rfloor\bmod 2\right),\\
-h(B',E')&=[\c(B')>c(B)\].
+   \oplus\left(\left\lfloor\frac{E_3}{4}\right\rfloor\bmod 2\right)\\
+h(B',E')&=[c(B')>c(B)].
 \end{aligned}
 $$
 
