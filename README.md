@@ -1,5 +1,7 @@
 # Plaintext
 
+<sub>✅ DIE is the final word recovered under the current decryption rules. Those rules yield no further plaintext beyond this point.</sub>
+
 ## Pages 0-2
 
 
