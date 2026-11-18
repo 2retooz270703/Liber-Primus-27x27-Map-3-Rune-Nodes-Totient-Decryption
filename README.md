@@ -118,6 +118,7 @@ Read these in order for the full model, or go directly to a specific constraint.
 | [14](./Start-reading-here/14-predicting-exact-next-key-axis.md) | Exact next key-axis prediction using Möbius signs and GP weights | Extends Report 13 with a new diagonal bit derived from rotated cell indices, Möbius signs, and original rune prime weights, predicting the exact axis of the next key node instead of narrowing it to two possibilities. |
 | [15](./Start-reading-here/15-predicting-next-key-radius-parity.md) | Next key-node radius parity prediction using Möbius signs | Introduces a new XOR-based rule combining coordinate parity and Möbius sign tests to predict whether the next key node's radius is even or odd, further narrowing the possible source nodes. |
 | [16](./Start-reading-here/16-whole-word-block-boundaries.md) | Whole-word block boundaries | Requires each independently decrypted block to contain one or more complete English words and rejects readings that split a word across blocks. |
+| [17](./Start-reading-here/17-xor-next-key-center-column.md) | XOR filter for the next key-center column | Uses the rotated index of the current key center and the Möbius function to filter candidate columns. |
 
 ## Plaintext walkthroughs
 
