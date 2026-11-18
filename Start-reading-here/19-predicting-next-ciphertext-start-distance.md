@@ -17,7 +17,7 @@ Use 1-based `(row, column)` coordinates on the 27 × 27 matrix. Rows increase do
 | $L$ | Current ciphertext cell in the smallest occupied column. At equal columns, choose the larger row. |
 | $B_{\mathrm{prev}}$ | Beginning of the preceding ciphertext block. Initialize it to $B$ on the first transition. |
 | $B'$ | First cell in reading order of a proposed next ciphertext segment |
-| $\left[P\right]$ | 1 when $P$ is true, otherwise 0 |
+| $[P]$ | 1 when $P$ is true, otherwise 0 |
 | $\oplus$ | Bitwise XOR of nonnegative integers, written `^` in Python |
 
 For a cell $X=(r,c)$, the ordinary and 180° rotated row-major indices from [Report 02](02-leftmost-cell-and-rotations.md) are
@@ -33,22 +33,22 @@ Use the Möbius function $\mu$ from [Report 00](00-decryption-method.md). Evalua
 
 $$
 \begin{aligned}
-a &= \left[(n_2(B)\oplus n_2(B_{\mathrm{prev}}))\bmod 7=0\right] \\
-b &= \left[\mu(n_0(U)+n_0(E))<0\right]
+a &= [(n_2(B)\oplus n_2(B_{\mathrm{prev}}))\bmod 7=0] \\
+b &= [\mu(n_0(U)+n_0(E))<0]
 \end{aligned}
 $$
 
-The XOR is evaluated before the remainder. The predicted bit is $\widehat{h}=\left[a=b\right]$. For two cells $X,Y$, let
+The XOR is evaluated before the remainder. The predicted bit is $\widehat{h}=[a=b]$. For two cells $X,Y$, let
 
 $$
-d_\infty(X,Y)=\max\left\{|r(X)-r(Y)|,\ |c(X)-c(Y)|\right\}
+d_\infty(X,Y)=\max\{|r(X)-r(Y)|,\ |c(X)-c(Y)|\}
 $$
 
 Accept $B'$ when
 
 $$
-\left[d_\infty(B',B)\le 7\right]
-=\left[d_\infty(B',L)\le 7\right]
+[d_\infty(B',B)\le 7]
+=[d_\infty(B',L)\le 7]
 =\widehat{h}
 $$
 
@@ -72,7 +72,7 @@ With equal weight per transition, the filter removes an average of **42.7%** of 
 
 ### Chronological check and random controls
 
-For the specified target $\left[d_\infty(B',L)\le 7\right]$, the formula was the only match in the tested family using the first 24 transitions. With the formula fixed, it matched **13 of 13** remaining transitions. The distance targets and the threshold of seven were identified using the full route, so this split measures recovery of the formula for a specified target.
+For the specified target $[d_\infty(B',L)\le 7]$, the formula was the only match in the tested family using the first 24 transitions. With the formula fixed, it matched **13 of 13** remaining transitions. The distance targets and the threshold of seven were identified using the full route, so this split measures recovery of the formula for a specified target.
 
 Each random trial drew one successor independently from each of the 37 candidate pools and repeated the search over the tested single targets and pairs of distance targets, with Boolean formulas of up to two input predicates. A trial counted when a formula matched all 37 sampled outcomes and discarded at least the observed mean fraction of candidates under the same weighting. For a paired target, both observed bits had to equal its prediction at every transition.
 
