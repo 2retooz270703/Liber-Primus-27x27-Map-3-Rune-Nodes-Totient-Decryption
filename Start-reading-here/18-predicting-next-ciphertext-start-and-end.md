@@ -52,7 +52,7 @@ $$
 \widehat v
 &=g_-(M_2,L_3)\oplus[\mu(Z_3+B_2)>0]\oplus g_-(M_3,L_2),\\
 v(B',E')
-&=[\,|r(E')-r(U)|\ge |c(E')-c(U)|\,].
+&=[\|r(E')-r(U)|\ge |c(E')-c(U)|\].
 \end{aligned}
 $$
 
