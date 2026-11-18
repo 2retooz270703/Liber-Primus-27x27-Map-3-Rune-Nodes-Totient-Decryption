@@ -1,7 +1,5 @@
 # Plaintext
 
-<sub>✅ The plaintext ends with DIE. Under the current rules, no further text can be recovered.</sub>
-
 ## Pages 0-2
 
 
