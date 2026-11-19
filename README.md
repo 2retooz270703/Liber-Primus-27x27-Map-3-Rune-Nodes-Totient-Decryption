@@ -126,6 +126,7 @@ Read these in order for the full model, or go directly to a specific constraint.
 | [18](./Start-reading-here/18-predicting-next-ciphertext-start-and-end.md) | Next ciphertext start and end | Tests three XOR rules that narrow the possible starts and ends of the next ciphertext segment. |
 | [19](./Start-reading-here/19-predicting-next-ciphertext-start-distance.md) | Predicting the next ciphertext start with two distances | Predicts whether the next ciphertext starts within seven cells of both the current start and leftmost cell, or farther than seven cells from both. |
 | [20](./Start-reading-here/20-two-orientation-gcd-filter.md) | Two-orientation GCD filter for the next key center | Requires both GCDs between the next ciphertext start index and the next key center indices at 0° and 180° to be at most seven. |
+| [21](./Start-reading-here/21-conditional-seven-step-bound.md) | Conditional seven-step bound on key radius and ciphertext span | Caps the sum of the next key radius and ciphertext span at seven when the current key node’s upper extreme (left for horizontal nodes) is within seven grid steps of the current ciphertext end. |
 
 ## Plaintext walkthroughs
 
