@@ -127,6 +127,7 @@ Read these in order for the full model, or go directly to a specific constraint.
 | [19](./Start-reading-here/19-predicting-next-ciphertext-start-distance.md) | Predicting the next ciphertext start with two distances | Predicts whether the next ciphertext starts within seven cells of both the current start and leftmost cell, or farther than seven cells from both. |
 | [20](./Start-reading-here/20-two-orientation-gcd-filter.md) | Two-orientation GCD filter for the next key center | Requires both GCDs between the next ciphertext start index and the next key center indices at 0° and 180° to be at most seven. |
 | [21](./Start-reading-here/21-conditional-seven-step-bound.md) | Conditional seven-step bound on key radius and ciphertext span | Caps the sum of the next key radius and ciphertext span at seven when the current key node’s upper extreme (left for horizontal nodes) is within seven grid steps of the current ciphertext end. |
+| [22](./Start-reading-here/22-seven-step-key-cell-coverage.md) | Seven-step coverage by a single key cell | If any cell of the next ciphertext is within seven columns of its key center, the same original key-node cell must be within seven grid steps of both the first and the leftmost ciphertext cells. |
 
 ## Plaintext walkthroughs
 
