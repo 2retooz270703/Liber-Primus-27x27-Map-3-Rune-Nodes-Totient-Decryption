@@ -23,7 +23,7 @@ The comparison counts English words and ignores punctuation. The two boundary wi
 
 The audit compared every contiguous seven-word window in the candidate with every within-page seven-word window of the solved LP1 text on pages 0–16. The candidate contributes **16 windows** and LP1 contributes **658**, giving **10,528 possible pairs**. A candidate window can cross a line or sentence break. The LP1 search keeps each window on a single page.
 
-For each window, the audit counted rune symbols, summed their indices in the **0–28** Gematria Primus alphabet, and summed their GP prime values. If a rune has index $i$, its GP value is the $(i+1)$st prime. For instance, **TH** is one rune with index **2** and GP value **5**.
+For each window, the audit counted rune symbols, summed their indices in the **0–28** Gematria Primus alphabet, and summed their GP prime values. If a rune has index $i$, its GP value is the $(i+1)^{\mathrm{st}}$ prime. For instance, **TH** is one rune with index **2** and GP value **5**.
 
 A pair qualified when it met all three conditions.
 
