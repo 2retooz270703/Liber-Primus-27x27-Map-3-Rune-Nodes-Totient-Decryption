@@ -32,6 +32,10 @@ Its key-source node is the exact reflection of the opening key-source node acros
 
 The two nodes share **`(13,13)`**, which stays fixed under the reflection.
 
+### DIE
+
+After `DIE`, the route rules allow no further move. The first cell of the opening key is at map position **335**. Its reflection across the main diagonal contains `T`, rune index **16**. Their product, **335 × 16 = 5,360**, equals the GP sum of the full plaintext. `DIE` supplies the final **187**, bringing the total from **5,173** to **5,360**.
+
 # Welcome
 
 This project arranges the pages’ 729 runes into a single 27 × 27 matrix and investigates how its geometry connects ciphertext, key material, and reading order. The proposed method combines *three-rune key nodes*, *Euler’s totient function*, *Möbius signatures*, and *repeating-key subtraction modulo 29*.
