@@ -1,6 +1,6 @@
 # Plaintext
 
-<sub>✅ **Die** is the final word recovered under the decryption rules. No further plaintext beyond this point.</sub>
+<sub>✅ **Die** is the final word recovered under the decryption rules.</sub>
 
 ## Pages 0-2
 
