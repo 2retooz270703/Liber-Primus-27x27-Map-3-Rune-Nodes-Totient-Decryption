@@ -26,4 +26,4 @@ The difference between the opening-key product and the subtotal through `I ASK` 
 
 **GP(plaintext through DIE) = 4,709 + 464 + 187 = 5,360 = 335 × 16.**
 
-For the recorded route through `I ASK`, this gives a concrete test of any proposed final block. To reach the opening-key product, its runes must contribute exactly 187 GP. Addition is insensitive to rune order, so the route's key and ciphertext supply the reading order. The equality is exact and was identified after the reading `DIE` was known. Whether the puzzle author intended it as a checksum remains open.
+For the recorded route through `I ASK`, this gives a concrete test of any proposed final block. To reach the opening-key product, its runes must contribute exactly 187 GP. Addition is insensitive to rune order, so the route's key and ciphertext supply the reading order.
