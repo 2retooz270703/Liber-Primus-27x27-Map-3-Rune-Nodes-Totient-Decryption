@@ -4,37 +4,35 @@ Two arithmetic tests on the current block predict the modulo-seven relation betw
 
 ## 1. Acceptance test
 
-Use 1-based coordinates on the $27\times27$ map. Let $U$ be the first geometric extreme of the current original key node in row–column order, $M$ its center, and $B$ the first cell of the current ciphertext in reading order. Let $M'$ be the next original key center and $L'$ the next ciphertext's leftmost cell, with the bottommost cell chosen in a tie. The original key's reading direction leaves $U$ and $M$ fixed. [Report 02](02-leftmost-cell-and-rotations.md)
+Use 1-based coordinates on the 27 × 27 map. Let `U` be the first geometric extreme of the current original key node in row–column order, `M` its center, and `B` the first cell of the current ciphertext in reading order. Let `M'` be the next original key center and `L'` the next ciphertext's leftmost cell, with the bottommost cell chosen in a tie. The original key's reading direction leaves `U` and `M` fixed. [Report 02](02-leftmost-cell-and-rotations.md)
 
-Use the rotated row-major indices $n_\theta$ from Report 23. In the formulas, $[P]$ is the indicator of proposition $P$, $\operatorname{xor}$ is bitwise XOR on integer indices, and $\oplus$ is XOR on the two resulting bits.
+Use the rotated row-major indices `n_θ` from Report 23. Brackets denote the indicator of a condition. `XOR` combines either two integer indices bitwise or two Boolean bits.
 
-$$
-\begin{aligned}
-x &= \operatorname{xor}\left(n_{180}(U),n_{270}(M)\right),\\
-a &= \left[x>0\ \text{and}\ \mu(x)=-1\right],\\
-b &= \left[\mu\left(\gcd(n_0(B),n_{270}(B))\right)=0\right].
-\end{aligned}
-$$
+```text
+x = n_180(U) XOR n_270(M)
+a = [x > 0 and μ(x) = −1]
+b = [μ(gcd(n_0(B), n_270(B))) = 0]
+```
 
-If $x=0$, set $a=0$. This keeps the Möbius input in its positive domain. Accept the proposed next block if
+If `x = 0`, set `a = 0`. This keeps the Möbius input in its positive domain. Accept the proposed next block if the following equality holds.
 
-$$
-\boxed{\left[(n_0(M')+n_{180}(L'))\bmod 7=0\right]=a\oplus b.}
-$$
+```text
+[(n_0(M') + n_180(L')) mod 7 = 0] = a XOR b
+```
 
 ## 2. Seven and the derived residue five
 
-On this map, $n_{180}(X)=730-n_0(X)$. The divisibility test is therefore equivalent to
+On this map, `n_180(X) = 730 − n_0(X)`. The divisibility test is therefore equivalent to the following congruence.
 
-$$
-n_0(M')-n_0(L')\equiv -730 \equiv 5\pmod{7}.
-$$
+```text
+n_0(M') − n_0(L') ≡ −730 ≡ 5 (mod 7)
+```
 
-Since $27\equiv-1\pmod{7}$, this is also equivalent to
+Since `27 ≡ −1 (mod 7)`, this is also equivalent to the following relation between the cells' diagonal coordinates.
 
-$$
-\bigl(c(M')-r(M')\bigr)-\bigl(c(L')-r(L')\bigr)\equiv 5\pmod{7}.
-$$
+```text
+(c(M') − r(M')) − (c(L') − r(L')) ≡ 5 (mod 7)
+```
 
 A forecast of 1 selects this class of diagonal offsets. A forecast of 0 accepts the other six classes. The residue five follows from the reflected indexing and modulus seven.
 
@@ -42,11 +40,11 @@ Seven recurs in the phase thresholds and 28-unit cycle in Report 11, the start-d
 
 ## 3. I ASK → DIE versus APP
 
-For **I ASK**, the current cells are $U=(11,13)$, $M=(12,13)$, and $B=(5,17)$. Then $x=\operatorname{xor}(447,390)=57$, with $\mu(57)=+1$, and $\gcd(125,275)=25$, with $\mu(25)=0$. Thus $a=0$, $b=1$, and the next sum must be divisible by seven.
+For **I ASK**, the current cells are `U = (11, 13)`, `M = (12, 13)`, and `B = (5, 17)`. Then `447 XOR 390 = 57` and `μ(57) = +1`. Also, `gcd(125, 275) = 25` and `μ(25) = 0`. Thus `a = 0`, `b = 1`, and the next sum must be divisible by seven.
 
-Both readings use the ordered segment $(3,22)\to(4,23)\to(5,24)$. Its leftmost cell has $n_{180}(L')=654$.
+Both readings use the ordered segment `(3, 22) → (4, 23) → (5, 24)`. Its leftmost cell has `n_180(L') = 654`.
 
-| Reading | Original key center | $n_0(M')$ | Sum with 654 | Remainder modulo 7 | Result |
+| Reading | Original key center | `n_0(M')` | Sum with 654 | Remainder modulo 7 | Result |
 | :--- | :---: | ---: | ---: | ---: | :--- |
 | **DIE** | (18,14) | 473 | 1,127 | 0 | Keep |
 | APP | (26,6) | 681 | 1,335 | 5 | Reject |
