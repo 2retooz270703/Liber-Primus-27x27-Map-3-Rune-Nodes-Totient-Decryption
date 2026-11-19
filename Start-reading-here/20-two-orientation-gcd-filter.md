@@ -19,8 +19,8 @@ Compute the two greatest common divisors and apply the same bound to both.
 
 $$
 \begin{aligned}
-g_0 &= \gcd\bigl(n_0(M'),\,n_0(B')\bigr) \\
-g_2 &= \gcd\bigl(n_2(M'),\,n_0(B')\bigr) \\
+g_0 &= \gcd\bigl(n_0(M'),\n_0(B')\bigr) \\
+g_2 &= \gcd\bigl(n_2(M'),\n_0(B')\bigr) \\
 \text{Accept} &\quad\Longleftrightarrow\quad \max(g_0,g_2)\le 7
 \end{aligned}
 $$
