@@ -22,7 +22,7 @@ Go, do as I ask.
 
 ### Closing the Route
 
-The proposed main route ends at **Block 38 — I ASK**, reached on transition 37.
+The main route ends at **Block 38 — I ASK**, reached on transition 37.
 
 Its key-source node is the exact reflection of the opening key-source node across the main diagonal, under `(r, c) → (c, r)`.
 
