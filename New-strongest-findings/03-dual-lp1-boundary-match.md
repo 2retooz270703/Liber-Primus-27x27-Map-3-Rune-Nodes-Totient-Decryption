@@ -73,6 +73,8 @@ For example, **DEATH** has indices $23+28+2=53$ and GP values $89+109+5=203$. On
 
 ## 4. Comparison with other English texts
 
+**Source repository:** [FlareZ123 / liber-primus](https://github.com/FlareZ123/liber-primus)
+
 The audit applied the same comparison to every contiguous **22-word span** in three pre-existing English corpora. For each span, it tested the **first seven** and **last seven** words against the same **658 solved LP1 windows**. A span counted as a two-boundary match if each end found a qualifying partner anywhere in those LP1 windows. The reported criterion accepts either totient direction at each end.
 
 | English corpus | 22-word spans | At least one matching boundary | Share with at least one match | Both boundaries match |
