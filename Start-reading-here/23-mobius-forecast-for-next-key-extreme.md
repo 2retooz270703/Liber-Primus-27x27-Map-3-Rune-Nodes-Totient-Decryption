@@ -16,14 +16,19 @@ n_{270}(X) &= 730-n_{90}(X).
 \end{aligned}
 $$
 
-Write $[P]$ for the indicator of a proposition, $\oplus$ for XOR, and $\mu$ for the Möbius function. Compute the two current-block bits and compare their XOR with the bit observed at the proposed key extreme:
+Write $[P]$ for the indicator of a proposition, $\oplus$ for XOR, and $\mu$ for the Möbius function. Compute the two bits from the current block.
 
 $$
 \begin{aligned}
-a &= [\,3\mid\gcd(n_{270}(B),\,n_{90}(L))\,],\\
-b &= [\,\mu(n_{270}(M)+n_{270}(E))>0\,],\\
-\boxed{[\mu(n_{180}(U'))>0] &= a\oplus b.}
+a &= \left[3 \mid \gcd\!\left(n_{270}(B), n_{90}(L)\right)\right],\\
+b &= \left[\mu\!\left(n_{270}(M) + n_{270}(E)\right) > 0\right].
 \end{aligned}
+$$
+
+Accept the proposed key extreme when its observed bit equals the XOR of these two bits.
+
+$$
+\boxed{\left[\mu\!\left(n_{180}(U')\right) > 0\right] = a \oplus b}
 $$
 
 The first bit is equivalent to requiring both rotated indices to be divisible by three. Keep the sum in the second bit as an ordinary integer. A forecast of 1 requires $\mu=+1$ at $U'$. A forecast of 0 accepts either $\mu=-1$ or $\mu=0$. The forecast can be computed once per current block and applied to each candidate original node. The same transition state suffices for this additional test. [Report 00](00-decryption-method.md) · [Report 14](14-predicting-exact-next-key-axis.md) · [Report 20](20-two-orientation-gcd-filter.md)
