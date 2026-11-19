@@ -83,21 +83,3 @@ The audit applied the same comparison to every contiguous **22-word span** in th
 | **Combined** | **149,009** | **446** | **0.299%** | **0** |
 
 Every corpus produced one-boundary matches. Across all three, **446 spans** matched at one end and **none** matched at both. The controls show that a single match can arise in English literary texts under the same scoring rule. The paired result specifies where both matches occur within the candidate.
-
-The zero count needs context because single matches are already uncommon. For scale, suppose the two ends had the same match rate $q$ and matched independently. Fitting that hypothetical model to the pooled share with at least one match gives $1-(1-q)^2=446/149{,}009$. It would predict about **0.33** double-hit spans across all three corpora. This calculation illustrates how a zero count can arise at low single-hit rates. The actual control spans overlap, and the audit reports a pooled count for spans that hit at either end. Estimating a chance rate for the joint pattern would require evidence about the separate rates and their dependence.
-
-## 5. What the match bears on
-
-The 22-word prefix through THEN existed before the audit. The idea of treating its two boundaries as a pair arose after the closing match was found. A prospective check would need a predeclared endpoint rule, fixed LP1 reference windows, and fresh controls before another frequency comparison could be interpreted as confirmatory.
-
-The match depends on the proposed words. The recorded **SOON** placements in rows 25 and 27 give the same word sequence through THEN and therefore the same LP1 boundary matches. Choosing between those routes requires evidence that uses the ciphertext cells or key geometry. A test for a shared cipher mechanism would specify a reversible rule independently and check whether it maps both LP1 passages to their respective LP2 partners.
-
-## 6. Source and reproduction
-
-The window search and literary controls are from Agent29's *P0 first-17 dual solved-LP1 boundary match*, dated 19 November 2026, in **lp2-p0-first17-dual-lp1-boundary-match.md**. The candidate prefix, earlier opening match and alternative **SOON** placements are documented in *Strongest Plaintext Evidence*. The four rune-count, index-sum and GP entries were checked separately. The search counts are reported from the audit.
-
-The audit gives the following command to run from the root of its repository.
-
-~~~sh
-node sims/lp2_p0_first17_dual_lp1_boundary_match_sft.cjs
-~~~
