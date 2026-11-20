@@ -25,7 +25,8 @@ python3 decode.py matrix.txt --top 1 --trace
 
 
 > [!IMPORTANT]
-> **Red runes: Secuendi Ratio ("The Way to Proceed")**
+> **Red runes: Secuendi Ratio  
+> ("The Way to Proceed")**
 >
 > As I go, the weather turns cold.  
 I may cry now.  
