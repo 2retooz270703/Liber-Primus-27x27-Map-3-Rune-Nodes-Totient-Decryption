@@ -155,6 +155,7 @@ Read these in order for the full model, or go directly to a specific constraint.
 | [24](./Start-reading-here/24-mod-seven-key-center-ciphertext-alignment.md) | Modulo-seven key-center and ciphertext alignment | Uses two arithmetic tests on the current block to predict the modulo-seven relation between the next key center and ciphertext. |
 | [25](./Start-reading-here/25-reflected-start-cell-seven-step-bound.md) | Reflected start-cell seven-step bound | Limits the next ciphertext start using rotated coordinates of the current key and ciphertext. |
 | [26](./Start-reading-here/26-mod-seven-next-key-center-start-distance.md) | Next key-center distance modulo seven | Uses the current block’s geometry to predict whether the Chebyshev distance between the next key center and ciphertext start is divisible by seven. |
+| [27 ✅](./Start-reading-here/27-key-alignment-from-node-geometry.md) | Key alignment from node geometry | Uses the current node and ciphertext start to test the next aligned key against the final ciphertext rune using a modulo-three check and a seven-index distance threshold. |
 
 ## Plaintext walkthroughs
 
