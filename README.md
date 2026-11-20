@@ -19,7 +19,7 @@ Add `--top 1 --trace` to show only the highest-ranked reading and trace how each
 python3 decode.py matrix.txt --top 1 --trace
 ```
 
-Use `--top 192` to show the complete ranking on the included matrix.
+Use `--top 192` to show the complete ranking on the included matrix. [Full ranking of all 192 readings](./Start-reading-here/liber_primus_192_ranked_readings.md)
 
 # Plaintext
 
