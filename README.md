@@ -1,6 +1,24 @@
-# Plaintext
+## Experimental Python Decoder
 
-<sub>✅ **Die** is the final word recovered under the decryption rules.</sub>
+I’ve added a runnable Python decoder for *Liber Primus* (LP2, pages 0–2). It takes a 27×27 rune matrix, explores the block transitions allowed by Reports 00–27, and ranks candidate readings by English word frequency. The search runs without a supplied plaintext or a preset block count.
+
+On the included matrix, the decoder finds a single 39-block route spanning 118 runes. Those runes yield 96 candidate readings. The highest-ranked reading matches the proposed plaintext below and ends with **DIE**.
+
+[Download the decoder ZIP](./liber_primus_decoder.zip)
+
+Extract the archive and run the decoder from the folder containing `decode.py`.
+
+```bash
+python3 decode.py matrix.txt
+```
+
+Add `--top 1 --trace` to show only the highest-ranked reading and trace how each block was decrypted.
+
+```bash
+python3 decode.py matrix.txt --top 1 --trace
+```
+
+# Plaintext
 
 ## Pages 0-2
 
