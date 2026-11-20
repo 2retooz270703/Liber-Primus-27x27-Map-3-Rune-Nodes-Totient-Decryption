@@ -96,7 +96,7 @@ SIZE = 27
 BOUND = 7
 RUNES = (
     "F U/V TH O R C/K G W H N I J EO P X S/Z "
-    "T B E M L NG OE D A AE Y IA/IO EA"
+    "T B E M L NG/ING OE D A AE Y IA/IO EA"
 ).split()
 
 
