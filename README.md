@@ -19,6 +19,8 @@ Add `--top 1 --trace` to show only the highest-ranked reading and trace how each
 python3 decode.py matrix.txt --top 1 --trace
 ```
 
+Use `--top 192` to show the complete ranking on the included matrix. [Readings ending in DIE](./New-strongest-findings/liber_primus_96_ranked_readings.md)
+
 # Plaintext
 
 ## Pages 0-2
@@ -42,11 +44,11 @@ Go, do as I ask.
 
 ### Closing the Route
 
-The main route ends at **Block 38 — I ASK**, reached on transition 37.
+The two terminal routes share **Block 38 — I ASK**, reached on transition 37.
 
 Its key-source node is the exact reflection of the opening key-source node across the main diagonal, under `(r, c) → (c, r)`.
 
-| Opening node · Block 1 | Final node · Block 38 |
+| Opening node · Block 1 | Reflected node · Block 38 |
 | --- | --- |
 | `(13,11) → (13,12) → (13,13)` | `(11,13) → (12,13) → (13,13)` |
 
@@ -54,7 +56,7 @@ The two nodes share **`(13,13)`**, which stays fixed under the reflection.
 
 ### DIE
 
-After `DIE`, the route rules allow no further move. The first cell of the opening key is at map position **335**. Its reflection across the main diagonal contains `T`, rune index **16**. Their product, **335 × 16 = 5,360**, equals the GP sum of the full plaintext. `DIE` supplies the final **187**, bringing the total from **5,173** to **5,360**.
+After `DIE`, the route rules allow no further move. The first cell of the opening key is at map position **335**. Its reflection across the main diagonal contains `T`, rune index **16**. Their product, **335 × 16 = 5,360**, equals the GP sum of the proposed DIE reading. `DIE` supplies the final **187**, bringing the total from **5,173** to **5,360**. On the other terminal branch, `WINGING` contributes **177**, giving **5,350**. [Terminal-route replay](./Start-reading-here/27-key-alignment-from-node-geometry.md)
 
 # Welcome
 
@@ -191,7 +193,7 @@ Each walkthrough identifies the source node, key, phase, ciphertext cells, and r
 | 25 | [EAST](./plaintext-i-found/25-east.md) |
 | 26 | [OF](./plaintext-i-found/26-of.md) |
 | 27 | [THE](./plaintext-i-found/27-the.md) |
-| 28 | [MAP LIFE](./plaintext-i-found/28-map.md) |
+| 28 | [MAP LIFE](./plaintext-i-found/28-map-life.md) |
 | 29 | [MAY](./plaintext-i-found/29-may.md) |
 | 30 | [BE](./plaintext-i-found/30-be.md) |
 | 31 | [THE](./plaintext-i-found/31-the.md) |
