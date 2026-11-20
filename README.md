@@ -27,8 +27,7 @@ Use `--top 192` to show the complete ranking on the included matrix. [Full ranki
 
 
 > [!IMPORTANT]
-> **Red runes: Secuendi Ratio  
-> ("The Way to Proceed")**
+> **Red runes: Secuendi Ratio ("The Way to Proceed")**
 >
 > As I go, the weather turns cold.  
 I may cry now.  
