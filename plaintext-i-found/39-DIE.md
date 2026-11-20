@@ -53,11 +53,11 @@ Read the ciphertext **down-right** from `(3,22)` to `(5,24)`. Subtract one align
 
 > Go, do as I ask. Die.
 
-The punctuation is editorial. The specified placement passes the incoming checks through Report 18. In the enumeration from the fixed block 38, this is the only source/order/operation and ciphertext segment that yields the exact standalone word `DIE`.
+The punctuation is editorial. The specified placement passes the incoming checks through Report 27. [Terminal-route replay](../Start-reading-here/27-key-alignment-from-node-geometry.md) In the enumeration from the fixed block 38, this is the only source/order/operation and ciphertext segment that yields the exact standalone word `DIE`.
 
-An outgoing search from `DIE` gives **18 distinct rune outputs on 3 ordered ciphertext segments** after the geometric filters. Two outputs read as standalone English words, `JAB` and `JOES`. Both use the upward segment `(3,26) → (2,26) → (1,26)`. For either reading, Report 03 requires a leftward diagonal for the following block, so its leftmost cell coincides with its endpoint. Report 05 assigns those two positions opposite row parities, leaving no admissible following segment.
+Before applying Report 19, an outgoing search from `DIE` gives **18 distinct rune outputs on 3 ordered ciphertext segments** after the geometric filters. The reference Hunspell check accepts `JAB` and the segmented reading `EA AB`. The historical `JOES` example comes from the same upward segment as `JAB` and depends on admitting that spelling in the lexicon. The three placements have incompatible row-parity requirements for another block. [Stopping test](40-why-die-is-the-final-word.md)
 
-**Status:** `DIE` is a candidate final word for this reading. The transition rules do not independently establish where the message ends.
+Report 19 rejects all three segments, making this placement terminal. The separate `WINGING` placement also stops under the route rules. `DIE` yields the recorded total GP of 5,360 and ranks first under the decoder’s frequency score. [Stopping test](40-why-die-is-the-final-word.md) · [GP sum](../New-strongest-findings/06-opening-key-and-final-gp-sum.md)
 
 ---
 

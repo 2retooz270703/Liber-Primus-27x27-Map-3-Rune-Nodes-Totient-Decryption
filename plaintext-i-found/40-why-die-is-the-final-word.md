@@ -1,6 +1,6 @@
-# 40 — Why Is DIE the Last Word?
+# 40 — Why the DIE Branch Stops
 
-The proposed reading ends with **GO DO AS I ASK DIE**. With editorial punctuation, it reads **“Go, do as I ask. Die.”** The final imperative fits the preceding instruction. The transition checks provide two further reasons to stop at this word. Under Reports 00–18, the two standalone English readings found immediately after `DIE`, `JAB` and `JOES`, each lead to a geometric contradiction on the following step. With Report 19 added, the search stops at `DIE` itself. [Block 39 — DIE](39.md)
+The proposed reading ends with **GO DO AS I ASK DIE**. With editorial punctuation, it reads **“Go, do as I ask. Die.”** The final imperative fits the preceding instruction. Under Reports 00–18, the reference Hunspell check admits `JAB` and the segmented reading `EA AB` after `DIE`. Either placement leads to a geometric contradiction on the following step. The historical `JOES` example gives the same contradiction if that spelling is admitted. With Report 19 added, the search stops at `DIE` itself. The full replay under 00–27 also finds a terminal `WINGING` branch from `I ASK`. This walkthrough examines the stopping condition for the specified `DIE` placement. [Both terminal routes](../Start-reading-here/27-key-alignment-from-node-geometry.md) [Block 39 — DIE](39-DIE.md)
 
 ## 1. What the search finds after DIE
 
@@ -17,9 +17,9 @@ For the next block, the enumeration uses the straight, contiguous ciphertext seg
 
 The 18 assignments under Report 18 give 18 distinct rune strings. The counts in the table precede the whole-word check from [Report 16](../Start-reading-here/16-whole-word-block-boundaries.md).
 
-## 2. Why JAB and JOES cannot continue
+## 2. Why the example placements cannot continue
 
-The two standalone English readings `JAB` and `JOES` both come from the upward ciphertext segment `(3,26) → (2,26) → (1,26)`. It contains `P · X · W`, with indices `(13,14,7)`.
+The `JAB` and `JOES` rune outputs both come from the upward ciphertext segment `(3,26) → (2,26) → (1,26)`. It contains `P · X · W`, with indices `(13,14,7)`.
 
 | Reading | Original key node | Aligned key | Decrypted rune indices |
 | :--- | :--- | :--- | :--- |
@@ -38,7 +38,7 @@ $$
 
 On either allowed leftward diagonal the next endpoint $E'$ is the next leftmost cell $L'$. Report 05 predicts an odd row for $E'$ and an even row for $L'$. The same cell cannot have both row parities. This leaves **zero admissible ciphertext segments** after either `JAB` or `JOES`, regardless of the next key or plaintext.
 
-A larger lexicon can classify some strings differently. For example, treating `EA` and `AB` as separate entries admits another reading of the same upward segment, with key center `(7,17)`. That placement gives the same odd/even contradiction. The geometric check in the next section applies to every surviving string regardless of how it is segmented.
+The reference Hunspell dictionary admits `JAB` and `EA AB` when word breaks are allowed between runes. The `EA AB` reading uses the same upward segment with key center `(7,17)` and gives the same odd/even contradiction. The geometric check in the next section applies to every placement independently of the lexicon. [Dictionary details](../Start-reading-here/16-whole-word-block-boundaries.md#4-applying-the-rule-during-searches)
 
 ## 3. Why Report 19 stops the search at DIE
 
@@ -150,4 +150,4 @@ print("Report 19 excludes all three starts after DIE.")
 
 ## Conclusion
 
-**DIE is terminal for the tested branch under the rules through Report 19.** Reports 03 and 05 also explain why the two standalone readings found under the earlier filters cannot lead to a further block. The conclusion uses the fixed placement of `DIE`, the project's segment conventions and the empirical filter in Report 19. It supports reading `DIE` as the last word of this proposed route.
+**DIE is terminal for the tested branch under the rules through Report 19.** Reports 03 and 05 also explain why the illustrated placements from the earlier filters cannot lead to a further block. The conclusion uses the fixed placement of `DIE`, the project's segment conventions and the empirical filter in Report 19. It supports reading `DIE` as the last word of this proposed route.

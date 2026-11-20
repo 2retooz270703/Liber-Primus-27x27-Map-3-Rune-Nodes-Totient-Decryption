@@ -2,7 +2,7 @@
 
 *Selected continuation: **LIFE MAY BE THE DEATH OF YOU***
 
-This block begins the sentence **LIFE MAY BE THE DEATH OF YOU** after LIFE has already been read inside [MAPLIFE (28)](28-map.md). The vertical non-mirror source `T–OE–AE` becomes `T–I–AE`. Three cells read rightward on row 18 decrypt as **M·A·Y**.
+This block begins the sentence **LIFE MAY BE THE DEATH OF YOU** after LIFE has already been read inside [MAPLIFE (28)](28-map-life.md). The vertical non-mirror source `T–OE–AE` becomes `T–I–AE`. Three cells read rightward on row 18 decrypt as **M·A·Y**.
 
 **Conventions:** Coordinates are 1-based `(row, column)` in the 27 × 27 matrix. Rune indices are 0–28; GP values are the corresponding prime weights. `B`, `E`, `L`, and `M` denote the beginning, endpoint, leftmost ciphertext cell, and original key-node center. The leftmost tie-break is the bottommost cell. Method and rotation conventions follow [Report 00](../Start-reading-here/00-decryption-method.md).
 
@@ -158,4 +158,4 @@ The selected next block is **[BE (30)](30-be.md)**, read `(25,12) → (26,11)` w
 
 ---
 
-[← Previous: MAPLIFE](28-map.md) · [Next: BE →](30-be.md) · [Decryption method](../Start-reading-here/00-decryption-method.md)
+[← Previous: MAPLIFE](28-map-life.md) · [Next: BE →](30-be.md) · [Decryption method](../Start-reading-here/00-decryption-method.md)
