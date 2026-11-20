@@ -2,7 +2,7 @@
 
 I’ve added a runnable Python decoder for *Liber Primus* (LP2, pages 0–2). It takes a 27×27 rune matrix, explores the block transitions allowed by Reports 00–27, and ranks candidate readings by English word frequency. The search runs without a supplied plaintext or a preset block count.
 
-On the included matrix, the decoder finds a single 39-block route spanning 118 runes. Those runes yield 96 candidate readings. The highest-ranked reading matches the proposed plaintext below and ends with **DIE**.
+On the included matrix, the two longest completed routes each contain 39 blocks and 118 runes. They share their first 38 blocks and end in **DIE** and **WINGING**, respectively. Each route yields 96 candidate readings, for a total of 192. The highest-ranked reading matches the proposed plaintext below and ends with **DIE**. The highest-ranked reading ending in **WINGING** places fourth overall.
 
 > [!IMPORTANT]
 > [Download the decoder ZIP](./liber_primus_decoder.zip)
