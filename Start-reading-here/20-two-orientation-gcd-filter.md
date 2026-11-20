@@ -209,7 +209,11 @@ def read_matrix(map_path):
     tokens = re.findall(r'<span class="rune">([^<]+)</span>', html)
     if len(tokens) != SIZE**2:
         raise ValueError(f"Expected 729 rune cells, found {len(tokens)}.")
-    rune_index = {rune: index for index, rune in enumerate(RUNES)}
+    rune_index = {
+        token: index
+        for index, label in enumerate(RUNES)
+        for token in (label, *label.split('/'))
+    }
     return tuple(rune_index[token] for token in tokens)
 
 
