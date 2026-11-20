@@ -1,4 +1,4 @@
-## Experimental Python Decoder
+# Experimental Python Decoder
 
 I’ve added a runnable Python decoder for *Liber Primus* (LP2, pages 0–2). It takes a 27×27 rune matrix, explores the block transitions allowed by Reports 00–27, and ranks candidate readings by English word frequency. The search runs without a supplied plaintext or a preset block count.
 
