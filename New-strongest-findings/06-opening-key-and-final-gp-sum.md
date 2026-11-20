@@ -22,6 +22,8 @@ For the plaintext total, each rune contributes its Gematria Primus prime value. 
 
 The difference between the opening-key product and the subtotal through `I ASK` is **5,360 − 5,173 = 187**. The three runes of `DIE` contribute precisely **89 + 31 + 67 = 187**.
 
+The other terminal branch reads `WINGING` from indices `(7,21,21)`, or W·ING·ING. The corresponding primes are 19, 79 and 79, so the branch contributes 177 GP to the shared 5,173 prefix and totals **5,350**. Both final blocks contain three runes. [Terminal-route replay](../Start-reading-here/27-key-alignment-from-node-geometry.md)
+
 ## What the equality establishes
 
 **GP(plaintext through DIE) = 4,709 + 464 + 187 = 5,360 = 335 × 16.**

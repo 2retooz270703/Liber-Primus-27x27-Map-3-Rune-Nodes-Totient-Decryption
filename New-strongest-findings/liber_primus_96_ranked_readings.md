@@ -1,6 +1,6 @@
-# LIBER PRIMUS 27×27 — ALL 96 RANKED ENGLISH READINGS
+# Liber Primus 27×27 — 96 ranked readings ending in DIE
 
-One 39-block route, 118 runes. Readings are ranked by the decoder’s English word-frequency score. Higher scores rank first. A vertical bar (`|`) marks the boundary between two decrypted blocks.
+This list contains the 96 readings on the DIE branch, which has 39 blocks and 118 runes. The decoder ranks another 96 readings on the WINGING branch. Each heading gives the rank within the DIE branch, the English word-frequency score, and the overall rank across both branches. A vertical bar (`|`) marks a decryption-block boundary. Run `python3 decode.py matrix.txt --top 192` for the complete ranking. [Decoder](../README.md#experimental-python-decoder)
 
 ## Blocks with more than one English reading
 
@@ -15,7 +15,7 @@ One 39-block route, 118 runes. Readings are ranked by the decoder’s English wo
 
 ## Ranked readings
 
-### #01 · score -117.143145
+### #01 · score -117.143145 · overall rank 1
 
 AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YOU SOON THEN THE KEY IS TO GO TO THE EAST OF THE MAP LIFE MAY BE THE DEATH OF YOU GO DO AS I ASK DIE
 
@@ -23,7 +23,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #02 · score -118.073166
+### #02 · score -118.073166 · overall rank 2
 
 **Changes from #01**  16 SO ON
 
@@ -33,7 +33,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #03 · score -119.788192
+### #03 · score -119.788192 · overall rank 3
 
 **Changes from #01**  01 A SI GO THE
 
@@ -43,7 +43,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #04 · score -120.448461
+### #04 · score -120.448461 · overall rank 5
 
 **Changes from #01**  14 ZEE
 
@@ -53,7 +53,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #05 · score -120.718212
+### #05 · score -120.718213 · overall rank 6
 
 **Changes from #01**  01 A SI GO THE  |  16 SO ON
 
@@ -63,7 +63,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #06 · score -121.378482
+### #06 · score -121.378482 · overall rank 8
 
 **Changes from #01**  14 ZEE  |  16 SO ON
 
@@ -73,7 +73,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #07 · score -121.813926
+### #07 · score -121.813926 · overall rank 9
 
 **Changes from #01**  38 I A SC
 
@@ -83,7 +83,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #08 · score -122.472095
+### #08 · score -122.472095 · overall rank 10
 
 **Changes from #01**  16 ZOON
 
@@ -93,7 +93,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #09 · score -122.743947
+### #09 · score -122.743947 · overall rank 12
 
 **Changes from #01**  16 SO ON  |  38 I A SC
 
@@ -103,7 +103,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #10 · score -123.093507
+### #10 · score -123.093508 · overall rank 13
 
 **Changes from #01**  01 A SI GO THE  |  14 ZEE
 
@@ -113,7 +113,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #11 · score -123.889210
+### #11 · score -123.889210 · overall rank 16
 
 **Changes from #01**  25 EA ST
 
@@ -123,7 +123,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #12 · score -124.023528
+### #12 · score -124.023528 · overall rank 17
 
 **Changes from #01**  01 A SI GO THE  |  14 ZEE  |  16 SO ON
 
@@ -133,7 +133,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #13 · score -124.458973
+### #13 · score -124.458973 · overall rank 19
 
 **Changes from #01**  01 A SI GO THE  |  38 I A SC
 
@@ -143,7 +143,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #14 · score -124.593648
+### #14 · score -124.593648 · overall rank 20
 
 **Changes from #01**  08 ID EA
 
@@ -153,7 +153,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #15 · score -124.819231
+### #15 · score -124.819231 · overall rank 22
 
 **Changes from #01**  16 SO ON  |  25 EA ST
 
@@ -163,7 +163,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #16 · score -125.117142
+### #16 · score -125.117142 · overall rank 23
 
 **Changes from #01**  01 A SI GO THE  |  16 ZOON
 
@@ -173,7 +173,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #17 · score -125.119242
+### #17 · score -125.119242 · overall rank 24
 
 **Changes from #01**  14 ZEE  |  38 I A SC
 
@@ -183,7 +183,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #18 · score -125.388994
+### #18 · score -125.388994 · overall rank 26
 
 **Changes from #01**  01 A SI GO THE  |  16 SO ON  |  38 I A SC
 
@@ -193,7 +193,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #19 · score -125.523668
+### #19 · score -125.523669 · overall rank 27
 
 **Changes from #01**  08 ID EA  |  16 SO ON
 
@@ -203,7 +203,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #20 · score -125.777411
+### #20 · score -125.777411 · overall rank 29
 
 **Changes from #01**  14 ZEE  |  16 ZOON
 
@@ -213,7 +213,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #21 · score -126.049263
+### #21 · score -126.049263 · overall rank 31
 
 **Changes from #01**  14 ZEE  |  16 SO ON  |  38 I A SC
 
@@ -223,7 +223,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #22 · score -126.534257
+### #22 · score -126.534257 · overall rank 32
 
 **Changes from #01**  01 A SI GO THE  |  25 EA ST
 
@@ -233,7 +233,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #23 · score -127.142876
+### #23 · score -127.142876 · overall rank 35
 
 **Changes from #01**  16 ZOON  |  38 I A SC
 
@@ -243,7 +243,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #24 · score -127.194526
+### #24 · score -127.194526 · overall rank 36
 
 **Changes from #01**  14 ZEE  |  25 EA ST
 
@@ -253,7 +253,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #25 · score -127.238694
+### #25 · score -127.238694 · overall rank 37
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA
 
@@ -263,7 +263,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #26 · score -127.464278
+### #26 · score -127.464278 · overall rank 40
 
 **Changes from #01**  01 A SI GO THE  |  16 SO ON  |  25 EA ST
 
@@ -273,7 +273,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #27 · score -127.764289
+### #27 · score -127.764289 · overall rank 42
 
 **Changes from #01**  01 A SI GO THE  |  14 ZEE  |  38 I A SC
 
@@ -283,7 +283,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #28 · score -127.898963
+### #28 · score -127.898964 · overall rank 43
 
 **Changes from #01**  08 ID EA  |  14 ZEE
 
@@ -293,7 +293,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH ZEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | ZEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #29 · score -128.124547
+### #29 · score -128.124547 · overall rank 46
 
 **Changes from #01**  14 ZEE  |  16 SO ON  |  25 EA ST
 
@@ -303,7 +303,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #30 · score -128.168715
+### #30 · score -128.168715 · overall rank 47
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA  |  16 SO ON
 
@@ -313,7 +313,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #31 · score -128.422458
+### #31 · score -128.422458 · overall rank 50
 
 **Changes from #01**  01 A SI GO THE  |  14 ZEE  |  16 ZOON
 
@@ -323,7 +323,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #32 · score -128.559991
+### #32 · score -128.559992 · overall rank 51
 
 **Changes from #01**  25 EA ST  |  38 I A SC
 
@@ -333,7 +333,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #33 · score -128.694309
+### #33 · score -128.694310 · overall rank 53
 
 **Changes from #01**  01 A SI GO THE  |  14 ZEE  |  16 SO ON  |  38 I A SC
 
@@ -343,7 +343,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #34 · score -128.828984
+### #34 · score -128.828984 · overall rank 54
 
 **Changes from #01**  08 ID EA  |  14 ZEE  |  16 SO ON
 
@@ -353,7 +353,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH ZEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | ZEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #35 · score -129.218160
+### #35 · score -129.218161 · overall rank 56
 
 **Changes from #01**  16 ZOON  |  25 EA ST
 
@@ -363,7 +363,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #36 · score -129.264429
+### #36 · score -129.264429 · overall rank 57
 
 **Changes from #01**  08 ID EA  |  38 I A SC
 
@@ -373,7 +373,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #37 · score -129.490012
+### #37 · score -129.490012 · overall rank 59
 
 **Changes from #01**  16 SO ON  |  25 EA ST  |  38 I A SC
 
@@ -383,7 +383,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #38 · score -129.787923
+### #38 · score -129.787923 · overall rank 60
 
 **Changes from #01**  01 A SI GO THE  |  16 ZOON  |  38 I A SC
 
@@ -393,7 +393,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #39 · score -129.839573
+### #39 · score -129.839573 · overall rank 61
 
 **Changes from #01**  01 A SI GO THE  |  14 ZEE  |  25 EA ST
 
@@ -403,7 +403,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #40 · score -129.922598
+### #40 · score -129.922598 · overall rank 62
 
 **Changes from #01**  08 ID EA  |  16 ZOON
 
@@ -413,7 +413,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #41 · score -130.194450
+### #41 · score -130.194450 · overall rank 66
 
 **Changes from #01**  08 ID EA  |  16 SO ON  |  38 I A SC
 
@@ -423,7 +423,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #42 · score -130.448192
+### #42 · score -130.448192 · overall rank 68
 
 **Changes from #01**  14 ZEE  |  16 ZOON  |  38 I A SC
 
@@ -433,7 +433,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #43 · score -130.544010
+### #43 · score -130.544010 · overall rank 69
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA  |  14 ZEE
 
@@ -443,7 +443,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH ZEE Y
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | ZEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #44 · score -130.769593
+### #44 · score -130.769594 · overall rank 72
 
 **Changes from #01**  01 A SI GO THE  |  14 ZEE  |  16 SO ON  |  25 EA ST
 
@@ -453,7 +453,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #45 · score -131.205038
+### #45 · score -131.205038 · overall rank 75
 
 **Changes from #01**  01 A SI GO THE  |  25 EA ST  |  38 I A SC
 
@@ -463,7 +463,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #46 · score -131.339713
+### #46 · score -131.339713 · overall rank 77
 
 **Changes from #01**  08 ID EA  |  25 EA ST
 
@@ -473,7 +473,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #47 · score -131.474031
+### #47 · score -131.474031 · overall rank 79
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA  |  14 ZEE  |  16 SO ON
 
@@ -483,7 +483,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH ZEE Y
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | ZEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #48 · score -131.863207
+### #48 · score -131.863207 · overall rank 82
 
 **Changes from #01**  01 A SI GO THE  |  16 ZOON  |  25 EA ST
 
@@ -493,7 +493,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #49 · score -131.865307
+### #49 · score -131.865307 · overall rank 83
 
 **Changes from #01**  14 ZEE  |  25 EA ST  |  38 I A SC
 
@@ -503,7 +503,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #50 · score -131.909475
+### #50 · score -131.909476 · overall rank 84
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA  |  38 I A SC
 
@@ -513,7 +513,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #51 · score -132.135059
+### #51 · score -132.135059 · overall rank 87
 
 **Changes from #01**  01 A SI GO THE  |  16 SO ON  |  25 EA ST  |  38 I A SC
 
@@ -523,7 +523,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #52 · score -132.269734
+### #52 · score -132.269734 · overall rank 88
 
 **Changes from #01**  08 ID EA  |  16 SO ON  |  25 EA ST
 
@@ -533,7 +533,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #53 · score -132.523476
+### #53 · score -132.523476 · overall rank 90
 
 **Changes from #01**  14 ZEE  |  16 ZOON  |  25 EA ST
 
@@ -543,7 +543,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #54 · score -132.567644
+### #54 · score -132.567645 · overall rank 91
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA  |  16 ZOON
 
@@ -553,7 +553,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #55 · score -132.569745
+### #55 · score -132.569745 · overall rank 92
 
 **Changes from #01**  08 ID EA  |  14 ZEE  |  38 I A SC
 
@@ -563,7 +563,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH ZEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | ZEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #56 · score -132.795328
+### #56 · score -132.795328 · overall rank 96
 
 **Changes from #01**  14 ZEE  |  16 SO ON  |  25 EA ST  |  38 I A SC
 
@@ -573,7 +573,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #57 · score -132.839496
+### #57 · score -132.839496 · overall rank 97
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA  |  16 SO ON  |  38 I A SC
 
@@ -583,7 +583,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #58 · score -133.093239
+### #58 · score -133.093239 · overall rank 99
 
 **Changes from #01**  01 A SI GO THE  |  14 ZEE  |  16 ZOON  |  38 I A SC
 
@@ -593,7 +593,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #59 · score -133.227914
+### #59 · score -133.227914 · overall rank 100
 
 **Changes from #01**  08 ID EA  |  14 ZEE  |  16 ZOON
 
@@ -603,7 +603,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH ZEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | ZEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #60 · score -133.499765
+### #60 · score -133.499766 · overall rank 103
 
 **Changes from #01**  08 ID EA  |  14 ZEE  |  16 SO ON  |  38 I A SC
 
@@ -613,7 +613,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH ZEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | ZEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #61 · score -133.888942
+### #61 · score -133.888942 · overall rank 105
 
 **Changes from #01**  16 ZOON  |  25 EA ST  |  38 I A SC
 
@@ -623,7 +623,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #62 · score -133.984760
+### #62 · score -133.984760 · overall rank 106
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA  |  25 EA ST
 
@@ -633,7 +633,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #63 · score -134.510354
+### #63 · score -134.510354 · overall rank 110
 
 **Changes from #01**  01 A SI GO THE  |  14 ZEE  |  25 EA ST  |  38 I A SC
 
@@ -643,7 +643,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #64 · score -134.593379
+### #64 · score -134.593379 · overall rank 111
 
 **Changes from #01**  08 ID EA  |  16 ZOON  |  38 I A SC
 
@@ -653,7 +653,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #65 · score -134.645029
+### #65 · score -134.645029 · overall rank 112
 
 **Changes from #01**  08 ID EA  |  14 ZEE  |  25 EA ST
 
@@ -663,7 +663,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH ZEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | ZEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #66 · score -134.914780
+### #66 · score -134.914780 · overall rank 116
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA  |  16 SO ON  |  25 EA ST
 
@@ -673,7 +673,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #67 · score -135.168523
+### #67 · score -135.168523 · overall rank 119
 
 **Changes from #01**  01 A SI GO THE  |  14 ZEE  |  16 ZOON  |  25 EA ST
 
@@ -683,7 +683,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #68 · score -135.214791
+### #68 · score -135.214791 · overall rank 120
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA  |  14 ZEE  |  38 I A SC
 
@@ -693,7 +693,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH ZEE Y
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | ZEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #69 · score -135.440375
+### #69 · score -135.440375 · overall rank 124
 
 **Changes from #01**  01 A SI GO THE  |  14 ZEE  |  16 SO ON  |  25 EA ST  |  38 I A SC
 
@@ -703,7 +703,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #70 · score -135.575049
+### #70 · score -135.575050 · overall rank 125
 
 **Changes from #01**  08 ID EA  |  14 ZEE  |  16 SO ON  |  25 EA ST
 
@@ -713,7 +713,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH ZEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | ZEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #71 · score -135.872960
+### #71 · score -135.872960 · overall rank 128
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA  |  14 ZEE  |  16 ZOON
 
@@ -723,7 +723,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH ZEE Y
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | ZEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #72 · score -136.010494
+### #72 · score -136.010494 · overall rank 130
 
 **Changes from #01**  08 ID EA  |  25 EA ST  |  38 I A SC
 
@@ -733,7 +733,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #73 · score -136.144812
+### #73 · score -136.144812 · overall rank 132
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA  |  14 ZEE  |  16 SO ON  |  38 I A SC
 
@@ -743,7 +743,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH ZEE Y
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | ZEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #74 · score -136.533988
+### #74 · score -136.533988 · overall rank 134
 
 **Changes from #01**  01 A SI GO THE  |  16 ZOON  |  25 EA ST  |  38 I A SC
 
@@ -753,7 +753,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH SEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | SEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #75 · score -136.668663
+### #75 · score -136.668663 · overall rank 135
 
 **Changes from #01**  08 ID EA  |  16 ZOON  |  25 EA ST
 
@@ -763,7 +763,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #76 · score -136.940515
+### #76 · score -136.940515 · overall rank 138
 
 **Changes from #01**  08 ID EA  |  16 SO ON  |  25 EA ST  |  38 I A SC
 
@@ -773,7 +773,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #77 · score -137.194257
+### #77 · score -137.194257 · overall rank 139
 
 **Changes from #01**  14 ZEE  |  16 ZOON  |  25 EA ST  |  38 I A SC
 
@@ -783,7 +783,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #78 · score -137.238426
+### #78 · score -137.238426 · overall rank 140
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA  |  16 ZOON  |  38 I A SC
 
@@ -793,7 +793,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #79 · score -137.290075
+### #79 · score -137.290075 · overall rank 141
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA  |  14 ZEE  |  25 EA ST
 
@@ -803,7 +803,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH ZEE Y
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | ZEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #80 · score -137.898695
+### #80 · score -137.898695 · overall rank 146
 
 **Changes from #01**  08 ID EA  |  14 ZEE  |  16 ZOON  |  38 I A SC
 
@@ -813,7 +813,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH ZEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | ZEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #81 · score -138.220096
+### #81 · score -138.220096 · overall rank 149
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA  |  14 ZEE  |  16 SO ON  |  25 EA ST
 
@@ -823,7 +823,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH ZEE Y
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | ZEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #82 · score -138.655541
+### #82 · score -138.655541 · overall rank 152
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA  |  25 EA ST  |  38 I A SC
 
@@ -833,7 +833,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #83 · score -139.313710
+### #83 · score -139.313710 · overall rank 156
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA  |  16 ZOON  |  25 EA ST
 
@@ -843,7 +843,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #84 · score -139.315810
+### #84 · score -139.315810 · overall rank 157
 
 **Changes from #01**  08 ID EA  |  14 ZEE  |  25 EA ST  |  38 I A SC
 
@@ -853,7 +853,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH ZEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | ZEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #85 · score -139.585561
+### #85 · score -139.585562 · overall rank 160
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA  |  16 SO ON  |  25 EA ST  |  38 I A SC
 
@@ -863,7 +863,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #86 · score -139.839304
+### #86 · score -139.839304 · overall rank 162
 
 **Changes from #01**  01 A SI GO THE  |  14 ZEE  |  16 ZOON  |  25 EA ST  |  38 I A SC
 
@@ -873,7 +873,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE IDEA OF THE END IS DEATH ZEE YO
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | IDEA | OF | THE | END | IS | DEATH | ZEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #87 · score -139.973979
+### #87 · score -139.973979 · overall rank 163
 
 **Changes from #01**  08 ID EA  |  14 ZEE  |  16 ZOON  |  25 EA ST
 
@@ -883,7 +883,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH ZEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | ZEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #88 · score -140.245831
+### #88 · score -140.245831 · overall rank 167
 
 **Changes from #01**  08 ID EA  |  14 ZEE  |  16 SO ON  |  25 EA ST  |  38 I A SC
 
@@ -893,7 +893,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH ZEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | ZEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #89 · score -140.543741
+### #89 · score -140.543742 · overall rank 168
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA  |  14 ZEE  |  16 ZOON  |  38 I A SC
 
@@ -903,7 +903,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH ZEE Y
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | ZEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EAST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #90 · score -141.339444
+### #90 · score -141.339444 · overall rank 171
 
 **Changes from #01**  08 ID EA  |  16 ZOON  |  25 EA ST  |  38 I A SC
 
@@ -913,7 +913,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #91 · score -141.960856
+### #91 · score -141.960857 · overall rank 173
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA  |  14 ZEE  |  25 EA ST  |  38 I A SC
 
@@ -923,7 +923,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH ZEE Y
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | ZEE | YOU | SOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #92 · score -142.619025
+### #92 · score -142.619026 · overall rank 177
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA  |  14 ZEE  |  16 ZOON  |  25 EA ST
 
@@ -933,7 +933,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH ZEE Y
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | ZEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I ASK | DIE
 
-### #93 · score -142.890877
+### #93 · score -142.890877 · overall rank 180
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA  |  14 ZEE  |  16 SO ON  |  25 EA ST  |  38 I A SC
 
@@ -943,7 +943,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH ZEE Y
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | ZEE | YOU | SO ON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #94 · score -143.984491
+### #94 · score -143.984491 · overall rank 183
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA  |  16 ZOON  |  25 EA ST  |  38 I A SC
 
@@ -953,7 +953,7 @@ A SI GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH SEE Y
 
 A SI GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | SEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #95 · score -144.644760
+### #95 · score -144.644760 · overall rank 185
 
 **Changes from #01**  08 ID EA  |  14 ZEE  |  16 ZOON  |  25 EA ST  |  38 I A SC
 
@@ -963,7 +963,7 @@ AS I GO THE WEATHER TURNS COLD I MAY CRY NOW THE ID EA OF THE END IS DEATH ZEE Y
 
 AS I GO THE | WEATHER | TURNS | COLD | I MAY | CRY | NOW THE | ID EA | OF | THE | END | IS | DEATH | ZEE | YOU | ZOON | THEN | THE | KEY | IS | TO | GO | TO | THE | EA ST | OF | THE | MAP LIFE | MAY | BE | THE | DEATH | OF | YOU | GO | DO | AS | I A SC | DIE
 
-### #96 · score -147.289807
+### #96 · score -147.289807 · overall rank 190
 
 **Changes from #01**  01 A SI GO THE  |  08 ID EA  |  14 ZEE  |  16 ZOON  |  25 EA ST  |  38 I A SC
 

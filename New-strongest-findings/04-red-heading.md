@@ -195,9 +195,9 @@ The five-object title construction above had already frozen the additive sums `1
 
 The immediate receiver is negative. Reading the recurrence values as zero-based row-major table addresses `[15,42,57,99,156,255]` gives printed tokens `3W 0S 1w 0Y 0q 1K`, canonical bytes `[212,28,118,34,52,80]`, and GP29 residues `N-EA-TH-C-D-OE`. The equally direct rival “locate each recurrence number as a table byte value” also stops: value 99 is absent, while 42 occurs twice and 156 three times; only 15, 57 and 255 are unique. No phase, alternate traversal, arithmetic sign, or nearby index was tried.
 
-**Scope:** this does not authenticate the conditional `SEQUENDI RATIO` title and does not turn the p50 table into a decoder. It supplies a prospective consequence of the already-frozen recurrence and gives conditional manuscript-internal support to viewing the 256-cell table as a zero-based address space. The separate historical audit still finds no Cicada-authored 2012–2014 zero-based row-major convention. Director #1612 has now performed that source-receiver audit. Original cell255 is ordinary lower-right token `1K`, visually unmarked relative to the table, and the same physical page continues below with black runic text. No first-party LP2 instruction or authenticated 2012–2016 Cicada convention reviewed by #1570 names cell255, a terminal-table receiver, or zero-based row-major addressing. The recurrence therefore stops here as a **conditional zero-origin cross-link**, not an executable handoff. Do not tune neighboring cells, alternate recurrences, traversals, token radices, or table walks absent a new independent receiver clue. See [the #1612 source gate](lp2-p0-title-recurrence-p50-cell255-source-gate.md).
+**Scope:** this does not authenticate the conditional `SEQUENDI RATIO` title and does not turn the p50 table into a decoder. It supplies a prospective consequence of the already-frozen recurrence and gives conditional manuscript-internal support to viewing the 256-cell table as a zero-based address space. The separate historical audit still finds no Cicada-authored 2012–2014 zero-based row-major convention. Director #1612 has now performed that source-receiver audit. Original cell255 is ordinary lower-right token `1K`, visually unmarked relative to the table, and the same physical page continues below with black runic text. No first-party LP2 instruction or authenticated 2012–2016 Cicada convention reviewed by #1570 names cell255, a terminal-table receiver, or zero-based row-major addressing. The recurrence therefore stops here as a **conditional zero-origin cross-link**, not an executable handoff. Do not tune neighboring cells, alternate recurrences, traversals, token radices, or table walks absent a new independent receiver clue. The referenced #1612 source-gate note, `lp2-p0-title-recurrence-p50-cell255-source-gate.md`, is absent from this project archive.
 
-Reproducer: [`sims/lp2_p0_title_recurrence_p50_255_sft.cjs`](../sims/lp2_p0_title_recurrence_p50_255_sft.cjs).
+Reproducer: `sims/lp2_p0_title_recurrence_p50_255_sft.cjs`.
 
 ## Recurrence residues do not supply a direct GP29 body key
 
@@ -214,7 +214,7 @@ The authenticated p56 transparent-plaintext-F rule is even more decisive here. A
 
 **Scope:** this closes only the simplest interpretation in which the title's additive checksum sequence itself becomes a repeating GP29 additive key. It does not weaken the 255→p50 address coincidence above, the conditional title construction, or a different source-authored operation on the recurrence values. Do not tune nearby phases, signs, F exceptions or partial windows; the full finite direct family is already covered.
 
-Reproducer: [`sims/lp2_p0_secuendi_recurrence_key_gate_sft.cjs`](../sims/lp2_p0_secuendi_recurrence_key_gate_sft.cjs). Windows Node 22 CI: [run 44398637616](https://github.com/FlareZ123/liber-primus/actions/runs/44398637616).
+Reproducer: `sims/lp2_p0_secuendi_recurrence_key_gate_sft.cjs`. Windows Node 22 CI: [run 44398637616](https://github.com/FlareZ123/liber-primus/actions/runs/44398637616).
 
 ## Independent MAP corroboration of the same second-key node
 
@@ -287,9 +287,9 @@ The strongest current chain is:
 
 The raw 13-rune construction is now substantially more constrained and internally self-consistent. The main remaining gap is the equal-rune/equal-radius geometry rule; an external Latin control would strengthen the register interpretation but the artifact's own numbers already discriminate between the two candidate spelling registers. A prospective untouched-cipher consequence is still required before calling the title established plaintext.
 
-## Reproduction
+## Reproduction references
 
-Run:
+The commands refer to the original analysis workspace. The `sims/` scripts and their source images are absent from this project archive.
 
 ```
 node sims/lp2_p0_red_ratio_sourceonly_sft.cjs

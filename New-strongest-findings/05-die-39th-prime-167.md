@@ -1,6 +1,6 @@
 # Report 05 — DIE at Block 39 and Cicada’s Prime 167
 
-The proposed LP2 reading for pages 0–2 ends with **DIE** at block **39**. Counting primes in ascending order from 2, the **39th prime is 167**. That number already appears in Cicada 3301’s 2013 puzzle as the duration in whole seconds of *The Instar Emergence*, whose filename reverses those digits to **`761.mp3`**. The same recording was used to recover the original Gematria Primus table. The match adds a numerical reason to consider **DIE** a deliberate endpoint of the proposed reading.
+The proposed LP2 reading for pages 0–2 ends with **DIE** at block **39**. Counting primes in ascending order from 2, the **39th prime is 167**. That number already appears in Cicada 3301’s 2013 puzzle as the duration in whole seconds of *The Instar Emergence*, whose filename reverses those digits to **`761.mp3`**. The same recording was used to recover the original Gematria Primus table. The match concerns the endpoint’s position. Both `DIE` and `WINGING` are terminal at block 39 under Reports 00–27. [Terminal-route replay](../Start-reading-here/27-key-alignment-from-node-geometry.md)
 
 ## 1. What block 39 matches
 
@@ -42,11 +42,11 @@ The factorization and the 39th-prime match both depend on the same observed endp
 
 ## 4. What this adds to the proposed ending
 
-The route worksheet derives **DIE** from three ciphertext runes under the documented incoming checks. Its outgoing search reports two standalone English outputs, **JAB** and **JOES**. Each reaches a state where the required diagonal and row parities leave no admissible following segment. The linguistic reading also closes naturally on a one-word imperative, **“Go, do as I ask. Die.”** [Block 39 worksheet and outgoing search](../plaintext-i-found/39-DIE.md#4-candidate-ending)
+The route worksheet derives **DIE** from three ciphertext runes under the documented incoming checks. Before Report 19 is applied, the outgoing search admits **JAB** and **EA AB** with the reference Hunspell lexicon. The required diagonal and row parities leave no following segment for either placement. Report 19 rejects all immediate geometric successors from `DIE`. The linguistic reading also closes naturally on a one-word imperative, **“Go, do as I ask. Die.”** [Block 39 worksheet and outgoing search](../plaintext-i-found/39-DIE.md#4-candidate-ending)
 
 The 2013 material supplies an external reference for the endpoint’s position. Starting with **167** and counting its position in the primes identifies **block 39** uniquely under the stated indexing convention. That is where the proposed route produces **DIE**. The nearby positions map to **163** and **173**.
 
-The comparison was made after **DIE** had been identified. Its evidential value is retrospective, and depends on whether Cicada intended prime indexing to apply to route blocks. Together with the documented outgoing search, the match supports **DIE** as a candidate ending for this reading. Establishing an intended stopping rule remains open.
+The comparison was made after **DIE** had been identified. Its evidential value is retrospective, and depends on whether Cicada intended prime indexing to apply to route blocks. The same block count applies to the `WINGING` ending. The opening-key GP comparison separately distinguishes the two. [Opening-key GP comparison](06-opening-key-and-final-gp-sum.md)
 
 ## 5. Reproduce the numerical check
 
