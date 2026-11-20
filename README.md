@@ -201,7 +201,7 @@ Each walkthrough identifies the source node, key, phase, ciphertext cells, and r
 | 36 | [DO](./plaintext-i-found/36-do.md) |
 | 37 | [AS](./plaintext-i-found/37-as.md) |
 | 38 | [I ASK](./plaintext-i-found/38-i-ask.md) |
-| 39 | [DIE](./plaintext-i-found/39-DIE.md) |
+| 39 ✅ | [DIE](./plaintext-i-found/39-DIE.md) |
 
 ## Structural evidence and the red heading
 
