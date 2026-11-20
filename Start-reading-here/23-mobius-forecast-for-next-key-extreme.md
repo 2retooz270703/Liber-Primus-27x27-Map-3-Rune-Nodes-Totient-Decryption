@@ -67,7 +67,7 @@ The enumeration starts each test at the recorded current block with its recorded
 
 All **38/38** recorded placements pass. The forecast is positive on **9** transitions. With equal weight per transition, the mean geometric reduction is **23.17%** across all lengths and **21.97%** at recorded lengths.
 
-As a separate whole-word check after I ASK, English Hunspell `en_US` accepts **43 → 24** distinct segmented readings. At rune boundaries the accepted outputs go from **17 → 8** single tokens and **26 → 16** multi-token readings. This check allows the alternate transliterations in the project's rune alphabet. Distinct keys giving the same segmented output count once. The eight single tokens are **APP, DIE, OBOE, ROW, SEC, SOY, SSH, TOY**. The dictionary includes abbreviations. [Report 16](16-whole-word-block-boundaries.md)
+As a separate whole-word check after I ASK, English Hunspell `en_US` accepts **52 → 28** distinct segmented readings. At rune boundaries the accepted outputs go from **22 → 12** single tokens and **30 → 16** multi-token readings. This check uses the rune alphabet’s single-rune transliteration alternatives, including both NG and ING for ᛝ. Distinct keys giving the same segmented output count once. The 12 surviving single tokens are **APP, DIE, OBOE, ROW, SEC, SINGS, SOY, SSH, TINGS, TOY, WINGING, ZINGS**. The dictionary includes abbreviations. Run the Report 24 verifier with `--dictionary` to check these counts. [Report 16](16-whole-word-block-boundaries.md) · [Report 24](24-mod-seven-key-center-ciphertext-alignment.md)
 
 ### One-block lookahead
 

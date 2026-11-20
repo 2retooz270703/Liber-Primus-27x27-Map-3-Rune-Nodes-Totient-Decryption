@@ -1094,8 +1094,10 @@ The accumulated plaintext totals distinguish the following boundaries along the 
 | Through MAP LIFE | Complete block 28 | 34 | 90 | 1085 | 3913 |
 | Through YOU | 34 | 40 | 105 | 1295 | 4709 |
 | **Through I ASK** | **38** | **45** | **115** | **1423** | **5173** |
+| Through DIE | 39 | 46 | 118 | 1474 | 5360 |
+| Through WINGING | 39 | 46 | 118 | 1472 | 5350 |
 
-The selected reading is therefore:
+The proposed reading on the highest-ranked route is:
 
 ```text
 AS I GO, THE WEATHER TURNS COLD.
@@ -1107,9 +1109,10 @@ SEE YOU SOON, THEN.
 THE KEY IS TO GO TO THE EAST OF THE MAP.
 LIFE MAY BE THE DEATH OF YOU.
 GO, DO AS I ASK.
+DIE.
 ```
 
-The incoming transition to YOU is evaluated at **S = 27** and produces **S = 28**. The proposed cyclic phase schedule selects **Direct/+1** for the outgoing transition at that point. The four added blocks have phases **2, 0, 2, 0**, bringing the accumulated state to **S = 32** at I ASK. Block 38 is the endpoint of the recorded candidate route. [Report 11 — Cyclic phase modes](./11-seven-thresholds-and-cyclic-phase-modes.md)
+The incoming transition to YOU is evaluated at **S = 27** and produces **S = 28**. The proposed cyclic phase schedule selects **Direct/+1** for the outgoing transition at that point. The four added blocks have phases **2, 0, 2, 0**, bringing the accumulated state to **S = 32** at I ASK. Block 38 is the last shared block. Both terminal branches pass the geometric replay through Report 27. The DIE branch matches the opening-key GP product. [Report 11 — Cyclic phase modes](./11-seven-thresholds-and-cyclic-phase-modes.md) · [Report 27 — Terminal routes](./27-key-alignment-from-node-geometry.md) · [Opening-key checksum](../New-strongest-findings/06-opening-key-and-final-gp-sum.md)
 
 ---
 

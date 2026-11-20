@@ -47,9 +47,16 @@ For each candidate continuation:
 4. Check the grammar and meaning of the resulting continuation in context.
 5. Retain it only if it also passes the applicable constraints in Reports 00–15.
 
-Evaluate word boundaries on the established rune transliteration. Multi-letter rune labels such as `TH` and `EA` still represent one rune each.
+Evaluate word boundaries on the established rune transliteration. Split only between complete rune emissions. For example, `TH` and `EA` each come from a single rune, and ᛝ (index 21) can emit `NG` or `ING`. The standalone decoder also accepts `QU` from the adjacent pair `C/K + W` (indices `5, 7`), with no word break inside that pair. Reports 23–27 count Hunspell readings using single-rune emissions. [Decoder](../README.md#experimental-python-decoder) · [Report 27](27-key-alignment-from-node-geometry.md)
 
 The minimum length in Report 08 applies to the **whole block**. Thus, the one-letter word I is allowed inside the multiword block `IMAY`; this does not permit a separate one-rune block.
+
+The numerical Hunspell checks can vary with the installed dictionary. The reference `en_US` pair used for the tables in this project has the following SHA-256 hashes.
+
+```text
+70fe5778717d097ce2f3326baaa5c1e4d2206d81a5a81d3ea8e11c4770806dd5  en_US.aff
+829a043cf078d1e80e886289a13823454977f442a239a859d2133ea61944aa60  en_US.dic
+```
 
 **Acceptance condition: every block is fully accounted for by complete English words, and every word belongs entirely to one block.**
 

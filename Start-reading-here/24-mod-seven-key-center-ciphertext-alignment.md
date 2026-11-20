@@ -49,7 +49,7 @@ Both readings use the ordered segment `(3, 22) → (4, 23) → (5, 24)`. Its lef
 | **DIE** | (18,14) | 473 | 1,127 | 0 | Keep |
 | APP | (26,6) | 681 | 1,335 | 5 | Reject |
 
-Hunspell `en_US` accepts **24 → 4** segmented readings after I ASK when the search checks boundaries between runes and allows the project's alternate transliterations. The four survivors are **DIE**, **A YR**, **AS AE**, and **DO AE**. DIE is the only single token. On the exact DIE segment, the surviving readings are **DIE** and **DO AE**, which share a physical key node and use different key directions. The filter compares cell positions, so both directions on that geometry satisfy the same test. [Report 16](16-whole-word-block-boundaries.md) · [I ASK](../plaintext-i-found/38-i-ask.md) · [DIE](../plaintext-i-found/39-DIE.md)
+Hunspell `en_US` accepts **28 → 5** segmented readings after I ASK when the search checks boundaries between runes and allows the project's alternate transliterations. The five surviving readings are **A YR**, **AS AE**, **DIE**, **DO AE**, and **WINGING**. **DIE** and **WINGING** are single tokens on separate segments. On the exact DIE segment, the surviving readings are **DIE** and **DO AE**, which share a physical key node and use different key directions. The filter compares cell positions, so both directions on that geometry satisfy the same test. [Report 16](16-whole-word-block-boundaries.md) · [I ASK](../plaintext-i-found/38-i-ask.md) · [DIE](../plaintext-i-found/39-DIE.md)
 
 ## 4. Route validation and selectivity
 
@@ -83,7 +83,7 @@ These frequencies apply to the tested search families and pools. Report 24 is an
 
 ## 6. Reproduce the results
 
-Save the Python block below as `verify_report24.py` and run it from the project root. The default run uses the existing Report 23 enumerator and the map, with no third-party packages. The optional `--lookahead` run checks both successive transitions. To reproduce the word counts, pass the prefix of an English Hunspell dictionary and use a system installation that exposes the Hunspell C library.
+Save the Python block below as `verify_report24.py` and run it from the project root. The default run uses the existing Report 23 enumerator and the map, with no third-party packages. The optional `--lookahead` run checks both successive transitions. To reproduce the word counts after I ASK for Reports 23 and 24, pass the prefix of the reference English Hunspell dictionary and use a system installation that exposes the Hunspell C library. [Dictionary details](16-whole-word-block-boundaries.md#4-applying-the-rule-during-searches)
 
 ```bash
 python3 verify_report24.py
@@ -195,7 +195,7 @@ def verify_lookahead(report21, route, states, before, after, next23, accepts24):
     print("Lookahead at recorded first-step lengths: 357 -> 241.")
 
 
-def verify_dictionary(search, before, after, final_segment, dictionary):
+def verify_dictionary(search, through22, through23, through24, final_segment, dictionary):
     import ctypes as c
     from ctypes.util import find_library
     from os import fsencode
@@ -251,10 +251,17 @@ def verify_dictionary(search, before, after, final_segment, dictionary):
         }
 
     try:
-        assert len(readings(before)) == 24
-        assert readings(after) == {"DIE", "A YR", "AS AE", "DO AE"}
-        assert readings(e for e in after if e[1] == final_segment) == {"DIE", "DO AE"}
-        print("Hunspell en_US: 24 -> 4 readings. DIE is the sole single token.")
+        old, filtered = readings(through22), readings(through23)
+        assert (len(old), len(filtered)) == (52, 28)
+        assert sum(" " not in text for text in old) == 22
+        assert {text for text in filtered if " " not in text} == {
+            "APP", "DIE", "OBOE", "ROW", "SEC", "SINGS", "SOY", "SSH",
+            "TINGS", "TOY", "WINGING", "ZINGS",
+        }
+        assert readings(through24) == {"DIE", "A YR", "AS AE", "DO AE", "WINGING"}
+        fixed = (entry for entry in through24 if entry[1] == final_segment)
+        assert readings(fixed) == {"DIE", "DO AE"}
+        print("Hunspell en_US after I ASK: 52 -> 28 -> 5 readings (Reports 22, 23, 24).")
     finally:
         hunspell.Hunspell_destroy(handle)
 
@@ -300,5 +307,6 @@ if __name__ == "__main__":
         verify_lookahead(report21, route, states, before, after, next23, accepts24)
 
     if args.dictionary:
-        verify_dictionary(search, before[-1], after[-1], route[-1][1], args.dictionary)
+        through22 = [e for e in after21[-1] if report22.passes_report22(*e[:2])]
+        verify_dictionary(search, through22, before[-1], after[-1], route[-1][1], args.dictionary)
 ```

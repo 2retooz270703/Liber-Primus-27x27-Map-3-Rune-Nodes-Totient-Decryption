@@ -2,7 +2,7 @@
 
 This report proposes a **local, one-step geometric filter** for the next ciphertext start. It uses only the current block's original key node and ciphertext start, plus the proposed next ciphertext start. It does **not** use the proposed plaintext, a fixed terminal block, a full-route closure condition, or the next key's content.
 
-Applied after Reports 00–24, the filter retains **38/38 recorded transitions**. Across those 38 independently enumerated successor pools, it reduces **4,125 to 2,960 geometric candidates** (28.2% removed) and **804 to 563 distinct dictionary readings** (30.0% removed). The largest reading reductions occur after **TO (block 23)** and **BE (block 30)**. These are retrospective results, not independent evidence of a cipher rule. [Report 24](24-mod-seven-key-center-ciphertext-alignment.md)
+Applied after Reports 00–24, the filter retains **38/38 recorded transitions**. Across those 38 independently enumerated successor pools, it reduces **4,125 to 2,960 geometric candidates** (28.2% removed) and **857 to 600 distinct dictionary readings** (30.0% removed). The largest reading reductions occur after **TO (block 23)** and **BE (block 30)**. These are retrospective results, not independent evidence of a cipher rule. [Report 24](24-mod-seven-key-center-ciphertext-alignment.md)
 
 ## 1. Acceptance test
 
@@ -58,21 +58,21 @@ Each row starts at a *recorded* current block with its recorded phase history. T
 | :--- | ---: | ---: | ---: |
 | Geometries, all successor lengths | 4,125 | **2,960** | **28.2%** |
 | Geometries, recorded successor lengths | 715 | **523** | **26.9%** |
-| Distinct dictionary readings, all lengths | 804 | **563** | **30.0%** |
-| Distinct dictionary readings, recorded lengths | 310 | **237** | **23.5%** |
+| Distinct dictionary readings, all lengths | 857 | **600** | **30.0%** |
+| Distinct dictionary readings, recorded lengths | 333 | **252** | **24.3%** |
 
 **The largest local effects:**
 
 | Current block | Geometries | Dictionary readings | Known successor |
 | :--- | ---: | ---: | :--- |
 | **07 NOW THE** | 22 → 4 | **11 → 3** | IDEA |
-| **23 TO** | 775 → 127 | **170 → 32** | THE |
-| **26 OF** | 557 → 489 | **74 → 63** | THE |
-| **27 THE** | 261 → 138 | **32 → 18** | MAP LIFE |
-| **30 BE** | 332 → 90 | **106 → 37** | THE |
-| **37 AS** | 581 → 528 | **120 → 119** | I ASK |
+| **23 TO** | 775 → 127 | **181 → 36** | THE |
+| **26 OF** | 557 → 489 | **87 → 71** | THE |
+| **27 THE** | 261 → 138 | **33 → 18** | MAP LIFE |
+| **30 BE** | 332 → 90 | **117 → 45** | THE |
+| **37 AS** | 581 → 528 | **127 → 126** | I ASK |
 
-There are four additional transitions where geometries decrease but the number of distinct dictionary readings does not: **09 OF**, **10 THE**, **33 OF**, and **34 YOU**. Thus the filter changes the geometric pool at **10/38** transitions and the dictionary-reading count at **6/38** transitions. It does **not** eliminate all alternatives: after **I ASK**, the four readings **DIE**, **A YR**, **AS AE**, and **DO AE** remain unchanged. [Report 16](16-whole-word-block-boundaries.md) · [I ASK](../plaintext-i-found/38-i-ask.md) · [DIE](../plaintext-i-found/39-DIE.md)
+There are four additional transitions where geometries decrease but the number of distinct dictionary readings does not: **09 OF**, **10 THE**, **33 OF**, and **34 YOU**. Thus the filter changes the geometric pool at **10/38** transitions and the dictionary-reading count at **6/38** transitions. After **I ASK**, the same five readings remain **A YR**, **AS AE**, **DIE**, **DO AE**, and **WINGING**. [Report 16](16-whole-word-block-boundaries.md) · [I ASK](../plaintext-i-found/38-i-ask.md) · [DIE](../plaintext-i-found/39-DIE.md)
 
 The totals above **sum per-transition counts**, so the same string (for example `THE`) appearing in two different rows contributes twice to the aggregate. They are not counts of unique strings over the entire 39-block route, nor counts of complete paths.
 
@@ -247,11 +247,11 @@ def main(repo, dictionary):
         try:
             old = reading_sets(search, before, dll, handle)
             new = reading_sets(search, after, dll, handle)
-            assert (sum(map(len, old)), sum(map(len, new))) == (804, 563)
-            assert (len(old[22]), len(new[22])) == (170, 32)
-            assert (len(old[29]), len(new[29])) == (106, 37)
-            assert (len(old[36]), len(new[36])) == (120, 119)
-            assert new[-1] == {"DIE", "A YR", "AS AE", "DO AE"}
+            assert (sum(map(len, old)), sum(map(len, new))) == (857, 600)
+            assert (len(old[22]), len(new[22])) == (181, 36)
+            assert (len(old[29]), len(new[29])) == (117, 45)
+            assert (len(old[36]), len(new[36])) == (127, 126)
+            assert new[-1] == {"DIE", "A YR", "AS AE", "DO AE", "WINGING"}
             fixed_old = [
                 [e for e in pool if len(e[1]) == len(route[i + 1][1])]
                 for i, pool in enumerate(before)
@@ -261,9 +261,9 @@ def main(repo, dictionary):
                 for i, pool in enumerate(after)
             ]
             assert (sum(map(len, reading_sets(search, fixed_old, dll, handle))),
-                    sum(map(len, reading_sets(search, fixed_new, dll, handle)))) == (310, 237)
-            print("Hunspell readings: 804 -> 563; fixed length: 310 -> 237")
-            print("After TO #23: 170 -> 32; after BE #30: 106 -> 37")
+                    sum(map(len, reading_sets(search, fixed_new, dll, handle)))) == (333, 252)
+            print("Hunspell readings: 857 -> 600; fixed length: 333 -> 252")
+            print("After TO #23: 181 -> 36; after BE #30: 117 -> 45")
         finally:
             dll.Hunspell_destroy(handle)
 

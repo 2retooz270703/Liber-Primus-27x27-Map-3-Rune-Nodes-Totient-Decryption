@@ -1,6 +1,6 @@
 # Report 27 — Key Alignment from Node Geometry
 
-Rules 00–27 retain **38/38 recorded transitions**. The two clauses in this report reduce the number of local dictionary readings from **380 to 191** and leave **DIE** as the sole reading after **I ASK**. In a complete replay from the recorded opening, the rules select **one of the three geometric routes that stop at block 39**. The surviving route determines one sequence of **118 plaintext runes**. [Report 26](26-mod-seven-next-key-center-start-distance.md)
+Rules 00–27 retain **38/38 recorded transitions**. The two clauses in this report reduce the number of local dictionary readings from **410 to 208** and admit **DIE** and **WINGING** after **I ASK**. In a replay from the recorded opening, two geometric routes stop at block 39. Each yields a sequence of **118 plaintext runes**, and they share their first 38 blocks. [Report 26](26-mod-seven-next-key-center-start-distance.md)
 
 ## 1. The two clauses
 
@@ -34,9 +34,9 @@ This clause is active on **13/38** recorded transitions. **Evaluate both clauses
 
 ## 2. What each clause resolves
 
-### I ASK → DIE
+### I ASK → DIE and WINGING
 
-At block 38, $Z=(13,13)$ and $B=(5,17)$, so their Chebyshev distance is **8**. Clause A is active. All three competing readings have an absolute final-position difference of 4 and therefore remainder 1. **DIE** has difference 18 and remainder 0. [I ASK walkthrough](../plaintext-i-found/38-i-ask.md) · [DIE walkthrough](../plaintext-i-found/39-DIE.md)
+At block 38, $Z=(13,13)$ and $B=(5,17)$, so their Chebyshev distance is **8**. Clause A is active. The three rejected readings have a final-position difference of 4 and therefore remainder 1. **DIE** has remainder 0, and **WINGING** has remainder 2. [I ASK walkthrough](../plaintext-i-found/38-i-ask.md) · [DIE walkthrough](../plaintext-i-found/39-DIE.md)
 
 | Reading with 00–26 | $C_{\rm end}$ | $K_{\rm end}$ | Absolute difference | Modulo 3 | Clause A |
 | :--- | ---: | ---: | ---: | ---: | :--- |
@@ -44,8 +44,9 @@ At block 38, $Z=(13,13)$ and $B=(5,17)$, so their Chebyshev distance is **8**. C
 | `AS AE` | 17 | 21 | 4 | 1 | Reject |
 | `DO AE` | 23 | 27 | 4 | 1 | Reject |
 | **`DIE`** | **23** | **5** | **18** | **0** | **Keep** |
+| **`WINGING`** | **13** | **21** | **8** | **2** | **Keep** |
 
-`DIE` and `DO AE` use the same key node and ciphertext segment. The last-position test distinguishes their aligned keys. Clause B is inactive at block 38 because $\gcd(447,310)=1$.
+`DIE` and `DO AE` use the same key node and ciphertext segment. The last-position test distinguishes their aligned keys. Clause B is inactive at block 38 because $\gcd(447,310)=1$. `WINGING` uses the node `(16,14) → (16,16) → (16,18)`, the ordered ciphertext cells `(1,24), (2,25), (3,26)`, and aligned key indices `(2,5,21)`. Subtraction modulo 29 gives `(7,21,21)`, read as W·ING·ING.
 
 ### GO → DO
 
@@ -56,21 +57,21 @@ At block 35, $U=(3,16)$ and $M=(7,20)$ have row-major addresses 70 and 182. Thei
 | **`DO`** | **(5, 20, 25)** | **18** | **Keep** |
 | `OO` | (25, 20, 5) | 2 | Reject |
 
-Clause A admits both alignments at this transition. Clause B resolves the final alignment ambiguity on the full route that survived clause A.
+Clause A admits both alignments at this transition. Clause B resolves this alignment ambiguity on the shared prefix. Both terminal branches remain.
 
 ## 3. What remains after applying 00–27 together
 
-For each local pool, the current block and its recorded phase history are fixed. All eligible successor lengths are considered. A geometry is an original key-node/ciphertext-segment pair. An alignment is one candidate key on that geometry. A reading is a distinct string in its transition pool after Hunspell en_US admission, alternate rune transliteration, and segmentation at rune boundaries. The table retains every dictionary reading, including abbreviations. [Report 16](16-whole-word-block-boundaries.md) · [Report 26](26-mod-seven-next-key-center-start-distance.md)
+For each local pool, the current block and its recorded phase history are fixed. All eligible successor lengths are considered. A geometry is an original key-node/ciphertext-segment pair. An alignment is one candidate key on that geometry. A reading is a distinct string in its transition pool after Hunspell en_US admission, single-rune transliteration alternatives (including NG and ING for ᛝ), and segmentation at rune boundaries. The table retains every dictionary reading, including abbreviations. [Report 16](16-whole-word-block-boundaries.md) · [Report 26](26-mod-seven-next-key-center-start-distance.md)
 
 | Local successor pools | 00–26 | + A only | + B only | **00–27 (A and B)** |
 | :--- | ---: | ---: | ---: | ---: |
 | Geometries | 1,928 | 1,611 | 1,622 | **1,348** |
 | Aligned-key assignments | 4,377 | 3,035 | 3,479 | **2,414** |
-| Dictionary readings | 380 | 264 | 275 | **191** |
-| Dictionary readings at recorded successor lengths | 165 | 125 | 110 | **86** |
-| Transitions with a single reading | 7 | 11 | 9 | **13** |
+| Dictionary readings | 410 | 293 | 293 | **208** |
+| Dictionary readings at recorded successor lengths | 178 | 138 | 116 | **92** |
+| Transitions with a single reading | 6 | 8 | 8 | **10** |
 
-Together the clauses eliminate **189 of 380 readings (49.7%)** and reduce the reading count at **23/38 transitions**. Requiring each candidate to permit up to three further geometrically and algebraically valid transitions reduces the pools further to **62 readings**, with single readings at **25/38** transitions. This optional lookahead tests candidate geometry and alignments before dictionary admission on the future hops. It checks the stopping condition when the lookahead reaches block 39.
+Together the clauses eliminate **202 of 410 readings (49.3%)** and reduce the reading count at **23/38 transitions**. Requiring each candidate to permit up to three further geometrically and algebraically valid transitions reduces the pools further to **67 readings**, with single readings at **22/38** transitions. This optional lookahead tests candidate geometry and alignments before dictionary admission on the future hops. It checks the stopping condition when the lookahead reaches block 39.
 
 ### All surviving local readings
 
@@ -81,7 +82,7 @@ Together the clauses eliminate **189 of 380 readings (49.7%)** and reduce the re
 | 03 | TURNS → COLD | 3 | 2 | `CO`, `COLD` |
 | 04 | COLD → I MAY | 1 | 1 | `I MAY` |
 | 05 | I MAY → CRY | 1 | 1 | `CRY` |
-| 06 | CRY → NOW THE | 4 | 1 | `NOW THE` |
+| 06 | CRY → NOW THE | 5 | 2 | `NOW THE`, `NOW THE PING` |
 | 07 | NOW THE → IDEA | 3 | 3 | `ID EA`, `IDEA`, `NEAR` |
 | 08 | IDEA → OF | 3 | 1 | `OF` |
 | 09 | OF → THE | 8 | 4 | `BX`, `DE`, `LN`, `THE` |
@@ -90,44 +91,45 @@ Together the clauses eliminate **189 of 380 readings (49.7%)** and reduce the re
 | 12 | IS → DEATH | 10 | 10 | `DEATH`, `FA`, `FA FO`, `FA VO`, `GO`, `JR`, `KEAS`, `LEA`, `NR`, `OD` |
 | 13 | DEATH → SEE | 5 | 2 | `SEE`, `ZEE` |
 | 14 | SEE → YOU | 7 | 5 | `CAW`, `CW`, `KW`, `YOU`, `YOUNG I` |
-| 15 | YOU → SOON | 23 | 15 | `BD HEATH`, `DZ VB`, `HF`, `HF BE`, `HF BE MA`, `HF BEMA`, `I AH`, `IX`, `JA`, `LB`, `LS`, `SO ON`, `SOON`, `ZOO`, `ZOON` |
+| 15 | YOU → SOON | 24 | 16 | `BD HEATH`, `DZ VB`, `HF`, `HF BE`, `HF BE MA`, `HF BEMA`, `HING`, `I AH`, `IX`, `JA`, `LB`, `LS`, `SO ON`, `SOON`, `ZOO`, `ZOON` |
 | 16 | SOON → THEN | 2 | 2 | `THE`, `THEN` |
 | 17 | THEN → THE | 2 | 2 | `HE`, `THE` |
 | 18 | THE → KEY | 2 | 1 | `KEY` |
-| 19 | KEY → IS | 1 | 1 | `IS` |
+| 19 | KEY → IS | 2 | 2 | `IS`, `THINGS` |
 | 20 | IS → TO | 3 | 1 | `TO` |
 | 21 | TO → GO | 4 | 4 | `AD`, `AD PIG`, `AD PIG EA`, `GO` |
 | 22 | GO → TO | 1 | 1 | `TO` |
-| 23 | TO → THE | 29 | 9 | `BRIO`, `DE`, `DG`, `TEAK`, `THE`, `TING`, `TRIO`, `TYG`, `WEN` |
+| 23 | TO → THE | 33 | 9 | `BRIO`, `DE`, `DG`, `TEAK`, `THE`, `TING`, `TRIO`, `TYG`, `WEN` |
 | 24 | THE → EAST | 2 | 2 | `EA ST`, `EAST` |
 | 25 | EAST → OF | 3 | 3 | `OD`, `OD OP`, `OF` |
-| 26 | OF → THE | 61 | 14 | `AE EA LX`, `BY`, `CD`, `CL`, `EX ANTE`, `GDS`, `GS`, `KL`, `PL`, `RE`, `RE PUL`, `RE PUL ENG`, `THE`, `THE PEAL` |
+| 26 | OF → THE | 66 | 15 | `AE EA LX`, `BY`, `CD`, `CL`, `EX ANTE`, `GDS`, `GS`, `KL`, `PING`, `PL`, `RE`, `RE PUL`, `RE PUL ENG`, `THE`, `THE PEAL` |
 | 27 | THE → MAP LIFE | 16 | 5 | `MAP LIFE`, `MIC`, `OHS`, `OHS RD`, `YOB` |
 | 28 | MAP LIFE → MAY | 36 | 24 | `AE KB`, `AE SI CO FTH`, `AE SIC`, `BK`, `BUS GS ON AE EA COO`, `I AD`, `I AGIO`, `JAB`, `JAY`, `MAD`, `MAY`, `MAY WRY`, `PC`, `PG`, `PK`, `PS`, `RS`, `TB`, `TS`, `WAG`, `WAG A`, `WAY`, `WAY A`, `WK` |
-| 29 | MAY → BE | 13 | 5 | `BE`, `EON`, `ES`, `HO`, `LX` |
-| 30 | BE → THE | 28 | 13 | `AE CM`, `AE EM`, `AE KM`, `EA AE`, `EA AE A`, `EA YA`, `EAU`, `SH AE`, `THE`, `THY`, `WK RE AE`, `YE`, `YE EH NR` |
-| 31 | THE → DEATH | 15 | 13 | `BE`, `BIO`, `BL`, `DEATH`, `EA A AE CA`, `EA A AE KA`, `EA BIO KB`, `EX`, `NO`, `OS`, `OZ`, `PD`, `TEL NO` |
-| 32 | DEATH → OF | 32 | 9 | `A BI BIB`, `A BIB IB`, `AB I BIB`, `AB IB IB`, `AS`, `GL YE`, `OB`, `OF`, `WE` |
+| 29 | MAY → BE | 15 | 7 | `BE`, `EON`, `ES`, `HO`, `LING`, `LX`, `RING` |
+| 30 | BE → THE | 36 | 16 | `AE CM`, `AE EM`, `AE KM`, `EA AE`, `EA AE A`, `EA YA`, `EAU`, `HAE GM TING`, `SH AE`, `THE`, `THING`, `THY`, `WK RE AE`, `YE`, `YE EH NR`, `ZINGY` |
+| 31 | THE → DEATH | 16 | 14 | `BE`, `BIO`, `BL`, `DEATH`, `EA A AE CA`, `EA A AE KA`, `EA BIO KB`, `EA DING`, `EX`, `NO`, `OS`, `OZ`, `PD`, `TEL NO` |
+| 32 | DEATH → OF | 33 | 10 | `A BI BIB`, `A BIB IB`, `AB I BIB`, `AB IB IB`, `AS`, `BL RING`, `GL YE`, `OB`, `OF`, `WE` |
 | 33 | OF → YOU | 2 | 2 | `YO`, `YOU` |
 | 34 | YOU → GO | 1 | 1 | `GO` |
 | 35 | GO → DO | 4 | 1 | `DO` |
 | 36 | DO → AS | 10 | 5 | `AS`, `EWE`, `HO`, `THO`, `THY MG FOES` |
-| 37 | AS → I ASK | 26 | 14 | `AB`, `AL`, `EN`, `FF`, `I A SC`, `I A SC EL JG`, `I A SC EL JG RT TA`, `I AN KEX JG`, `I ASK`, `I ASK EL JG`, `I ASK EL JG RT TA`, `LB`, `SH`, `UH` |
-| 38 | I ASK → DIE | 4 | 1 | `DIE` |
-| 39 | DIE → stop | 0 | 0 | — |
-| | **Total** | **380** | **191** | |
+| 37 | AS → I ASK | 31 | 19 | `AB`, `AL`, `EN`, `FF`, `HING`, `I A SC`, `I A SC EL JG`, `I A SC EL JG RT TA`, `I AN KEX JG`, `I ASK`, `I ASK EL JG`, `I ASK EL JG RT TA`, `KING`, `LB`, `PING`, `SH`, `SING`, `UH`, `ZING` |
+| 38 | I ASK → DIE or WINGING | 5 | 2 | `DIE`, `WINGING` |
+| 39 | DIE or WINGING → stop | 0 | 0 | — |
+| | **Total** | **410** | **208** | |
 
-## 4. One complete route
+## 4. Two complete routes
 
 The full replay fixes the recorded opening block and starting state, then carries phase history and the previous ciphertext start along each branch. It allows the same candidate lengths and dictionary readings as the local pools. A 39-block route qualifies as stopped when block 39 has zero geometric successors under 00–25 before dictionary admission. The replay uses the 39-block horizon and the same stopping test in each row. [Opening block](../plaintext-i-found/01-as-i-go-the.md) · [Terminal test](../plaintext-i-found/40-why-die-is-the-final-word.md)
 
 | Rules applied along each branch | Geometric routes reaching block 39 | Geometric routes stopping at block 39 | Distinct rune sequences on stopping routes |
 | :--- | ---: | ---: | ---: |
-| 00–26 | 4 | 3 | 14 |
-| 00–26 + A | 1 | 1 | 2 |
-| **00–27 (A and B)** | **1** | **1** | **1** |
+| 00–26 | 8 | 6 | 42 |
+| 00–26 + A | 2 | 2 | 4 |
+| 00–26 + B | 4 | 3 | 8 |
+| **00–27 (A and B)** | **2** | **2** | **2** |
 
-The two sequences after clause A differ at block 36, `DO` or `OO`. The full result after both clauses is the recorded **118-rune body ending in DIE**, transcribed here with the repository's punctuation.
+After clause A, each terminal geometry has two rune sequences because block 36 can read `DO` or `OO`. Clause B leaves `DO` on the common prefix. The remaining terminal rune triples are **(23,10,18)**, read as **DIE**, and **(7,21,21)**, read as **WINGING**. Adding the terminal GP sums of **187** and **177** to the common prefix sum of **5,173** gives **5,360** and **5,350**. The DIE branch is transcribed here with the repository's punctuation.
 
 > As I go, the weather turns cold.  
 > I may cry now.
@@ -141,11 +143,11 @@ The two sequences after clause A differ at block 36, `DO` or `OO`. The full resu
 >
 > Die.
 
-The full-route search uses the two clauses, dictionary admission, and the terminal test. It proceeds independently of the mirror-closure and GP-sum checks in earlier reports. The baseline rules are applied as specified, including the GP feature in Rule 14. The clauses in Rule 27 were fitted on the recorded transitions, so **38/38 measures retrospective retention**. The uniqueness result holds within the replay conditions stated above. [Report 14](14-predicting-exact-next-key-axis.md)
+The full-route search uses the two clauses, dictionary admission, and the terminal test. It proceeds independently of the mirror-closure and GP-sum checks in earlier reports. The baseline rules are applied as specified, including the GP feature in Rule 14. The clauses in Rule 27 were fitted on the recorded transitions, so **38/38 measures retrospective retention**. The standalone decoder also checks the paired QU reading and uses its bundled English frequency lexicon. On the included matrix it reports 192 ranked English readings across the same two terminal geometries, with 96 on each. [Decoder](../README.md#experimental-python-decoder) · [Report 14](14-predicting-exact-next-key-axis.md)
 
 ## 5. Reproduce the results
 
-Use the reference archive at commit **1db4ad54efe3bd38e83ed672f753baf2f976301c**. Copy the Python block to `verify_report27.py` in the repository root. The verifier uses Python 3.9+ and the embedded functions from Report 26. The dictionary argument is the prefix of the Hunspell en_US .aff and .dic files. The Hunspell shared library must also be available. The default run prints the complete table of local readings. Add both flags to replay the full routes and check the three-transition lookahead.
+Use the project revision containing this report and its companion reports. Copy the Python block to `verify_report27.py` in the repository root. The verifier uses Python 3.9+ and the embedded functions from Report 26. The dictionary argument is the prefix of the Hunspell en_US .aff and .dic files. The Hunspell shared library must also be available. The default run prints the complete table of local readings. Add both flags to replay the full routes and check the three-transition lookahead.
 
 ```bash
 python3 verify_report27.py --dictionary /usr/share/hunspell/en_US --routes --lookahead
@@ -238,18 +240,29 @@ def local_results(search, route, base, readings):
         observed = (sum(map(len, pools)), count_assignments(pools), sum(map(len, words)),
                     sum(map(len, fixed)), sum(len(w) == 1 for w in words))
         expected = {
-            "": (1928, 4377, 380, 165, 7),
-            "A": (1611, 3035, 264, 125, 11),
-            "B": (1622, 3479, 275, 110, 9),
-            "AB": (1348, 2414, 191, 86, 13),
+            "": (1928, 4377, 410, 178, 6),
+            "A": (1611, 3035, 293, 138, 8),
+            "B": (1622, 3479, 293, 116, 8),
+            "AB": (1348, 2414, 208, 92, 10),
         }[clauses]
         assert observed == expected, (clauses, observed)
         print(f"{clauses or '00–26'}: {observed} "
               "(geometries, alignments, readings, fixed-length readings, single-reading pools)")
-    assert results[""][1][-1] == {"A YR", "AS AE", "DIE", "DO AE"}
-    assert results["A"][1][-1] == results["AB"][1][-1] == {"DIE"}
+    assert results[""][1][-1] == results["B"][1][-1] == {
+        "A YR", "AS AE", "DIE", "DO AE", "WINGING",
+    }
+    assert results["A"][1][-1] == results["AB"][1][-1] == {"DIE", "WINGING"}
     assert tuple(sum(flags) for flags in zip(*(gates(current) for current in route[:-1]))) == (25, 13)
     assert sum(a != b for a, b in zip(map(len, results[""][1]), map(len, results["AB"][1]))) == 23
+    winging_node = ((16, 14), (16, 16), (16, 18))
+    winging_cells = ((1, 24), (2, 25), (3, 26))
+    winging_key = (2, 5, 21)
+    assert search.grid[winging_cells[-1]] == 13
+    assert any(
+        (node, cells) == (winging_node, winging_cells)
+        and winging_key in keys and "WINGING" in readings((node, cells, (winging_key,)))
+        for node, cells, keys in results["AB"][0][-1]
+    )
     print("38/38 recorded transitions retained by both clauses")
     return results
 
@@ -260,9 +273,10 @@ def transition_table(results, lookahead):
     print("| ---: | :--- | ---: | ---: | :--- |")
     for i, (current, following, old, new) in enumerate(zip(RECORDED, RECORDED[1:], baseline, combined), 1):
         candidates = ", ".join(f"\x60{reading}\x60" for reading in sorted(new))
-        print(f"| {i:02d} | {current} → {following} | {len(old)} | {len(new)} | {candidates} |")
-    print("| 39 | DIE → stop | 0 | 0 | — |")
-    print("| | **Total** | **380** | **191** | |")
+        label = following if i < 38 else "DIE or WINGING"
+        print(f"| {i:02d} | {current} → {label} | {len(old)} | {len(new)} | {candidates} |")
+    print("| 39 | DIE or WINGING → stop | 0 | 0 | — |")
+    print(f"| | **Total** | **{sum(map(len, baseline))}** | **{sum(map(len, combined))}** | |")
     if lookahead is not None:
         print("Three-transition lookahead per pool:", list(map(len, lookahead)))
 
@@ -321,7 +335,7 @@ def main():
         geometries = {tuple(entry[:2] for entry in path) for path in stopped}
         print(f"Routes {clauses or '00–26'}: {reached} reach block 39, "
               f"{len(geometries)} stop there, {len(rune_paths)} distinct rune sequences")
-        return geometries, rune_paths
+        return reached, geometries, rune_paths
 
     @cache
     def viable(node, cells, prior_start, state, remaining, terminal):
@@ -345,20 +359,27 @@ def main():
                 assert any(e[:2] == (tuple(sorted(route[i + 1][0])), route[i + 1][1])
                            and RECORDED[i + 1] in readings(e) for e in retained)
                 ahead.append(pool_readings(retained, readings))
-            assert sum(map(len, ahead)) == 62
-            assert sum(len(w) == 1 for w in ahead) == 25
+            assert sum(map(len, ahead)) == 67
+            assert sum(len(w) == 1 for w in ahead) == 22
         assert not next25(*route[-1], route[-2][1][0], states[-1])
         transition_table(results, ahead)
         if args.routes:
-            before, words_before = route_replay("")
-            with_a, words_a = route_replay("A")
-            both, words_both = route_replay("AB")
-            assert (len(before), len(with_a), len(both)) == (3, 1, 1)
-            assert (len(words_before), len(words_a), len(words_both)) == (14, 2, 1)
-            assert next(iter(both)) == tuple((tuple(sorted(n)), cells) for n, cells in route[1:])
-            sequence, = words_both
-            assert sum(map(len, sequence)) == 118 and sequence[-1] == (23, 10, 18)
-            print("The unique 118-rune sequence uses the recorded geometry and ends D-I-E.")
+            expected = {"": (8, 6, 42), "A": (2, 2, 4), "B": (4, 3, 8), "AB": (2, 2, 2)}
+            for clauses, counts in expected.items():
+                reached, geometries, rune_paths = route_replay(clauses)
+                assert (reached, len(geometries), len(rune_paths)) == counts, clauses
+            recorded = tuple((tuple(sorted(node)), cells) for node, cells in route[1:])
+            assert recorded in geometries
+            assert {geometry[:-1] for geometry in geometries} == {recorded[:-1]}
+            assert {geometry[-1] for geometry in geometries} == {
+                recorded[-1], (((16, 14), (16, 16), (16, 18)), ((1, 24), (2, 25), (3, 26))),
+            }
+            assert len({sequence[:-1] for sequence in rune_paths}) == 1
+            assert {sequence[-1] for sequence in rune_paths} == {(23, 10, 18), (7, 21, 21)}
+            assert all(len(seq) == 39 and sum(map(len, seq)) == 118 for seq in rune_paths)
+            primes = search.report[14].GP_PRIMES
+            assert {sum(primes[r] for block in seq for r in block) for seq in rune_paths} == {5350, 5360}
+            print("Two 118-rune sequences share 38 blocks and end in DIE or WINGING.")
     finally:
         close()
 

@@ -1,6 +1,6 @@
 # Report 26 — Modulo-Seven Distance Between the Next Key Center and Ciphertext Start
 
-Applied after Reports 00–25, this geometric filter retains **38/38 recorded transitions**. It reduces **2,960 to 1,928** candidate geometries and **563 to 380** distinct dictionary readings across the 38 successor pools. The largest reductions in readings are **119 → 26** after **AS (37)** and **44 → 4** after **GO (35)**. The formula was selected using the recorded route. [Report 25](25-reflected-start-cell-seven-step-bound.md)
+Applied after Reports 00–25, this geometric filter retains **38/38 recorded transitions**. It reduces **2,960 to 1,928** candidate geometries and **600 to 410** distinct dictionary readings across the 38 successor pools. The largest reductions in readings are **126 → 31** after **AS (37)** and **44 → 4** after **GO (35)**. The formula was selected using the recorded route. [Report 25](25-reflected-start-cell-seven-step-bound.md)
 
 ## 1. Acceptance test
 
@@ -40,20 +40,20 @@ Each successor pool starts from the recorded block and its phase history. A geom
 | :--- | ---: | ---: | ---: |
 | Geometries, all lengths | 2,960 | **1,928** | **34.9%** |
 | Geometries, recorded lengths | 523 | **338** | **35.4%** |
-| Dictionary readings, all lengths | 563 | **380** | **32.5%** |
-| Dictionary readings, recorded lengths | 237 | **165** | **30.4%** |
+| Dictionary readings, all lengths | 600 | **410** | **31.7%** |
+| Dictionary readings, recorded lengths | 252 | **178** | **29.4%** |
 
-The geometry count decreases at **29/38** transitions. The dictionary count decreases at **17/38**, and **7/38** still have a single reading. With equal weight per transition, the mean removal is **19.4%** for geometries and **15.0%** for dictionary readings across all lengths.
+The geometry count decreases at **29/38** transitions. The dictionary count decreases at **19/38**, and **6/38** still have a single reading. With equal weight per transition, the mean removal is **19.4%** for geometries and **15.3%** for dictionary readings across all lengths.
 
 | Current block | Geometries, all lengths | Readings, all lengths | Readings, recorded length |
 | :--- | ---: | ---: | ---: |
 | **24 THE** | 38 → 7 | 18 → 2 | 2 → 2 |
 | **25 EAST** | 16 → 5 | 5 → 3 | 2 → 2 |
 | **35 GO** | 290 → 2 | 44 → 4 | 27 → 4 |
-| **37 AS** | 528 → 119 | 119 → 26 | 41 → 6 |
-| **38 I ASK** | 18 → 17 | 4 → 4 | 4 → 4 |
+| **37 AS** | 528 → 119 | 126 → 31 | 42 → 6 |
+| **38 I ASK** | 18 → 17 | 5 → 5 | 5 → 5 |
 
-The four divisible-distance transitions account for **151 of the 183** removed readings. After **I ASK**, the pool still admits **DIE**, **A YR**, **AS AE**, and **DO AE**. [I ASK walkthrough](../plaintext-i-found/38-i-ask.md) · [DIE walkthrough](../plaintext-i-found/39-DIE.md)
+The four divisible-distance transitions account for **153 of the 190** removed readings. After **I ASK**, the pool still admits **A YR**, **AS AE**, **DIE**, **DO AE**, and **WINGING**. [I ASK walkthrough](../plaintext-i-found/38-i-ask.md) · [DIE walkthrough](../plaintext-i-found/39-DIE.md)
 
 ## 4. Full-route replay
 
@@ -61,13 +61,13 @@ The replay starts with the recorded opening key and ciphertext geometry. It carr
 
 | Replay conditions | Geometric routes |
 | :--- | ---: |
-| 00–25, reach block 39 | 14,322 |
-| 00–25, stop at block 39 | 11,177 |
-| Stop at block 39, apply Rule 26 on every transition | **3** |
-| Stop at block 39, transpose the opening key node at block 38 | **2** |
-| Stop at block 39, transpose the opening key node at block 38, require GP = 5,360 | **1** |
+| 00–25, reach block 39 | 23,615 |
+| 00–25, stop at block 39 | 18,252 |
+| 00–26, stop at block 39 | **6** |
+| 00–26, stop at block 39, require the transposed opening key node at block 38 | **3** |
+| Same conditions, plus GP = 5,360 | **1** |
 
-The two routes that satisfy the transposition share the same first 38 block geometries. One final geometry gives **DIE** or **DO AE** under two key alignments. The other gives **AS AE**. With the recorded rune readings of the shared prefix fixed, the three complete GP totals are **5,360**, **5,370**, and **5,424**, respectively. Allowing all dictionary-admissible readings of the shared prefix yields 12 different GP totals. Requiring the opening-key checksum still selects one 118-rune sequence ending in **DIE**. This closure check uses the previously recorded 39-block horizon, transposition, and GP target. [Opening-key checksum](../New-strongest-findings/06-opening-key-and-final-gp-sum.md) · [Why DIE is last](../plaintext-i-found/40-why-die-is-the-final-word.md)
+The three geometries passing the transposition test yield **14 distinct GP totals** when all their dictionary-admissible rune sequences are evaluated. The recorded prefix through **I ASK** has GP **5,173**. Its **DIE** and **WINGING** continuations contribute **187** and **177**, producing totals **5,360** and **5,350**, respectively. Applying the GP target of **5,360** leaves one 118-rune sequence ending in **DIE** within this replay. The closure check uses the recorded 39-block horizon, transposition and GP target. [Opening-key checksum](../New-strongest-findings/06-opening-key-and-final-gp-sum.md) · [Rule 27 replay](27-key-alignment-from-node-geometry.md)
 
 ## 5. Search-conditioned random controls
 
@@ -84,7 +84,7 @@ The broader frequencies account for the choice of target and predictor within th
 
 ## 6. Reproduce the results
 
-The reference archive is commit **ffc87143be67dff4362ee397d64ecb1a1850c70e**. Save the Python block as verify_report26.py in the repository root. The default run uses Python 3.9+ and the embedded enumerator in Report 25. The dictionary flag takes the prefix of the Hunspell .aff and .dic files and requires the Hunspell shared library. The optional route replay takes several minutes. The optional random control uses NumPy and a fixed seed.
+Use the project revision containing this report and its companion reports. Save the Python block as `verify_report26.py` in the repository root. The default run uses Python 3.9+ and the embedded enumerator in Report 25. The dictionary flag takes the prefix of the Hunspell .aff and .dic files and requires the Hunspell shared library. The optional route replay takes several minutes. The optional random control uses NumPy and a fixed seed.
 
 ```bash
 python3 verify_report26.py
@@ -174,10 +174,10 @@ def success_counts(r21, route, before, after, readings):
         assert (old[0], new[0]) == ((523, 338) if fixed else (2960, 1928))
         print(f"  Geometries: {old[0]:,} -> {new[0]:,}")
         if readings:
-            expected = (237, 165) if fixed else (563, 380)
+            expected = (252, 178) if fixed else (600, 410)
             assert (sum(old[1]), sum(new[1])) == expected
             if not fixed:
-                assert sum(a != b for a, b in zip(old[1], new[1])) == 17
+                assert sum(a != b for a, b in zip(old[1], new[1])) == 19
             print(f"  Dictionary readings: {expected[0]:,} -> {expected[1]:,}")
             print("  Per-transition readings:", list(zip(old[1], new[1])))
 
@@ -245,18 +245,18 @@ def count_routes(search, route, after25, decodings, indices):
                     counts[0] += total
                     if observed(entry) == prediction:
                         counts[1] += local
-                    if step < 38 or node == transposed:
-                        counts[2] += closed
-                        parents[next_state].append((state, entry))
+                        if closed and (step < 38 or node == transposed):
+                            counts[2] += closed
+                            parents[next_state].append((state, entry))
         history.append(parents)
         frontier = forward
 
     reached = sum(n[0] for n in frontier.values())
     ends = {state: n for state, n in frontier.items() if next(next_blocks(state), None) is None}
-    stopped, stopped26, reflected = map(sum, zip(*ends.values()))
+    stopped, stopped26, reflected = (sum(n[i] for n in ends.values()) for i in range(3))
     print(f"Reached block 39: {reached:,}")
     print(f"Stopped under 00–25: {stopped:,}, with Rule 26: {stopped26:,}, with reflection: {reflected:,}")
-    assert (reached, stopped, stopped26, reflected) == (14322, 11177, 3, 2)
+    assert (reached, stopped, stopped26, reflected) == (23615, 18252, 6, 3)
 
     def backwards(state, depth):
         if depth == 0:
@@ -271,33 +271,30 @@ def count_routes(search, route, after25, decodings, indices):
     target = (27 * (row - 1) + col) * search.grid[(col, row)]
     start_code = indices(route[0][1], (25, 10, 28))
     primes = search.report[14].GP_PRIMES
-    passing = []
-    reflected_paths = []
+    passing = set()
+    winning_geometries = set()
+    reflected_paths = 0
     totals = set()
     for state, counts in ends.items():
         if counts[2]:
             for path in backwards(state, 38):
-                reflected_paths.append(path)
+                reflected_paths += 1
                 for codes in product((start_code,), *(decodings(entry) for entry in path)):
                     total = sum(primes[rune] for block in codes for rune in block)
                     totals.add(total)
                     if total == target:
-                        passing.append(codes)
-    assert len(reflected_paths) == 2
-    assert reflected_paths[0][:-1] == reflected_paths[1][:-1]
-    assert len(totals) == 12
-    assert target == 5360 and len(passing) == 1
-    assert sum(map(len, passing[0])) == 118
-    assert passing[0][-1] == (23, 10, 18)
-    prefix_gp = sum(primes[rune] for block in passing[0][:-1] for rune in block)
-    fixed_prefix_totals = {
-        prefix_gp + sum(primes[rune] for rune in code)
-        for path in reflected_paths
-        for code in decodings(path[-1])
-    }
-    assert prefix_gp == 5173 and fixed_prefix_totals == {5360, 5370, 5424}
+                        passing.add(codes)
+                        winning_geometries.add(tuple(entry[:2] for entry in path))
+    assert reflected_paths == reflected == 3
+    assert len(totals) == 14
+    assert target == 5360 and len(passing) == len(winning_geometries) == 1
+    winner, = passing
+    recorded = tuple((tuple(sorted(node)), cells) for node, cells in route[1:])
+    assert winning_geometries == {recorded}
+    assert len(winner) == 39 and sum(map(len, winner)) == 118
+    assert winner[-1] == (23, 10, 18)
+    assert sum(primes[rune] for block in winner[:-1] for rune in block) == 5173
     print("Reflected-route GP totals:", sorted(totals))
-    print("GP totals with the recorded shared-prefix readings:", sorted(fixed_prefix_totals))
     print(f"With GP {target:,}: one 118-rune sequence, ending D-I-E")
 
 
