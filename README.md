@@ -4,7 +4,8 @@ I’ve added a runnable Python decoder for *Liber Primus* (LP2, pages 0–2). It
 
 On the included matrix, the decoder finds a single 39-block route spanning 118 runes. Those runes yield 96 candidate readings. The highest-ranked reading matches the proposed plaintext below and ends with **DIE**.
 
-[Download the decoder ZIP](./liber_primus_decoder.zip)
+> [!IMPORTANT]
+> [Download the decoder ZIP](./liber_primus_decoder.zip)
 
 Extract the archive and run the decoder from the folder containing `decode.py`.
 
