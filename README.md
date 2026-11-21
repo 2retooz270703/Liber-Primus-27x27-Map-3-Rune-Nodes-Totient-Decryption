@@ -1,6 +1,6 @@
 # Python Decoder
 
-I built a Python decoder that uses my decryption method to recover the hidden text in pages 0–2 of *Liber Primus* (LP2). The default search starts with the 27×27 rune matrix and the bundled English frequency dictionary. *It takes no reference plaintext, preset route, starting coordinates, preselected keys, block boundaries, or target block count.* It finds the openings by scanning the grid, uses the rules in Reports 00–27 to test possible moves, and ranks the resulting plaintext candidates by English word frequency.
+I built a Python decoder that uses my decryption method to recover the hidden text in pages 0–2 of *Liber Primus* (LP2). The default search starts with the 27×27 rune matrix and the bundled English frequency dictionary. It takes no reference plaintext, preset route, starting coordinates, preselected keys, block boundaries, or target block count. It finds the openings by scanning the grid, uses the rules in Reports 00–27 to test possible moves, and ranks the resulting plaintext candidates by English word frequency.
 
 > [!IMPORTANT]
 > [Download the decoder ZIP](./liber_primus_decoder.zip)
