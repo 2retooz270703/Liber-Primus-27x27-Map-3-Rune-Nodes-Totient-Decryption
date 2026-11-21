@@ -58,9 +58,7 @@ This shows all 192 ranked readings from the two 39-block routes on the included 
 
 I wanted the opening search to be transparent. On the original 27×27 matrix, the decoder finds 87,115 admissible starting states. Even with that much larger search space, my 39-block plaintext ending in DIE still ranks first.
 
-The decoder infers the height and width from the input and uses them to calculate coordinates, rotations, and grid-dependent bounds. I kept the numerical thresholds of 7 and 13 from the reports because they may also apply to LP2 pages 3 onward. That still needs to be tested.
-
-The default run took about two minutes in testing.
+The decoder infers the height and width from the input and uses them to calculate coordinates, rotations, and grid-dependent bounds. I kept the numerical thresholds of 7 and 13 from the reports because they may also apply to LP2 pages 3 onward. That still needs to be tested. The default run took about two minutes in testing.
 
 # Plaintext
 
