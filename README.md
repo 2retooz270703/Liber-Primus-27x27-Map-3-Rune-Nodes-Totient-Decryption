@@ -240,6 +240,4 @@ I created this [interactive 27 × 27 map](https://2retooz270703.github.io/Liber-
 
 ## New Strongest Findings
 
-## New Strongest Findings
-
 A deeper analysis of my original 27×27 discovery with some of the most capable AI models revealed [new connections between the grid, the decoding route, and the proposed plaintext](./New-strongest-findings/).
