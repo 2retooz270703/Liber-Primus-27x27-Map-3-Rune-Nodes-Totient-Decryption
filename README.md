@@ -1,24 +1,24 @@
-# Python Decoder
+# C++ Decoder
 
-I built a Python decoder that uses my decryption method to recover the hidden text in pages 0–2 of *Liber Primus* (LP2). The default search starts with the 27×27 rune matrix and the bundled English frequency dictionary. It takes no reference plaintext, preset route, starting coordinates, preselected keys, block boundaries, or target block count. It finds the openings by scanning the grid, uses the rules in Reports 00–27 to test possible moves, and ranks the resulting plaintext candidates by English word frequency.
+I built a C++ decoder that applies my decryption method to the 27×27 rune matrix for pages 0–2 of *Liber Primus* (LP2). It uses the bundled English frequency dictionary to rank plaintext candidates. The search starts with the matrix and dictionary alone. It takes no reference plaintext, preset route, starting coordinates, preselected keys, block boundaries, or target block count. It scans the grid for openings and uses the rules in Reports 00–27 to test how each route can continue.
 
 > [!IMPORTANT]
-> [Download the decoder ZIP](./liber_primus_decoder.zip)
+> [Download the C++ decoder ZIP](./liber_primus_decoder_cpp_only.zip)
 
-Extract the archive and run the commands from the folder containing `decode.py` and `matrix.txt`.
+Extract the archive and open a terminal in the folder containing `decode_cpp`, `decode.cpp`, and `matrix.txt`. The launcher builds the decoder on the first run and uses the compiled executable on subsequent runs. The initial build requires a C++20 compiler and zlib development headers.
 
 ### Default run
 
 ```bash
-python3 decode.py matrix.txt
+./decode_cpp matrix.txt
 ```
 
-The default run shows the five highest-ranked readings from the longest completed routes.
+The program starts the full opening search (`free`) automatically and displays the five highest-ranked readings from the longest completed routes.
 
 ### Best reading at a specific length
 
 ```bash
-python3 decode.py matrix.txt --blocks 38 --top 1
+./decode_cpp matrix.txt --blocks 38 --top 1
 ```
 
 This shows the highest-ranked reading among routes that end at exactly 38 blocks. Change `38` to the block count you want to check.
@@ -26,29 +26,29 @@ This shows the highest-ranked reading among routes that end at exactly 38 blocks
 ### Best readings at every depth
 
 ```bash
-python3 decode.py matrix.txt --by-depth
+./decode_cpp matrix.txt --by-depth
 ```
 
-This shows up to three best readings at each depth, from block 1 through the deepest block reached. On the included matrix, it covers all 39 depths. Each ranking includes every valid reading that reaches that depth, whether the route ends there or has more moves to explore. For example, the ranking at depth 13 scores the first 13 blocks of every route that reaches that point.
+This shows up to three readings at each depth. On the included matrix, it covers depths 1 through 39. Each ranking considers readings that reach that depth, including routes that continue beyond it. For example, depth 13 ranks the first 13 blocks of routes that reach that point.
 
-Use `--top` to change the number of readings per depth:
+To show up to five readings per depth, run the following command.
 
 ```bash
-python3 decode.py matrix.txt --by-depth --top 5
+./decode_cpp matrix.txt --by-depth --top 5
 ```
 
 ### Trace the highest-ranked reading
 
 ```bash
-python3 decode.py matrix.txt --top 1 --trace
+./decode_cpp matrix.txt --top 1 --trace
 ```
 
-This shows how each block of the highest-ranked reading was decrypted, including the ciphertext cells, the aligned key, and the resulting runes.
+The trace shows the ciphertext cells, aligned key, and resulting runes for each block of the highest-ranked reading.
 
 ### Show the full ranking
 
 ```bash
-python3 decode.py matrix.txt --top 192
+./decode_cpp matrix.txt --top 192
 ```
 
 This shows all 192 ranked readings from the two 39-block routes on the included matrix.
@@ -56,9 +56,11 @@ This shows all 192 ranked readings from the two 39-block routes on the included 
 > [!IMPORTANT]
 > [Full ranking of all 192 readings](./Start-reading-here/liber_primus_192_ranked_readings.md)
 
-I wanted the opening search to be transparent. On the original 27×27 matrix, the decoder finds 87,115 admissible starting states. Even with that much larger search space, my 39-block plaintext ending in DIE still ranks first.
+### Results on the included matrix
 
-The decoder infers the height and width from the input and uses them to calculate coordinates, rotations, and grid-dependent bounds. I kept the numerical thresholds of 7 and 13 from the reports because they may also apply to LP2 pages 3 onward. That still needs to be tested. The default full run took about two minutes in testing.
+The full opening search finds **87,115 admissible starting states**. The 39-block plaintext ending in **DIE** ranks first. The default run took **0.33 seconds** after the initial build, measured as the median of three runs on Linux with nine logical CPUs available.
+
+The decoder infers the height and width from the input and uses them to calculate coordinates, rotations, and grid-dependent bounds. It keeps the numerical thresholds of 7 and 13 from the reports. Their applicability to LP2 pages 3 onward remains to be tested.
 
 # Plaintext
 
