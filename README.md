@@ -234,6 +234,8 @@ I created this [interactive 27 × 27 map](https://2retooz270703.github.io/Liber-
 
 [new-strongest-findings/](./New-strongest-findings/)
 
+---
+
 <a name="experimental-python-decoder"></a>
 
 # Liber Primus 27×27 Decoder for Pages 0–2
