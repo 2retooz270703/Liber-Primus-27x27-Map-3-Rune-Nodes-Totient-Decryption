@@ -207,7 +207,6 @@ Each walkthrough identifies the source node, key, phase, ciphertext cells, and r
 
 ## Structural evidence and the red heading
 
-
 > [!IMPORTANT]
 > The [Strongest Plaintext Evidence](./Start-reading-here/strongest-plaintext-evidence.md) report examines relationships between the selected reading, its ciphertext, the matrix, and LP1.
 
@@ -242,27 +241,8 @@ I created this [interactive 27 × 27 map](https://2retooz270703.github.io/Liber-
 | Run the default search | `python3 decode.py matrix.txt` |
 | Show the top reading and trace every block | `python3 decode.py matrix.txt --top 1 --trace` |
 | Show all 192 readings at the greatest completed depth on the bundled matrix | `python3 decode.py matrix.txt --top 192` |
-| Show how many states are active at each block | `python3 decode.py matrix.txt --progress` |
 | Keep only geometrically complete routes of exactly 39 blocks | `python3 decode.py matrix.txt --blocks 39` |
 | Compare completed routes of every length | `python3 decode.py matrix.txt --all-lengths` |
-| Try the red-heading opening hypothesis | `python3 decode.py matrix.txt --opening heading` |
 | Raise the search depth limit from 128 to 256 blocks | `python3 decode.py matrix.txt --max-depth 256` |
-| Use a different dictionary and frequency table | `python3 decode.py matrix.txt --lexicon my-words.tsv` |
-| Read the matrix from standard input | `python3 decode.py - < matrix.txt` |
-| Save the ranking and search progress to separate files | `python3 decode.py matrix.txt --top 192 --progress > readings.txt 2> progress.txt` |
-| Run the bundled tests | `python3 -m unittest -v` |
 
-`--blocks` and `--all-lengths` are mutually exclusive. `--trace` traces the highest-ranked result. It shows the three source cells of the key (`node`), the ciphertext cells in reading order (`cells`), the aligned key (`key`), and the decrypted rune indices (`runes`). Coordinates are 1-based `(row, column)` pairs.
-
-For scripts, exit code `0` means the search completed with a result, `2` means invalid arguments or an input error, `3` means the search completed with no qualifying reading, and `4` means the search hit its depth limit with active branches remaining.
-
-## Reproducing the published result
-
-With the bundled matrix and dictionary, the default scan finds **36 admissible opening states**. The two longest completed routes share their first 38 blocks and each contain **39 blocks and 118 runes**. Each route admits **96 readings**.
-
-| Ending | Best rank | Score |
-| --- | ---: | ---: |
-| **DIE** | 1 | `-117.143145` |
-| **WINGING** | 4 | `-119.992244` |
-
-The highest-ranked reading starts with **AS I GO THE WEATHER TURNS COLD**, continues through **THE KEY IS TO GO TO THE EAST OF THE MAP**, and ends with **DIE**.
+Exit code `0` means the search completed with a result, `2` means invalid arguments or an input error, `3` means the search completed with no qualifying reading, and `4` means the search hit its depth limit with active branches remaining.
