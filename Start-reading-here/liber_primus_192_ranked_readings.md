@@ -1,6 +1,8 @@
 # Liber Primus 27×27 — 192 ranked readings
 
-This list contains all 192 distinct English readings on the two longest completed routes for the included matrix. Each route contains 39 blocks and 118 runes. The routes share their first 38 blocks, which end with `I ASK`. Each route has 96 readings.
+The results below come directly from running my decoder with `python3 decode.py matrix.txt --top 192`. The decoder starts with the 27×27 rune matrix and takes no reference plaintext, preset route, starting coordinates, or target block count. It uses the geometry of the grid to explore possible moves and combines Euler’s totient function with the Möbius function, `μ(φ(k))`, to compute key signatures and phases. The English dictionary checks the decrypted words and ranks the resulting readings by frequency.
+
+The search continued until it exhausted all valid branches. The deepest completed routes reached 39 blocks, and the list below contains all 192 distinct English readings at that depth. Both routes contain 118 runes and share their first 38 blocks, through `I ASK`. One ends with `DIE` and the other with `WINGING`, with 96 readings on each route.
 
 Ranks and scores reproduce the decoder’s combined output. The score is based on English word frequency, with higher scores ranked first. A vertical bar (`|`) marks a decryption-block boundary.
 
@@ -8,24 +10,6 @@ Ranks and scores reproduce the decoder’s combined output. The score is based o
 | --- | ---: | ---: | ---: |
 | `DIE` | 96 | [#001](#rank-001) | -117.143145 |
 | `WINGING` | 96 | [#004](#rank-004) | -119.992244 |
-
-Run this command from the extracted decoder folder to reproduce the list. [Decoder](../README.md#experimental-python-decoder)
-
-```bash
-python3 decode.py matrix.txt --top 192
-```
-
-## Blocks with more than one English reading
-
-| Block | English readings |
-| --- | --- |
-| 01 | `AS I GO THE` / `A SI GO THE` |
-| 08 | `IDEA` / `ID EA` |
-| 14 | `SEE` / `ZEE` |
-| 16 | `SOON` / `SO ON` / `ZOON` |
-| 25 | `EAST` / `EA ST` |
-| 38 | `I ASK` / `I A SC` |
-| 39 | `DIE` / `WINGING` |
 
 ## Ranked readings
 
