@@ -163,7 +163,7 @@ Read these in order for the full model, or go directly to a specific constraint.
 
 Each walkthrough identifies the source node, key, phase, ciphertext cells, and resulting runes. The numbering follows the interactive map. A block can contain several English words.
 
-| Block | Proposed reading |
+| Block | |
 | :---: | :--- |
 | 01 | [AS I GO, THE](./plaintext-i-found/01-as-i-go-the.md) |
 | 02 | [WEATHER](./plaintext-i-found/02-weather.md) |
@@ -203,7 +203,7 @@ Each walkthrough identifies the source node, key, phase, ciphertext cells, and r
 | 36 | [DO](./plaintext-i-found/36-do.md) |
 | 37 | [AS](./plaintext-i-found/37-as.md) |
 | 38 | [I ASK](./plaintext-i-found/38-i-ask.md) |
-| 39 ✅ | [DIE](./plaintext-i-found/39-DIE.md) |
+| 39 | [DIE](./plaintext-i-found/39-DIE.md) |
 
 ## Structural evidence and the red heading
 
@@ -211,19 +211,6 @@ Each walkthrough identifies the source node, key, phase, ciphertext cells, and r
 > The [Strongest Plaintext Evidence](./Start-reading-here/strongest-plaintext-evidence.md) report examines relationships between the selected reading, its ciphertext, the matrix, and LP1.
 
 A separate [red-heading analysis](./Start-reading-here/red-heading-SEQUENDI-RATIO.md) documents the literal output SECUENDI RATIO, interpreted as Latin SEQUENDI RATIO — “a method of following” — with the C/K rune read as Q.
-
-## Conventions
-
-| Notation | Meaning |
-| :--- | :--- |
-| `(row, column)` | One-based coordinates; rows increase downward, columns to the right. |
-| Rune index | A value from 0 to 28, used in subtraction modulo 29. |
-| `TH`, `EA`, and other multi-letter labels | Each label represents one rune. |
-| `φ(n)` | Euler’s totient: the number of integers from 1 to `n` coprime to `n`. |
-| `μ(n)` | Möbius function: zero when a prime square divides `n`; otherwise +1 or −1 according to the parity of its distinct prime-factor count. `μ(1) = +1`. |
-| `GP` | Gematria Primus prime values, distinct from rune indices: indices 0–28 correspond to primes 2–109. |
-| Absolute position | Row-major cell number, `n₀(r,c) = 27(r−1) + c`, from 1 to 729. |
-| Rotation | Clockwise matrix rotation used to calculate cell indices; distinct from cyclic rotation of a three-rune key. |
 
 ## Interactive Map
 
