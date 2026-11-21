@@ -234,64 +234,6 @@ I created this [interactive 27 × 27 map](https://2retooz270703.github.io/Liber-
 
 [new-strongest-findings/](./New-strongest-findings/)
 
----
-
-<a name="experimental-python-decoder"></a>
-
-# Liber Primus 27×27 Decoder for Pages 0–2
-
-I built a Python decoder that searches for reading routes through pages 0–2 of *Liber Primus*. It takes a 27×27 grid of 729 runes, finds possible openings, and follows the transitions defined in [Reports 00–27](#method-and-transition-reports). It decides where each route ends, then ranks the completed readings by English word frequency. The default run starts with the matrix and the bundled dictionary. It discovers the opening coordinates, block lengths, and route depth during the search.
-
-## Quick start
-
-[Download the decoder ZIP](./liber_primus_decoder.zip), extract it, and open a terminal in the folder containing `decode.py` and `matrix.txt`. The decoder runs offline with Python 3.9 or later, using the standard library and the bundled dictionary.
-
-```bash
-python3 decode.py matrix.txt
-```
-
-On Windows, use `py -3` if Python is installed through the Windows launcher.
-
-```powershell
-py -3 decode.py matrix.txt
-```
-
-The default command shows up to five readings from the longest completed routes. For each result, the first line gives its rank, score, block count, and rune count. The next two lines show the full reading and the same text with `|` marking the boundaries between decrypted blocks. A block can contain more than one word.
-
-## How the decoder searches
-
-### 1. Find possible openings
-
-In the default `scan` mode, the decoder examines every three-cell horizontal window. If the center rune has index `h`, it replaces that index with Euler’s totient `φ(h)` and checks for the opening Möbius signature `(0, 0, 0)`. The ciphertext starts `φ(h) + φ(φ(h))` cells after the leftmost key cell in row-major order. The reading can wrap onto the next row.
-
-The decoder tries every opening length of at least two runes that passes the opening checks and can be read as complete dictionary words. The optional `heading` mode restricts the starting key nodes to those that satisfy the red-heading hypothesis.
-
-### 2. Generate and test the next moves
-
-A move pairs a **key node** with a **ciphertext segment**. The key node consists of three equally spaced cells on a horizontal, vertical, or diagonal axis. The decoder considers every radius from 1 to 13 that fits in the grid, both orders of the outer runes, and two center values: the original index or its totient. After the opening, ciphertext segments run in any of eight directions and contain 2–27 cells, staying within the grid.
-
-For each active route, the transition formulas use the current key node, the current ciphertext cells, the previous block’s start, and the running phase state. They use cell addresses at four grid rotations to constrain the next move. For example, they predict the next key’s signature, axis, radius parity, and center parity, as well as the next segment’s axis, reading direction, and endpoint properties. Further checks test the distance between the next key center and segment start, and whether the aligned key is compatible with the final ciphertext rune.
-
-### 3. Decrypt each candidate and keep the valid readings
-
-The decoder computes the signature of the derived key by applying `μ(φ(k))` to each of its three values. The sum of the signature values modulo 3 gives the phase. It rotates the key left by that many positions, repeats it across the ciphertext segment, and calculates each plaintext rune as `(ciphertext index − key index) mod 29`.
-
-A decrypted block must split entirely into dictionary words at rune boundaries. The decoder checks alternative rune readings such as `NG` and `ING`, so one rune sequence can produce several English readings.
-
-The search advances one block at a time and explores every surviving state. When two routes reach the same state, they share the same possible continuations. The decoder keeps the best `K` distinct text histories for that state. `--top K` controls how many readings it retains and prints while leaving the number of geometric states unrestricted.
-
-## When a route ends
-
-The decoder counts a route as **complete** when the current block has zero geometric successors under Reports 00–25, before checking the dictionary or applying the final filters from Reports 26–27. If geometric successors exist and every one fails those later checks, the decoder discards the branch.
-
-The search finishes when there are no active branches left to expand, or when an exact depth requested with `--blocks N` has been checked. If branches could still continue at `--max-depth`, the decoder reports an incomplete search and exits with code `4`. Any completed readings found before the limit are still printed.
-
-## How readings are ranked
-
-Each word receives a score based on its frequency in the bundled dictionary. For a word with count `c`, the decoder adds `log10((c + 1) / (total counts + vocabulary size))` to the reading’s score. Scores closer to zero rank higher.
-
-The default output ranks readings at the greatest completed depth. `--all-lengths` ranks completed routes of every length together. Since the score adds one negative value per word, short readings can rank first in that mode.
-
 ## Commands
 
 | Task | Command |
@@ -314,12 +256,6 @@ The default output ranks readings at the greatest completed depth. `--all-length
 
 For scripts, exit code `0` means the search completed with a result, `2` means invalid arguments or an input error, `3` means the search completed with no qualifying reading, and `4` means the search hit its depth limit with active branches remaining.
 
-## Using your own matrix
-
-Supply exactly 27 rows of 27 cells. Use whitespace-separated text, CSV, or a JSON array of 27 arrays. A cell can contain a Gematria Primus index from `0` to `28`, a Latin rune label such as `TH` or `C/K`, or a runic character. `TH` occupies one cell. Index `0` is valid in the ciphertext, and the three original key runes must have positive indices.
-
-A custom lexicon can be plain UTF-8 text or gzip-compressed. Put one lowercase ASCII word and one nonnegative integer count on each line, separated by whitespace. Each word should appear once. Changing the lexicon affects both which blocks pass the word check and how the readings are ranked.
-
 ## Reproducing the published result
 
 With the bundled matrix and dictionary, the default scan finds **36 admissible opening states**. The two longest completed routes share their first 38 blocks and each contain **39 blocks and 118 runes**. Each route admits **96 readings**.
@@ -330,5 +266,3 @@ With the bundled matrix and dictionary, the default scan finds **36 admissible o
 | **WINGING** | 4 | `-119.992244` |
 
 The highest-ranked reading starts with **AS I GO THE WEATHER TURNS COLD**, continues through **THE KEY IS TO GO TO THE EAST OF THE MAP**, and ends with **DIE**.
-
-[Full ranking of all 192 readings](./Start-reading-here/liber_primus_192_ranked_readings.md) · [Terminal-route analysis](./Start-reading-here/27-key-alignment-from-node-geometry.md)
