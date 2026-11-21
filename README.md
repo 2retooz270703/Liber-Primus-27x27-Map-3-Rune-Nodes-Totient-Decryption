@@ -13,7 +13,7 @@ Extract the archive and run the commands from the folder containing `decode.py` 
 python3 decode.py matrix.txt
 ```
 
-The default run shows the five highest-ranked readings from the longest completed routes. On the included matrix, my proposed reading ending in **DIE** ranks first. The best reading ending in **WINGING** ranks fourth. Both routes reach 39 blocks and contain 118 runes.
+The default run shows the five highest-ranked readings from the longest completed routes. On the included matrix, my proposed reading ending in **DIE** ranks first.
 
 ### Best reading at a specific length
 
@@ -37,12 +37,21 @@ Use `--top` to change the number of readings per depth:
 python3 decode.py matrix.txt --by-depth --top 5
 ```
 
-### Trace and full ranking
+### Trace the highest-ranked reading
 
-| Task | Command |
-| --- | --- |
-| Trace how each block of the highest-ranked reading was decrypted | `python3 decode.py matrix.txt --top 1 --trace` |
-| Show all 192 ranked readings from the two 39-block routes | `python3 decode.py matrix.txt --top 192` |
+```bash
+python3 decode.py matrix.txt --top 1 --trace
+```
+
+This shows how each block of the highest-ranked reading was decrypted, including the ciphertext cells, the aligned key, and the resulting runes.
+
+### Show the full ranking
+
+```bash
+python3 decode.py matrix.txt --top 192
+```
+
+This shows all 192 ranked readings from the two 39-block routes on the included matrix.
 
 [Full ranking of all 192 readings](./Start-reading-here/liber_primus_192_ranked_readings.md)
 
