@@ -29,7 +29,7 @@ This shows the highest-ranked reading among routes that end at exactly 38 blocks
 python3 decode.py matrix.txt --by-depth
 ```
 
-This shows up to **three best readings at each depth**, from block 1 through the deepest block reached. On the included matrix, it covers all 39 depths. Each ranking includes every valid reading that reaches that depth, whether the route ends there or has more moves to explore. For example, the ranking at depth 13 scores the first 13 blocks of every route that reaches that point.
+This shows up to three best readings at each depth, from block 1 through the deepest block reached. On the included matrix, it covers all 39 depths. Each ranking includes every valid reading that reaches that depth, whether the route ends there or has more moves to explore. For example, the ranking at depth 13 scores the first 13 blocks of every route that reaches that point.
 
 Use `--top` to change the number of readings per depth:
 
@@ -74,21 +74,9 @@ Go, do as I ask.
 >
 > Die.
 
-### Closing the Route
-
-The two terminal routes share **Block 38 — I ASK**, reached on transition 37.
-
-Its key-source node is the exact reflection of the opening key-source node across the main diagonal, under `(r, c) → (c, r)`.
-
-| Opening node · Block 1 | Reflected node · Block 38 |
-| --- | --- |
-| `(13,11) → (13,12) → (13,13)` | `(11,13) → (12,13) → (13,13)` |
-
-The two nodes share **`(13,13)`**, which stays fixed under the reflection.
-
 ### DIE
 
-After `DIE`, the route rules allow no further move. The first cell of the opening key is at map position **335**. Its reflection across the main diagonal contains `T`, rune index **16**. Their product, **335 × 16 = 5,360**, equals the GP sum of the proposed DIE reading. `DIE` supplies the final **187**, bringing the total from **5,173** to **5,360**. On the other terminal branch, `WINGING` contributes **177**, giving **5,350**. [Terminal-route replay](./Start-reading-here/27-key-alignment-from-node-geometry.md)
+After `DIE`, the route rules allow no further move. The first cell of the opening key is at map position **335**. Its reflection across the main diagonal contains `T`, rune index **16**. Their product, **335 × 16 = 5,360**, equals the GP sum of the proposed DIE reading. `DIE` supplies the final **187**, bringing the total from **5,173** to **5,360**.
 
 # Welcome
 
