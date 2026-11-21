@@ -53,7 +53,8 @@ python3 decode.py matrix.txt --top 192
 
 This shows all 192 ranked readings from the two 39-block routes on the included matrix.
 
-[Full ranking of all 192 readings](./Start-reading-here/liber_primus_192_ranked_readings.md)
+> [!IMPORTANT]
+> [Full ranking of all 192 readings](./Start-reading-here/liber_primus_192_ranked_readings.md)
 
 # Plaintext
 
