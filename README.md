@@ -241,7 +241,7 @@ I created this [interactive 27 × 27 map](https://2retooz270703.github.io/Liber-
 | Run the default search | `python3 decode.py matrix.txt` |
 | Show the top reading and trace every block | `python3 decode.py matrix.txt --top 1 --trace` |
 | Show all 192 readings at the greatest completed depth on the bundled matrix | `python3 decode.py matrix.txt --top 192` |
-| Keep only geometrically complete routes of exactly 39 blocks | `python3 decode.py matrix.txt --blocks 39` |
+| Show only routes that reach block 39 and have no next move | `python3 decode.py matrix.txt --blocks 39` |
 | Compare completed routes of every length | `python3 decode.py matrix.txt --all-lengths` |
 | Raise the search depth limit from 128 to 256 blocks | `python3 decode.py matrix.txt --max-depth 256` |
 
