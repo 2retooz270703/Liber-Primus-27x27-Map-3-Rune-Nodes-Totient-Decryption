@@ -128,36 +128,36 @@ The result is WEATHER. `EA` and `TH` each represent one rune. See the [complete 
 
 Read these in order for the full model, or go directly to a specific constraint.
 
-| Report | Subject | What it defines or tests |
-| :---: | :--- | :--- |
-| [00](./Start-reading-here/00-decryption-method.md) | Decryption method | Rune indices, key derivation, phase, and subtraction modulo 29. |
-| [01](./Start-reading-here/01-next-key-signature.md) | Next-key signature | Predicts the next signature and phase using ciphertext positions and running state. |
-| [02](./Start-reading-here/02-leftmost-cell-and-rotations.md) | Leftmost cell and rotations | Checks the current mode and predicts whether the next leftmost cell is read first or last. |
-| [03](./Start-reading-here/03-predicting-axis-and-reading-direction.md) | Axis and reading direction | Predicts a horizontal, vertical, or diagonal axis and the reading boundary. |
-| [04](./Start-reading-here/04-predicting-next-key-center-parity.md) | Key-center parity | Predicts the row and column parity of the next original key center. |
-| [05](./Start-reading-here/05-predicting-next-ciphertext-row-parity.md) | Ciphertext row parity | Predicts row parity for the next endpoint and leftmost cell. |
-| [06](./Start-reading-here/06-predicting-next-ciphertext-ray-and-mobius-deviation.md) | Ray alignment | Tests the next beginning against eight rays and a conditional one-cell allowance. |
-| [07](./Start-reading-here/07-predicting-next-key-mirror-status.md) | Mirror status | Predicts whether the next original node has matching outer runes. |
-| [08](./Start-reading-here/08-minimum-ciphertext-block-length.md) | Minimum block length | Requires at least two runes per independently decrypted block. |
-| [09](./Start-reading-here/09-predicting-next-ciphertext-column-parity.md) | Ciphertext column parity | Predicts the column parity of the next leftmost cell. |
-| [10](./Start-reading-here/10-squarefree-gcd-compatibility.md) | Squarefree-GCD compatibility | Tests four numerical relationships between a proposed key center and ciphertext cells. |
-| [11](./Start-reading-here/11-seven-thresholds-and-cyclic-phase-modes.md) | Seven-phase thresholds and cyclic modes | Tests exact hits at multiples of seven and proposes a repeating four-mode cycle every 28 phase units. |
-| [12](./Start-reading-here/12-predicting-exact-ray-deviation.md) | Deterministic ray deviation using Möbius zeroes | Introduces a new rule that determines the exact 0-or-1 offset from geometric rays using rotated cell indices. |
-| [13](./Start-reading-here/13-predicting-next-key-axis-group.md) | Axis-group prediction using Möbius signs | Introduces a new rule that determines the next key node's axis group using rotated cell indices and Möbius signs. |
-| [14](./Start-reading-here/14-predicting-exact-next-key-axis.md) | Exact next key-axis prediction using Möbius signs and GP weights | Extends Report 13 with a new diagonal bit derived from rotated cell indices, Möbius signs, and original rune prime weights, predicting the exact axis of the next key node. |
-| [15](./Start-reading-here/15-predicting-next-key-radius-parity.md) | Next key-node radius parity prediction using Möbius signs | Introduces a new XOR-based rule combining coordinate parity and Möbius sign tests to predict whether the next key node's radius is even or odd. |
-| [16](./Start-reading-here/16-whole-word-block-boundaries.md) | Whole-word block boundaries | Requires each independently decrypted block to contain one or more complete English words and rejects readings that split a word across blocks. |
-| [17](./Start-reading-here/17-xor-next-key-center-column.md) | XOR filter for the next key-center column | Uses the rotated index of the current key center and the Möbius function to filter candidate columns. |
-| [18](./Start-reading-here/18-predicting-next-ciphertext-start-and-end.md) | Next ciphertext start and end | Tests three XOR rules that narrow the possible starts and ends of the next ciphertext segment. |
-| [19](./Start-reading-here/19-predicting-next-ciphertext-start-distance.md) | Predicting the next ciphertext start with two distances | Predicts whether the next ciphertext starts within seven cells of both the current start and leftmost cell, or farther than seven cells from both. |
-| [20](./Start-reading-here/20-two-orientation-gcd-filter.md) | Two-orientation GCD filter for the next key center | Requires both GCDs between the next ciphertext start index and the next key center indices at 0° and 180° to be at most seven. |
-| [21](./Start-reading-here/21-conditional-seven-step-bound.md) | Conditional seven-step bound on key radius and ciphertext span | Caps the sum of the next key radius and ciphertext span at seven when the current key node’s upper extreme (left for horizontal nodes) is within seven grid steps of the current ciphertext end. |
-| [22](./Start-reading-here/22-seven-step-key-cell-coverage.md) | Seven-step coverage by a single key cell | If any cell of the next ciphertext is within seven columns of its key center, the same original key-node cell must be within seven grid steps of both the first and the leftmost ciphertext cells. |
-| [23](./Start-reading-here/23-mobius-forecast-for-next-key-extreme.md) | Möbius forecast for the next key extreme | Uses two tests on rotated indices of the current block to predict whether the 180° index of the next key node’s upper extreme (left for horizontal nodes) has positive Möbius value. |
-| [24](./Start-reading-here/24-mod-seven-key-center-ciphertext-alignment.md) | Modulo-seven key-center and ciphertext alignment | Uses two arithmetic tests on the current block to predict the modulo-seven relation between the next key center and ciphertext. |
-| [25](./Start-reading-here/25-reflected-start-cell-seven-step-bound.md) | Reflected start-cell seven-step bound | Limits the next ciphertext start using rotated coordinates of the current key and ciphertext. |
-| [26](./Start-reading-here/26-mod-seven-next-key-center-start-distance.md) | Next key-center distance modulo seven | Uses the current block’s geometry to predict whether the Chebyshev distance between the next key center and ciphertext start is divisible by seven. |
-| [27 ✅](./Start-reading-here/27-key-alignment-from-node-geometry.md) | Key alignment from node geometry | Uses the current node and ciphertext start to test the next aligned key against the final ciphertext rune using a modulo-three check and a seven-index distance threshold. |
+| Report | |
+| :---: | :--- |
+| [00](./Start-reading-here/00-decryption-method.md) | Decryption method |
+| [01](./Start-reading-here/01-next-key-signature.md) | Next-key signature |
+| [02](./Start-reading-here/02-leftmost-cell-and-rotations.md) | Leftmost cell and rotations |
+| [03](./Start-reading-here/03-predicting-axis-and-reading-direction.md) | Axis and reading direction |
+| [04](./Start-reading-here/04-predicting-next-key-center-parity.md) | Key-center parity |
+| [05](./Start-reading-here/05-predicting-next-ciphertext-row-parity.md) | Ciphertext row parity |
+| [06](./Start-reading-here/06-predicting-next-ciphertext-ray-and-mobius-deviation.md) | Ray alignment |
+| [07](./Start-reading-here/07-predicting-next-key-mirror-status.md) | Mirror status |
+| [08](./Start-reading-here/08-minimum-ciphertext-block-length.md) | Minimum block length |
+| [09](./Start-reading-here/09-predicting-next-ciphertext-column-parity.md) | Ciphertext column parity |
+| [10](./Start-reading-here/10-squarefree-gcd-compatibility.md) | Squarefree-GCD compatibility |
+| [11](./Start-reading-here/11-seven-thresholds-and-cyclic-phase-modes.md) | Seven-phase thresholds and cyclic modes |
+| [12](./Start-reading-here/12-predicting-exact-ray-deviation.md) | Deterministic ray deviation using Möbius zeroes |
+| [13](./Start-reading-here/13-predicting-next-key-axis-group.md) | Axis-group prediction using Möbius signs |
+| [14](./Start-reading-here/14-predicting-exact-next-key-axis.md) | Exact next key-axis prediction using Möbius signs and GP weights |
+| [15](./Start-reading-here/15-predicting-next-key-radius-parity.md) | Next key-node radius parity prediction using Möbius signs |
+| [16](./Start-reading-here/16-whole-word-block-boundaries.md) | Whole-word block boundaries |
+| [17](./Start-reading-here/17-xor-next-key-center-column.md) | XOR filter for the next key-center column |
+| [18](./Start-reading-here/18-predicting-next-ciphertext-start-and-end.md) | Next ciphertext start and end |
+| [19](./Start-reading-here/19-predicting-next-ciphertext-start-distance.md) | Predicting the next ciphertext start with two distances |
+| [20](./Start-reading-here/20-two-orientation-gcd-filter.md) | Two-orientation GCD filter for the next key center |
+| [21](./Start-reading-here/21-conditional-seven-step-bound.md) | Conditional seven-step bound on key radius and ciphertext span |
+| [22](./Start-reading-here/22-seven-step-key-cell-coverage.md) | Seven-step coverage by a single key cell |
+| [23](./Start-reading-here/23-mobius-forecast-for-next-key-extreme.md) | Möbius forecast for the next key extreme |
+| [24](./Start-reading-here/24-mod-seven-key-center-ciphertext-alignment.md) | Modulo-seven key-center and ciphertext alignment |
+| [25](./Start-reading-here/25-reflected-start-cell-seven-step-bound.md) | Reflected start-cell seven-step bound |
+| [26](./Start-reading-here/26-mod-seven-next-key-center-start-distance.md) | Next key-center distance modulo seven |
+| [27](./Start-reading-here/27-key-alignment-from-node-geometry.md) | Key alignment from node geometry |
 
 ## Plaintext walkthroughs
 
