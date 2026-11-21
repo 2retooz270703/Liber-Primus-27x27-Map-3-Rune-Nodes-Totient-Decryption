@@ -1,25 +1,50 @@
-# Experimental Python Decoder
+# Python Decoder
 
-I’ve added a runnable Python decoder for *Liber Primus* (LP2, pages 0–2). It takes a 27×27 rune matrix, explores the block transitions allowed by Reports 00–27, and ranks candidate readings by English word frequency. The search runs without a supplied plaintext or a preset block count.
-
-On the included matrix, the two longest completed routes each contain 39 blocks and 118 runes. They share their first 38 blocks and end in **DIE** and **WINGING**, respectively. Each route yields 96 candidate readings, for a total of 192. The highest-ranked reading matches the proposed plaintext below and ends with **DIE**. The highest-ranked reading ending in **WINGING** places fourth overall.
+I built a Python decoder that uses my decryption method to recover the hidden text in pages 0–2 of *Liber Primus* (LP2). The decoder searches a 27×27 grid made from the pages’ runes, uses the rules in Reports 00–27 to decide which cells it can read next, and ranks the resulting plaintext candidates by English word frequency.
 
 > [!IMPORTANT]
 > [Download the decoder ZIP](./liber_primus_decoder.zip)
 
-Extract the archive and run the decoder from the folder containing `decode.py`.
+Extract the archive and run the commands from the folder containing `decode.py` and `matrix.txt`.
+
+### Default run
 
 ```bash
 python3 decode.py matrix.txt
 ```
 
-Add `--top 1 --trace` to show only the highest-ranked reading and trace how each block was decrypted.
+The default run shows the five highest-ranked readings from the longest completed routes. On the included matrix, my proposed reading ending in **DIE** ranks first. The best reading ending in **WINGING** ranks fourth. Both routes reach 39 blocks and contain 118 runes.
+
+### Best reading at a specific length
 
 ```bash
-python3 decode.py matrix.txt --top 1 --trace
+python3 decode.py matrix.txt --blocks 38 --top 1
 ```
 
-Use `--top 192` to show the complete ranking on the included matrix. [Full ranking of all 192 readings](./Start-reading-here/liber_primus_192_ranked_readings.md)
+This shows the highest-ranked reading among routes that end at exactly 38 blocks. Change `38` to the block count you want to check.
+
+### Best readings at every depth
+
+```bash
+python3 decode.py matrix.txt --by-depth
+```
+
+This shows up to **three best readings at each depth**, from block 1 through the deepest block reached. On the included matrix, it covers all 39 depths. Each ranking includes every valid reading that reaches that depth, whether the route ends there or has more moves to explore. For example, the ranking at depth 13 scores the first 13 blocks of every route that reaches that point.
+
+Use `--top` to change the number of readings per depth:
+
+```bash
+python3 decode.py matrix.txt --by-depth --top 5
+```
+
+### Trace and full ranking
+
+| Task | Command |
+| --- | --- |
+| Trace how each block of the highest-ranked reading was decrypted | `python3 decode.py matrix.txt --top 1 --trace` |
+| Show all 192 ranked readings from the two 39-block routes | `python3 decode.py matrix.txt --top 192` |
+
+[Full ranking of all 192 readings](./Start-reading-here/liber_primus_192_ranked_readings.md)
 
 # Plaintext
 
