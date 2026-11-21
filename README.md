@@ -240,18 +240,6 @@ I created this [interactive 27 × 27 map](https://2retooz270703.github.io/Liber-
 
 ## New Strongest Findings
 
-[new-strongest-findings/](./New-strongest-findings/)
+This folder documents what some of the most powerful AI models uncovered when they examined my original discovery in more detail.
 
-## Commands
-
-| Task | Command |
-| --- | --- |
-| Show all available options | `python3 decode.py --help` |
-| Run the default search | `python3 decode.py matrix.txt` |
-| Show the top reading and trace every block | `python3 decode.py matrix.txt --top 1 --trace` |
-| Show all 192 readings at the greatest completed depth on the bundled matrix | `python3 decode.py matrix.txt --top 192` |
-| Show only routes that reach block 39 and have no next move | `python3 decode.py matrix.txt --blocks 39` |
-| Compare completed routes of every length | `python3 decode.py matrix.txt --all-lengths` |
-| Raise the search depth limit from 128 to 256 blocks | `python3 decode.py matrix.txt --max-depth 256` |
-
-Exit code `0` means the search completed with a result, `2` means invalid arguments or an input error, `3` means the search completed with no qualifying reading, and `4` means the search hit its depth limit with active branches remaining.
+[Browse the findings](./New-strongest-findings/)
