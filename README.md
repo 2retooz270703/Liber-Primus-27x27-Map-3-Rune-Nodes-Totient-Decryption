@@ -13,7 +13,7 @@ Extract the archive and run the commands from the folder containing `decode.py` 
 python3 decode.py matrix.txt
 ```
 
-The default run shows the five highest-ranked readings from the longest completed routes. On the included matrix, my proposed reading ending in **DIE** ranks first.
+The default run shows the five highest-ranked readings from the longest completed routes.
 
 ### Best reading at a specific length
 
@@ -58,7 +58,6 @@ This shows all 192 ranked readings from the two 39-block routes on the included 
 # Plaintext
 
 ## Pages 0-2
-
 
 > [!IMPORTANT]
 > **Red runes: Secuendi Ratio ("The Way to Proceed")**
