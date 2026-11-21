@@ -248,6 +248,3 @@ I built a decoder that automates my method for reading pages 0–2 of *Liber Pri
 Anyone can run the published decoder on the 27×27 grid to reproduce my proposed reading and check the documented route step by step.
 
 My broader hypothesis is that pages 0–2 demonstrate a method that can also be applied to the rest of *Liber Primus*.
-
-> [!IMPORTANT]
-> [Download the decoder ZIP](./liber_primus_decoder.zip)
