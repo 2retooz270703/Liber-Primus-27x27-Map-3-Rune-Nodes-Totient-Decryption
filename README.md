@@ -3,7 +3,7 @@
 I built a C++ decoder that applies my decryption method to the 27×27 rune matrix for pages 0–2 of *Liber Primus* (LP2). It uses the bundled English frequency dictionary to rank plaintext candidates. The search starts with the matrix and dictionary alone. It takes no reference plaintext, preset route, starting coordinates, preselected keys, block boundaries, or target block count. It scans the grid for openings and uses the rules in Reports 00–27 to test how each route can continue.
 
 > [!IMPORTANT]
-> [Download the C++ decoder ZIP](./liber_primus_decoder_cpp_only.zip)
+> [Download the C++ decoder ZIP](./liber_primus_decoder_cpp.zip)
 
 Extract the archive and open a terminal in the folder containing `decode_cpp`, `decode.cpp`, and `matrix.txt`. The launcher builds the decoder on the first run and uses the compiled executable on subsequent runs. The initial build requires a C++20 compiler and zlib development headers.
 
