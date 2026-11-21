@@ -1,8 +1,6 @@
 # Liber Primus 27×27 — 192 ranked readings
 
-The results below come directly from running my decoder with `python3 decode.py matrix.txt --top 192`. The decoder starts with the 27×27 rune matrix and takes no reference plaintext, preset route, starting coordinates, or target block count. The English dictionary checks the decrypted words and ranks the resulting readings by frequency.
-
-The search continued until it exhausted all valid branches. The deepest completed routes reached 39 blocks, and the list below contains all 192 distinct English readings at that depth.
+The decoder starts with the 27×27 rune matrix and takes no reference plaintext, preset route, starting coordinates, or target block count. The English dictionary checks the decrypted words and ranks the resulting readings by frequency. The search continued until it exhausted all valid branches. The deepest completed routes reached 39 blocks, and the list below contains all 192 distinct English readings at that depth.
 
 ## Ranked readings
 
